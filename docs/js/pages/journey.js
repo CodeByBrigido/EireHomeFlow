@@ -91,13 +91,82 @@ function renderPage(p) {
   bind("nextTitle", next ? next.title : "Put the kettle on");
 }
 
-// Every step can be read. Completing one needs the earlier blocking steps done,
-// and the account step also needs the person to be signed in.
+// The person's figures for a step (data-numbers in guide.html), worked out by calc().
+function mineFor(kind, c) {
+  const s = state;
+  if (kind === "calculator") {
+    return { title: "Your numbers", rows: [
+      ["Maximum property price", euro(c.maxPrice), true],
+      ["Maximum mortgage (" + c.multiple + "×)", euro(c.maxLoan)],
+      ["Funds available", euro(c.funds)],
+      ["Monthly repayment for a " + euro(c.price) + " home", euro(c.monthly)],
+    ] };
+  }
+  if (kind === "deposit") {
+    return { title: "Your deposit", rows: [
+      ["10% of " + euro(c.price), euro(c.deposit), true],
+      ["Savings and family gift", euro(c.own)],
+      ...(c.htb ? [["Help to Buy", euro(c.htb)]] : []),
+    ], note: c.funds >= c.deposit ? "Your funds cover the deposit." : "You are " + euro(c.deposit - c.funds) + " short of the deposit." };
+  }
+  if (kind === "costs") {
+    return { title: "Your extra costs on " + euro(c.price), rows: [
+      ["Stamp duty", euro(c.stamp)],
+      ["Solicitor", "~" + euro(c.solicitor)],
+      ["Structural survey", "~" + euro(c.survey)],
+      ["Bank valuation", "~" + euro(c.valuation)],
+      ["Total, on top of the deposit", euro(c.costs), true],
+    ], note: s.newBuild ? "The calculator is set to a new " + (s.apartment ? "apartment" : "house") + ", so stamp duty is worked out on the price without " +
+      (s.apartment ? "9%" : "13.5%") + " VAT." : "" };
+  }
+  if (kind === "htb") {
+    const title = "Help to Buy and you";
+    if (!s.ftb) return { title, note: "Your calculator says you are moving home. Help to Buy is for first-time buyers only, so you can skip this optional step." };
+    if (!s.newBuild) return { title, note: "Your calculator is set to a second-hand home. Help to Buy only covers new builds and self-builds, so choose New house or New apartment in the calculator if that is what you are looking at." };
+    if (c.price > HTB.priceCap) return { title, note: "Your target price of " + euro(c.price) + " is above the " + euro(HTB.priceCap) + " limit, so Help to Buy would not apply." };
+    if (c.price > c.htbStop) {
+      return { title, note: "Help to Buy needs a mortgage of at least 70% of the price, which is " + euro(c.price * HTB.minLoanShare) +
+        " at your target price. You can borrow up to " + euro(c.maxLoan) + ", so Help to Buy would not apply at this price." };
+    }
+    const loanShare = c.loanShare < HTB.minLoanShare
+      ? " It also needs a mortgage of at least 70% of the price (" + euro(c.price * HTB.minLoanShare) + "), so plan to borrow that much and keep the rest of your savings." : "";
+    return { title, rows: [
+      ["Most you could get on " + euro(c.price), euro(c.htbCap), true],
+      ["Counted in your calculator", euro(c.htb)],
+    ], note: "The final amount is also limited by the income tax and DIRT you paid in the last four years. Your Revenue application shows it." + loanShare };
+  }
+  return null;
+}
+
+// Figures appear only after the person has saved the calculator, so the example
+// numbers are never shown as theirs. They are read from this browser only.
+function renderMine(s, isDone) {
+  const box = document.getElementById("mine");
+  if (!box) return;
+  const saved = !!state.calcSaved;
+  const mine = s.numbers && (s.auto !== "calculator" || isDone)
+    ? (saved ? mineFor(s.numbers, calc())
+      : { title: "Your numbers", note: s.auto === "calculator"
+        ? "Your figures are not saved in this browser yet. Open the calculator and choose Save to my journey to see them here."
+        : "Save your numbers in the calculator (step 1) to see your own figures here." })
+    : null;
+  box.hidden = !mine;
+  if (!mine) return;
+  bind("mineTitle", mine.title);
+  document.getElementById("mine-rows").innerHTML = (mine.rows || []).map(([label, value, strong]) =>
+    `<span class="mine__row${strong ? " is-total" : ""}"><span class="mine__label">${esc(label)}</span><span class="mine__value">${esc(value)}</span></span>`).join("");
+  const note = document.getElementById("mine-note");
+  note.textContent = mine.note || "";
+  note.hidden = !mine.note;
+}
+
+// Every step can be read. Completing one by hand needs the earlier blocking steps done.
+// Steps with data-auto are ticked by the site: the calculator step when the figures are
+// saved there, the account step when the person signs in.
 function renderDetail(p, s) {
   const index = steps.indexOf(s);
   const isDone = !!state.done[s.id];
   const locked = index > p.unlocked && !isDone;
-  const needsAccount = s.account && !isDone && !Account.user;
 
   bind("openPhase", s.phase.n + " · " + s.phase.title);
   bind("openStepLabel", "Step " + (index + 1) + " of " + steps.length);
@@ -117,19 +186,55 @@ function renderDetail(p, s) {
   tag.classList.toggle("is-optional", !s.blocking);
   document.getElementById("open-checklist").innerHTML = s.checklist
     .map((text) => `<li><span class="checklist__mark" aria-hidden="true">◆</span><span>${esc(text)}</span></li>`).join("");
+  renderMine(s, isDone);
 
-  const note = locked
-    ? 'You can read this step now. You can complete it once you finish "' + steps[p.unlocked].title + '".'
-    : !needsAccount ? ""
-      : !Account.ready ? "Checking your account..."
-        : Account.enabled ? "Create an account or sign in to complete this step."
-          : "Accounts are not switched on yet, so this step cannot be completed.";
+  // The page and the step list can briefly come from different versions (GitHub Pages
+  // caches files for 10 minutes), so the newer parts are optional here.
+  const howto = s.howto || [];
+  const links = (s.links || []).filter((link) => /^https:\/\//.test(link.href));
+  const howtoBox = document.getElementById("open-howto-box");
+  const linksBox = document.getElementById("open-links");
+  if (howtoBox) {
+    howtoBox.hidden = !howto.length;
+    bind("openHowtoLabel", s.howtoLabel || "How to do it");
+    document.getElementById("open-howto").innerHTML = howto.map((text) => `<li>${esc(text)}</li>`).join("");
+  }
+  if (linksBox) {
+    linksBox.hidden = !links.length;
+    linksBox.innerHTML = links.map((link) =>
+      `<a class="step-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.text)}<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a>`).join("");
+  }
+
+  const user = Account.user;
+  const note = s.auto === "calculator"
+    ? (isDone ? "" : "This step is ticked for you when you choose Save to my journey in the calculator.")
+    : s.auto === "account"
+      ? (user ? "You are signed in as " + user.email + (isDone ? ", so this step is done." : ". This step is being ticked for you.")
+        : !Account.ready ? "Checking your account..."
+          : Account.enabled ? "This step is ticked for you as soon as you sign in."
+            : "Accounts are not switched on yet, so this step cannot be completed.")
+      : locked ? 'You can read this step now. You can complete it once you finish "' + steps[p.unlocked].title + '".' : "";
   const noteEl = document.getElementById("detail-note");
   noteEl.textContent = note;
   noteEl.hidden = !note;
 
-  document.getElementById("toggle-step").disabled = locked || (needsAccount && !(Account.ready && Account.enabled));
-  bind("openAction", isDone ? "Mark as not done" : needsAccount ? "Create account or sign in" : "Complete step +25 XP");
+  // Manual steps get the tick button; the calculator and account steps get a link instead.
+  const toggle = document.getElementById("toggle-step");
+  toggle.hidden = !!s.auto;
+  toggle.disabled = locked;
+  bind("openAction", isDone ? "Mark as not done" : "Complete step +25 XP");
+  const go = document.getElementById("step-go");
+  if (!go) return;
+  const link = s.auto === "calculator" ? { href: "calculator.html", text: isDone ? "Change my numbers" : "Open the calculator", main: !isDone }
+    : s.auto === "account" && !user && Account.ready && Account.enabled
+      ? { href: "signup.html?next=" + encodeURIComponent(stepLink(s)), text: "Create account or sign in", main: true } : null;
+  go.hidden = !link;
+  if (link) {
+    go.href = link.href;
+    go.textContent = link.text;
+    go.classList.toggle("btn--primary", link.main);
+    go.classList.toggle("btn--outline", !link.main);
+  }
 }
 
 Object.assign(actions, {
@@ -145,12 +250,9 @@ Object.assign(actions, {
   },
   toggle: () => {
     const s = steps.find((step) => step.id === state.open);
+    if (!s || s.auto) return;
     const isDone = !!state.done[s.id];
     if (!isDone && steps.indexOf(s) > progress().unlocked) return;
-    if (!isDone && s.account && !Account.user) {
-      location.href = "signup.html?next=" + encodeURIComponent(stepLink(s));
-      return;
-    }
     setDone({ ...state.done, [s.id]: !isDone });
   },
   prev: () => {
@@ -167,5 +269,9 @@ Object.assign(actions, {
     openStep(next.id);
     focusDetail();
   },
-  reset: () => setDone({}),
+  // A signed-in person keeps the account step: being signed in is what it asks for.
+  reset: () => {
+    const accountStep = steps.find((s) => s.account);
+    setDone(Account.user && accountStep ? { [accountStep.id]: true } : {});
+  },
 });

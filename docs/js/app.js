@@ -6,15 +6,20 @@
 const XP_PER_STEP = 25;
 const STORAGE_KEY = "eirehome-flow";
 const FLASH_KEY = "eirehome-flash";
-const SAVED_FIELDS = ["ftb", "joint", "salary", "salary2", "savings", "gift", "htb", "price", "rate", "term"];
+const SAVED_FIELDS = ["ftb", "joint", "newBuild", "apartment", "salary", "salary2", "savings", "gift", "htb", "price", "rate", "term", "calcSaved"];
 const PAGE = document.body.dataset.page;
 
+// calcSaved: true once the person has saved the calculator to their journey.
+// Until then, the figures are the examples below, not theirs.
 const state = {
   done: {}, open: null,
-  ftb: true, joint: false,
+  ftb: true, joint: false, newBuild: false, apartment: false,
   salary: "45000", salary2: "38000", savings: "35000", gift: "0", htb: "0", price: "380000",
-  rate: "3.9", term: "30",
+  rate: "3.9", term: "30", calcSaved: "",
 };
+
+// The calculator's sliders: lowest, highest and default value.
+const RANGES = { rate: [1, 8, 3.9], term: [5, 35, 30] };
 
 let PHASES = [];
 let steps = [];
@@ -66,6 +71,12 @@ function loadSaved() {
   } catch (err) {
     // Storage blocked or unreadable: start fresh.
   }
+  // Figures saved before the sliders existed can be outside their range.
+  for (const key in RANGES) {
+    const [min, max, fallback] = RANGES[key];
+    const value = num(state[key]);
+    if (value < min || value > max) state[key] = String(value ? Math.min(max, Math.max(min, value)) : fallback);
+  }
 }
 
 function save() {
@@ -78,9 +89,11 @@ function save() {
   }
 }
 
+// Returns the cloud save, so a page can wait for it before moving on.
 function setDone(done) {
   setState({ done });
-  if (Account.user) Account.saveProgress(done).catch((err) => console.error("Could not save progress to the account.", err));
+  if (!Account.user) return Promise.resolve();
+  return Account.saveProgress(done).catch((err) => console.error("Could not save progress to the account.", err));
 }
 
 /* ---------- Steps (the content lives in guide.html) ---------- */
@@ -89,7 +102,9 @@ async function loadSteps() {
   let doc = document;
   try {
     if (!document.querySelector(".guide-phase")) {
-      const res = await fetch("guide.html");
+      // "no-cache" asks the server whether the guide changed, so the steps never come
+      // from an older copy than the scripts reading them.
+      const res = await fetch("guide.html", { cache: "no-cache" });
       doc = new DOMParser().parseFromString(await res.text(), "text/html");
     }
   } catch (err) {
@@ -103,14 +118,21 @@ async function loadSteps() {
     title: textOf(el, ".guide-phase__title"),
     subtitle: textOf(el, ".guide-phase__subtitle"),
     text: textOf(el, ".guide-phase__text"),
+    // data-auto: the site ticks the step itself ("calculator": saved from the calculator,
+    // "account": signed in). data-numbers: which calculator figures the journey shows on it.
     tasks: [...el.querySelectorAll(".guide-step")].map((s) => ({
       title: textOf(s, ".guide-step__title"),
       body: textOf(s, ".guide-step__body"),
       blocking: s.dataset.blocking === "true",
-      account: s.dataset.account === "true",
+      auto: s.dataset.auto || (s.dataset.account === "true" ? "account" : ""),
+      account: s.dataset.auto === "account" || s.dataset.account === "true",
+      numbers: s.dataset.numbers || "",
       time: textOf(s, ".guide-step__time"),
       cost: textOf(s, ".guide-step__cost"),
       checklist: [...s.querySelectorAll(".guide-step__checklist li")].map((li) => li.textContent.trim()),
+      howtoLabel: s.querySelector(".guide-step__howto-label") ? textOf(s, ".guide-step__howto-label") : "",
+      howto: [...s.querySelectorAll(".guide-step__howto li")].map((li) => li.textContent.trim()),
+      links: [...s.querySelectorAll(".guide-step__links a")].map((a) => ({ href: a.getAttribute("href"), text: a.textContent.trim() })),
       tip: textOf(s, ".guide-step__tip-text"),
       image: s.querySelector(".guide-step__image") ? s.querySelector(".guide-step__image").getAttribute("src") : "",
       imageAlt: s.querySelector(".guide-step__image") ? s.querySelector(".guide-step__image").alt : "",
@@ -147,38 +169,91 @@ function phaseCardsHtml() {
   }).join("");
 }
 
-/* ---------- Calculator maths (calculator and dashboard) ---------- */
+/* ---------- Calculator maths (calculator, journey and dashboard) ---------- */
 
-function calc() {
-  const s = state;
+const DEPOSIT_RATE = 0.1; // Central Bank minimum for first-time and subsequent buyers since 2023
+const FEES = { solicitor: 2500, survey: 400, valuation: 150 };
+const FEES_TOTAL = FEES.solicitor + FEES.survey + FEES.valuation;
+// VAT included in the price of a new home: 13.5% on houses, and 9% on apartments sold
+// from 8 October 2025 to 31 December 2030.
+const VAT = { house: 0.135, apartment: 0.09 };
+const HTB = { max: 30000, share: 0.1, priceCap: 500000, minLoanShare: 0.7 };
+
+const homeVat = (s) => (!s.newBuild ? 0 : s.apartment ? VAT.apartment : VAT.house);
+
+// Residential stamp duty since 2 October 2024: 1% up to €1m, 2% from €1m to €1.5m, 6% above.
+// On a new home it is charged on the price without VAT.
+const stampBase = (price, vat) => price / (1 + (vat || 0));
+function stampDuty(price, vat) {
+  const base = stampBase(price, vat);
+  return Math.min(base, 1e6) * 0.01 + Math.max(0, Math.min(base, 1.5e6) - 1e6) * 0.02 + Math.max(0, base - 1.5e6) * 0.06;
+}
+const stampBands = (base) => (base <= 1e6 ? "1%" : base <= 1.5e6 ? "1% and 2% bands" : "1%, 2% and 6% bands");
+
+// Help to Buy: first-time buyers of a new home up to €500,000, with a mortgage of at least
+// 70% of the price. So it also stops where 70% of the price is more than the person can borrow.
+// The refund is the lowest of €30,000, 10% of the price and the amount typed in (the income
+// tax and DIRT paid in the last four years).
+const htbCap = (price) => Math.min(HTB.max, price * HTB.share);
+const htbLimit = (maxLoan) => Math.min(HTB.priceCap, maxLoan / HTB.minLoanShare);
+const htbFor = (s, price, maxLoan) =>
+  (s.ftb && s.newBuild && price <= htbLimit(maxLoan) ? Math.min(num(s.htb), htbCap(price)) : 0);
+
+// Highest price (within 50 cent) for which ok(price) holds. Each check gets harder as the
+// price rises, except where Help to Buy stops (split), so the prices above it are searched alone.
+function highestPrice(ok, split) {
+  const search = (lo, hi) => {
+    if (ok(hi)) return hi;
+    while (hi - lo > 0.5) {
+      const mid = (lo + hi) / 2;
+      if (ok(mid)) lo = mid; else hi = mid;
+    }
+    return lo;
+  };
+  const upTo = ok(0) ? search(0, split) : 0;
+  const above = ok(split + 1) ? search(split + 1, 1e8) : 0;
+  return Math.max(upTo, above);
+}
+
+function calc(s = state) {
   const income = num(s.salary) + (s.joint ? num(s.salary2) : 0);
   const multiple = s.ftb ? 4 : 3.5;
-  const depositRate = 0.1; // Central Bank minimum for first-time and subsequent buyers since 2023
   const maxLoan = income * multiple;
-  const price = num(s.price);
-  const htbCap = Math.min(30000, price * 0.1);
-  const htb = s.ftb ? Math.min(num(s.htb), htbCap) : 0;
-  const funds = num(s.savings) + num(s.gift) + htb;
-  const solicitor = 2500, survey = 400, valuation = 150;
-  const fixedFees = solicitor + survey + valuation;
-  // Highest price where cash covers the minimum deposit plus costs, and savings above
-  // that minimum go into the purchase so the loan stays within the income limit.
-  // Stamp duty is taken as 1%, the rate up to €1m.
-  const fundsLimitedPrice = Math.max(0, (funds - fixedFees) / (depositRate + 0.01));
-  const loanLimitedPrice = Math.max(0, (maxLoan + funds - fixedFees) / 1.01);
+  const vat = homeVat(s);
+  const own = num(s.savings) + num(s.gift);
+  const htbStop = htbLimit(maxLoan);
+  const fundsAt = (p) => own + htbFor(s, p, maxLoan);
+  const costsAt = (p) => stampDuty(p, vat) + FEES_TOTAL;
+  // Cash must cover the 10% deposit and the costs; savings above that go into the purchase,
+  // so the loan is the price plus costs minus all the funds.
+  const fundsOk = (p) => fundsAt(p) >= p * DEPOSIT_RATE + costsAt(p);
+  const fundsLimitedPrice = highestPrice(fundsOk, htbStop);
+  const loanLimitedPrice = highestPrice((p) => p + costsAt(p) - fundsAt(p) <= maxLoan, htbStop);
   const maxPrice = Math.min(fundsLimitedPrice, loanLimitedPrice);
-  const deposit = price * depositRate;
-  const stamp = price * 0.01;
-  const cashNeeded = deposit + stamp + fixedFees;
+  // Savings needed to go just past the point where Help to Buy stops, without it.
+  const pastHtb = htbStop + 1;
+  const savingsPastHtb = pastHtb * DEPOSIT_RATE + costsAt(pastHtb) - own;
+
+  const price = num(s.price);
+  const htb = htbFor(s, price, maxLoan);
+  const funds = own + htb;
+  const deposit = price * DEPOSIT_RATE;
+  const stamp = stampDuty(price, vat);
+  const costs = stamp + FEES_TOTAL;
+  const cashNeeded = deposit + costs;
   const extraSavings = Math.max(0, funds - cashNeeded);
   const loanNeeded = Math.max(0, price - deposit - extraSavings);
   const r = num(s.rate) / 100 / 12;
   const n = num(s.term) * 12;
   const monthly = r > 0 && n > 0 ? (loanNeeded * r) / (1 - Math.pow(1 + r, -n)) : loanNeeded / (n || 1);
-  return { multiple, depositRate, maxLoan, price, htbCap, funds, loanLimitedPrice, fundsLimitedPrice, maxPrice,
-    deposit, stamp, solicitor, survey, valuation, cashNeeded, extraSavings, loanNeeded, monthly,
-    gap: cashNeeded - funds, loanOver: loanNeeded - maxLoan };
+  return { multiple, depositRate: DEPOSIT_RATE, maxLoan, price, own, htb, htbCap: htbCap(price), htbStop, savingsPastHtb, funds,
+    loanLimitedPrice, fundsLimitedPrice, maxPrice, vat, stampBase: stampBase(price, vat), deposit, stamp, costs, ...FEES,
+    cashNeeded, extraSavings, loanNeeded, loanShare: price ? loanNeeded / price : 0, monthly, gap: cashNeeded - funds, loanOver: loanNeeded - maxLoan };
 }
+
+// The calculator step: the site ticks it when the person saves their figures there.
+// Step IDs never change, so the ID is a fallback if the guide came without data-auto.
+const calculatorStep = () => steps.find((s) => s.auto === "calculator") || steps.find((s) => s.id === "preparation-0");
 
 /* ---------- Rendering ---------- */
 
@@ -403,12 +478,18 @@ async function onAccountChange(user, event) {
     return;
   }
   if (user && (event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "PASSWORD_RECOVERY")) {
+    // Being signed in is what the account step asks for, so it is ticked here.
+    const accountStep = steps.find((s) => s.account);
+    const signedIn = accountStep ? { [accountStep.id]: true } : {};
     try {
-      const merged = { ...(await Account.loadProgress()) };
+      const merged = { ...(await Account.loadProgress()), ...signedIn };
       for (const id in state.done) if (state.done[id]) merged[id] = true;
       setDone(merged);
     } catch (err) {
+      // Tick it in this browser only: writing to the account after a failed read would
+      // replace the progress saved there.
       console.error("Could not load progress from the account.", err);
+      setState({ done: { ...state.done, ...signedIn } });
     }
   }
   if (event === "SIGNED_OUT") setState({ done: {}, open: null });
@@ -432,7 +513,7 @@ async function onAccountChange(user, event) {
 async function loadPartials() {
   await Promise.all([...document.querySelectorAll("[data-include]")].map(async (slot) => {
     try {
-      const res = await fetch(slot.dataset.include);
+      const res = await fetch(slot.dataset.include, { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status + " " + res.statusText);
       slot.outerHTML = await res.text();
     } catch (err) {

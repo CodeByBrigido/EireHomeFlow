@@ -201,27 +201,46 @@ button { font-family: inherit; cursor: pointer; }
 .finish__note { margin-top: 4px; font-size: 14px; color: var(--faint); }
 
 /* Journey: step detail */
-.detail { position: sticky; top: 88px; box-sizing: border-box; max-height: calc(100vh - 104px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 26px 26px 0; border-radius: 26px; background: #fff; border: 2px solid var(--line); }
+/* Compact spacing so a typical step fits on a laptop screen without scrolling the panel. */
+.detail { position: sticky; top: 84px; box-sizing: border-box; max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; scroll-padding-bottom: 96px; scrollbar-width: thin; padding: 20px 24px 0; border-radius: 26px; background: #fff; border: 2px solid var(--line); }
 .detail__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .detail__top .eyebrow { margin: 0; }
-.detail__close { padding: 7px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--faint); font-weight: 700; font-size: 13px; }
+.detail__close { padding: 6px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--faint); font-weight: 700; font-size: 13px; }
 .detail__close:hover { background: var(--hover); }
-.detail__step { margin: 12px 0 0; font-size: 13px; font-weight: 700; color: var(--muted-2); }
-.detail__title { margin: 6px 0 0; font-weight: 800; font-size: 34px; line-height: 1.08; letter-spacing: -0.025em; }
-.detail__chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.detail__step { margin: 8px 0 0; font-size: 13px; font-weight: 700; color: var(--muted-2); }
+.detail__title { margin: 4px 0 0; font-weight: 800; font-size: 30px; line-height: 1.1; letter-spacing: -0.025em; }
+.detail__chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .chip { margin: 0; padding: 5px 12px; border-radius: 999px; background: var(--sand); color: var(--muted); font-weight: 700; font-size: 12px; }
 .chip--tag { display: inline-block; background: var(--pop); color: #fff; font-weight: 800; }
 .chip--tag.is-optional { background: var(--sand); color: var(--faint); font-weight: 700; }
-.detail__body { margin: 14px 0 0; font-size: 17px; line-height: 1.6; color: var(--body); }
-.detail .label { margin: 20px 0 10px; }
-.checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.checklist li { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-radius: 16px; background: #fdfaf4; border: 1px solid var(--sand-2); font-size: 15px; line-height: 1.5; color: var(--body); }
+.detail__body { margin: 12px 0 0; font-size: 16px; line-height: 1.55; color: var(--body); }
+.detail .label { margin: 16px 0 8px; }
+.checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 14px; border-radius: 14px; background: #fdfaf4; border: 1px solid var(--sand-2); font-size: 15px; line-height: 1.45; color: var(--body); }
 .checklist__mark { color: var(--ink); font-weight: 800; }
-.tip { margin-top: 20px; padding: 16px 18px; border-radius: 18px; background: var(--peach); }
+.tip { margin-top: 14px; padding: 11px 16px; border-radius: 16px; background: var(--peach); }
 .tip .label { margin: 0; color: #8a5420; }
-.tip__text { margin: 7px 0 0; font-size: 15px; line-height: 1.55; color: #6b4a22; }
-.detail__actions { position: sticky; bottom: 0; z-index: 1; display: flex; gap: 12px; flex-wrap: wrap; margin: 20px -26px 0; padding: 14px 26px 20px; background: #fff; border-top: 1px solid var(--sand); }
+.tip__text { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: #6b4a22; }
+.detail__actions { position: sticky; bottom: 0; z-index: 1; display: flex; gap: 12px; flex-wrap: wrap; margin: 14px -24px 0; padding: 12px 24px 14px; background: #fff; border-top: 1px solid var(--sand); }
 .detail__actions .btn--primary { padding: 13px 24px; font-size: 15px; }
+
+/* Journey: the person's own figures, the how-to list and outside links */
+.mine { margin-top: 14px; padding: 12px 16px; border-radius: 16px; background: var(--mint); border: 2px solid #cfe2d7; }
+.mine .label.mine__title { margin: 0 0 4px; color: var(--ink); }
+.mine__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 5px 0; border-bottom: 1px solid #cfe2d7; font-size: 15px; }
+.mine__row:last-child { border-bottom: 0; }
+.mine__label { color: var(--body); font-weight: 600; }
+.mine__value { flex: none; font-weight: 800; color: var(--text); }
+.mine__row.is-total .mine__label { color: var(--text); font-weight: 800; }
+.mine__row.is-total .mine__value { font-size: 17px; color: var(--ink); }
+.mine__note { margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: var(--body); }
+.howto { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.5; color: var(--body); }
+.howto li { padding-left: 4px; }
+.howto li::marker { color: var(--ink); font-weight: 800; }
+.step-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.step-link { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--line-2); color: var(--ink); font-weight: 800; font-size: 14px; }
+.step-link:hover { background: var(--hover); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* Journey: progress sidebar */
 .aside { position: sticky; top: 104px; }
@@ -247,16 +266,35 @@ button { font-family: inherit; cursor: pointer; }
 /* Calculator */
 .calc__intro { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 62ch; }
 .calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 32px; margin-top: 32px; align-items: start; }
-.form { padding: 26px; border-radius: 24px; background: #fff; border: 2px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
+/* Left column: the form, then the monthly repayment right under the sliders. */
+.calc__inputs { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.form { padding: 26px; border-radius: 24px; background: #fff; border: 2px solid var(--line); display: flex; flex-direction: column; gap: 18px; }
 .pills { display: flex; gap: 10px; }
 .pill { flex: 1; padding: 11px 14px; border-radius: 999px; font-weight: 800; font-size: 14px; border: 2px solid var(--line-2); background: #fff; color: var(--faint); }
 .pill.is-on { border-color: var(--ink); background: var(--ink); color: var(--cream); }
+.pills--three .pill { padding-left: 8px; padding-right: 8px; line-height: 1.2; }
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.fields--rates { padding-top: 4px; border-top: 2px solid var(--sand); }
 .field { display: block; }
 .field__label { display: block; font-weight: 700; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-.fields--rates .field__label { margin: 10px 0 6px; }
 .field input { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 2px solid var(--line-2); border-radius: 14px; background: var(--cream); font-family: inherit; font-weight: 700; font-size: 16px; color: var(--text); }
+/* A field that does not apply stays in place, switched off, and its placeholder says why. */
+.field.is-off .field__label { color: var(--locked); }
+.field input:disabled { background: var(--sand); border-style: dashed; cursor: not-allowed; }
+.field input:disabled::placeholder { color: var(--faint); opacity: 1; font-size: 14px; }
+
+/* Sliders: interest rate and term */
+.fields--rates { gap: 28px; padding-top: 18px; border-top: 2px solid var(--sand); }
+.range { min-width: 0; }
+.range__head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.range__head .field__label { margin: 0; }
+.range__value { font-weight: 800; font-size: 18px; color: var(--ink); white-space: nowrap; }
+.range__input { --fill: calc(13px + (100% - 26px) * var(--pct, .5)); -webkit-appearance: none; appearance: none; display: block; box-sizing: border-box; width: 100%; height: 10px; margin: 16px 0 0; padding: 0; border-radius: 999px; cursor: pointer;
+  background: linear-gradient(to right, var(--ink) var(--fill), var(--sand-2) var(--fill)); }
+.range__input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); box-shadow: 0 3px 0 var(--ink-dark); }
+.range__input::-moz-range-thumb { box-sizing: border-box; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); box-shadow: 0 3px 0 var(--ink-dark); }
+.range__input::-moz-range-track { background: transparent; }
+.range__input:focus-visible { outline: 3px solid var(--pop); outline-offset: 8px; }
+.range__scale { display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; font-weight: 700; color: var(--faint); }
 .hint { margin: 0; padding: 12px 14px; border-radius: 14px; background: var(--peach); font-size: 13px; line-height: 1.5; color: #8a5a2a; }
 .disclaimer { margin: 0; font-size: 13px; line-height: 1.5; color: var(--faint); }
 
@@ -269,6 +307,12 @@ button { font-family: inherit; cursor: pointer; }
 .result-main__box { padding: 14px; border-radius: 16px; background: rgba(255, 250, 243, .14); }
 .result-main__box-label { margin: 0; font-size: 12px; font-weight: 700; }
 .result-main__box-value { margin: 4px 0 0; font-weight: 800; font-size: 22px; }
+.result-main__save { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 18px; }
+.result-main__btn { padding: 12px 22px; border: 0; border-radius: 999px; background: var(--gold); color: var(--text); font-weight: 800; font-size: 15px; box-shadow: 0 4px 0 #c98f3e; }
+.result-main__btn:active { transform: translateY(3px); }
+.result-main__btn:disabled { opacity: .75; cursor: progress; }
+.result-main__save-note { flex: 1 1 180px; margin: 0; font-size: 13px; line-height: 1.45; opacity: .92; }
+.result-main :focus-visible { outline-color: var(--cream); }
 
 .breakdown-card { padding: 26px; border-radius: 24px; background: #fff; border: 2px solid var(--line); }
 .breakdown-card__title { margin: 0; font-weight: 800; font-size: 20px; }
@@ -285,8 +329,6 @@ button { font-family: inherit; cursor: pointer; }
 .verdict.is-short { background: var(--peach); border-color: #f0dcc0; }
 .verdict__title { margin: 0; font-weight: 800; font-size: 18px; }
 .verdict__body { margin: 8px 0 0; font-size: 15px; line-height: 1.55; }
-.verdict__btn { display: inline-block; margin-top: 16px; padding: 12px 22px; border: 0; border-radius: 999px; background: var(--text); color: var(--cream); font-weight: 800; font-size: 15px; }
-.verdict__btn:hover { filter: brightness(1.2); }
 
 .monthly { padding: 22px 26px; border-radius: 24px; background: var(--sand); }
 .monthly__value { margin: 8px 0 0; font-weight: 800; font-size: 38px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
@@ -323,7 +365,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Journey: read-only and account notes */
 .detail__title:focus { outline: none; }
-.detail__note { margin: 20px 0 0; padding: 12px 16px; border-radius: 14px; background: var(--sand); font-size: 14px; font-weight: 700; line-height: 1.5; color: var(--brown); }
+.detail__note { margin: 14px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--sand); font-size: 14px; font-weight: 700; line-height: 1.5; color: var(--brown); }
 .btn:disabled { opacity: .45; cursor: not-allowed; filter: none; transform: none; box-shadow: none; }
 
 /* Forms: status line, password rules, red fields */
@@ -400,7 +442,8 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Guide page and the home invitation to it */
 .guide__phases { margin-top: 28px; }
-.guide-step__link { display: inline-block; margin-top: 12px; font-weight: 800; font-size: 14px; color: var(--ink); text-decoration: underline; }
+.guide-step__link { display: inline-block; justify-self: start; margin: 12px 18px 0 0; font-weight: 800; font-size: 14px; color: var(--ink); text-decoration: underline; }
+.guide-step__link + .guide-step__link { margin-top: 6px; }
 .guide-cta { padding: 56px 32px 90px; }
 .guide-cta__card { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 26px 28px; border-radius: 22px; background: var(--sand); }
 .guide-cta__title { margin: 0; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; }
@@ -409,12 +452,15 @@ button { font-family: inherit; cursor: pointer; }
 /* Step illustrations (journey panel and guide) */
 .step-image { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; border-radius: 18px; }
 /* Centred by alignment (justify-content), not by margins. */
-.detail__figure { display: flex; justify-content: center; margin-top: 18px; }
-.detail__image { max-width: 340px; }
+.detail__figure { display: flex; justify-content: center; margin-top: 12px; }
+.detail__image { max-width: 300px; }
 /* Guide: text on the left, illustration on the right (percentages); stacked on phones. */
 .guide-step { display: grid; grid-template-columns: 68% 28%; justify-content: space-between; align-items: start; }
 .guide-step > * { grid-column: 1; }
-.guide-step > .guide-step__image { grid-column: 2; grid-row: 1 / span 6; margin-top: 4px; }
+.guide-step > .guide-step__image { grid-column: 2; grid-row: 1 / span 12; margin-top: 4px; }
+.guide-step__howto-label { margin: 12px 0 0; font-weight: 800; font-size: 14px; color: var(--text); }
+.guide-step__howto { margin: 6px 0 0; padding-left: 22px; font-size: 15px; line-height: 1.6; color: var(--body); }
+.guide-step__links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; font-weight: 800; font-size: 14px; }
 
 /* Legal pages: privacy policy and terms of use */
 /* Text column and sidebar share the width in percentages, so the layout scales with the screen. */
@@ -468,8 +514,9 @@ button { font-family: inherit; cursor: pointer; }
   .dash-row, .profile-grid { grid-template-columns: minmax(0, 1fr); }
   .legal-layout { grid-template-columns: 100%; row-gap: 20px; }
   .legal-aside { position: static; order: -1; margin-top: 16px; }
-  .detail { position: fixed; inset: 0; z-index: 60; max-height: none; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px 0; border: 0; border-radius: 0; }
-  .detail__actions { margin: 20px -20px 0; padding: 14px 20px 20px; }
+  .detail { position: fixed; inset: 0; z-index: 60; max-height: none; overflow-y: auto; overscroll-behavior: contain; padding: 20px 20px 0; border: 0; border-radius: 0; }
+  .detail__actions { margin: 14px -20px 0; padding: 12px 20px 16px; }
+  .detail__close { min-height: 44px; }
 }
 
 /* Phone */

@@ -1,6 +1,6 @@
 # Design System
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os tokens e componentes e quando usar cada um. Toda cor nova precisa virar token em `:root` e passar no teste de contraste (seção 2.3).
 
@@ -40,7 +40,7 @@ Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os toke
 | `--error` | `#b42318` | Borda, mensagem e requisitos pendentes de campo inválido (6,6:1 no branco) |
 | `--error-bg` | `#fdf0ee` | Fundo de campo inválido |
 
-Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó atual), `#e0d2be` (sombra do nó bloqueado), `#c98f3e` (sombra do botão dourado), `#ffd79a` ("★ N XP" no cabeçalho), `#8a5420` / `#6b4a22` / `#8a5a2a` (textos sobre `--peach`), `#cfe2d7` / `#f0dcc0` (bordas do veredito), `#fdfaf4` (itens da checklist), `#c3b39c` / `#ddcdb6` (selo final tracejado).
+Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó atual), `#e0d2be` (sombra do nó bloqueado), `#c98f3e` (sombra do botão dourado), `#ffd79a` ("★ N XP" no cabeçalho), `#8a5420` / `#6b4a22` / `#8a5a2a` (textos sobre `--peach`), `#cfe2d7` / `#f0dcc0` (bordas do veredito; `#cfe2d7` também na borda e nas linhas da caixa `.mine`), `#fdfaf4` (itens da checklist), `#c3b39c` / `#ddcdb6` (selo final tracejado).
 
 ### 2.2 Combinações aprovadas
 
@@ -73,10 +73,10 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 | H1 de tela | 48px (`clamp(32px, 8.5vw, 48px)`) | 800 | 1.02 | -0.03em | "Getting the keys...", "What you can actually buy" |
 | Número grande | 56px (cartões), 52px (preço máximo), 38px (prestação) | 800 | 1 | -0.03em | Valores |
 | H2 de seção | 42px (`clamp(28px, 7.5vw, 42px)`) | 800 | 1.05 | -0.025em | "Six phases...", "The full guide" |
-| Título do painel | 34px (celular 28px) | 800 | 1.08 | -0.025em | Título da etapa |
+| Título do painel | 30px (celular 28px) | 800 | 1.1 | -0.025em | Título da etapa |
 | Título de cartão | 21px | 800 | 1.15 | | Fases |
 | Título de etapa no guia | 18px | 800 | 1.25 | | |
-| Corpo grande | 17-18px | 400 | 1.6 | | Hero, painel |
+| Corpo grande | 17-18px | 400 | 1.6 | | Hero (o texto do painel da etapa usa 16px com 1.55) |
 | Corpo | 15-16px | 400 | 1.5-1.6 | | Textos, checklist |
 | Pequeno | 13-14px | 600-700 | 1.5 | | Notas, legendas, rodapé |
 | Eyebrow / rótulo | 12px | 800 | | 0.12-0.14em, maiúsculas | "YOUR JOURNEY", "WHAT THIS TAKES" |
@@ -88,7 +88,7 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 - **Largura máxima do conteúdo:** 1160px, centralizado.
 - **Margem lateral:** 32px (desktop) e 16px (≤ 720px).
 - **Espaçamentos comuns:** 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 30, 32, 36, 44, 56, 64, 90px.
-- **Raios:** 999px (pílulas e botões), 50% (nós e selos), 26px (painel da etapa e cartão de conta), 24px (cartões da calculadora e imagem), 22px (cartões), 18px (cabeçalho de fase e dica), 16px (checklist), 14px (campos, mini cartões, notas).
+- **Raios:** 999px (pílulas e botões), 50% (nós e selos), 26px (painel da etapa e cartão de conta), 24px (cartões da calculadora e imagem), 22px (cartões), 18px (cabeçalho de fase), 16px (dica do painel e caixa `.mine`), 14px (checklist do painel, campos, mini cartões, notas).
 - **Profundidade "pressionável":** botões e nós têm sombra sólida sem desfoque, deslocada 4-6px para baixo, na cor escura do próprio botão (ex.: `0 5px 0 var(--ink-dark)`). Ao clicar, o elemento desce 3-4px (`translateY`).
 - **Camadas (z-index):** cabeçalho 40; menu da conta 45; painel de etapa em tela cheia (≤ 960px) 60; aviso (toast) 70.
 
@@ -120,14 +120,14 @@ Com `prefers-reduced-motion: reduce`, as animações e transições acima são d
 | Contorno | `.btn.btn--outline` | Transparente, borda `--line-2` | Previous / Next |
 | Pílula de alternância | `.pill` (`.is-on`) | Branca; ativa fica verde | Perfis da calculadora; sempre com `aria-pressed` |
 | Dourado | `.next-up__btn` | Dourado, texto escuro | "Open this step" |
-| Escuro | `.verdict__btn` | `--text`, texto creme | "Back to my journey" |
+| Dourado no cartão verde | `.result-main__btn` | `--gold`, texto `--text`, sombra `#c98f3e`; foco creme | "Save to my journey" / "Update my journey" |
 | Pequeno | `.detail__close` | Pílula pequena com borda | "Close" |
 | Largo discreto | `.reset` | Largura total, borda | "Reset progress" |
 | Topo | `.btn-signin` (link) | Borda creme translúcida | "Sign in" deslogado |
 | Link de texto | `<a>` sem classe | Verde, sublinhado; hover verde escuro | Links dentro de textos |
 | Desativado | `.btn:disabled` | 45% de opacidade, sem sombra | Etapa bloqueada |
 
-Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn`, `.verdict__btn`, `.nav__link`, `.phase-card`). A regra de cor de link vale só para `<a>` sem classe.
+Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn`, `.nav__link`, `.phase-card`, `.step-link`). A regra de cor de link vale só para `<a>` sem classe.
 
 ### 7.2 Cartões e superfícies
 `.stat` (número-chave; `.stat--accent` terracota), `.phase-card` (fase na Home, sobe 3px no hover), `.guide-phase` (acordeão do guia), `.card` (progresso), `.next-up` (verde), `.detail` (painel), `.form`, `.result-main` (verde), `.breakdown-card`, `.verdict` (mint; `.is-short` pêssego), `.monthly` (areia), `.auth-card` (páginas de conta), `.gate` (aviso de página logada), `.guide-cta__card` (convite ao guia, areia). Todos brancos com borda `--line` de 2px, exceto os coloridos citados.
@@ -148,11 +148,19 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - **Dica** `.tip` / `.guide-step__tip`: fundo pêssego, rótulo "Worth knowing".
 - **Nota** `.detail__note`: fundo areia, texto `--brown`, negrito.
 - **Dica da calculadora** `.hint`: fundo pêssego.
+- **Números da pessoa** `.mine`: caixa `--mint` com borda `#cfe2d7`, raio 16px; título `.mine__title` verde; linhas `.mine__row` (rótulo à esquerda, valor em negrito à direita; `.is-total` com valor verde 17px); nota `.mine__note` 14px.
+- **Passo a passo** `.howto` (jornada) e `.guide-step__howto` (guia): lista numerada com números verdes em negrito.
+- **Links externos** `.step-link`: pílula com borda `--line-2`, texto verde 14px em negrito e "↗", altura mínima de 44px (área de toque) e 10px entre elas; abrem em nova aba. No guia, `.guide-step__links` usa links sublinhados comuns.
+- **Só para leitor de tela** `.sr-only`: texto escondido na tela, lido por leitores de tela (ex.: "(opens in a new tab)").
 
 ### 7.5 Formulários
 - **Campo** `.field` > `.field__label` + `input`: fundo creme, borda `--line-2` de 2px, raio 14px, texto 16px em negrito (16px evita zoom automático no iPhone).
 - **Campo inválido** `.field.is-invalid`: borda `--error` e fundo `--error-bg`, com `aria-invalid="true"` no input.
 - **Mensagem de erro** `.field__error`: 13px, negrito, `--error`, logo abaixo do input, ligada por `aria-describedby` (id `error-<campo>`); some quando vazia.
+- **Campo que não se aplica** `.field.is-off` + `input:disabled`: continua no mesmo lugar, com fundo `--sand`, borda tracejada, rótulo `--locked` e o motivo no placeholder (`--faint`, 14px). Nunca esconder um campo condicional: isso empurra os outros de lugar.
+- **Pílulas de três opções** `.pills--three`: menos espaço lateral e altura de linha 1.2, para o texto quebrar em duas linhas no celular estreito sem estourar.
+- **Slider** `.range` > `.range__head` (rótulo + valor `.range__value` verde 18px, com `aria-hidden` para não ser lido duas vezes) + `input.range__input[type=range]` + `.range__scale` (mínimo e máximo, 12px). Trilho de 10px em `--sand-2` preenchido de `--ink` até o botão (variável `--pct`, 0 a 1, definida pelo JS); botão de 26px branco com borda verde de 3px e sombra sólida `--ink-dark`; foco com contorno terracota. O valor falado vem de `aria-valuetext` ("3.90%", "30 years").
+- **Botão de salvar na calculadora** `.result-main__btn`: pílula dourada com sombra `#c98f3e`, no cartão verde; nota `.result-main__save-note` 13px ao lado. No cartão verde, o contorno de foco é creme.
 - **Requisitos de senha** `.password-rules`: lista de 13px; ○ pendente, ✓ verde quando atendido; com `.is-invalid`, os pendentes ficam `--error`.
 - **Status** `.form-status`: 14px, negrito, `--pop-dark`, com `role="status"`; some quando vazio.
 
@@ -169,8 +177,10 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - **Perfil:** `.profile-grid` com o formulário (`.profile-form`) e o cartão lateral (`.profile-side`); títulos de cartão `.card__title` 20px; valores só de leitura `.field__static`.
 
 ### 7.7.1 Painel da etapa
-- `.detail`: fixo (`sticky`, 88px do topo), `box-sizing: border-box`, `max-height: calc(100vh - 104px)` e rolagem própria (`overflow-y: auto`, `overscroll-behavior: contain`).
-- `.detail__actions`: presos no rodapé do painel (`position: sticky; bottom: 0`), fundo branco e linha `--sand` acima.
+- `.detail`: fixo (`sticky`, 84px do topo), `box-sizing: border-box`, `max-height: calc(100vh - 96px)` e rolagem própria (`overflow-y: auto`, `overscroll-behavior: contain`). Espaço interno 20px em cima e 24px nas laterais.
+- **Espaçamento compacto** (para uma etapa comum caber sem rolar): título 30px; texto 16px com altura de linha 1,55; rótulos com 16px acima e 8px abaixo; itens da checklist com 8px de espaço interno vertical e 6px entre eles; dica com 11px de espaço interno; ilustração até 300px.
+- `.detail__actions`: presos no rodapé do painel (`position: sticky; bottom: 0`), fundo branco e linha `--sand` acima. O painel tem `scroll-padding-bottom: 96px`, para um link focado pelo teclado nunca ficar escondido atrás dessa barra.
+- `.detail__close`: no tablet e no celular (painel em tela cheia), altura mínima de 44px.
 - Ao abrir outra etapa, o painel volta ao topo.
 
 ### 7.8 Páginas legais
@@ -181,7 +191,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - Links do rodapé em `.site-footer__links` (sublinhados, `--faint`).
 
 ### 7.9 Ilustrações das etapas
-Uma ilustração por etapa em `docs/img/steps/<id da etapa>.svg`, exibida com a classe `.step-image` (proporção 8:5, raio 18px): até 340px e **centralizada por alinhamento** no painel da jornada (contêiner `.detail__figure` com `display: flex; justify-content: center`, sem margem automática na `.detail__image`) e, no guia, numa coluna à direita do texto (`.guide-step` em grade `68% 28%`; no celular, acima do título, até 320px).
+Uma ilustração por etapa em `docs/img/steps/<id da etapa>.svg`, exibida com a classe `.step-image` (proporção 8:5, raio 18px): até 300px e **centralizada por alinhamento** no painel da jornada (contêiner `.detail__figure` com `display: flex; justify-content: center`, sem margem automática na `.detail__image`) e, no guia, numa coluna à direita do texto (`.guide-step` em grade `68% 28%`; no celular, acima do título, até 320px).
 
 Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_svg.py`):
 - SVG escrito à mão, `viewBox="0 0 320 200"`, `width="320" height="200"`, até 6 KB.

@@ -19,7 +19,14 @@ function renderPage(p) {
   if (next) nextLink.href = stepLink(next);
   document.getElementById("dash-phases").innerHTML = phaseCardsHtml();
 
-  bind("maxPrice", euro(c.maxPrice));
+  // Until the calculator is saved, the figures are only the examples, so none are shown.
+  const saved = !!state.calcSaved;
+  bind("maxPrice", saved ? euro(c.maxPrice) : "Not saved yet");
+  bind("numbersNote", saved ? "Maximum property price, based on the figures in your calculator."
+    : "Fill in the calculator and choose Save to my journey to see your numbers here. They stay in this browser.");
+  const numbers = document.getElementById("dash-numbers");
+  if (numbers) numbers.hidden = !saved;
+  bind("numbersAction", saved ? "Open the calculator" : "Use the calculator");
   bind("maxLoan", euro(c.maxLoan));
   bind("funds", euro(c.funds));
   bind("memberSince", "Member since " + new Date(user.created_at).toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" }));
