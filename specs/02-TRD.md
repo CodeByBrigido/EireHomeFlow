@@ -1,6 +1,6 @@
 # TRD: Technical Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 24/09/2026
 
 ## 1. Arquitetura
 
@@ -9,7 +9,7 @@ Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/
  ┌──────────────────────────────────────────────────────────────┐
  │ 12 páginas .html (uma por lugar do site)                      │
  │   cada uma: <body data-page="...">                            │
- │   partials/header.html e footer.html (fetch)                  │
+ │   cabeçalho e rodapé já no HTML (copiados de partials/)       │
  │   css/styles.css                                              │
  │   js/pages/<pg>.js (módulo ES) → js/core/*.js → js/lib/*.js   │
  │   js/config.js (chaves do Supabase, lido por core/account.js) │
@@ -44,6 +44,7 @@ EireHomeFlow/
 │   ├── privacy.html · terms.html   ← Privacy Policy e Terms of Use
 │   ├── partials/header.html       ← marca, navegação, "★ N XP", Sign in / círculo e menu da conta
 │   ├── partials/footer.html       ← rodapé, links legais e caixa de avisos (toast)
+│   │                                 (fonte única: npm run partials copia os dois para as 12 páginas)
 │   ├── css/styles.css
 │   ├── js/config.js               ← SUPABASE_URL e SUPABASE_ANON_KEY (chave publicável)
 │   ├── js/lib/                    ← lógica pura, sem DOM, testada no Node (tests/)
@@ -66,8 +67,9 @@ EireHomeFlow/
 ├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
 ├── _original-Backup/              ← bundle original do Claude Design
 ├── tests/                         ← testes automáticos (npm test)
-├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js, versions.js
-├── .github/workflows/checks.yml   ← lint, testes e versões em cada Pull Request (Node 22)
+├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js, versions.js,
+│                                     partials.js e stamp-partials.js (npm run partials)
+├── .github/workflows/checks.yml   ← lint, testes, versões e partials em cada Pull Request (Node 22)
 ├── package.json · eslint.config.js · .editorconfig
 ├── README.md  ·  .gitignore  ·  .gitattributes (LF para todos)
 ```
@@ -76,17 +78,17 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 
 ## 3. Ciclo de carregamento
 
-1. O HTML da página chega com o seu conteúdo estático.
+1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove.
 2. Os módulos rodam depois que o HTML é lido (módulos ES são adiados por padrão). O módulo da página chama `startPage()` de `core/app.js`.
 3. `init()` em `core/app.js`:
    1. `loadSaved()` restaura progresso e calculadora do `localStorage`;
-   2. em paralelo, `loadPartials()` troca os `<div data-include>` por `header.html` e `footer.html`, e `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch` e lido com `DOMParser`; no próprio `guide.html`, usa o documento atual);
+   2. `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch` e lido com `DOMParser`; no próprio `guide.html`, usa o documento atual);
    3. `init` da página, se existir;
    4. `render()` (cabeçalho e `render(p)` da página);
    5. mostra o aviso guardado na página anterior (`sessionStorage`) e, se o endereço trouxer erro de link de e-mail, o aviso vermelho;
    6. `Account.init(onAccountChange)`.
 
-**Consequência:** o site precisa ser servido por HTTP. Abrindo um `.html` direto do disco (`file://`), os `fetch` falham e cabeçalho, rodapé e etapas não aparecem.
+**Consequência:** o site precisa ser servido por HTTP. Abrindo um `.html` direto do disco (`file://`), os módulos e o `fetch` do guia falham: cabeçalho e rodapé aparecem, mas nada funciona e as etapas não carregam.
 
 ## 4. Núcleo compartilhado (`js/core/` e `js/lib/`)
 
@@ -101,7 +103,7 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 | Cabeçalho e área logada | `core/header.js` | `renderHeader` (link ativo, XP, "Sign in" ou círculo), `renderGate`, `setMenu` |
 | Avisos | `core/notices.js` | `showToast(msg, { error, action, sticky })`, `hideToast`, `flash`, `showFlash` |
 | Formulários | `core/forms.js` + `lib/validation.js` | `formValues`, `checkForm`, `watchForm`, `renderPasswordRules`, `sayInForm`; regras `PASSWORD_RULES`, `EMAIL_PATTERN`, `isFullName` |
-| Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange`, `loadPartials` |
+| Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange` |
 | Nomes | `lib/people.js` | `userName`, `firstName`, `initials` ("Rodrigo Andrade Brigido" vira "RB") |
 | Utilitários | `lib/format.js` + `core/dom.js` | `num`, `euro`, `esc`; `PAGE`, `bind` |
 | Segurança | `lib/format.js`, `lib/validation.js` | `esc()` em todo texto que vai para `innerHTML`; `safeNext()` aceita só `nome-de-pagina.html` com `#ancora` opcional |
@@ -118,7 +120,7 @@ Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p
 | `data-id` | Id da etapa nos nós da trilha (`data-action="open"`) |
 | `data-field="<campo>"` | Campo da calculadora ligado ao `state` |
 | `data-bind="<nome>"` | Recebe texto via `bind(nome, valor)` |
-| `data-include="<caminho>"` | Substituído pelo HTML do partial |
+| `<!-- include partials/<arquivo>.html: ... -->` … `<!-- /include -->` | Cópia do partial dentro da página. **Não edite entre os marcadores:** edite o arquivo em `partials/` e rode `npm run partials` (que também marca o link ativo da navegação de cada página). `npm run check:partials` (também no GitHub Actions) falha se alguma página estiver desatualizada. Um `<div data-include="partials/<arquivo>.html"></div>` vazio numa página nova vira a cópia na próxima execução |
 | `data-fields="name email ..."` num `<form>` | Campos a validar |
 | `data-password="new\|current"` num `<form>` | Senha nova (regras de força) ou atual (só não vazia) |
 | `data-keep-next` num link | Mantém o `?next=` ao trocar entre sign-in e sign-up |
@@ -233,7 +235,7 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 - Sem minificação; para esse tamanho, não compensa um processo de build.
 - O GitHub Pages usa cache de 10 minutos, então um visitante pode receber uma página nova com um script antigo (ou o contrário). Três defesas:
   1. **Versão nos endereços:** as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/pages/<página>.js?v=AAAAMMDD`, e todo `import` entre módulos também leva `?v=AAAAMMDD`. **Ao mudar qualquer CSS ou JS, rode `npm run bump`**, que troca o número em todos os arquivos de `docs/` pela data de hoje. Numa segunda mudança no mesmo dia, use `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã). O `npm run check:versions` (também no GitHub Actions) falha se sobrar um número diferente ou um arquivo sem versão: um `import` sem `?v=` criaria uma segunda cópia do módulo, com estado separado.
-  2. `guide.html` e os partials são buscados com `cache: "no-cache"`: o navegador sempre pergunta ao servidor se mudaram.
+  2. `guide.html` é buscado com `cache: "no-cache"`: o navegador sempre pergunta ao servidor se mudou. Cabeçalho e rodapé vêm dentro de cada página, então não há partial para ficar desatualizado.
   3. Os scripts de página toleram partes que faltam (ex.: `s.howto || []`, elementos ausentes) e `loadSteps` ainda aceita o atributo antigo `data-account`. As assinaturas de funções usadas por outras páginas continuam compatíveis (ex.: `signUp(email, password, name)`).
 
 ## 11. Ambientes

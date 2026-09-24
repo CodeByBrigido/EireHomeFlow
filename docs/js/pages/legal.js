@@ -1,7 +1,7 @@
 // Privacy Policy and Terms of Use: "On this page" list built from the section headings,
 // with the section on screen highlighted. The list starts open; people can fold it.
-import { esc } from "../lib/format.js?v=20260925";
-import { startPage } from "../core/app.js?v=20260925";
+import { esc } from "../lib/format.js?v=20260926";
+import { startPage } from "../core/app.js?v=20260926";
 
 function initPage() {
   const headings = [...document.querySelectorAll(".legal h2")];

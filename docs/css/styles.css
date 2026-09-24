@@ -101,6 +101,8 @@ button { font-family: inherit; cursor: pointer; }
 .nav__link.is-active { color: var(--cream); border-bottom-color: var(--gold); }
 .nav__stat { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 74px; font-weight: 800; font-size: 15px; }
 .nav__stat--xp { color: #ffd79a; }
+/* The header is in the page from the first frame; the XP count waits (keeping its space) until the script has worked it out. */
+.site-header[data-pending] .nav__stat { visibility: hidden; }
 .btn-signin { display: inline-block; padding: 8px 18px; border-radius: 999px; border: 2px solid rgba(255, 250, 243, .5); background: none; color: var(--cream); font-weight: 700; font-size: 14px; }
 .btn-signin:hover { background: rgba(255, 250, 243, .12); }
 

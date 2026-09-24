@@ -36,7 +36,7 @@ EireHomeFlow/
 ├── docs/                     # THE SITE (published by GitHub Pages)
 │   ├── *.html                # 12 pages, one per place; <body data-page="...">
 │   ├── guide.html            # SINGLE SOURCE of the 31 steps' content (other pages fetch + parse it)
-│   ├── partials/             # header.html, footer.html (injected via data-include)
+│   ├── partials/             # header.html, footer.html: the SOURCE; npm run partials stamps them into every page
 │   ├── css/styles.css
 │   ├── js/config.js          # SUPABASE_URL + publishable anon key (the only key allowed in the repo)
 │   ├── js/lib/               # PURE logic (no DOM): calculator, progress, validation, people, format. Tested in Node
@@ -45,7 +45,7 @@ EireHomeFlow/
 │   └── img/, fonts/
 ├── specs/                    # source of truth (see table below)
 ├── tests/                    # npm test (node:test); calculator tests hold the TRD 12.1 reference values
-├── tools/                    # serve.js, bump-version.js, check-versions.js, versions.js
+├── tools/                    # serve.js, bump-version.js, check-versions.js, versions.js, partials.js, stamp-partials.js
 ├── .github/workflows/        # CI: lint + tests + version check
 ├── supabase/email-templates/ # confirmation + reset emails, pasted into the Supabase dashboard
 └── _original-Backup/         # original Claude Design bundle: READ ONLY, reference only
@@ -88,6 +88,7 @@ EireHomeFlow/
   ```
   Then open http://localhost:8000/. Without Node: `python -m http.server 8000 --directory docs`, but on Windows some Python installs serve `.js` with the wrong type and the modules do not load (blank header and steps), so `npm start` is the recommended way.
 - **Cache-busting:** changed any `.css` or `.js`? Run `npm run bump` (`npm run bump -- YYYYMMDD` for a second change on the same day). Every relative `import` must carry the same `?v=` as the pages. A module imported with two different URLs runs twice with separate state. `npm run check:versions` enforces this. GitHub Pages caches for 10 minutes, so without the bump a visitor can get a new page with an old script.
+- **Header and footer:** edit `docs/partials/*.html`, never the copy between `<!-- include ... -->` and `<!-- /include -->` in a page, then run `npm run partials`. `npm run check:partials` (in `npm run check` and CI) fails if a page is out of date.
 - **Layering:** `js/lib/` must never import from `js/core/` or touch the DOM; that is what keeps it testable in Node. New maths or rules go in `lib/` with a test.
 - **One `startPage()` per page:** it throws if called twice. Page-only `data-action` handlers go in the `actions` hook, not on `document`.
 - **Backwards-tolerant scripts:** page modules must tolerate missing parts (e.g. `s.howto || []`), and function signatures used across pages must stay compatible.

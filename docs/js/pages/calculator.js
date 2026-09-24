@@ -1,13 +1,13 @@
 // Buying power calculator. The maths is calc() in lib/calculator.js, shared with the journey and the dashboard.
 // Saving here ticks step 1 of the journey; the figures themselves stay in this browser.
-import { calc, HTB, RANGES, stampBands, verdictKind } from "../lib/calculator.js?v=20260925";
-import { esc, euro, num } from "../lib/format.js?v=20260925";
-import { startPage } from "../core/app.js?v=20260925";
-import { bind } from "../core/dom.js?v=20260925";
-import { flash } from "../core/notices.js?v=20260925";
-import { setState, state } from "../core/state.js?v=20260925";
-import { calculatorStep, stepLink } from "../core/steps.js?v=20260925";
-import { setDone } from "../core/sync.js?v=20260925";
+import { calc, HTB, RANGES, stampBands, verdictKind } from "../lib/calculator.js?v=20260926";
+import { esc, euro, num } from "../lib/format.js?v=20260926";
+import { startPage } from "../core/app.js?v=20260926";
+import { bind } from "../core/dom.js?v=20260926";
+import { flash } from "../core/notices.js?v=20260926";
+import { setState, state } from "../core/state.js?v=20260926";
+import { calculatorStep, stepLink } from "../core/steps.js?v=20260926";
+import { setDone } from "../core/sync.js?v=20260926";
 
 function initPage() {
   document.querySelectorAll("[data-field]").forEach((input) => { input.value = state[input.dataset.field]; });

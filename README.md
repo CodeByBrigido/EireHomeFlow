@@ -46,14 +46,16 @@ Quem tem Python também pode usar `python -m http.server 8000 --directory docs`,
 | `npm run lint` | ESLint: `import` esquecido, variável não declarada, erros comuns |
 | `npm run check:versions` | Confere se todo CSS e JS usa o mesmo `?v=` |
 | `npm run bump` | Troca o `?v=` em todos os arquivos pela data de hoje. Use depois de mudar CSS ou JS. Segunda mudança no mesmo dia: `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã) |
-| `npm run check` | Lint, testes e versões juntos, igual ao GitHub Actions em cada Pull Request |
+| `npm run partials` | Copia `docs/partials/header.html` e `footer.html` para as 12 páginas. Use depois de mudar um dos dois |
+| `npm run check:partials` | Confere se todas as páginas têm o cabeçalho e o rodapé atuais |
+| `npm run check` | Lint, testes, versões e partials juntos, igual ao GitHub Actions em cada Pull Request |
 
 ## Trabalhar em equipe
 
 1. Atualize a sua cópia antes de começar: `git pull`.
 2. Crie um branch para cada mudança: `git switch -c nome-da-mudanca`.
 3. Faça a mudança, confira no navegador e atualize os documentos de `specs/` afetados (regra 1 abaixo).
-   Mudou algum arquivo `.css` ou `.js`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
+   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Mudou algum arquivo `.css` ou `.js`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
 4. Envie o branch (`git push -u origin nome-da-mudanca`) e abra um Pull Request no GitHub.
 5. Outra pessoa revisa, e o Pull Request entra na `main`. Só então a mudança vai para o site.
 

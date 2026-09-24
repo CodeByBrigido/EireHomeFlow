@@ -1,6 +1,6 @@
 // Form checks for sign-up, sign-in, passwords and the profile: red fields, messages,
 // the live password rules and the status line under each form.
-import { EMAIL_PATTERN, isFullName, PASSWORD_RULES, strongPassword } from "../lib/validation.js?v=20260925";
+import { EMAIL_PATTERN, isFullName, PASSWORD_RULES, strongPassword } from "../lib/validation.js?v=20260926";
 
 // Each check returns an error message, or "" when the field is fine. A form lists the
 // fields to check in data-fields; data-password="current" means sign-in (no strength rules).

@@ -1,7 +1,7 @@
 // Calculator rules and maths, shared by the calculator, the journey and the dashboard.
 // Pure: no DOM and no storage, so tests/calculator.test.js runs it in Node.
 // The source of every rule is listed in specs/02-TRD.md, section 6.
-import { num } from "./format.js?v=20260925";
+import { num } from "./format.js?v=20260926";
 
 // The calculator's sliders: lowest, highest and default value.
 export const RANGES = { rate: [1, 8, 3.9], term: [5, 35, 30] };

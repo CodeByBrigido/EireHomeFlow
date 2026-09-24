@@ -1,11 +1,11 @@
 // My profile: change the name on the account, see the email, change password, sign out.
-import { userName } from "../lib/people.js?v=20260925";
-import { Account } from "../core/account.js?v=20260925";
-import { startPage } from "../core/app.js?v=20260925";
-import { bind } from "../core/dom.js?v=20260925";
-import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260925";
-import { renderGate } from "../core/header.js?v=20260925";
-import { showToast } from "../core/notices.js?v=20260925";
+import { userName } from "../lib/people.js?v=20260926";
+import { Account } from "../core/account.js?v=20260926";
+import { startPage } from "../core/app.js?v=20260926";
+import { bind } from "../core/dom.js?v=20260926";
+import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260926";
+import { renderGate } from "../core/header.js?v=20260926";
+import { showToast } from "../core/notices.js?v=20260926";
 
 let profileFilled = false;
 

@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 24/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -84,6 +84,12 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] `npm run bump` e `npm run check:versions` para o `?v=`
 - [x] GitHub Actions: lint, testes e versões em cada Pull Request (Node 22)
 - Plano: `specs/plans/2026-09-24-engineering-foundation.md`
+
+### Marco 3.5: Cabeçalho sem pulo (24/09/2026) ✅
+- [x] M11 cabeçalho, rodapé e avisos copiados de `partials/` para as 12 páginas por `npm run partials`, em vez de chegarem por `fetch` depois da página: nada pula ao trocar de página, e funcionam mesmo sem JavaScript
+- [x] Link ativo da navegação já marcado no HTML; "★ N XP" invisível (ocupando o espaço) até o primeiro `render()`
+- [x] `npm run check:partials` no `npm run check` e no GitHub Actions
+- [x] Servidor local (`npm start`) guarda fontes e imagens e responde 304, então a fonte não pisca a cada clique
 
 ## Próximos marcos
 

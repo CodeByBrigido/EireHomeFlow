@@ -1,7 +1,7 @@
 // Accounts: Supabase sign-up and sign-in, and reading and writing the progress row (merging is in sync.js).
 // Settings come from config.js. With them empty, Account.enabled stays false
 // and the Supabase library is never downloaded.
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260925";
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260926";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js";
 

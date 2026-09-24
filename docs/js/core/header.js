@@ -1,9 +1,9 @@
 // The shared header (active link, XP, sign-in link or account circle), the gate on
 // signed-in pages, and the account menu.
-import { XP_PER_STEP } from "../lib/progress.js?v=20260925";
-import { initials, userName } from "../lib/people.js?v=20260925";
-import { Account } from "./account.js?v=20260925";
-import { bind, PAGE } from "./dom.js?v=20260925";
+import { XP_PER_STEP } from "../lib/progress.js?v=20260926";
+import { initials, userName } from "../lib/people.js?v=20260926";
+import { Account } from "./account.js?v=20260926";
+import { bind, PAGE } from "./dom.js?v=20260926";
 
 export function renderHeader(p) {
   document.querySelectorAll(".nav__link").forEach((link) => {
@@ -15,6 +15,9 @@ export function renderHeader(p) {
   const streak = Math.min(p.doneCount, 7);
   bind("streak", streak + (streak === 1 ? " day" : " days"));
   bind("xp", p.doneCount * XP_PER_STEP);
+  // The XP count stays hidden until this first render, so it never shows "0 XP" by mistake.
+  const header = document.querySelector(".site-header");
+  if (header) header.removeAttribute("data-pending");
 
   // Signed out: "Sign in" link. Signed in: circle with initials that opens the account menu.
   const user = Account.user;

@@ -1,4 +1,4 @@
-# Runs lint, tests and the ?v= check on every Pull Request and on main.
+# Runs lint, tests, the ?v= check and the header/footer check on every Pull Request and on main.
 name: Checks
 
 on:
@@ -26,3 +26,4 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run check:versions
+      - run: npm run check:partials

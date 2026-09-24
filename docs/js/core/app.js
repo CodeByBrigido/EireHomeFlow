@@ -1,16 +1,16 @@
-// Start-up and what every page shares: partials, rendering, clicks and account events.
+// Start-up and what every page shares: rendering, clicks and account events.
 // Each page module calls startPage({ init, render, actions }) once:
-//   init()     runs once, after the partials and the step list have loaded;
+//   init()     runs once, after the step list has loaded;
 //   render(p)  runs after every state change, with p = currentProgress();
 //   actions    handlers for data-action="<name>" on that page.
-import { firstName } from "../lib/people.js?v=20260925";
-import { Account } from "./account.js?v=20260925";
-import { PAGE } from "./dom.js?v=20260925";
-import { renderHeader, setMenu } from "./header.js?v=20260925";
-import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260925";
-import { loadSaved, onStateChange, setState } from "./state.js?v=20260925";
-import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260925";
-import { syncOnSignIn } from "./sync.js?v=20260925";
+import { firstName } from "../lib/people.js?v=20260926";
+import { Account } from "./account.js?v=20260926";
+import { PAGE } from "./dom.js?v=20260926";
+import { renderHeader, setMenu } from "./header.js?v=20260926";
+import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260926";
+import { loadSaved, onStateChange, setState } from "./state.js?v=20260926";
+import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260926";
+import { syncOnSignIn } from "./sync.js?v=20260926";
 
 // Links in the confirmation and password emails bring people back with details after
 // "#" (e.g. type=signup, or error_code=otp_expired). Read them before Supabase clears them.
@@ -87,23 +87,11 @@ async function onAccountChange(user, event) {
   render();
 }
 
-// Header, footer and notices live in partials/ and are fetched at load. fetch() needs the site
-// to be served over http(s): GitHub Pages, or `npm start` locally.
-async function loadPartials() {
-  await Promise.all([...document.querySelectorAll("[data-include]")].map(async (slot) => {
-    try {
-      const res = await fetch(slot.dataset.include, { cache: "no-cache" });
-      if (!res.ok) throw new Error(res.status + " " + res.statusText);
-      slot.outerHTML = await res.text();
-    } catch (err) {
-      console.error("Could not load " + slot.dataset.include + ". Serve the site over http(s), not file://.", err);
-    }
-  }));
-}
-
+// The header, footer and notices are already in the page (stamped from partials/ by
+// npm run partials), so only the step list is fetched here.
 async function init() {
   loadSaved();
-  await Promise.all([loadPartials(), loadSteps()]);
+  await loadSteps();
   if (page.init) page.init();
   render();
   showFlash();

@@ -4,13 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The full guide | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260925">
-  <script type="module" src="js/pages/guide.js?v=20260925"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260926">
+  <script type="module" src="js/pages/guide.js?v=20260926"></script>
 </head>
 <body data-page="guide">
 <div class="page">
 
-  <div data-include="partials/header.html"></div>
+  <!-- include partials/header.html: edit that file, then run npm run partials -->
+  <header class="site-header" data-pending>
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav__link" href="index.html" data-page="home">Home</a>
+        <a class="nav__link is-active" aria-current="page" href="guide.html" data-page="guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
+        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="account-nav" id="account-nav" hidden>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <div class="menu" id="account-menu" hidden>
+            <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
+            <a class="menu__item" href="dashboard.html">Dashboard</a>
+            <a class="menu__item" href="profile.html">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- /include -->
 
   <main class="main main--wide">
     <p class="eyebrow">The full guide</p>
@@ -500,7 +523,28 @@
     </div>
   </main>
 
-  <div data-include="partials/footer.html"></div>
+  <!-- include partials/footer.html: edit that file, then run npm run partials -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span class="site-footer__brand">ÉireHome Flow, Dublin</span>
+      <span>Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Short notices: email confirmed, signed in or out, profile saved -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast__icon" aria-hidden="true">✓</span>
+    <div class="toast__body">
+      <p class="toast__text" id="toast-text"></p>
+      <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
+    </div>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+  </div>
+  <!-- /include -->
 
 </div>
 </body>
