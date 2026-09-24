@@ -20,8 +20,14 @@ const TYPES = {
   ".xml": "application/xml",
 };
 
-createServer(async (req, res) => {
-  const path = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
+const server = createServer(async (req, res) => {
+  let path;
+  try {
+    path = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
+  } catch {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" }).end("Bad request");
+    return;
+  }
   let file = normalize(join(ROOT, path));
   if (file !== ROOT && !file.startsWith(ROOT + sep)) {
     res.writeHead(403).end();
@@ -36,3 +42,8 @@ createServer(async (req, res) => {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }).end("Not found: " + path);
   }
 }).listen(PORT, () => console.log(`ÉireHome Flow on http://localhost:${PORT}/`));
+
+server.on("error", (err) => {
+  console.error(err.code === "EADDRINUSE" ? `Port ${PORT} is in use. Stop the other server, or run with PORT=8001.` : err.message);
+  process.exit(1);
+});
