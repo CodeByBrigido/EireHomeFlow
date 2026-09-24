@@ -183,8 +183,9 @@ A regra de senha do site (maiúscula + especial) é validada no navegador. O Sup
 
 Variáveis usadas: `{{ .Email }}` e `{{ .ConfirmationURL }}`. Disponível e ainda não usada: `{{ .Data.full_name }}`.
 
-**Storage:** bucket público `brand` com `eirehome-flow-logo.png` (498×112 px, exibida a 220px de largura). URL:
-`https://dyfxstpbzmihtmccaezs.supabase.co/storage/v1/object/public/brand/eirehome-flow-logo.png`
+**Logo:** `docs/img/brand/eirehome-flow-logo.png` (498×112 px, exibida a 220px de largura), publicada pelo GitHub Pages junto com o site. Não usa Storage do Supabase. URL nos modelos:
+`https://codebybrigido.github.io/EireHomeFlow/img/brand/eirehome-flow-logo.png`
+Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no Supabase.
 
 **Limites de envio:**
 - Envio padrão do Supabase: só para a equipe do projeto, 2 por hora.

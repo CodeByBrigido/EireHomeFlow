@@ -19,6 +19,7 @@ function initPage() {
 function openStep(id) {
   setState({ open: id });
   history.replaceState(null, "", id ? "#step-" + id : location.pathname);
+  document.getElementById("detail").scrollTop = 0; // a new step starts at the top of the panel
 }
 
 const nodeFor = (id) => document.querySelector('[data-action="open"][data-id="' + id + '"]');

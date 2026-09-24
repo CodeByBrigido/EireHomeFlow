@@ -46,7 +46,7 @@ docs/
 ```
 - O runtime proprietário do Claude Design (69 KB) e o React (~140 KB) saíram. Tudo foi reescrito em JavaScript puro.
 - A comparação no navegador mostrou o **mesmo visual pixel a pixel** na home, na jornada (com etapa aberta) e na calculadora, com os mesmos resultados numéricos.
-- O original está guardado em `_original/index.bundle.html`.
+- O original está guardado em `_original-Backup/index.bundle.html`.
 - ⚠️ **Header e footer são carregados via `fetch`, então o site precisa ser servido por HTTP.** Funciona no GitHub Pages ou com `python -m http.server` rodando dentro de `docs/`. Abrindo o `index.html` com duplo clique (`file://`), o cabeçalho e o rodapé não aparecem. Veja o item M11.
 
 ---

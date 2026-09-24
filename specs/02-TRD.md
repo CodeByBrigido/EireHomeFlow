@@ -56,9 +56,12 @@ EireHomeFlow/
 │   ├── js/pages/legal.js          ← índice "On this page" das páginas legais
 │   ├── img/hero-600.webp · hero-900.webp · hero-1200.webp  ← capa em WebP (srcset)
 │   ├── img/steps/<id>.svg         ← uma ilustração por etapa (31), referenciada no guide.html
+│   ├── img/brand/eirehome-flow-logo.png  ← logo dos e-mails, servida pelo GitHub Pages
 │   └── fonts/*.woff2
-├── supabase/email-templates/ e supabase/brand/
-├── specs/  ·  _original/  ·  .claude/launch.json  ·  AUDITORIA.md  ·  SETUP-CONTAS.md
+├── supabase/email-templates/      ← e-mails de confirmação e de nova senha
+├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
+├── _original-Backup/              ← bundle original do Claude Design
+├── README.md  ·  .gitignore  ·  .gitattributes (LF para todos)
 ```
 
 Cada página inclui `config.js`, `account.js`, `app.js` e, se precisar, o seu script de `js/pages/`. O `guide.html` não tem script próprio.
@@ -209,7 +212,7 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 | Ambiente | Endereço | Como rodar |
 |---|---|---|
 | Local | `http://localhost:8000/` | `python -m http.server 8000 --directory docs` |
-| Produção | GitHub Pages, pasta `/docs` (endereço a definir) | Push no repositório |
+| Produção | `https://codebybrigido.github.io/EireHomeFlow/` (GitHub Pages, branch `main`, pasta `/docs`) | Pull Request aceito na `main` do repositório `CodeByBrigido/EireHomeFlow` |
 | Supabase | projeto `dyfxstpbzmihtmccaezs`, região eu-west-1 | Painel supabase.com |
 
 Qualquer novo endereço base (produção, domínio próprio) precisa entrar em **Site URL** e **Redirect URLs** no Supabase.
