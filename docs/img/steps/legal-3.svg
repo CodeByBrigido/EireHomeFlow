@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="36" cy="40" r="6" fill="#f3b45f"/>
+  <circle cx="50" cy="62" r="3" fill="#cfe7dd"/>
+  <circle cx="284" cy="48" r="5" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="168" cy="172" rx="120" ry="12" fill="#e4d8c8"/>
+  <!-- umbrella shaft (goes behind the house) -->
+  <path d="M191 50v40" stroke="#6b5a48" stroke-width="4" stroke-linecap="round"/>
+  <!-- small house behind -->
+  <rect x="150" y="112" width="82" height="58" rx="6" fill="#e4d8c8"/>
+  <rect x="150" y="106" width="82" height="58" rx="6" fill="#fffaf3"/>
+  <rect x="208" y="72" width="12" height="22" rx="2" fill="#8a3d14"/>
+  <path d="M140 112 191 70l51 42z" fill="#8a3d14"/>
+  <path d="M140 108 191 66l51 42z" fill="#b3521f"/>
+  <rect x="182" y="116" width="18" height="16" rx="3" fill="#cfe7dd"/>
+  <path d="M191 116v16M182 124h18" stroke="#fffaf3" stroke-width="3" stroke-linecap="round"/>
+  <rect x="210" y="130" width="18" height="34" rx="4" fill="#f3b45f"/>
+  <circle cx="224" cy="148" r="2" fill="#8a3d14"/>
+  <!-- umbrella canopy -->
+  <path d="M131 62a60 34 0 0 1 120 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0z" fill="#c98f3e"/>
+  <path d="M131 58a60 34 0 0 1 120 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0a15 7 0 0 0-30 0z" fill="#f3b45f"/>
+  <path d="M191 27q-24 10-30 31M191 27v31M191 27q24 10 30 31" stroke="#c98f3e" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="191" cy="22" r="4" fill="#6b5a48"/>
+  <!-- shield in front -->
+  <path d="M90 83q22 0 44-10 22 10 44 10v34c0 30-20 48-44 58-24-10-44-28-44-58z" fill="#0a4c3a"/>
+  <path d="M90 78q22 0 44-10 22 10 44 10v34c0 30-20 48-44 58-24-10-44-28-44-58z" fill="#0f6b52"/>
+  <path d="M114 118l14 14 26-26" stroke="#fffaf3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

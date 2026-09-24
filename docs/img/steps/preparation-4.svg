@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="44" cy="40" r="6" fill="#f3b45f"/>
+  <circle cx="288" cy="72" r="5" fill="#cfe7dd"/>
+  <circle cx="70" cy="62" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="164" cy="170" rx="126" ry="12" fill="#e4d8c8"/>
+  <!-- crane behind the house -->
+  <path d="M136 38 227 26l37 12M227 26v12" stroke="#c98f3e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="222" y="44" width="10" height="122" rx="2" fill="#c98f3e"/>
+  <rect x="222" y="40" width="10" height="122" rx="2" fill="#f3b45f"/>
+  <path d="M222 62 232 76 222 90 232 104 222 118 232 132 222 146" stroke="#c98f3e" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+  <rect x="124" y="41" width="142" height="7" rx="3" fill="#c98f3e"/>
+  <rect x="124" y="37" width="142" height="7" rx="3" fill="#f3b45f"/>
+  <rect x="250" y="44" width="14" height="12" rx="2" fill="#6b5a48"/>
+  <rect x="216" y="44" width="20" height="14" rx="3" fill="#b3521f"/>
+  <rect x="221" y="47" width="10" height="6" rx="2" fill="#cfe7dd"/>
+  <rect x="214" y="158" width="26" height="8" rx="3" fill="#c98f3e"/>
+  <path d="M142 44v16" stroke="#6b5a48" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M142 60v4a4 4 0 1 1-7 2" stroke="#6b5a48" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- new-build house: walls up, roof still a bare timber frame -->
+  <rect x="116" y="110" width="88" height="60" rx="6" fill="#0a4c3a"/>
+  <rect x="116" y="104" width="88" height="60" rx="6" fill="#0f6b52"/>
+  <path d="M112 104 160 72l48 32zM160 72v32M136 104l24-16 24 16" stroke="#b3521f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="128" y="118" width="20" height="18" rx="3" fill="#fffaf3"/>
+  <rect x="172" y="118" width="20" height="18" rx="3" fill="#fffaf3"/>
+  <path d="M138 118v18M128 127h20M182 118v18M172 127h20" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <rect x="150" y="136" width="20" height="28" rx="4" fill="#f3b45f"/>
+  <!-- coin coming back: refund arrow -->
+  <circle cx="68" cy="138" r="16" fill="#c98f3e"/>
+  <circle cx="68" cy="134" r="16" fill="#f3b45f"/>
+  <circle cx="68" cy="134" r="9" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <path d="M68 106a28 28 0 1 0 28 28" stroke="#0f6b52" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M88 132l8-13 8 13z" fill="#0f6b52" stroke="#0f6b52" stroke-width="2" stroke-linejoin="round"/>
+</svg>

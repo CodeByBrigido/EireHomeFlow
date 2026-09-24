@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="48" cy="46" r="6" fill="#f3b45f"/>
+  <circle cx="276" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="220" cy="30" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="164" cy="170" rx="120" ry="12" fill="#e4d8c8"/>
+  <!-- percent tag resting on the ground -->
+  <circle cx="252" cy="144" r="21" fill="#c98f3e"/>
+  <circle cx="252" cy="140" r="21" fill="#f3b45f"/>
+  <circle cx="248" cy="139" r="4" fill="#8a3d14"/>
+  <circle cx="261" cy="153" r="4" fill="#8a3d14"/>
+  <path d="M262 136 246 156" stroke="#8a3d14" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- tail -->
+  <path d="M88 112c-10-4-16 4-10 10 5 5 0 12-8 8" stroke="#b3521f" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- legs -->
+  <rect x="106" y="140" width="18" height="26" rx="6" fill="#8a3d14"/>
+  <rect x="166" y="140" width="18" height="26" rx="6" fill="#8a3d14"/>
+  <!-- piggy body -->
+  <ellipse cx="146" cy="121" rx="60" ry="42" fill="#8a3d14"/>
+  <ellipse cx="146" cy="116" rx="60" ry="42" fill="#b3521f"/>
+  <path d="M110 96c6-6 14-9 22-10" stroke="#fdf2e4" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- ear -->
+  <path d="M168 86 180 62q3-5 6 0l12 28z" fill="#b3521f"/>
+  <path d="M176 84 182 70l7 17z" fill="#8a3d14"/>
+  <!-- string from under the chin to the tag hole -->
+  <path d="M206 124q16 20 32 6" stroke="#6b5a48" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="241" cy="129" r="3" fill="#f3ece1"/>
+  <!-- snout, eye, slot -->
+  <rect x="198" y="106" width="22" height="26" rx="9" fill="#8a3d14"/>
+  <rect x="198" y="102" width="22" height="26" rx="9" fill="#b3521f"/>
+  <circle cx="206" cy="115" r="2.5" fill="#8a3d14"/>
+  <circle cx="213" cy="115" r="2.5" fill="#8a3d14"/>
+  <circle cx="186" cy="102" r="3.5" fill="#2c2118"/>
+  <rect x="132" y="78" width="28" height="6" rx="3" fill="#8a3d14"/>
+  <!-- coin dropping in -->
+  <circle cx="146" cy="54" r="14" fill="#c98f3e"/>
+  <circle cx="146" cy="50" r="14" fill="#f3b45f"/>
+  <circle cx="146" cy="50" r="8" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <path d="M122 42v10M170 42v10" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+</svg>

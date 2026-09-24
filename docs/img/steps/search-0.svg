@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="40" cy="44" r="6" fill="#f3b45f"/>
+  <circle cx="282" cy="46" r="5" fill="#cfe7dd"/>
+  <circle cx="264" cy="30" r="3" fill="#f3b45f"/>
+  <circle cx="44" cy="150" r="4" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="162" cy="167" rx="124" ry="12" fill="#e4d8c8"/>
+  <!-- folded map: twin first -->
+  <path d="M66 77 122 67 178 77 234 67v90l-56 10-56-10-56 10z" fill="#e4d8c8"/>
+  <path d="M66 72 122 62v90l-56 10z" fill="#fffaf3"/>
+  <path d="M122 62 178 72v90l-56-10z" fill="#efe2d1"/>
+  <path d="M178 72 234 62v90l-56 10z" fill="#fffaf3"/>
+  <!-- parks -->
+  <path d="M102 112 118 109v35l-16 3z" fill="#cfe7dd"/>
+  <path d="M130 116 170 123v27l-40-7z" fill="#cfe7dd"/>
+  <path d="M186 80 206 76v24l-20 4z" fill="#cfe7dd"/>
+  <circle cx="110" cy="128" r="4" fill="#0f6b52"/>
+  <circle cx="142" cy="130" r="5" fill="#0f6b52"/>
+  <circle cx="158" cy="137" r="4" fill="#0f6b52"/>
+  <circle cx="196" cy="88" r="4" fill="#0f6b52"/>
+  <!-- roads -->
+  <path d="M86 70v84M214 70v83" stroke="#e4d8c8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M71 111 122 102 178 112 229 103" fill="none" stroke="#f3b45f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- location pin -->
+  <ellipse cx="150" cy="108" rx="10" ry="3" fill="#e4d8c8"/>
+  <path d="M150 112C144 103 126 89 126 63a24 24 0 0 1 48 0c0 26-18 40-24 49z" fill="#8a3d14"/>
+  <path d="M150 107C144 98 126 84 126 58a24 24 0 0 1 48 0c0 26-18 40-24 49z" fill="#b3521f"/>
+  <circle cx="150" cy="58" r="9" fill="#fffaf3"/>
+  <!-- price tag -->
+  <g transform="rotate(-12 244 146)">
+    <path d="M212 151 224 139h46a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4h-46z" fill="#c98f3e"/>
+    <path d="M212 146 224 134h46a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4h-46z" fill="#f3b45f"/>
+    <circle cx="223" cy="146" r="3" fill="#fffaf3"/>
+    <path d="M261 139a8 8 0 1 0 0 14M245 144h10M245 148h10" fill="none" stroke="#8a3d14" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

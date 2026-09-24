@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="44" cy="46" r="5" fill="#f3b45f"/>
+  <circle cx="278" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="284" cy="130" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="112" ry="10" fill="#e4d8c8"/>
+  <!-- floor plan: pressed twin, room floors, walls -->
+  <rect x="77" y="44" width="166" height="118" rx="6" fill="#0a4c3a"/>
+  <rect x="80" y="42" width="84" height="58" fill="#fdf2e4"/>
+  <rect x="164" y="42" width="76" height="48" fill="#e8f1ec"/>
+  <rect x="80" y="100" width="84" height="54" fill="#e8f1ec"/>
+  <rect x="164" y="90" width="76" height="64" fill="#fdf2e4"/>
+  <g fill="none" stroke="#0f6b52" stroke-width="6" stroke-linecap="round">
+    <rect x="80" y="42" width="160" height="112" rx="3"/>
+    <path d="M164 42v70M164 130v24M80 100h24M124 100h40M164 90h32M216 90h24"/>
+  </g>
+  <!-- room 1: stack of three and a coin -->
+  <rect x="100" y="74" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="100" y="71" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="100" y="68" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="100" y="65" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="100" y="62" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="100" y="59" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <circle cx="138" cy="80" r="10" fill="#c98f3e"/>
+  <circle cx="138" cy="76" r="10" fill="#f3b45f"/>
+  <circle cx="138" cy="76" r="5" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <!-- room 2: stack of two and a coin -->
+  <rect x="180" y="66" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="63" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="180" y="60" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="57" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <circle cx="218" cy="74" r="10" fill="#c98f3e"/>
+  <circle cx="218" cy="70" r="10" fill="#f3b45f"/>
+  <circle cx="218" cy="70" r="5" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <!-- room 3: stack of two and a coin -->
+  <rect x="100" y="127" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="100" y="124" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="100" y="121" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="100" y="118" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <circle cx="138" cy="135" r="10" fill="#c98f3e"/>
+  <circle cx="138" cy="131" r="10" fill="#f3b45f"/>
+  <circle cx="138" cy="131" r="5" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <!-- room 4: stack of four and a coin -->
+  <rect x="180" y="128" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="125" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="180" y="122" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="119" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="180" y="116" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="113" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="180" y="110" width="30" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="180" y="107" width="30" height="9" rx="4" fill="#f3b45f"/>
+  <circle cx="218" cy="134" r="10" fill="#c98f3e"/>
+  <circle cx="218" cy="130" r="10" fill="#f3b45f"/>
+  <circle cx="218" cy="130" r="5" fill="none" stroke="#c98f3e" stroke-width="3"/>
+</svg>

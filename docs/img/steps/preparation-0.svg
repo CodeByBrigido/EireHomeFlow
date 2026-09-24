@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="48" cy="42" r="6" fill="#f3b45f"/>
+  <circle cx="276" cy="46" r="5" fill="#cfe7dd"/>
+  <circle cx="258" cy="28" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="124" ry="12" fill="#e4d8c8"/>
+  <!-- small house -->
+  <rect x="54" y="128" width="44" height="38" rx="4" fill="#e4d8c8"/>
+  <rect x="54" y="124" width="44" height="38" rx="4" fill="#fffaf3"/>
+  <path d="M48 130 76 104l28 26z" fill="#8a3d14"/>
+  <path d="M48 126 76 100l28 26z" fill="#b3521f"/>
+  <rect x="62" y="140" width="12" height="22" rx="3" fill="#f3b45f"/>
+  <rect x="80" y="138" width="12" height="11" rx="2" fill="#cfe7dd"/>
+  <!-- calculator -->
+  <rect x="116" y="52" width="88" height="118" rx="12" fill="#0a4c3a"/>
+  <rect x="116" y="46" width="88" height="118" rx="12" fill="#0f6b52"/>
+  <rect x="128" y="58" width="64" height="26" rx="5" fill="#e8f1ec"/>
+  <!-- euro sign drawn with strokes -->
+  <path d="M170 64a9 9 0 1 0 0 14M152 69h11M152 74h11" stroke="#0f6b52" stroke-width="3" stroke-linecap="round" fill="none"/>  <!-- keys: twins then faces -->
+  <g fill="#e4d8c8">
+    <rect x="128" y="98" width="16" height="16" rx="4"/>
+    <rect x="152" y="98" width="16" height="16" rx="4"/>
+    <rect x="128" y="120" width="16" height="16" rx="4"/>
+    <rect x="152" y="120" width="16" height="16" rx="4"/>
+    <rect x="128" y="142" width="16" height="16" rx="4"/>
+    <rect x="152" y="142" width="16" height="16" rx="4"/>
+  </g>
+  <g fill="#fffaf3">
+    <rect x="128" y="95" width="16" height="16" rx="4"/>
+    <rect x="152" y="95" width="16" height="16" rx="4"/>
+    <rect x="128" y="117" width="16" height="16" rx="4"/>
+    <rect x="152" y="117" width="16" height="16" rx="4"/>
+    <rect x="128" y="139" width="16" height="16" rx="4"/>
+    <rect x="152" y="139" width="16" height="16" rx="4"/>
+  </g>
+  <g fill="#c98f3e">
+    <rect x="176" y="98" width="16" height="16" rx="4"/>
+    <rect x="176" y="120" width="16" height="38" rx="4"/>
+  </g>
+  <g fill="#f3b45f">
+    <rect x="176" y="95" width="16" height="16" rx="4"/>
+    <rect x="176" y="117" width="16" height="38" rx="4"/>
+  </g>
+  <path d="M184 99v8M180 103h8M180 132h8M180 138h8" stroke="#fffaf3" stroke-width="3" stroke-linecap="round"/>
+  <!-- coin stack -->
+  <ellipse cx="244" cy="162" rx="20" ry="7" fill="#c98f3e"/>
+  <ellipse cx="244" cy="158" rx="20" ry="7" fill="#f3b45f"/>
+  <ellipse cx="244" cy="154" rx="20" ry="7" fill="#c98f3e"/>
+  <ellipse cx="244" cy="150" rx="20" ry="7" fill="#f3b45f"/>
+  <ellipse cx="244" cy="146" rx="20" ry="7" fill="#c98f3e"/>
+  <ellipse cx="244" cy="142" rx="20" ry="7" fill="#f3b45f"/>
+  <ellipse cx="244" cy="142" rx="11" ry="3" fill="none" stroke="#c98f3e" stroke-width="3"/>
+</svg>

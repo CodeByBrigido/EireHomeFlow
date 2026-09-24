@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="46" cy="44" r="6" fill="#f3b45f"/>
+  <circle cx="286" cy="46" r="5" fill="#cfe7dd"/>
+  <circle cx="198" cy="30" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="124" ry="12" fill="#e4d8c8"/>
+  <!-- bank statement -->
+  <g transform="translate(-8 0)">
+    <rect x="80" y="39" width="104" height="126" rx="8" fill="#e4d8c8"/>
+    <rect x="80" y="34" width="104" height="126" rx="8" fill="#fffaf3"/>
+    <path d="M80 56V42a8 8 0 0 1 8-8h88a8 8 0 0 1 8 8v14z" fill="#0f6b52"/>
+    <circle cx="96" cy="45" r="5" fill="#cfe7dd"/>
+    <path d="M108 45h28" stroke="#cfe7dd" stroke-width="4" stroke-linecap="round"/>
+    <path d="M92 74l4 4 8-8M92 92l4 4 8-8M92 110l4 4 8-8M92 128l4 4 8-8M92 146l4 4 8-8" stroke="#0f6b52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M114 74h36M114 92h28M114 110h36M114 128h32M114 146h24" stroke="#e4d8c8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 74h12M160 92h12M160 110h12M160 128h12M160 146h12" stroke="#c98f3e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- wall calendar, hung a little higher -->
+  <g transform="translate(-8 -12)">
+    <path d="M226 82 239 64l13 18" stroke="#6b5a48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="239" cy="63" r="3" fill="#6b5a48"/>
+    <rect x="208" y="89" width="62" height="72" rx="7" fill="#e4d8c8"/>
+    <rect x="208" y="84" width="62" height="72" rx="7" fill="#fffaf3"/>
+    <path d="M208 102V91a7 7 0 0 1 7-7h48a7 7 0 0 1 7 7v11z" fill="#b3521f"/>
+    <path d="M226 80v8M252 80v8" stroke="#6b5a48" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#0f6b52">
+      <rect x="213" y="110" width="10" height="10" rx="2"/>
+      <rect x="227" y="110" width="10" height="10" rx="2"/>
+      <rect x="241" y="110" width="10" height="10" rx="2"/>
+      <rect x="255" y="110" width="10" height="10" rx="2"/>
+      <rect x="213" y="124" width="10" height="10" rx="2"/>
+      <rect x="227" y="124" width="10" height="10" rx="2"/>
+    </g>
+    <g fill="#efe2d1">
+      <rect x="241" y="124" width="10" height="10" rx="2"/>
+      <rect x="255" y="124" width="10" height="10" rx="2"/>
+      <rect x="213" y="138" width="10" height="10" rx="2"/>
+      <rect x="227" y="138" width="10" height="10" rx="2"/>
+      <rect x="241" y="138" width="10" height="10" rx="2"/>
+      <rect x="255" y="138" width="10" height="10" rx="2"/>
+    </g>
+  </g>
+</svg>

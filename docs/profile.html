@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My profile | ÉireHome Flow</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/pages/profile.js" defer></script>
+</head>
+<body data-page="profile">
+<div class="page">
+
+  <div data-include="partials/header.html"></div>
+
+  <main class="main main--wide">
+    <p class="eyebrow">Your account</p>
+    <h1 class="page-title">My profile</h1>
+    <p class="calc__intro">Your details and how your account works.</p>
+
+    <div class="gate card" id="gate">
+      <p class="gate__text" data-bind="gateText">Loading your account...</p>
+      <div class="gate__actions" id="gate-actions" hidden>
+        <a class="btn btn--primary" href="signin.html?next=profile.html">Sign in</a>
+        <a class="btn btn--outline" href="signup.html?next=profile.html">Create an account</a>
+      </div>
+    </div>
+
+    <div id="signed-in" hidden>
+      <div class="profile-grid">
+        <form class="card profile-form" id="profile-form" novalidate data-fields="name">
+          <h2 class="card__title">Your details</h2>
+          <label class="field">
+            <span class="field__label">Full name</span>
+            <input type="text" name="name" autocomplete="name" maxlength="80" aria-describedby="error-name">
+            <span class="field__error" id="error-name"></span>
+          </label>
+          <div class="field">
+            <span class="field__label">Email</span>
+            <p class="field__static" data-bind="userEmail"></p>
+          </div>
+          <div class="field">
+            <span class="field__label">Member since</span>
+            <p class="field__static" data-bind="memberSince"></p>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn--primary">Save changes</button>
+        </form>
+
+        <div class="card profile-side">
+          <h2 class="card__title">Password</h2>
+          <p class="profile-side__text">Use at least 8 characters, with a capital letter and a special character.</p>
+          <a class="btn btn--outline" href="new-password.html">Change password</a>
+
+          <h2 class="card__title">Your data</h2>
+          <p class="profile-side__text">Your account stores your name, your email and the steps you have completed, on servers in Ireland. The figures you type into the calculator stay in your browser. <a href="privacy.html">Read our Privacy Policy</a>.</p>
+          <p class="profile-side__text">To delete your account and everything saved in it, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a> from the address you signed up with.</p>
+
+          <h2 class="card__title">Sign out</h2>
+          <p class="profile-side__text">Your progress stays saved in your account for next time.</p>
+          <button type="button" class="btn btn--outline" data-action="signOut">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="44" cy="52" r="5" fill="#f3b45f"/>
+  <circle cx="280" cy="98" r="5" fill="#cfe7dd"/>
+  <circle cx="40" cy="120" r="3" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="112" ry="11" fill="#e4d8c8"/>
+  <!-- window -->
+  <rect x="120" y="73" width="80" height="82" rx="4" fill="#e4d8c8"/>
+  <rect x="120" y="68" width="80" height="82" rx="4" fill="#fffaf3"/>
+  <rect x="128" y="76" width="64" height="66" rx="2" fill="#cfe7dd"/>
+  <path d="M160 76v66M128 109h64" stroke="#fffaf3" stroke-width="5"/>
+  <rect x="112" y="152" width="96" height="7" rx="3" fill="#e4d8c8"/>
+  <rect x="112" y="148" width="96" height="7" rx="3" fill="#fffaf3"/>
+  <!-- curtain rail -->
+  <path d="M92 58h136" stroke="#6b5a48" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="90" cy="58" r="6" fill="#6b5a48"/>
+  <circle cx="230" cy="58" r="6" fill="#6b5a48"/>
+  <!-- curtains -->
+  <path d="M94 65h38q-16 44-20 58 4 26 10 46H90q6-48 4-104z" fill="#8a3d14"/>
+  <path d="M94 60h38q-16 44-20 58 4 26 10 46H90q6-48 4-104z" fill="#b3521f"/>
+  <path d="M226 65h-38q16 44 20 58-4 26-10 46h32q-6-48-4-104z" fill="#8a3d14"/>
+  <path d="M226 60h-38q16 44 20 58-4 26-10 46h32q-6-48-4-104z" fill="#b3521f"/>
+  <path d="M106 66q-2 24 0 44M104 126q-2 18-4 32M214 66q2 24 0 44M216 126q2 18 4 32" fill="none" stroke="#8a3d14" stroke-width="3" stroke-linecap="round"/>
+  <rect x="92" y="112" width="22" height="7" rx="3" fill="#f3b45f"/>
+  <rect x="206" y="112" width="22" height="7" rx="3" fill="#f3b45f"/>
+  <!-- measuring tape along the rail -->
+  <rect x="88" y="41" width="150" height="9" rx="2" fill="#c98f3e"/>
+  <rect x="88" y="38" width="150" height="9" rx="2" fill="#f3b45f"/>
+  <path d="M98 38v3M110 38v5M122 38v3M134 38v5M146 38v3M158 38v5M170 38v3M182 38v5M194 38v3M206 38v5M218 38v3M230 38v5" stroke="#6b5a48" stroke-width="3" stroke-linecap="round"/>
+  <rect x="84" y="36" width="5" height="16" rx="2" fill="#6b5a48"/>
+  <rect x="236" y="35" width="30" height="30" rx="9" fill="#c98f3e"/>
+  <rect x="236" y="30" width="30" height="30" rx="9" fill="#f3b45f"/>
+  <circle cx="251" cy="45" r="7" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <circle cx="251" cy="45" r="2" fill="#c98f3e"/>
+</svg>

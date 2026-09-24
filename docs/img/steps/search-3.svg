@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="40" cy="44" r="6" fill="#f3b45f"/>
+  <circle cx="282" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="266" cy="26" r="3" fill="#f3b45f"/>
+  <circle cx="38" cy="138" r="4" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="162" cy="170" rx="124" ry="12" fill="#e4d8c8"/>
+  <!-- notebook cover -->
+  <rect x="68" y="61" width="184" height="104" rx="8" fill="#0a4c3a"/>
+  <rect x="68" y="56" width="184" height="104" rx="8" fill="#0f6b52"/>
+  <!-- pages -->
+  <rect x="76" y="65" width="80" height="92" rx="4" fill="#e4d8c8"/>
+  <rect x="164" y="65" width="80" height="92" rx="4" fill="#e4d8c8"/>
+  <rect x="76" y="62" width="80" height="92" rx="4" fill="#fffaf3"/>
+  <rect x="164" y="62" width="80" height="92" rx="4" fill="#fffaf3"/>
+  <!-- spiral -->
+  <path d="M152 72h16M152 84h16M152 96h16M152 108h16M152 120h16M152 132h16M152 144h16" stroke="#6b5a48" stroke-width="3" stroke-linecap="round"/>
+  <!-- bid log: bullet, note, amount -->
+  <circle cx="86" cy="78" r="3" fill="#c98f3e"/>
+  <circle cx="86" cy="94" r="3" fill="#c98f3e"/>
+  <circle cx="86" cy="110" r="3" fill="#c98f3e"/>
+  <circle cx="86" cy="126" r="3" fill="#c98f3e"/>
+  <circle cx="86" cy="142" r="3" fill="#c98f3e"/>
+  <path d="M95 78h22M95 94h28M95 110h18M95 126h26M95 142h20" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M130 78h14M132 94h12M126 110h18M132 126h12M130 142h14" stroke="#f3b45f" stroke-width="3" stroke-linecap="round"/>
+  <!-- rising bids -->
+  <path d="M174 74h26" stroke="#c98f3e" stroke-width="4" stroke-linecap="round"/>
+  <rect x="176" y="112" width="10" height="12" rx="2" fill="#cfe7dd"/>
+  <rect x="192" y="104" width="10" height="20" rx="2" fill="#cfe7dd"/>
+  <rect x="208" y="96" width="10" height="28" rx="2" fill="#cfe7dd"/>
+  <rect x="224" y="86" width="10" height="38" rx="2" fill="#0f6b52"/>
+  <path d="M172 128h64" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <!-- pencil -->
+  <path d="M159 142 175 135h94a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-94z" fill="#c98f3e" transform="translate(0 5) rotate(-25 216 142)"/>
+  <g transform="rotate(-25 216 142)">
+    <path d="M159 142 175 135v14z" fill="#efe2d1"/>
+    <path d="M159 142 166 139v6z" fill="#2c2118"/>
+    <rect x="175" y="135" width="76" height="14" fill="#f3b45f"/>
+    <path d="M179 142h68" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+    <rect x="251" y="135" width="8" height="14" fill="#e4d8c8"/>
+    <path d="M259 135h10a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-10z" fill="#b3521f"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="42" cy="40" r="6" fill="#f3b45f"/>
+  <circle cx="282" cy="38" r="6" fill="#cfe7dd"/>
+  <circle cx="264" cy="60" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="130" ry="12" fill="#e4d8c8"/>
+  <!-- signpost pole -->
+  <rect x="155" y="46" width="10" height="124" rx="4" fill="#8a3d14"/>
+  <circle cx="160" cy="46" r="7" fill="#b3521f"/>
+  <!-- left arrow board (to the bank) -->
+  <path d="M96 78 110 65h68v26h-68z" fill="#c98f3e" stroke="#c98f3e" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M96 73 110 60h68v26h-68z" fill="#f3b45f" stroke="#f3b45f" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M116 73h50" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+  <!-- right arrow board (to the broker) -->
+  <path d="M142 101h68l14 13-14 13h-68z" fill="#c98f3e" stroke="#c98f3e" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M142 96h68l14 13-14 13h-68z" fill="#f3b45f" stroke="#f3b45f" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M154 109h50" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+  <!-- bank -->
+  <rect x="27" y="116" width="62" height="42" rx="2" fill="#0a4c3a"/>
+  <path d="M22 121 58 99l36 22z" fill="#0a4c3a" stroke="#0a4c3a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M22 116 58 94l36 22z" fill="#0f6b52" stroke="#0f6b52" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="58" cy="109" r="4" fill="#f3b45f"/>
+  <rect x="29" y="123" width="9" height="34" rx="2" fill="#fffaf3"/>
+  <rect x="45" y="123" width="9" height="34" rx="2" fill="#fffaf3"/>
+  <rect x="62" y="123" width="9" height="34" rx="2" fill="#fffaf3"/>
+  <rect x="78" y="123" width="9" height="34" rx="2" fill="#fffaf3"/>
+  <path d="M33 128v24M49 128v24M66 128v24M82 128v24" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <rect x="22" y="159" width="72" height="11" rx="3" fill="#0a4c3a"/>
+  <rect x="22" y="154" width="72" height="11" rx="3" fill="#0f6b52"/>
+  <!-- briefcase -->
+  <rect x="254" y="112" width="24" height="18" rx="6" fill="none" stroke="#8a3d14" stroke-width="5"/>
+  <rect x="236" y="129" width="60" height="40" rx="7" fill="#8a3d14"/>
+  <rect x="236" y="124" width="60" height="40" rx="7" fill="#b3521f"/>
+  <path d="M240 140h52" stroke="#8a3d14" stroke-width="3" stroke-linecap="round"/>
+  <rect x="259" y="134" width="14" height="12" rx="3" fill="#f3b45f"/>
+</svg>

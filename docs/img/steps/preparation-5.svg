@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="46" cy="44" r="6" fill="#f3b45f"/>
+  <circle cx="284" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="120" cy="42" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="126" ry="12" fill="#e4d8c8"/>
+  <!-- cloud -->
+  <path d="M180 72h32a10 10 0 0 0 1-20 14 14 0 0 0-27-3 12 12 0 0 0-6 23z" fill="#e4d8c8"/>
+  <path d="M180 68h32a10 10 0 0 0 1-20 14 14 0 0 0-27-3 12 12 0 0 0-6 23z" fill="#ffffff"/>
+  <!-- sync arrows -->
+  <path d="M182 98q15-10 30 0M211 91l1 7-7 1M212 116q-15 10-30 0M183 123l-1-7 7-1" stroke="#b3521f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- laptop -->
+  <rect x="64" y="80" width="108" height="72" rx="8" fill="#0f6b52"/>
+  <rect x="72" y="88" width="92" height="56" rx="3" fill="#e8f1ec"/>
+  <circle cx="118" cy="106" r="9" fill="#0f6b52"/>
+  <path d="M102 136a16 14 0 0 1 32 0z" fill="#0f6b52"/>
+  <path d="M52 154h132v6a6 6 0 0 1-6 6H58a6 6 0 0 1-6-6z" fill="#0a4c3a"/>
+  <path d="M52 150h132v6a6 6 0 0 1-6 6H58a6 6 0 0 1-6-6z" fill="#0f6b52"/>
+  <rect x="106" y="150" width="24" height="4" rx="2" fill="#0a4c3a"/>
+  <!-- phone -->
+  <rect x="222" y="87" width="44" height="80" rx="9" fill="#0a4c3a"/>
+  <rect x="222" y="82" width="44" height="80" rx="9" fill="#0f6b52"/>
+  <rect x="227" y="92" width="34" height="58" rx="3" fill="#e8f1ec"/>
+  <path d="M238 87h12" stroke="#cfe7dd" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="244" cy="156" r="2.5" fill="#cfe7dd"/>
+  <circle cx="244" cy="112" r="7" fill="#0f6b52"/>
+  <path d="M232 138a12 11 0 0 1 24 0z" fill="#0f6b52"/>
+</svg>

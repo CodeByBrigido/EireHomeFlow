@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My journey | ÉireHome Flow</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/pages/journey.js" defer></script>
+</head>
+<body data-page="journey">
+<div class="page">
+
+  <div data-include="partials/header.html"></div>
+
+  <main class="main main--wide">
+    <div class="journey" id="journey">
+      <div class="journey__main">
+        <div class="journey__head">
+          <p class="eyebrow">Your journey</p>
+          <h1 class="page-title">Getting the keys and settling in</h1>
+        </div>
+        <div class="journey__track">
+          <div id="journey-phases"></div>
+          <div class="finish">
+            <span class="finish__badge" id="finish-badge" aria-hidden="true">🔑</span>
+            <span class="finish__title" data-bind="finishTitle"></span>
+            <span class="finish__note" data-bind="finishNote"></span>
+          </div>
+        </div>
+      </div>
+
+      <section class="detail" id="detail" aria-labelledby="detail-title" hidden>
+        <div class="detail__top">
+          <p class="eyebrow" data-bind="openPhase"></p>
+          <button type="button" class="detail__close" data-action="close">Close</button>
+        </div>
+        <p class="detail__step" data-bind="openStepLabel"></p>
+        <h2 class="detail__title" id="detail-title" tabindex="-1" data-bind="openTitle"></h2>
+        <div class="detail__chips">
+          <p class="chip chip--tag" id="open-tag"></p>
+          <p class="chip">⏱ <span data-bind="openTime"></span></p>
+          <p class="chip">€ <span data-bind="openCost"></span></p>
+        </div>
+        <div class="detail__figure" id="open-figure" hidden>
+          <img class="step-image detail__image" id="open-image" src="" alt="" width="320" height="200">
+        </div>
+        <p class="detail__body" data-bind="openBody"></p>
+
+        <p class="label">What this takes</p>
+        <ul class="checklist" id="open-checklist"></ul>
+
+        <div class="tip">
+          <p class="label">Worth knowing</p>
+          <p class="tip__text" data-bind="openTip"></p>
+        </div>
+
+        <p class="detail__note" id="detail-note" role="status" hidden></p>
+
+        <div class="detail__actions">
+          <button type="button" class="btn btn--primary" id="toggle-step" data-action="toggle" data-bind="openAction"></button>
+          <button type="button" class="btn btn--outline" data-action="prev">← Previous</button>
+          <button type="button" class="btn btn--outline" data-action="next">Next →</button>
+        </div>
+      </section>
+
+      <aside class="aside">
+        <div class="card">
+          <div class="ring-row">
+            <svg class="ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="43" fill="none" stroke="#f0e5d6" stroke-width="11"></circle>
+              <circle id="ring-fill" cx="50" cy="50" r="43" fill="none" stroke="#0f6b52" stroke-width="11" stroke-linecap="round" transform="rotate(-90 50 50)"></circle>
+            </svg>
+            <div>
+              <p class="ring__pct" data-bind="pct"></p>
+              <p class="ring__count" data-bind="countLabel"></p>
+            </div>
+          </div>
+          <div class="minis">
+            <div class="mini">
+              <p class="mini__label">Streak</p>
+              <p class="mini__value" data-bind="streak"></p>
+            </div>
+            <div class="mini mini--mint">
+              <p class="mini__label">Earned</p>
+              <p class="mini__value" data-bind="xp"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-up">
+          <p class="label">Next up</p>
+          <p class="next-up__title" data-bind="nextTitle"></p>
+          <button type="button" class="next-up__btn" data-action="openNext">Open this step</button>
+        </div>
+
+        <button type="button" class="reset" data-action="reset">Reset progress</button>
+      </aside>
+    </div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | ÉireHome Flow</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/pages/dashboard.js" defer></script>
+</head>
+<body data-page="dashboard">
+<div class="page">
+
+  <div data-include="partials/header.html"></div>
+
+  <main class="main main--wide">
+    <p class="eyebrow">Your dashboard</p>
+    <h1 class="page-title" data-bind="dashGreeting">Your dashboard</h1>
+    <p class="calc__intro">Where you are on the road to your keys, and the numbers behind it.</p>
+
+    <div class="gate card" id="gate">
+      <p class="gate__text" data-bind="gateText">Loading your account...</p>
+      <div class="gate__actions" id="gate-actions" hidden>
+        <a class="btn btn--primary" href="signin.html?next=dashboard.html">Sign in</a>
+        <a class="btn btn--outline" href="signup.html?next=dashboard.html">Create an account</a>
+      </div>
+    </div>
+
+    <div id="signed-in" hidden>
+      <div class="dash-stats">
+        <div class="stat">
+          <p class="label">Progress</p>
+          <p class="stat__value" data-bind="pct"></p>
+          <p class="stat__note" data-bind="countLabel"></p>
+        </div>
+        <div class="stat">
+          <p class="label">Current phase</p>
+          <p class="stat__value" data-bind="dashPhaseNumber"></p>
+          <p class="stat__note" data-bind="dashPhaseName"></p>
+        </div>
+        <div class="stat">
+          <p class="label">Earned</p>
+          <p class="stat__value" data-bind="xp"></p>
+          <p class="stat__note">XP, 25 for each step you complete.</p>
+        </div>
+        <div class="stat stat--accent">
+          <p class="label">Next up</p>
+          <p class="next-up__title" data-bind="nextTitle"></p>
+          <a class="next-up__btn" id="next-link" href="journey.html">Open this step</a>
+        </div>
+      </div>
+
+      <h2 class="dash__title">Your phases</h2>
+      <div class="phases__grid dash__phases" id="dash-phases"></div>
+
+      <div class="dash-row">
+        <div class="result-main">
+          <p class="label">Your numbers</p>
+          <p class="result-main__value" data-bind="maxPrice"></p>
+          <p class="result-main__note">Maximum property price, based on the figures in your calculator.</p>
+          <div class="result-main__grid">
+            <div class="result-main__box">
+              <p class="result-main__box-label">Max mortgage</p>
+              <p class="result-main__box-value" data-bind="maxLoan"></p>
+            </div>
+            <div class="result-main__box">
+              <p class="result-main__box-label">Funds available</p>
+              <p class="result-main__box-value" data-bind="funds"></p>
+            </div>
+          </div>
+          <a class="next-up__btn" href="calculator.html">Open the calculator</a>
+        </div>
+
+        <div class="card dash-account">
+          <p class="label">Your account</p>
+          <p class="dash-account__name" data-bind="userName"></p>
+          <p class="dash-account__email" data-bind="userEmail"></p>
+          <p class="dash-account__since" data-bind="memberSince"></p>
+          <p class="dash-account__sync"><span aria-hidden="true">✓</span> Your progress is saved to your account.</p>
+          <div class="dash-account__actions">
+            <a class="btn btn--outline" href="profile.html">My profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+</div>
+</body>
+</html>

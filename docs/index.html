@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ÉireHome Flow</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/pages/home.js" defer></script>
+</head>
+<body data-page="home">
+<div class="page">
+
+  <div data-include="partials/header.html"></div>
+
+  <main class="main">
+    <section class="hero container">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">For first-time buyers in Ireland</p>
+          <h1 class="hero__title">From first savings<br>to your <em>first sofa</em>.</h1>
+          <p class="hero__lead">Six phases and thirty-one steps, from the deposit maths and the AIP paperwork to bidding and getting the keys. It also covers what comes after, like floors, curtains and the first boiler service.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="journey.html" data-bind="resumeLabel">Start my journey</a>
+            <a class="btn btn--ghost" href="calculator.html">Buying power calculator</a>
+          </div>
+        </div>
+        <figure class="hero__figure">
+          <img src="img/hero-1200.webp" srcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w"
+               sizes="(max-width: 960px) calc(100vw - 32px), 560px" alt="Illustrated Irish home above the coast" width="1200" height="800" fetchpriority="high">
+          <figcaption>The home you are working towards.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="ticker" id="ticker" aria-label="Key figures">
+      <div class="ticker__track" id="ticker-track">
+        <span class="ticker__item">Central Bank rule: 4× gross income<span class="ticker__dot"></span></span>
+        <span class="ticker__item">First-time buyer deposit: 10%<span class="ticker__dot"></span></span>
+        <span class="ticker__item">Stamp duty: 1%<span class="ticker__dot"></span></span>
+        <span class="ticker__item">Solicitor: €2,000-3,000<span class="ticker__dot"></span></span>
+        <span class="ticker__item">Structural survey: about €400<span class="ticker__dot"></span></span>
+        <span class="ticker__item">Bank valuation: about €150<span class="ticker__dot"></span></span>
+      </div>
+      <button type="button" class="ticker__toggle" data-action="ticker">Pause</button>
+    </section>
+
+    <section class="stats container">
+      <div class="stats__grid">
+        <div class="stat">
+          <p class="label">Maximum mortgage</p>
+          <p class="stat__value">4×</p>
+          <p class="stat__note">Gross annual income, per Central Bank of Ireland rules.</p>
+        </div>
+        <div class="stat">
+          <p class="label">Minimum deposit</p>
+          <p class="stat__value">10%</p>
+          <p class="stat__note">The same for first-time buyers and for anyone who has owned before.</p>
+        </div>
+        <div class="stat stat--accent">
+          <p class="label">Cash outside the loan</p>
+          <p class="stat__value">€3,550</p>
+          <p class="stat__note">Solicitor, survey and valuation, plus 1% stamp duty.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="phases container">
+      <h2 class="phases__title">Six phases, one after the other.</h2>
+      <p class="phases__intro">Steps unlock in order: finish each blocking step to unlock the next one. You can read every step at any time in the full guide.</p>
+      <div class="phases__grid" id="phase-cards"></div>
+    </section>
+
+    <section class="guide-cta container">
+      <div class="guide-cta__card">
+        <div>
+          <h2 class="guide-cta__title">Read the full guide</h2>
+          <p class="guide-cta__text">All thirty-one steps in one place, with checklists and tips. No account needed.</p>
+        </div>
+        <a class="btn btn--primary" href="guide.html">Open the guide</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+</div>
+</body>
+</html>

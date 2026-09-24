@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="46" cy="60" r="5" fill="#f3b45f"/>
+  <circle cx="84" cy="82" r="3" fill="#cfe7dd"/>
+  <circle cx="282" cy="122" r="4" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="124" ry="11" fill="#e4d8c8"/>
+  <!-- ceiling line -->
+  <path d="M36 24h248" stroke="#e4d8c8" stroke-width="4" stroke-linecap="round"/>
+  <!-- boiler pipes -->
+  <path d="M136 146v20M156 146v20M176 146v20" stroke="#c98f3e" stroke-width="5" stroke-linecap="round"/>
+  <!-- wall-mounted boiler -->
+  <rect x="112" y="53" width="88" height="98" rx="12" fill="#e4d8c8"/>
+  <rect x="112" y="48" width="88" height="98" rx="12" fill="#fffaf3"/>
+  <path d="M136 60h40" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M156 70q18 18 13 31a13 13 0 0 1-26 0q-5-13 13-31z" fill="#b3521f"/>
+  <path d="M156 88q9 9 7 16a7 7 0 0 1-14 0q-2-7 7-16z" fill="#f3b45f"/>
+  <rect x="126" y="122" width="60" height="16" rx="5" fill="#e4d8c8"/>
+  <rect x="132" y="126" width="24" height="8" rx="2" fill="#cfe7dd"/>
+  <circle cx="172" cy="130" r="6" fill="#0f6b52"/>
+  <path d="M172 130l3-3" stroke="#fffaf3" stroke-width="2" stroke-linecap="round"/>
+  <!-- open-ended wrench lying on the floor -->
+  <g transform="translate(80 158) rotate(-14)" fill="#0a4c3a">
+    <path d="M-42-5h12v10h-12a13 13 0 1 0 0-10z"/>
+    <rect x="-24" y="-5" width="46" height="10" rx="5"/>
+  </g>
+  <g transform="translate(80 154) rotate(-14)" fill="#0f6b52">
+    <path d="M-42-5h12v10h-12a13 13 0 1 0 0-10z"/>
+    <rect x="-24" y="-5" width="46" height="10" rx="5"/>
+  </g>
+  <!-- smoke alarm on the ceiling with signal arcs -->
+  <rect x="234" y="24" width="28" height="7" rx="2" fill="#e4d8c8"/>
+  <path d="M222 34h52a26 14 0 0 1-52 0z" fill="#e4d8c8"/>
+  <path d="M222 30h52a26 14 0 0 1-52 0z" fill="#fffaf3"/>
+  <circle cx="248" cy="37" r="3" fill="#b3521f"/>
+  <path d="M273 51a26 26 0 0 1-12 16M285 54a38 38 0 0 1-18 23M235 67a26 26 0 0 1-12-16M229 77a38 38 0 0 1-18-23" fill="none" stroke="#b3521f" stroke-width="4" stroke-linecap="round"/>
+</svg>

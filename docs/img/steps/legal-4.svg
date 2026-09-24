@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="38" cy="42" r="6" fill="#f3b45f"/>
+  <circle cx="282" cy="150" r="5" fill="#cfe7dd"/>
+  <circle cx="268" cy="36" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="172" rx="120" ry="12" fill="#e4d8c8"/>
+  <!-- contract page -->
+  <rect x="112" y="41" width="88" height="128" rx="6" fill="#e4d8c8"/>
+  <rect x="112" y="36" width="88" height="128" rx="6" fill="#fffaf3"/>
+  <path d="M126 54h40" stroke="#c98f3e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M126 70h60M126 82h60M126 94h48M126 106h60M126 118h36" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <!-- signature -->
+  <path d="M126 148h60" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+  <path d="M128 140c4-12 10-12 9-3s-4 8 2 2 8-10 9-3-2 7 4 2 8-6 10 0 6 1 12-2" stroke="#0f6b52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- fountain pen (twin, then pen) -->
+  <g transform="translate(178 144) rotate(-40)">
+    <path d="M0 0 16-7v14z" fill="#c98f3e"/>
+    <rect x="16" y="-9" width="74" height="18" rx="9" fill="#0a4c3a"/>
+  </g>
+  <g transform="translate(178 139) rotate(-40)">
+    <path d="M0 0 16-7v14z" fill="#f3b45f"/>
+    <path d="M4 0h9" stroke="#c98f3e" stroke-width="2" stroke-linecap="round"/>
+    <rect x="16" y="-6" width="10" height="12" rx="2" fill="#2c2118"/>
+    <rect x="26" y="-9" width="64" height="18" rx="9" fill="#0f6b52"/>
+    <rect x="46" y="-9" width="5" height="18" fill="#f3b45f"/>
+    <rect x="54" y="-13" width="30" height="4" rx="2" fill="#f3b45f"/>
+  </g>
+  <!-- small stack of coins -->
+  <rect x="62" y="154" width="40" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="62" y="150" width="40" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="64" y="145" width="40" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="64" y="141" width="40" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="61" y="136" width="40" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="61" y="132" width="40" height="9" rx="4" fill="#f3b45f"/>
+  <rect x="63" y="127" width="40" height="9" rx="4" fill="#c98f3e"/>
+  <rect x="63" y="123" width="40" height="9" rx="4" fill="#f3b45f"/>
+  <path d="M70 127h24" stroke="#fdf2e4" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="40" cy="42" r="6" fill="#f3b45f"/>
+  <circle cx="282" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="44" cy="160" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="108" ry="12" fill="#e4d8c8"/>
+  <!-- stand -->
+  <rect x="154" y="44" width="12" height="112" rx="5" fill="#0f6b52"/>
+  <rect x="122" y="156" width="76" height="14" rx="6" fill="#0a4c3a"/>
+  <rect x="122" y="151" width="76" height="14" rx="6" fill="#0f6b52"/>
+  <!-- strings -->
+  <path d="M86 56 56 120M86 56l30 64M234 56l-30 64M234 56l30 64" stroke="#6b5a48" stroke-width="3" stroke-linecap="round"/>
+  <!-- beam -->
+  <rect x="78" y="54" width="164" height="10" rx="5" fill="#8a3d14"/>
+  <rect x="78" y="49" width="164" height="10" rx="5" fill="#b3521f"/>
+  <circle cx="160" cy="58" r="10" fill="#c98f3e"/>
+  <circle cx="160" cy="54" r="10" fill="#f3b45f"/>
+  <circle cx="160" cy="54" r="3" fill="#c98f3e"/>
+  <!-- house (rent) on the left pan -->
+  <rect x="66" y="98" width="40" height="26" rx="3" fill="#e4d8c8"/>
+  <rect x="66" y="94" width="40" height="26" rx="3" fill="#fffaf3"/>
+  <path d="M58 100l28-22 28 22z" fill="#8a3d14" stroke="#8a3d14" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M58 96l28-22 28 22z" fill="#b3521f" stroke="#b3521f" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="81" y="104" width="10" height="16" rx="2" fill="#f3b45f"/>
+  <!-- jar of coins on the right pan -->
+  <rect x="210" y="88" width="48" height="36" rx="10" fill="#cfe7dd"/>
+  <rect x="210" y="84" width="48" height="36" rx="10" fill="#e8f1ec"/>
+  <circle cx="222" cy="110" r="6" fill="#f3b45f"/>
+  <circle cx="234" cy="110" r="6" fill="#c98f3e"/>
+  <circle cx="246" cy="110" r="6" fill="#f3b45f"/>
+  <circle cx="228" cy="99" r="6" fill="#f3b45f"/>
+  <circle cx="240" cy="99" r="6" fill="#c98f3e"/>
+  <circle cx="234" cy="89" r="6" fill="#f3b45f"/>
+  <path d="M216 94v12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <rect x="218" y="79" width="32" height="10" rx="3" fill="#0a4c3a"/>
+  <rect x="218" y="76" width="32" height="10" rx="3" fill="#0f6b52"/>
+  <!-- pans -->
+  <path d="M50 125h72a36 14 0 0 1-72 0z" fill="#c98f3e"/>
+  <path d="M50 120h72a36 14 0 0 1-72 0z" fill="#f3b45f"/>
+  <path d="M198 125h72a36 14 0 0 1-72 0z" fill="#c98f3e"/>
+  <path d="M198 120h72a36 14 0 0 1-72 0z" fill="#f3b45f"/>
+</svg>

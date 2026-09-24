@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="44" cy="46" r="6" fill="#f3b45f"/>
+  <circle cx="276" cy="36" r="4" fill="#f3b45f"/>
+  <circle cx="284" cy="124" r="5" fill="#cfe7dd"/>
+  <circle cx="38" cy="130" r="3" fill="#cfe7dd"/>
+  <!-- ground -->
+  <ellipse cx="160" cy="170" rx="116" ry="12" fill="#e4d8c8"/>
+  <!-- book cover -->
+  <rect x="72" y="110" width="176" height="56" rx="8" fill="#8a3d14"/>
+  <rect x="72" y="104" width="176" height="56" rx="8" fill="#b3521f"/>
+  <!-- pages: twin (page stack) then top pages -->
+  <path d="M82 104C104 96 136 96 158 106v50c-22-9-54-9-76-1zM238 104c-22-8-54-8-76 2v50c22-9 54-9 76-1z" fill="#e4d8c8"/>
+  <path d="M82 98C104 90 136 90 158 100v50c-22-9-54-9-76-1zM238 98c-22-8-54-8-76 2v50c22-9 54-9 76-1z" fill="#fffaf3"/>
+  <path d="M150 98 158 100v50l-8-2zM170 98 162 100v50l8-2z" fill="#efe2d1"/>
+  <!-- glossary entries: term in amber, meaning in lines -->
+  <path d="M92 108c6-2 12-2 18-2M172 107c6-2 12-2 18-1M92 132c6-1 12-2 18-2M172 131c6-1 12-2 18-1" fill="none" stroke="#c98f3e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M92 118c18-5 34-5 50 0M92 142c16-4 30-4 44 0M172 117c18-5 36-5 56-1M172 141c14-4 28-4 42-2" fill="none" stroke="#e4d8c8" stroke-width="3" stroke-linecap="round"/>
+  <!-- speech bubble left (dots) -->
+  <path d="M104 36h44a14 14 0 0 1 14 14v8a14 14 0 0 1-14 14h-20l-12 12 2-12h-14a14 14 0 0 1-14-14v-8a14 14 0 0 1 14-14z" fill="#0a4c3a" transform="translate(0 5)"/>
+  <path d="M104 36h44a14 14 0 0 1 14 14v8a14 14 0 0 1-14 14h-20l-12 12 2-12h-14a14 14 0 0 1-14-14v-8a14 14 0 0 1 14-14z" fill="#0f6b52"/>
+  <circle cx="112" cy="54" r="4" fill="#cfe7dd"/>
+  <circle cx="126" cy="54" r="4" fill="#cfe7dd"/>
+  <circle cx="140" cy="54" r="4" fill="#cfe7dd"/>
+  <!-- speech bubble right (lines) -->
+  <path d="M186 28h40a14 14 0 0 1 14 14v6a14 14 0 0 1-14 14h-12l2 12-12-12h-18a14 14 0 0 1-14-14v-6a14 14 0 0 1 14-14z" fill="#c98f3e" transform="translate(0 5)"/>
+  <path d="M186 28h40a14 14 0 0 1 14 14v6a14 14 0 0 1-14 14h-12l2 12-12-12h-18a14 14 0 0 1-14-14v-6a14 14 0 0 1 14-14z" fill="#f3b45f"/>
+  <path d="M186 40h36M186 50h22" stroke="#fffaf3" stroke-width="4" stroke-linecap="round"/>
+</svg>

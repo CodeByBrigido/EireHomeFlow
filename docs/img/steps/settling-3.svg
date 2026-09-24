@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <!-- accents -->
+  <circle cx="38" cy="44" r="5" fill="#f3b45f"/>
+  <circle cx="282" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="36" cy="138" r="3" fill="#f3b45f"/>
+  <!-- ground -->
+  <ellipse cx="164" cy="168" rx="124" ry="12" fill="#e4d8c8"/>
+  <!-- stack of floorboards, bottom plank first -->
+  <rect x="86" y="151" width="128" height="14" rx="5" fill="#c98f3e"/>
+  <rect x="86" y="146" width="128" height="14" rx="5" fill="#f3b45f"/>
+  <rect x="94" y="135" width="128" height="14" rx="5" fill="#c98f3e"/>
+  <rect x="94" y="130" width="128" height="14" rx="5" fill="#f3b45f"/>
+  <rect x="84" y="119" width="128" height="14" rx="5" fill="#c98f3e"/>
+  <rect x="84" y="114" width="128" height="14" rx="5" fill="#f3b45f"/>
+  <rect x="92" y="103" width="128" height="14" rx="5" fill="#c98f3e"/>
+  <rect x="92" y="98" width="128" height="14" rx="5" fill="#f3b45f"/>
+  <path d="M118 150v6M178 134v6M130 118v6M112 102v6" stroke="#c98f3e" stroke-width="3" stroke-linecap="round"/>
+  <!-- hammer lying on the top plank -->
+  <path d="M184 85L124 94" stroke="#8a3d14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M184 81L124 90" stroke="#b3521f" stroke-width="8" stroke-linecap="round"/>
+  <rect x="176" y="72" width="16" height="26" rx="3" fill="#2c2118"/>
+  <rect x="176" y="68" width="16" height="26" rx="3" fill="#6b5a48"/>
+  <!-- armchair waiting for the room to be ready -->
+  <path d="M240 156v8M274 156v8" stroke="#6b5a48" stroke-width="5" stroke-linecap="round"/>
+  <rect x="240" y="115" width="34" height="40" rx="8" fill="#0a4c3a"/>
+  <rect x="240" y="110" width="34" height="40" rx="8" fill="#0f6b52"/>
+  <rect x="232" y="139" width="50" height="22" rx="8" fill="#0a4c3a"/>
+  <rect x="232" y="134" width="50" height="22" rx="8" fill="#0f6b52"/>
+</svg>
