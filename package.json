@@ -1,0 +1,15 @@
+{
+  "name": "eirehome-flow",
+  "private": true,
+  "type": "module",
+  "description": "ÉireHome Flow: a guide for first-time home buyers in Ireland.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node tools/serve.js",
+    "test": "node --test",
+    "lint": "eslint .",
+    "check:versions": "node tools/check-versions.js",
+    "bump": "node tools/bump-version.js",
+    "check": "npm run lint && npm test && npm run check:versions"
+  }
+}
