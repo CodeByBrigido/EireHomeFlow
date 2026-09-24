@@ -1,5 +1,7 @@
 # Auditoria do site ÉireHome Flow
 
+> Nota: as referências a `js/app.js` e números de linha são da estrutura anterior a 24/09/2026; o código agora está em `docs/js/core/` e `docs/js/lib/`.
+
 Data: 23/09/2026 · Escopo: `docs/` (versão reestruturada em HTML/CSS/JS puros)
 
 > **Status (atualizado em 23/09/2026):** os itens **C1, C2, C3, A1, A2, A3, A4, A5, A6 e A7** foram corrigidos e testados no navegador (desktop, 375px e 320px). Também foi criada a etapa obrigatória "Create your ÉireHome Flow account" no fim da fase 1, com login via Supabase e progresso salvo na nuvem. Para ativar as contas, veja `SETUP-CONTAS.md`. **Continuam em aberto:** A8 e todos os itens M e baixos, exceto M8 ("Sign in" agora abre a janela de conta). As referências de linha abaixo são da versão auditada; alguns arquivos mudaram depois.

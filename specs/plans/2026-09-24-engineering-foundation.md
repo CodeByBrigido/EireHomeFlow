@@ -10,6 +10,22 @@
 
 ---
 
+## Deviations from the plan (recorded after execution)
+
+- The dev server returns 400 on malformed URLs and explains a busy port.
+- The version check also reads single-quoted attributes and fails when no `?v=` is found at all.
+- `safeNext` has regression tests for the known attack shapes.
+- `startPage` throws if it is called twice.
+- The header comment in `core/account.js` was corrected.
+- CI runs on Node 22 (Node 20 reached end of life in April 2026), with `permissions: contents: read` and a concurrency group.
+- `engines` is `">=20.1"`, because `readdirSync` with `recursive` needs Node 20.1.
+- Docs tidy: a Windows PowerShell tip, a caveat about Python's MIME types, and how to bump twice on the same day.
+- The paths in `SETUP-CONTAS.md` and in the Backend Schema were corrected.
+- `tests/pages-link.test.js` was added: each page module is imported in its own Node process to prove every import links.
+- `?v=` was bumped to `20260925`, because the JavaScript behind the old number changed.
+
+---
+
 ## Ground rules for whoever executes this
 
 - **This is a pure restructure.** No visible text, layout, maths or behaviour changes. If you spot a bug, write it down under "Follow-ups" at the end of this file; don't fix it here.
