@@ -78,7 +78,7 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 
 ## 3. Ciclo de carregamento
 
-1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove.
+1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove. Do mesmo jeito, "Sign in" e o círculo da conta ficam invisíveis até `Account.ready` (`data-auth-pending`), para quem está logado não ver "Sign in" piscar.
 2. Os módulos rodam depois que o HTML é lido (módulos ES são adiados por padrão). O módulo da página chama `startPage()` de `core/app.js`.
 3. `init()` em `core/app.js`:
    1. `loadSaved()` restaura progresso e calculadora do `localStorage`;

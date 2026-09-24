@@ -86,8 +86,8 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - Plano: `specs/plans/2026-09-24-engineering-foundation.md`
 
 ### Marco 3.5: Cabeçalho sem pulo (24/09/2026) ✅
-- [x] M11 cabeçalho, rodapé e avisos copiados de `partials/` para as 12 páginas por `npm run partials`, em vez de chegarem por `fetch` depois da página: nada pula ao trocar de página, e funcionam mesmo sem JavaScript
-- [x] Link ativo da navegação já marcado no HTML; "★ N XP" invisível (ocupando o espaço) até o primeiro `render()`
+- [x] M11 cabeçalho, rodapé e avisos copiados de `partials/` para as 12 páginas por `npm run partials`, em vez de chegarem por `fetch` depois da página: nada pula ao trocar de página, e aparecem mesmo sem JavaScript
+- [x] Link ativo da navegação já marcado no HTML; "★ N XP" invisível (ocupando o espaço) até o primeiro `render()`, e "Sign in" ou o círculo da conta até se saber se a pessoa está logada
 - [x] `npm run check:partials` no `npm run check` e no GitHub Actions
 - [x] Servidor local (`npm start`) guarda fontes e imagens e responde 304, então a fonte não pisca a cada clique
 

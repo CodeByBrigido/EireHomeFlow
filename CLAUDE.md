@@ -46,7 +46,7 @@ EireHomeFlow/
 ├── specs/                    # source of truth (see table below)
 ├── tests/                    # npm test (node:test); calculator tests hold the TRD 12.1 reference values
 ├── tools/                    # serve.js, bump-version.js, check-versions.js, versions.js, partials.js, stamp-partials.js
-├── .github/workflows/        # CI: lint + tests + version check
+├── .github/workflows/        # CI: lint + tests + version check + header/footer check
 ├── supabase/email-templates/ # confirmation + reset emails, pasted into the Supabase dashboard
 └── _original-Backup/         # original Claude Design bundle: READ ONLY, reference only
 ```
@@ -86,7 +86,7 @@ EireHomeFlow/
   ```bash
   npm start
   ```
-  Then open http://localhost:8000/. Without Node: `python -m http.server 8000 --directory docs`, but on Windows some Python installs serve `.js` with the wrong type and the modules do not load (blank header and steps), so `npm start` is the recommended way.
+  Then open http://localhost:8000/. Without Node: `python -m http.server 8000 --directory docs`, but on Windows some Python installs serve `.js` with the wrong type and the modules do not load (nothing works and the steps stay empty), so `npm start` is the recommended way.
 - **Cache-busting:** changed any `.css` or `.js`? Run `npm run bump` (`npm run bump -- YYYYMMDD` for a second change on the same day). Every relative `import` must carry the same `?v=` as the pages. A module imported with two different URLs runs twice with separate state. `npm run check:versions` enforces this. GitHub Pages caches for 10 minutes, so without the bump a visitor can get a new page with an old script.
 - **Header and footer:** edit `docs/partials/*.html`, never the copy between `<!-- include ... -->` and `<!-- /include -->` in a page, then run `npm run partials`. `npm run check:partials` (in `npm run check` and CI) fails if a page is out of date.
 - **Layering:** `js/lib/` must never import from `js/core/` or touch the DOM; that is what keeps it testable in Node. New maths or rules go in `lib/` with a test.

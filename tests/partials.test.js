@@ -36,6 +36,24 @@ test("a changed partial replaces the old copy", () => {
   assert.doesNotMatch(twice, /<footer>Footer<\/footer>/);
 });
 
+test("pages saved with Windows line endings are still recognised and come out as LF", () => {
+  const once = stampPartials(page('  <div data-include="partials/footer.html"></div>'), read);
+  const crlf = once.replace(/\n/g, "\r\n");
+  const twice = stampPartials(crlf, (path) => read(path).replace("Footer", "New footer"));
+  assert.match(twice, /<footer>New footer<\/footer>/);
+  assert.doesNotMatch(twice, /\r/);
+});
+
+test("a slot the stamper can't read is an error, not a page without a header", () => {
+  assert.throws(() => stampPartials(page('  <div data-include="partials/header.html" class="x"></div>'), read), /data-include/);
+  assert.throws(() => stampPartials(page("  <!-- include partials/footer.html: edit that file, then run npm run partials -->\n  <footer>"), read), /include/);
+});
+
+test("the page name is matched literally", () => {
+  const out = stampPartials(page('  <div data-include="partials/header.html"></div>').replace('data-page="guide"', 'data-page="g.ide"'), read);
+  assert.doesNotMatch(out, /is-active/);
+});
+
 test("a missing partial is an error, not an empty header", () => {
   assert.throws(() => stampPartials(page('  <div data-include="partials/nope.html"></div>'), () => undefined), /partials\/nope\.html/);
 });

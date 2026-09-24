@@ -92,8 +92,12 @@ async function onAccountChange(user, event) {
 async function init() {
   loadSaved();
   await loadSteps();
-  if (page.init) page.init();
-  render();
+  try {
+    if (page.init) page.init();
+  } finally {
+    // Render even if the page's init failed, so the shared header still shows its XP.
+    render();
+  }
   showFlash();
   if (AUTH_RETURN.error) {
     showToast("This link has expired or has already been used. Sign in, or ask for a new link.", { error: true, sticky: true });

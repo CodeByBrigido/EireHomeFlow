@@ -103,6 +103,9 @@ button { font-family: inherit; cursor: pointer; }
 .nav__stat--xp { color: #ffd79a; }
 /* The header is in the page from the first frame; the XP count waits (keeping its space) until the script has worked it out. */
 .site-header[data-pending] .nav__stat { visibility: hidden; }
+/* "Sign in" or the account circle waits the same way until we know whether someone is signed in. */
+.site-header[data-auth-pending] .btn-signin,
+.site-header[data-auth-pending] .account-nav { visibility: hidden; }
 .btn-signin { display: inline-block; padding: 8px 18px; border-radius: 999px; border: 2px solid rgba(255, 250, 243, .5); background: none; color: var(--cream); font-weight: 700; font-size: 14px; }
 .btn-signin:hover { background: rgba(255, 250, 243, .12); }
 

@@ -15,9 +15,13 @@ export function renderHeader(p) {
   const streak = Math.min(p.doneCount, 7);
   bind("streak", streak + (streak === 1 ? " day" : " days"));
   bind("xp", p.doneCount * XP_PER_STEP);
-  // The XP count stays hidden until this first render, so it never shows "0 XP" by mistake.
+  // The XP count stays hidden until this first render, so it never shows "0 XP" by mistake;
+  // "Sign in" or the account circle stays hidden until the account state is known.
   const header = document.querySelector(".site-header");
-  if (header) header.removeAttribute("data-pending");
+  if (header) {
+    header.removeAttribute("data-pending");
+    if (Account.ready) header.removeAttribute("data-auth-pending");
+  }
 
   // Signed out: "Sign in" link. Signed in: circle with initials that opens the account menu.
   const user = Account.user;

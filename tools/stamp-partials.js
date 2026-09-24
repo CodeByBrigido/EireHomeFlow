@@ -16,15 +16,25 @@ const read = (path) => {
 };
 
 const stale = [];
+const missing = [];
 for (const name of readdirSync(DOCS).filter((file) => file.endsWith(".html"))) {
   const file = join(DOCS, name);
   const html = readFileSync(file, "utf8");
   const next = stampPartials(html, read);
+  // Every page needs exactly one header and one footer (the footer also holds the notices box).
+  for (const partial of ["partials/header.html", "partials/footer.html"]) {
+    const copies = next.split(`<!-- include ${partial}:`).length - 1;
+    if (copies !== 1) missing.push(`${file} has ${copies} copies of ${partial}`);
+  }
   if (next === html) continue;
   stale.push(file);
   if (!check) writeFileSync(file, next);
 }
 
+if (missing.length) {
+  console.error(missing.join("\n") + '\nAdd <div data-include="partials/<file>.html"></div> where it belongs, then run npm run partials.');
+  process.exit(1);
+}
 if (check && stale.length) {
   console.error(`Header or footer out of date in: ${stale.join(", ")}. Run npm run partials.`);
   process.exit(1);
