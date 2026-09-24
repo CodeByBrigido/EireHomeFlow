@@ -3,14 +3,14 @@
 //   init()     runs once, after the partials and the step list have loaded;
 //   render(p)  runs after every state change, with p = currentProgress();
 //   actions    handlers for data-action="<name>" on that page.
-import { firstName } from "../lib/people.js?v=20260924";
-import { Account } from "./account.js?v=20260924";
-import { PAGE } from "./dom.js?v=20260924";
-import { renderHeader, setMenu } from "./header.js?v=20260924";
-import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260924";
-import { loadSaved, onStateChange, setState } from "./state.js?v=20260924";
-import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260924";
-import { syncOnSignIn } from "./sync.js?v=20260924";
+import { firstName } from "../lib/people.js?v=20260925";
+import { Account } from "./account.js?v=20260925";
+import { PAGE } from "./dom.js?v=20260925";
+import { renderHeader, setMenu } from "./header.js?v=20260925";
+import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260925";
+import { loadSaved, onStateChange, setState } from "./state.js?v=20260925";
+import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260925";
+import { syncOnSignIn } from "./sync.js?v=20260925";
 
 // Links in the confirmation and password emails bring people back with details after
 // "#" (e.g. type=signup, or error_code=otp_expired). Read them before Supabase clears them.

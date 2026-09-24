@@ -1,7 +1,7 @@
 // The journey and calculator state, saved in this browser. Pages change it with setState();
 // core/app.js subscribes with onStateChange() to re-render after every change.
-import { RANGES } from "../lib/calculator.js?v=20260924";
-import { num } from "../lib/format.js?v=20260924";
+import { RANGES } from "../lib/calculator.js?v=20260925";
+import { num } from "../lib/format.js?v=20260925";
 
 const STORAGE_KEY = "eirehome-flow";
 const SAVED_FIELDS = ["ftb", "joint", "newBuild", "apartment", "salary", "salary2", "savings", "gift", "htb", "price", "rate", "term", "calcSaved"];

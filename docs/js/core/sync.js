@@ -1,7 +1,7 @@
 // The cloud copy of journey progress, for signed-in people.
-import { Account } from "./account.js?v=20260924";
-import { setState, state } from "./state.js?v=20260924";
-import { steps } from "./steps.js?v=20260924";
+import { Account } from "./account.js?v=20260925";
+import { setState, state } from "./state.js?v=20260925";
+import { steps } from "./steps.js?v=20260925";
 
 // Returns the cloud save, so a page can wait for it before moving on.
 export function setDone(done) {

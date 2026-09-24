@@ -1,8 +1,8 @@
 // The step list, read from guide.html (the single source of the steps' content).
 // PHASES and steps are live exports: they fill in once loadSteps() has run.
-import { esc } from "../lib/format.js?v=20260924";
-import { progress } from "../lib/progress.js?v=20260924";
-import { state } from "./state.js?v=20260924";
+import { esc } from "../lib/format.js?v=20260925";
+import { progress } from "../lib/progress.js?v=20260925";
+import { state } from "./state.js?v=20260925";
 
 export let PHASES = [];
 export let steps = [];
