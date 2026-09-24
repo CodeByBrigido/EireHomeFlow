@@ -30,6 +30,7 @@ Depois abra `http://localhost:8000/`.
 1. Atualize a sua cópia antes de começar: `git pull`.
 2. Crie um branch para cada mudança: `git switch -c nome-da-mudanca`.
 3. Faça a mudança, confira no navegador e atualize os documentos de `specs/` afetados (regra 1 abaixo).
+   Mudou algum arquivo `.css` ou `.js`? Troque o número depois de `?v=` em todas as páginas de `docs/` (buscar e substituir, ex.: `?v=20260924` por `?v=20261001`). Sem isso, quem visitou o site há pouco pode receber a página nova com o script antigo.
 4. Envie o branch (`git push -u origin nome-da-mudanca`) e abra um Pull Request no GitHub.
 5. Outra pessoa revisa, e o Pull Request entra na `main`. Só então a mudança vai para o site.
 

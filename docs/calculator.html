@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buying power calculator | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/config.js" defer></script>
-  <script src="js/account.js" defer></script>
-  <script src="js/app.js" defer></script>
-  <script src="js/pages/calculator.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260924">
+  <script src="js/config.js?v=20260924" defer></script>
+  <script src="js/account.js?v=20260924" defer></script>
+  <script src="js/app.js?v=20260924" defer></script>
+  <script src="js/pages/calculator.js?v=20260924" defer></script>
 </head>
 <body data-page="calculator">
 <div class="page">
@@ -16,62 +16,82 @@
   <div data-include="partials/header.html"></div>
 
   <main class="main main--wide">
-    <p class="eyebrow">Phase 01: Preparation</p>
+    <p class="eyebrow">Phase 01: Preparation · Step 1</p>
     <h1 class="page-title">What you can actually buy</h1>
-    <p class="calc__intro">The Central Bank caps mortgages at 4× gross income for first-time buyers and 3.5× for everyone else. Fill in your numbers and the results on the right update as you type.</p>
+    <p class="calc__intro">The Central Bank caps mortgages at 4× gross income for first-time buyers and 3.5× for everyone else. Fill in your numbers and the results update as you go. Save them to your journey to complete step 1.</p>
 
     <div class="calc">
-      <div class="form">
-        <div class="pills" role="group" aria-label="Buyer type">
-          <button type="button" class="pill" data-action="ftb" aria-pressed="true">First-time buyer</button>
-          <button type="button" class="pill" data-action="mover" aria-pressed="false">Moving home</button>
-        </div>
-        <div class="pills" role="group" aria-label="Application type">
-          <button type="button" class="pill" data-action="single" aria-pressed="true">Buying alone</button>
-          <button type="button" class="pill" data-action="joint" aria-pressed="false">Joint application</button>
+      <div class="calc__inputs">
+        <div class="form">
+          <div class="pills" role="group" aria-label="Buyer type">
+            <button type="button" class="pill" data-action="ftb" aria-pressed="true">First-time buyer</button>
+            <button type="button" class="pill" data-action="mover" aria-pressed="false">Moving home</button>
+          </div>
+          <div class="pills" role="group" aria-label="Application type">
+            <button type="button" class="pill" data-action="single" aria-pressed="true">Buying alone</button>
+            <button type="button" class="pill" data-action="joint" aria-pressed="false">Joint application</button>
+          </div>
+          <div class="pills pills--three" role="group" aria-label="Type of home">
+            <button type="button" class="pill" data-action="secondHand" aria-pressed="true">Second-hand</button>
+            <button type="button" class="pill" data-action="newHouse" aria-pressed="false">New house</button>
+            <button type="button" class="pill" data-action="newApartment" aria-pressed="false">New apartment</button>
+          </div>
+
+          <!-- Every field keeps its place. One that does not apply is switched off and says why. -->
+          <div class="fields">
+            <label class="field">
+              <span class="field__label">Your gross annual salary</span>
+              <input type="number" min="0" step="1000" data-field="salary" placeholder="45000">
+            </label>
+            <label class="field" id="field-salary2">
+              <span class="field__label">Partner's gross salary</span>
+              <input type="number" min="0" step="1000" data-field="salary2" placeholder="38000" data-placeholder="38000">
+            </label>
+            <label class="field">
+              <span class="field__label">Savings</span>
+              <input type="number" min="0" step="1000" data-field="savings" placeholder="30000">
+            </label>
+            <label class="field">
+              <span class="field__label">Family gift</span>
+              <input type="number" min="0" step="1000" data-field="gift" placeholder="0">
+            </label>
+            <label class="field" id="field-htb">
+              <span class="field__label">Help to Buy relief</span>
+              <input type="number" min="0" step="1000" data-field="htb" placeholder="30000" data-placeholder="30000">
+            </label>
+            <label class="field">
+              <span class="field__label">Target house price</span>
+              <input type="number" min="0" step="5000" data-field="price" placeholder="380000">
+            </label>
+          </div>
+
+          <p class="hint" data-bind="htbHint"></p>
+
+          <div class="fields fields--rates">
+            <div class="range">
+              <div class="range__head">
+                <label class="field__label" for="rate">Interest rate</label>
+                <span class="range__value" id="rate-value" aria-hidden="true"></span>
+              </div>
+              <input class="range__input" id="rate" type="range" min="1" max="8" step="0.05" data-field="rate">
+              <span class="range__scale" aria-hidden="true"><span>1%</span><span>8%</span></span>
+            </div>
+            <div class="range">
+              <div class="range__head">
+                <label class="field__label" for="term">Term</label>
+                <span class="range__value" id="term-value" aria-hidden="true"></span>
+              </div>
+              <input class="range__input" id="term" type="range" min="5" max="35" step="1" data-field="term">
+              <span class="range__scale" aria-hidden="true"><span>5 years</span><span>35 years</span></span>
+            </div>
+          </div>
         </div>
 
-        <div class="fields">
-          <label class="field">
-            <span class="field__label">Your gross annual salary</span>
-            <input type="number" min="0" step="1000" data-field="salary" placeholder="45000">
-          </label>
-          <label class="field" id="field-salary2">
-            <span class="field__label">Partner's gross salary</span>
-            <input type="number" min="0" step="1000" data-field="salary2" placeholder="38000">
-          </label>
-          <label class="field">
-            <span class="field__label">Savings</span>
-            <input type="number" min="0" step="1000" data-field="savings" placeholder="30000">
-          </label>
-          <label class="field">
-            <span class="field__label">Family gift</span>
-            <input type="number" min="0" step="1000" data-field="gift" placeholder="0">
-          </label>
-          <label class="field" id="field-htb">
-            <span class="field__label">Help to Buy relief</span>
-            <input type="number" min="0" step="1000" data-field="htb" placeholder="30000">
-          </label>
-          <label class="field">
-            <span class="field__label">Target house price</span>
-            <input type="number" min="0" step="5000" data-field="price" placeholder="380000">
-          </label>
+        <div class="monthly">
+          <p class="label">Estimated monthly repayment</p>
+          <p class="monthly__value" data-bind="monthly"></p>
+          <p class="monthly__note" data-bind="monthlyNote"></p>
         </div>
-
-        <p class="hint" data-bind="htbHint"></p>
-
-        <div class="fields fields--rates">
-          <label class="field">
-            <span class="field__label">Interest rate (%)</span>
-            <input type="number" min="0" step="0.1" data-field="rate">
-          </label>
-          <label class="field">
-            <span class="field__label">Term (years)</span>
-            <input type="number" min="5" max="35" step="1" data-field="term">
-          </label>
-        </div>
-
-        <p class="disclaimer">Educational estimates based on Central Bank of Ireland macroprudential rules. Each lender applies its own credit criteria and exemptions.</p>
       </div>
 
       <div class="results">
@@ -89,6 +109,10 @@
               <p class="result-main__box-value" data-bind="funds"></p>
             </div>
           </div>
+          <div class="result-main__save">
+            <button type="button" class="result-main__btn" data-action="saveToJourney" data-bind="saveLabel">Save to my journey</button>
+            <p class="result-main__save-note" data-bind="saveNote"></p>
+          </div>
         </div>
 
         <div class="breakdown-card">
@@ -100,14 +124,9 @@
         <div class="verdict" id="verdict" aria-live="polite">
           <p class="verdict__title" data-bind="verdictTitle"></p>
           <p class="verdict__body" data-bind="verdictBody"></p>
-          <a class="verdict__btn" href="journey.html">Back to my journey</a>
         </div>
 
-        <div class="monthly">
-          <p class="label">Estimated monthly repayment</p>
-          <p class="monthly__value" data-bind="monthly"></p>
-          <p class="monthly__note" data-bind="monthlyNote"></p>
-        </div>
+        <p class="disclaimer">Educational estimates based on Central Bank of Ireland rules and Revenue's stamp duty and Help to Buy rules. Each lender applies its own credit criteria and exemptions.</p>
       </div>
     </div>
   </main>

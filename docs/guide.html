@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The full guide | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/config.js" defer></script>
-  <script src="js/account.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260924">
+  <script src="js/config.js?v=20260924" defer></script>
+  <script src="js/account.js?v=20260924" defer></script>
+  <script src="js/app.js?v=20260924" defer></script>
 </head>
 <body data-page="guide">
 <div class="page">
@@ -28,20 +28,21 @@
           </h3>
         </summary>
         <p class="guide-phase__text">Buying power, deposit target and six clean months of statements.</p>
-        <article class="guide-step" id="step-preparation-0" data-blocking="true">
+        <article class="guide-step" id="step-preparation-0" data-blocking="true" data-auto="calculator" data-numbers="calculator">
           <img class="step-image guide-step__image" src="img/steps/preparation-0.svg" alt="A green calculator with a euro sign on its screen, beside a small house and a stack of gold coins" width="320" height="200" loading="lazy">
           <h4 class="guide-step__title">Calculate my buying power</h4>
-          <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">1 evening</span> · <span class="guide-step__cost">Free</span></p>
-          <p class="guide-step__body">The Central Bank of Ireland lets first-time buyers borrow up to four times their gross annual income. Movers are capped at 3.5×. Your income sets how much you can borrow, and the size of your deposit depends on what you have saved.</p>
+          <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">15 minutes</span> · <span class="guide-step__cost">Free</span></p>
+          <p class="guide-step__body">Everything else builds on this number. The Central Bank of Ireland lets first-time buyers borrow up to four times their gross annual income, and movers 3.5 times. Your savings then decide how much deposit and fees you can cover.</p>
           <ul class="guide-step__checklist">
+            <li>Open the calculator and fill in your salary, savings and target price</li>
             <li>Add both gross salaries if you are applying jointly</li>
-            <li>Subtract any car loan or credit union repayments, because lenders stress-test them</li>
-            <li>Write down the maximum price the calculator gives you</li>
+            <li>Choose Save to my journey: this step is ticked for you and later steps show your figures</li>
           </ul>
-          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Lenders can grant exemptions above the multiple, but they are rationed each quarter and go early in the year.</span></p>
+          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Car loans and credit union repayments lower what lenders will offer, because they stress-test every monthly commitment.</span></p>
+          <a class="guide-step__link" href="calculator.html">Open the calculator</a>
           <a class="guide-step__link" href="journey.html#step-preparation-0">Open in my journey</a>
         </article>
-        <article class="guide-step" id="step-preparation-1" data-blocking="true">
+        <article class="guide-step" id="step-preparation-1" data-blocking="true" data-numbers="deposit">
           <img class="step-image guide-step__image" src="img/steps/preparation-1.svg" alt="A terracotta piggy bank with a gold coin dropping into its slot and a round gold tag showing a percent sign" width="320" height="200" loading="lazy">
           <h4 class="guide-step__title">Confirm the 10% deposit</h4>
           <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">Ongoing</span> · <span class="guide-step__cost">10% of price</span></p>
@@ -54,13 +55,14 @@
           <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Six months of regular saving at roughly your future repayment is the strongest thing on your file.</span></p>
           <a class="guide-step__link" href="journey.html#step-preparation-1">Open in my journey</a>
         </article>
-        <article class="guide-step" id="step-preparation-2" data-blocking="true">
+        <article class="guide-step" id="step-preparation-2" data-blocking="true" data-numbers="costs">
           <img class="step-image guide-step__image" src="img/steps/preparation-2.svg" alt="An open gold envelope with green banknotes sticking out, next to two small paper receipts" width="320" height="200" loading="lazy">
           <h4 class="guide-step__title">Set aside cash for the extra costs</h4>
-          <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">Ongoing</span> · <span class="guide-step__cost">About €3,550 + 1% stamp duty</span></p>
-          <p class="guide-step__body">Stamp duty, solicitor, survey and valuation are paid from your own cash, not the mortgage.</p>
+          <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">Ongoing</span> · <span class="guide-step__cost">Stamp duty + about €3,050</span></p>
+          <p class="guide-step__body">Stamp duty, solicitor, survey and valuation are paid from your own cash, not the mortgage. My journey shows your own amounts once you have saved the calculator.</p>
           <ul class="guide-step__checklist">
-            <li>Stamp duty: 1% of the price up to €1m</li>
+            <li>Stamp duty: 1% of the price up to €1m, 2% from €1m to €1.5m and 6% above that</li>
+            <li>On a new home, stamp duty is charged on the price without VAT: 13.5% for a house, 9% for an apartment</li>
             <li>Solicitor: €2,000-3,000 plus VAT and outlays</li>
             <li>Structural survey about €400, bank valuation about €150</li>
           </ul>
@@ -80,30 +82,45 @@
           <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Revolut and credit union accounts count too. The lender will ask for those statements as well.</span></p>
           <a class="guide-step__link" href="journey.html#step-preparation-3">Open in my journey</a>
         </article>
-        <article class="guide-step" id="step-preparation-4" data-blocking="false">
+        <article class="guide-step" id="step-preparation-4" data-blocking="false" data-numbers="htb">
           <img class="step-image guide-step__image" src="img/steps/preparation-4.svg" alt="A green house with a bare timber roof frame and a tower crane behind it, next to a gold coin in a curved green arrow" width="320" height="200" loading="lazy">
           <h4 class="guide-step__title">Check Help to Buy eligibility</h4>
           <p class="guide-step__meta"><span class="guide-step__kind">Optional step</span> · ⏱ <span class="guide-step__time">2 weeks</span> · <span class="guide-step__cost">Refund up to €30,000</span></p>
-          <p class="guide-step__body">Help to Buy refunds income tax and DIRT you already paid, up to €30,000 or 10% of the price, on new builds only.</p>
+          <p class="guide-step__body">Help to Buy gives back the income tax and DIRT you paid in Ireland over the last four years, up to €30,000 or 10% of the price, whichever is lower. It is for first-time buyers of a new build or a self-build, and runs until the end of 2029. The First Home Scheme is a separate shared-equity option worth pricing too.</p>
           <ul class="guide-step__checklist">
-            <li>Apply through Revenue&#x27;s myAccount and get your HTB code</li>
-            <li>New builds and self-builds only. Second-hand homes do not qualify</li>
-            <li>The First Home Scheme is a separate shared-equity option worth pricing</li>
+            <li>You have never bought or built a home, in Ireland or abroad</li>
+            <li>The home is a new build or a self-build worth €500,000 or less</li>
+            <li>Your mortgage is at least 70% of the price, from a qualifying lender</li>
+            <li>You will live in it as your main home for five years</li>
           </ul>
-          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">The refund goes to the developer as part of your deposit, so approval must be in place before you sign.</span></p>
+          <p class="guide-step__howto-label">How to apply</p>
+          <ol class="guide-step__howto">
+            <li>Register for Revenue's myAccount if you are paid through PAYE, or ROS if you are self-employed. Revenue posts you a code to finish registering, so allow a few days.</li>
+            <li>For each of the last four years you want counted, file an Income Tax Return and get your Statement of Liability. Pay any tax you still owe for those years.</li>
+            <li>In myAccount, open Help to Buy under Property and Land Services and complete the application. On ROS, use the Help to Buy applicant link on the home screen.</li>
+            <li>Revenue gives you an application number, an access code and the most you could claim. Your lender will ask to see it.</li>
+            <li>Once you have your loan offer and have signed the contract, go back to Help to Buy and make the claim, uploading the loan offer, your signed acceptance and the contract.</li>
+            <li>Give your claim reference number and access code to the developer, who confirms the claim. Revenue then pays the refund to the developer as part of your deposit.</li>
+          </ol>
+          <p class="guide-step__links">
+            <a href="https://www.revenue.ie/en/property/help-to-buy-incentive/index.aspx">Revenue: Help to Buy</a>
+            <a href="https://www.revenue.ie/en/property/help-to-buy-incentive/what-do-you-need-to-do-before-you-apply.aspx">Revenue: before you apply</a>
+            <a href="https://www.revenue.ie/en/property/help-to-buy-incentive/how-do-you-apply-for-help-to-buy-htb.aspx">Revenue: how to apply</a>
+          </p>
+          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">The application has an expiry date, so claim before it runs out. Self-building? You claim after the first mortgage drawdown, upload the drawdown proof and the lender's valuation instead of a contract, and your solicitor confirms the claim.</span></p>
           <a class="guide-step__link" href="journey.html#step-preparation-4">Open in my journey</a>
         </article>
-        <article class="guide-step" id="step-preparation-5" data-blocking="true" data-account="true">
+        <article class="guide-step" id="step-preparation-5" data-blocking="true" data-auto="account">
           <img class="step-image guide-step__image" src="img/steps/preparation-5.svg" alt="A laptop and a phone showing the same profile icon, with a small cloud and two sync arrows between them" width="320" height="200" loading="lazy">
           <h4 class="guide-step__title">Create your ÉireHome Flow account</h4>
           <p class="guide-step__meta"><span class="guide-step__kind">Blocking step</span> · ⏱ <span class="guide-step__time">2 minutes</span> · <span class="guide-step__cost">Free</span></p>
-          <p class="guide-step__body">An account saves your journey, so you can pick it up on your phone, your laptop or any other device. It is free and takes a couple of minutes.</p>
+          <p class="guide-step__body">An account saves your journey, so you can pick it up on your phone, your laptop or any other device. It is free, and this step is ticked for you as soon as you sign in.</p>
           <ul class="guide-step__checklist">
-            <li>Choose Create account and enter your email and a password</li>
+            <li>Choose Create account and enter your name, email and a password</li>
             <li>Confirm your email address from the link we send you</li>
             <li>Sign in on any other device to see the same progress</li>
           </ul>
-          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Your account stores your email and the steps you have completed. The figures you type into the calculator stay in your browser.</span></p>
+          <p class="guide-step__tip"><strong>Worth knowing:</strong> <span class="guide-step__tip-text">Your account stores your name, your email and the steps you have completed. The figures you type into the calculator stay in your browser.</span></p>
           <a class="guide-step__link" href="journey.html#step-preparation-5">Open in my journey</a>
         </article>
       </details>

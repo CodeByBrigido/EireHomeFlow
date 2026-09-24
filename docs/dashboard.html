@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/config.js" defer></script>
-  <script src="js/account.js" defer></script>
-  <script src="js/app.js" defer></script>
-  <script src="js/pages/dashboard.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260924">
+  <script src="js/config.js?v=20260924" defer></script>
+  <script src="js/account.js?v=20260924" defer></script>
+  <script src="js/app.js?v=20260924" defer></script>
+  <script src="js/pages/dashboard.js?v=20260924" defer></script>
 </head>
 <body data-page="dashboard">
 <div class="page">
@@ -59,8 +59,8 @@
         <div class="result-main">
           <p class="label">Your numbers</p>
           <p class="result-main__value" data-bind="maxPrice"></p>
-          <p class="result-main__note">Maximum property price, based on the figures in your calculator.</p>
-          <div class="result-main__grid">
+          <p class="result-main__note" data-bind="numbersNote"></p>
+          <div class="result-main__grid" id="dash-numbers">
             <div class="result-main__box">
               <p class="result-main__box-label">Max mortgage</p>
               <p class="result-main__box-value" data-bind="maxLoan"></p>
@@ -70,7 +70,7 @@
               <p class="result-main__box-value" data-bind="funds"></p>
             </div>
           </div>
-          <a class="next-up__btn" href="calculator.html">Open the calculator</a>
+          <a class="next-up__btn" href="calculator.html" data-bind="numbersAction">Open the calculator</a>
         </div>
 
         <div class="card dash-account">

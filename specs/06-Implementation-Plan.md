@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -58,6 +58,24 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Capa em WebP com `srcset` (600/900/1200px), de 298 KB para 55-179 KB conforme a tela (M20). O registro C2PA da imagem original não foi mantido, por decisão do Rodrigo
 - [x] `privacy.html` e `terms.html`, com links no rodapé, no cadastro, nas páginas de conta e no perfil
 
+### Marco 3.3: Calculadora dentro da jornada (24/09/2026) ✅
+- [x] Etapa 1 só se conclui pela calculadora ("Save to my journey"), que devolve a pessoa à etapa
+- [x] Etapa de conta marcada sozinha ao entrar
+- [x] "Your numbers" nas etapas 1, 2, 3 e 5, com os números da calculadora (só do navegador)
+- [x] Campos da calculadora fixos: o que não se aplica fica desativado e diz por quê
+- [x] Taxa e prazo em sliders (1-8% e 5-35 anos), o que resolve o prazo 0 ou vazio do M3
+- [x] Prestação mensal logo abaixo do formulário
+- [x] Imposto de selo por faixas (1% / 2% / 6%) e sobre o preço sem IVA em imóvel novo
+- [x] M1 Help to Buy: opções "New house" e "New apartment", teto de €500.000 e empréstimo mínimo de 70%
+- [x] Etapa do Help to Buy com requisitos, passo a passo no myAccount e links para a Revenue
+- [x] Dica "rationed each quarter" substituída na etapa 1
+- [x] Painel da etapa mais compacto (~140px a menos numa etapa comum; ilustração em 300px)
+- [x] Imóvel novo dividido em casa (IVA 13,5%) e apartamento (IVA 9% desde 08/10/2025) no imposto de selo
+- [x] Help to Buy só conta onde o empréstimo pode chegar a 70% do preço (Revenue)
+- [x] Dashboard e calculadora não tratam os números de exemplo como da pessoa antes de salvar
+- [x] Revisão com 4 revisores independentes (código, contas e regras, acessibilidade, textos e documentos); achados conferidos e corrigidos
+- [x] Versão (`?v=`) nos CSS e JS de todas as páginas; guia e partials conferidos com o servidor a cada visita
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -90,11 +108,8 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 **Pronto quando:** um visitante sabe quem está por trás do site, de onde vêm os números e o que é feito com o e-mail dele.
 
 ### Marco 7: Precisão da calculadora e do conteúdo
-- [ ] M1 Help to Buy: teto de €500.000 no valor do imóvel, pergunta "new build?", exigência de empréstimo ≥ 70%
-- [ ] M2 custos consistentes em todo o site (€3,550 vs €3,050) e IVA de 23% no solicitor
-- [ ] M3 validação dos campos (negativos, vazios, prazo fora de 5-35 anos)
-- [ ] Imposto de selo por faixas (1% até €1m, 2% até €1,5m, 6% acima)
-- [ ] Corrigir a dica "rationed each quarter" sobre as exceções ao limite de renda (a cota é anual)
+- [ ] M2 custos consistentes em todo o site e IVA de 23% no solicitor. A etapa 3 já usa os €3,050 da calculadora; falta a Home ("€3,550") e decidir se o solicitor entra com IVA e outlays (muda os valores de referência do TRD)
+- [ ] M3 validação dos campos de valor (negativos e vazios); taxa e prazo já estão resolvidos pelos sliders
 - [ ] M17 rever quais etapas são "Optional"
 - [ ] M9 chip de custo sem o "€ " duplicado
 

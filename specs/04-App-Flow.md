@@ -1,6 +1,6 @@
 # App Flow
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 Os diagramas usam Mermaid (renderizado no GitHub e no VS Code com a extensão de preview). Cada caixa com `.html` é uma página própria.
 
@@ -12,7 +12,8 @@ flowchart LR
   H -->|My journey / Start or Resume / cartão de fase| J[journey.html]
   H -->|Calculator| C[calculator.html]
   G -->|Open in my journey| J
-  C -->|Back to my journey| J
+  C -->|Save to my journey: marca a etapa 1| J
+  J -->|Open the calculator / Change my numbers| C
   J -->|Create account or sign in na etapa de conta| SU[signup.html]
   H & G & J & C -->|Sign in| SI[signin.html]
   SI <-->|links| SU
@@ -30,6 +31,7 @@ flowchart LR
 1. O visitante chega à Home. Sem progresso salvo, o botão diz "Start my journey".
 2. Pode ler o guia completo (`guide.html`), usar a calculadora ou abrir a jornada, sem conta.
 3. Na jornada, "Calculate my buying power" aparece como atual ("Start here"); as demais obrigatórias aparecem bloqueadas.
+4. A etapa 1 só se conclui pela calculadora: "Open the calculator" → preenche → "Save to my journey" → volta à etapa 1 marcada, com os números da pessoa. Daí em diante, as etapas 2, 3 e 5 mostram os números dela.
 
 ## 3. Regra de desbloqueio
 
@@ -44,22 +46,24 @@ etapa i está:
 
 - Etapas **opcionais** nunca bloqueiam as seguintes.
 - A etapa **de conta** (`preparation-5`) é obrigatória: sem ela, nada da fase 2 em diante pode ser concluído.
+- Etapas **automáticas** (`data-auto`) não têm "Complete step": a calculadora (`preparation-0`) é marcada ao salvar na jornada, e a de conta (`preparation-5`) ao entrar. A de conta é marcada mesmo que as anteriores ainda não estejam feitas; a trilha continua parada na primeira obrigatória pendente.
 - Desmarcar uma etapa obrigatória anterior volta a bloquear as seguintes; as que já estavam feitas podem ser desmarcadas.
+- Etapas automáticas não têm "Mark as not done". "Reset progress" limpa tudo, menos a etapa de conta de quem está logado.
 
 ## 4. Abrir e concluir uma etapa (journey.html)
 
 ```mermaid
 flowchart TD
   S[Clica num nó, Open this step, ou chega por journey.html#step-id] --> O[Painel abre; endereço vira #step-id; foco no título]
-  O --> Q1{Etapa já feita?}
+  O --> Q0{Etapa automática?}
+  Q0 -->|Calculadora| C1[Open the calculator ou Change my numbers] --> C2[Save to my journey marca a etapa 1 e volta]
+  Q0 -->|Conta, sem login| A[Create account or sign in → signup.html?next=journey.html#step-preparation-5] --> A2[Ao entrar, a etapa é marcada sozinha]
+  Q0 -->|Conta, com login| A3[Nota: You are signed in as ..., so this step is done]
+  Q0 -->|Não| Q1{Etapa já feita?}
   Q1 -->|Sim| U[Mark as not done] --> U2[Desmarca e salva]
   Q1 -->|Não| Q2{Bloqueada?}
   Q2 -->|Sim| L[Nota: You can complete it once you finish X; botão desativado]
-  Q2 -->|Não| Q3{É a etapa de conta?}
-  Q3 -->|Não| K[Complete step +25 XP] --> K2[Marca, +25 XP, salva local e na nuvem se logado]
-  Q3 -->|Sim| Q4{Logado?}
-  Q4 -->|Sim| K
-  Q4 -->|Não| A[Create account or sign in → signup.html?next=journey.html#step-preparation-5]
+  Q2 -->|Não| K[Complete step +25 XP] --> K2[Marca, +25 XP, salva local e na nuvem se logado]
 ```
 
 "Close" fecha o painel, remove o `#step-...` do endereço e devolve o foco ao nó.
@@ -83,7 +87,7 @@ sequenceDiagram
   M->>H: Abre a Home com #access_token...&type=signup
   H->>SB: supabase-js cria a sessão
   SB-->>H: evento SIGNED_IN
-  H->>SB: carrega e soma o progresso, grava de volta
+  H->>SB: carrega e soma o progresso, marca a etapa de conta, grava de volta
   H-->>P: Aviso fixo "Your email is confirmed. Welcome..., Rodrigo!" + "Go to my journey"
   P->>H: Go to my journey → journey.html#step-preparation-5
 ```
@@ -153,6 +157,8 @@ Quem já está logado usa o mesmo `new-password.html` pelo botão "Change passwo
 | Biblioteca do Supabase não carrega | Contas desligadas nessa visita; páginas de conta e etapa de conta avisam |
 | Link do e-mail expirado ou já usado | Home mostra aviso vermelho fixo e limpa o endereço |
 | `?next=` com endereço estranho | Ignorado; só são aceitos nomes de página do próprio site (ex.: `journey.html#step-aip-0`) |
+| Falha ao ler o progresso da nuvem ao entrar | A etapa de conta é marcada só neste navegador; nada é gravado na conta, para não apagar o progresso salvo lá |
+| Etapa 1 feita sem os números neste navegador (marcada à mão antes, ou outro aparelho) | A jornada pede "Open the calculator and choose Save to my journey"; o Dashboard mostra "Not saved yet"; a calculadora mostra "Save to my journey" |
 | Página logada acessada sem login | Cartão "Sign in to see this page..." com links que voltam para a página |
 | Etapa aberta e página recarregada | O `#step-id` reabre a mesma etapa |
-| Visitante com versão antiga em cache | As funções mantêm assinaturas compatíveis por até 10 minutos de cache do GitHub Pages |
+| Visitante com versão antiga em cache | Páginas carregam CSS e JS com `?v=` (página nova busca scripts novos); o guia e os partials são sempre conferidos com o servidor; os scripts toleram partes que faltam (ver TRD, seção 10) |

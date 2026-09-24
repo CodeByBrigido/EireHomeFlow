@@ -1,6 +1,6 @@
 # PRD: Product Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026 · Dono: Rodrigo
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026 · Dono: Rodrigo
 
 ## 1. Visão
 
@@ -51,27 +51,28 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 
 ### 5.1.1 Guia completo (`guide.html`)
 - As 31 etapas com texto, checklist e dica, em acordeão por fase, legíveis sem conta e sem JavaScript.
-- Cada etapa tem o link "Open in my journey".
+- Cada etapa tem o link "Open in my journey"; a etapa 1 também tem "Open the calculator", e a do Help to Buy tem passo a passo ("How to apply") e links para a Revenue.
 
 ### 5.2 My journey
 - 31 etapas em 6 fases: Preparation (6), Approval in Principle (5), Search & Bidding (5), Legal & Contracts (5), Keys in Hand (4), Settling In (6).
 - 24 etapas obrigatórias ("blocking") e 7 opcionais.
 - Desbloqueio em ordem: uma etapa só pode ser **concluída** depois de todas as obrigatórias anteriores. Qualquer etapa pode ser **lida** a qualquer momento.
-- Painel de detalhe com ilustração da etapa, tempo, custo, texto, checklist, dica e ações (concluir, anterior, próxima).
+- Painel de detalhe com ilustração da etapa, tempo, custo, texto, "Your numbers" (números da pessoa, quando a etapa tem), checklist, passo a passo e links externos (quando a etapa tem), dica e ações (concluir, anterior, próxima).
 - Cada uma das 31 etapas tem uma ilustração própria, no estilo da marca, também exibida no guia.
 - Progresso: anel de %, contagem, "streak", XP (25 por etapa), "Next up" e "Reset progress".
 
 ### 5.3 Calculadora de poder de compra
-- Perfil: primeira compra ou mudança de imóvel; compra sozinho ou conjunta.
-- Entradas: salário(s), poupança, presente familiar, Help to Buy, preço-alvo, taxa de juros, prazo.
-- Saídas: preço máximo, empréstimo máximo, fundos disponíveis, detalhamento de custos, veredito e prestação mensal estimada.
+- Perfil: primeira compra ou mudança de imóvel; compra sozinho ou conjunta; imóvel usado, casa nova ou apartamento novo.
+- Entradas: salário(s), poupança, presente familiar, Help to Buy, preço-alvo, taxa de juros e prazo (os dois últimos em sliders).
+- Saídas: preço máximo, empréstimo máximo, fundos disponíveis, detalhamento de custos (imposto de selo por faixas), veredito e prestação mensal estimada, logo abaixo do formulário.
+- **É o primeiro passo da jornada:** "Save to my journey" conclui a etapa 1, e as etapas seguintes passam a mostrar os números da pessoa (entrada, custos extras, Help to Buy).
 
 ### 5.4 Contas
 - Cadastro com nome, e-mail, senha e confirmação de senha.
 - Senha forte: pelo menos 8 caracteres, 1 maiúscula e 1 caractere especial.
 - Confirmação de e-mail, login, logout e redefinição de senha, com e-mails no visual da marca.
 - Progresso salvo na nuvem e sincronizado entre aparelhos.
-- A etapa **"Create your ÉireHome Flow account"** (última da fase 1) é obrigatória e só pode ser concluída com a pessoa logada.
+- A etapa **"Create your ÉireHome Flow account"** (última da fase 1) é obrigatória e é marcada sozinha quando a pessoa entra na conta.
 
 ### 5.5 Área logada
 - No topo, um círculo com as iniciais do primeiro e do último nome ("Rodrigo Andrade Brigido" vira RB) substitui o botão "Sign in".
@@ -93,9 +94,9 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | ID | Requisito | Critério de aceite |
 |---|---|---|
 | RF-01 | Mostrar o guia completo sem login | As 31 etapas aparecem no HTML de `guide.html`, legíveis com JavaScript desligado |
-| RF-02 | Desbloqueio em ordem | Etapa só conclui se todas as obrigatórias anteriores estiverem feitas; a etapa bloqueada mostra quem a bloqueia |
+| RF-02 | Desbloqueio em ordem | Etapa só conclui se todas as obrigatórias anteriores estiverem feitas; a etapa bloqueada mostra quem a bloqueia. Exceção: a etapa de conta (automática) é marcada ao entrar, mesmo com etapas anteriores pendentes |
 | RF-03 | Leitura livre | Qualquer etapa abre no painel de detalhe, inclusive as bloqueadas |
-| RF-04 | Etapa de conta | Sem login, o botão vira "Create account or sign in" e leva a `signup.html`, que devolve a pessoa à etapa depois; com login, conclui normalmente |
+| RF-04 | Etapa de conta automática | Sem login, o botão é "Create account or sign in" e leva a `signup.html`, que devolve a pessoa à etapa depois; ao entrar, a etapa fica feita sem clique |
 | RF-05 | Salvar progresso local | Recarregar a página mantém etapas feitas e valores da calculadora |
 | RF-06 | Sincronizar com a conta | Ao entrar, progresso local e da conta são somados e gravados; cada mudança posterior é gravada na conta |
 | RF-07 | Logout limpa o navegador | Após "Sign out", nenhuma etapa aparece como feita neste navegador |
@@ -117,6 +118,12 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-23 | Ilustração por etapa | As 31 etapas têm uma ilustração própria (SVG no estilo da marca, com texto alternativo), exibida no painel da etapa e no guia |
 | RF-24 | Páginas legais | `privacy.html` e `terms.html` acessíveis pelo rodapé de todas as páginas; o cadastro informa o aceite dos Termos e o conhecimento da Política |
 | RF-25 | Indicador de XP | O topo mostra só "★ N XP" em amarelo |
+| RF-26 | Calculadora como etapa 1 | A etapa 1 não tem "Complete step": só "Save to my journey", na calculadora, a conclui e devolve a pessoa à etapa |
+| RF-27 | Números da pessoa na jornada | Depois de salvar a calculadora, as etapas 1, 2, 3 e 5 mostram preço máximo, entrada, imposto de selo e custos, e Help to Buy calculados com os números dela; os números continuam só no navegador |
+| RF-28 | Campos fixos na calculadora | Trocar perfil, tipo de compra ou tipo de imóvel não move nenhum campo; o que não se aplica fica desativado e diz por quê |
+| RF-29 | Imposto de selo real | 1% até €1m, 2% até €1,5m, 6% acima; em imóvel novo, sobre o preço sem IVA (13,5% em casa, 9% em apartamento) |
+| RF-30 | Help to Buy com as regras da Revenue | Só primeira compra, imóvel novo, preço até €500.000 e empréstimo possível de pelo menos 70% do preço; a etapa explica quem pode, o passo a passo no myAccount e tem links para a Revenue |
+| RF-31 | Painel compacto | Uma etapa comum cabe no painel sem rolar numa janela de 910px de altura útil ou mais |
 
 ## 7. Requisitos não funcionais
 
@@ -142,7 +149,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 
 **Premissas**
 - O público lê inglês; o texto evita jargão e explica termos locais.
-- Regras de 2026: 4× / 3,5× de renda, 10% de entrada, imposto de selo 1% até €1m, Help to Buy até €30.000.
+- Regras de 2026: 4× / 3,5× de renda, 10% de entrada, imposto de selo de 1% até €1m (2% até €1,5m e 6% acima, sobre o preço sem IVA em imóvel novo), Help to Buy até €30.000 para imóvel novo de até €500.000, até o fim de 2029.
 
 **Restrições**
 - Sem servidor próprio: toda lógica roda no navegador; o Supabase é o único backend.

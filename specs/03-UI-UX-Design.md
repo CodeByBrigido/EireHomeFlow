@@ -1,6 +1,6 @@
 # UI/UX Design
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 Complementa o [Design System](07-Design-System.md), que define cores, tipos e componentes. Este documento define **o que cada página mostra, em que estado e com quais palavras**.
 
@@ -89,13 +89,15 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 
 ### 5.2 Guia completo (`guide.html`)
 - Eyebrow "The full guide", título "Every step, in detail", introdução com link para My journey.
-- Um acordeão por fase. Cada etapa mostra, à esquerda, título, "Blocking/Optional step · ⏱ tempo · custo", texto, checklist, "Worth knowing" e o link **"Open in my journey"** (`journey.html#step-<id>`); à direita, a ilustração da etapa (no celular, acima do título).
+- Um acordeão por fase. Cada etapa mostra, à esquerda, título, "Blocking/Optional step · ⏱ tempo · custo", texto, checklist, passo a passo numerado e links externos quando a etapa tem (ex.: "How to apply" e os links da Revenue no Help to Buy), "Worth knowing" e o link **"Open in my journey"** (`journey.html#step-<id>`); a etapa 1 também tem **"Open the calculator"**. À direita, a ilustração da etapa (no celular, acima do título).
 - É a **fonte única do conteúdo** das etapas (ver TRD).
 
 ### 5.3 Jornada (`journey.html`)
 **Desktop (>960px), sem etapa aberta:** trilha à esquerda e barra lateral de 300px à direita (anel de %, Streak, Earned, "Next up" com "Open this step", "Reset progress"). No fim da trilha, o selo 🔑.
 
 **Com etapa aberta (modo compacto):** trilha estreita à esquerda e painel de detalhe à direita, fixo ao rolar. **Duas rolagens:** a trilha rola com a página e o painel tem rolagem própria, nunca mais alto que a tela. Os botões (Complete step, Previous, Next) ficam presos no rodapé do painel e estão sempre visíveis. No tablet e no celular (≤960px), o painel ocupa a tela inteira, com "Close".
+
+**Espaçamento compacto:** uma etapa comum (ilustração, texto, 3 itens e dica) mede cerca de 810px no painel, contra 950px antes. Ela cabe sem rolar a partir de uns 910px de altura útil de janela. Etapas com números da pessoa ou passo a passo (Help to Buy) são mais longas e rolam no painel.
 
 **Estados de um nó:**
 
@@ -108,31 +110,51 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 | Bloqueada | Bege, texto marrom | 🔒 | "..., locked" |
 | Aberta | Contorno terracota | (do estado) | |
 
-**Painel da etapa:** fase, "Step N of 31", título, chips, **ilustração da etapa** (até 340px, cantos arredondados, **centralizada** no painel), texto, checklist, dica, nota e ações.
+**Painel da etapa:** fase, "Step N of 31", título, chips, **ilustração da etapa** (até 300px, cantos arredondados, **centralizada** no painel), texto, **"Your numbers"** (quando a etapa tem `data-numbers`), checklist, **passo a passo** e **links externos** (quando a etapa tem), dica, nota e ações.
 
+**"Your numbers"** (caixa verde-menta) só mostra números depois que a pessoa salvou a calculadora na jornada; antes disso, diz "Save your numbers in the calculator (step 1) to see your own figures here."
+
+| Etapa | O que a caixa mostra |
+|---|---|
+| 1. Calculate my buying power | Preço máximo, empréstimo máximo, fundos e a prestação no preço-alvo |
+| 2. Confirm the 10% deposit | 10% do preço-alvo, poupança e presente, Help to Buy (se houver) e se os fundos cobrem a entrada |
+| 3. Set aside cash for the extra costs | Imposto de selo, solicitor, vistoria, avaliação e o total além da entrada; aviso quando o imposto é sobre o preço sem IVA |
+| 5. Check Help to Buy eligibility | Quanto a pessoa pode receber no preço-alvo, ou por que não se aplica (mudança, imóvel usado, preço acima de €500.000, empréstimo abaixo de 70%) |
+
+**Etapas automáticas** (`data-auto`): o site marca sozinho e não mostra "Complete step".
 
 | Situação | Nota | Botão principal |
 |---|---|---|
 | Disponível | (nenhuma) | "Complete step +25 XP" |
 | Feita | (nenhuma) | "Mark as not done" |
 | Bloqueada | "You can read this step now. You can complete it once you finish "X"." | desativado |
-| Etapa de conta, ainda carregando | "Checking your account..." | desativado |
-| Etapa de conta, sem login | "Create an account or sign in to complete this step." | "Create account or sign in" (vai para `signup.html?next=...`) |
-| Etapa de conta, contas desligadas | "Accounts are not switched on yet, so this step cannot be completed." | desativado |
+| Etapa 1, calculadora não salva | "This step is ticked for you when you choose Save to my journey in the calculator." | "Open the calculator" |
+| Etapa 1 feita, mas sem os números neste navegador | (nenhuma; "Your numbers" diz "Your figures are not saved in this browser yet. Open the calculator and choose Save to my journey to see them here.") | "Change my numbers" (contorno) |
+| Etapa 1, feita | (nenhuma; "Your numbers" aparece) | "Change my numbers" (contorno) |
+| Etapa de conta, ainda carregando | "Checking your account..." | (nenhum) |
+| Etapa de conta, sem login | "This step is ticked for you as soon as you sign in." | "Create account or sign in" (vai para `signup.html?next=...`) |
+| Etapa de conta, com login | "You are signed in as <e-mail>, so this step is done." (enquanto a marcação chega: "...This step is being ticked for you.") | (nenhum) |
+| Etapa de conta, contas desligadas | "Accounts are not switched on yet, so this step cannot be completed." | (nenhum) |
+
+Links externos (ex.: Revenue no Help to Buy) abrem em nova aba, com "↗" e o aviso "(opens in a new tab)" para leitores de tela.
 
 "← Previous" e "Next →" percorrem todas as 31 etapas.
 
 ### 5.4 Calculadora (`calculator.html`)
-- Eyebrow "Phase 01: Preparation", título "What you can actually buy".
-- **Formulário:** First-time buyer / Moving home; Buying alone / Joint application; campos; dica do Help to Buy; taxa e prazo; aviso "Educational estimates...".
-- **Resultados:** preço máximo com nota do limite, empréstimo máximo e fundos; detalhamento "On a €X house"; veredito com 4 estados e o link "Back to my journey"; prestação mensal.
+- Eyebrow "Phase 01: Preparation · Step 1", título "What you can actually buy". A introdução termina com "Save them to your journey to complete step 1."
+- **Coluna da esquerda:** o formulário e, logo abaixo dele, a **prestação mensal**, para ver o efeito dos sliders sem rolar.
+- **Formulário:** First-time buyer / Moving home; Buying alone / Joint application; **Second-hand / New house / New apartment** (três pílulas; no celular estreito o texto quebra em duas linhas); 6 campos em 3 linhas; dica do Help to Buy; **sliders** de taxa (1% a 8%, passo 0,05, valor "3.90%" ao lado do rótulo) e prazo (5 a 35 anos, "30 years"). O valor ao lado do rótulo é só visual (`aria-hidden`); o leitor de tela ouve o `aria-valuetext` do próprio slider, uma vez.
+- **Campos que não se aplicam não saem do lugar:** ficam desativados (fundo areia, borda tracejada) com o motivo no lugar do número: "Joint applications only" (salário do parceiro), "First-time buyers only" ou "New builds only" (Help to Buy). Ao reativar, o valor digitado volta.
+- **Dica do Help to Buy** conforme o caso: só primeira compra; só imóvel novo; acima de €500.000; 70% do preço acima do empréstimo máximo (não conta); ou o máximo no preço, com aviso para pegar pelo menos 70% de empréstimo se a pessoa estiver usando poupança demais.
+- **Nota do limite:** "Right now your income is the limit..." ou "Right now your savings are the limit. Every extra €1,000 saved raises this by about €X." Preso no degrau do Help to Buy: "...at the highest price where Help to Buy still applies. Going above it without Help to Buy needs about €X more in savings."
+- **Resultados:** preço máximo com nota do limite, empréstimo máximo e fundos, e o botão dourado **"Save to my journey"** ("Update my journey" depois da primeira vez) com a nota "Completes step 1. Your figures stay in this browser."; detalhamento "On a €X house" com o imposto e as faixas usadas ("Stamp duty (1%)", "(1% and 2% bands)", "(1%, 2% and 6% bands)"; em imóvel novo, "... of the price without 13.5% VAT" ou "without 9% VAT"); veredito com 4 estados; aviso "Educational estimates..." no fim.
 
 ### 5.5 Dashboard (`dashboard.html`)
 - **Deslogado ou carregando:** cartão "Loading your account..." ou "Sign in to see this page..." com "Sign in" e "Create an account" (voltam para o Dashboard).
 - **Logado:** eyebrow "Your dashboard", título "Hi, Rodrigo".
   1. Quatro cartões: Progress (% e "N of 31 steps"), Current phase (número e nome), Earned (XP), Next up (terracota, com "Open this step" levando à etapa na jornada).
   2. "Your phases": os 6 cartões de fase.
-  3. "Your numbers" (cartão verde): preço máximo, empréstimo máximo e fundos da calculadora, com "Open the calculator".
+  3. "Your numbers" (cartão verde): preço máximo, empréstimo máximo e fundos da calculadora, com "Open the calculator". Se a calculadora ainda não foi salva neste navegador: "Not saved yet", o texto "Fill in the calculator and choose Save to my journey to see your numbers here. They stay in this browser." e o botão "Use the calculator", sem os números de exemplo.
   4. "Your account": nome, e-mail, "Member since", "✓ Your progress is saved to your account." e "My profile".
 
 ### 5.6 Meu perfil (`profile.html`)

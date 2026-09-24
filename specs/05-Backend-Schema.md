@@ -1,6 +1,6 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.1 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
 
 O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
 
@@ -96,12 +96,12 @@ O ID é `<slug da fase>-<posição na fase, a partir de 0>`, gerado a partir da 
 
 | ID | Etapa | Tipo |
 |---|---|---|
-| `preparation-0` | Calculate my buying power | obrigatória |
+| `preparation-0` | Calculate my buying power | obrigatória, automática (`data-auto="calculator"`: marcada ao salvar a calculadora) |
 | `preparation-1` | Confirm the 10% deposit | obrigatória |
 | `preparation-2` | Set aside cash for the extra costs | obrigatória |
 | `preparation-3` | Keep the bank account clean for six months | obrigatória |
 | `preparation-4` | Check Help to Buy eligibility | opcional |
-| `preparation-5` | Create your ÉireHome Flow account | obrigatória (conta) |
+| `preparation-5` | Create your ÉireHome Flow account | obrigatória, automática (`data-auto="account"`: marcada ao entrar na conta) |
 | `aip-0` | Choose a bank direct or a broker | obrigatória |
 | `aip-1` | Gather six months of bank statements | obrigatória |
 | `aip-2` | Gather payslips and the Employment Detail Summary | obrigatória |
@@ -129,7 +129,8 @@ O ID é `<slug da fase>-<posição na fase, a partir de 0>`, gerado a partir da 
 | `settling-5` | Service the boiler and test the alarms | opcional |
 
 ### Regras para mudar etapas
-- **Pode:** mudar título, texto, checklist, dica, tempo e custo de uma etapa (o ID não muda).
+- **Pode:** mudar título, texto, checklist, passo a passo, links, dica, tempo e custo de uma etapa (o ID não muda).
+- **Pode:** mudar `data-auto` e `data-numbers` de uma etapa. Não há mudança no banco: `done` continua guardando só `true` por ID, e os números da calculadora nunca vão para a nuvem.
 - **Pode:** acrescentar uma etapa **no fim** de uma fase (ela recebe o próximo índice).
 - **Não pode sem migração:** inserir uma etapa no meio de uma fase, reordenar etapas, mover etapa entre fases ou mudar o `data-slug` de uma fase. Isso muda os IDs das etapas seguintes, e o progresso salvo passa a apontar para a etapa errada.
 - Se for inevitável, escreva uma migração SQL que renomeie as chaves em `progress.done` e atualize esta tabela no mesmo trabalho. Exemplo:

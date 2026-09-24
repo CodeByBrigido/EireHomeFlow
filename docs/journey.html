@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My journey | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/config.js" defer></script>
-  <script src="js/account.js" defer></script>
-  <script src="js/app.js" defer></script>
-  <script src="js/pages/journey.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260924">
+  <script src="js/config.js?v=20260924" defer></script>
+  <script src="js/account.js?v=20260924" defer></script>
+  <script src="js/app.js?v=20260924" defer></script>
+  <script src="js/pages/journey.js?v=20260924" defer></script>
 </head>
 <body data-page="journey">
 <div class="page">
@@ -49,8 +49,21 @@
         </div>
         <p class="detail__body" data-bind="openBody"></p>
 
+        <!-- The person's own figures from the calculator, on the steps they belong to. -->
+        <div class="mine" id="mine" hidden>
+          <p class="label mine__title" data-bind="mineTitle"></p>
+          <div class="mine__rows" id="mine-rows"></div>
+          <p class="mine__note" id="mine-note"></p>
+        </div>
+
         <p class="label">What this takes</p>
         <ul class="checklist" id="open-checklist"></ul>
+
+        <div id="open-howto-box" hidden>
+          <p class="label" data-bind="openHowtoLabel"></p>
+          <ol class="howto" id="open-howto"></ol>
+        </div>
+        <div class="step-links" id="open-links" hidden></div>
 
         <div class="tip">
           <p class="label">Worth knowing</p>
@@ -61,6 +74,7 @@
 
         <div class="detail__actions">
           <button type="button" class="btn btn--primary" id="toggle-step" data-action="toggle" data-bind="openAction"></button>
+          <a class="btn btn--primary" id="step-go" href="calculator.html" hidden></a>
           <button type="button" class="btn btn--outline" data-action="prev">← Previous</button>
           <button type="button" class="btn btn--outline" data-action="next">Next →</button>
         </div>
