@@ -53,9 +53,11 @@ Em **Project Settings → API Keys**, copie:
 Cole as duas em `docs/js/config.js`:
 
 ```js
-const SUPABASE_URL = "https://abcd1234.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_...";
+export const SUPABASE_URL = "https://abcd1234.supabase.co";
+export const SUPABASE_ANON_KEY = "sb_publishable_...";
 ```
+
+Mantenha o `export`: `docs/js/core/account.js` importa esses dois nomes, e sem ele nenhum script de página carrega.
 
 Essa chave foi feita para ficar pública no navegador; quem protege os dados são as políticas do passo 2. **Nunca** coloque a chave `service_role` (ou `secret`) nesse arquivo nem em nenhum outro arquivo do repositório.
 

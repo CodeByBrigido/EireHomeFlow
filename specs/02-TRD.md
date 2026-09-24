@@ -192,7 +192,7 @@ Veredito (4 estados):
 
 ## 7. Contas e sincronização
 
-- **Cliente:** `supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
+- **Cliente:** `window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
 - **`Account.ready`** fica `true` quando já se sabe se há alguém logado (primeiro evento do Supabase, ou contas desligadas). Até lá, as páginas logadas mostram "Loading your account...".
 - **Operações** (`core/account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)`, `loadProgress`, `saveProgress`. Cadastro e redefinição usam `homeUrl()` como endereço de retorno.
 - **Eventos** (`onAuthStateChange` → `onAccountChange`, sempre via `setTimeout`):
