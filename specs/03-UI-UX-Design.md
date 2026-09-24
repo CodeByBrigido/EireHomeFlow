@@ -95,7 +95,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 ### 5.3 Jornada (`journey.html`)
 **Desktop (>960px), sem etapa aberta:** trilha à esquerda e barra lateral de 300px à direita (anel de %, Streak, Earned, "Next up" com "Open this step", "Reset progress"). No fim da trilha, o selo 🔑.
 
-**Com etapa aberta (modo compacto):** trilha estreita à esquerda e painel de detalhe à direita, fixo ao rolar. No tablet e no celular (≤960px), o painel ocupa a tela inteira, com "Close".
+**Com etapa aberta (modo compacto):** trilha estreita à esquerda e painel de detalhe à direita, fixo ao rolar. **Duas rolagens:** a trilha rola com a página e o painel tem rolagem própria, nunca mais alto que a tela. Os botões (Complete step, Previous, Next) ficam presos no rodapé do painel e estão sempre visíveis. No tablet e no celular (≤960px), o painel ocupa a tela inteira, com "Close".
 
 **Estados de um nó:**
 
@@ -108,7 +108,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 | Bloqueada | Bege, texto marrom | 🔒 | "..., locked" |
 | Aberta | Contorno terracota | (do estado) | |
 
-**Painel da etapa:** fase, "Step N of 31", título, chips, **ilustração da etapa** (até 420px, cantos arredondados, **centralizada** no painel), texto, checklist, dica, nota e ações.
+**Painel da etapa:** fase, "Step N of 31", título, chips, **ilustração da etapa** (até 340px, cantos arredondados, **centralizada** no painel), texto, checklist, dica, nota e ações.
 
 
 | Situação | Nota | Botão principal |
@@ -203,4 +203,4 @@ Mínimo suportado: 320px sem rolagem horizontal.
 
 ## 8. Pendências de UX (da auditoria)
 
-A8 aviso legal junto aos resultados · M4 "streak" que não é sequência · M5 estado final contraditório · M9 chip "€ Free" · M10 painel alto demais em notebooks · M17 etapas "Optional" que o texto trata como necessárias · M19 jargão e conteúdo para imigrantes. O item M7 (endereço por tela, Voltar do navegador, título por página) foi resolvido com as páginas separadas.
+A8 aviso legal junto aos resultados · M4 "streak" que não é sequência · M5 estado final contraditório · M9 chip "€ Free" · M17 etapas "Optional" que o texto trata como necessárias · M19 jargão e conteúdo para imigrantes. O item M7 (endereço por tela, Voltar do navegador, título por página) foi resolvido com as páginas separadas.

@@ -201,7 +201,7 @@ button { font-family: inherit; cursor: pointer; }
 .finish__note { margin-top: 4px; font-size: 14px; color: var(--faint); }
 
 /* Journey: step detail */
-.detail { position: sticky; top: 104px; padding: 30px; border-radius: 26px; background: #fff; border: 2px solid var(--line); }
+.detail { position: sticky; top: 88px; box-sizing: border-box; max-height: calc(100vh - 104px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 26px 26px 0; border-radius: 26px; background: #fff; border: 2px solid var(--line); }
 .detail__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .detail__top .eyebrow { margin: 0; }
 .detail__close { padding: 7px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--faint); font-weight: 700; font-size: 13px; }
@@ -212,15 +212,15 @@ button { font-family: inherit; cursor: pointer; }
 .chip { margin: 0; padding: 5px 12px; border-radius: 999px; background: var(--sand); color: var(--muted); font-weight: 700; font-size: 12px; }
 .chip--tag { display: inline-block; background: var(--pop); color: #fff; font-weight: 800; }
 .chip--tag.is-optional { background: var(--sand); color: var(--faint); font-weight: 700; }
-.detail__body { margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: var(--body); }
-.detail .label { margin: 26px 0 10px; }
+.detail__body { margin: 14px 0 0; font-size: 17px; line-height: 1.6; color: var(--body); }
+.detail .label { margin: 20px 0 10px; }
 .checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .checklist li { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-radius: 16px; background: #fdfaf4; border: 1px solid var(--sand-2); font-size: 15px; line-height: 1.5; color: var(--body); }
 .checklist__mark { color: var(--ink); font-weight: 800; }
 .tip { margin-top: 20px; padding: 16px 18px; border-radius: 18px; background: var(--peach); }
 .tip .label { margin: 0; color: #8a5420; }
 .tip__text { margin: 7px 0 0; font-size: 15px; line-height: 1.55; color: #6b4a22; }
-.detail__actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+.detail__actions { position: sticky; bottom: 0; z-index: 1; display: flex; gap: 12px; flex-wrap: wrap; margin: 20px -26px 0; padding: 14px 26px 20px; background: #fff; border-top: 1px solid var(--sand); }
 .detail__actions .btn--primary { padding: 13px 24px; font-size: 15px; }
 
 /* Journey: progress sidebar */
@@ -410,7 +410,7 @@ button { font-family: inherit; cursor: pointer; }
 .step-image { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; border-radius: 18px; }
 /* Centred by alignment (justify-content), not by margins. */
 .detail__figure { display: flex; justify-content: center; margin-top: 18px; }
-.detail__image { max-width: 420px; }
+.detail__image { max-width: 340px; }
 /* Guide: text on the left, illustration on the right (percentages); stacked on phones. */
 .guide-step { display: grid; grid-template-columns: 68% 28%; justify-content: space-between; align-items: start; }
 .guide-step > * { grid-column: 1; }
@@ -468,7 +468,8 @@ button { font-family: inherit; cursor: pointer; }
   .dash-row, .profile-grid { grid-template-columns: minmax(0, 1fr); }
   .legal-layout { grid-template-columns: 100%; row-gap: 20px; }
   .legal-aside { position: static; order: -1; margin-top: 16px; }
-  .detail { position: fixed; inset: 0; z-index: 60; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px 32px; border: 0; border-radius: 0; }
+  .detail { position: fixed; inset: 0; z-index: 60; max-height: none; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px 0; border: 0; border-radius: 0; }
+  .detail__actions { margin: 20px -20px 0; padding: 14px 20px 20px; }
 }
 
 /* Phone */

@@ -12,7 +12,7 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Bundle do Claude Design (852 KB, runtime proprietário + React) substituído por HTML/CSS/JS puros
 - [x] Arquivos separados: `index.html`, `partials/header.html`, `partials/footer.html`, `css/styles.css`, `js/*.js`
 - [x] Marcas de IA removidas do texto (travessões, meias-riscas, "≈", clichês) e do código
-- [x] Backup do original em `_original/`
+- [x] Backup do original em `_original-Backup/`
 - [x] Auditoria completa (`AUDITORIA.md`)
 
 ### Marco 1: Correções prioritárias da auditoria (23/09/2026) ✅
@@ -54,6 +54,7 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Menu da conta sem "Change password" (troca de senha só em My profile)
 - [x] Topo com um único "★ N XP" amarelo
 - [x] 31 ilustrações SVG, uma por etapa, no painel da jornada e no guia
+- [x] M10 painel da etapa com rolagem própria, altura máxima da tela e botões sempre visíveis; ilustração do painel em 340px
 - [x] Capa em WebP com `srcset` (600/900/1200px), de 298 KB para 55-179 KB conforme a tela (M20). O registro C2PA da imagem original não foi mantido, por decisão do Rodrigo
 - [x] `privacy.html` e `terms.html`, com links no rodapé, no cadastro, nas páginas de conta e no perfil
 
@@ -63,16 +64,17 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] SMTP: ativar a verificação em duas etapas no Google e gerar a senha de app, **ou** criar conta no Brevo
 - [ ] Preencher "Enable custom SMTP" no Supabase (ver `SETUP-CONTAS.md`)
-- [ ] Criar o bucket público `brand` e enviar `supabase/brand/eirehome-flow-logo.png`
-- [ ] Colar os dois modelos de e-mail e os assuntos
+- [x] Logo dos e-mails publicada pelo GitHub Pages (`docs/img/brand/`), sem bucket no Supabase
+- [ ] Colar os dois modelos de e-mail (versão com a logo no GitHub Pages) e os assuntos
 - [ ] Definir o tamanho mínimo de senha = 8
 - [ ] Teste completo em `http://localhost:8000/`: `signup.html` → e-mail → confirmação (aviso na Home) → concluir a etapa de conta → fase 2 destrava → outro navegador mostra o mesmo progresso → menu da conta → Dashboard → Perfil (mudar o nome) → Sign out → `forgot-password.html` → e-mail → `new-password.html`
 
 **Pronto quando:** todos os passos do teste passam com uma conta real.
 
 ### Marco 5: Publicação
-- [ ] `git init`, `.gitignore` (ignorar `_original/` e `.claude/`), primeiro commit
-- [ ] Repositório no GitHub; GitHub Pages servindo a pasta `/docs`
+- [x] Repositório `CodeByBrigido/EireHomeFlow` no GitHub, com `.gitignore` e `.gitattributes` (final de linha LF para todos)
+- [x] GitHub Pages servindo a pasta `/docs` da `main`: `https://codebybrigido.github.io/EireHomeFlow/`
+- [ ] Convidar os 4 colaboradores e proteger a `main` (mudanças só por Pull Request)
 - [ ] Atualizar **Site URL** e **Redirect URLs** no Supabase com o endereço publicado
 - [ ] Repetir o teste do Marco 4 em produção
 - [ ] (Opcional) domínio próprio, ex.: `eirehomeflow.ie`, com HTTPS
@@ -101,7 +103,6 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 ### Marco 8: Jornada e navegação
 - [ ] M4 decidir "streak": renomear ("Steps done") ou implementar por datas (exige mudar `done`, ver Backend Schema seção 9)
 - [ ] M5 estado final coerente (nota do selo final; "Next up" quando só faltam opcionais)
-- [ ] M10 painel da etapa com altura máxima e rolagem interna em notebooks
 - [ ] Confirmação antes de "Reset progress"
 - [ ] M12 a M14 foco, anúncios e títulos para leitor de tela
 
@@ -111,7 +112,8 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 
 ### Marco 10: Qualidade e manutenção
 - [ ] Testes automáticos da calculadora (página `tests.html` que roda `calc()` contra os valores de referência)
-- [ ] `README.md` do repositório, licença e `fonts/OFL.txt` (M21)
+- [x] `README.md` do repositório, com o fluxo de trabalho em equipe (M21, parte 1)
+- [ ] Licença e `fonts/OFL.txt` (M21, parte 2)
 - [ ] M22 constantes regulatórias num único objeto `RULES`
 - [ ] Escolher analytics sem cookies (Plausible ou Umami) e definir as metas do PRD
 

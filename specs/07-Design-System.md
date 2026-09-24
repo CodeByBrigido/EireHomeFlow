@@ -8,7 +8,7 @@ Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os toke
 
 - **Nome:** ÉireHome Flow. "ÉireHome" em creme e "Flow" em dourado sobre o verde.
 - **Símbolo:** casinha creme com porta terracota sobre fundo verde (ícone do projeto original).
-- **Logo para e-mail:** `supabase/brand/eirehome-flow-logo.png`, selo verde arredondado com o símbolo e o nome, 498×112 px (exibida a 220px).
+- **Logo para e-mail:** `docs/img/brand/eirehome-flow-logo.png` (publicada pelo GitHub Pages), selo verde arredondado com o símbolo e o nome, 498×112 px (exibida a 220px).
 - **Personalidade:** acolhedora, prática, irlandesa (verde de musgo, terracota de tijolo, areia de praia).
 
 ## 2. Cores
@@ -168,6 +168,11 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - **Dashboard:** grade `.dash-stats` de 4 cartões (2 no tablet, 1 abaixo de 480px), `.dash-row` com o cartão verde de números e o cartão da conta (`.dash-account__*`, com faixa `--mint` "Your progress is saved to your account.").
 - **Perfil:** `.profile-grid` com o formulário (`.profile-form`) e o cartão lateral (`.profile-side`); títulos de cartão `.card__title` 20px; valores só de leitura `.field__static`.
 
+### 7.7.1 Painel da etapa
+- `.detail`: fixo (`sticky`, 88px do topo), `box-sizing: border-box`, `max-height: calc(100vh - 104px)` e rolagem própria (`overflow-y: auto`, `overscroll-behavior: contain`).
+- `.detail__actions`: presos no rodapé do painel (`position: sticky; bottom: 0`), fundo branco e linha `--sand` acima.
+- Ao abrir outra etapa, o painel volta ao topo.
+
 ### 7.8 Páginas legais
 - Grade `.legal-layout` com colunas em porcentagem (`68% 28%`, `justify-content: space-between`); uma coluna abaixo de 960px.
 - Conteúdo em `.legal`: parágrafos e itens com `text-align: justify` e `hyphens: auto`; data em `.legal__updated` (14px, `--faint`), resumo em `.legal__summary` (fundo `--sand`, raio 18px).
@@ -176,7 +181,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - Links do rodapé em `.site-footer__links` (sublinhados, `--faint`).
 
 ### 7.9 Ilustrações das etapas
-Uma ilustração por etapa em `docs/img/steps/<id da etapa>.svg`, exibida com a classe `.step-image` (proporção 8:5, raio 18px): até 420px e **centralizada por alinhamento** no painel da jornada (contêiner `.detail__figure` com `display: flex; justify-content: center`, sem margem automática na `.detail__image`) e, no guia, numa coluna à direita do texto (`.guide-step` em grade `68% 28%`; no celular, acima do título, até 320px).
+Uma ilustração por etapa em `docs/img/steps/<id da etapa>.svg`, exibida com a classe `.step-image` (proporção 8:5, raio 18px): até 340px e **centralizada por alinhamento** no painel da jornada (contêiner `.detail__figure` com `display: flex; justify-content: center`, sem margem automática na `.detail__image`) e, no guia, numa coluna à direita do texto (`.guide-step` em grade `68% 28%`; no celular, acima do título, até 320px).
 
 Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_svg.py`):
 - SVG escrito à mão, `viewBox="0 0 320 200"`, `width="320" height="200"`, até 6 KB.
