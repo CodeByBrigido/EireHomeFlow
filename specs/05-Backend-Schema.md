@@ -1,6 +1,6 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
 

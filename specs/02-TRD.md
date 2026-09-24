@@ -11,7 +11,8 @@ Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/
  │   cada uma: <body data-page="...">                            │
  │   partials/header.html e footer.html (fetch)                  │
  │   css/styles.css                                              │
- │   js/pages/<pg>.js (módulo ES) → js/core/*.js → js/lib/*.js    │
+ │   js/pages/<pg>.js (módulo ES) → js/core/*.js → js/lib/*.js   │
+ │   js/config.js (chaves do Supabase, lido por core/account.js) │
  │   conteúdo das etapas: guide.html (lido por fetch + DOMParser)│
  │   localStorage "eirehome-flow" · sessionStorage "eirehome-flash"│
  └──────────────┬─────────────────────────────┬─────────────────┘
@@ -65,7 +66,7 @@ EireHomeFlow/
 ├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
 ├── _original-Backup/              ← bundle original do Claude Design
 ├── tests/                         ← testes automáticos (npm test)
-├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js
+├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js, versions.js
 ├── .github/workflows/checks.yml   ← lint, testes e versões em cada Pull Request (Node 22)
 ├── package.json · eslint.config.js · .editorconfig
 ├── README.md  ·  .gitignore  ·  .gitattributes (LF para todos)
@@ -231,7 +232,7 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 - Páginas que não são o guia buscam `guide.html` (~38 KB) para montar a lista de etapas; o navegador guarda em cache entre páginas.
 - Sem minificação; para esse tamanho, não compensa um processo de build.
 - O GitHub Pages usa cache de 10 minutos, então um visitante pode receber uma página nova com um script antigo (ou o contrário). Três defesas:
-  1. **Versão nos endereços:** as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/pages/<página>.js?v=AAAAMMDD`, e todo `import` entre módulos também leva `?v=AAAAMMDD`. **Ao mudar qualquer CSS ou JS, rode `npm run bump`**, que troca o número em todos os arquivos de `docs/`. O `npm run check:versions` (também no GitHub Actions) falha se sobrar um número diferente ou um arquivo sem versão: um `import` sem `?v=` criaria uma segunda cópia do módulo, com estado separado.
+  1. **Versão nos endereços:** as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/pages/<página>.js?v=AAAAMMDD`, e todo `import` entre módulos também leva `?v=AAAAMMDD`. **Ao mudar qualquer CSS ou JS, rode `npm run bump`**, que troca o número em todos os arquivos de `docs/` pela data de hoje. Numa segunda mudança no mesmo dia, use `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã). O `npm run check:versions` (também no GitHub Actions) falha se sobrar um número diferente ou um arquivo sem versão: um `import` sem `?v=` criaria uma segunda cópia do módulo, com estado separado.
   2. `guide.html` e os partials são buscados com `cache: "no-cache"`: o navegador sempre pergunta ao servidor se mudaram.
   3. Os scripts de página toleram partes que faltam (ex.: `s.howto || []`, elementos ausentes) e `loadSteps` ainda aceita o atributo antigo `data-account`. As assinaturas de funções usadas por outras páginas continuam compatíveis (ex.: `signUp(email, password, name)`).
 
@@ -239,7 +240,7 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 
 | Ambiente | Endereço | Como rodar |
 |---|---|---|
-| Local | `http://localhost:8000/` | `npm start` (Node 20+), ou `python -m http.server 8000 --directory docs` |
+| Local | `http://localhost:8000/` | `npm start` (Node 20.1+), ou `python -m http.server 8000 --directory docs` (no Windows, algumas instalações do Python enviam os `.js` com o tipo errado e os módulos não carregam; prefira `npm start`) |
 | Produção | `https://codebybrigido.github.io/EireHomeFlow/` (GitHub Pages, branch `main`, pasta `/docs`) | Pull Request aceito na `main` do repositório `CodeByBrigido/EireHomeFlow` |
 | Supabase | projeto `dyfxstpbzmihtmccaezs`, região eu-west-1 | Painel supabase.com |
 
@@ -271,7 +272,7 @@ Valores padrão: primeira compra, sozinho, salário 45.000, poupança 35.000, pr
 
 Imposto de um imóvel novo de €400.000: €3,524.23 numa casa (o exemplo da própria Revenue) e €3,669.72 num apartamento.
 
-Estes valores estão em `tests/calculator.test.js`. Ao mudar uma regra, atualize a tabela e o teste no mesmo trabalho.
+Os números desta tabela estão em `tests/calculator.test.js`. Ao mudar uma regra, atualize a tabela e o teste no mesmo trabalho.
 
 ### 12.2 Páginas e navegação
 - As 12 páginas abrem sem erro no console, cada uma com seu título e com o link certo marcado no topo.

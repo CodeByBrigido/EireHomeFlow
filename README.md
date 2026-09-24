@@ -20,7 +20,7 @@ Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e
 
 ## Rodar no computador
 
-Precisa do [Node.js](https://nodejs.org/) 20 ou mais novo (o GitHub Actions usa o 22). Na pasta do repositório, na primeira vez:
+Precisa do [Node.js](https://nodejs.org/) 20.1 ou mais novo (o GitHub Actions usa o 22). Na pasta do repositório, na primeira vez:
 
 ```bash
 npm install
@@ -32,16 +32,20 @@ Depois, para abrir o site:
 npm start
 ```
 
-e abra `http://localhost:8000/`. Quem tem Python também pode usar `python -m http.server 8000 --directory docs`. O site precisa de um servidor porque cabeçalho, rodapé e etapas são carregados por `fetch`: abrir o `index.html` com duplo clique não funciona.
+e abra `http://localhost:8000/`.
+
+No Windows, se o PowerShell disser que a execução de scripts está desabilitada, use o Git Bash ou o Prompt de Comando (cmd), ou rode uma vez `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+Quem tem Python também pode usar `python -m http.server 8000 --directory docs`, mas no Windows algumas instalações do Python enviam os `.js` com o tipo errado e os módulos não carregam (cabeçalho e etapas em branco); por isso o recomendado é `npm start`. O site precisa de um servidor porque cabeçalho, rodapé e etapas são carregados por `fetch`: abrir o `index.html` com duplo clique não funciona.
 
 ## Conferências automáticas
 
 | Comando | O que faz |
 |---|---|
-| `npm test` | Testes da calculadora (valores de referência do TRD), do progresso, da validação e das ferramentas |
+| `npm test` | Testes da calculadora (valores de referência do TRD), do progresso, da validação, da formatação e das ferramentas |
 | `npm run lint` | ESLint: `import` esquecido, variável não declarada, erros comuns |
 | `npm run check:versions` | Confere se todo CSS e JS usa o mesmo `?v=` |
-| `npm run bump` | Troca o `?v=` em todos os arquivos. Use depois de mudar CSS ou JS |
+| `npm run bump` | Troca o `?v=` em todos os arquivos pela data de hoje. Use depois de mudar CSS ou JS. Segunda mudança no mesmo dia: `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã) |
 | `npm run check` | Lint, testes e versões juntos, igual ao GitHub Actions em cada Pull Request |
 
 ## Trabalhar em equipe

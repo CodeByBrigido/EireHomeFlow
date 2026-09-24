@@ -4,7 +4,7 @@
   "type": "module",
   "description": "ÉireHome Flow: a guide for first-time home buyers in Ireland.",
   "engines": {
-    "node": ">=20"
+    "node": ">=20.1"
   },
   "scripts": {
     "start": "node tools/serve.js",

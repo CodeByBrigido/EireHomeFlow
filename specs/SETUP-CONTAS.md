@@ -60,13 +60,13 @@ const SUPABASE_ANON_KEY = "sb_publishable_...";
 Essa chave foi feita para ficar pública no navegador; quem protege os dados são as políticas do passo 2. **Nunca** coloque a chave `service_role` (ou `secret`) nesse arquivo nem em nenhum outro arquivo do repositório.
 
 ## 5. Testar no seu computador
-Na pasta do repositório (com Node.js 20 ou mais novo; na primeira vez, rode antes `npm install`):
+Na pasta do repositório (com Node.js 20.1 ou mais novo; na primeira vez, rode antes `npm install`):
 
 ```bash
 npm start
 ```
 
-Sem Node, `python -m http.server 8000 --directory docs` também serve.
+Sem Node, `python -m http.server 8000 --directory docs` também serve, mas no Windows algumas instalações do Python enviam os `.js` com o tipo errado e os módulos não carregam (cabeçalho e etapas em branco); por isso o recomendado é `npm start`.
 
 Abra `http://localhost:8000/`, clique em **Sign in → Create account**, confirme o e-mail pelo link e entre. Na Journey, a etapa da conta passa a poder ser concluída e a fase 2 destrava. Entrando com a mesma conta em outro navegador, o progresso aparece lá também.
 
