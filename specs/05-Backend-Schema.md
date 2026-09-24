@@ -150,7 +150,7 @@ where done ? 'aip-3';
 
 ## 5. Operações feitas pelo site
 
-| Operação | Chamada (`account.js`) | Quando |
+| Operação | Chamada (`core/account.js`) | Quando |
 |---|---|---|
 | Cadastro | `auth.signUp({ email, password, options: { emailRedirectTo, data: { full_name } } })` | `signup.html` |
 | Login | `auth.signInWithPassword({ email, password })` | `signin.html` |
@@ -204,5 +204,5 @@ Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no
 ## 9. Evoluções previstas (não implementadas)
 
 - Tabela de auditoria de mudanças no progresso, só se houver necessidade de suporte.
-- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), para um "streak" real por dias. Exige migração do formato de `done` e ajuste em `app.js`.
+- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), para um "streak" real por dias. Exige migração do formato de `done` e ajuste em `lib/progress.js` e `core/sync.js`.
 - Compartilhamento de progresso entre duas contas (casal): tabela `households` e políticas RLS próprias.

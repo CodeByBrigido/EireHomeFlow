@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -76,6 +76,15 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Revisão com 4 revisores independentes (código, contas e regras, acessibilidade, textos e documentos); achados conferidos e corrigidos
 - [x] Versão (`?v=`) nos CSS e JS de todas as páginas; guia e partials conferidos com o servidor a cada visita
 
+### Marco 3.4: Base de engenharia (24/09/2026) ✅
+- [x] Módulos ES: `js/lib/` (lógica pura, testada no Node) e `js/core/` (navegador); um módulo por página com `startPage()`
+- [x] `app.js` de 540 linhas dividido em módulos com uma responsabilidade cada
+- [x] Testes automáticos (`npm test`) com os valores de referência do TRD 12.1
+- [x] ESLint, `.editorconfig` e `npm start` (sem precisar de Python)
+- [x] `npm run bump` e `npm run check:versions` para o `?v=`
+- [x] GitHub Actions: lint, testes e versões em cada Pull Request (Node 22)
+- Plano: `specs/plans/2026-09-24-engineering-foundation.md`
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -93,6 +102,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [x] Repositório `CodeByBrigido/EireHomeFlow` no GitHub, com `.gitignore` e `.gitattributes` (final de linha LF para todos)
 - [x] GitHub Pages servindo a pasta `/docs` da `main`: `https://codebybrigido.github.io/EireHomeFlow/`
 - [ ] Convidar os 4 colaboradores e proteger a `main` (mudanças só por Pull Request)
+- [ ] Na proteção da `main`, exigir o check `checks` do GitHub Actions (workflow **Checks**)
 - [ ] Atualizar **Site URL** e **Redirect URLs** no Supabase com o endereço publicado
 - [ ] Repetir o teste do Marco 4 em produção
 - [ ] (Opcional) domínio próprio, ex.: `eirehomeflow.ie`, com HTTPS
@@ -126,10 +136,11 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] Título da página mais descritivo
 
 ### Marco 10: Qualidade e manutenção
-- [ ] Testes automáticos da calculadora (página `tests.html` que roda `calc()` contra os valores de referência)
+- [x] Testes automáticos da calculadora (`tests/calculator.test.js`, no Node, em vez de uma página `tests.html`)
 - [x] `README.md` do repositório, com o fluxo de trabalho em equipe (M21, parte 1)
 - [ ] Licença e `fonts/OFL.txt` (M21, parte 2)
-- [ ] M22 constantes regulatórias num único objeto `RULES`
+- [ ] M22 constantes regulatórias num único objeto `RULES` (já estão todas em `lib/calculator.js`; falta agrupar e mostrar a data da última conferência)
+- [ ] Atualizar o ESLint (a versão 9 não recebe mais suporte) e, quando todos tiverem Node 22, subir `engines` para `>=22`
 - [ ] Escolher analytics sem cookies (Plausible ou Umami) e definir as metas do PRD
 
 ### Marco 11: Conteúdo para imigrantes
@@ -139,7 +150,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 ## Definição de pronto (vale para toda tarefa)
 
 1. Funciona no navegador em desktop e em 375px, sem erros no console.
-2. Passa no roteiro de testes do TRD (seção 12) nas partes afetadas.
+2. Passa no `npm run check` e no roteiro de testes do TRD (seção 12) nas partes afetadas.
 3. Texto novo segue o tom de voz (UI/UX seção 2): sem travessões, sem clichês.
 4. Documentos em `specs/` atualizados, com a data de revisão.
 5. Nenhum ID de etapa mudou sem migração (Backend Schema seção 4).

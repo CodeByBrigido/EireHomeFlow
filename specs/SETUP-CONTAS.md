@@ -60,11 +60,13 @@ const SUPABASE_ANON_KEY = "sb_publishable_...";
 Essa chave foi feita para ficar pública no navegador; quem protege os dados são as políticas do passo 2. **Nunca** coloque a chave `service_role` (ou `secret`) nesse arquivo nem em nenhum outro arquivo do repositório.
 
 ## 5. Testar no seu computador
-Na pasta do repositório:
+Na pasta do repositório (com Node.js 20 ou mais novo; na primeira vez, rode antes `npm install`):
 
 ```bash
-python -m http.server 8000 --directory docs
+npm start
 ```
+
+Sem Node, `python -m http.server 8000 --directory docs` também serve.
 
 Abra `http://localhost:8000/`, clique em **Sign in → Create account**, confirme o e-mail pelo link e entre. Na Journey, a etapa da conta passa a poder ser concluída e a fase 2 destrava. Entrando com a mesma conta em outro navegador, o progresso aparece lá também.
 
@@ -94,7 +96,7 @@ No Supabase, em **Authentication → Sign In / Providers → Email**, defina **M
 - **E-mails:** o serviço de e-mail padrão do Supabase serve só para testes e tem limite baixo de envios por hora. Para uso real, configure um SMTP próprio em **Authentication → Emails → SMTP Settings** (por exemplo Gmail com senha de app, Brevo, Resend ou Postmark). A senha do SMTP fica só no painel do Supabase, nunca no repositório.
 - **Plano gratuito:** projetos gratuitos são pausados depois de um período sem uso. Confira a política atual no painel e considere o plano pago quando houver usuários de verdade.
 - **GDPR:** o site guarda dados pessoais (nome e e-mail). A Privacy Policy está em `docs/privacy.html`. Para apagar um usuário: **Authentication → Users → Delete user**.
-- **Biblioteca:** o `docs/js/account.js` carrega o `@supabase/supabase-js@2` do jsDelivr, e só quando as chaves estão preenchidas. Para travar numa versão exata, troque `@2` pelo número da versão (por exemplo `@2.x.y`).
+- **Biblioteca:** o `docs/js/core/account.js` carrega o `@supabase/supabase-js@2` do jsDelivr, e só quando as chaves estão preenchidas. Para travar numa versão exata, troque `@2` pelo número da versão (por exemplo `@2.x.y`).
 
 ## Como funciona
 - **Sem conta:** o progresso e os valores da calculadora ficam salvos no navegador (`localStorage`).
