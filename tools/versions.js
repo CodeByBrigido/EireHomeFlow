@@ -19,7 +19,7 @@ export const findVersions = (text) => [...text.matchAll(VERSION)].map((m) => m[1
 export function unversionedRefs(text) {
   const refs = [];
   for (const m of text.matchAll(/(?:\bfrom|\bimport)\s*\(?\s*["'](\.{1,2}\/[^"'?]+)["']/g)) refs.push(m[1]);
-  for (const m of text.matchAll(/\b(?:src|href)="((?:js|css)\/[^"?]+\.(?:js|css))"/g)) refs.push(m[1]);
+  for (const m of text.matchAll(/\b(?:src|href)=(["'])((?:js|css)\/[^"'?]+\.(?:js|css))\1/g)) refs.push(m[2]);
   return refs;
 }
 

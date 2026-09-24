@@ -22,6 +22,10 @@ test("unversionedRefs ignores external links, partials and versioned files", () 
   assert.deepEqual(unversionedRefs(html), []);
 });
 
+test("unversionedRefs also reads single-quoted attributes", () => {
+  assert.deepEqual(unversionedRefs("<script src='js/app.js'></script><link href='css/a.css?v=20260924'>"), ["js/app.js"]);
+});
+
 test("bumpText replaces every number with one version", () => {
   assert.equal(bumpText("a?v=20260924 b?v=20260925", "20261001"), "a?v=20261001 b?v=20261001");
 });
