@@ -21,6 +21,7 @@ const AUTH_RETURN = (() => {
 const cleanAuthUrl = () => history.replaceState(null, "", location.pathname);
 
 let page = {};
+let started = false;
 
 const actions = {
   menu: () => setMenu(document.getElementById("account-menu").hidden),
@@ -114,6 +115,8 @@ async function init() {
 }
 
 export function startPage(hooks = {}) {
+  if (started) throw new Error("startPage() was called twice; each page calls it once.");
+  started = true;
   page = hooks;
   Object.assign(actions, hooks.actions);
   onStateChange(render);
