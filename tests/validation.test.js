@@ -9,6 +9,10 @@ test("safeNext only follows this site's page links", () => {
   assert.equal(safeNext("//evil.example", "dashboard.html"), "dashboard.html");
   assert.equal(safeNext("journey.html?x=1", "dashboard.html"), "dashboard.html");
   assert.equal(safeNext(null, "dashboard.html"), "dashboard.html");
+  assert.equal(safeNext("javascript:alert(1)", "dashboard.html"), "dashboard.html");
+  assert.equal(safeNext("../../evil.html", "dashboard.html"), "dashboard.html");
+  assert.equal(safeNext("Dashboard.html", "dashboard.html"), "dashboard.html");
+  assert.equal(safeNext("journey.html#step-aip-0\nevil", "dashboard.html"), "dashboard.html");
 });
 
 test("names need two words of two or more letters", () => {
