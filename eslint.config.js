@@ -5,15 +5,7 @@ import globals from "globals";
 
 export default [
   {
-    ignores: [
-      "node_modules/**",
-      "_original-Backup/**",
-      // Classic scripts, replaced by ES modules in the next task. Delete these lines then.
-      "docs/js/app.js",
-      "docs/js/account.js",
-      "docs/js/config.js",
-      "docs/js/pages/**",
-    ],
+    ignores: ["node_modules/**", "_original-Backup/**"],
   },
   js.configs.recommended,
   {

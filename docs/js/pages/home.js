@@ -1,4 +1,7 @@
 // Home page: ticker loop, phase cards and the start or resume button.
+import { startPage } from "../core/app.js?v=20260924";
+import { bind } from "../core/dom.js?v=20260924";
+import { phaseCardsHtml } from "../core/steps.js?v=20260924";
 
 function initPage() {
   // A second, hidden copy of the ticker items makes the loop seamless.
@@ -15,8 +18,10 @@ function renderPage(p) {
   document.getElementById("phase-cards").innerHTML = phaseCardsHtml();
 }
 
-actions.ticker = () => {
+function toggleTicker() {
   const ticker = document.getElementById("ticker");
   const paused = ticker.classList.toggle("is-paused");
   ticker.querySelector(".ticker__toggle").textContent = paused ? "Play" : "Pause";
-};
+}
+
+startPage({ init: initPage, render: renderPage, actions: { ticker: toggleTicker } });

@@ -1,4 +1,11 @@
 // My profile: change the name on the account, see the email, change password, sign out.
+import { userName } from "../lib/people.js?v=20260924";
+import { Account } from "../core/account.js?v=20260924";
+import { startPage } from "../core/app.js?v=20260924";
+import { bind } from "../core/dom.js?v=20260924";
+import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260924";
+import { renderGate } from "../core/header.js?v=20260924";
+import { showToast } from "../core/notices.js?v=20260924";
 
 let profileFilled = false;
 
@@ -29,3 +36,5 @@ function renderPage() {
   }
   bind("memberSince", new Date(user.created_at).toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" }));
 }
+
+startPage({ init: initPage, render: renderPage });

@@ -1,5 +1,13 @@
-// Buying power calculator. The maths is calc() in app.js, shared with the journey and the dashboard.
+// Buying power calculator. The maths is calc() in lib/calculator.js, shared with the journey and the dashboard.
 // Saving here ticks step 1 of the journey; the figures themselves stay in this browser.
+import { calc, HTB, RANGES, stampBands, verdictKind } from "../lib/calculator.js?v=20260924";
+import { esc, euro, num } from "../lib/format.js?v=20260924";
+import { startPage } from "../core/app.js?v=20260924";
+import { bind } from "../core/dom.js?v=20260924";
+import { flash } from "../core/notices.js?v=20260924";
+import { setState, state } from "../core/state.js?v=20260924";
+import { calculatorStep, stepLink } from "../core/steps.js?v=20260924";
+import { setDone } from "../core/sync.js?v=20260924";
 
 function initPage() {
   document.querySelectorAll("[data-field]").forEach((input) => { input.value = state[input.dataset.field]; });
@@ -70,7 +78,7 @@ function limitNote(s, c) {
 
 function renderPage() {
   const s = state;
-  const c = calc();
+  const c = calc(s);
   const pills = { ftb: s.ftb, mover: !s.ftb, single: !s.joint, joint: s.joint,
     secondHand: !s.newBuild, newHouse: s.newBuild && !s.apartment, newApartment: s.newBuild && !!s.apartment };
   for (const action in pills) {
@@ -118,21 +126,20 @@ function renderPage() {
     euro(c.deposit) + " deposit is due when you sign.");
 
   // Two separate limits: cash for the deposit and costs, and the loan against the income multiple.
-  const cashShort = c.gap > 0;
-  const loanOver = c.loanOver > 0;
+  const kind = verdictKind(c);
   const limit = "your " + c.multiple + "× limit of " + euro(c.maxLoan);
-  const verdict = !cashShort && !loanOver
-    ? ["This price is within your limits",
-      "You have " + euro(c.funds) + " against " + euro(c.cashNeeded) + " needed in cash, and the mortgage of " + euro(c.loanNeeded) + " sits inside " + limit + ". Next step: gather the AIP paperwork."]
-    : cashShort && loanOver
-      ? ["This price is out of reach for now",
-        "You are " + euro(c.gap) + " short in cash, and the mortgage you would need (" + euro(c.loanNeeded) + ") is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."]
-      : cashShort
-        ? ["You are " + euro(c.gap) + " short in cash",
-          "You have " + euro(c.funds) + " available and need " + euro(c.cashNeeded) + " in cash at this price. Save the difference or aim closer to " + euro(c.maxPrice) + "."]
-        : ["The mortgage is over your limit",
-          "You would need to borrow " + euro(c.loanNeeded) + ", which is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."];
-  document.getElementById("verdict").classList.toggle("is-short", cashShort || loanOver);
+  const verdicts = {
+    within: ["This price is within your limits",
+      "You have " + euro(c.funds) + " against " + euro(c.cashNeeded) + " needed in cash, and the mortgage of " + euro(c.loanNeeded) + " sits inside " + limit + ". Next step: gather the AIP paperwork."],
+    outOfReach: ["This price is out of reach for now",
+      "You are " + euro(c.gap) + " short in cash, and the mortgage you would need (" + euro(c.loanNeeded) + ") is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."],
+    cashShort: ["You are " + euro(c.gap) + " short in cash",
+      "You have " + euro(c.funds) + " available and need " + euro(c.cashNeeded) + " in cash at this price. Save the difference or aim closer to " + euro(c.maxPrice) + "."],
+    loanOver: ["The mortgage is over your limit",
+      "You would need to borrow " + euro(c.loanNeeded) + ", which is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."],
+  };
+  const verdict = verdicts[kind];
+  document.getElementById("verdict").classList.toggle("is-short", kind !== "within");
   bind("verdictTitle", verdict[0]);
   bind("verdictBody", verdict[1]);
   bind("monthly", euro(c.monthly));
@@ -141,7 +148,7 @@ function renderPage() {
 
 let saving = false;
 
-Object.assign(actions, {
+startPage({ init: initPage, render: renderPage, actions: {
   ftb: () => setState({ ftb: true }),
   mover: () => setState({ ftb: false }),
   single: () => setState({ joint: false }),
@@ -165,4 +172,4 @@ Object.assign(actions, {
       saving = false;
     }
   },
-});
+} });

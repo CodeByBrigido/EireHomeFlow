@@ -1,10 +1,18 @@
 // Dashboard for signed-in people: progress, current phase, next step, phases,
 // calculator figures and account details.
+import { calc } from "../lib/calculator.js?v=20260924";
+import { euro } from "../lib/format.js?v=20260924";
+import { firstName } from "../lib/people.js?v=20260924";
+import { startPage } from "../core/app.js?v=20260924";
+import { bind } from "../core/dom.js?v=20260924";
+import { renderGate } from "../core/header.js?v=20260924";
+import { state } from "../core/state.js?v=20260924";
+import { phaseCardsHtml, stepLink, steps } from "../core/steps.js?v=20260924";
 
 function renderPage(p) {
   const user = renderGate();
   if (!user) return;
-  const c = calc();
+  const c = calc(state);
   const next = steps[p.unlocked];
   const current = next || steps[steps.length - 1];
 
@@ -31,3 +39,5 @@ function renderPage(p) {
   bind("funds", euro(c.funds));
   bind("memberSince", "Member since " + new Date(user.created_at).toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" }));
 }
+
+startPage({ render: renderPage });

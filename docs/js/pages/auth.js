@@ -1,5 +1,12 @@
 // Account pages: sign in, create account, forgot password and new password.
 // After signing in, people go back to the page in ?next= (or to their dashboard).
+import { firstName } from "../lib/people.js?v=20260924";
+import { safeNext } from "../lib/validation.js?v=20260924";
+import { Account } from "../core/account.js?v=20260924";
+import { startPage } from "../core/app.js?v=20260924";
+import { bind, PAGE } from "../core/dom.js?v=20260924";
+import { checkForm, formValues, renderPasswordRules, sayInForm, watchForm } from "../core/forms.js?v=20260924";
+import { flash } from "../core/notices.js?v=20260924";
 
 const NEXT = safeNext(new URLSearchParams(location.search).get("next"), "dashboard.html");
 
@@ -73,3 +80,5 @@ function renderPage() {
   document.getElementById("auth-note-links").hidden = !note || !Account.ready || !Account.enabled;
   document.getElementById("auth-form").hidden = !!note;
 }
+
+startPage({ init: initPage, render: renderPage });

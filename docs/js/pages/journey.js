@@ -1,5 +1,13 @@
 // My journey: the step path, the step panel and the progress sidebar.
 // Links can open a step (journey.html#step-aip-0) or jump to a phase (journey.html#phase-aip).
+import { calc, HTB } from "../lib/calculator.js?v=20260924";
+import { esc, euro } from "../lib/format.js?v=20260924";
+import { Account } from "../core/account.js?v=20260924";
+import { startPage } from "../core/app.js?v=20260924";
+import { bind } from "../core/dom.js?v=20260924";
+import { setState, state } from "../core/state.js?v=20260924";
+import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260924";
+import { setDone } from "../core/sync.js?v=20260924";
 
 const WAVE = [0, 72, 108, 72, 0, -72, -108, -72];
 const RING = 2 * Math.PI * 43;
@@ -145,7 +153,7 @@ function renderMine(s, isDone) {
   if (!box) return;
   const saved = !!state.calcSaved;
   const mine = s.numbers && (s.auto !== "calculator" || isDone)
-    ? (saved ? mineFor(s.numbers, calc())
+    ? (saved ? mineFor(s.numbers, calc(state))
       : { title: "Your numbers", note: s.auto === "calculator"
         ? "Your figures are not saved in this browser yet. Open the calculator and choose Save to my journey to see them here."
         : "Save your numbers in the calculator (step 1) to see your own figures here." })
@@ -237,7 +245,7 @@ function renderDetail(p, s) {
   }
 }
 
-Object.assign(actions, {
+startPage({ init: initPage, render: renderPage, actions: {
   open: (el) => {
     openStep(el.dataset.id);
     focusDetail();
@@ -252,7 +260,7 @@ Object.assign(actions, {
     const s = steps.find((step) => step.id === state.open);
     if (!s || s.auto) return;
     const isDone = !!state.done[s.id];
-    if (!isDone && steps.indexOf(s) > progress().unlocked) return;
+    if (!isDone && steps.indexOf(s) > currentProgress().unlocked) return;
     setDone({ ...state.done, [s.id]: !isDone });
   },
   prev: () => {
@@ -264,7 +272,7 @@ Object.assign(actions, {
     if (i > -1 && i < steps.length - 1) openStep(steps[i + 1].id);
   },
   openNext: () => {
-    const next = steps[progress().unlocked];
+    const next = steps[currentProgress().unlocked];
     if (!next) return;
     openStep(next.id);
     focusDetail();
@@ -274,4 +282,4 @@ Object.assign(actions, {
     const accountStep = steps.find((s) => s.account);
     setDone(Account.user && accountStep ? { [accountStep.id]: true } : {});
   },
-});
+} });

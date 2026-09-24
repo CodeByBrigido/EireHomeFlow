@@ -1,10 +1,11 @@
 // Accounts: Supabase sign-up and sign-in, plus a cloud copy of journey progress.
 // Settings come from config.js. With them empty, Account.enabled stays false
 // and the Supabase library is never downloaded.
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260924";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js";
 
-const Account = {
+export const Account = {
   enabled: false,
   ready: false,   // true once we know whether someone is signed in
   client: null,
@@ -23,7 +24,7 @@ const Account = {
       this.ready = true;
       return onChange(null, "DISABLED");
     }
-    this.client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    this.client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     this.enabled = true;
     this.client.auth.onAuthStateChange((event, session) => {
       this.user = session ? session.user : null;
