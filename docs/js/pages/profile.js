@@ -1,11 +1,11 @@
 // My profile: change the name on the account, see the email, change password, sign out.
-import { userName } from "../lib/people.js?v=20260926";
-import { Account } from "../core/account.js?v=20260926";
-import { startPage } from "../core/app.js?v=20260926";
-import { bind } from "../core/dom.js?v=20260926";
-import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260926";
-import { renderGate } from "../core/header.js?v=20260926";
-import { showToast } from "../core/notices.js?v=20260926";
+import { userName } from "../lib/people.js?v=20260927";
+import { Account } from "../core/account.js?v=20260927";
+import { startPage } from "../core/app.js?v=20260927";
+import { bind } from "../core/dom.js?v=20260927";
+import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260927";
+import { renderGate } from "../core/header.js?v=20260927";
+import { showToast } from "../core/notices.js?v=20260927";
 
 let profileFilled = false;
 
@@ -17,6 +17,7 @@ function initPage() {
     if (!checkForm(form)) return sayInForm(form, "");
     sayInForm(form, "Saving...");
     try {
+      await Account.whenReady;
       const res = await Account.updateProfile(form.elements.name.value.trim().replace(/\s+/g, " "));
       if (res.error) throw res.error;
       sayInForm(form, "");

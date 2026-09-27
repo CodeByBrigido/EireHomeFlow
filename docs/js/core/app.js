@@ -3,14 +3,14 @@
 //   init()     runs once, after the step list has loaded;
 //   render(p)  runs after every state change, with p = currentProgress();
 //   actions    handlers for data-action="<name>" on that page.
-import { firstName } from "../lib/people.js?v=20260926";
-import { Account } from "./account.js?v=20260926";
-import { PAGE } from "./dom.js?v=20260926";
-import { renderHeader, setMenu } from "./header.js?v=20260926";
-import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260926";
-import { loadSaved, onStateChange, setState } from "./state.js?v=20260926";
-import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260926";
-import { syncOnSignIn } from "./sync.js?v=20260926";
+import { firstName } from "../lib/people.js?v=20260927";
+import { Account } from "./account.js?v=20260927";
+import { PAGE } from "./dom.js?v=20260927";
+import { renderHeader, setMenu } from "./header.js?v=20260927";
+import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260927";
+import { loadSaved, onStateChange, setState, state } from "./state.js?v=20260927";
+import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260927";
+import { syncOnSignIn } from "./sync.js?v=20260927";
 
 // Links in the confirmation and password emails bring people back with details after
 // "#" (e.g. type=signup, or error_code=otp_expired). Read them before Supabase clears them.
@@ -28,6 +28,8 @@ const actions = {
   closeToast: hideToast,
   signOut: async () => {
     setMenu(false);
+    // The account circle can show before Supabase has answered; sign out only once it has.
+    await Account.whenReady;
     if (Account.enabled) await Account.signOut();
     setState({ done: {}, open: null });
     const message = "You have signed out. Your progress is saved in your account.";
@@ -91,6 +93,8 @@ async function onAccountChange(user, event) {
 // npm run partials), so only the step list is fetched here.
 async function init() {
   loadSaved();
+  // Draw the header now, before the step list arrives: XP from the steps ticked in this browser.
+  renderHeader({ doneCount: Object.values(state.done).filter(Boolean).length });
   await loadSteps();
   try {
     if (page.init) page.init();

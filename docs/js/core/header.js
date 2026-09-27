@@ -1,9 +1,9 @@
 // The shared header (active link, XP, sign-in link or account circle), the gate on
 // signed-in pages, and the account menu.
-import { XP_PER_STEP } from "../lib/progress.js?v=20260926";
-import { initials, userName } from "../lib/people.js?v=20260926";
-import { Account } from "./account.js?v=20260926";
-import { bind, PAGE } from "./dom.js?v=20260926";
+import { XP_PER_STEP } from "../lib/progress.js?v=20260927";
+import { initials, userName } from "../lib/people.js?v=20260927";
+import { Account } from "./account.js?v=20260927";
+import { bind, PAGE } from "./dom.js?v=20260927";
 
 export function renderHeader(p) {
   document.querySelectorAll(".nav__link").forEach((link) => {
@@ -15,16 +15,17 @@ export function renderHeader(p) {
   const streak = Math.min(p.doneCount, 7);
   bind("streak", streak + (streak === 1 ? " day" : " days"));
   bind("xp", p.doneCount * XP_PER_STEP);
-  // The XP count stays hidden until this first render, so it never shows "0 XP" by mistake;
-  // "Sign in" or the account circle stays hidden until the account state is known.
+  // The XP count stays hidden until this first render, so it never shows "0 XP" by mistake.
+  // "Sign in" or the account circle is drawn at once from the session saved in this browser;
+  // it waits for Supabase only when someone arrives from an email link.
   const header = document.querySelector(".site-header");
   if (header) {
     header.removeAttribute("data-pending");
-    if (Account.ready) header.removeAttribute("data-auth-pending");
+    if (Account.settled()) header.removeAttribute("data-auth-pending");
   }
 
   // Signed out: "Sign in" link. Signed in: circle with initials that opens the account menu.
-  const user = Account.user;
+  const user = Account.shown();
   const signIn = document.getElementById("signin-link");
   const accountNav = document.getElementById("account-nav");
   if (signIn) signIn.hidden = !!user;
@@ -38,15 +39,16 @@ export function renderHeader(p) {
 }
 
 // Pages for signed-in people show a notice until we know someone is signed in.
+// Someone signed in on this browser sees the page at once, from the saved session.
 export function renderGate() {
-  const user = Account.user;
+  const user = Account.shown();
   document.getElementById("gate").hidden = !!user;
   document.getElementById("signed-in").hidden = !user;
   if (!user) {
-    bind("gateText", !Account.ready ? "Loading your account..."
-      : Account.enabled ? "Sign in to see this page. Your journey, numbers and details are waiting for you."
+    bind("gateText", !Account.settled() ? "Loading your account..."
+      : Account.available() ? "Sign in to see this page. Your journey, numbers and details are waiting for you."
         : "Accounts are not switched on yet. Please check back soon.");
-    document.getElementById("gate-actions").hidden = !Account.ready || !Account.enabled;
+    document.getElementById("gate-actions").hidden = !Account.settled() || !Account.available();
   }
   return user;
 }

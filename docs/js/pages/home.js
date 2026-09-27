@@ -1,7 +1,7 @@
 // Home page: ticker loop, phase cards and the start or resume button.
-import { startPage } from "../core/app.js?v=20260926";
-import { bind } from "../core/dom.js?v=20260926";
-import { phaseCardsHtml } from "../core/steps.js?v=20260926";
+import { startPage } from "../core/app.js?v=20260927";
+import { bind } from "../core/dom.js?v=20260927";
+import { phaseCardsHtml } from "../core/steps.js?v=20260927";
 
 function initPage() {
   // A second, hidden copy of the ticker items makes the loop seamless.

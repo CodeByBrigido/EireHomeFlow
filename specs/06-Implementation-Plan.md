@@ -91,6 +91,13 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] `npm run check:partials` no `npm run check` e no GitHub Actions
 - [x] Servidor local (`npm start`) guarda fontes e imagens e responde 304, então a fonte não pisca a cada clique
 
+### Marco 3.6: Troca de página sem piscar (27/09/2026) ✅
+- [x] Cabeçalho desenhado antes da lista de etapas chegar: XP das etapas deste navegador
+- [x] "Sign in" ou o círculo da conta na hora, pela sessão salva no navegador; o Supabase confere depois. Só a volta de link de e-mail espera
+- [x] Dashboard e Perfil abertos na hora para quem entrou neste navegador; sair e salvar o nome esperam o Supabase
+- [x] Biblioteca do Supabase começa a baixar junto com a página
+- [x] Transição suave entre páginas (`@view-transition`), com o cabeçalho parado; desligada com "reduzir movimento"
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade

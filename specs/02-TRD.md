@@ -1,6 +1,6 @@
 # TRD: Technical Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 27/09/2026
 
 ## 1. Arquitetura
 
@@ -78,7 +78,8 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 
 ## 3. Ciclo de carregamento
 
-1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove. Do mesmo jeito, "Sign in" e o círculo da conta ficam invisíveis até `Account.ready` (`data-auth-pending`), para quem está logado não ver "Sign in" piscar.
+1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove. Logo que os módulos rodam, antes de a lista de etapas chegar, `init()` desenha o cabeçalho: o XP sai das etapas marcadas neste navegador, e "Sign in" ou o círculo da conta sai da sessão que o Supabase salvou neste navegador no último login (`Account.shown()`). Só quem chega por um link de e-mail (`#access_token`, `type=`, `error_code`) espera o Supabase, com os dois invisíveis (`data-auth-pending`). Assim nem "Sign in" pisca para quem está logado, nem o círculo aparece atrasado.
+   Na troca de página, `@view-transition { navigation: auto; }` faz a página nova aparecer num fade de 0,15 s (Chrome, Edge, Safari 18.2+; nos outros, troca como antes), e o cabeçalho, com `view-transition-name: site-header`, fica parado. Desligado com `prefers-reduced-motion: reduce`.
 2. Os módulos rodam depois que o HTML é lido (módulos ES são adiados por padrão). O módulo da página chama `startPage()` de `core/app.js`.
 3. `init()` em `core/app.js`:
    1. `loadSaved()` restaura progresso e calculadora do `localStorage`;
@@ -195,7 +196,8 @@ Veredito (4 estados):
 ## 7. Contas e sincronização
 
 - **Cliente:** `window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
-- **`Account.ready`** fica `true` quando já se sabe se há alguém logado (primeiro evento do Supabase, ou contas desligadas). Até lá, as páginas logadas mostram "Loading your account...".
+- **`Account.ready`** fica `true` quando o Supabase responde se há alguém logado (primeiro evento, ou contas desligadas); `Account.whenReady` é a promessa desse momento. A biblioteca começa a baixar assim que `core/account.js` roda, e não depois da lista de etapas.
+- **Antes da resposta** (`Account.saved`, `shown()`, `settled()`, `available()`): a sessão salva em `localStorage` (`sb-<projeto>-auth-token`) só é **lida**, para desenhar o cabeçalho, o Dashboard e o Perfil na hora. Nada é enviado com ela. O Supabase confere a sessão logo depois; se ela não valer mais, a página passa para "Sign in". Sair e salvar o nome esperam `Account.whenReady`. "Loading your account..." só aparece para quem chega por link de e-mail.
 - **Operações** (`core/account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)`, `loadProgress`, `saveProgress`. Cadastro e redefinição usam `homeUrl()` como endereço de retorno.
 - **Eventos** (`onAuthStateChange` → `onAccountChange`, sempre via `setTimeout`):
 
