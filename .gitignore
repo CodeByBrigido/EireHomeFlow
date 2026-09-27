@@ -3,6 +3,8 @@
 .claude/launch.json
 .vscode/
 .idea/
+.vs/
+node_modules/
 
 # System files
 .DS_Store

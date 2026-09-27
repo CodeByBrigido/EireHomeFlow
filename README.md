@@ -13,24 +13,49 @@ Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e
 | `docs/` | O site. É a pasta publicada pelo GitHub Pages: o que entra na `main` vai ao ar em poucos minutos. |
 | `specs/` | A fonte de verdade do projeto: requisitos, arquitetura, telas, fluxos, banco, plano e design system. |
 | `supabase/email-templates/` | Os e-mails de confirmação e de nova senha, para colar no painel do Supabase. |
+| `tests/` | Os testes automáticos (`npm test`). |
+| `tools/` | Servidor local (`npm start`) e as ferramentas do `?v=`. |
+| `.github/` | O GitHub Actions, que confere cada Pull Request. |
 | `_original-Backup/` | O arquivo original do Claude Design, antes da reestruturação. Só consulta. |
 
 ## Rodar no computador
 
-O cabeçalho e o rodapé são carregados por `fetch`, então o site precisa de um servidor. Abrir o `index.html` com duplo clique não funciona. Na pasta do repositório:
+Precisa do [Node.js](https://nodejs.org/) 20.1 ou mais novo (o GitHub Actions usa o 22). Na pasta do repositório, na primeira vez:
 
 ```bash
-python -m http.server 8000 --directory docs
+npm install
 ```
 
-Depois abra `http://localhost:8000/`.
+Depois, para abrir o site:
+
+```bash
+npm start
+```
+
+e abra `http://localhost:8000/`.
+
+No Windows, se o PowerShell disser que a execução de scripts está desabilitada, use o Git Bash ou o Prompt de Comando (cmd), ou rode uma vez `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+Quem tem Python também pode usar `python -m http.server 8000 --directory docs`, mas no Windows algumas instalações do Python enviam os `.js` com o tipo errado e os módulos não carregam (cabeçalho e etapas em branco); por isso o recomendado é `npm start`. O site precisa de um servidor porque cabeçalho, rodapé e etapas são carregados por `fetch`: abrir o `index.html` com duplo clique não funciona.
+
+## Conferências automáticas
+
+| Comando | O que faz |
+|---|---|
+| `npm test` | Testes da calculadora (valores de referência do TRD), do progresso, da validação, da formatação e das ferramentas |
+| `npm run lint` | ESLint: `import` esquecido, variável não declarada, erros comuns |
+| `npm run check:versions` | Confere se todo CSS e JS usa o mesmo `?v=` |
+| `npm run bump` | Troca o `?v=` em todos os arquivos pela data de hoje. Use depois de mudar CSS ou JS. Segunda mudança no mesmo dia: `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã) |
+| `npm run partials` | Copia `docs/partials/header.html` e `footer.html` para as 12 páginas. Use depois de mudar um dos dois |
+| `npm run check:partials` | Confere se todas as páginas têm o cabeçalho e o rodapé atuais |
+| `npm run check` | Lint, testes, versões e partials juntos, igual ao GitHub Actions em cada Pull Request |
 
 ## Trabalhar em equipe
 
 1. Atualize a sua cópia antes de começar: `git pull`.
 2. Crie um branch para cada mudança: `git switch -c nome-da-mudanca`.
 3. Faça a mudança, confira no navegador e atualize os documentos de `specs/` afetados (regra 1 abaixo).
-   Mudou algum arquivo `.css` ou `.js`? Troque o número depois de `?v=` em todas as páginas de `docs/` (buscar e substituir, ex.: `?v=20260924` por `?v=20261001`). Sem isso, quem visitou o site há pouco pode receber a página nova com o script antigo.
+   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Mudou algum arquivo `.css` ou `.js`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
 4. Envie o branch (`git push -u origin nome-da-mudanca`) e abra um Pull Request no GitHub.
 5. Outra pessoa revisa, e o Pull Request entra na `main`. Só então a mudança vai para o site.
 

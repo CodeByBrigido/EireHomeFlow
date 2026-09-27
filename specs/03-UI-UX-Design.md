@@ -1,6 +1,6 @@
 # UI/UX Design
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 27/09/2026
 
 Complementa o [Design System](07-Design-System.md), que define cores, tipos e componentes. Este documento define **o que cada página mostra, em que estado e com quais palavras**.
 
@@ -150,7 +150,7 @@ Links externos (ex.: Revenue no Help to Buy) abrem em nova aba, com "↗" e o av
 - **Resultados:** preço máximo com nota do limite, empréstimo máximo e fundos, e o botão dourado **"Save to my journey"** ("Update my journey" depois da primeira vez) com a nota "Completes step 1. Your figures stay in this browser."; detalhamento "On a €X house" com o imposto e as faixas usadas ("Stamp duty (1%)", "(1% and 2% bands)", "(1%, 2% and 6% bands)"; em imóvel novo, "... of the price without 13.5% VAT" ou "without 9% VAT"); veredito com 4 estados; aviso "Educational estimates..." no fim.
 
 ### 5.5 Dashboard (`dashboard.html`)
-- **Deslogado ou carregando:** cartão "Loading your account..." ou "Sign in to see this page..." com "Sign in" e "Create an account" (voltam para o Dashboard).
+- **Deslogado ou carregando:** cartão "Sign in to see this page..." com "Sign in" e "Create an account" (voltam para o Dashboard). "Loading your account..." só aparece para quem chega por um link de e-mail. Quem entrou neste navegador vê o Dashboard na hora, sem esse cartão.
 - **Logado:** eyebrow "Your dashboard", título "Hi, Rodrigo".
   1. Quatro cartões: Progress (% e "N of 31 steps"), Current phase (número e nome), Earned (XP), Next up (terracota, com "Open this step" levando à etapa na jornada).
   2. "Your phases": os 6 cartões de fase.

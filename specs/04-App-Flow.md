@@ -1,6 +1,6 @@
 # App Flow
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/2026
 
 Os diagramas usam Mermaid (renderizado no GitHub e no VS Code com a extensão de preview). Cada caixa com `.html` é uma página própria.
 
@@ -161,4 +161,4 @@ Quem já está logado usa o mesmo `new-password.html` pelo botão "Change passwo
 | Etapa 1 feita sem os números neste navegador (marcada à mão antes, ou outro aparelho) | A jornada pede "Open the calculator and choose Save to my journey"; o Dashboard mostra "Not saved yet"; a calculadora mostra "Save to my journey" |
 | Página logada acessada sem login | Cartão "Sign in to see this page..." com links que voltam para a página |
 | Etapa aberta e página recarregada | O `#step-id` reabre a mesma etapa |
-| Visitante com versão antiga em cache | Páginas carregam CSS e JS com `?v=` (página nova busca scripts novos); o guia e os partials são sempre conferidos com o servidor; os scripts toleram partes que faltam (ver TRD, seção 10) |
+| Visitante com versão antiga em cache | Páginas carregam CSS e JS com `?v=` (página nova busca scripts novos); o guia é sempre conferido com o servidor, e cabeçalho e rodapé vêm dentro de cada página; os scripts toleram partes que faltam (ver TRD, seção 10) |

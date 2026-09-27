@@ -1,6 +1,6 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.2 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
 
 O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
 
@@ -150,7 +150,7 @@ where done ? 'aip-3';
 
 ## 5. Operações feitas pelo site
 
-| Operação | Chamada (`account.js`) | Quando |
+| Operação | Chamada (`core/account.js`) | Quando |
 |---|---|---|
 | Cadastro | `auth.signUp({ email, password, options: { emailRedirectTo, data: { full_name } } })` | `signup.html` |
 | Login | `auth.signInWithPassword({ email, password })` | `signin.html` |
@@ -204,5 +204,5 @@ Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no
 ## 9. Evoluções previstas (não implementadas)
 
 - Tabela de auditoria de mudanças no progresso, só se houver necessidade de suporte.
-- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), para um "streak" real por dias. Exige migração do formato de `done` e ajuste em `app.js`.
+- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), para um "streak" real por dias. Exige migração do formato de `done` e ajuste em `lib/progress.js` e `core/sync.js`.
 - Compartilhamento de progresso entre duas contas (casal): tabela `households` e políticas RLS próprias.

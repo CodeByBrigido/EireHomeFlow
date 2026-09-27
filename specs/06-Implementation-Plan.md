@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 24/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -76,6 +76,28 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Revisão com 4 revisores independentes (código, contas e regras, acessibilidade, textos e documentos); achados conferidos e corrigidos
 - [x] Versão (`?v=`) nos CSS e JS de todas as páginas; guia e partials conferidos com o servidor a cada visita
 
+### Marco 3.4: Base de engenharia (24/09/2026) ✅
+- [x] Módulos ES: `js/lib/` (lógica pura, testada no Node) e `js/core/` (navegador); um módulo por página com `startPage()`
+- [x] `app.js` de 540 linhas dividido em módulos com uma responsabilidade cada
+- [x] Testes automáticos (`npm test`) com os valores de referência do TRD 12.1
+- [x] ESLint, `.editorconfig` e `npm start` (sem precisar de Python)
+- [x] `npm run bump` e `npm run check:versions` para o `?v=`
+- [x] GitHub Actions: lint, testes e versões em cada Pull Request (Node 22)
+- Plano: `specs/plans/2026-09-24-engineering-foundation.md`
+
+### Marco 3.5: Cabeçalho sem pulo (24/09/2026) ✅
+- [x] M11 cabeçalho, rodapé e avisos copiados de `partials/` para as 12 páginas por `npm run partials`, em vez de chegarem por `fetch` depois da página: nada pula ao trocar de página, e aparecem mesmo sem JavaScript
+- [x] Link ativo da navegação já marcado no HTML; "★ N XP" invisível (ocupando o espaço) até o primeiro `render()`, e "Sign in" ou o círculo da conta até se saber se a pessoa está logada
+- [x] `npm run check:partials` no `npm run check` e no GitHub Actions
+- [x] Servidor local (`npm start`) guarda fontes e imagens e responde 304, então a fonte não pisca a cada clique
+
+### Marco 3.6: Troca de página sem piscar (27/09/2026) ✅
+- [x] Cabeçalho desenhado antes da lista de etapas chegar: XP das etapas deste navegador
+- [x] "Sign in" ou o círculo da conta na hora, pela sessão salva no navegador; o Supabase confere depois. Só a volta de link de e-mail espera
+- [x] Dashboard e Perfil abertos na hora para quem entrou neste navegador; sair e salvar o nome esperam o Supabase
+- [x] Biblioteca do Supabase começa a baixar junto com a página
+- [x] Transição suave entre páginas (`@view-transition`), com o cabeçalho parado; desligada com "reduzir movimento"
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -93,6 +115,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [x] Repositório `CodeByBrigido/EireHomeFlow` no GitHub, com `.gitignore` e `.gitattributes` (final de linha LF para todos)
 - [x] GitHub Pages servindo a pasta `/docs` da `main`: `https://codebybrigido.github.io/EireHomeFlow/`
 - [ ] Convidar os 4 colaboradores e proteger a `main` (mudanças só por Pull Request)
+- [ ] Na proteção da `main`, exigir o check `checks` do GitHub Actions (workflow **Checks**)
 - [ ] Atualizar **Site URL** e **Redirect URLs** no Supabase com o endereço publicado
 - [ ] Repetir o teste do Marco 4 em produção
 - [ ] (Opcional) domínio próprio, ex.: `eirehomeflow.ie`, com HTTPS
@@ -126,10 +149,11 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] Título da página mais descritivo
 
 ### Marco 10: Qualidade e manutenção
-- [ ] Testes automáticos da calculadora (página `tests.html` que roda `calc()` contra os valores de referência)
+- [x] Testes automáticos da calculadora (`tests/calculator.test.js`, no Node, em vez de uma página `tests.html`)
 - [x] `README.md` do repositório, com o fluxo de trabalho em equipe (M21, parte 1)
 - [ ] Licença e `fonts/OFL.txt` (M21, parte 2)
-- [ ] M22 constantes regulatórias num único objeto `RULES`
+- [ ] M22 constantes regulatórias num único objeto `RULES` (já estão todas em `lib/calculator.js`; falta agrupar e mostrar a data da última conferência)
+- [ ] Atualizar o ESLint (a versão 9 não recebe mais suporte) e, quando todos tiverem Node 22, subir `engines` para `>=22`
 - [ ] Escolher analytics sem cookies (Plausible ou Umami) e definir as metas do PRD
 
 ### Marco 11: Conteúdo para imigrantes
@@ -139,7 +163,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 ## Definição de pronto (vale para toda tarefa)
 
 1. Funciona no navegador em desktop e em 375px, sem erros no console.
-2. Passa no roteiro de testes do TRD (seção 12) nas partes afetadas.
+2. Passa no `npm run check` e no roteiro de testes do TRD (seção 12) nas partes afetadas.
 3. Texto novo segue o tom de voz (UI/UX seção 2): sem travessões, sem clichês.
 4. Documentos em `specs/` atualizados, com a data de revisão.
 5. Nenhum ID de etapa mudou sem migração (Backend Schema seção 4).

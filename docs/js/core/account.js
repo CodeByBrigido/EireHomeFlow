@@ -1,33 +1,78 @@
-// Accounts: Supabase sign-up and sign-in, plus a cloud copy of journey progress.
+// Accounts: Supabase sign-up and sign-in, and reading and writing the progress row (merging is in sync.js).
 // Settings come from config.js. With them empty, Account.enabled stays false
 // and the Supabase library is never downloaded.
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260927";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js";
+const CONFIGURED = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 
-const Account = {
+// Coming back from an email link (sign-up confirmation, password reset): only Supabase can
+// tell who this is, so the header waits for it. Every other visit can be drawn at once.
+const RETURNING = /(^|&)(access_token|error_code|type)=/.test(location.hash.slice(1)) || /[?&](code|error_code)=/.test(location.search);
+
+// The session Supabase saved in this browser at the last sign-in. It is only read, to draw
+// the header and the signed-in pages straight away; Supabase checks it moments later.
+function savedUser() {
+  try {
+    const ref = new URL(SUPABASE_URL).hostname.split(".")[0];
+    const saved = JSON.parse(localStorage.getItem("sb-" + ref + "-auth-token"));
+    const session = saved && (saved.currentSession || saved);
+    return (session && session.user) || null;
+  } catch (err) {
+    return null;
+  }
+}
+
+// The library starts downloading as soon as this module runs, not after the step list loads.
+const library = CONFIGURED ? loadScript(SUPABASE_JS) : Promise.resolve();
+library.catch(() => {}); // the failure is reported by init()
+
+let markReady;
+const whenReady = new Promise((resolve) => { markReady = resolve; });
+
+export const Account = {
   enabled: false,
-  ready: false,   // true once we know whether someone is signed in
+  ready: false,   // true once Supabase has said whether someone is signed in
+  whenReady,      // resolves at that moment
   client: null,
   user: null,
+  saved: CONFIGURED ? savedUser() : null,
+
+  // Who to show as signed in: before Supabase answers, the session saved in this browser.
+  shown() {
+    return this.ready ? this.user : this.saved;
+  },
+
+  // Whether the header can already choose between "Sign in" and the account circle.
+  settled() {
+    return this.ready || !RETURNING;
+  },
+
+  // Whether accounts are on: before Supabase answers, whether config.js is filled in.
+  available() {
+    return this.ready ? this.enabled : CONFIGURED;
+  },
 
   // onChange(user, event) runs on page load and on every sign-in, sign-out or password recovery.
   async init(onChange) {
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    const done = (user, event) => {
       this.ready = true;
-      return onChange(null, "DISABLED");
-    }
+      markReady();
+      return onChange(user, event);
+    };
+    if (!CONFIGURED) return done(null, "DISABLED");
     try {
-      await loadScript(SUPABASE_JS);
+      await library;
     } catch (err) {
       console.error("Could not load the Supabase library, so accounts are off for this visit.", err);
-      this.ready = true;
-      return onChange(null, "DISABLED");
+      return done(null, "DISABLED");
     }
-    this.client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    this.client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     this.enabled = true;
     this.client.auth.onAuthStateChange((event, session) => {
       this.user = session ? session.user : null;
       this.ready = true;
+      markReady();
       // Supabase advises against calling its other methods inside this callback, so defer.
       setTimeout(() => onChange(this.user, event), 0);
     });

@@ -101,6 +101,19 @@ button { font-family: inherit; cursor: pointer; }
 .nav__link.is-active { color: var(--cream); border-bottom-color: var(--gold); }
 .nav__stat { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 74px; font-weight: 800; font-size: 15px; }
 .nav__stat--xp { color: #ffd79a; }
+/* The header is in the page from the first frame; the XP count waits (keeping its space) until the script has worked it out. */
+.site-header[data-pending] .nav__stat { visibility: hidden; }
+/* "Sign in" or the account circle waits the same way until we know whether someone is signed in. */
+.site-header[data-auth-pending] .btn-signin,
+.site-header[data-auth-pending] .account-nav { visibility: hidden; }
+
+/* Moving to another page cross-fades instead of flashing (Chrome, Edge, Safari 18.2+; other
+   browsers change page as before). The header has the same name on every page, so it stays still. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+}
+.site-header { view-transition-name: site-header; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .15s; }
 .btn-signin { display: inline-block; padding: 8px 18px; border-radius: 999px; border: 2px solid rgba(255, 250, 243, .5); background: none; color: var(--cream); font-weight: 700; font-size: 14px; }
 .btn-signin:hover { background: rgba(255, 250, 243, .12); }
 

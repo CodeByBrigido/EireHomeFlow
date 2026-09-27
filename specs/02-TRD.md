@@ -1,6 +1,6 @@
 # TRD: Technical Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 27/09/2026
 
 ## 1. Arquitetura
 
@@ -9,9 +9,10 @@ Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/
  ┌──────────────────────────────────────────────────────────────┐
  │ 12 páginas .html (uma por lugar do site)                      │
  │   cada uma: <body data-page="...">                            │
- │   partials/header.html e footer.html (fetch)                  │
+ │   cabeçalho e rodapé já no HTML (copiados de partials/)       │
  │   css/styles.css                                              │
- │   js/config.js → js/account.js → js/app.js → js/pages/<pg>.js │
+ │   js/pages/<pg>.js (módulo ES) → js/core/*.js → js/lib/*.js   │
+ │   js/config.js (chaves do Supabase, lido por core/account.js) │
  │   conteúdo das etapas: guide.html (lido por fetch + DOMParser)│
  │   localStorage "eirehome-flow" · sessionStorage "eirehome-flash"│
  └──────────────┬─────────────────────────────┬─────────────────┘
@@ -25,7 +26,7 @@ Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/
 ```
 
 - **Uma página por lugar.** Todo clique que leva a outro lugar abre um `.html` próprio. Painéis dentro de uma página (a etapa aberta na jornada) ganham endereço com `#`.
-- **Sem build, sem framework.** HTML, CSS e JavaScript puros, scripts clássicos com `defer`.
+- **Sem build, sem framework.** HTML, CSS e JavaScript puros, em módulos ES (`<script type="module">`), carregados direto pelo navegador.
 - **Sem servidor próprio.** A lógica roda no navegador; o Supabase cuida de login e do progresso na nuvem.
 
 ## 2. Estrutura de arquivos
@@ -43,17 +44,21 @@ EireHomeFlow/
 │   ├── privacy.html · terms.html   ← Privacy Policy e Terms of Use
 │   ├── partials/header.html       ← marca, navegação, "★ N XP", Sign in / círculo e menu da conta
 │   ├── partials/footer.html       ← rodapé, links legais e caixa de avisos (toast)
+│   │                                 (fonte única: npm run partials copia os dois para as 12 páginas)
 │   ├── css/styles.css
 │   ├── js/config.js               ← SUPABASE_URL e SUPABASE_ANON_KEY (chave publicável)
-│   ├── js/account.js              ← objeto Account: login, cadastro, senha, perfil, progresso na nuvem
-│   ├── js/app.js                  ← núcleo compartilhado (ver seção 4)
-│   ├── js/pages/home.js           ← ticker, cartões de fase, botão Start/Resume
-│   ├── js/pages/journey.js        ← trilha, painel, ações da jornada, endereços #step/#phase
-│   ├── js/pages/calculator.js     ← formulário e resultados da calculadora
-│   ├── js/pages/dashboard.js      ← painel logado
-│   ├── js/pages/profile.js        ← formulário do perfil
-│   ├── js/pages/auth.js           ← as 4 páginas de conta
-│   ├── js/pages/legal.js          ← índice "On this page" das páginas legais
+│   ├── js/lib/                    ← lógica pura, sem DOM, testada no Node (tests/)
+│   │   ├── calculator.js          ← regras e fórmulas, calc(), verdictKind(), RANGES
+│   │   ├── progress.js            ← progress(steps, done), XP_PER_STEP
+│   │   ├── validation.js          ← senha, e-mail, nome, safeNext()
+│   │   ├── people.js              ← userName, firstName, initials
+│   │   └── format.js              ← num, euro, esc
+│   ├── js/core/                   ← partes do navegador compartilhadas (ver seção 4)
+│   │   ├── app.js                 ← startPage(): carregamento, cliques, eventos da conta
+│   │   ├── state.js · steps.js · sync.js · account.js
+│   │   └── header.js · notices.js · forms.js · dom.js
+│   ├── js/pages/<página>.js       ← um módulo por página (home, guide, journey, calculator,
+│   │                                 dashboard, profile, auth, legal)
 │   ├── img/hero-600.webp · hero-900.webp · hero-1200.webp  ← capa em WebP (srcset)
 │   ├── img/steps/<id>.svg         ← uma ilustração por etapa (31), referenciada no guide.html
 │   ├── img/brand/eirehome-flow-logo.png  ← logo dos e-mails, servida pelo GitHub Pages
@@ -61,44 +66,50 @@ EireHomeFlow/
 ├── supabase/email-templates/      ← e-mails de confirmação e de nova senha
 ├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
 ├── _original-Backup/              ← bundle original do Claude Design
+├── tests/                         ← testes automáticos (npm test)
+├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js, versions.js,
+│                                     partials.js e stamp-partials.js (npm run partials)
+├── .github/workflows/checks.yml   ← lint, testes, versões e partials em cada Pull Request (Node 22)
+├── package.json · eslint.config.js · .editorconfig
 ├── README.md  ·  .gitignore  ·  .gitattributes (LF para todos)
 ```
 
-Cada página inclui `config.js`, `account.js`, `app.js` e, se precisar, o seu script de `js/pages/`. O `guide.html` não tem script próprio.
+Cada página carrega um único script: `<script type="module" src="js/pages/<página>.js?v=...">`. Ele importa o que usa de `js/core/` e `js/lib/` e chama `startPage({ init, render, actions })`. O `guide.html` usa `js/pages/guide.js`, que só chama `startPage()`.
 
 ## 3. Ciclo de carregamento
 
-1. O HTML da página chega com o seu conteúdo estático.
-2. Os scripts rodam em ordem (`defer`); o `app.js` espera o `DOMContentLoaded`, que só dispara depois do script da página.
-3. `init()` em `app.js`:
+1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove. Logo que os módulos rodam, antes de a lista de etapas chegar, `init()` desenha o cabeçalho: o XP sai das etapas marcadas neste navegador, e "Sign in" ou o círculo da conta sai da sessão que o Supabase salvou neste navegador no último login (`Account.shown()`). Só quem chega por um link de e-mail (`#access_token`, `type=`, `error_code`) espera o Supabase, com os dois invisíveis (`data-auth-pending`). Assim nem "Sign in" pisca para quem está logado, nem o círculo aparece atrasado.
+   Na troca de página, `@view-transition { navigation: auto; }` faz a página nova aparecer num fade de 0,15 s (Chrome, Edge, Safari 18.2+; nos outros, troca como antes), e o cabeçalho, com `view-transition-name: site-header`, fica parado. Desligado com `prefers-reduced-motion: reduce`.
+2. Os módulos rodam depois que o HTML é lido (módulos ES são adiados por padrão). O módulo da página chama `startPage()` de `core/app.js`.
+3. `init()` em `core/app.js`:
    1. `loadSaved()` restaura progresso e calculadora do `localStorage`;
-   2. em paralelo, `loadPartials()` troca os `<div data-include>` por `header.html` e `footer.html`, e `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch` e lido com `DOMParser`; no próprio `guide.html`, usa o documento atual);
-   3. `initPage()` da página, se existir;
-   4. `render()`;
+   2. `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch` e lido com `DOMParser`; no próprio `guide.html`, usa o documento atual);
+   3. `init` da página, se existir;
+   4. `render()` (cabeçalho e `render(p)` da página);
    5. mostra o aviso guardado na página anterior (`sessionStorage`) e, se o endereço trouxer erro de link de e-mail, o aviso vermelho;
    6. `Account.init(onAccountChange)`.
 
-**Consequência:** o site precisa ser servido por HTTP. Abrindo um `.html` direto do disco (`file://`), os `fetch` falham e cabeçalho, rodapé e etapas não aparecem.
+**Consequência:** o site precisa ser servido por HTTP. Abrindo um `.html` direto do disco (`file://`), os módulos e o `fetch` do guia falham: cabeçalho e rodapé aparecem, mas nada funciona e as etapas não carregam.
 
-## 4. Núcleo compartilhado (`app.js`)
+## 4. Núcleo compartilhado (`js/core/` e `js/lib/`)
 
-| Parte | O que faz |
-|---|---|
-| Estado | `state = { done, open, ftb, joint, newBuild, apartment, salary, salary2, savings, gift, htb, price, rate, term, calcSaved }`. `apartment` só vale com `newBuild` (IVA de 9% em vez de 13,5%). `calcSaved` vira `true` quando a pessoa salva a calculadora na jornada: só depois disso os números aparecem como dela |
-| Persistência | `loadSaved` (também traz taxa e prazo para dentro de `RANGES`: 1-8% e 5-35 anos), `save` (chave `eirehome-flow`), `setState`, `setDone` (também grava na nuvem se logado e devolve essa promessa) |
-| Etapas | `loadSteps` (texto, checklist, dica, tempo, custo, tipo, `auto`, `numbers`, passo a passo, links externos e ilustração com alt de cada etapa), `progress()`, `stepLink(step)`, `calculatorStep()`, `phaseCardsHtml()` (Home e Dashboard) |
-| Cálculo | `calc(s = state)` (Calculadora, Jornada e Dashboard), `homeVat(s)`, `stampBase(price, vat)`, `stampDuty(price, vat)`, `stampBands(base)`, `htbCap(price)`, `htbLimit(maxLoan)`, `htbFor(s, price, maxLoan)`, `highestPrice(ok, split)` |
-| Cabeçalho | `renderHeader`: link ativo por `data-page`, XP, "Sign in" ou círculo com iniciais |
-| Área logada | `renderGate()`: mostra `#gate` ou `#signed-in` conforme o login |
-| Menu da conta | `setMenu(open)`, fecha com clique fora e Esc |
-| Avisos | `showToast(msg, { error, action: { label, href }, sticky })`, `hideToast`, `flash` (para a próxima página), `showFlash` |
-| Formulários | `FIELD_CHECKS`, `checkField`, `checkForm`, `markField`, `watchForm`, `renderPasswordRules`, `sayInForm` |
-| Retorno de e-mail | `AUTH_RETURN` lê `type` e `error_code` do endereço antes do Supabase limpar; `cleanAuthUrl()` |
-| Nomes | `userName`, `firstName`, `initials` ("Rodrigo Andrade Brigido" vira "RB") |
-| Eventos | `actions` (registro de ações), um `click`, um `input` e um `keydown` no `document`; `onAccountChange` |
-| Segurança | `esc()` em todo texto que vai para `innerHTML`; `safeNext()` aceita só `nome-de-pagina.html` com `#ancora` opcional |
+| Parte | Módulo | O que faz |
+|---|---|---|
+| Estado | `core/state.js` | `state = { done, open, ftb, joint, newBuild, apartment, salary, salary2, savings, gift, htb, price, rate, term, calcSaved }`. `apartment` só vale com `newBuild` (IVA de 9% em vez de 13,5%). `calcSaved` vira `true` quando a pessoa salva a calculadora na jornada: só depois disso os números aparecem como dela. `setState` (grava no `localStorage`, chave `eirehome-flow`, e avisa quem se inscreveu com `onStateChange`), `loadSaved` (também traz taxa e prazo para dentro de `RANGES`: 1-8% e 5-35 anos) |
+| Etapas | `core/steps.js` | `loadSteps` (texto, checklist, dica, tempo, custo, tipo, `auto`, `numbers`, passo a passo, links externos e ilustração com alt de cada etapa), `PHASES` e `steps` (preenchidos depois do carregamento), `currentProgress()`, `stepLink`, `calculatorStep`, `phaseCardsHtml` (Home e Dashboard) |
+| Progresso | `lib/progress.js` | `progress(steps, done)` e `XP_PER_STEP` |
+| Nuvem | `core/sync.js` | `setDone` (também grava na conta e devolve a promessa), `syncOnSignIn` (soma o progresso local com o da conta) |
+| Cálculo | `lib/calculator.js` | `calc(s)`, `verdictKind(c)` (`"within"`, `"cashShort"`, `"loanOver"`, `"outOfReach"`), `homeVat`, `stampBase`, `stampDuty`, `stampBands`, `htbCap`, `htbLimit`, `htbFor`, `highestPrice`, as constantes da seção 6 e `RANGES` |
+| Conta | `core/account.js` | objeto `Account` (Supabase) |
+| Cabeçalho e área logada | `core/header.js` | `renderHeader` (link ativo, XP, "Sign in" ou círculo), `renderGate`, `setMenu` |
+| Avisos | `core/notices.js` | `showToast(msg, { error, action, sticky })`, `hideToast`, `flash`, `showFlash` |
+| Formulários | `core/forms.js` + `lib/validation.js` | `formValues`, `checkForm`, `watchForm`, `renderPasswordRules`, `sayInForm`; regras `PASSWORD_RULES`, `EMAIL_PATTERN`, `isFullName` |
+| Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange` |
+| Nomes | `lib/people.js` | `userName`, `firstName`, `initials` ("Rodrigo Andrade Brigido" vira "RB") |
+| Utilitários | `lib/format.js` + `core/dom.js` | `num`, `euro`, `esc`; `PAGE`, `bind` |
+| Segurança | `lib/format.js`, `lib/validation.js` | `esc()` em todo texto que vai para `innerHTML`; `safeNext()` aceita só `nome-de-pagina.html` com `#ancora` opcional |
 
-Os scripts de página definem `initPage()` e/ou `renderPage(p)` e acrescentam entradas em `actions`.
+Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p)` e `actions` (as ações de `data-action` só daquela página). `lib/` nunca importa de `core/`: por isso roda no Node.
 
 ### 4.1 Convenções do HTML
 
@@ -110,7 +121,7 @@ Os scripts de página definem `initPage()` e/ou `renderPage(p)` e acrescentam en
 | `data-id` | Id da etapa nos nós da trilha (`data-action="open"`) |
 | `data-field="<campo>"` | Campo da calculadora ligado ao `state` |
 | `data-bind="<nome>"` | Recebe texto via `bind(nome, valor)` |
-| `data-include="<caminho>"` | Substituído pelo HTML do partial |
+| `<!-- include partials/<arquivo>.html: ... -->` … `<!-- /include -->` | Cópia do partial dentro da página. **Não edite entre os marcadores:** edite o arquivo em `partials/` e rode `npm run partials` (que também marca o link ativo da navegação de cada página). `npm run check:partials` (também no GitHub Actions) falha se alguma página estiver desatualizada. Um `<div data-include="partials/<arquivo>.html"></div>` vazio numa página nova vira a cópia na próxima execução |
 | `data-fields="name email ..."` num `<form>` | Campos a validar |
 | `data-password="new\|current"` num `<form>` | Senha nova (regras de força) ou atual (só não vazia) |
 | `data-keep-next` num link | Mantém o `?next=` ao trocar entre sign-in e sign-up |
@@ -128,7 +139,7 @@ Os scripts de página definem `initPage()` e/ou `renderPage(p)` e acrescentam en
 
 ## 6. Especificação da calculadora
 
-Constantes (no topo da seção de cálculo em `app.js`):
+Constantes (em `docs/js/lib/calculator.js`):
 
 | Nome | Valor | Origem |
 |---|---|---|
@@ -184,9 +195,10 @@ Veredito (4 estados):
 
 ## 7. Contas e sincronização
 
-- **Cliente:** `supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
-- **`Account.ready`** fica `true` quando já se sabe se há alguém logado (primeiro evento do Supabase, ou contas desligadas). Até lá, as páginas logadas mostram "Loading your account...".
-- **Operações** (`account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)`, `loadProgress`, `saveProgress`. Cadastro e redefinição usam `homeUrl()` como endereço de retorno.
+- **Cliente:** `window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
+- **`Account.ready`** fica `true` quando o Supabase responde se há alguém logado (primeiro evento, ou contas desligadas); `Account.whenReady` é a promessa desse momento. A biblioteca começa a baixar assim que `core/account.js` roda, e não depois da lista de etapas.
+- **Antes da resposta** (`Account.saved`, `shown()`, `settled()`, `available()`): a sessão salva em `localStorage` (`sb-<projeto>-auth-token`) só é **lida**, para desenhar o cabeçalho, o Dashboard e o Perfil na hora. Nada é enviado com ela. O Supabase confere a sessão logo depois; se ela não valer mais, a página passa para "Sign in". Sair e salvar o nome esperam `Account.whenReady`. "Loading your account..." só aparece para quem chega por link de e-mail.
+- **Operações** (`core/account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)`, `loadProgress`, `saveProgress`. Cadastro e redefinição usam `homeUrl()` como endereço de retorno.
 - **Eventos** (`onAuthStateChange` → `onAccountChange`, sempre via `setTimeout`):
 
 | Evento | Ação |
@@ -198,7 +210,7 @@ Veredito (4 estados):
 | `USER_UPDATED` | Re-renderiza (iniciais e nome novos) |
 
 - **Depois das ações das páginas de conta:** entrar guarda "Welcome back, <nome>." e vai para `next`; nova senha guarda "Your password has been changed." e vai para o Dashboard; sair (em Dashboard, Perfil ou Nova senha) guarda "You have signed out..." e vai para a Home.
-- **Validação** (`FIELD_CHECKS`):
+- **Validação** (`FIELD_CHECKS` em `core/forms.js`; as regras ficam em `lib/validation.js`):
   - nome: pelo menos 2 palavras com 2+ letras (`\p{L}`) cada; espaços extras normalizados antes do envio;
   - e-mail: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`;
   - senha nova: `length ≥ 8`, `/\p{Lu}/u` e um símbolo da lista aceita pelo Supabase ``!@#$%^&*()_+-=[]{};'\:"|<>?,./`~``; senha atual: não vazia;
@@ -224,15 +236,15 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 - Páginas que não são o guia buscam `guide.html` (~38 KB) para montar a lista de etapas; o navegador guarda em cache entre páginas.
 - Sem minificação; para esse tamanho, não compensa um processo de build.
 - O GitHub Pages usa cache de 10 minutos, então um visitante pode receber uma página nova com um script antigo (ou o contrário). Três defesas:
-  1. **Versão nos endereços:** todas as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/...js?v=AAAAMMDD`. Página nova sempre busca scripts novos. **Ao mudar qualquer CSS ou JS, troque o número em todas as páginas** (buscar e substituir `?v=` antigo pelo novo).
-  2. `guide.html` e os partials são buscados com `cache: "no-cache"`: o navegador sempre pergunta ao servidor se mudaram.
+  1. **Versão nos endereços:** as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/pages/<página>.js?v=AAAAMMDD`, e todo `import` entre módulos também leva `?v=AAAAMMDD`. **Ao mudar qualquer CSS ou JS, rode `npm run bump`**, que troca o número em todos os arquivos de `docs/` pela data de hoje. Numa segunda mudança no mesmo dia, use `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã). O `npm run check:versions` (também no GitHub Actions) falha se sobrar um número diferente ou um arquivo sem versão: um `import` sem `?v=` criaria uma segunda cópia do módulo, com estado separado.
+  2. `guide.html` é buscado com `cache: "no-cache"`: o navegador sempre pergunta ao servidor se mudou. Cabeçalho e rodapé vêm dentro de cada página, então não há partial para ficar desatualizado.
   3. Os scripts de página toleram partes que faltam (ex.: `s.howto || []`, elementos ausentes) e `loadSteps` ainda aceita o atributo antigo `data-account`. As assinaturas de funções usadas por outras páginas continuam compatíveis (ex.: `signUp(email, password, name)`).
 
 ## 11. Ambientes
 
 | Ambiente | Endereço | Como rodar |
 |---|---|---|
-| Local | `http://localhost:8000/` | `python -m http.server 8000 --directory docs` |
+| Local | `http://localhost:8000/` | `npm start` (Node 20.1+), ou `python -m http.server 8000 --directory docs` (no Windows, algumas instalações do Python enviam os `.js` com o tipo errado e os módulos não carregam; prefira `npm start`) |
 | Produção | `https://codebybrigido.github.io/EireHomeFlow/` (GitHub Pages, branch `main`, pasta `/docs`) | Pull Request aceito na `main` do repositório `CodeByBrigido/EireHomeFlow` |
 | Supabase | projeto `dyfxstpbzmihtmccaezs`, região eu-west-1 | Painel supabase.com |
 
@@ -240,7 +252,7 @@ Qualquer novo endereço base (produção, domínio próprio) precisa entrar em *
 
 ## 12. Testes
 
-Ainda não há testes automatizados (ver Implementation Plan). Antes de publicar, rode este roteiro manual.
+Testes automáticos: `npm test` roda `tests/*.test.js` no Node, sem navegador: calculadora (os valores da seção 12.1), progresso, validação, formatação e as ferramentas de versão. `npm run check` roda lint, testes e versões, igual ao GitHub Actions. O roteiro manual abaixo continua valendo para o que depende do navegador.
 
 ### 12.1 Calculadora (valores de referência)
 
@@ -263,6 +275,8 @@ Valores padrão: primeira compra, sozinho, salário 45.000, poupança 35.000, pr
 | Preço 1.200.000 | €209,851 | This price is out of reach for now | Imposto €14,000 (1% até €1m + 2% sobre €200.000); rótulo "1% and 2% bands" |
 
 Imposto de um imóvel novo de €400.000: €3,524.23 numa casa (o exemplo da própria Revenue) e €3,669.72 num apartamento.
+
+Os números desta tabela estão em `tests/calculator.test.js`. Ao mudar uma regra, atualize a tabela e o teste no mesmo trabalho.
 
 ### 12.2 Páginas e navegação
 - As 12 páginas abrem sem erro no console, cada uma com seu título e com o link certo marcado no topo.
