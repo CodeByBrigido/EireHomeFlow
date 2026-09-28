@@ -1,6 +1,6 @@
 # Design System
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026
 
 Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os tokens e componentes e quando usar cada um. Toda cor nova precisa virar token em `:root` e passar no teste de contraste (seção 2.3).
 
@@ -8,6 +8,7 @@ Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os toke
 
 - **Nome:** ÉireHome Flow. "ÉireHome" em creme e "Flow" em dourado sobre o verde.
 - **Símbolo:** casinha creme com porta terracota sobre fundo verde (ícone do projeto original).
+- **Ícone do site (favicon):** a casinha da logo (casa creme `--cream`, porta terracota `--pop`) num quadrado verde `--ink` com raio 14/64. Arquivos em `docs/img/icon/`: `favicon.svg` (principal), `favicon-32.png` (navegadores sem SVG) e `apple-touch-icon.png` (180×180, sem cantos arredondados, porque o iPhone arredonda sozinho). Os três `<link>` ficam no `<head>` de todas as páginas, antes do CSS.
 - **Logo para e-mail:** `docs/img/brand/eirehome-flow-logo.png` (publicada pelo GitHub Pages), selo verde arredondado com o símbolo e o nome, 498×112 px (exibida a 220px).
 - **Personalidade:** acolhedora, prática, irlandesa (verde de musgo, terracota de tijolo, areia de praia).
 
@@ -83,6 +84,8 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 
 Ênfase no hero: `<em>` em itálico e verde (`--ink`).
 
+**Alinhamento do texto corrido:** todo parágrafo, item de lista e legenda (`p`, `li`, `figcaption`, e `.phase-card__text`) é **justificado** (`text-align: justify`) com `hyphens: auto`. É o justificado simples: a última linha fica à esquerda (nada de `text-align-last: justify`), então um texto de uma linha só não muda. Títulos, botões, rótulos e textos centralizados de propósito (ex.: `.auth-card__switch`, `.path__label`) têm alinhamento próprio na classe, que vence a regra geral. **Textos curtos no topo de um cartão centralizado ficam centralizados:** nas páginas de conta, o eyebrow "Your account", o título, a introdução, a nota que substitui o formulário e os botões dela (`text-wrap: balance`, para duas linhas terem tamanhos parecidos).
+
 ## 4. Espaço, forma e profundidade
 
 - **Largura máxima do conteúdo:** 1160px, centralizado.
@@ -107,7 +110,7 @@ Com `prefers-reduced-motion: reduce`, as animações e transições acima são d
 | Nome | Regra | Efeito principal |
 |---|---|---|
 | Tablet | `max-width: 960px` | Grades viram 1 coluna (fases em 2); painel da etapa em tela cheia |
-| Celular | `max-width: 720px` | Margens de 16px; tipografia com `clamp()`; streak e XP ocultos no topo; onda da trilha a 45% |
+| Celular | `max-width: 720px` | Margens de 16px; tipografia com `clamp()`; streak e XP ocultos no topo; cabeçalho em 2 linhas (marca e `.site-header__account` em cima, links embaixo); onda da trilha a 45% |
 | Celular estreito | `max-width: 480px` | Campos da calculadora e caixas de resultado em 1 coluna |
 
 ## 7. Componentes
@@ -124,6 +127,9 @@ Com `prefers-reduced-motion: reduce`, as animações e transições acima são d
 | Pequeno | `.detail__close` | Pílula pequena com borda | "Close" |
 | Largo discreto | `.reset` | Largura total, borda | "Reset progress" |
 | Topo | `.btn-signin` (link) | Borda creme translúcida | "Sign in" deslogado |
+| Perigo (contorno) | `.btn.btn--danger-outline` | Transparente, borda e texto `--error` | "Delete my account" |
+| Perigo | `.btn.btn--danger` | `--error`, texto branco, sombra sólida `#7a180f` | "Yes, delete my account" (só dentro da confirmação) |
+| Google | `.btn.btn--google` | Branco, borda `--line-2` de 2px, texto `--text` 16px, logo "G" colorido de 20px (`.google-logo`) à esquerda, largura total | "Continue with Google" nas páginas de conta; desativado com "Opening Google..." |
 | Link de texto | `<a>` sem classe | Verde, sublinhado; hover verde escuro | Links dentro de textos |
 | Desativado | `.btn:disabled` | 45% de opacidade, sem sombra | Etapa bloqueada |
 
@@ -169,6 +175,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 
 ### 7.7 Conta e área logada
 - **Círculo de iniciais** `.avatar`: 40px, dourado (`--gold`), texto `--text` 14px negrito, borda creme; `aria-expanded` indica o menu aberto.
+- **Separador** `.auth-divider`: texto 13px `--faint` entre duas linhas `--line-2` ("or use your email").
 - **Menu da conta** `.menu`: cartão branco, raio 18px, sombra suave, 240px de largura mínima, abaixo do círculo e alinhado à direita (no celular, largura da tela menos 16px de cada lado). Cabeçalho `.menu__who` (nome em negrito, e-mail em `--faint`) e itens `.menu__item` (hover `--hover`; "Sign out" com `.menu__item--danger` em `--error`).
 - **Aviso** `.toast`: fixo no rodapé da tela, centralizado, até 560px, raio 18px. Sucesso: fundo `--mint`, ícone ✓ verde. Erro (`.is-error`): fundo `--error-bg`, ícone ! vermelho. Ação opcional `.toast__action` (pílula verde) e fechar `.toast__close` (×).
 - **Cartão de conta** `.auth-card`: branco, até 440px, raio 26px, centralizado na página; título 30px; nota `.auth-card__note` em areia; links `.auth-card__switch` centralizados.
@@ -185,7 +192,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 
 ### 7.8 Páginas legais
 - Grade `.legal-layout` com colunas em porcentagem (`68% 28%`, `justify-content: space-between`); uma coluna abaixo de 960px.
-- Conteúdo em `.legal`: parágrafos e itens com `text-align: justify` e `hyphens: auto`; data em `.legal__updated` (14px, `--faint`), resumo em `.legal__summary` (fundo `--sand`, raio 18px).
+- Conteúdo em `.legal`: parágrafos e itens justificados pela regra geral do texto corrido (seção 3); data em `.legal__updated` (14px, `--faint`), resumo em `.legal__summary` (fundo `--sand`, raio 18px).
 - Barra lateral `.legal-aside` (fixa a 90px do topo no desktop): índice `.legal-toc` (cartão branco com borda; links 14px `--muted`, seção atual com fundo `--sand` e texto `--ink`) e cartão `.legal-help` (fundo `--ink`, link de e-mail creme sublinhado, botão dourado `.legal-help__link`).
 - `h2` 24px e `h3` 18px em negrito; parágrafos e listas 16px com altura de linha 1.65 em `--body`.
 - Links do rodapé em `.site-footer__links` (sublinhados, `--faint`).

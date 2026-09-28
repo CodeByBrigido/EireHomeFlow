@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign in | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260927">
-  <script type="module" src="js/pages/auth.js?v=20260927"></script>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260928">
+  <script type="module" src="js/pages/auth.js?v=20260928"></script>
 </head>
 <body data-page="signin">
 <div class="page">
@@ -20,6 +23,8 @@
         <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
         <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
         <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      </nav>
+      <div class="site-header__account">
         <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
           <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
@@ -30,7 +35,7 @@
             <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
   <!-- /include -->
@@ -43,6 +48,11 @@
       <p class="auth-card__note" id="auth-note" data-bind="authNote" hidden></p>
       <div class="auth-card__links" id="auth-note-links" hidden>
         <a class="btn btn--primary" href="dashboard.html">Go to my dashboard</a>
+      </div>
+      <div class="auth-google" id="auth-google" hidden>
+        <button type="button" class="btn btn--google" data-action="google"><svg class="google-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span data-bind="googleLabel">Continue with Google</span></button>
+        <p class="form-status" id="google-status" role="status" aria-live="polite"></p>
+        <p class="auth-divider">or use your email</p>
       </div>
       <form class="auth-form" id="auth-form" novalidate data-fields="email password" data-password="current">
           <label class="field">
@@ -60,14 +70,14 @@
       </form>
       <p class="auth-card__switch"><a href="forgot-password.html">Forgot your password?</a></p>
       <p class="auth-card__switch">New here? <a href="signup.html" data-keep-next>Create an account</a></p>
-      <p class="auth-card__privacy">Your account stores your name, your email and the steps you have completed, on servers in Ireland. Calculator figures stay in your browser. <a href="privacy.html">Read our Privacy Policy</a>.</p>
+      <p class="auth-card__privacy">Your account stores your name, your email and the steps you have completed, on servers in Ireland. With Google, it also keeps the profile picture link Google sends, which we do not use. Calculator figures stay in your browser. <a href="privacy.html">Read our Privacy Policy</a>.</p>
     </div>
   </main>
 
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow, Dublin</span>
+      <span class="site-footer__brand">ÉireHome Flow</span>
       <span>Educational content. Not regulated financial advice.</span>
       <nav class="site-footer__links" aria-label="Legal">
         <a href="privacy.html">Privacy Policy</a>

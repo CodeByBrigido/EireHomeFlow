@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -98,6 +98,18 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Biblioteca do Supabase começa a baixar junto com a página
 - [x] Transição suave entre páginas (`@view-transition`), com o cabeçalho parado; desligada com "reduzir movimento"
 
+### Marco 3.7: Entrar com Google (28/09/2026) ✅
+- [x] "Continue with Google" em `signin.html` e `signup.html`, com estados de carregando e de erro
+- [x] Volta pela pasta do site (`/EireHomeFlow/`) e segue para a página de onde a pessoa saiu
+- [x] Nome escolhido em My profile (`display_name`) não é apagado por um novo login com Google
+- [x] Privacy Policy e Terms of Use atualizados (Google como forma de entrar, `eirehome-google`, exclusão pela própria pessoa); trecho antigo sobre a logo dos e-mails no Supabase corrigido
+- [x] Ícone do site (casinha da logo) nas 12 páginas
+- [x] Rodapé sem "Dublin" copiado para as 12 páginas (a checagem da `main` estava falhando)
+- [x] Cabeçalho no celular em 2 linhas: "Sign in" ou o círculo sobem para a linha da marca
+- [x] Texto corrido justificado em todo o site (justificado simples, última linha à esquerda)
+- [x] "Delete my account" em My profile, com confirmação na página (função `delete_my_account()` no Supabase)
+- [ ] Rodrigo: rodar o SQL da seção 2.1 do `SETUP-CONTAS.md` no Supabase antes de publicar
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -145,7 +157,8 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] M12 a M14 foco, anúncios e títulos para leitor de tela
 
 ### Marco 9: SEO e divulgação
-- [ ] M15 meta description, Open Graph e Twitter card, favicon, canonical, `robots.txt`, `sitemap.xml`, página 404
+- [x] M15 (parte) ícone do site
+- [ ] M15 meta description, Open Graph e Twitter card, canonical, `robots.txt`, `sitemap.xml`, página 404
 - [ ] Título da página mais descritivo
 
 ### Marco 10: Qualidade e manutenção

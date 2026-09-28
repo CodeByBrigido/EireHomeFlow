@@ -1,13 +1,13 @@
 // My journey: the step path, the step panel and the progress sidebar.
 // Links can open a step (journey.html#step-aip-0) or jump to a phase (journey.html#phase-aip).
-import { calc, HTB } from "../lib/calculator.js?v=20260927";
-import { esc, euro } from "../lib/format.js?v=20260927";
-import { Account } from "../core/account.js?v=20260927";
-import { startPage } from "../core/app.js?v=20260927";
-import { bind } from "../core/dom.js?v=20260927";
-import { setState, state } from "../core/state.js?v=20260927";
-import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260927";
-import { setDone } from "../core/sync.js?v=20260927";
+import { calc, HTB } from "../lib/calculator.js?v=20260928";
+import { esc, euro } from "../lib/format.js?v=20260928";
+import { Account } from "../core/account.js?v=20260928";
+import { startPage } from "../core/app.js?v=20260928";
+import { bind } from "../core/dom.js?v=20260928";
+import { setState, state } from "../core/state.js?v=20260928";
+import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260928";
+import { setDone } from "../core/sync.js?v=20260928";
 
 const WAVE = [0, 72, 108, 72, 0, -72, -108, -72];
 const RING = 2 * Math.PI * 43;

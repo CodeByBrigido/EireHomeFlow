@@ -1,6 +1,6 @@
 # PRD: Product Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026 · Dono: Rodrigo
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026 · Dono: Rodrigo
 
 ## 1. Visão
 
@@ -68,10 +68,11 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - **É o primeiro passo da jornada:** "Save to my journey" conclui a etapa 1, e as etapas seguintes passam a mostrar os números da pessoa (entrada, custos extras, Help to Buy).
 
 ### 5.4 Contas
-- Cadastro com nome, e-mail, senha e confirmação de senha.
+- Cadastro com nome, e-mail, senha e confirmação de senha, **ou "Continue with Google"** (entrar e criar conta com a conta Google, sem senha no site).
 - Senha forte: pelo menos 8 caracteres, 1 maiúscula e 1 caractere especial.
 - Confirmação de e-mail, login, logout e redefinição de senha, com e-mails no visual da marca.
 - Progresso salvo na nuvem e sincronizado entre aparelhos.
+- **Apagar a conta** pelo próprio site, em My profile (sem precisar mandar e-mail).
 - A etapa **"Create your ÉireHome Flow account"** (última da fase 1) é obrigatória e é marcada sozinha quando a pessoa entra na conta.
 
 ### 5.5 Área logada
@@ -124,6 +125,9 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-29 | Imposto de selo real | 1% até €1m, 2% até €1,5m, 6% acima; em imóvel novo, sobre o preço sem IVA (13,5% em casa, 9% em apartamento) |
 | RF-30 | Help to Buy com as regras da Revenue | Só primeira compra, imóvel novo, preço até €500.000 e empréstimo possível de pelo menos 70% do preço; a etapa explica quem pode, o passo a passo no myAccount e tem links para a Revenue |
 | RF-31 | Painel compacto | Uma etapa comum cabe no painel sem rolar numa janela de 910px de altura útil ou mais |
+| RF-32 | Entrar com Google | "Continue with Google" em `signin.html` e `signup.html` leva ao Google e volta ao site já logado, na página de onde a pessoa saiu (`?next=`), mantendo a pasta `/EireHomeFlow/` do GitHub Pages; cancelar ou dar erro mostra um aviso vermelho com "Sign in" |
+| RF-33 | Apagar a conta pelo site | Em My profile, "Delete my account" pede confirmação na própria página e apaga a conta e o progresso na hora; depois a pessoa volta à Home deslogada, com o aviso "Your account and its saved progress have been deleted." |
+| RF-34 | Cabeçalho no celular em 2 linhas | Até 720px: marca e "Sign in" (ou o círculo da conta) na primeira linha, os 4 links na segunda |
 
 ## 7. Requisitos não funcionais
 

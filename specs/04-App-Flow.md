@@ -1,6 +1,6 @@
 # App Flow
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
 
 Os diagramas usam Mermaid (renderizado no GitHub e no VS Code com a extensão de preview). Cada caixa com `.html` é uma página própria.
 
@@ -101,6 +101,32 @@ Se a confirmação de e-mail estiver desligada no Supabase, o cadastro já cria 
 3. Com sucesso: o aviso "Welcome back, Rodrigo." é guardado para a próxima página, e a pessoa vai para o `next` ou para o Dashboard. Lá, o evento `INITIAL_SESSION` soma e sincroniza o progresso.
 4. Com erro: mensagem do Supabase (ex.: "Invalid login credentials").
 
+### 6.1 Entrar (ou criar conta) com Google
+
+```mermaid
+sequenceDiagram
+  actor P as Pessoa
+  participant S as signin.html ou signup.html
+  participant SB as Supabase
+  participant G as Google
+  participant H as index.html (Home)
+  participant N as página de destino (next)
+  P->>S: Continue with Google
+  S->>S: guarda next em sessionStorage (eirehome-google)
+  S->>SB: signInWithOAuth(google, redirectTo = pasta do site)
+  SB->>G: tela de escolha de conta
+  P->>G: escolhe a conta e aceita
+  G->>SB: /auth/v1/callback
+  SB->>H: volta com #access_token
+  H->>H: supabase-js cria a sessão (SIGNED_IN)
+  H->>N: aviso de boas-vindas + location.replace(next)
+  N->>SB: INITIAL_SESSION: soma o progresso e marca a etapa de conta
+```
+
+- A conta é criada no primeiro login com Google, já confirmada (não há e-mail de confirmação).
+- Se o e-mail da conta Google já tiver conta com senha no site, o Supabase junta as duas no mesmo usuário (o e-mail do Google é verificado). O progresso é o mesmo.
+- Cancelar no Google, ou qualquer erro, volta para a Home com aviso vermelho e o botão "Sign in".
+
 ## 7. Esqueci a senha e troca de senha
 
 ```mermaid
@@ -137,6 +163,14 @@ Quem já está logado usa o mesmo `new-password.html` pelo botão "Change passwo
 1. O nome vem preenchido.
 2. Nome inválido fica vermelho ("Enter your first and last name.").
 3. "Save changes" grava `full_name` no Supabase; chega o evento `USER_UPDATED`, as iniciais do topo se atualizam e aparece "Your profile has been updated."
+
+## 9.1 Apagar a conta (profile.html)
+
+1. "Delete my account" abre a confirmação na própria página; "Cancel" fecha.
+2. "Yes, delete my account" chama `delete_my_account()` no Supabase: a conta, o progresso e as sessões são apagados.
+3. Este navegador sai da conta (as figuras da calculadora ficam), e a pessoa vai à Home com "Your account and its saved progress have been deleted."
+4. Outros aparelhos onde a pessoa estava logada perdem a sessão quando o token de acesso vence (em até 1 hora) e não conseguem mais gravar progresso.
+5. Se der erro, a mensagem aparece abaixo dos botões e nada é apagado. Sem a função no banco: "Deleting accounts from the site is not switched on yet. Email...".
 
 ## 10. Sair
 

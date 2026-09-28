@@ -67,6 +67,10 @@ a:where(:not([class])):hover { color: var(--ink-dark); }
 button { font-family: inherit; cursor: pointer; }
 :where(a, button, summary):focus-visible { outline: 3px solid var(--pop); outline-offset: 3px; }
 [hidden] { display: none !important; }
+/* Running text is justified when it wraps to two or more lines. Plain justify: the last line
+   stays on the left (no text-align-last). Hyphens keep the gaps small in narrow columns.
+   Headings, buttons and text centred on purpose keep their own alignment. */
+p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 
 @keyframes eh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes eh-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -96,7 +100,10 @@ button { font-family: inherit; cursor: pointer; }
 .site-header__inner { max-width: 1160px; margin: 0 auto; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .brand { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; flex: none; color: var(--cream); }
 .brand__accent { color: var(--gold); }
-.nav { display: flex; align-items: center; gap: 18px; flex: none; }
+.nav { display: flex; align-items: center; gap: 18px; flex: none; margin-left: auto; }
+/* "Sign in" or the account circle sits outside the nav, so on phones it can share the first
+   row with the brand while the links take the second row. */
+.site-header__account { display: flex; align-items: center; margin-left: -6px; }
 .nav__link { display: inline-block; background: none; border: 0; border-bottom: 3px solid transparent; padding: 4px 0; font-weight: 800; font-size: 15px; color: rgba(255, 250, 243, .9); }
 .nav__link.is-active { color: var(--cream); border-bottom-color: var(--gold); }
 .nav__stat { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 74px; font-weight: 800; font-size: 15px; }
@@ -400,11 +407,24 @@ button { font-family: inherit; cursor: pointer; }
 .auth-card__intro { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
 .auth-card__note { margin: 18px 0 0; padding: 12px 16px; border-radius: 14px; background: var(--sand); font-size: 14px; font-weight: 700; line-height: 1.5; color: var(--brown); }
 .auth-card__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+/* The short texts at the top of an account card are centred, like the card itself;
+   longer text below (terms, privacy note) stays justified. */
+.auth-card > .eyebrow, .auth-card__title, .auth-card__intro, .auth-card__note { text-align: center; text-wrap: balance; }
+.auth-card__links { justify-content: center; }
 .auth-form { display: flex; flex-direction: column; gap: 16px; margin-top: 22px; }
 .auth-form__submit { width: 100%; }
 .auth-card__switch { margin: 16px 0 0; text-align: center; font-size: 14px; font-weight: 700; color: var(--muted); }
 .auth-card__privacy { margin: 20px 0 0; font-size: 12px; line-height: 1.5; color: var(--faint); }
 .auth-card__terms { margin: 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+/* Continue with Google: white button with the Google logo, as Google's branding guidelines ask. */
+.auth-google { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+.auth-google + .auth-form { margin-top: 12px; }
+.btn--google { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 13px 20px; border: 2px solid var(--line-2); background: #fff; color: var(--text); font-size: 16px; font-weight: 700; }
+.btn--google:hover { background: var(--hover); }
+.btn--google:disabled { opacity: .7; cursor: progress; }
+.google-logo { width: 20px; height: 20px; flex: none; }
+.auth-divider { display: flex; align-items: center; gap: 12px; margin: 4px 0 0; font-size: 13px; font-weight: 700; color: var(--faint); }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--line-2); }
 
 /* Account menu (header) */
 .account-nav { position: relative; }
@@ -452,6 +472,15 @@ button { font-family: inherit; cursor: pointer; }
 .profile-form .card__title { margin-bottom: 0; }
 .profile-side .card__title:not(:first-child) { margin-top: 26px; }
 .profile-side__text { margin: 0 0 14px; font-size: 15px; line-height: 1.55; color: var(--muted); }
+/* Deleting the account: a red outline button, then an inline confirmation (no pop-up). */
+.btn--danger-outline { padding: 13px 20px; border: 2px solid var(--error); background: none; color: var(--error); font-weight: 700; font-size: 15px; }
+.btn--danger-outline:hover { background: var(--error-bg); }
+.btn--danger { padding: 13px 20px; border: 0; background: var(--error); color: #fff; font-size: 15px; box-shadow: 0 5px 0 #7a180f; }
+.btn--danger:active { transform: translateY(4px); }
+.danger-zone { display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 16px; background: var(--error-bg); border: 2px solid #f3c4bd; }
+.danger-zone__text { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text); overflow-wrap: anywhere; }
+.danger-zone__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.profile-side__note { margin-top: 14px; font-size: 13px; }
 
 /* Guide page and the home invitation to it */
 .guide__phases { margin-top: 28px; }
@@ -479,7 +508,6 @@ button { font-family: inherit; cursor: pointer; }
 /* Text column and sidebar share the width in percentages, so the layout scales with the screen. */
 .legal-layout { display: grid; grid-template-columns: 68% 28%; justify-content: space-between; align-items: start; margin-top: 8px; }
 .legal { min-width: 0; }
-.legal p, .legal li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .legal h2 { scroll-margin-top: 90px; }
 .legal-aside { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
 .legal-toc { padding: 16px 18px; border-radius: 18px; background: #fff; border: 2px solid var(--line); }
@@ -540,7 +568,8 @@ button { font-family: inherit; cursor: pointer; }
   .nav__stat { display: none; }
   .nav__link { font-size: 14px; }
   .btn-signin { padding: 6px 14px; }
-  .btn-signin, .account-nav { margin-left: auto; }
+  .nav { order: 1; margin-left: 0; }
+  .site-header__account { margin-left: auto; }
   /* The account menu opens full width under the header instead of under the circle. */
   .site-header__inner { position: relative; }
   .account-nav { position: static; }

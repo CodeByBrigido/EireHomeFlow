@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260927">
-  <script type="module" src="js/pages/home.js?v=20260927"></script>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260928">
+  <script type="module" src="js/pages/home.js?v=20260928"></script>
 </head>
 <body data-page="home">
 <div class="page">
@@ -20,6 +23,8 @@
         <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
         <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
         <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      </nav>
+      <div class="site-header__account">
         <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
           <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
@@ -30,7 +35,7 @@
             <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
   <!-- /include -->
@@ -107,7 +112,7 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow, Dublin</span>
+      <span class="site-footer__brand">ÉireHome Flow</span>
       <span>Educational content. Not regulated financial advice.</span>
       <nav class="site-footer__links" aria-label="Legal">
         <a href="privacy.html">Privacy Policy</a>

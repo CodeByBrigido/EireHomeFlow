@@ -1,6 +1,6 @@
 # TRD: Technical Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 27/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/2026
 
 ## 1. Arquitetura
 
@@ -62,6 +62,7 @@ EireHomeFlow/
 │   ├── img/hero-600.webp · hero-900.webp · hero-1200.webp  ← capa em WebP (srcset)
 │   ├── img/steps/<id>.svg         ← uma ilustração por etapa (31), referenciada no guide.html
 │   ├── img/brand/eirehome-flow-logo.png  ← logo dos e-mails, servida pelo GitHub Pages
+│   ├── img/icon/                  ← ícone do site: favicon.svg, favicon-32.png, apple-touch-icon.png
 │   └── fonts/*.woff2
 ├── supabase/email-templates/      ← e-mails de confirmação e de nova senha
 ├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
@@ -198,7 +199,16 @@ Veredito (4 estados):
 - **Cliente:** `window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)`, criado só se as duas constantes estiverem preenchidas.
 - **`Account.ready`** fica `true` quando o Supabase responde se há alguém logado (primeiro evento, ou contas desligadas); `Account.whenReady` é a promessa desse momento. A biblioteca começa a baixar assim que `core/account.js` roda, e não depois da lista de etapas.
 - **Antes da resposta** (`Account.saved`, `shown()`, `settled()`, `available()`): a sessão salva em `localStorage` (`sb-<projeto>-auth-token`) só é **lida**, para desenhar o cabeçalho, o Dashboard e o Perfil na hora. Nada é enviado com ela. O Supabase confere a sessão logo depois; se ela não valer mais, a página passa para "Sign in". Sair e salvar o nome esperam `Account.whenReady`. "Loading your account..." só aparece para quem chega por link de e-mail.
-- **Operações** (`core/account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)`, `loadProgress`, `saveProgress`. Cadastro e redefinição usam `homeUrl()` como endereço de retorno.
+- **Operações** (`core/account.js`): `signUp(email, password, name)` (nome em `user_metadata.full_name`), `signIn`, `signInWithGoogle(next)`, `googleAvailable()`, `takeGoogleReturn()`, `signOut`, `sendReset`, `setPassword`, `updateProfile(name)` (grava `display_name` e `full_name`), `loadProgress`, `saveProgress`. Cadastro, redefinição e Google usam `homeUrl()` como endereço de retorno.
+- **Entrar com Google** (`signInWithOAuth`, fluxo *implicit*, o padrão do `supabase-js@2`; o PKCE não é usado porque quebraria os links de e-mail abertos em outro aparelho):
+  1. `googleAvailable()` lê `GET /auth/v1/settings` (configuração pública, com a chave publicável) e diz se o Google está ligado no painel. O botão aparece assim que as contas estão ligadas e só some se essa leitura disser que não.
+  2. O clique grava em `sessionStorage` (`eirehome-google`) a página de destino (`next`, validada por `safeNext`) e a hora, e chama `signInWithOAuth({ provider: "google", options: { redirectTo: homeUrl(), queryParams: { prompt: "select_account" } } })`. O botão fica em "Opening Google..." até a página mudar e volta ao normal no `pageshow` (botão Voltar).
+  3. Google → `https://<projeto>.supabase.co/auth/v1/callback` → `homeUrl()` com `#access_token=...`. `homeUrl()` é a pasta do site (`https://codebybrigido.github.io/EireHomeFlow/`), então as Redirect URLs só precisam do endereço base.
+  4. Na Home, `AUTH_RETURN.token` (tem `access_token` ou `code`) e `takeGoogleReturn()` (existe e tem menos de 15 minutos) juntos disparam o aviso ("Welcome back, <nome>." ou, para conta nova, "Your account is ready. Welcome to ÉireHome Flow, <nome>!") e `location.replace(next)`, **antes** da sincronização do progresso, que a página seguinte faz ao abrir.
+  5. Erro na volta (`?error=`/`#error=`, com `error_description`): se havia `eirehome-google`, aviso vermelho "Signing in with Google was cancelled..." (`access_denied`) ou "Signing in with Google did not work: <descrição>...", com o botão "Sign in" (volta para `signin.html?next=...`). Sem `eirehome-google`, continua o aviso de link de e-mail expirado.
+- **Nome** (`lib/people.js`): `userName` prefere `display_name` (definido em My profile), depois `full_name` e `name`: o Google regrava `full_name` e `name` a cada login com Google. A foto que o Google manda (`avatar_url`, `picture`) fica no `user_metadata` do Supabase, mas o site não a mostra: o círculo do topo tem sempre as iniciais.
+- **Apagar a conta** (`Account.deleteAccount()`, em My profile): chama `rpc("delete_my_account")`, a função do banco da seção 2.1 do `SETUP-CONTAS.md`, que apaga só a linha de `auth.users` de quem chama (`auth.uid()`). O `progress` vai junto (`ON DELETE CASCADE`), e as sessões e tokens de atualização também. Depois, `signOut({ scope: "local" })` limpa a sessão deste navegador, `done` é zerado e a pessoa vai à Home com o aviso. Se a função ainda não existir (erro `PGRST202`), a mensagem manda escrever para eirehomeflow@gmail.com. Nenhuma chave secreta é usada: a função roda com os direitos de quem a criou (`security definer`), e só `authenticated` pode chamá-la.
+- **Segredos:** o Client ID e o Client Secret do Google ficam **só** no painel do Supabase (Authentication → Sign In / Providers → Google). O site só conhece `SUPABASE_URL` e a chave publicável.
 - **Eventos** (`onAuthStateChange` → `onAccountChange`, sempre via `setTimeout`):
 
 | Evento | Ação |

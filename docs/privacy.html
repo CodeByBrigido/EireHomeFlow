@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260927">
-  <script type="module" src="js/pages/legal.js?v=20260927"></script>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260928">
+  <script type="module" src="js/pages/legal.js?v=20260928"></script>
 </head>
 <body data-page="privacy">
 <div class="page">
@@ -20,6 +23,8 @@
         <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
         <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
         <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      </nav>
+      <div class="site-header__account">
         <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
           <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
@@ -30,7 +35,7 @@
             <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
   <!-- /include -->
@@ -38,7 +43,7 @@
   <main class="main main--wide">
     <p class="eyebrow">Legal</p>
     <h1 class="page-title">Privacy Policy</h1>
-    <p class="legal__updated">Last updated: 24 September 2026</p>
+    <p class="legal__updated">Last updated: 28 September 2026</p>
     <div class="legal-layout">
     <div class="legal">
 
@@ -47,8 +52,8 @@
         <ul>
           <li>ÉireHome Flow is free. We do not show ads, use analytics or tracking, or sell your data.</li>
           <li>You can use the guide, My journey and the calculator without an account. Your calculator figures never leave your browser.</li>
-          <li>If you create an account, we keep your name, email address and journey progress with our database provider, Supabase, on servers in Ireland.</li>
-          <li>You can change your name and password on My profile. To get a copy of your data, have it corrected or delete your account, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We will reply within one month.</li>
+          <li>If you create an account, we keep your name, email address and journey progress with our database provider, Supabase, on servers in Ireland. If you sign in with Google, our account system also keeps the link to your Google profile picture that Google sends. We do not show it or use it.</li>
+          <li>You can change your name and password, and delete your account, on My profile. To get a copy of your data or have it corrected, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We will reply within one month.</li>
         </ul>
       </div>
 
@@ -69,9 +74,10 @@
 
       <h3>When you create an account</h3>
       <ul>
-        <li>Your full name, which you enter when you sign up and can change on My profile.</li>
+        <li>Your full name, which you enter when you sign up, or which comes from your Google account if you sign in with Google. You can change it on My profile.</li>
         <li>Your email address.</li>
-        <li>Your password. Supabase stores it in hashed (scrambled) form. We never see it.</li>
+        <li>Your password, if you sign up with your email. Supabase stores it in hashed (scrambled) form. We never see it. If you sign in with Google, we hold no password for you.</li>
+        <li>If you sign in with Google: the name, email address and profile picture link on your Google account, and the identifier Google uses for your account. Google shows you what it will share before you continue. We do not receive your Google password or anything else from your Google account.</li>
         <li>The date you created your account and the time you last signed in.</li>
         <li>Your journey progress: which of the 31 steps you have marked as done, and when your progress was last updated.</li>
         <li>Security records that Supabase keeps: logs of events such as signing up, signing in and resetting your password, and a record of each browser or device where you are signed in. These include your IP address, your browser user agent and the time. In this policy we call them authentication logs.</li>
@@ -82,13 +88,13 @@
       <p>We send emails only about your account or the service. Our account system sends two automatic emails: one to confirm your email address when you sign up, and one to reset your password when you ask for it. Each contains a link to complete that step.</p>
       <p>In a few cases we may also email you ourselves, for example to warn you before we delete an inactive account, to tell you why we have suspended or closed your account, or to tell you before ÉireHome Flow closes. We do not send marketing emails or newsletters.<!-- POLICY CHOICE: these occasional emails match the proposals in terms.html (inactive accounts in section 11, suspension in section 11, closing the service in section 10). If you drop any of those proposals, remove it here too. --></p>
       <p>All these emails are sent through our email provider, currently Google (Gmail), using your email address.</p>
-      <p>The logo in these emails is stored with Supabase. When your email app displays images, it downloads the logo from Supabase, which can see the IP address of your device or of your email provider. We do not use this to check whether you have opened an email.</p>
+      <p>The logo in these emails is published with our website on GitHub. When your email app displays images, it downloads the logo from GitHub, which can see the IP address of your device or of your email provider. We do not use this to check whether you have opened an email.</p>
 
       <h3>When you email us</h3>
       <p>If you write to us, we receive your email address, your name if you include it, and whatever you choose to tell us. Our mailbox is provided by Google (Gmail).</p>
 
       <h3>Where your data comes from</h3>
-      <p>We get your data from you, or from your device when you use the site. We do not buy data about you or receive it from anyone else.</p>
+      <p>We get your data from you, or from your device when you use the site. If you choose to sign in with Google, Google sends us your name, email address and profile picture link, with your permission. We do not buy data about you or receive it from anyone else.</p>
 
       <h2>Why we use your data and our legal basis</h2>
       <p>The law requires a legal basis for each use of personal data. Ours are:</p>
@@ -118,10 +124,10 @@
       <h2>Who receives your data</h2>
       <p>We use a small number of service providers. Each one receives only what it needs to do its job.</p>
       <ul>
-        <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapore) runs our account system and database. It stores your account details, your progress, the authentication logs and the logo used in our emails. Our Supabase project is hosted on Amazon Web Services servers in Ireland (region eu-west-1). Supabase acts as our processor under its data processing addendum, which means it may use your data only on our instructions. See the <a href="https://supabase.com/privacy">Supabase privacy policy</a>.</li>
-        <li><strong>GitHub</strong> (GitHub, Inc., USA) hosts the website. GitHub logs the IP address of every visitor for security purposes, whether or not the visitor has a GitHub account. GitHub handles these logs under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>. We do not have access to them.</li>
+        <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapore) runs our account system and database. It stores your account details, your progress and the authentication logs. Our Supabase project is hosted on Amazon Web Services servers in Ireland (region eu-west-1). Supabase acts as our processor under its data processing addendum, which means it may use your data only on our instructions. See the <a href="https://supabase.com/privacy">Supabase privacy policy</a>.</li>
+        <li><strong>GitHub</strong> (GitHub, Inc., USA) hosts the website. It also serves the logo used in our emails. GitHub logs the IP address of every visitor for security purposes, whether or not the visitor has a GitHub account. GitHub handles these logs under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>. We do not have access to them.</li>
         <li><strong>jsDelivr</strong> (Volentio JSD Limited, United Kingdom) is a content delivery network. It delivers the Supabase code library that our pages load. jsDelivr and the network partners it uses (currently Cloudflare, Fastly, Bunny and GCore) receive your IP address and the details your browser sends. jsDelivr says it uses this data to run and protect its service and to publish download counts for each file. See the <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr privacy policy</a>.</li>
-        <li><strong>Google</strong> provides the email service (Gmail) we use to send account emails and to receive your messages. Google processes your email address and the content of these emails. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+        <li><strong>Google</strong> provides the email service (Gmail) we use to send account emails and to receive your messages. Google processes your email address and the content of these emails. If you choose to sign in with Google, Google also confirms who you are and sends us the details listed above, and so knows that you signed in to ÉireHome Flow. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
       </ul>
       <p>We may also disclose personal data where the law requires it, for example to comply with a court order, or where necessary to establish, exercise or defend legal claims. We do not share it with anyone else.</p>
 
@@ -138,7 +144,7 @@
 
       <h2>How long we keep your data</h2>
       <ul>
-        <li><strong>Account details and progress:</strong> for as long as your account exists. When you ask us to delete your account, we delete it, with your progress, within one month.</li>
+        <li><strong>Account details and progress:</strong> for as long as your account exists. When you delete your account on My profile, it is deleted straight away, with your progress. When you ask us by email instead, we delete it within one month.</li>
         <li><strong>Inactive accounts:</strong> if nobody signs in to an account for 24 months, we will delete it, with its progress. We will email the account's address at least 30 days before. To keep your account, sign in before the date given in that email.<!-- POLICY CHOICE: 24 months without a sign-in plus at least 30 days' email notice, to match terms.html section 11 (which says "may delete"; consider changing it to "will delete" so both pages commit to the same rule). Note that Supabase's last_sign_in_at does not change while someone stays signed in, so also check progress.updated_at before treating an account as inactive. If you drop this rule, remove it here, under "Account emails", in terms.html, and keep accounts until the holder asks for deletion. --></li>
         <li><strong>Authentication logs:</strong> Supabase's logs of sign-up, sign-in and password events are deleted after no more than 7 days. The record of a signed-in browser or device is deleted when that session ends, for example when you sign out, or when your account is deleted.<!-- POLICY CHOICE: Supabase log retention depends on the plan (checked on supabase.com/pricing, 24 September 2026: Free 1 day, Pro 7 days, Team 28 days). On Team, change "7 days" to "28 days". Supabase can also copy auth audit logs into the database table auth.audit_log_entries ("Postgres database storage" under Authentication settings). Entries there stay until deleted: switch that option off, or delete rows older than 7 days. Session records (auth.sessions, which hold IP address and user agent) stay until the session ends. --></li>
         <li><strong>Backups:</strong> if our Supabase plan includes backups, deleted data may remain in them until they expire, which takes no more than 14 days.<!-- POLICY CHOICE: Supabase Free has no automatic backups; Pro keeps daily backups for 7 days and Team for 14. Update this line if the plan changes. --></li>
@@ -154,8 +160,9 @@
         <li><strong>eirehome-flow</strong> (localStorage): keeps your journey progress, the figures you enter in the calculator and whether you have saved them to your journey, so they are still there when you come back and My journey can show them. It stays until you clear your browser's data for our site. Signing out clears your journey progress from it, and resetting your progress clears the ticks. Calculator figures never leave your browser.</li>
         <li><strong>eirehome-flash</strong> (sessionStorage): holds a one-time notice, such as "You have signed out", while you move from one page to the next. It is deleted as soon as the notice is shown, or when you close the tab.</li>
         <li><strong>Supabase session</strong> (localStorage, under a key that starts with sb- and ends with -auth-token): used only while you are signed in. It holds a session token that keeps you signed in as you move between pages and come back later. It is removed when you sign out.</li>
+        <li><strong>eirehome-google</strong> (sessionStorage): used only when you choose to sign in with Google. It remembers, for up to 15 minutes, which page to take you to when you come back from Google. It is deleted when you come back, or when you close the tab.</li>
       </ul>
-      <p>Under Regulation 5 of the ePrivacy Regulations (S.I. No. 336 of 2011), a website does not need your consent to store information on your device where this is strictly necessary to provide a service you have asked for. Each item above is used only for a feature you choose to use: tracking your journey, using the calculator, seeing a notice after you sign in or out, and staying signed in. None is used for analytics, advertising or tracking. That is why we do not show a cookie banner.</p>
+      <p>Under Regulation 5 of the ePrivacy Regulations (S.I. No. 336 of 2011), a website does not need your consent to store information on your device where this is strictly necessary to provide a service you have asked for. Each item above is used only for a feature you choose to use: tracking your journey, using the calculator, seeing a notice after you sign in or out, coming back to the right page after signing in with Google, and staying signed in. None is used for analytics, advertising or tracking. That is why we do not show a cookie banner.</p>
       <!-- POLICY CHOICE: remembering calculator figures between visits is the least clear-cut item here. It is treated as part of the calculator service the visitor asked for. For a stricter reading, keep calculator figures in sessionStorage so they last only for the visit. -->
       <p>You can clear this storage at any time in your browser settings. If you block it, the guide and the calculator still work, but your progress and figures are lost when you leave or reload the page, and you may not stay signed in as you move between pages.</p>
 
@@ -182,7 +189,7 @@
         <li>Sign out. This clears your journey progress from that browser. The copy in your account stays.</li>
         <li>Clear the data kept in your browser through your browser settings.</li>
       </ul>
-      <p>For anything else, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. This includes deleting your account, as there is no delete button on the site yet. Deleting your account also deletes your saved progress.</p>
+      <p>To delete your account, use "Delete my account" on My profile. It deletes your account and your saved progress straight away. If you cannot sign in, email us instead. For anything else, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>.</p>
       <p>Please email us from the address linked to your account, so we can confirm the request is yours. If we cannot confirm who you are, we may ask for more information, but only what we need to check.</p>
       <p>We will reply within one month of receiving your request. If a request is complex, or you send several, we may extend this by up to two more months. If so, we will tell you within the first month and explain why. Using your rights is free. If a request is clearly unfounded or excessive, we may charge a reasonable fee or refuse it, and we will explain why.</p>
 

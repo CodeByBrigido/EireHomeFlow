@@ -1,6 +1,6 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.3 · Última revisão: 24/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026
 
 O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
 
@@ -21,7 +21,7 @@ O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estát
 auth.users (gerenciada pelo Supabase)
   id                 uuid  PK
   email              text
-  raw_user_meta_data jsonb  → { "full_name": "Rodrigo Brigido" }
+  raw_user_meta_data jsonb  → { "full_name": "Rodrigo Brigido", "display_name"?, "avatar_url"?, "name"?, "picture"? }
   ...
         │ 1
         │
@@ -35,7 +35,13 @@ public.progress
 ### 2.1 `auth.users`
 Tabela interna do Supabase Auth. O site grava apenas:
 - `email` e senha (hash), via `signUp`;
-- `user_metadata.full_name`, o nome digitado no cadastro (via `options.data`) e alterado no perfil (via `updateUser({ data })`).
+- `user_metadata.full_name`, o nome digitado no cadastro (via `options.data`) e alterado no perfil (via `updateUser({ data })`);
+- `user_metadata.display_name`, o nome definido em My profile (a partir de 28/09/2026). Tem prioridade sobre `full_name`, porque cada login com Google regrava `full_name`, `name`, `avatar_url` e `picture` com os dados da conta Google.
+
+Quem entra com Google não tem senha. O Supabase guarda a identidade Google em `auth.identities` e copia nome, e-mail e o link da foto para `user_metadata` (o site não usa a foto).
+
+### 2.1.1 Função `public.delete_my_account()`
+Deixa a própria pessoa apagar a conta em My profile. `security definer` (roda com os direitos de quem a criou, que pode apagar em `auth.users`), `set search_path = '`, e sem parâmetros: só apaga `auth.uid()`, então ninguém consegue apagar a conta de outra pessoa. `EXECUTE` só para `authenticated` (tirado de `public` e `anon`). O SQL está no `SETUP-CONTAS.md`, seção 2.1. Apagar em `auth.users` leva junto `public.progress` (cascade), `auth.identities`, `auth.sessions` e os tokens de atualização. Não pode haver arquivos no Storage em nome da pessoa (o site não usa Storage).
 
 Nos modelos de e-mail, o nome fica disponível como `{{ .Data.full_name }}`.
 
@@ -154,21 +160,25 @@ where done ? 'aip-3';
 |---|---|---|
 | Cadastro | `auth.signUp({ email, password, options: { emailRedirectTo, data: { full_name } } })` | `signup.html` |
 | Login | `auth.signInWithPassword({ email, password })` | `signin.html` |
+| Entrar com Google | `auth.signInWithOAuth({ provider: "google", options: { redirectTo, queryParams: { prompt: "select_account" } } })` | `signin.html` e `signup.html` |
+| Google ligado? | `GET /auth/v1/settings` com o header `apikey` (chave publicável): `external.google` | `signin.html` e `signup.html` |
 | Logout | `auth.signOut()` | Menu da conta e `profile.html` |
+| Apagar a própria conta | `rpc("delete_my_account")` e depois `auth.signOut({ scope: "local" })` | `profile.html` |
 | Pedir redefinição | `auth.resetPasswordForEmail(email, { redirectTo })` | `forgot-password.html` |
 | Nova senha | `auth.updateUser({ password })` | `new-password.html` |
-| Mudar o nome | `auth.updateUser({ data: { full_name } })` | `profile.html` |
+| Mudar o nome | `auth.updateUser({ data: { display_name, full_name } })` | `profile.html` |
 | Ler progresso | `from("progress").select("done").eq("user_id", id).maybeSingle()` | Ao entrar |
 | Gravar progresso | `from("progress").upsert({ user_id, done, updated_at })` | Ao entrar (soma) e a cada mudança |
 
-`emailRedirectTo` e `redirectTo` são sempre o endereço base do site (`Account.homeUrl()`, a pasta onde está o `index.html`). A Home trata o retorno: mostra o aviso de confirmação ou, no caso de senha, redireciona para `new-password.html`. Por isso as Redirect URLs só precisam do endereço base.
+`emailRedirectTo` e `redirectTo` (também no Google) são sempre o endereço base do site (`Account.homeUrl()`, a pasta onde está o `index.html`). A Home trata o retorno: mostra o aviso de confirmação ou, no caso de senha, redireciona para `new-password.html`. Por isso as Redirect URLs só precisam do endereço base.
 
 ## 6. Configuração do Auth (painel)
 
 | Onde | Configuração |
 |---|---|
 | Authentication → Sign In / Providers → Email | Email ativado; **Confirm email** ligado; **Minimum password length = 8** |
-| Authentication → URL Configuration | **Site URL** = endereço de produção; **Redirect URLs** = produção + `http://localhost:8000/` |
+| Authentication → Sign In / Providers → Google | Ligado, com o **Client ID** e o **Client Secret** do Google Cloud. O segredo fica só aqui, nunca no repositório |
+| Authentication → URL Configuration | **Site URL** = endereço de produção; **Redirect URLs** = produção + `http://localhost:8000/` (e qualquer outro endereço onde o site rode, ex.: Vercel) |
 | Authentication → Emails → SMTP Settings | SMTP próprio (Gmail com senha de app, ou Brevo/Resend) |
 | Authentication → Rate Limits | E-mails por hora: 30 (padrão com SMTP próprio) |
 | Authentication → Emails → Templates | Modelos da seção 7 |

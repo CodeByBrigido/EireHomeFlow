@@ -1,6 +1,6 @@
 # UI/UX Design
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 27/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
 
 Complementa o [Design System](07-Design-System.md), que define cores, tipos e componentes. Este documento define **o que cada página mostra, em que estado e com quais palavras**.
 
@@ -61,9 +61,10 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
   - nome e e-mail;
   - Dashboard · My profile · **Sign out** (em vermelho). A troca de senha não fica no menu: só em My profile.
   - Fecha ao clicar fora, com Esc (o foco volta ao círculo) ou ao escolher uma opção. No celular, abre na largura da tela, logo abaixo do cabeçalho.
+- **No celular (até 720px), o cabeçalho tem 2 linhas:** a marca à esquerda e "Sign in" (ou o círculo) à direita na primeira; Home, Guide, My journey e Calculator na segunda. Por isso "Sign in" e o círculo ficam fora do `<nav>`, num `.site-header__account` próprio.
 
 ### 4.2 Rodapé e avisos (`partials/footer.html`)
-- Rodapé areia com "ÉireHome Flow, Dublin", "Educational content. Not regulated financial advice." e os links **Privacy Policy** e **Terms of Use**.
+- Rodapé areia com "ÉireHome Flow", "Educational content. Not regulated financial advice." e os links **Privacy Policy** e **Terms of Use**.
 - **Aviso (toast):** caixa no rodapé da tela, verde (sucesso) ou vermelha (erro), com ícone, texto, botão de ação opcional e "×". Some sozinho em 7 segundos, exceto os avisos marcados como fixos.
 
 | Situação | Texto | Tipo |
@@ -163,9 +164,21 @@ Links externos (ex.: Revenue no Help to Buy) abrem em nova aba, com "↗" e o av
 - **Password:** explicação das regras e "Change password" (vai para `new-password.html`).
 - **Your data:** o que a conta guarda e onde, link para a Privacy Policy e como pedir a exclusão da conta (e-mail para eirehomeflow@gmail.com).
 - **Sign out.**
+- **Delete your account:** texto "This deletes your account and the progress saved in it, straight away. It cannot be undone...". Botão com contorno vermelho **"Delete my account"**. O clique troca o botão por uma caixa vermelho-clara, na própria página (sem pop-up): "Delete the account for <e-mail> and all its saved progress? ..." com **"Yes, delete my account"** (vermelho cheio) e **"Cancel"**. Enquanto apaga: "Deleting...". Deu certo: Home, deslogado, aviso "Your account and its saved progress have been deleted." Deu errado: mensagem vermelha logo abaixo. Por último, a nota "Cannot sign in any more? Email eirehomeflow@gmail.com..."
 
 ### 5.7 Páginas de conta
-Cartão branco centralizado com eyebrow "Your account", título, introdução, formulário e aviso de privacidade no fim.
+Cartão branco centralizado com eyebrow "Your account", título, introdução, formulário e aviso de privacidade no fim. Eyebrow, título, introdução e a nota que substitui o formulário ficam centralizados; os textos longos (termos, aviso de privacidade) ficam justificados.
+
+**Continue with Google** (em `signin.html` e `signup.html`, acima do formulário): botão branco largo com o logo "G" colorido do Google, como pedem as regras de marca do Google, e a linha "or use your email" separando do formulário. No cadastro, logo abaixo do botão: "By continuing with Google, you agree to our Terms of Use and confirm you have read our Privacy Policy." Enquanto abre: "Opening Google..." (desativado). Erro antes de sair do site (ex.: Google desligado no painel): mensagem abaixo do botão. O bloco some junto com o formulário quando a pessoa já está logada.
+
+O aviso de privacidade das páginas de conta diz também: "With Google, it also keeps the profile picture link Google sends, which we do not use."
+
+| Situação na volta do Google | Aviso |
+|---|---|
+| Conta já existia | "Welcome back, Rodrigo." (na página de onde a pessoa saiu) |
+| Conta nova | "Your account is ready. Welcome to ÉireHome Flow, Rodrigo!" |
+| Cancelou no Google | Vermelho, fixo: "Signing in with Google was cancelled. You can try again, or use your email." + "Sign in" |
+| Outro erro | Vermelho, fixo: "Signing in with Google did not work: <motivo>. Please try again, or use your email." + "Sign in" |
 
 | Página | Campos | Botão | Links |
 |---|---|---|---|
