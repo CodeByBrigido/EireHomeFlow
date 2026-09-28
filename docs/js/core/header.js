@@ -1,9 +1,9 @@
 // The shared header (active link, XP, sign-in link or account circle), the gate on
 // signed-in pages, and the account menu.
-import { XP_PER_STEP } from "../lib/progress.js?v=20260927";
-import { initials, userName } from "../lib/people.js?v=20260927";
-import { Account } from "./account.js?v=20260927";
-import { bind, PAGE } from "./dom.js?v=20260927";
+import { XP_PER_STEP } from "../lib/progress.js?v=20260928";
+import { initials, userName } from "../lib/people.js?v=20260928";
+import { Account } from "./account.js?v=20260928";
+import { bind, PAGE } from "./dom.js?v=20260928";
 
 export function renderHeader(p) {
   document.querySelectorAll(".nav__link").forEach((link) => {

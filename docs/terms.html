@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Terms of Use | ÉireHome Flow</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260927">
-  <script type="module" src="js/pages/legal.js?v=20260927"></script>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260928">
+  <script type="module" src="js/pages/legal.js?v=20260928"></script>
 </head>
 <body data-page="terms">
 <div class="page">
@@ -20,6 +23,8 @@
         <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
         <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
         <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      </nav>
+      <div class="site-header__account">
         <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
           <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
@@ -30,7 +35,7 @@
             <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
   <!-- /include -->
@@ -38,7 +43,7 @@
   <main class="main main--wide">
     <p class="eyebrow">Legal</p>
     <h1 class="page-title">Terms of Use</h1>
-    <p class="legal__updated">Last updated: 24 September 2026</p>
+    <p class="legal__updated">Last updated: 28 September 2026</p>
     <div class="legal-layout">
     <div class="legal">
       <div class="legal__summary">
@@ -118,11 +123,11 @@
       <p>Accounts are optional and free. You must be 18 or over to create one.</p>
       <p>Each account is for one person only. Do not share your account or create one for someone else. If you are buying with someone else, each of you should use your own account.</p>
       <h3>Your details</h3>
-      <p>Give your real name and an email address that you control. We use the email address to confirm your account and to help you reset your password. You can see and change your name on <a href="profile.html">My profile</a>.</p>
+      <p>Give your real name and an email address that you control. We use the email address to confirm your account and to help you reset your password. You can also sign in with a Google account; we then use the name and email address on it. You can see and change your name on <a href="profile.html">My profile</a>.</p>
       <!-- POLICY CHOICE: the sign-up form requires a first and last name. The service does not strictly need a real full name, so under the GDPR data minimisation principle consider accepting any name the person is happy to use, and then relax "real name" here and "false details" in sections 7 and 11. -->
       <h3>Keeping your account safe</h3>
       <ul>
-        <li>Choose a strong password that you do not use anywhere else, and do not share it with anyone.</li>
+        <li>Choose a strong password that you do not use anywhere else, and do not share it with anyone. If you sign in with Google, keep your Google account safe in the same way.</li>
         <li>Sign out when you finish using a shared or public device.</li>
         <li>We never see your password and we will never ask you for it.</li>
         <li>If you think someone else has used your account, change your password straight away and tell us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>.</li>
@@ -131,8 +136,8 @@
       <h3>Your progress</h3>
       <p>While you are signed in, the steps you mark as done are saved to your account. When you sign out, your progress is cleared from that browser, but the copy in your account stays. You can reset your progress at any time.</p>
       <h3>Closing your account</h3>
-      <p>You can stop using ÉireHome Flow at any time. To close your account, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a> from the email address linked to your account and ask us to delete it. If you can no longer use that address, tell us and we will find another way to check that the account is yours. We will delete the account within one month of your request. Deleting your account also deletes the progress saved in it.</p>
-      <!-- POLICY CHOICE: account deletion is by email only (no self-service yet). We ask for the request to come from the email address on the account, as a simple identity check, and commit to deleting within one month, in line with the GDPR one-month deadline for responding to requests. Update this section if a self-service delete button is added. -->
+      <p>You can stop using ÉireHome Flow at any time. To close your account, use "Delete my account" on <a href="profile.html">My profile</a>: it deletes the account and the progress saved in it straight away, and cannot be undone. If you cannot sign in, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a> from the email address linked to your account and ask us to delete it. If you can no longer use that address, tell us and we will find another way to check that the account is yours. We will delete the account within one month of your email.</p>
+      <!-- POLICY CHOICE: self-service deletion needs the delete_my_account() database function from specs/SETUP-CONTAS.md, step 2.1. Email stays as the route for people who cannot sign in, with the GDPR one-month deadline. -->
 
       <h2>7. Acceptable use</h2>
       <p>You agree not to:</p>
@@ -162,7 +167,7 @@
       <ul>
         <li>GitHub Pages (GitHub, Inc.) hosts the website;</li>
         <li>Supabase (Supabase Pte. Ltd., Singapore) runs our accounts, on Amazon Web Services servers in Ireland;</li>
-        <li>Google's Gmail service currently sends account emails, such as confirming your email address and resetting your password; and</li>
+        <li>Google's Gmail service currently sends account emails, such as confirming your email address and resetting your password, and Google confirms who you are if you choose to sign in with Google; and</li>
         <li>jsDelivr, a content delivery network, delivers the code library we use for accounts when a page loads.</li>
       </ul>
       <p>If one of these providers has a problem, parts of ÉireHome Flow may be slow or unavailable. Our <a href="privacy.html">privacy policy</a> explains what personal data they handle.</p>
@@ -252,7 +257,7 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow, Dublin</span>
+      <span class="site-footer__brand">ÉireHome Flow</span>
       <span>Educational content. Not regulated financial advice.</span>
       <nav class="site-footer__links" aria-label="Legal">
         <a href="privacy.html">Privacy Policy</a>

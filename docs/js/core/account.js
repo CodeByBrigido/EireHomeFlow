@@ -1,7 +1,7 @@
 // Accounts: Supabase sign-up and sign-in, and reading and writing the progress row (merging is in sync.js).
 // Settings come from config.js. With them empty, Account.enabled stays false
 // and the Supabase library is never downloaded.
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260927";
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260928";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js";
 const CONFIGURED = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
@@ -26,6 +26,12 @@ function savedUser() {
 // The library starts downloading as soon as this module runs, not after the step list loads.
 const library = CONFIGURED ? loadScript(SUPABASE_JS) : Promise.resolve();
 library.catch(() => {}); // the failure is reported by init()
+
+// Google sign-in leaves the site and comes back to the home page; this remembers, for that
+// tab only, the page to go on to afterwards.
+const GOOGLE_RETURN = "eirehome-google";
+const GOOGLE_RETURN_MAX_AGE = 15 * 60 * 1000;
+let googleCheck = null;
 
 let markReady;
 const whenReady = new Promise((resolve) => { markReady = resolve; });
@@ -96,6 +102,45 @@ export const Account = {
     return this.client.auth.signInWithPassword({ email, password });
   },
 
+  // Whether Google sign-in is switched on in the Supabase dashboard. It is a public setting,
+  // read with the publishable key; the Google client secret stays in the dashboard.
+  googleAvailable() {
+    if (!CONFIGURED) return Promise.resolve(false);
+    if (!googleCheck) {
+      googleCheck = fetch(SUPABASE_URL + "/auth/v1/settings", { headers: { apikey: SUPABASE_ANON_KEY } })
+        .then((res) => (res.ok ? res.json() : null))
+        .then((settings) => !!(settings && settings.external && settings.external.google))
+        .catch(() => false);
+    }
+    return googleCheck;
+  },
+
+  // Sends the person to Google. Google and Supabase bring them back to the home page, which
+  // keeps the site's folder (/EireHomeFlow/ on GitHub Pages), so the Supabase redirect list
+  // only needs the site's base address; app.js then takes them on to `next`.
+  signInWithGoogle(next) {
+    try {
+      sessionStorage.setItem(GOOGLE_RETURN, JSON.stringify({ next, at: Date.now() }));
+    } catch (err) {
+      // Storage blocked: the person stays on the home page after signing in.
+    }
+    return this.client.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: this.homeUrl(), queryParams: { prompt: "select_account" } },
+    });
+  },
+
+  // The page to go on to after Google, once: null when this visit is not a return from Google.
+  takeGoogleReturn() {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(GOOGLE_RETURN));
+      sessionStorage.removeItem(GOOGLE_RETURN);
+      return saved && Date.now() - saved.at < GOOGLE_RETURN_MAX_AGE ? saved : null;
+    } catch (err) {
+      return null;
+    }
+  },
+
   signOut() {
     return this.client.auth.signOut();
   },
@@ -108,8 +153,25 @@ export const Account = {
     return this.client.auth.updateUser({ password });
   },
 
+  // display_name survives a Google sign-in, which rewrites full_name with the Google name;
+  // full_name is still set because the email templates read it.
   updateProfile(name) {
-    return this.client.auth.updateUser({ data: { full_name: name } });
+    return this.client.auth.updateUser({ data: { display_name: name, full_name: name } });
+  },
+
+  // Deletes the signed-in person's account for good, through the delete_my_account() database
+  // function (SQL in specs/SETUP-CONTAS.md). The function can only delete the account of
+  // whoever calls it, so no secret key is needed here. The saved progress goes with it
+  // (ON DELETE CASCADE), and then this browser is signed out.
+  async deleteAccount() {
+    const { error } = await this.client.rpc("delete_my_account");
+    if (error) {
+      // PGRST202: the database function has not been created yet.
+      if (error.code === "PGRST202") throw new Error("Deleting accounts from the site is not switched on yet. Email eirehomeflow@gmail.com and we will delete it for you.");
+      throw error;
+    }
+    // The account is gone, so only this browser's copy of the session needs clearing.
+    await this.client.auth.signOut({ scope: "local" });
   },
 
   async loadProgress() {

@@ -34,6 +34,28 @@ create policy "Users update their own progress" on public.progress
 
 As políticas de *row level security* garantem que cada pessoa só leia e grave o próprio progresso. Ao apagar um usuário, o progresso dele é apagado junto.
 
+### 2.1 Deixar a pessoa apagar a própria conta
+O botão "Delete my account" de My profile precisa desta função. Cole no **SQL Editor** e clique em **Run**:
+
+```sql
+-- Lets a signed-in person delete their own account from My profile.
+-- It takes no arguments and only ever deletes the caller (auth.uid()).
+-- Their progress row goes with it (on delete cascade), and so do their sessions.
+create or replace function public.delete_my_account()
+returns void
+language sql
+security definer
+set search_path = '
+as $$
+  delete from auth.users where id = auth.uid();
+$$;
+
+revoke execute on function public.delete_my_account() from public, anon;
+grant execute on function public.delete_my_account() to authenticated;
+```
+
+Sem essa função, o botão mostra "Deleting accounts from the site is not switched on yet" e manda a pessoa escrever para eirehomeflow@gmail.com. Para apagar uma conta à mão: **Authentication → Users → Delete user**.
+
 ## 3. Configurar o login
 Em **Authentication → Sign In / Providers**:
 - **Email** deve estar ativado.
@@ -43,7 +65,20 @@ Em **Authentication → URL Configuration**:
 - **Site URL:** `https://codebybrigido.github.io/EireHomeFlow/`
 - **Redirect URLs:** adicione `https://codebybrigido.github.io/EireHomeFlow/` e também `http://localhost:8000/`, para testar no computador.
 
-Sem o endereço público nessa lista, os links dos e-mails de confirmação e de senha não voltam para o site.
+Sem o endereço público nessa lista, os links dos e-mails de confirmação e de senha, e a volta do login com Google, não voltam para o site. Se o site também rodar em outro endereço (por exemplo na Vercel), acrescente esse endereço também.
+
+### 3.1 Entrar com Google
+O site já tem o botão "Continue with Google". Ele só aparece quando o Google está ligado no Supabase.
+
+1. No [Google Cloud Console](https://console.cloud.google.com/), crie um projeto e, em **APIs e serviços → Tela de consentimento OAuth**, preencha o nome do app (ÉireHome Flow), o e-mail de suporte e o domínio `codebybrigido.github.io`.
+2. Em **Credenciais → Criar credenciais → ID do cliente OAuth**, escolha **Aplicativo da Web**:
+   - **Origens JavaScript autorizadas:** `https://codebybrigido.github.io` e `http://localhost:8000`;
+   - **URIs de redirecionamento autorizados:** `https://dyfxstpbzmihtmccaezs.supabase.co/auth/v1/callback`.
+3. No Supabase, em **Authentication → Sign In / Providers → Google**, ligue o Google e cole o **Client ID** e o **Client Secret**.
+4. O **Client Secret** fica só no painel do Supabase. Nunca o coloque em `docs/js/config.js` nem em nenhum arquivo do repositório.
+5. Teste: `signin.html` → "Continue with Google" → escolha a conta → você volta ao Dashboard já logado, com as suas iniciais no topo.
+
+Enquanto o app estiver em modo de teste no Google Cloud, só os e-mails cadastrados como testadores conseguem entrar. Para liberar para todos, publique o app na tela de consentimento.
 
 ## 4. Colar as chaves no site
 Em **Project Settings → API Keys**, copie:
