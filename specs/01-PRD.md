@@ -90,7 +90,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Progresso e valores da calculadora ficam salvos no navegador.
 
 ### 5.8 Idiomas
-- O site inteiro (navegação, as 31 etapas, calculadora, contas, avisos, erros, textos para leitor de tela) está em inglês, português do Brasil, espanhol, francês, alemão e italiano.
+- O site inteiro (navegação, as 31 etapas, calculadora, contas, avisos, erros, textos para leitor de tela) está em inglês, português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano.
 - Na primeira visita, o site segue o idioma do navegador; sem idioma disponível, abre em inglês.
 - Menu de idiomas no cabeçalho, com os nomes na própria língua. A escolha fica salva no navegador e nunca é trocada pela detecção.
 - Regras, valores e nomes oficiais irlandeses (Help to Buy, AIP, Revenue...) são os mesmos em todos os idiomas; os nomes oficiais ficam em inglês, com explicação.

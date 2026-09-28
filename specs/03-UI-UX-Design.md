@@ -16,7 +16,7 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 
 ## 2. Tom de voz e regras de texto
 
-- **Idioma:** inglês britânico e irlandês (`en-IE`) na fonte: *organise, savings, solicitor, flat, estate agent*. O site também está em português do Brasil, espanhol, francês, alemão e italiano, traduzidos a partir do inglês com as mesmas regras (sem travessão, sem "≈", sem "…", sem prometer resultado) e o glossário do [doc 08](08-Internationalisation.md), seção 6. Termos oficiais irlandeses ficam em inglês nas traduções, explicados na primeira menção.
+- **Idioma:** inglês britânico e irlandês (`en-IE`) na fonte: *organise, savings, solicitor, flat, estate agent*. O site também está em português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano, traduzidos a partir do inglês com as mesmas regras (sem travessão, sem "≈", sem "…", sem prometer resultado) e o glossário do [doc 08](08-Internationalisation.md), seção 6. Termos oficiais irlandeses ficam em inglês nas traduções, explicados na primeira menção.
 - **Maiúsculas:** sentence case em títulos e botões ("Start my journey", não "Start My Journey"). Exceções: nomes próprios e termos oficiais (Approval in Principle, Sale Agreed, Help to Buy, Local Property Tax).
 - **Números:** em inglês, euro antes do valor e vírgula de milhar (€380,000). Nos outros idiomas, o formato local (€ 380.000 em português, 380.000 € em alemão e romeno, 380 000 € em francês, polonês e lituano), sempre com os mesmos valores. Faixas com hífen simples (€2,000-3,000; 1-2 weeks). Aproximação com "about" no texto e "~" nas tabelas ("ca." em alemão, "env." em francês).
 - **Proibido** (marcas de texto gerado por IA):
