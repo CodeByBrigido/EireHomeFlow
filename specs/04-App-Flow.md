@@ -1,6 +1,6 @@
 # App Flow
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
 
 Os diagramas usam Mermaid (renderizado no GitHub e no VS Code com a extensão de preview). Cada caixa com `.html` é uma página própria.
 
@@ -28,7 +28,7 @@ flowchart LR
 
 ## 2. Primeira visita
 
-1. O visitante chega à Home. Sem progresso salvo, o botão diz "Start my journey".
+1. O visitante chega à Home, no idioma do navegador se o site o tiver completo (português, espanhol, francês, alemão ou italiano), senão em inglês. Nada é salvo: a detecção roda de novo a cada visita até a pessoa escolher um idioma no menu (seção 10.1). Sem progresso salvo, o botão diz "Start my journey".
 2. Pode ler o guia completo (`guide.html`), usar a calculadora ou abrir a jornada, sem conta.
 3. Na jornada, "Calculate my buying power" aparece como atual ("Start here"); as demais obrigatórias aparecem bloqueadas.
 4. A etapa 1 só se conclui pela calculadora: "Open the calculator" → preenche → "Save to my journey" → volta à etapa 1 marcada, com os números da pessoa. Daí em diante, as etapas 2, 3 e 5 mostram os números dela.
@@ -176,9 +176,26 @@ Quem já está logado usa o mesmo `new-password.html` pelo botão "Change passwo
 
 "Sign out" (menu ou Perfil) encerra a sessão e apaga o progresso deste navegador. O progresso continua na conta. No Dashboard, no Perfil e em Nova senha, a pessoa volta à Home com o aviso "You have signed out..."; nas outras páginas, o aviso aparece ali mesmo.
 
+## 10.1 Trocar de idioma
+
+```mermaid
+flowchart LR
+  A[Qualquer página] -->|botão com globo no cabeçalho| M[Menu de idiomas]
+  M -->|escolhe Deutsch| S[Salva eirehome-locale = de]
+  S --> B[Baixa os textos desta página em alemão]
+  B --> R[Recarrega a mesma página, já em alemão]
+  R --> N[Próximas páginas e visitas em alemão]
+```
+
+1. O menu lista só os idiomas completos, cada um no próprio nome. O atual vem marcado.
+2. A escolha fica salva no navegador (`localStorage`) e vale para todas as páginas e visitas. A detecção pelo idioma do navegador nunca a substitui.
+3. A página recarrega no mesmo lugar (a etapa aberta na jornada continua aberta, porque está no endereço). Formulário meio preenchido é perdido.
+4. **Link com `?lang=`** (ex.: `index.html?lang=pt`): abre naquele idioma só nesta aba, sem mudar a escolha salva. Serve para mandar o site em português para alguém, e para revisar idiomas em rascunho (`?lang=<código>`).
+5. Com o armazenamento bloqueado, a escolha não pode ser salva: a página recarrega com `?lang=` no endereço, e o idioma vale só para ela.
+
 ## 11. Pessoa que volta
 
-- **Sem conta:** progresso e calculadora restaurados do `localStorage`; "Resume my journey".
+- **Sem conta:** progresso e calculadora restaurados do `localStorage`; "Resume my journey". O idioma escolhido antes continua.
 - **Com conta, no mesmo navegador:** sessão restaurada (`INITIAL_SESSION`) e progresso somado com o da nuvem.
 - **Com conta, em outro aparelho:** ao entrar, o progresso da nuvem aparece.
 
@@ -195,4 +212,7 @@ Quem já está logado usa o mesmo `new-password.html` pelo botão "Change passwo
 | Etapa 1 feita sem os números neste navegador (marcada à mão antes, ou outro aparelho) | A jornada pede "Open the calculator and choose Save to my journey"; o Dashboard mostra "Not saved yet"; a calculadora mostra "Save to my journey" |
 | Página logada acessada sem login | Cartão "Sign in to see this page..." com links que voltam para a página |
 | Etapa aberta e página recarregada | O `#step-id` reabre a mesma etapa |
+| Primeira visita num idioma, sem cópia dos textos | A página fica escondida até os textos chegarem (no máximo 3 s; depois disso aparece em inglês). As páginas seguintes abrem na hora |
+| Idioma escolhido virou rascunho | A escolha fica guardada, mas não vale: o site usa o idioma do navegador ou o inglês até o idioma voltar a ficar completo |
+| Texto sem tradução num idioma em rascunho | Aparece em inglês |
 | Visitante com versão antiga em cache | Páginas carregam CSS e JS com `?v=` (página nova busca scripts novos); o guia é sempre conferido com o servidor, e cabeçalho e rodapé vêm dentro de cada página; os scripts toleram partes que faltam (ver TRD, seção 10) |

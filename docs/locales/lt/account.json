@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Suvestinė | ÉireHome Flow",
+    "eyebrow": "Jūsų suvestinė",
+    "title": "Jūsų suvestinė",
+    "intro": "Kur esate kelyje link raktų ir kokie skaičiai už to slypi.",
+    "progress": "Pažanga",
+    "phase": "Dabartinis etapas",
+    "earned": "Surinkta",
+    "xpNote": "XP, po 25 už kiekvieną atliktą žingsnį.",
+    "nextUp": "Toliau",
+    "openStep": "Atidaryti šį žingsnį",
+    "phases": "Jūsų etapai",
+    "numbers": "Jūsų skaičiai",
+    "maxLoan": "Didžiausia paskola",
+    "funds": "Turimos lėšos",
+    "openCalculator": "Atidaryti skaičiuoklę",
+    "account": "Jūsų paskyra",
+    "synced": "Jūsų pažanga išsaugota paskyroje.",
+    "profile": "Mano profilis",
+    "hello": "Sveiki, {name}",
+    "helloNoName": "Sveiki",
+    "allDone": "Visi žingsniai atlikti. Metas užkaisti arbatinuką.",
+    "notSaved": "Dar neišsaugota",
+    "numbersSaved": "Didžiausia būsto kaina pagal Jūsų skaičiuoklės skaičius.",
+    "numbersHint": "Užpildykite skaičiuoklę ir pasirinkite Išsaugoti mano kelyje, kad čia matytumėte savo skaičius. Jie lieka šioje naršyklėje.",
+    "useCalculator": "Naudoti skaičiuoklę",
+    "memberSince": "Paskyra sukurta {date}"
+  },
+  "profile": {
+    "meta": "Mano profilis | ÉireHome Flow",
+    "title": "Mano profilis",
+    "intro": "Jūsų duomenys ir kaip veikia Jūsų paskyra.",
+    "details": "Jūsų duomenys",
+    "memberSince": "Paskyra sukurta",
+    "save": "Išsaugoti pakeitimus",
+    "saving": "Išsaugoma...",
+    "updated": "Jūsų profilis atnaujintas.",
+    "password": {
+      "title": "Slaptažodis",
+      "text": "Naudokite bent 8 simbolius, įskaitant didžiąją raidę ir specialųjį simbolį.",
+      "change": "Keisti slaptažodį"
+    },
+    "data": {
+      "title": "Jūsų duomenys",
+      "text": "Jūsų paskyroje saugomas vardas, el. paštas ir atlikti žingsniai, serveriuose Airijoje. Prisijungus su Google, saugoma ir Google atsiųsta profilio nuotraukos nuoroda, kurios nenaudojame. Skaičiai, kuriuos įvedate į skaičiuoklę, lieka Jūsų naršyklėje. <a href=\"privacy.html\">Perskaitykite mūsų Privatumo politiką</a>."
+    },
+    "signOut": {
+      "title": "Atsijungti",
+      "text": "Jūsų pažanga lieka išsaugota paskyroje kitam kartui."
+    },
+    "delete": {
+      "title": "Ištrinti paskyrą",
+      "text": "Tai iš karto ištrina Jūsų paskyrą ir joje išsaugotą pažangą. To atšaukti negalima. Skaičiuoklės skaičiai šioje naršyklėje nėra paskyros dalis ir lieka čia.",
+      "start": "Ištrinti mano paskyrą",
+      "question": "Ištrinti paskyrą <strong data-bind=\"userEmail\"></strong> ir visą išsaugotą pažangą? Vėliau galėsite susikurti naują paskyrą, bet šios atkurti nepavyks.",
+      "confirm": "Taip, ištrinti mano paskyrą",
+      "cancel": "Atšaukti",
+      "deleting": "Trinama...",
+      "done": "Jūsų paskyra ir išsaugota pažanga ištrintos.",
+      "failed": "Nepavyko ištrinti paskyros. Bandykite dar kartą.",
+      "signInAgain": "Norėdami ištrinti paskyrą, prisijunkite iš naujo.",
+      "notEnabled": "Paskyrų trynimas svetainėje dar neįjungtas. Parašykite adresu eirehomeflow@gmail.com, ir paskyrą ištrinsime už Jus.",
+      "note": "Nebegalite prisijungti? Parašykite adresu <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> iš paskyros el. pašto adreso, ir paskyrą ištrinsime už Jus."
+    }
+  }
+}

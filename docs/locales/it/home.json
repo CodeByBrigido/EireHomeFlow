@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Per chi compra la prima casa in Irlanda",
+    "title": "Dai primi risparmi<br>al tuo <em>primo divano</em>.",
+    "lead": "Sei fasi e trentuno passi, dai conti dell'anticipo e dai documenti per l'AIP fino alle offerte e alla consegna delle chiavi. La guida copre anche quello che viene dopo, come pavimenti, tende e la prima manutenzione della caldaia.",
+    "start": "Inizia il mio percorso",
+    "resume": "Riprendi il mio percorso",
+    "calculator": "Calcolatore del potere d'acquisto",
+    "alt": "Illustrazione di una casa irlandese sopra la costa",
+    "caption": "La casa per cui stai lavorando."
+  },
+  "ticker": {
+    "label": "Numeri chiave",
+    "items": [
+      "Regola della Banca centrale: 4× il reddito lordo",
+      "Anticipo per la prima casa: 10%",
+      "Imposta di bollo: 1%",
+      "Avvocato: 2.000-3.000 €",
+      "Perizia strutturale: circa 400 €",
+      "Valutazione della banca: circa 150 €"
+    ],
+    "pause": "Pausa",
+    "play": "Riprendi"
+  },
+  "stats": {
+    "loan": {
+      "label": "Mutuo massimo",
+      "value": "4×",
+      "note": "Il reddito annuo lordo, secondo le regole della Banca centrale d'Irlanda."
+    },
+    "deposit": {
+      "label": "Anticipo minimo",
+      "value": "10%",
+      "note": "Lo stesso per chi compra la prima casa e per chi ne ha già avuta una."
+    },
+    "cash": {
+      "label": "Contanti oltre al mutuo",
+      "value": "3.550 €",
+      "note": "Avvocato, perizia e valutazione, più l'1% di imposta di bollo."
+    }
+  },
+  "phases": {
+    "title": "Sei fasi, una dopo l'altra.",
+    "intro": "I passi si sbloccano in ordine: completa ogni passo obbligatorio per sbloccare il successivo. Puoi leggere tutti i passi quando vuoi nella guida completa."
+  },
+  "cta": {
+    "title": "Leggi la guida completa",
+    "text": "Tutti i trentuno passi in un unico posto, con liste e consigli. Non serve un account.",
+    "button": "Apri la guida"
+  }
+}

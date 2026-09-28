@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "label": "Główne",
+    "home": "Start",
+    "guide": "Poradnik",
+    "journey": "Moja droga",
+    "calculator": "Kalkulator"
+  },
+  "header": {
+    "signIn": "Zaloguj"
+  },
+  "language": {
+    "button": "Język: Polski. Zmień język",
+    "code": "PL",
+    "title": "Język"
+  },
+  "account": {
+    "menu": "Menu konta",
+    "dashboard": "Panel",
+    "profile": "Mój profil",
+    "signOut": "Wyloguj",
+    "fallbackName": "Twoje konto",
+    "menuFor": "Menu konta: {name}",
+    "signedOut": "Wylogowano. Twoje postępy są zapisane na koncie."
+  },
+  "yourAccount": "Twoje konto",
+  "footer": {
+    "disclaimer": "Treści edukacyjne. To nie jest regulowane doradztwo finansowe.",
+    "legal": "Informacje prawne",
+    "privacy": "Polityka prywatności",
+    "terms": "Warunki korzystania"
+  },
+  "toast": {
+    "dismiss": "Zamknij"
+  },
+  "gate": {
+    "loading": "Wczytywanie konta...",
+    "signIn": "Zaloguj się",
+    "signUp": "Załóż konto",
+    "signInPrompt": "Zaloguj się, aby zobaczyć tę stronę. Twoja droga, liczby i dane czekają na ciebie.",
+    "accountsOff": "Konta nie są jeszcze włączone. Zajrzyj wkrótce."
+  },
+  "fields": {
+    "name": "Imię i nazwisko",
+    "email": "E-mail",
+    "password": "Hasło",
+    "confirm": "Powtórz hasło"
+  },
+  "forms": {
+    "name": "Wpisz imię i nazwisko.",
+    "email": "Wpisz poprawny adres e-mail, na przykład imie@przyklad.pl.",
+    "password": "Wpisz hasło.",
+    "weakPassword": "Hasło nie spełnia poniższych wymagań.",
+    "confirm": "Powtórz hasło.",
+    "mismatch": "Hasła nie są takie same.",
+    "wait": "Proszę czekać...",
+    "connecting": "Chwila, trwa łączenie. Spróbuj ponownie."
+  },
+  "errors": {
+    "invalidCredentials": "Nieprawidłowy e-mail lub hasło. Sprawdź je i spróbuj ponownie.",
+    "emailNotConfirmed": "Najpierw potwierdź adres e-mail: otwórz link, który wysłaliśmy.",
+    "userExists": "Konto z tym adresem e-mail już istnieje. Zaloguj się.",
+    "weakPassword": "Wybierz silniejsze hasło: co najmniej 8 znaków, z wielką literą i znakiem specjalnym.",
+    "samePassword": "Nowe hasło musi się różnić od obecnego.",
+    "rateLimit": "Za dużo prób. Odczekaj minutę i spróbuj ponownie.",
+    "signupsOff": "Zakładanie kont jest na razie wyłączone. Zajrzyj wkrótce.",
+    "sessionEnded": "Sesja wygasła. Zaloguj się ponownie.",
+    "network": "Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.",
+    "generic": "Coś poszło nie tak. Spróbuj ponownie."
+  },
+  "welcome": {
+    "newAccount": "Twoje konto jest gotowe. Witaj w ÉireHome Flow, {name}!",
+    "newAccountNoName": "Twoje konto jest gotowe. Witaj w ÉireHome Flow!",
+    "back": "Witaj ponownie, {name}.",
+    "backNoName": "Witaj ponownie.",
+    "confirmed": "Adres e-mail potwierdzony. Witaj w ÉireHome Flow, {name}!",
+    "confirmedNoName": "Adres e-mail potwierdzony. Witaj w ÉireHome Flow!",
+    "goToJourney": "Przejdź do mojej drogi"
+  },
+  "google": {
+    "cancelled": "Logowanie przez Google zostało anulowane. Spróbuj ponownie albo użyj adresu e-mail.",
+    "failed": "Logowanie przez Google nie powiodło się. Spróbuj ponownie albo użyj adresu e-mail.",
+    "failedWith": "Logowanie przez Google nie powiodło się: {reason}. Spróbuj ponownie albo użyj adresu e-mail."
+  },
+  "linkExpired": "Ten link wygasł albo został już użyty. Zaloguj się albo poproś o nowy link.",
+  "progress": {
+    "steps": {
+      "one": "Kroki: {done} z {count}",
+      "few": "Kroki: {done} z {count}",
+      "many": "Kroki: {done} z {count}",
+      "other": "Kroki: {done} z {count}"
+    },
+    "phase": {
+      "one": "Ukończone kroki: {done} z {count}",
+      "few": "Ukończone kroki: {done} z {count}",
+      "many": "Ukończone kroki: {done} z {count}",
+      "other": "Ukończone kroki: {done} z {count}"
+    }
+  },
+  "approx": "ok. {amount}",
+  "newTab": "(otwiera się w nowej karcie)"
+}

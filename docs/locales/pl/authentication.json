@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Logowanie | ÉireHome Flow",
+    "title": "Zaloguj się",
+    "intro": "Zaloguj się, aby zobaczyć zapisaną drogę.",
+    "submit": "Zaloguj się",
+    "forgot": "Nie pamiętasz hasła?",
+    "newHere": "Pierwszy raz tutaj?",
+    "createAccount": "Załóż konto"
+  },
+  "signup": {
+    "meta": "Załóż konto | ÉireHome Flow",
+    "title": "Załóż konto",
+    "intro": "Zapisz swoją drogę i kontynuuj na dowolnym urządzeniu.",
+    "terms": "Zakładając konto, akceptujesz nasze <a href=\"terms.html\">Warunki korzystania</a> i potwierdzasz zapoznanie się z naszą <a href=\"privacy.html\">Polityką prywatności</a>.",
+    "submit": "Załóż konto",
+    "haveAccount": "Masz już konto?",
+    "signIn": "Zaloguj się",
+    "checkInbox": "Sprawdź skrzynkę odbiorczą i kliknij link, który wysłaliśmy, aby potwierdzić konto."
+  },
+  "forgot": {
+    "meta": "Resetowanie hasła | ÉireHome Flow",
+    "title": "Zresetuj hasło",
+    "intro": "Wpisz e-mail, a wyślemy ci link do ustawienia nowego hasła.",
+    "submit": "Wyślij link",
+    "remembered": "Już pamiętasz?",
+    "signIn": "Zaloguj się",
+    "sent": "Jeśli ten e-mail ma konto, link do zresetowania hasła jest już w drodze. Sprawdź skrzynkę odbiorczą."
+  },
+  "newPassword": {
+    "meta": "Nowe hasło | ÉireHome Flow",
+    "title": "Ustaw nowe hasło",
+    "intro": "Wpisz nowe hasło do swojego konta.",
+    "newLink": "Wyślij mi nowy link",
+    "signIn": "Zaloguj się",
+    "submit": "Zapisz nowe hasło",
+    "changed": "Hasło zostało zmienione."
+  },
+  "google": {
+    "continue": "Kontynuuj z Google",
+    "divider": "lub użyj adresu e-mail",
+    "terms": "Kontynuując z Google, akceptujesz nasze <a href=\"terms.html\">Warunki korzystania</a> i potwierdzasz zapoznanie się z naszą <a href=\"privacy.html\">Polityką prywatności</a>.",
+    "opening": "Otwieranie Google...",
+    "off": "Logowanie przez Google nie jest jeszcze włączone. Na razie użyj adresu e-mail.",
+    "failed": "Nie udało się otworzyć Google. Spróbuj ponownie."
+  },
+  "password": {
+    "length": "Co najmniej 8 znaków",
+    "upper": "Jedna wielka litera",
+    "special": "Jeden znak specjalny, na przykład ! # $ lub ?"
+  },
+  "goToDashboard": "Przejdź do panelu",
+  "privacyNote": "Twoje konto przechowuje imię, e-mail i ukończone kroki, na serwerach w Irlandii. Przy logowaniu przez Google zapisuje też link do zdjęcia profilowego wysłany przez Google, którego nie używamy. Liczby z kalkulatora zostają w twojej przeglądarce. <a href=\"privacy.html\">Przeczytaj naszą Politykę prywatności</a>.",
+  "note": {
+    "checking": "Sprawdzanie linku...",
+    "signedIn": "Zalogowano jako {email}.",
+    "needLink": "Aby ustawić nowe hasło, otwórz ponownie link z e-maila albo najpierw się zaloguj."
+  }
+}

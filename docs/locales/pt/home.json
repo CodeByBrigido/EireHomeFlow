@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Para quem compra o primeiro imóvel na Irlanda",
+    "title": "Das primeiras economias<br>ao seu <em>primeiro sofá</em>.",
+    "lead": "Seis fases e trinta e uma etapas, da conta da entrada e da papelada da AIP até as propostas e a entrega das chaves. O guia também cobre o que vem depois, como pisos, cortinas e a primeira revisão da caldeira.",
+    "start": "Começar minha jornada",
+    "resume": "Continuar minha jornada",
+    "calculator": "Calculadora de poder de compra",
+    "alt": "Ilustração de uma casa irlandesa acima do litoral",
+    "caption": "A casa pela qual você está se esforçando."
+  },
+  "ticker": {
+    "label": "Números principais",
+    "items": [
+      "Regra do Banco Central: 4× a renda bruta",
+      "Entrada para primeiro imóvel: 10%",
+      "Imposto de selo: 1%",
+      "Advogado: € 2.000-3.000",
+      "Vistoria estrutural: cerca de € 400",
+      "Avaliação do banco: cerca de € 150"
+    ],
+    "pause": "Pausar",
+    "play": "Continuar"
+  },
+  "stats": {
+    "loan": {
+      "label": "Financiamento máximo",
+      "value": "4×",
+      "note": "Da renda bruta anual, pelas regras do Banco Central da Irlanda."
+    },
+    "deposit": {
+      "label": "Entrada mínima",
+      "value": "10%",
+      "note": "A mesma para quem compra o primeiro imóvel e para quem já teve um."
+    },
+    "cash": {
+      "label": "Dinheiro fora do financiamento",
+      "value": "€ 3.550",
+      "note": "Advogado, vistoria e avaliação, mais 1% de imposto de selo."
+    }
+  },
+  "phases": {
+    "title": "Seis fases, uma depois da outra.",
+    "intro": "As etapas são liberadas em ordem: conclua cada etapa obrigatória para liberar a próxima. Você pode ler todas as etapas a qualquer momento no guia completo."
+  },
+  "cta": {
+    "title": "Leia o guia completo",
+    "text": "Todas as trinta e uma etapas em um só lugar, com checklists e dicas. Não precisa de conta.",
+    "button": "Abrir o guia"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Calculator de putere de cumpărare | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Etapa 01: Pregătire · Pasul 1",
+    "title": "Ce îți permiți de fapt",
+    "intro": "Banca Centrală limitează creditele ipotecare la 4× venitul brut pentru prima locuință și la 3,5× pentru toți ceilalți. Completează-ți cifrele și rezultatele se actualizează pe loc. Salvează-le în drumul tău ca să termini pasul 1."
+  },
+  "pills": {
+    "buyer": "Tip de cumpărător",
+    "ftb": "Prima locuință",
+    "mover": "Schimb de locuință",
+    "application": "Tip de cerere",
+    "single": "Individual",
+    "joint": "Cerere comună",
+    "home": "Tip de locuință",
+    "secondHand": "La mâna a doua",
+    "newHouse": "Casă nouă",
+    "newApartment": "Apartament nou"
+  },
+  "fields": {
+    "salary": "Salariul tău anual brut",
+    "salary2": "Salariul brut al partenerului",
+    "savings": "Economii",
+    "gift": "Donație de la familie",
+    "htb": "Rambursare Help to Buy",
+    "price": "Prețul țintă",
+    "rate": "Dobânda",
+    "term": "Durata"
+  },
+  "off": {
+    "joint": "Doar pentru cereri comune",
+    "newBuild": "Doar pentru construcții noi",
+    "ftb": "Doar pentru prima locuință"
+  },
+  "scale": {
+    "rateMin": "1 %",
+    "rateMax": "8 %",
+    "termMin": "5 ani",
+    "termMax": "35 de ani"
+  },
+  "years": {
+    "one": "{count} an",
+    "few": "{count} ani",
+    "other": "{count} de ani"
+  },
+  "htb": {
+    "notFtb": "Help to Buy e doar pentru prima locuință, deci aici nu se ia în calcul.",
+    "notNew": "Help to Buy acoperă doar construcțiile noi și cele pe cont propriu. Alege mai sus Casă nouă sau Apartament nou dacă asta cumperi.",
+    "overCap": "Help to Buy acoperă doar locuințe de până la {cap}, deci la acest preț nu se ia în calcul.",
+    "loanTooSmall": "Help to Buy cere un credit de cel puțin 70 % din preț, adică {minLoan} aici. Poți împrumuta până la {maxLoan}, deci la acest preț nu se ia în calcul.",
+    "counted": "Help to Buy îți dă înapoi impozitul pe venit și DIRT plătite în ultimii patru ani, până la 30.000 € sau 10 % din preț. La acest preț, maximul este {most}.",
+    "borrowEnough": "Mai cere și un credit de cel puțin 70 % din preț ({minLoan}), așa că plănuiește să împrumuți atât și păstrează restul economiilor."
+  },
+  "monthly": {
+    "label": "Rata lunară estimată",
+    "note": "{loan} pe {years} la {rate}. Asigurarea creditului și asigurarea locuinței se adaugă."
+  },
+  "results": {
+    "maxPrice": "Prețul maxim al locuinței",
+    "maxLoan": "Credit maxim (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Fonduri disponibile"
+  },
+  "limit": {
+    "income": "Acum limita e venitul tău. Regula de {multiple} limitează creditul la {maxLoan}.",
+    "savings": "Acum limita sunt economiile tale. Fiecare 1.000 € în plus pus deoparte crește suma cu circa {amount}.",
+    "htbEdge": "Acum limita sunt economiile tale, la cel mai mare preț la care Help to Buy încă se aplică. Ca să treci de el fără Help to Buy îți trebuie cu circa {amount} mai mult în economii."
+  },
+  "save": {
+    "label": "Salvează în drumul meu",
+    "update": "Actualizează drumul meu",
+    "hint": "Termină pasul 1. Cifrele tale rămân în acest browser.",
+    "saved": "Pasul 1 e făcut. Drumul tău arată mereu cifrele din această pagină.",
+    "noJourney": "Drumul tău nu s-a putut încărca. Reîncarcă pagina ca să salvezi.",
+    "done": "Cifrele tale sunt salvate și pasul 1 e făcut.",
+    "updated": "Drumul tău folosește acum aceste cifre."
+  },
+  "breakdown": {
+    "title": "Pentru o locuință de <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Avans (minimum 10 %)",
+    "loan": "Credit necesar",
+    "loanAll": "Credit necesar, folosind toate economiile",
+    "stamp": "Taxa de timbru ({bands})",
+    "stampNew": "Taxa de timbru ({bands} pe prețul fără TVA de {vat})",
+    "bands": {
+      "1": "1 %",
+      "2": "tranșele de 1 % și 2 %",
+      "3": "tranșele de 1 %, 2 % și 6 %"
+    },
+    "solicitor": "Avocat",
+    "survey": "Inspecție tehnică",
+    "valuation": "Evaluarea băncii",
+    "total": "Total bani necesari",
+    "booking": "Ca să rezervi casa, plătești un avans de rezervare de circa 5.000 € (returnabil până la semnarea contractelor). Restul avansului de {deposit} se plătește la semnare."
+  },
+  "verdict": {
+    "within": {
+      "title": "Prețul acesta e în limitele tale",
+      "body": "Ai {funds} față de {cash} necesari în numerar, iar creditul de {loan} se încadrează în limita ta de {multiple} ({maxLoan}). Pasul următor: adună actele pentru AIP."
+    },
+    "outOfReach": {
+      "title": "Prețul acesta e deocamdată prea mare",
+      "body": "Îți lipsesc {gap} în numerar, iar creditul de care ai avea nevoie ({loan}) depășește cu {over} limita ta de {multiple} ({maxLoan}). Țintește la {maxPrice} sau mai puțin."
+    },
+    "cashShort": {
+      "title": "Îți lipsesc {gap} în numerar",
+      "body": "Ai {funds} disponibili și îți trebuie {cash} în numerar la acest preț. Economisește diferența sau țintește mai aproape de {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Creditul depășește limita ta",
+      "body": "Ar trebui să împrumuți {loan}, cu {over} peste limita ta de {multiple} ({maxLoan}). Țintește la {maxPrice} sau mai puțin."
+    }
+  },
+  "disclaimer": "Estimări educative bazate pe regulile Băncii Centrale a Irlandei și pe regulile Revenue pentru taxa de timbru și Help to Buy. Fiecare bancă își aplică propriile criterii de creditare și excepții."
+}

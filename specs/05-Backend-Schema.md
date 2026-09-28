@@ -1,6 +1,6 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
 
 O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
 
@@ -98,7 +98,7 @@ create policy "Users update their own progress" on public.progress
 
 ## 4. IDs das etapas (permanentes)
 
-O ID é `<slug da fase>-<posição na fase, a partir de 0>`, gerado a partir da ordem das etapas no `docs/guide.html`.
+O ID é `<slug da fase>-<posição na fase, a partir de 0>`, gerado a partir da ordem das etapas no `docs/guide.html`. Os IDs não mudam com o idioma: o mesmo `progress.done` vale em qualquer um dos 9 idiomas, e a tabela abaixo mostra os títulos em inglês, a fonte dos textos.
 
 | ID | Etapa | Tipo |
 |---|---|---|
@@ -198,6 +198,8 @@ Variáveis usadas: `{{ .Email }}` e `{{ .ConfirmationURL }}`. Disponível e aind
 `https://codebybrigido.github.io/EireHomeFlow/img/brand/eirehome-flow-logo.png`
 Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no Supabase.
 
+**Idioma:** os e-mails saem sempre em inglês, mesmo para quem usa o site em outro idioma. O Supabase tem um modelo por projeto, e a conta não guarda o idioma da pessoa. E-mails em vários idiomas exigiriam guardar o idioma em `user_metadata` e usar condicionais no modelo ou um envio próprio (seção 9).
+
 **Limites de envio:**
 - Envio padrão do Supabase: só para a equipe do projeto, 2 por hora.
 - Gmail com senha de app: cerca de 500 por dia.
@@ -206,7 +208,7 @@ Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no
 ## 8. Privacidade e GDPR
 
 - **Dados pessoais guardados:** nome, e-mail, hash da senha, datas de acesso (gerenciados pelo Supabase) e o mapa de etapas feitas.
-- **Dados que nunca saem do navegador:** salário, poupança, presente, preço e tudo o mais da calculadora.
+- **Dados que nunca saem do navegador:** salário, poupança, presente, preço e tudo o mais da calculadora. Também o idioma escolhido e as cópias dos textos traduzidos (`eirehome-locale`, `eirehome-locale-preview`, `eirehome-i18n:*`), que não têm dado pessoal.
 - **Localização:** Irlanda (eu-west-1).
 - **Exclusão:** Authentication → Users → Delete user apaga o usuário e, por cascata, o progresso.
 - **Pendente antes do lançamento:** política de privacidade, contato para pedidos de exclusão ou acesso, e prazo de retenção de contas inativas.
@@ -214,5 +216,6 @@ Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no
 ## 9. Evoluções previstas (não implementadas)
 
 - Tabela de auditoria de mudanças no progresso, só se houver necessidade de suporte.
-- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), para um "streak" real por dias. Exige migração do formato de `done` e ajuste em `lib/progress.js` e `core/sync.js`.
+- Datas de conclusão por etapa (`done` como `{ id: timestamp }`), se um dia o site mostrar uma sequência de dias ou um histórico. Exige migração do formato de `done` e ajuste em `lib/progress.js` e `core/sync.js`.
 - Compartilhamento de progresso entre duas contas (casal): tabela `households` e políticas RLS próprias.
+- E-mails de conta no idioma da pessoa: gravar o código do idioma em `user_metadata` no cadastro e escolher o texto no modelo (`{{ if eq .Data.locale "pt" }}`) ou mandar os e-mails por um serviço próprio.

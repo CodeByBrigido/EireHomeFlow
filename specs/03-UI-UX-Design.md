@@ -1,6 +1,6 @@
 # UI/UX Design
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
 
 Complementa o [Design System](07-Design-System.md), que define cores, tipos e componentes. Este documento define **o que cada página mostra, em que estado e com quais palavras**.
 
@@ -16,9 +16,9 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 
 ## 2. Tom de voz e regras de texto
 
-- **Idioma:** inglês britânico e irlandês (`en-IE`): *organise, savings, solicitor, flat, estate agent*.
+- **Idioma:** inglês britânico e irlandês (`en-IE`) na fonte: *organise, savings, solicitor, flat, estate agent*. O site também está em português do Brasil, espanhol, francês, alemão e italiano, traduzidos a partir do inglês com as mesmas regras (sem travessão, sem "≈", sem "…", sem prometer resultado) e o glossário do [doc 08](08-Internationalisation.md), seção 6. Termos oficiais irlandeses ficam em inglês nas traduções, explicados na primeira menção.
 - **Maiúsculas:** sentence case em títulos e botões ("Start my journey", não "Start My Journey"). Exceções: nomes próprios e termos oficiais (Approval in Principle, Sale Agreed, Help to Buy, Local Property Tax).
-- **Números:** euro antes do valor e vírgula de milhar (€380,000). Faixas com hífen simples (€2,000-3,000; 1-2 weeks). Aproximação com "about" no texto e "~" nas tabelas.
+- **Números:** em inglês, euro antes do valor e vírgula de milhar (€380,000). Nos outros idiomas, o formato local (€ 380.000 em português, 380.000 € em alemão e romeno, 380 000 € em francês, polonês e lituano), sempre com os mesmos valores. Faixas com hífen simples (€2,000-3,000; 1-2 weeks). Aproximação com "about" no texto e "~" nas tabelas ("ca." em alemão, "env." em francês).
 - **Proibido** (marcas de texto gerado por IA):
   - travessão (—), meia-risca (–) e "≈";
   - ganchos do tipo "nobody tells you", "nobody warns you about", "the part nobody budgets for";
@@ -48,6 +48,8 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 
 **Endereços profundos da jornada:** `journey.html#step-<id>` abre a etapa no painel; `journey.html#phase-<slug>` rola até a fase. O endereço acompanha a etapa aberta.
 
+Os títulos acima são os do inglês; cada idioma tem os seus (ex.: "Minha jornada | ÉireHome Flow").
+
 **Retorno depois de entrar:** as páginas de conta aceitam `?next=<página>`, por exemplo `signup.html?next=journey.html#step-preparation-5`. Sem `next`, quem entra vai para o Dashboard.
 
 ## 4. Elementos compartilhados
@@ -55,13 +57,14 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 ### 4.1 Cabeçalho (`partials/header.html`)
 - Verde (`--ink`), fixo no topo. A marca "ÉireHome **Flow**" é um link para a Home.
 - Links: Home, Guide, My journey, Calculator. O link da página atual fica creme com sublinhado dourado e `aria-current="page"`.
-- Indicador único **"★ N XP"** em amarelo (`#ffd79a`), escondido no celular. Os dias de "streak" não aparecem no topo.
+- Sem contadores no topo: o XP aparece só no Dashboard.
+- **Menu de idiomas:** botão com globo e o código do idioma atual (EN, PT...), antes de "Sign in" ou do círculo. Abre uma lista dos idiomas completos, cada um no próprio nome ("Português (Brasil)", "Deutsch"), com o nome no idioma atual embaixo e o atual marcado com ✓. `aria-label` diz o idioma atual ("Language: English. Change language"); cada nome tem o `lang` da língua. Fecha com Esc e clique fora, como o menu da conta. Escolher um idioma recarrega a página nele. Em telas baixas, a lista dos 9 idiomas rola dentro do menu, que para 16px antes do fim da tela.
 - **Deslogado:** link "Sign in".
 - **Logado:** círculo dourado com as iniciais do primeiro e do último nome ("Rodrigo Andrade Brigido" vira **RB**; sem nome, a inicial do e-mail). O clique abre o **menu da conta**:
   - nome e e-mail;
   - Dashboard · My profile · **Sign out** (em vermelho). A troca de senha não fica no menu: só em My profile.
   - Fecha ao clicar fora, com Esc (o foco volta ao círculo) ou ao escolher uma opção. No celular, abre na largura da tela, logo abaixo do cabeçalho.
-- **No celular (até 720px), o cabeçalho tem 2 linhas:** a marca à esquerda e "Sign in" (ou o círculo) à direita na primeira; Home, Guide, My journey e Calculator na segunda. Por isso "Sign in" e o círculo ficam fora do `<nav>`, num `.site-header__account` próprio.
+- **Até 880px, o cabeçalho tem 2 linhas, em qualquer idioma:** a marca à esquerda e o botão de idioma com "Sign in" (ou o círculo) à direita na primeira; Home, Guide, My journey e Calculator na segunda. Por isso esses botões ficam fora do `<nav>`, num `.site-header__account` próprio. Abaixo de 400px o botão de idioma mostra só o globo. Os rótulos do menu são curtos em todos os idiomas ("Jornada", "Parcours", "Percorso") para caberem em 320px.
 
 ### 4.2 Rodapé e avisos (`partials/footer.html`)
 - Rodapé areia com "ÉireHome Flow", "Educational content. Not regulated financial advice." e os links **Privacy Policy** e **Terms of Use**.
@@ -76,6 +79,8 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 | Saiu | "You have signed out. Your progress is saved in your account." | Sucesso |
 | Perfil salvo | "Your profile has been updated." | Sucesso |
 | Senha trocada | "Your password has been changed." | Sucesso |
+
+Todos os avisos aparecem no idioma da página. Os textos acima são os do inglês.
 
 Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar senha) aparecem na página seguinte.
 
@@ -94,9 +99,9 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 - É a **fonte única do conteúdo** das etapas (ver TRD).
 
 ### 5.3 Jornada (`journey.html`)
-**Desktop (>960px), sem etapa aberta:** trilha à esquerda e barra lateral de 300px à direita (anel de %, Streak, Earned, "Next up" com "Open this step", "Reset progress"). No fim da trilha, o selo 🔑.
+**Desktop (>960px), sem etapa aberta:** trilha à esquerda e barra lateral de 300px à direita (anel de % com a contagem de etapas, "Next up" com "Open this step", "Reset progress"). No fim da trilha, o selo 🔑.
 
-**Com etapa aberta (modo compacto):** trilha estreita à esquerda e painel de detalhe à direita, fixo ao rolar. **Duas rolagens:** a trilha rola com a página e o painel tem rolagem própria, nunca mais alto que a tela. Os botões (Complete step, Previous, Next) ficam presos no rodapé do painel e estão sempre visíveis. No tablet e no celular (≤960px), o painel ocupa a tela inteira, com "Close".
+**Com etapa aberta (modo compacto):** trilha estreita à esquerda e painel de detalhe à direita, fixo ao rolar. **Duas rolagens:** a trilha rola com a página e o painel tem rolagem própria, nunca mais alto que a tela. Os botões (Complete step, Previous, Next) ficam presos no rodapé do painel e estão sempre visíveis. Na trilha, os nós e os rótulos diminuem, e os balões "Start here" e "Optional" continuam visíveis, menores. No tablet e no celular (≤960px), o painel ocupa a tela inteira, com "Close".
 
 **Espaçamento compacto:** uma etapa comum (ilustração, texto, 3 itens e dica) mede cerca de 810px no painel, contra 950px antes. Ela cabe sem rolar a partir de uns 910px de altura útil de janela. Etapas com números da pessoa ou passo a passo (Help to Buy) são mais longas e rolam no painel.
 
@@ -202,7 +207,7 @@ Quando não há nada a fazer na página, o formulário dá lugar a uma nota:
 | Password (login) | Não vazia | Enter your password. |
 | Confirm password | Não vazia e igual à senha | Confirm your password. / The passwords do not match. |
 
-Requisitos de senha ao vivo: ○ pendente, ✓ verde quando atendido, pendentes em vermelho depois de uma tentativa. Mensagens gerais abaixo dos campos: "Please wait...", "Check your inbox and click the link we sent to confirm your account.", "If that email has an account, a reset link is on its way. Check your inbox." e erros do Supabase (em inglês).
+Requisitos de senha ao vivo: ○ pendente, ✓ verde quando atendido, pendentes em vermelho depois de uma tentativa. Mensagens gerais abaixo dos campos: "Please wait...", "Check your inbox and click the link we sent to confirm your account.", "If that email has an account, a reset link is on its way. Check your inbox." e erros do Supabase. Os erros comuns do Supabase (senha errada, e-mail não confirmado, conta já existente, limite de tentativas, sessão expirada, rede) têm texto próprio no idioma da página; outros aparecem em inglês para quem usa inglês e como "Something went wrong" traduzido nos demais.
 
 Em `signup.html`, logo acima do botão: "By creating an account, you agree to our Terms of Use and confirm you have read our Privacy Policy." (com links). Todas as páginas de conta levam o link "Read our Privacy Policy" no aviso de privacidade.
 
@@ -212,10 +217,11 @@ Em `signup.html`, logo acima do botão: "By creating an account, you agree to ou
 - **Texto:** caixa de resumo em areia no topo, títulos `h2`/`h3`, parágrafos e listas **justificados** (justificado normal: a última linha fica à esquerda) com hifenização automática em inglês.
 - **Barra lateral** (fixa ao rolar no desktop): índice **"On this page"**, sempre aberto ao carregar e recolhível, montado a partir dos títulos, com a seção visível destacada; e cartão verde de contato ("Questions about your data?" / "Questions about these terms?", e-mail e link para o outro documento).
 - Linguagem simples, em inglês britânico e irlandês, sem travessões.
+- **Em outros idiomas:** eyebrow, título, data, o resumo ("The short version"), o índice, o cartão de contato e um aviso ("A política completa abaixo está disponível apenas em inglês.") ficam no idioma. O texto integral continua em inglês, marcado com `lang="en-IE"`, e o índice lateral também (aponta para as seções em inglês). O aviso não aparece em inglês.
 - Trechos que dependem de decisão do dono do site ficam marcados no código com `<!-- TODO -->` ou `<!-- POLICY CHOICE -->`.
 
 ### 5.9 E-mails
-Modelos em `supabase/email-templates/`: fundo areia, cartão branco, logo, título, 2 parágrafos curtos, botão verde, nota "If you didn't..." e rodapé. Os dois links levam à Home, que mostra o aviso de confirmação ou encaminha para `new-password.html`.
+Modelos em `supabase/email-templates/`, só em inglês (o Supabase usa um modelo por projeto): fundo areia, cartão branco, logo, título, 2 parágrafos curtos, botão verde, nota "If you didn't..." e rodapé. Os dois links levam à Home, que mostra o aviso de confirmação ou encaminha para `new-password.html`.
 
 ## 6. Responsividade
 
@@ -223,7 +229,9 @@ Modelos em `supabase/email-templates/`: fundo areia, cartão branco, logo, títu
 |---|---|
 | > 960px | Layouts completos de duas colunas |
 | ≤ 960px | Hero, calculadora, jornada, Dashboard (linha de baixo) e Perfil em 1 coluna; cartões do Dashboard em 2; painel da etapa em tela cheia |
-| ≤ 720px | Margens de 16px; navegação em linha própria; streak e XP escondidos; círculo e "Sign in" à direita; menu da conta na largura da tela; títulos com `clamp()`; onda da trilha a 45% |
+| ≤ 880px | Cabeçalho em 2 linhas: marca, idioma e conta em cima; links embaixo (XP à direita) |
+| ≤ 720px | Margens de 16px; navegação em linha própria; botão de idioma, círculo e "Sign in" à direita; menus da conta e de idioma na largura da tela; títulos com `clamp()`; onda da trilha a 45% |
+| ≤ 400px | Botão de idioma só com o globo |
 | ≤ 480px | Campos da calculadora, caixas de resultado e cartões do Dashboard em 1 coluna |
 
 Mínimo suportado: 320px sem rolagem horizontal.
@@ -232,10 +240,11 @@ Mínimo suportado: 320px sem rolagem horizontal.
 
 - **Contraste:** texto ≥ 4,5:1 em todos os fundos.
 - **Leitores de tela:** nós da trilha com rótulo completo e `aria-current="step"`; link da página atual com `aria-current="page"`; círculo com `aria-label` "Account menu for <nome>" e `aria-expanded`; pílulas com `aria-pressed`; campos inválidos com `aria-invalid` e mensagem ligada por `aria-describedby`; veredito e avisos em regiões `aria-live`.
-- **Teclado:** tudo é link, botão ou campo nativo; `:focus-visible` com contorno terracota. Esc fecha o menu da conta.
+- **Idioma:** `<html lang>` segue o idioma mostrado (pt-BR, de-DE...), para leitores de tela e hifenização; trechos que ficam em inglês levam `lang="en-IE"`. Os `aria-label`, `alt` e mensagens de erro são traduzidos como o resto.
+- **Teclado:** tudo é link, botão ou campo nativo; `:focus-visible` com contorno terracota. Esc fecha o menu da conta e o de idiomas.
 - **Foco:** abrir etapa leva o foco ao título do painel; fechar devolve ao nó; formulário com erro leva o foco ao primeiro campo vermelho.
 - **Movimento:** com `prefers-reduced-motion: reduce`, ticker parado, nó atual sem pulo e transições desligadas.
 
 ## 8. Pendências de UX (da auditoria)
 
-A8 aviso legal junto aos resultados · M4 "streak" que não é sequência · M5 estado final contraditório · M9 chip "€ Free" · M17 etapas "Optional" que o texto trata como necessárias · M19 jargão e conteúdo para imigrantes. O item M7 (endereço por tela, Voltar do navegador, título por página) foi resolvido com as páginas separadas.
+A8 aviso legal junto aos resultados · M5 estado final contraditório · M9 chip "€ Free" · M17 etapas "Optional" que o texto trata como necessárias · M19 jargão e conteúdo para imigrantes. O item M7 (endereço por tela, Voltar do navegador, título por página) foi resolvido com as páginas separadas, e o M4 com a retirada do "streak".

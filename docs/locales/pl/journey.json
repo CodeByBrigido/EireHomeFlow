@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Moja droga | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Twoja droga",
+    "title": "Do kluczy i urządzonego domu"
+  },
+  "callout": {
+    "start": "Zacznij tutaj",
+    "optional": "Opcjonalny"
+  },
+  "status": {
+    "completed": "ukończony",
+    "locked": "zablokowany",
+    "current": "bieżący krok",
+    "optional": "opcjonalny"
+  },
+  "node": {
+    "label": "Krok {n} z {total}: {title}"
+  },
+  "finish": {
+    "title": "Dom w pełni urządzony",
+    "note": "Odblokuje się, gdy każdy krok obowiązkowy zostanie zaznaczony.",
+    "doneTitle": "Urządzone",
+    "doneNote": "Każdy krok ukończony, łącznie z podłogami i zasłonami."
+  },
+  "next": {
+    "none": "Czas nastawić czajnik"
+  },
+  "aside": {
+    "nextUp": "Następny krok",
+    "openStep": "Otwórz ten krok",
+    "reset": "Wyzeruj postępy"
+  },
+  "detail": {
+    "close": "Zamknij",
+    "stepOf": "Krok {n} z {total}",
+    "checklist": "Co trzeba zrobić",
+    "howto": "Jak to zrobić",
+    "tip": "Warto wiedzieć",
+    "complete": "Ukończ krok +25 XP",
+    "undo": "Oznacz jako nieukończony",
+    "changeNumbers": "Zmień moje liczby",
+    "openCalculator": "Otwórz kalkulator",
+    "signUp": "Załóż konto lub zaloguj się",
+    "previous": "← Poprzedni",
+    "next": "Następny →"
+  },
+  "note": {
+    "calculator": "Ten krok zaznaczy się sam, gdy w kalkulatorze wybierzesz Zapisz w mojej drodze.",
+    "signedInDone": "Zalogowano jako {email}, więc ten krok jest ukończony.",
+    "signedInTicking": "Zalogowano jako {email}. Ten krok właśnie się zaznacza.",
+    "checking": "Sprawdzanie konta...",
+    "signIn": "Ten krok zaznaczy się sam, gdy tylko się zalogujesz.",
+    "accountsOff": "Konta nie są jeszcze włączone, więc tego kroku nie można ukończyć.",
+    "locked": "Możesz już przeczytać ten krok. Ukończysz go, gdy skończysz „{title}”."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Twoje liczby",
+      "maxPrice": "Maksymalna cena nieruchomości",
+      "maxLoan": "Maksymalny kredyt ({multiple})",
+      "funds": "Dostępne środki",
+      "monthly": "Miesięczna rata przy cenie {price}"
+    },
+    "deposit": {
+      "title": "Twój wkład własny",
+      "tenPercent": "10% z {price}",
+      "own": "Oszczędności i prezent od rodziny",
+      "htb": "Help to Buy",
+      "covered": "Twoje środki pokrywają wkład własny.",
+      "short": "Do wkładu własnego brakuje ci {amount}."
+    },
+    "costs": {
+      "title": "Twoje dodatkowe koszty przy cenie {price}",
+      "stamp": "Opłata skarbowa",
+      "solicitor": "Prawnik",
+      "survey": "Inspekcja techniczna",
+      "valuation": "Wycena banku",
+      "total": "Razem, ponad wkład własny",
+      "newHouse": "Kalkulator jest ustawiony na nowy dom, więc opłatę skarbową liczy się od ceny bez 13,5% VAT.",
+      "newApartment": "Kalkulator jest ustawiony na nowe mieszkanie, więc opłatę skarbową liczy się od ceny bez 9% VAT."
+    },
+    "htb": {
+      "title": "Help to Buy a ty",
+      "mover": "Według kalkulatora zmieniasz nieruchomość. Help to Buy jest tylko dla osób kupujących pierwszą nieruchomość, więc możesz pominąć ten opcjonalny krok.",
+      "secondHand": "Kalkulator jest ustawiony na rynek wtórny. Help to Buy obejmuje tylko nowe budynki i budowę samodzielną, więc wybierz w kalkulatorze Nowy dom lub Nowe mieszkanie, jeśli tego szukasz.",
+      "overCap": "Twoja docelowa cena {price} przekracza limit {cap}, więc Help to Buy by nie przysługiwał.",
+      "loanTooSmall": "Help to Buy wymaga kredytu na co najmniej 70% ceny, czyli {minLoan} przy twojej docelowej cenie. Możesz pożyczyć do {maxLoan}, więc przy tej cenie Help to Buy by nie przysługiwał.",
+      "borrowEnough": "Wymaga też kredytu na co najmniej 70% ceny ({minLoan}), więc zaplanuj pożyczenie takiej kwoty i zatrzymaj resztę oszczędności.",
+      "most": "Najwięcej, ile możesz dostać przy cenie {price}",
+      "counted": "Uwzględnione w kalkulatorze",
+      "note": "Ostateczną kwotę ogranicza też podatek dochodowy i DIRT zapłacone w ciągu ostatnich czterech lat. Pokazuje ją twój wniosek w Revenue."
+    },
+    "notSaved": "Twoje liczby nie są jeszcze zapisane w tej przeglądarce. Otwórz kalkulator i wybierz Zapisz w mojej drodze, aby je tu zobaczyć.",
+    "saveFirst": "Zapisz swoje liczby w kalkulatorze (krok 1), aby zobaczyć tu własne wartości."
+  }
+}

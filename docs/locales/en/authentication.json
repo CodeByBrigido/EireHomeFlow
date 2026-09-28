@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Sign in | ÉireHome Flow",
+    "title": "Sign in",
+    "intro": "Sign in to see your saved journey.",
+    "submit": "Sign in",
+    "forgot": "Forgot your password?",
+    "newHere": "New here?",
+    "createAccount": "Create an account"
+  },
+  "signup": {
+    "meta": "Create your account | ÉireHome Flow",
+    "title": "Create your account",
+    "intro": "Save your journey and pick it up on any device.",
+    "terms": "By creating an account, you agree to our <a href=\"terms.html\">Terms of Use</a> and confirm you have read our <a href=\"privacy.html\">Privacy Policy</a>.",
+    "submit": "Create account",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "checkInbox": "Check your inbox and click the link we sent to confirm your account."
+  },
+  "forgot": {
+    "meta": "Reset your password | ÉireHome Flow",
+    "title": "Reset your password",
+    "intro": "Enter your email and we will send you a link to choose a new password.",
+    "submit": "Send reset link",
+    "remembered": "Remembered it?",
+    "signIn": "Sign in",
+    "sent": "If that email has an account, a reset link is on its way. Check your inbox."
+  },
+  "newPassword": {
+    "meta": "Choose a new password | ÉireHome Flow",
+    "title": "Choose a new password",
+    "intro": "Enter a new password for your account.",
+    "newLink": "Send me a new link",
+    "signIn": "Sign in",
+    "submit": "Save new password",
+    "changed": "Your password has been changed."
+  },
+  "google": {
+    "continue": "Continue with Google",
+    "divider": "or use your email",
+    "terms": "By continuing with Google, you agree to our <a href=\"terms.html\">Terms of Use</a> and confirm you have read our <a href=\"privacy.html\">Privacy Policy</a>.",
+    "opening": "Opening Google...",
+    "off": "Google sign-in is not switched on yet. Please use your email for now.",
+    "failed": "Google could not be opened. Please try again."
+  },
+  "password": {
+    "length": "At least 8 characters",
+    "upper": "One capital letter",
+    "special": "One special character, such as ! # $ or ?"
+  },
+  "goToDashboard": "Go to my dashboard",
+  "privacyNote": "Your account stores your name, your email and the steps you have completed, on servers in Ireland. With Google, it also keeps the profile picture link Google sends, which we do not use. Calculator figures stay in your browser. <a href=\"privacy.html\">Read our Privacy Policy</a>.",
+  "note": {
+    "checking": "Checking your link...",
+    "signedIn": "You are signed in as {email}.",
+    "needLink": "To choose a new password, open the link in your email again, or sign in first."
+  }
+}

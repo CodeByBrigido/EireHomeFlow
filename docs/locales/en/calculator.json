@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Buying power calculator | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Phase 01: Preparation · Step 1",
+    "title": "What you can actually buy",
+    "intro": "The Central Bank caps mortgages at 4× gross income for first-time buyers and 3.5× for everyone else. Fill in your numbers and the results update as you go. Save them to your journey to complete step 1."
+  },
+  "pills": {
+    "buyer": "Buyer type",
+    "ftb": "First-time buyer",
+    "mover": "Moving home",
+    "application": "Application type",
+    "single": "Buying alone",
+    "joint": "Joint application",
+    "home": "Type of home",
+    "secondHand": "Second-hand",
+    "newHouse": "New house",
+    "newApartment": "New apartment"
+  },
+  "fields": {
+    "salary": "Your gross annual salary",
+    "salary2": "Partner's gross salary",
+    "savings": "Savings",
+    "gift": "Family gift",
+    "htb": "Help to Buy relief",
+    "price": "Target house price",
+    "rate": "Interest rate",
+    "term": "Term"
+  },
+  "off": {
+    "joint": "Joint applications only",
+    "newBuild": "New builds only",
+    "ftb": "First-time buyers only"
+  },
+  "scale": {
+    "rateMin": "1%",
+    "rateMax": "8%",
+    "termMin": "5 years",
+    "termMax": "35 years"
+  },
+  "years": {
+    "one": "{count} year",
+    "other": "{count} years"
+  },
+  "htb": {
+    "notFtb": "Help to Buy is for first-time buyers only, so it is not counted here.",
+    "notNew": "Help to Buy only covers new builds and self-builds. Choose New house or New apartment above if that is what you are buying.",
+    "overCap": "Help to Buy only covers homes up to {cap}, so it is not counted at this price.",
+    "loanTooSmall": "Help to Buy needs a mortgage of at least 70% of the price, which is {minLoan} here. You can borrow up to {maxLoan}, so it is not counted at this price.",
+    "counted": "Help to Buy gives back the income tax and DIRT you paid in the last four years, up to €30,000 or 10% of the price. On this price, the most is {most}.",
+    "borrowEnough": "It also needs a mortgage of at least 70% of the price ({minLoan}), so plan to borrow that much and keep the rest of your savings."
+  },
+  "monthly": {
+    "label": "Estimated monthly repayment",
+    "note": "{loan} over {years} at {rate}. Mortgage protection and home insurance are on top."
+  },
+  "results": {
+    "maxPrice": "Maximum property price",
+    "maxLoan": "Max mortgage (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Funds available"
+  },
+  "limit": {
+    "income": "Right now your income is the limit. The {multiple} rule caps the loan at {maxLoan}.",
+    "savings": "Right now your savings are the limit. Every extra €1,000 saved raises this by about {amount}.",
+    "htbEdge": "Right now your savings are the limit, at the highest price where Help to Buy still applies. Going above it without Help to Buy needs about {amount} more in savings."
+  },
+  "save": {
+    "label": "Save to my journey",
+    "update": "Update my journey",
+    "hint": "Completes step 1. Your figures stay in this browser.",
+    "saved": "Step 1 is done. Your journey always shows the figures on this page.",
+    "noJourney": "Could not load your journey. Reload the page to save.",
+    "done": "Your numbers are saved and step 1 is done.",
+    "updated": "Your journey now uses these numbers."
+  },
+  "breakdown": {
+    "title": "On a <span data-bind=\"priceLabel\"></span> house",
+    "deposit": "Deposit (10% minimum)",
+    "loan": "Mortgage needed",
+    "loanAll": "Mortgage needed, using all your savings",
+    "stamp": "Stamp duty ({bands})",
+    "stampNew": "Stamp duty ({bands} of the price without {vat} VAT)",
+    "bands": {
+      "1": "1%",
+      "2": "1% and 2% bands",
+      "3": "1%, 2% and 6% bands"
+    },
+    "solicitor": "Solicitor",
+    "survey": "Structural survey",
+    "valuation": "Bank valuation",
+    "total": "Total cash you need",
+    "booking": "To secure the house you pay a booking deposit of roughly €5,000 (refundable until contracts are signed). The rest of the {deposit} deposit is due when you sign."
+  },
+  "verdict": {
+    "within": {
+      "title": "This price is within your limits",
+      "body": "You have {funds} against {cash} needed in cash, and the mortgage of {loan} sits inside your {multiple} limit of {maxLoan}. Next step: gather the AIP paperwork."
+    },
+    "outOfReach": {
+      "title": "This price is out of reach for now",
+      "body": "You are {gap} short in cash, and the mortgage you would need ({loan}) is {over} above your {multiple} limit of {maxLoan}. Aim at or below {maxPrice}."
+    },
+    "cashShort": {
+      "title": "You are {gap} short in cash",
+      "body": "You have {funds} available and need {cash} in cash at this price. Save the difference or aim closer to {maxPrice}."
+    },
+    "loanOver": {
+      "title": "The mortgage is over your limit",
+      "body": "You would need to borrow {loan}, which is {over} above your {multiple} limit of {maxLoan}. Aim at or below {maxPrice}."
+    }
+  },
+  "disclaimer": "Educational estimates based on Central Bank of Ireland rules and Revenue's stamp duty and Help to Buy rules. Each lender applies its own credit criteria and exemptions."
+}

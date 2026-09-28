@@ -1,13 +1,14 @@
 // Buying power calculator. The maths is calc() in lib/calculator.js, shared with the journey and the dashboard.
 // Saving here ticks step 1 of the journey; the figures themselves stay in this browser.
-import { calc, HTB, RANGES, stampBands, verdictKind } from "../lib/calculator.js?v=20260928";
-import { esc, euro, num } from "../lib/format.js?v=20260928";
-import { startPage } from "../core/app.js?v=20260928";
-import { bind } from "../core/dom.js?v=20260928";
-import { flash } from "../core/notices.js?v=20260928";
-import { setState, state } from "../core/state.js?v=20260928";
-import { calculatorStep, stepLink } from "../core/steps.js?v=20260928";
-import { setDone } from "../core/sync.js?v=20260928";
+import { calc, HTB, RANGES, stampBandCount, verdictKind } from "../lib/calculator.js?v=20260929";
+import { esc, num } from "../lib/format.js?v=20260929";
+import { startPage } from "../core/app.js?v=20260929";
+import { bind } from "../core/dom.js?v=20260929";
+import { money, number, percent, t } from "../core/i18n.js?v=20260929";
+import { flash } from "../core/notices.js?v=20260929";
+import { setState, state } from "../core/state.js?v=20260929";
+import { calculatorStep, stepLink } from "../core/steps.js?v=20260929";
+import { setDone } from "../core/sync.js?v=20260929";
 
 function initPage() {
   document.querySelectorAll("[data-field]").forEach((input) => { input.value = state[input.dataset.field]; });
@@ -45,35 +46,35 @@ function renderRange(key, text) {
   value.textContent = text;
 }
 
+// "4×" or "3.5×", written the language's way.
+const multipleText = (c) => number(c.multiple) + "×";
+const rateText = (s) => percent(num(s.rate) / 100, 2);
+const yearsText = (s) => t("calculator:years", { count: num(s.term) });
+
 function htbHint(s, c) {
-  if (!s.ftb) return "Help to Buy is for first-time buyers only, so it is not counted here.";
-  if (!s.newBuild) return "Help to Buy only covers new builds and self-builds. Choose New house or New apartment above if that is what you are buying.";
-  if (c.price > HTB.priceCap) return "Help to Buy only covers homes up to " + euro(HTB.priceCap) + ", so it is not counted at this price.";
-  if (c.price > c.htbStop) {
-    return "Help to Buy needs a mortgage of at least 70% of the price, which is " + euro(c.price * HTB.minLoanShare) +
-      " here. You can borrow up to " + euro(c.maxLoan) + ", so it is not counted at this price.";
-  }
-  const loanShare = c.loanShare < HTB.minLoanShare
-    ? " It also needs a mortgage of at least 70% of the price (" + euro(c.price * HTB.minLoanShare) + "), so plan to borrow that much and keep the rest of your savings." : "";
-  return "Help to Buy gives back the income tax and DIRT you paid in the last four years, up to €30,000 or 10% of the price. On this price, the most is " +
-    euro(c.htbCap) + "." + loanShare;
+  if (!s.ftb) return t("calculator:htb.notFtb");
+  if (!s.newBuild) return t("calculator:htb.notNew");
+  if (c.price > HTB.priceCap) return t("calculator:htb.overCap", { cap: money(HTB.priceCap) });
+  if (c.price > c.htbStop) return t("calculator:htb.loanTooSmall", { minLoan: money(c.price * HTB.minLoanShare), maxLoan: money(c.maxLoan) });
+  const counted = t("calculator:htb.counted", { most: money(c.htbCap) });
+  return c.loanShare < HTB.minLoanShare ? counted + " " + t("calculator:htb.borrowEnough", { minLoan: money(c.price * HTB.minLoanShare) }) : counted;
 }
 
 function stampLabel(s, c) {
-  const vat = !s.newBuild ? "" : " of the price without " + (s.apartment ? "9%" : "13.5%") + " VAT";
-  return "Stamp duty (" + stampBands(c.stampBase) + vat + ")";
+  const count = stampBandCount(c.stampBase);
+  const bands = t(`calculator:breakdown.bands.${count}`);
+  if (!s.newBuild) return t("calculator:breakdown.stamp", { bands });
+  // VAT on a new home: 13.5% on a house, 9% on an apartment.
+  return t("calculator:breakdown.stampNew", { bands, vat: percent(c.vat, Math.round(c.vat * 1000) % 10 ? 1 : 0) });
 }
 
 // Which limit sets the maximum price, and what would move it.
 function limitNote(s, c) {
-  if (c.fundsLimitedPrice >= c.loanLimitedPrice) {
-    return "Right now your income is the limit. The " + c.multiple + "× rule caps the loan at " + euro(c.maxLoan) + ".";
-  }
+  if (c.fundsLimitedPrice >= c.loanLimitedPrice) return t("calculator:limit.income", { multiple: multipleText(c), maxLoan: money(c.maxLoan) });
   const perThousand = calc({ ...s, savings: num(s.savings) + 1000 }).fundsLimitedPrice - c.fundsLimitedPrice;
-  if (perThousand >= 1) return "Right now your savings are the limit. Every extra €1,000 saved raises this by about " + euro(perThousand) + ".";
+  if (perThousand >= 1) return t("calculator:limit.savings", { amount: money(perThousand) });
   // Stuck where Help to Buy stops: a little more saving does not help, going past it without Help to Buy does.
-  return "Right now your savings are the limit, at the highest price where Help to Buy still applies. Going above it without Help to Buy needs about " +
-    euro(c.savingsPastHtb) + " more in savings.";
+  return t("calculator:limit.htbEdge", { amount: money(c.savingsPastHtb) });
 }
 
 function renderPage() {
@@ -87,63 +88,51 @@ function renderPage() {
     pill.classList.toggle("is-on", pills[action]);
     pill.setAttribute("aria-pressed", pills[action]);
   }
-  setField("salary2", s.joint, "Joint applications only");
-  setField("htb", s.ftb && s.newBuild, s.ftb ? "New builds only" : "First-time buyers only");
-  renderRange("rate", num(s.rate).toFixed(2) + "%");
-  renderRange("term", num(s.term) + " years");
+  setField("salary2", s.joint, t("calculator:off.joint"));
+  setField("htb", s.ftb && s.newBuild, s.ftb ? t("calculator:off.newBuild") : t("calculator:off.ftb"));
+  renderRange("rate", rateText(s));
+  renderRange("term", yearsText(s));
 
   bind("htbHint", htbHint(s, c));
-  bind("maxPrice", euro(c.maxPrice));
+  bind("maxPrice", money(c.maxPrice));
   bind("limitNote", limitNote(s, c));
-  bind("multipleLabel", c.multiple + "×");
-  bind("maxLoan", euro(c.maxLoan));
-  bind("funds", euro(c.funds));
-  bind("priceLabel", euro(c.price));
+  bind("multipleLabel", multipleText(c));
+  bind("maxLoan", money(c.maxLoan));
+  bind("funds", money(c.funds));
+  bind("priceLabel", money(c.price));
 
   // "Saved" needs both the tick and the figures in this browser: step 1 can be done by hand
   // (before this button existed) or on another device, and then the journey has no figures yet.
   const step = calculatorStep();
   const saved = step && state.done[step.id] && state.calcSaved;
-  bind("saveLabel", saved ? "Update my journey" : "Save to my journey");
-  bind("saveNote", !step ? "Could not load your journey. Reload the page to save."
-    : saved ? "Step 1 is done. Your journey always shows the figures on this page."
-      : "Completes step 1. Your figures stay in this browser.");
+  bind("saveLabel", saved ? t("calculator:save.update") : t("calculator:save.label"));
+  bind("saveNote", !step ? t("calculator:save.noJourney") : saved ? t("calculator:save.saved") : t("calculator:save.hint"));
   const saveBtn = document.querySelector('[data-action="saveToJourney"]');
   if (saveBtn && !step) saveBtn.disabled = true;
 
+  const approx = (n) => t("common:approx", { amount: money(n) });
   const lines = [
-    ["Deposit (10% minimum)", euro(c.deposit)],
-    [c.extraSavings > 0 ? "Mortgage needed, using all your savings" : "Mortgage needed", euro(c.loanNeeded)],
-    [stampLabel(s, c), euro(c.stamp)],
-    ["Solicitor", "~" + euro(c.solicitor)],
-    ["Structural survey", "~" + euro(c.survey)],
-    ["Bank valuation", "~" + euro(c.valuation)],
-    ["Total cash you need", euro(c.cashNeeded), true],
+    [t("calculator:breakdown.deposit"), money(c.deposit)],
+    [c.extraSavings > 0 ? t("calculator:breakdown.loanAll") : t("calculator:breakdown.loan"), money(c.loanNeeded)],
+    [stampLabel(s, c), money(c.stamp)],
+    [t("calculator:breakdown.solicitor"), approx(c.solicitor)],
+    [t("calculator:breakdown.survey"), approx(c.survey)],
+    [t("calculator:breakdown.valuation"), approx(c.valuation)],
+    [t("calculator:breakdown.total"), money(c.cashNeeded), true],
   ];
   document.getElementById("breakdown").innerHTML = lines.map(([label, value, strong]) =>
     `<span class="breakdown__row${strong ? " is-total" : ""}"><span class="breakdown__label">${esc(label)}</span><span class="breakdown__value">${esc(value)}</span></span>`).join("");
-  bind("bookingNote", "To secure the house you pay a booking deposit of roughly €5,000 (refundable until contracts are signed). The rest of the " +
-    euro(c.deposit) + " deposit is due when you sign.");
+  bind("bookingNote", t("calculator:breakdown.booking", { deposit: money(c.deposit) }));
 
   // Two separate limits: cash for the deposit and costs, and the loan against the income multiple.
   const kind = verdictKind(c);
-  const limit = "your " + c.multiple + "× limit of " + euro(c.maxLoan);
-  const verdicts = {
-    within: ["This price is within your limits",
-      "You have " + euro(c.funds) + " against " + euro(c.cashNeeded) + " needed in cash, and the mortgage of " + euro(c.loanNeeded) + " sits inside " + limit + ". Next step: gather the AIP paperwork."],
-    outOfReach: ["This price is out of reach for now",
-      "You are " + euro(c.gap) + " short in cash, and the mortgage you would need (" + euro(c.loanNeeded) + ") is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."],
-    cashShort: ["You are " + euro(c.gap) + " short in cash",
-      "You have " + euro(c.funds) + " available and need " + euro(c.cashNeeded) + " in cash at this price. Save the difference or aim closer to " + euro(c.maxPrice) + "."],
-    loanOver: ["The mortgage is over your limit",
-      "You would need to borrow " + euro(c.loanNeeded) + ", which is " + euro(c.loanOver) + " above " + limit + ". Aim at or below " + euro(c.maxPrice) + "."],
-  };
-  const verdict = verdicts[kind];
+  const figures = { funds: money(c.funds), cash: money(c.cashNeeded), loan: money(c.loanNeeded), gap: money(c.gap),
+    over: money(c.loanOver), maxLoan: money(c.maxLoan), maxPrice: money(c.maxPrice), multiple: multipleText(c) };
   document.getElementById("verdict").classList.toggle("is-short", kind !== "within");
-  bind("verdictTitle", verdict[0]);
-  bind("verdictBody", verdict[1]);
-  bind("monthly", euro(c.monthly));
-  bind("monthlyNote", euro(c.loanNeeded) + " over " + num(s.term) + " years at " + num(s.rate).toFixed(2) + "%. Mortgage protection and home insurance are on top.");
+  bind("verdictTitle", t(`calculator:verdict.${kind}.title`, figures));
+  bind("verdictBody", t(`calculator:verdict.${kind}.body`, figures));
+  bind("monthly", money(c.monthly));
+  bind("monthlyNote", t("calculator:monthly.note", { loan: money(c.loanNeeded), years: yearsText(s), rate: rateText(s) }));
 }
 
 let saving = false;
@@ -166,7 +155,7 @@ startPage({ init: initPage, render: renderPage, actions: {
       const first = !state.done[step.id];
       setState({ calcSaved: true });
       await setDone({ ...state.done, [step.id]: true });
-      flash(first ? "Your numbers are saved and step 1 is done." : "Your journey now uses these numbers.");
+      flash(first ? t("calculator:save.done") : t("calculator:save.updated"));
       location.href = stepLink(step);
     } finally {
       saving = false;

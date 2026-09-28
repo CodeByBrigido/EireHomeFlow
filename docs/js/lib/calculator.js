@@ -1,7 +1,7 @@
 // Calculator rules and maths, shared by the calculator, the journey and the dashboard.
 // Pure: no DOM and no storage, so tests/calculator.test.js runs it in Node.
 // The source of every rule is listed in specs/02-TRD.md, section 6.
-import { num } from "./format.js?v=20260928";
+import { num } from "./format.js?v=20260929";
 
 // The calculator's sliders: lowest, highest and default value.
 export const RANGES = { rate: [1, 8, 3.9], term: [5, 35, 30] };
@@ -23,7 +23,8 @@ export function stampDuty(price, vat) {
   const base = stampBase(price, vat);
   return Math.min(base, 1e6) * 0.01 + Math.max(0, Math.min(base, 1.5e6) - 1e6) * 0.02 + Math.max(0, base - 1.5e6) * 0.06;
 }
-export const stampBands = (base) => (base <= 1e6 ? "1%" : base <= 1.5e6 ? "1% and 2% bands" : "1%, 2% and 6% bands");
+// How many of those bands a price reaches: 1, 2 or 3. The calculator page names them.
+export const stampBandCount = (base) => (base <= 1e6 ? 1 : base <= 1.5e6 ? 2 : 3);
 
 // Help to Buy: first-time buyers of a new home up to €500,000, with a mortgage of at least
 // 70% of the price. So it also stops where 70% of the price is more than the person can borrow.

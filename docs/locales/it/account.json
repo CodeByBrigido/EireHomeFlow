@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Pannello | ÉireHome Flow",
+    "eyebrow": "Il tuo pannello",
+    "title": "Il tuo pannello",
+    "intro": "A che punto sei sulla strada verso le chiavi, e i numeri che ci sono dietro.",
+    "progress": "Progressi",
+    "phase": "Fase attuale",
+    "earned": "Guadagnati",
+    "xpNote": "XP, 25 per ogni passo che completi.",
+    "nextUp": "Il prossimo",
+    "openStep": "Apri questo passo",
+    "phases": "Le tue fasi",
+    "numbers": "I tuoi numeri",
+    "maxLoan": "Mutuo massimo",
+    "funds": "Fondi disponibili",
+    "openCalculator": "Apri il calcolatore",
+    "account": "Il tuo account",
+    "synced": "I tuoi progressi sono salvati nel tuo account.",
+    "profile": "Il mio profilo",
+    "hello": "Ciao, {name}",
+    "helloNoName": "Ciao",
+    "allDone": "Tutti i passi sono fatti. È ora di un caffè.",
+    "notSaved": "Non ancora salvato",
+    "numbersSaved": "Prezzo massimo della casa, in base ai numeri del tuo calcolatore.",
+    "numbersHint": "Compila il calcolatore e scegli Salva nel mio percorso per vedere qui i tuoi numeri. Restano in questo browser.",
+    "useCalculator": "Usa il calcolatore",
+    "memberSince": "Iscritto dal {date}"
+  },
+  "profile": {
+    "meta": "Il mio profilo | ÉireHome Flow",
+    "title": "Il mio profilo",
+    "intro": "I tuoi dati e come funziona il tuo account.",
+    "details": "I tuoi dati",
+    "memberSince": "Iscritto dal",
+    "save": "Salva le modifiche",
+    "saving": "Salvataggio...",
+    "updated": "Il tuo profilo è stato aggiornato.",
+    "password": {
+      "title": "Password",
+      "text": "Usa almeno 8 caratteri, con una lettera maiuscola e un carattere speciale.",
+      "change": "Cambia password"
+    },
+    "data": {
+      "title": "I tuoi dati",
+      "text": "Il tuo account conserva nome, email e i passi completati, su server in Irlanda. Con Google conserva anche il link alla foto del profilo che invia Google, che non usiamo. I numeri che inserisci nel calcolatore restano nel tuo browser. <a href=\"privacy.html\">Leggi la nostra Informativa sulla privacy</a>."
+    },
+    "signOut": {
+      "title": "Esci",
+      "text": "I tuoi progressi restano salvati nel tuo account per la prossima volta."
+    },
+    "delete": {
+      "title": "Elimina il tuo account",
+      "text": "Questo elimina subito il tuo account e i progressi salvati. Non si può annullare. I numeri del calcolatore in questo browser non fanno parte del tuo account e restano qui.",
+      "start": "Elimina il mio account",
+      "question": "Eliminare l'account <strong data-bind=\"userEmail\"></strong> e tutti i progressi salvati? Potrai creare un nuovo account più avanti, ma questo non potrà essere recuperato.",
+      "confirm": "Sì, elimina il mio account",
+      "cancel": "Annulla",
+      "deleting": "Eliminazione...",
+      "done": "Il tuo account e i progressi salvati sono stati eliminati.",
+      "failed": "Impossibile eliminare il tuo account. Riprova.",
+      "signInAgain": "Accedi di nuovo per eliminare il tuo account.",
+      "notEnabled": "Non è ancora possibile eliminare gli account dal sito. Scrivi a eirehomeflow@gmail.com e lo elimineremo noi.",
+      "note": "Non riesci più ad accedere? Scrivi a <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> dall'indirizzo dell'account e lo elimineremo noi."
+    }
+  }
+}

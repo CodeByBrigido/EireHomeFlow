@@ -19,6 +19,11 @@ export default [
     languageOptions: { ecmaVersion: 2022, sourceType: "module", globals: globals.browser },
   },
   {
+    // The translations runtime is a classic script in <head>, not a module.
+    files: ["docs/js/i18n-boot.js"],
+    languageOptions: { sourceType: "script" },
+  },
+  {
     files: ["tests/**/*.js", "tools/**/*.js", "eslint.config.js"],
     languageOptions: { ecmaVersion: 2022, sourceType: "module", globals: globals.node },
   },

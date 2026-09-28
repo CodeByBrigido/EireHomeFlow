@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -110,6 +110,21 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] "Delete my account" em My profile, com confirmação na página (função `delete_my_account()` no Supabase)
 - [ ] Rodrigo: rodar o SQL da seção 2.1 do `SETUP-CONTAS.md` no Supabase antes de publicar
 
+### Marco 3.8: Site em vários idiomas (28/09/2026) ✅
+- [x] Textos em JSON por idioma e por parte do site (`docs/locales/`), com o inglês como fonte
+- [x] 9 idiomas completos, com 683 textos cada: inglês, português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano
+- [x] Idioma do navegador na primeira visita; escolha no menu do cabeçalho salva e nunca substituída; `?lang=` para mandar um link num idioma
+- [x] Página traduzida antes de aparecer, sem piscar em inglês, também nas partes montadas por JavaScript (passos, calculadora, avisos, erros do Supabase)
+- [x] Números, dinheiro e datas no formato de cada idioma, com os mesmos valores e regras irlandesas
+- [x] `npm run check:i18n` no `npm run check` e no GitHub Actions; testes do runtime, das ferramentas e dos formatos
+- [x] Páginas legais com resumo e moldura traduzidos e texto integral em inglês, com aviso; Privacy Policy lista as chaves novas do navegador
+- [x] Cabeçalho em 2 linhas até 880px em todos os idiomas; menu de idiomas rola por dentro em telas baixas
+- [x] Doc 08 (Internacionalização) com a convenção obrigatória para textos novos e o glossário
+
+### Marco 3.9: Jornada e topo mais limpos (28/09/2026) ✅
+- [x] Sem "★ N XP" no topo e sem os cartões "Streak" e "Earned" na jornada; o XP fica só no Dashboard
+- [x] Balões "Start here" e "Optional" continuam visíveis, menores, com uma etapa aberta
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -139,6 +154,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] Revisar `privacy.html` e `terms.html`: preencher os `TODO` (nome legal e endereço), decidir os `POLICY CHOICE` e, idealmente, pedir uma revisão jurídica
 - [ ] Página "About" com quem mantém o site e um contato
 - [ ] M16 links para fontes oficiais (Central Bank, Revenue, Citizens Information) e "Last reviewed: mês/ano"
+- [ ] Revisão das traduções por falantes nativos, começando pelo vocabulário financeiro. Polonês, romeno e lituano primeiro, por serem os mais novos
 
 **Pronto quando:** um visitante sabe quem está por trás do site, de onde vêm os números e o que é feito com o e-mail dele.
 
@@ -151,7 +167,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 **Pronto quando:** os valores de referência do TRD (seção 12.1) estiverem atualizados e conferidos.
 
 ### Marco 8: Jornada e navegação
-- [ ] M4 decidir "streak": renomear ("Steps done") ou implementar por datas (exige mudar `done`, ver Backend Schema seção 9)
+- [x] M4 "streak" retirado da jornada (era `min(etapas feitas, 7)` mostrado como dias, não uma sequência real)
 - [ ] M5 estado final coerente (nota do selo final; "Next up" quando só faltam opcionais)
 - [ ] Confirmação antes de "Reset progress"
 - [ ] M12 a M14 foco, anúncios e títulos para leitor de tela
@@ -160,6 +176,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [x] M15 (parte) ícone do site
 - [ ] M15 meta description, Open Graph e Twitter card, canonical, `robots.txt`, `sitemap.xml`, página 404
 - [ ] Título da página mais descritivo
+- [ ] Decidir se os idiomas precisam de endereços próprios para busca (hoje a tradução acontece no navegador, e o Google indexa o inglês)
 
 ### Marco 10: Qualidade e manutenção
 - [x] Testes automáticos da calculadora (`tests/calculator.test.js`, no Node, em vez de uma página `tests.html`)
@@ -180,3 +197,4 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 3. Texto novo segue o tom de voz (UI/UX seção 2): sem travessões, sem clichês.
 4. Documentos em `specs/` atualizados, com a data de revisão.
 5. Nenhum ID de etapa mudou sem migração (Backend Schema seção 4).
+6. Texto novo nasce em inglês em `docs/locales/en/` e é traduzido nos outros 8 idiomas no mesmo trabalho (doc 08, seção 7). Se mudou o cabeçalho, ele continua em 2 linhas em 320px em todos os idiomas.

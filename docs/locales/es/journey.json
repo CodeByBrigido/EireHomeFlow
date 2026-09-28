@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Mi camino | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Tu camino",
+    "title": "Hasta las llaves y la casa lista"
+  },
+  "callout": {
+    "start": "Empieza aquí",
+    "optional": "Opcional"
+  },
+  "status": {
+    "completed": "completado",
+    "locked": "bloqueado",
+    "current": "paso actual",
+    "optional": "opcional"
+  },
+  "node": {
+    "label": "Paso {n} de {total}: {title}"
+  },
+  "finish": {
+    "title": "Casa lista del todo",
+    "note": "Se desbloquea cuando todos los pasos obligatorios estén marcados.",
+    "doneTitle": "Instalado",
+    "doneNote": "Todos los pasos hechos, suelos y cortinas incluidos."
+  },
+  "next": {
+    "none": "Hora de poner la cafetera"
+  },
+  "aside": {
+    "nextUp": "Lo siguiente",
+    "openStep": "Abrir este paso",
+    "reset": "Reiniciar el progreso"
+  },
+  "detail": {
+    "close": "Cerrar",
+    "stepOf": "Paso {n} de {total}",
+    "checklist": "Qué hace falta",
+    "howto": "Cómo hacerlo",
+    "tip": "Conviene saber",
+    "complete": "Completar paso +25 XP",
+    "undo": "Marcar como no hecho",
+    "changeNumbers": "Cambiar mis cifras",
+    "openCalculator": "Abrir la calculadora",
+    "signUp": "Crear cuenta o iniciar sesión",
+    "previous": "← Anterior",
+    "next": "Siguiente →"
+  },
+  "note": {
+    "calculator": "Este paso se marca solo cuando eliges Guardar en mi camino en la calculadora.",
+    "signedInDone": "Has iniciado sesión como {email}, así que este paso está hecho.",
+    "signedInTicking": "Has iniciado sesión como {email}. Estamos marcando este paso por ti.",
+    "checking": "Comprobando tu cuenta...",
+    "signIn": "Este paso se marca solo en cuanto inicies sesión.",
+    "accountsOff": "Las cuentas todavía no están activadas, así que este paso no se puede completar.",
+    "locked": "Ya puedes leer este paso. Podrás completarlo cuando termines «{title}»."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Tus cifras",
+      "maxPrice": "Precio máximo de la vivienda",
+      "maxLoan": "Hipoteca máxima ({multiple})",
+      "funds": "Fondos disponibles",
+      "monthly": "Cuota mensual para una vivienda de {price}"
+    },
+    "deposit": {
+      "title": "Tu entrada",
+      "tenPercent": "10 % de {price}",
+      "own": "Ahorros y donación familiar",
+      "htb": "Help to Buy",
+      "covered": "Tus fondos cubren la entrada.",
+      "short": "Te faltan {amount} para la entrada."
+    },
+    "costs": {
+      "title": "Tus gastos extra sobre {price}",
+      "stamp": "Impuesto de timbre",
+      "solicitor": "Abogado",
+      "survey": "Inspección estructural",
+      "valuation": "Tasación del banco",
+      "total": "Total, además de la entrada",
+      "newHouse": "La calculadora está puesta en una casa nueva, así que el impuesto de timbre se calcula sobre el precio sin el 13,5 % de IVA.",
+      "newApartment": "La calculadora está puesta en un piso nuevo, así que el impuesto de timbre se calcula sobre el precio sin el 9 % de IVA."
+    },
+    "htb": {
+      "title": "El Help to Buy y tú",
+      "mover": "Según tu calculadora, cambias de vivienda. El Help to Buy es solo para la primera vivienda, así que puedes saltarte este paso opcional.",
+      "secondHand": "Tu calculadora está puesta en una vivienda de segunda mano. El Help to Buy solo cubre obra nueva y autoconstrucción, así que elige Casa nueva o Piso nuevo en la calculadora si es lo que estás buscando.",
+      "overCap": "Tu precio objetivo de {price} supera el límite de {cap}, así que el Help to Buy no se aplicaría.",
+      "loanTooSmall": "El Help to Buy exige una hipoteca de al menos el 70 % del precio, que son {minLoan} con tu precio objetivo. Puedes pedir hasta {maxLoan}, así que el Help to Buy no se aplicaría a ese precio.",
+      "borrowEnough": "También exige una hipoteca de al menos el 70 % del precio ({minLoan}), así que planea pedir esa cantidad y quedarte con el resto de tus ahorros.",
+      "most": "Lo máximo que podrías recibir sobre {price}",
+      "counted": "Contado en tu calculadora",
+      "note": "La cantidad final también depende del impuesto sobre la renta y del DIRT que pagaste en los últimos cuatro años. Tu solicitud en Revenue lo muestra."
+    },
+    "notSaved": "Tus cifras todavía no están guardadas en este navegador. Abre la calculadora y elige Guardar en mi camino para verlas aquí.",
+    "saveFirst": "Guarda tus cifras en la calculadora (paso 1) para ver aquí las tuyas."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "label": "Pagrindinis meniu",
+    "home": "Pradžia",
+    "guide": "Gidas",
+    "journey": "Mano kelias",
+    "calculator": "Skaičiuoklė"
+  },
+  "header": {
+    "signIn": "Prisijungti"
+  },
+  "language": {
+    "button": "Kalba: lietuvių. Pakeisti kalbą",
+    "code": "LT",
+    "title": "Kalba"
+  },
+  "account": {
+    "menu": "Paskyros meniu",
+    "dashboard": "Suvestinė",
+    "profile": "Mano profilis",
+    "signOut": "Atsijungti",
+    "fallbackName": "Jūsų paskyra",
+    "menuFor": "Paskyros meniu: {name}",
+    "signedOut": "Atsijungėte. Jūsų pažanga išsaugota paskyroje."
+  },
+  "yourAccount": "Jūsų paskyra",
+  "footer": {
+    "disclaimer": "Mokomasis turinys. Tai nėra reguliuojama finansinė konsultacija.",
+    "legal": "Teisinė informacija",
+    "privacy": "Privatumo politika",
+    "terms": "Naudojimo sąlygos"
+  },
+  "toast": {
+    "dismiss": "Uždaryti"
+  },
+  "gate": {
+    "loading": "Įkeliama paskyra...",
+    "signIn": "Prisijungti",
+    "signUp": "Sukurti paskyrą",
+    "signInPrompt": "Prisijunkite, kad matytumėte šį puslapį. Jūsų kelias, skaičiai ir duomenys Jūsų laukia.",
+    "accountsOff": "Paskyros dar neįjungtos. Užsukite netrukus."
+  },
+  "fields": {
+    "name": "Vardas ir pavardė",
+    "email": "El. paštas",
+    "password": "Slaptažodis",
+    "confirm": "Pakartokite slaptažodį"
+  },
+  "forms": {
+    "name": "Įveskite vardą ir pavardę.",
+    "email": "Įveskite teisingą el. pašto adresą, pavyzdžiui, vardas@pavyzdys.lt.",
+    "password": "Įveskite slaptažodį.",
+    "weakPassword": "Slaptažodis neatitinka toliau nurodytų reikalavimų.",
+    "confirm": "Pakartokite slaptažodį.",
+    "mismatch": "Slaptažodžiai nesutampa.",
+    "wait": "Palaukite...",
+    "connecting": "Akimirką, vis dar jungiamasi. Bandykite dar kartą."
+  },
+  "errors": {
+    "invalidCredentials": "Neteisingas el. paštas arba slaptažodis. Patikrinkite ir bandykite dar kartą.",
+    "emailNotConfirmed": "Pirmiausia patvirtinkite el. pašto adresą: atidarykite nuorodą, kurią Jums išsiuntėme.",
+    "userExists": "Paskyra su šiuo el. pašto adresu jau yra. Prisijunkite.",
+    "weakPassword": "Pasirinkite stipresnį slaptažodį: bent 8 simboliai, viena didžioji raidė ir vienas specialusis simbolis.",
+    "samePassword": "Naujas slaptažodis turi skirtis nuo dabartinio.",
+    "rateLimit": "Per daug bandymų. Palaukite minutę ir bandykite dar kartą.",
+    "signupsOff": "Naujų paskyrų kūrimas kol kas išjungtas. Užsukite netrukus.",
+    "sessionEnded": "Jūsų sesija baigėsi. Prisijunkite iš naujo.",
+    "network": "Nepavyko susisiekti su serveriu. Patikrinkite ryšį ir bandykite dar kartą.",
+    "generic": "Kažkas nepavyko. Bandykite dar kartą."
+  },
+  "welcome": {
+    "newAccount": "Jūsų paskyra paruošta. Sveiki atvykę į ÉireHome Flow, {name}!",
+    "newAccountNoName": "Jūsų paskyra paruošta. Sveiki atvykę į ÉireHome Flow!",
+    "back": "Sveiki sugrįžę, {name}.",
+    "backNoName": "Sveiki sugrįžę.",
+    "confirmed": "Jūsų el. paštas patvirtintas. Sveiki atvykę į ÉireHome Flow, {name}!",
+    "confirmedNoName": "Jūsų el. paštas patvirtintas. Sveiki atvykę į ÉireHome Flow!",
+    "goToJourney": "Eiti į mano kelią"
+  },
+  "google": {
+    "cancelled": "Prisijungimas su Google atšauktas. Galite bandyti dar kartą arba naudoti el. paštą.",
+    "failed": "Prisijungti su Google nepavyko. Bandykite dar kartą arba naudokite el. paštą.",
+    "failedWith": "Prisijungti su Google nepavyko: {reason}. Bandykite dar kartą arba naudokite el. paštą."
+  },
+  "linkExpired": "Ši nuoroda nebegalioja arba jau buvo panaudota. Prisijunkite arba paprašykite naujos nuorodos.",
+  "progress": {
+    "steps": {
+      "one": "Žingsniai: {done} iš {count}",
+      "few": "Žingsniai: {done} iš {count}",
+      "many": "Žingsniai: {done} iš {count}",
+      "other": "Žingsniai: {done} iš {count}"
+    },
+    "phase": {
+      "one": "Atlikti žingsniai: {done} iš {count}",
+      "few": "Atlikti žingsniai: {done} iš {count}",
+      "many": "Atlikti žingsniai: {done} iš {count}",
+      "other": "Atlikti žingsniai: {done} iš {count}"
+    }
+  },
+  "approx": "apie {amount}",
+  "newTab": "(atsidaro naujame skirtuke)"
+}

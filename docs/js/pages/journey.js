@@ -1,13 +1,14 @@
 // My journey: the step path, the step panel and the progress sidebar.
 // Links can open a step (journey.html#step-aip-0) or jump to a phase (journey.html#phase-aip).
-import { calc, HTB } from "../lib/calculator.js?v=20260928";
-import { esc, euro } from "../lib/format.js?v=20260928";
-import { Account } from "../core/account.js?v=20260928";
-import { startPage } from "../core/app.js?v=20260928";
-import { bind } from "../core/dom.js?v=20260928";
-import { setState, state } from "../core/state.js?v=20260928";
-import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260928";
-import { setDone } from "../core/sync.js?v=20260928";
+import { calc, HTB } from "../lib/calculator.js?v=20260929";
+import { esc } from "../lib/format.js?v=20260929";
+import { Account } from "../core/account.js?v=20260929";
+import { startPage } from "../core/app.js?v=20260929";
+import { bind } from "../core/dom.js?v=20260929";
+import { money, number, percent, t } from "../core/i18n.js?v=20260929";
+import { setState, state } from "../core/state.js?v=20260929";
+import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260929";
+import { setDone } from "../core/sync.js?v=20260929";
 
 const WAVE = [0, 72, 108, 72, 0, -72, -108, -72];
 const RING = 2 * Math.PI * 43;
@@ -55,14 +56,17 @@ function renderPage(p) {
       const shift = Math.round(WAVE[idx % WAVE.length] * (compact ? 0.34 : 1));
       const nodeClass = "node" + (checked ? " is-done" : locked ? " is-locked" : "") +
         (current ? " is-current" : "") + (state.open === s.id ? " is-open" : "");
-      const status = [checked ? "completed" : locked ? "locked" : current ? "current step" : "", s.blocking ? "" : "optional"]
-        .filter(Boolean).map((word) => ", " + word).join("");
-      const callout = current ? '<span class="callout callout--start" aria-hidden="true">Start here</span>'
-        : !s.blocking && !checked ? '<span class="callout" aria-hidden="true">Optional</span>' : "";
+      const status = [
+        checked ? t("journey:status.completed") : locked ? t("journey:status.locked") : current ? t("journey:status.current") : "",
+        s.blocking ? "" : t("journey:status.optional"),
+      ].filter(Boolean).map((word) => ", " + word).join("");
+      const label = t("journey:node.label", { n: idx + 1, total: steps.length, title: s.title }) + status;
+      const callout = current ? `<span class="callout callout--start" aria-hidden="true">${esc(t("journey:callout.start"))}</span>`
+        : !s.blocking && !checked ? `<span class="callout" aria-hidden="true">${esc(t("journey:callout.optional"))}</span>` : "";
       return `<li class="path__step" style="--shift:${shift}px">
           ${callout}
           <button type="button" class="${nodeClass}" data-action="open" data-id="${s.id}"${current ? ' aria-current="step"' : ""}
-            aria-label="${esc("Step " + (idx + 1) + " of " + steps.length + ": " + s.title + status)}">${checked ? "✓" : locked ? "🔒" : s.blocking ? "★" : "◆"}</button>
+            aria-label="${esc(label)}">${checked ? "✓" : locked ? "🔒" : s.blocking ? "★" : "◆"}</button>
           <span class="path__label${locked ? " is-locked" : checked ? " is-done" : ""}" aria-hidden="true">${esc(s.title)}</span>
         </li>`;
     }).join("");
@@ -74,7 +78,7 @@ function renderPage(p) {
             <span class="phase__title">${esc(phase.title)}</span>
             <span class="phase__subtitle">${esc(phase.subtitle)}</span>
           </span>
-          <span class="phase__count">${dn} / ${phase.tasks.length}</span>
+          <span class="phase__count">${number(dn)} / ${number(phase.tasks.length)}</span>
         </div>
         <ol class="path">${items}</ol>
       </section>`;
@@ -86,62 +90,60 @@ function renderPage(p) {
 
   const complete = p.pct === 100;
   document.getElementById("finish-badge").classList.toggle("is-done", complete);
-  bind("finishTitle", complete ? "Settled in" : "Home, fully settled");
-  bind("finishNote", complete ? "Every step done, floors and curtains included." : "Unlocks when every blocking step is ticked.");
+  bind("finishTitle", complete ? t("journey:finish.doneTitle") : t("journey:finish.title"));
+  bind("finishNote", complete ? t("journey:finish.doneNote") : t("journey:finish.note"));
 
   document.getElementById("detail").hidden = !openStepData;
   if (openStepData) renderDetail(p, openStepData);
 
   document.getElementById("ring-fill").setAttribute("stroke-dasharray", (RING * p.pct / 100).toFixed(1) + " " + RING.toFixed(1));
-  bind("pct", p.pct + "%");
-  bind("countLabel", p.doneCount + " of " + steps.length + " steps");
+  bind("pct", percent(p.pct / 100));
+  bind("countLabel", t("common:progress.steps", { done: p.doneCount, count: steps.length }));
   const next = steps[p.unlocked];
-  bind("nextTitle", next ? next.title : "Put the kettle on");
+  bind("nextTitle", next ? next.title : t("journey:next.none"));
 }
 
 // The person's figures for a step (data-numbers in guide.html), worked out by calc().
 function mineFor(kind, c) {
   const s = state;
+  const approx = (n) => t("common:approx", { amount: money(n) });
   if (kind === "calculator") {
-    return { title: "Your numbers", rows: [
-      ["Maximum property price", euro(c.maxPrice), true],
-      ["Maximum mortgage (" + c.multiple + "×)", euro(c.maxLoan)],
-      ["Funds available", euro(c.funds)],
-      ["Monthly repayment for a " + euro(c.price) + " home", euro(c.monthly)],
+    return { title: t("journey:mine.calculator.title"), rows: [
+      [t("journey:mine.calculator.maxPrice"), money(c.maxPrice), true],
+      [t("journey:mine.calculator.maxLoan", { multiple: number(c.multiple) + "×" }), money(c.maxLoan)],
+      [t("journey:mine.calculator.funds"), money(c.funds)],
+      [t("journey:mine.calculator.monthly", { price: money(c.price) }), money(c.monthly)],
     ] };
   }
   if (kind === "deposit") {
-    return { title: "Your deposit", rows: [
-      ["10% of " + euro(c.price), euro(c.deposit), true],
-      ["Savings and family gift", euro(c.own)],
-      ...(c.htb ? [["Help to Buy", euro(c.htb)]] : []),
-    ], note: c.funds >= c.deposit ? "Your funds cover the deposit." : "You are " + euro(c.deposit - c.funds) + " short of the deposit." };
+    return { title: t("journey:mine.deposit.title"), rows: [
+      [t("journey:mine.deposit.tenPercent", { price: money(c.price) }), money(c.deposit), true],
+      [t("journey:mine.deposit.own"), money(c.own)],
+      ...(c.htb ? [[t("journey:mine.deposit.htb"), money(c.htb)]] : []),
+    ], note: c.funds >= c.deposit ? t("journey:mine.deposit.covered") : t("journey:mine.deposit.short", { amount: money(c.deposit - c.funds) }) };
   }
   if (kind === "costs") {
-    return { title: "Your extra costs on " + euro(c.price), rows: [
-      ["Stamp duty", euro(c.stamp)],
-      ["Solicitor", "~" + euro(c.solicitor)],
-      ["Structural survey", "~" + euro(c.survey)],
-      ["Bank valuation", "~" + euro(c.valuation)],
-      ["Total, on top of the deposit", euro(c.costs), true],
-    ], note: s.newBuild ? "The calculator is set to a new " + (s.apartment ? "apartment" : "house") + ", so stamp duty is worked out on the price without " +
-      (s.apartment ? "9%" : "13.5%") + " VAT." : "" };
+    return { title: t("journey:mine.costs.title", { price: money(c.price) }), rows: [
+      [t("journey:mine.costs.stamp"), money(c.stamp)],
+      [t("journey:mine.costs.solicitor"), approx(c.solicitor)],
+      [t("journey:mine.costs.survey"), approx(c.survey)],
+      [t("journey:mine.costs.valuation"), approx(c.valuation)],
+      [t("journey:mine.costs.total"), money(c.costs), true],
+    ], note: !s.newBuild ? "" : s.apartment ? t("journey:mine.costs.newApartment") : t("journey:mine.costs.newHouse") };
   }
   if (kind === "htb") {
-    const title = "Help to Buy and you";
-    if (!s.ftb) return { title, note: "Your calculator says you are moving home. Help to Buy is for first-time buyers only, so you can skip this optional step." };
-    if (!s.newBuild) return { title, note: "Your calculator is set to a second-hand home. Help to Buy only covers new builds and self-builds, so choose New house or New apartment in the calculator if that is what you are looking at." };
-    if (c.price > HTB.priceCap) return { title, note: "Your target price of " + euro(c.price) + " is above the " + euro(HTB.priceCap) + " limit, so Help to Buy would not apply." };
+    const title = t("journey:mine.htb.title");
+    if (!s.ftb) return { title, note: t("journey:mine.htb.mover") };
+    if (!s.newBuild) return { title, note: t("journey:mine.htb.secondHand") };
+    if (c.price > HTB.priceCap) return { title, note: t("journey:mine.htb.overCap", { price: money(c.price), cap: money(HTB.priceCap) }) };
     if (c.price > c.htbStop) {
-      return { title, note: "Help to Buy needs a mortgage of at least 70% of the price, which is " + euro(c.price * HTB.minLoanShare) +
-        " at your target price. You can borrow up to " + euro(c.maxLoan) + ", so Help to Buy would not apply at this price." };
+      return { title, note: t("journey:mine.htb.loanTooSmall", { minLoan: money(c.price * HTB.minLoanShare), maxLoan: money(c.maxLoan) }) };
     }
-    const loanShare = c.loanShare < HTB.minLoanShare
-      ? " It also needs a mortgage of at least 70% of the price (" + euro(c.price * HTB.minLoanShare) + "), so plan to borrow that much and keep the rest of your savings." : "";
+    const note = t("journey:mine.htb.note");
     return { title, rows: [
-      ["Most you could get on " + euro(c.price), euro(c.htbCap), true],
-      ["Counted in your calculator", euro(c.htb)],
-    ], note: "The final amount is also limited by the income tax and DIRT you paid in the last four years. Your Revenue application shows it." + loanShare };
+      [t("journey:mine.htb.most", { price: money(c.price) }), money(c.htbCap), true],
+      [t("journey:mine.htb.counted"), money(c.htb)],
+    ], note: c.loanShare < HTB.minLoanShare ? note + " " + t("journey:mine.htb.borrowEnough", { minLoan: money(c.price * HTB.minLoanShare) }) : note };
   }
   return null;
 }
@@ -154,9 +156,7 @@ function renderMine(s, isDone) {
   const saved = !!state.calcSaved;
   const mine = s.numbers && (s.auto !== "calculator" || isDone)
     ? (saved ? mineFor(s.numbers, calc(state))
-      : { title: "Your numbers", note: s.auto === "calculator"
-        ? "Your figures are not saved in this browser yet. Open the calculator and choose Save to my journey to see them here."
-        : "Save your numbers in the calculator (step 1) to see your own figures here." })
+      : { title: t("journey:mine.calculator.title"), note: s.auto === "calculator" ? t("journey:mine.notSaved") : t("journey:mine.saveFirst") })
     : null;
   box.hidden = !mine;
   if (!mine) return;
@@ -168,6 +168,18 @@ function renderMine(s, isDone) {
   note.hidden = !mine.note;
 }
 
+// The note under a step: how it gets ticked, or why it cannot be yet.
+function detailNote(p, s, isDone, locked) {
+  const user = Account.user;
+  if (s.auto === "calculator") return isDone ? "" : t("journey:note.calculator");
+  if (s.auto === "account") {
+    if (user) return isDone ? t("journey:note.signedInDone", { email: user.email }) : t("journey:note.signedInTicking", { email: user.email });
+    if (!Account.ready) return t("journey:note.checking");
+    return Account.enabled ? t("journey:note.signIn") : t("journey:note.accountsOff");
+  }
+  return locked ? t("journey:note.locked", { title: steps[p.unlocked].title }) : "";
+}
+
 // Every step can be read. Completing one by hand needs the earlier blocking steps done.
 // Steps with data-auto are ticked by the site: the calculator step when the figures are
 // saved there, the account step when the person signs in.
@@ -177,7 +189,7 @@ function renderDetail(p, s) {
   const locked = index > p.unlocked && !isDone;
 
   bind("openPhase", s.phase.n + " · " + s.phase.title);
-  bind("openStepLabel", "Step " + (index + 1) + " of " + steps.length);
+  bind("openStepLabel", t("journey:detail.stepOf", { n: index + 1, total: steps.length }));
   bind("openTitle", s.title);
   bind("openTime", s.time);
   bind("openCost", s.cost);
@@ -190,7 +202,7 @@ function renderDetail(p, s) {
   }
   bind("openTip", s.tip);
   const tag = document.getElementById("open-tag");
-  tag.textContent = s.blocking ? "Blocking step" : "Optional step";
+  tag.textContent = s.blocking ? t("guide:kind.blocking") : t("guide:kind.optional");
   tag.classList.toggle("is-optional", !s.blocking);
   document.getElementById("open-checklist").innerHTML = s.checklist
     .map((text) => `<li><span class="checklist__mark" aria-hidden="true">◆</span><span>${esc(text)}</span></li>`).join("");
@@ -204,24 +216,17 @@ function renderDetail(p, s) {
   const linksBox = document.getElementById("open-links");
   if (howtoBox) {
     howtoBox.hidden = !howto.length;
-    bind("openHowtoLabel", s.howtoLabel || "How to do it");
+    bind("openHowtoLabel", s.howtoLabel || t("journey:detail.howto"));
     document.getElementById("open-howto").innerHTML = howto.map((text) => `<li>${esc(text)}</li>`).join("");
   }
   if (linksBox) {
     linksBox.hidden = !links.length;
+    const newTab = esc(t("common:newTab"));
     linksBox.innerHTML = links.map((link) =>
-      `<a class="step-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.text)}<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a>`).join("");
+      `<a class="step-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.text)}<span class="sr-only"> ${newTab}</span><span aria-hidden="true"> ↗</span></a>`).join("");
   }
 
-  const user = Account.user;
-  const note = s.auto === "calculator"
-    ? (isDone ? "" : "This step is ticked for you when you choose Save to my journey in the calculator.")
-    : s.auto === "account"
-      ? (user ? "You are signed in as " + user.email + (isDone ? ", so this step is done." : ". This step is being ticked for you.")
-        : !Account.ready ? "Checking your account..."
-          : Account.enabled ? "This step is ticked for you as soon as you sign in."
-            : "Accounts are not switched on yet, so this step cannot be completed.")
-      : locked ? 'You can read this step now. You can complete it once you finish "' + steps[p.unlocked].title + '".' : "";
+  const note = detailNote(p, s, isDone, locked);
   const noteEl = document.getElementById("detail-note");
   noteEl.textContent = note;
   noteEl.hidden = !note;
@@ -230,12 +235,13 @@ function renderDetail(p, s) {
   const toggle = document.getElementById("toggle-step");
   toggle.hidden = !!s.auto;
   toggle.disabled = locked;
-  bind("openAction", isDone ? "Mark as not done" : "Complete step +25 XP");
+  bind("openAction", isDone ? t("journey:detail.undo") : t("journey:detail.complete"));
   const go = document.getElementById("step-go");
   if (!go) return;
-  const link = s.auto === "calculator" ? { href: "calculator.html", text: isDone ? "Change my numbers" : "Open the calculator", main: !isDone }
-    : s.auto === "account" && !user && Account.ready && Account.enabled
-      ? { href: "signup.html?next=" + encodeURIComponent(stepLink(s)), text: "Create account or sign in", main: true } : null;
+  const link = s.auto === "calculator"
+    ? { href: "calculator.html", text: isDone ? t("journey:detail.changeNumbers") : t("journey:detail.openCalculator"), main: !isDone }
+    : s.auto === "account" && !Account.user && Account.ready && Account.enabled
+      ? { href: "signup.html?next=" + encodeURIComponent(stepLink(s)), text: t("journey:detail.signUp"), main: true } : null;
   go.hidden = !link;
   if (link) {
     go.href = link.href;

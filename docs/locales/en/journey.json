@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "My journey | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Your journey",
+    "title": "Getting the keys and settling in"
+  },
+  "callout": {
+    "start": "Start here",
+    "optional": "Optional"
+  },
+  "status": {
+    "completed": "completed",
+    "locked": "locked",
+    "current": "current step",
+    "optional": "optional"
+  },
+  "node": {
+    "label": "Step {n} of {total}: {title}"
+  },
+  "finish": {
+    "title": "Home, fully settled",
+    "note": "Unlocks when every blocking step is ticked.",
+    "doneTitle": "Settled in",
+    "doneNote": "Every step done, floors and curtains included."
+  },
+  "next": {
+    "none": "Put the kettle on"
+  },
+  "aside": {
+    "nextUp": "Next up",
+    "openStep": "Open this step",
+    "reset": "Reset progress"
+  },
+  "detail": {
+    "close": "Close",
+    "stepOf": "Step {n} of {total}",
+    "checklist": "What this takes",
+    "howto": "How to do it",
+    "tip": "Worth knowing",
+    "complete": "Complete step +25 XP",
+    "undo": "Mark as not done",
+    "changeNumbers": "Change my numbers",
+    "openCalculator": "Open the calculator",
+    "signUp": "Create account or sign in",
+    "previous": "← Previous",
+    "next": "Next →"
+  },
+  "note": {
+    "calculator": "This step is ticked for you when you choose Save to my journey in the calculator.",
+    "signedInDone": "You are signed in as {email}, so this step is done.",
+    "signedInTicking": "You are signed in as {email}. This step is being ticked for you.",
+    "checking": "Checking your account...",
+    "signIn": "This step is ticked for you as soon as you sign in.",
+    "accountsOff": "Accounts are not switched on yet, so this step cannot be completed.",
+    "locked": "You can read this step now. You can complete it once you finish \"{title}\"."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Your numbers",
+      "maxPrice": "Maximum property price",
+      "maxLoan": "Maximum mortgage ({multiple})",
+      "funds": "Funds available",
+      "monthly": "Monthly repayment for a {price} home"
+    },
+    "deposit": {
+      "title": "Your deposit",
+      "tenPercent": "10% of {price}",
+      "own": "Savings and family gift",
+      "htb": "Help to Buy",
+      "covered": "Your funds cover the deposit.",
+      "short": "You are {amount} short of the deposit."
+    },
+    "costs": {
+      "title": "Your extra costs on {price}",
+      "stamp": "Stamp duty",
+      "solicitor": "Solicitor",
+      "survey": "Structural survey",
+      "valuation": "Bank valuation",
+      "total": "Total, on top of the deposit",
+      "newHouse": "The calculator is set to a new house, so stamp duty is worked out on the price without 13.5% VAT.",
+      "newApartment": "The calculator is set to a new apartment, so stamp duty is worked out on the price without 9% VAT."
+    },
+    "htb": {
+      "title": "Help to Buy and you",
+      "mover": "Your calculator says you are moving home. Help to Buy is for first-time buyers only, so you can skip this optional step.",
+      "secondHand": "Your calculator is set to a second-hand home. Help to Buy only covers new builds and self-builds, so choose New house or New apartment in the calculator if that is what you are looking at.",
+      "overCap": "Your target price of {price} is above the {cap} limit, so Help to Buy would not apply.",
+      "loanTooSmall": "Help to Buy needs a mortgage of at least 70% of the price, which is {minLoan} at your target price. You can borrow up to {maxLoan}, so Help to Buy would not apply at this price.",
+      "borrowEnough": "It also needs a mortgage of at least 70% of the price ({minLoan}), so plan to borrow that much and keep the rest of your savings.",
+      "most": "Most you could get on {price}",
+      "counted": "Counted in your calculator",
+      "note": "The final amount is also limited by the income tax and DIRT you paid in the last four years. Your Revenue application shows it."
+    },
+    "notSaved": "Your figures are not saved in this browser yet. Open the calculator and choose Save to my journey to see them here.",
+    "saveFirst": "Save your numbers in the calculator (step 1) to see your own figures here."
+  }
+}

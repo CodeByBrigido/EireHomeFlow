@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Perkamosios galios skaičiuoklė | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "01 etapas: Pasiruošimas · 1 žingsnis",
+    "title": "Ką iš tikrųjų galite nusipirkti",
+    "intro": "Centrinis bankas riboja būsto paskolas iki 4× bendrųjų pajamų perkantiems pirmą būstą ir iki 3,5× visiems kitiems. Įveskite savo skaičius, ir rezultatai atsinaujins iš karto. Išsaugokite juos savo kelyje, kad atliktumėte 1 žingsnį."
+  },
+  "pills": {
+    "buyer": "Pirkėjo tipas",
+    "ftb": "Pirmas būstas",
+    "mover": "Keičiu būstą",
+    "application": "Paraiškos tipas",
+    "single": "Individuali",
+    "joint": "Bendra paraiška",
+    "home": "Būsto tipas",
+    "secondHand": "Senos statybos",
+    "newHouse": "Naujas namas",
+    "newApartment": "Naujas butas"
+  },
+  "fields": {
+    "salary": "Jūsų metinis bendrasis atlyginimas",
+    "salary2": "Partnerio bendrasis atlyginimas",
+    "savings": "Santaupos",
+    "gift": "Šeimos dovana",
+    "htb": "Help to Buy grąža",
+    "price": "Tikslinė kaina",
+    "rate": "Palūkanų norma",
+    "term": "Laikotarpis"
+  },
+  "off": {
+    "joint": "Tik bendroms paraiškoms",
+    "newBuild": "Tik naujai statybai",
+    "ftb": "Tik perkantiems pirmą būstą"
+  },
+  "scale": {
+    "rateMin": "1 %",
+    "rateMax": "8 %",
+    "termMin": "5 metai",
+    "termMax": "35 metai"
+  },
+  "years": {
+    "one": "{count} metai",
+    "few": "{count} metai",
+    "many": "{count} metų",
+    "other": "{count} metų"
+  },
+  "htb": {
+    "notFtb": "Help to Buy skirtas tik perkantiems pirmą būstą, todėl čia neįskaičiuojamas.",
+    "notNew": "Help to Buy taikomas tik naujos statybos ir pačių statomiems būstams. Jei tokį perkate, aukščiau pasirinkite Naujas namas arba Naujas butas.",
+    "overCap": "Help to Buy taikomas tik būstams iki {cap}, todėl esant šiai kainai neįskaičiuojamas.",
+    "loanTooSmall": "Help to Buy reikalauja paskolos, sudarančios bent 70 % kainos, čia tai yra {minLoan}. Galite pasiskolinti iki {maxLoan}, todėl esant šiai kainai neįskaičiuojamas.",
+    "counted": "Help to Buy grąžina pajamų mokestį ir DIRT, sumokėtus per pastaruosius ketverius metus, iki 30 000 € arba 10 % kainos. Esant šiai kainai, daugiausia galite gauti {most}.",
+    "borrowEnough": "Taip pat reikalaujama paskolos, sudarančios bent 70 % kainos ({minLoan}), tad planuokite pasiskolinti tiek ir pasilikti likusias santaupas."
+  },
+  "monthly": {
+    "label": "Numatoma mėnesio įmoka",
+    "note": "{loan} {years} laikotarpiui, esant {rate} palūkanų normai. Paskolos ir būsto draudimas mokami papildomai."
+  },
+  "results": {
+    "maxPrice": "Didžiausia būsto kaina",
+    "maxLoan": "Didžiausia paskola (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Turimos lėšos"
+  },
+  "limit": {
+    "income": "Šiuo metu ribą nustato Jūsų pajamos. {multiple} taisyklė riboja paskolą iki {maxLoan}.",
+    "savings": "Šiuo metu ribą nustato Jūsų santaupos. Kiekvienas papildomai sutaupytas 1 000 € šią sumą padidina maždaug {amount}.",
+    "htbEdge": "Šiuo metu ribą nustato Jūsų santaupos, esant didžiausiai kainai, kuriai dar taikomas Help to Buy. Norint ją viršyti be Help to Buy, reikia maždaug {amount} daugiau santaupų."
+  },
+  "save": {
+    "label": "Išsaugoti mano kelyje",
+    "update": "Atnaujinti mano kelią",
+    "hint": "Užbaigia 1 žingsnį. Jūsų skaičiai lieka šioje naršyklėje.",
+    "saved": "1 žingsnis atliktas. Jūsų kelias visada rodo šio puslapio skaičius.",
+    "noJourney": "Nepavyko įkelti Jūsų kelio. Norėdami išsaugoti, įkelkite puslapį iš naujo.",
+    "done": "Jūsų skaičiai išsaugoti, o 1 žingsnis atliktas.",
+    "updated": "Jūsų kelias dabar naudoja šiuos skaičius."
+  },
+  "breakdown": {
+    "title": "Perkant už <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Pradinis įnašas (ne mažiau kaip 10 %)",
+    "loan": "Reikalinga paskola",
+    "loanAll": "Reikalinga paskola, panaudojus visas santaupas",
+    "stamp": "Žyminis mokestis ({bands})",
+    "stampNew": "Žyminis mokestis ({bands} nuo kainos be {vat} PVM)",
+    "bands": {
+      "1": "1 %",
+      "2": "1 % ir 2 % tarifai",
+      "3": "1 %, 2 % ir 6 % tarifai"
+    },
+    "solicitor": "Teisininkas",
+    "survey": "Techninė apžiūra",
+    "valuation": "Banko vertinimas",
+    "total": "Iš viso reikia grynųjų",
+    "booking": "Norėdami rezervuoti namą, sumokate apie 5 000 € rezervacijos įnašą (grąžinamą iki sutarčių pasirašymo). Likusi {deposit} pradinio įnašo dalis mokama pasirašant."
+  },
+  "verdict": {
+    "within": {
+      "title": "Ši kaina neviršija Jūsų ribų",
+      "body": "Turite {funds}, o grynųjų reikia {cash}, ir {loan} paskola neviršija Jūsų {multiple} ribos ({maxLoan}). Kitas žingsnis: surinkite AIP dokumentus."
+    },
+    "outOfReach": {
+      "title": "Ši kaina kol kas nepasiekiama",
+      "body": "Jums trūksta {gap} grynųjų, o reikalinga paskola ({loan}) yra {over} didesnė nei Jūsų {multiple} riba ({maxLoan}). Taikykite į {maxPrice} ar mažiau."
+    },
+    "cashShort": {
+      "title": "Jums trūksta {gap} grynųjų",
+      "body": "Turite {funds} lėšų, o esant šiai kainai reikia {cash} grynųjų. Sutaupykite skirtumą arba taikykite arčiau {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Paskola viršija Jūsų ribą",
+      "body": "Reikėtų pasiskolinti {loan}, tai {over} daugiau nei Jūsų {multiple} riba ({maxLoan}). Taikykite į {maxPrice} ar mažiau."
+    }
+  },
+  "disclaimer": "Mokomieji skaičiavimai pagal Airijos centrinio banko taisykles ir Revenue žyminio mokesčio bei Help to Buy taisykles. Kiekvienas bankas taiko savo kreditavimo kriterijus ir išimtis."
+}

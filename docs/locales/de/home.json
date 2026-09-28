@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Für Erstkäufer in Irland",
+    "title": "Vom ersten Ersparten<br>bis zum <em>ersten Sofa</em>.",
+    "lead": "Sechs Phasen und einunddreißig Schritte, von der Anzahlungsrechnung und den Unterlagen für die AIP bis zu den Geboten und der Schlüsselübergabe. Der Ratgeber deckt auch alles danach ab, etwa Böden, Vorhänge und die erste Wartung des Heizkessels.",
+    "start": "Meinen Weg beginnen",
+    "resume": "Meinen Weg fortsetzen",
+    "calculator": "Kaufkraftrechner",
+    "alt": "Illustration eines irischen Hauses über der Küste",
+    "caption": "Das Zuhause, auf das Sie hinarbeiten."
+  },
+  "ticker": {
+    "label": "Wichtige Zahlen",
+    "items": [
+      "Regel der Zentralbank: 4× das Bruttoeinkommen",
+      "Anzahlung für Erstkäufer: 10 %",
+      "Stempelsteuer: 1 %",
+      "Anwalt: 2.000-3.000 €",
+      "Bautechnisches Gutachten: etwa 400 €",
+      "Wertgutachten der Bank: etwa 150 €"
+    ],
+    "pause": "Pause",
+    "play": "Abspielen"
+  },
+  "stats": {
+    "loan": {
+      "label": "Höchstes Darlehen",
+      "value": "4×",
+      "note": "Das jährliche Bruttoeinkommen, nach den Regeln der irischen Zentralbank."
+    },
+    "deposit": {
+      "label": "Mindestanzahlung",
+      "value": "10 %",
+      "note": "Gleich für Erstkäufer und für alle, die schon eine Immobilie besessen haben."
+    },
+    "cash": {
+      "label": "Bargeld neben dem Darlehen",
+      "value": "3.550 €",
+      "note": "Anwalt, Gutachten und Wertgutachten, dazu 1 % Stempelsteuer."
+    }
+  },
+  "phases": {
+    "title": "Sechs Phasen, eine nach der anderen.",
+    "intro": "Die Schritte werden der Reihe nach freigeschaltet: Erledigen Sie jeden Pflichtschritt, um den nächsten freizuschalten. Alle Schritte können Sie jederzeit im vollständigen Ratgeber lesen."
+  },
+  "cta": {
+    "title": "Den ganzen Ratgeber lesen",
+    "text": "Alle einunddreißig Schritte an einem Ort, mit Checklisten und Tipps. Ohne Konto.",
+    "button": "Ratgeber öffnen"
+  }
+}

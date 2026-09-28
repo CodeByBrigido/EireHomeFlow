@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Para quien compra su primera vivienda en Irlanda",
+    "title": "De los primeros ahorros<br>a tu <em>primer sofá</em>.",
+    "lead": "Seis fases y treinta y un pasos, desde las cuentas de la entrada y el papeleo de la AIP hasta las ofertas y la entrega de llaves. También cubre lo que viene después, como los suelos, las cortinas y la primera revisión de la caldera.",
+    "start": "Empezar mi camino",
+    "resume": "Seguir con mi camino",
+    "calculator": "Calculadora de capacidad de compra",
+    "alt": "Ilustración de una casa irlandesa sobre la costa",
+    "caption": "La casa por la que estás trabajando."
+  },
+  "ticker": {
+    "label": "Cifras clave",
+    "items": [
+      "Regla del Banco Central: 4× los ingresos brutos",
+      "Entrada para primera vivienda: 10 %",
+      "Impuesto de timbre: 1 %",
+      "Abogado: 2000-3000 €",
+      "Inspección estructural: unos 400 €",
+      "Tasación del banco: unos 150 €"
+    ],
+    "pause": "Pausar",
+    "play": "Reanudar"
+  },
+  "stats": {
+    "loan": {
+      "label": "Hipoteca máxima",
+      "value": "4×",
+      "note": "Los ingresos brutos anuales, según las normas del Banco Central de Irlanda."
+    },
+    "deposit": {
+      "label": "Entrada mínima",
+      "value": "10 %",
+      "note": "La misma para la primera vivienda y para quien ya ha tenido una."
+    },
+    "cash": {
+      "label": "Dinero aparte de la hipoteca",
+      "value": "3550 €",
+      "note": "Abogado, inspección y tasación, más el 1 % de impuesto de timbre."
+    }
+  },
+  "phases": {
+    "title": "Seis fases, una detrás de otra.",
+    "intro": "Los pasos se desbloquean en orden: completa cada paso obligatorio para desbloquear el siguiente. Puedes leer todos los pasos en cualquier momento en la guía completa."
+  },
+  "cta": {
+    "title": "Lee la guía completa",
+    "text": "Los treinta y un pasos en un solo sitio, con listas y consejos. No hace falta cuenta.",
+    "button": "Abrir la guía"
+  }
+}

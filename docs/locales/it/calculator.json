@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Calcolatore del potere d'acquisto | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Fase 01: Preparazione · Passo 1",
+    "title": "Cosa puoi davvero comprare",
+    "intro": "La Banca centrale limita i mutui a 4× il reddito lordo per chi compra la prima casa e a 3,5× per tutti gli altri. Inserisci i tuoi numeri e i risultati si aggiornano man mano. Salvali nel tuo percorso per completare il passo 1."
+  },
+  "pills": {
+    "buyer": "Tipo di acquirente",
+    "ftb": "Prima casa",
+    "mover": "Cambio casa",
+    "application": "Tipo di richiesta",
+    "single": "Da solo",
+    "joint": "Richiesta cointestata",
+    "home": "Tipo di casa",
+    "secondHand": "Usata",
+    "newHouse": "Casa nuova",
+    "newApartment": "Appartamento nuovo"
+  },
+  "fields": {
+    "salary": "Il tuo stipendio annuo lordo",
+    "salary2": "Stipendio lordo del partner",
+    "savings": "Risparmi",
+    "gift": "Donazione di famiglia",
+    "htb": "Rimborso Help to Buy",
+    "price": "Prezzo obiettivo",
+    "rate": "Tasso di interesse",
+    "term": "Durata"
+  },
+  "off": {
+    "joint": "Solo richieste cointestate",
+    "newBuild": "Solo case nuove",
+    "ftb": "Solo prima casa"
+  },
+  "scale": {
+    "rateMin": "1%",
+    "rateMax": "8%",
+    "termMin": "5 anni",
+    "termMax": "35 anni"
+  },
+  "years": {
+    "one": "{count} anno",
+    "many": "{count} anni",
+    "other": "{count} anni"
+  },
+  "htb": {
+    "notFtb": "L'Help to Buy è solo per chi compra la prima casa, quindi qui non viene conteggiato.",
+    "notNew": "L'Help to Buy copre solo case nuove e autocostruite. Scegli Casa nuova o Appartamento nuovo qui sopra se è quello che stai comprando.",
+    "overCap": "L'Help to Buy copre solo case fino a {cap}, quindi a questo prezzo non viene conteggiato.",
+    "loanTooSmall": "L'Help to Buy richiede un mutuo di almeno il 70% del prezzo, cioè {minLoan} qui. Puoi chiedere fino a {maxLoan}, quindi a questo prezzo non viene conteggiato.",
+    "counted": "L'Help to Buy ti restituisce l'imposta sul reddito e la DIRT pagate negli ultimi quattro anni, fino a 30.000 € o al 10% del prezzo. A questo prezzo, il massimo è {most}.",
+    "borrowEnough": "Richiede anche un mutuo di almeno il 70% del prezzo ({minLoan}), quindi pianifica di chiedere quella cifra e di tenere il resto dei risparmi."
+  },
+  "monthly": {
+    "label": "Rata mensile stimata",
+    "note": "{loan} in {years} al {rate}. L'assicurazione sul mutuo e quella sulla casa sono a parte."
+  },
+  "results": {
+    "maxPrice": "Prezzo massimo della casa",
+    "maxLoan": "Mutuo massimo (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Fondi disponibili"
+  },
+  "limit": {
+    "income": "Per ora il limite è il tuo reddito. La regola del {multiple} limita il mutuo a {maxLoan}.",
+    "savings": "Per ora il limite sono i tuoi risparmi. Ogni 1.000 € in più risparmiati alzano questa cifra di circa {amount}.",
+    "htbEdge": "Per ora il limite sono i tuoi risparmi, al prezzo più alto in cui l'Help to Buy vale ancora. Andare oltre senza l'Help to Buy richiede circa {amount} di risparmi in più."
+  },
+  "save": {
+    "label": "Salva nel mio percorso",
+    "update": "Aggiorna il mio percorso",
+    "hint": "Completa il passo 1. I tuoi numeri restano in questo browser.",
+    "saved": "Il passo 1 è fatto. Il tuo percorso mostra sempre i numeri di questa pagina.",
+    "noJourney": "Impossibile caricare il tuo percorso. Ricarica la pagina per salvare.",
+    "done": "I tuoi numeri sono salvati e il passo 1 è fatto.",
+    "updated": "Il tuo percorso ora usa questi numeri."
+  },
+  "breakdown": {
+    "title": "Per una casa da <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Anticipo (minimo 10%)",
+    "loan": "Mutuo necessario",
+    "loanAll": "Mutuo necessario, usando tutti i tuoi risparmi",
+    "stamp": "Imposta di bollo ({bands})",
+    "stampNew": "Imposta di bollo ({bands} sul prezzo senza il {vat} di IVA)",
+    "bands": {
+      "1": "1%",
+      "2": "scaglioni dell'1% e del 2%",
+      "3": "scaglioni dell'1%, del 2% e del 6%"
+    },
+    "solicitor": "Avvocato",
+    "survey": "Perizia strutturale",
+    "valuation": "Valutazione della banca",
+    "total": "Totale dei contanti necessari",
+    "booking": "Per bloccare la casa paghi una caparra di prenotazione di circa 5.000 € (rimborsabile fino alla firma dei contratti). Il resto dell'anticipo di {deposit} si paga alla firma."
+  },
+  "verdict": {
+    "within": {
+      "title": "Questo prezzo è nei tuoi limiti",
+      "body": "Hai {funds} contro {cash} di contanti necessari, e il mutuo di {loan} rientra nel tuo limite di {multiple}, pari a {maxLoan}. Prossimo passo: raccogli i documenti per l'AIP."
+    },
+    "outOfReach": {
+      "title": "Questo prezzo per ora è fuori portata",
+      "body": "Ti mancano {gap} di contanti, e il mutuo che ti servirebbe ({loan}) supera di {over} il tuo limite di {multiple}, pari a {maxLoan}. Punta a {maxPrice} o meno."
+    },
+    "cashShort": {
+      "title": "Ti mancano {gap} di contanti",
+      "body": "Hai {funds} disponibili e a questo prezzo ti servono {cash} in contanti. Risparmia la differenza o punta più vicino a {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Il mutuo supera il tuo limite",
+      "body": "Dovresti chiedere {loan}, cioè {over} sopra il tuo limite di {multiple}, pari a {maxLoan}. Punta a {maxPrice} o meno."
+    }
+  },
+  "disclaimer": "Stime a scopo formativo basate sulle regole della Banca centrale d'Irlanda e sulle regole di Revenue per l'imposta di bollo e l'Help to Buy. Ogni banca applica i propri criteri di credito ed eccezioni."
+}

@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common calculator">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Buying power calculator | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="calculator:meta.title">Buying power calculator | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/calculator.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/calculator.js?v=20260929"></script>
 </head>
 <body data-page="calculator">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link is-active" aria-current="page" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link is-active" aria-current="page" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -41,51 +48,51 @@
   <!-- /include -->
 
   <main class="main main--wide">
-    <p class="eyebrow">Phase 01: Preparation · Step 1</p>
-    <h1 class="page-title">What you can actually buy</h1>
-    <p class="calc__intro">The Central Bank caps mortgages at 4× gross income for first-time buyers and 3.5× for everyone else. Fill in your numbers and the results update as you go. Save them to your journey to complete step 1.</p>
+    <p class="eyebrow" data-i18n="calculator:page.eyebrow">Phase 01: Preparation · Step 1</p>
+    <h1 class="page-title" data-i18n="calculator:page.title">What you can actually buy</h1>
+    <p class="calc__intro" data-i18n="calculator:page.intro">The Central Bank caps mortgages at 4× gross income for first-time buyers and 3.5× for everyone else. Fill in your numbers and the results update as you go. Save them to your journey to complete step 1.</p>
 
     <div class="calc">
       <div class="calc__inputs">
         <div class="form">
-          <div class="pills" role="group" aria-label="Buyer type">
-            <button type="button" class="pill" data-action="ftb" aria-pressed="true">First-time buyer</button>
-            <button type="button" class="pill" data-action="mover" aria-pressed="false">Moving home</button>
+          <div class="pills" role="group" aria-label="Buyer type" data-i18n-aria-label="calculator:pills.buyer">
+            <button type="button" class="pill" data-action="ftb" aria-pressed="true" data-i18n="calculator:pills.ftb">First-time buyer</button>
+            <button type="button" class="pill" data-action="mover" aria-pressed="false" data-i18n="calculator:pills.mover">Moving home</button>
           </div>
-          <div class="pills" role="group" aria-label="Application type">
-            <button type="button" class="pill" data-action="single" aria-pressed="true">Buying alone</button>
-            <button type="button" class="pill" data-action="joint" aria-pressed="false">Joint application</button>
+          <div class="pills" role="group" aria-label="Application type" data-i18n-aria-label="calculator:pills.application">
+            <button type="button" class="pill" data-action="single" aria-pressed="true" data-i18n="calculator:pills.single">Buying alone</button>
+            <button type="button" class="pill" data-action="joint" aria-pressed="false" data-i18n="calculator:pills.joint">Joint application</button>
           </div>
-          <div class="pills pills--three" role="group" aria-label="Type of home">
-            <button type="button" class="pill" data-action="secondHand" aria-pressed="true">Second-hand</button>
-            <button type="button" class="pill" data-action="newHouse" aria-pressed="false">New house</button>
-            <button type="button" class="pill" data-action="newApartment" aria-pressed="false">New apartment</button>
+          <div class="pills pills--three" role="group" aria-label="Type of home" data-i18n-aria-label="calculator:pills.home">
+            <button type="button" class="pill" data-action="secondHand" aria-pressed="true" data-i18n="calculator:pills.secondHand">Second-hand</button>
+            <button type="button" class="pill" data-action="newHouse" aria-pressed="false" data-i18n="calculator:pills.newHouse">New house</button>
+            <button type="button" class="pill" data-action="newApartment" aria-pressed="false" data-i18n="calculator:pills.newApartment">New apartment</button>
           </div>
 
           <!-- Every field keeps its place. One that does not apply is switched off and says why. -->
           <div class="fields">
             <label class="field">
-              <span class="field__label">Your gross annual salary</span>
+              <span class="field__label" data-i18n="calculator:fields.salary">Your gross annual salary</span>
               <input type="number" min="0" step="1000" data-field="salary" placeholder="45000">
             </label>
             <label class="field" id="field-salary2">
-              <span class="field__label">Partner's gross salary</span>
+              <span class="field__label" data-i18n="calculator:fields.salary2">Partner's gross salary</span>
               <input type="number" min="0" step="1000" data-field="salary2" placeholder="38000" data-placeholder="38000">
             </label>
             <label class="field">
-              <span class="field__label">Savings</span>
+              <span class="field__label" data-i18n="calculator:fields.savings">Savings</span>
               <input type="number" min="0" step="1000" data-field="savings" placeholder="30000">
             </label>
             <label class="field">
-              <span class="field__label">Family gift</span>
+              <span class="field__label" data-i18n="calculator:fields.gift">Family gift</span>
               <input type="number" min="0" step="1000" data-field="gift" placeholder="0">
             </label>
             <label class="field" id="field-htb">
-              <span class="field__label">Help to Buy relief</span>
+              <span class="field__label" data-i18n="calculator:fields.htb">Help to Buy relief</span>
               <input type="number" min="0" step="1000" data-field="htb" placeholder="30000" data-placeholder="30000">
             </label>
             <label class="field">
-              <span class="field__label">Target house price</span>
+              <span class="field__label" data-i18n="calculator:fields.price">Target house price</span>
               <input type="number" min="0" step="5000" data-field="price" placeholder="380000">
             </label>
           </div>
@@ -95,25 +102,25 @@
           <div class="fields fields--rates">
             <div class="range">
               <div class="range__head">
-                <label class="field__label" for="rate">Interest rate</label>
+                <label class="field__label" for="rate" data-i18n="calculator:fields.rate">Interest rate</label>
                 <span class="range__value" id="rate-value" aria-hidden="true"></span>
               </div>
               <input class="range__input" id="rate" type="range" min="1" max="8" step="0.05" data-field="rate">
-              <span class="range__scale" aria-hidden="true"><span>1%</span><span>8%</span></span>
+              <span class="range__scale" aria-hidden="true"><span data-i18n="calculator:scale.rateMin">1%</span><span data-i18n="calculator:scale.rateMax">8%</span></span>
             </div>
             <div class="range">
               <div class="range__head">
-                <label class="field__label" for="term">Term</label>
+                <label class="field__label" for="term" data-i18n="calculator:fields.term">Term</label>
                 <span class="range__value" id="term-value" aria-hidden="true"></span>
               </div>
               <input class="range__input" id="term" type="range" min="5" max="35" step="1" data-field="term">
-              <span class="range__scale" aria-hidden="true"><span>5 years</span><span>35 years</span></span>
+              <span class="range__scale" aria-hidden="true"><span data-i18n="calculator:scale.termMin">5 years</span><span data-i18n="calculator:scale.termMax">35 years</span></span>
             </div>
           </div>
         </div>
 
         <div class="monthly">
-          <p class="label">Estimated monthly repayment</p>
+          <p class="label" data-i18n="calculator:monthly.label">Estimated monthly repayment</p>
           <p class="monthly__value" data-bind="monthly"></p>
           <p class="monthly__note" data-bind="monthlyNote"></p>
         </div>
@@ -121,27 +128,27 @@
 
       <div class="results">
         <div class="result-main">
-          <p class="label">Maximum property price</p>
+          <p class="label" data-i18n="calculator:results.maxPrice">Maximum property price</p>
           <p class="result-main__value" data-bind="maxPrice"></p>
           <p class="result-main__note" data-bind="limitNote"></p>
           <div class="result-main__grid">
             <div class="result-main__box">
-              <p class="result-main__box-label">Max mortgage (<span data-bind="multipleLabel"></span>)</p>
+              <p class="result-main__box-label" data-i18n-html="calculator:results.maxLoan">Max mortgage (<span data-bind="multipleLabel"></span>)</p>
               <p class="result-main__box-value" data-bind="maxLoan"></p>
             </div>
             <div class="result-main__box">
-              <p class="result-main__box-label">Funds available</p>
+              <p class="result-main__box-label" data-i18n="calculator:results.funds">Funds available</p>
               <p class="result-main__box-value" data-bind="funds"></p>
             </div>
           </div>
           <div class="result-main__save">
-            <button type="button" class="result-main__btn" data-action="saveToJourney" data-bind="saveLabel">Save to my journey</button>
+            <button type="button" class="result-main__btn" data-action="saveToJourney" data-bind="saveLabel" data-i18n="calculator:save.label">Save to my journey</button>
             <p class="result-main__save-note" data-bind="saveNote"></p>
           </div>
         </div>
 
         <div class="breakdown-card">
-          <p class="breakdown-card__title">On a <span data-bind="priceLabel"></span> house</p>
+          <p class="breakdown-card__title" data-i18n-html="calculator:breakdown.title">On a <span data-bind="priceLabel"></span> house</p>
           <div class="breakdown" id="breakdown"></div>
           <p class="breakdown-card__note" data-bind="bookingNote"></p>
         </div>
@@ -151,7 +158,7 @@
           <p class="verdict__body" data-bind="verdictBody"></p>
         </div>
 
-        <p class="disclaimer">Educational estimates based on Central Bank of Ireland rules and Revenue's stamp duty and Help to Buy rules. Each lender applies its own credit criteria and exemptions.</p>
+        <p class="disclaimer" data-i18n="calculator:disclaimer">Educational estimates based on Central Bank of Ireland rules and Revenue's stamp duty and Help to Buy rules. Each lender applies its own credit criteria and exemptions.</p>
       </div>
     </div>
   </main>
@@ -159,11 +166,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -175,7 +182,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

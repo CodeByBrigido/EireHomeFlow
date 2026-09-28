@@ -1,6 +1,6 @@
 # PRD: Product Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026 · Dono: Rodrigo
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026 · Dono: Rodrigo
 
 ## 1. Visão
 
@@ -25,7 +25,7 @@ Comprar o primeiro imóvel na Irlanda envolve regras do Central Bank, documenta�
 | **Rafael, imigrante** | 34 anos, brasileiro, trabalha em Dublin há 3 anos, inglês fluente mas não nativo | Entender o processo e o vocabulário irlandês sem jargão |
 | **Casal com renda conjunta** | Dois salários, um já teve imóvel no país de origem | Simular a compra conjunta e acompanhar o progresso juntos, em aparelhos diferentes |
 
-Idioma do site: inglês (en-IE). Mercado: República da Irlanda.
+Idiomas do site: inglês (en-IE, a fonte dos textos), português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano. Polonês, romeno e lituano atendem algumas das maiores comunidades estrangeiras do país (Censo 2022). Mercado: República da Irlanda.
 
 ## 4. Objetivos e métricas
 
@@ -59,7 +59,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Desbloqueio em ordem: uma etapa só pode ser **concluída** depois de todas as obrigatórias anteriores. Qualquer etapa pode ser **lida** a qualquer momento.
 - Painel de detalhe com ilustração da etapa, tempo, custo, texto, "Your numbers" (números da pessoa, quando a etapa tem), checklist, passo a passo e links externos (quando a etapa tem), dica e ações (concluir, anterior, próxima).
 - Cada uma das 31 etapas tem uma ilustração própria, no estilo da marca, também exibida no guia.
-- Progresso: anel de %, contagem, "streak", XP (25 por etapa), "Next up" e "Reset progress".
+- Progresso: anel de %, contagem de etapas, "Next up" e "Reset progress". O XP (25 por etapa) aparece só no Dashboard.
 
 ### 5.3 Calculadora de poder de compra
 - Perfil: primeira compra ou mudança de imóvel; compra sozinho ou conjunta; imóvel usado, casa nova ou apartamento novo.
@@ -78,7 +78,6 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 ### 5.5 Área logada
 - No topo, um círculo com as iniciais do primeiro e do último nome ("Rodrigo Andrade Brigido" vira RB) substitui o botão "Sign in".
 - O círculo abre um menu com nome e e-mail e as opções **Dashboard**, **My profile** e **Sign out**. A troca de senha fica só dentro de My profile.
-- No topo, um único indicador amarelo "★ N XP".
 - **Dashboard** (`dashboard.html`): página com progresso geral, fase atual, XP, próxima etapa, progresso por fase, os números da calculadora e os dados da conta.
 - **My profile** (`profile.html`): editar o nome, ver e-mail e data de cadastro, trocar a senha, sair.
 - **Páginas de conta:** `signin.html`, `signup.html`, `forgot-password.html` e `new-password.html`, com retorno para a página de origem (`?next=`).
@@ -89,6 +88,14 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 
 ### 5.7 Persistência sem conta
 - Progresso e valores da calculadora ficam salvos no navegador.
+
+### 5.8 Idiomas
+- O site inteiro (navegação, as 31 etapas, calculadora, contas, avisos, erros, textos para leitor de tela) está em inglês, português do Brasil, espanhol, francês, alemão e italiano.
+- Na primeira visita, o site segue o idioma do navegador; sem idioma disponível, abre em inglês.
+- Menu de idiomas no cabeçalho, com os nomes na própria língua. A escolha fica salva no navegador e nunca é trocada pela detecção.
+- Regras, valores e nomes oficiais irlandeses (Help to Buy, AIP, Revenue...) são os mesmos em todos os idiomas; os nomes oficiais ficam em inglês, com explicação.
+- Nas páginas legais, o resumo e a moldura são traduzidos; o texto integral continua em inglês, com aviso. Os e-mails de conta continuam em inglês.
+- Detalhes: `specs/08-Internationalisation.md`.
 
 ## 6. Requisitos funcionais
 
@@ -118,7 +125,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-22 | Uma página por lugar | Cada destino de navegação é um `.html` com título próprio; o botão Voltar funciona; `journey.html#step-<id>` abre a etapa e sobrevive a recarregar |
 | RF-23 | Ilustração por etapa | As 31 etapas têm uma ilustração própria (SVG no estilo da marca, com texto alternativo), exibida no painel da etapa e no guia |
 | RF-24 | Páginas legais | `privacy.html` e `terms.html` acessíveis pelo rodapé de todas as páginas; o cadastro informa o aceite dos Termos e o conhecimento da Política |
-| RF-25 | Indicador de XP | O topo mostra só "★ N XP" em amarelo |
+| RF-25 | XP só no Dashboard | O topo e a jornada não mostram XP nem sequência de dias; o Dashboard mostra o XP (25 por etapa feita) |
 | RF-26 | Calculadora como etapa 1 | A etapa 1 não tem "Complete step": só "Save to my journey", na calculadora, a conclui e devolve a pessoa à etapa |
 | RF-27 | Números da pessoa na jornada | Depois de salvar a calculadora, as etapas 1, 2, 3 e 5 mostram preço máximo, entrada, imposto de selo e custos, e Help to Buy calculados com os números dela; os números continuam só no navegador |
 | RF-28 | Campos fixos na calculadora | Trocar perfil, tipo de compra ou tipo de imóvel não move nenhum campo; o que não se aplica fica desativado e diz por quê |
@@ -127,7 +134,13 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-31 | Painel compacto | Uma etapa comum cabe no painel sem rolar numa janela de 910px de altura útil ou mais |
 | RF-32 | Entrar com Google | "Continue with Google" em `signin.html` e `signup.html` leva ao Google e volta ao site já logado, na página de onde a pessoa saiu (`?next=`), mantendo a pasta `/EireHomeFlow/` do GitHub Pages; cancelar ou dar erro mostra um aviso vermelho com "Sign in" |
 | RF-33 | Apagar a conta pelo site | Em My profile, "Delete my account" pede confirmação na própria página e apaga a conta e o progresso na hora; depois a pessoa volta à Home deslogada, com o aviso "Your account and its saved progress have been deleted." |
-| RF-34 | Cabeçalho no celular em 2 linhas | Até 720px: marca e "Sign in" (ou o círculo da conta) na primeira linha, os 4 links na segunda |
+| RF-34 | Cabeçalho no celular em 2 linhas | Até 880px, em todos os idiomas: marca, botão de idioma e "Sign in" (ou o círculo da conta) na primeira linha, os 4 links na segunda. Abaixo de 400px o botão de idioma mostra só o globo |
+| RF-35 | Site em 9 idiomas | Todo texto visível ou lido por leitor de tela existe em en, pt, es, fr, de, it, pl, ro e lt; `npm run check:i18n` mostra 100% nesses idiomas |
+| RF-36 | Idioma na primeira visita | Sem escolha salva, o site abre no primeiro idioma do navegador que estiver completo; sem nenhum, em inglês |
+| RF-37 | Escolha de idioma salva | O menu do cabeçalho lista os idiomas completos pelo nome na própria língua; a escolha fica salva no navegador, vale em todas as páginas e nunca é substituída pela detecção |
+| RF-38 | Regras iguais em todo idioma | Cada tradução tem os mesmos números do inglês (taxas, limites, preços, datas); a calculadora dá o mesmo resultado em todos os idiomas, só com o formato local (€209,851 ou 209.851 €) |
+| RF-39 | Troca de página sem inglês antes | Com os textos já copiados no navegador, a página aparece direto no idioma, sem mostrar o inglês primeiro |
+| RF-40 | Idioma incompleto não é anunciado | Idioma em rascunho não aparece no menu nem é detectado; só abre com `?lang=`, e o que falta aparece em inglês |
 
 ## 7. Requisitos não funcionais
 
@@ -135,6 +148,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - **Responsividade:** de 320px a telas largas, com breakpoints em 960px, 720px e 480px.
 - **Performance:** página inicial abaixo de 500 KB; sem frameworks; fontes locais.
 - **Privacidade:** nenhum rastreador de terceiros; dados da calculadora nunca saem do navegador; dados de conta hospedados na Irlanda (Supabase eu-west-1).
+- **Internacionalização:** todo texto novo nasce em inglês em `docs/locales/en/` e é traduzido nos idiomas completos no mesmo trabalho; nenhuma tradução automática no site; cada página baixa só os textos do idioma dela (e o inglês de reserva).
 - **Confiabilidade do conteúdo:** regras e valores revisados periodicamente, com data de revisão visível (pendente).
 - **Hospedagem:** site estático (GitHub Pages), sem servidor próprio.
 - **Navegadores:** versões atuais de Chrome, Edge, Firefox e Safari (desktop e celular).
@@ -145,14 +159,14 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Comparação de taxas de juros ou de bancos em tempo real.
 - Pagamentos, assinaturas ou área paga.
 - Aplicativo nativo (iOS/Android).
-- Outros idiomas além do inglês.
-- Login social (Google, Apple) e autenticação em dois fatores.
+- Texto integral das páginas legais e e-mails de conta em outros idiomas além do inglês (por enquanto).
+- Login com Apple e autenticação em dois fatores.
 - Compartilhamento de progresso entre duas contas (casal usa uma conta só por enquanto).
 
 ## 9. Premissas, restrições e riscos
 
 **Premissas**
-- O público lê inglês; o texto evita jargão e explica termos locais.
+- O público lê um dos 9 idiomas do site; o texto evita jargão e explica os termos locais, que ficam em inglês porque são os que a pessoa vai ouvir de bancos, corretores e da Revenue.
 - Regras de 2026: 4× / 3,5× de renda, 10% de entrada, imposto de selo de 1% até €1m (2% até €1,5m e 6% acima, sobre o preço sem IVA em imóvel novo), Help to Buy até €30.000 para imóvel novo de até €500.000, até o fim de 2029.
 
 **Restrições**
@@ -167,12 +181,13 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | Limite de envio de e-mail (Gmail ~500/dia; Supabase 30/h) | Cadastros sem e-mail de confirmação | Migrar para Brevo ou Resend com domínio próprio |
 | Projeto gratuito do Supabase pausar por inatividade | Login fora do ar | Monitorar; plano pago quando houver usuários |
 | Etapa de conta obrigatória afastar visitantes | Menos gente na fase 2+ | Leitura continua livre; medir desistência na etapa |
+| Tradução com erro de conteúdo | Regra ou valor errado num idioma | `check:i18n` compara os números de cada texto com o inglês; revisão por falantes nativos antes de divulgar em cada idioma |
 
 ## 10. Questões em aberto
 
 1. Ferramenta de analytics e metas numéricas da seção 4.
 2. Domínio próprio (ex.: eirehomeflow.ie) e e-mail no domínio.
 3. Política de privacidade e termos já existem; faltam o nome legal e o endereço do responsável pelo site (marcados como TODO nas páginas), a revisão das escolhas marcadas como POLICY CHOICE e uma página "About".
-4. "Streak" hoje é `min(etapas feitas, 7)` exibido como dias; decidir entre renomear ou implementar sequência real por datas.
-5. Itens abertos da auditoria (`AUDITORIA.md`): A8 e M1 a M22, priorizados no Implementation Plan.
-6. Conteúdo específico para imigrantes (residência, renda no exterior, histórico de crédito).
+4. Itens abertos da auditoria (`AUDITORIA.md`): A8 e M1 a M22, priorizados no Implementation Plan.
+5. Conteúdo específico para imigrantes (residência, renda no exterior, histórico de crédito).
+6. Revisão das traduções por falantes nativos; tradução do texto integral das páginas legais depois de fechar os itens em aberto delas; e-mails de conta em outros idiomas.

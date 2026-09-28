@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Pełny poradnik | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Pełny poradnik",
+    "title": "Każdy krok w szczegółach",
+    "intro": "Sześć etapów i trzydzieści jeden kroków, od pierwszych oszczędności do pierwszej kanapy. Otwórz etap, aby go przeczytać. Kiedy zechcesz, śledź postępy w <a href=\"journey.html\">Mojej drodze</a>."
+  },
+  "kind": {
+    "blocking": "Krok obowiązkowy",
+    "optional": "Krok opcjonalny"
+  },
+  "tipLabel": "Warto wiedzieć:",
+  "openCalculator": "Otwórz kalkulator",
+  "openInJourney": "Otwórz w Mojej drodze",
+  "phases": {
+    "preparation": {
+      "title": "Przygotowanie",
+      "subtitle": "Porządkowanie finansów",
+      "text": "Zdolność zakupowa, cel wkładu własnego i sześć miesięcy czystych wyciągów."
+    },
+    "aip": {
+      "title": "Wstępna zgoda banku (AIP)",
+      "subtitle": "Dowód, że bank udzieli ci kredytu",
+      "text": "Dokumenty, bank lub pośrednik i pismo, o które proszą agenci."
+    },
+    "search": {
+      "title": "Szukanie i oferty",
+      "subtitle": "Daft.ie i MyHome.ie",
+      "text": "Oglądanie, język agentów i oferty aż do Sale Agreed."
+    },
+    "legal": {
+      "title": "Sprawy prawne i umowy",
+      "subtitle": "Prawnik, inspekcja i wycena",
+      "text": "Umowy, inspekcja, wycena i obowiązkowe ubezpieczenia."
+    },
+    "keys": {
+      "title": "Klucze w ręku",
+      "subtitle": "Wypłata kredytu i dzień finalizacji",
+      "text": "Oferta kredytu, wypłata, dzień finalizacji i przeprowadzka."
+    },
+    "settling": {
+      "title": "Urządzanie się",
+      "subtitle": "Podłogi, zasłony i kocioł",
+      "text": "Urządzanie domu i dbanie o to, żeby wszystko działało."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Oblicz moją zdolność zakupową",
+      "time": "15 minut",
+      "cost": "Bezpłatnie",
+      "body": "Wszystko inne opiera się na tej liczbie. Bank Centralny Irlandii pozwala osobom kupującym pierwszą nieruchomość pożyczyć do czterokrotności rocznego dochodu brutto, a osobom zmieniającym nieruchomość do 3,5-krotności. Oszczędności decydują potem, jaki wkład własny i jakie opłaty możesz pokryć.",
+      "checklist": [
+        "Otwórz kalkulator i wpisz pensję, oszczędności i docelową cenę",
+        "Dodaj obie pensje brutto, jeśli składacie wniosek wspólnie",
+        "Wybierz Zapisz w mojej drodze: ten krok zaznaczy się sam, a kolejne kroki pokażą twoje liczby"
+      ],
+      "tip": "Kredyty samochodowe i raty w credit union zmniejszają to, co zaoferuje bank, bo banki sprawdzają każde miesięczne zobowiązanie.",
+      "alt": "Zielony kalkulator ze znakiem euro na ekranie, obok małego domu i stosu złotych monet"
+    },
+    "preparation-1": {
+      "title": "Zapewnij wkład własny 10%",
+      "time": "Na bieżąco",
+      "cost": "10% ceny",
+      "body": "Potrzebujesz co najmniej 10% ceny zakupu, niezależnie od tego, czy to twoja pierwsza nieruchomość. Wkład własny to coś innego niż opłaty opisane niżej.",
+      "checklist": [
+        "Ustaw zlecenie stałe na dzień po wypłacie",
+        "Trzymaj wkład własny na osobnym koncie, którego nie ruszasz",
+        "Udokumentowany prezent od rodziny się liczy, ale bank będzie chciał pisma, że to nie pożyczka"
+      ],
+      "tip": "Sześć miesięcy regularnego oszczędzania mniej więcej w wysokości przyszłej raty to najmocniejszy argument w twoim wniosku.",
+      "alt": "Świnka skarbonka w kolorze terakoty, do której wpada złota moneta, z okrągłą złotą zawieszką ze znakiem procentu"
+    },
+    "preparation-2": {
+      "title": "Odłóż gotówkę na dodatkowe koszty",
+      "time": "Na bieżąco",
+      "cost": "Opłata skarbowa + ok. 3050 €",
+      "body": "Opłatę skarbową (stamp duty), prawnika, inspekcję i wycenę płacisz z własnych pieniędzy, nie z kredytu. Moja droga pokaże twoje kwoty, gdy zapiszesz kalkulator.",
+      "checklist": [
+        "Opłata skarbowa: 1% ceny do 1 mln €, 2% od 1 mln € do 1,5 mln € i 6% powyżej",
+        "Przy nowej nieruchomości opłatę skarbową liczy się od ceny bez VAT: 13,5% przy domu, 9% przy mieszkaniu",
+        "Prawnik: 2000-3000 € plus VAT i koszty dodatkowe",
+        "Inspekcja techniczna ok. 400 €, wycena banku ok. 150 €"
+      ],
+      "tip": "Zaplanuj kolejne 1500-2000 € na przeprowadzkę, zamki i pierwsze rachunki za media.",
+      "alt": "Otwarta złota koperta, z której wystają zielone banknoty, obok dwóch małych papierowych paragonów"
+    },
+    "preparation-3": {
+      "title": "Utrzymuj czyste konto przez sześć miesięcy",
+      "time": "6 miesięcy",
+      "cost": "Bezpłatnie",
+      "body": "Analitycy banku przeglądają sześć miesięcy wyciągów linijka po linijce, żeby ocenić, jak gospodarujesz pieniędzmi.",
+      "checklist": [
+        "Żadnych zakładów online, w ogóle",
+        "Żadnych nieautoryzowanych debetów ani odrzuconych poleceń zapłaty",
+        "Czynsz płacony na czas z tego samego konta co miesiąc"
+      ],
+      "tip": "Konta w Revolut i w credit union też się liczą. Bank poprosi również o te wyciągi.",
+      "alt": "Wyciąg bankowy z zielonym znaczkiem przy każdym wierszu, obok wiszącego kalendarza z sześcioma zielonymi polami"
+    },
+    "preparation-4": {
+      "title": "Sprawdź, czy przysługuje ci Help to Buy",
+      "time": "2 tygodnie",
+      "cost": "Zwrot do 30 000 €",
+      "body": "Help to Buy zwraca podatek dochodowy i DIRT zapłacone w Irlandii w ciągu ostatnich czterech lat, do 30 000 € lub 10% ceny, zależnie od tego, która kwota jest niższa. Jest dla osób kupujących pierwszą nieruchomość, nową lub budowaną samodzielnie, i obowiązuje do końca 2029 roku. First Home Scheme to osobna opcja współwłasności (shared equity), którą też warto przeliczyć.",
+      "checklist": [
+        "Brak wcześniejszego zakupu lub budowy domu, w Irlandii ani za granicą",
+        "Nieruchomość jest nowa lub budowana samodzielnie i jest warta 500 000 € lub mniej",
+        "Twój kredyt wynosi co najmniej 70% ceny i pochodzi od uprawnionego banku",
+        "Zamieszkasz w niej jako w głównym miejscu zamieszkania przez pięć lat"
+      ],
+      "howtoLabel": "Jak złożyć wniosek",
+      "howto": [
+        "Zarejestruj się w myAccount w Revenue, jeśli dostajesz pensję przez PAYE, albo w ROS, jeśli prowadzisz własną działalność. Revenue wysyła pocztą kod do dokończenia rejestracji, więc zarezerwuj na to kilka dni.",
+        "Za każdy z ostatnich czterech lat, który ma się liczyć, złóż zeznanie podatkowe (Income Tax Return) i pobierz Statement of Liability. Zapłać zaległy podatek za te lata.",
+        "W myAccount otwórz Help to Buy w sekcji Property and Land Services i wypełnij wniosek. W ROS użyj linku Help to Buy applicant na ekranie głównym.",
+        "Revenue podaje numer wniosku, kod dostępu i maksymalną kwotę, o którą możesz się ubiegać. Bank poprosi o ich pokazanie.",
+        "Gdy masz już ofertę kredytu i podpisaną umowę, wróć do Help to Buy i złóż wniosek o wypłatę, załączając ofertę kredytu, podpisane przyjęcie oferty i umowę.",
+        "Przekaż numer referencyjny wniosku i kod dostępu deweloperowi, który potwierdza wniosek. Revenue wypłaca wtedy zwrot deweloperowi jako część twojego wkładu własnego."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: zanim złożysz wniosek",
+        "Revenue: jak złożyć wniosek"
+      ],
+      "tip": "Wniosek ma datę ważności, więc złóż wniosek o wypłatę, zanim wygaśnie. Budujesz samodzielnie? Wniosek o wypłatę składasz po pierwszej wypłacie kredytu: zamiast umowy załączasz potwierdzenie tej wypłaty i wycenę banku, a wniosek potwierdza twój prawnik.",
+      "alt": "Zielony dom z odsłoniętą drewnianą więźbą dachową i dźwigiem wieżowym w tle, obok złotej monety w zakrzywionej zielonej strzałce"
+    },
+    "preparation-5": {
+      "title": "Załóż konto w ÉireHome Flow",
+      "time": "2 minuty",
+      "cost": "Bezpłatnie",
+      "body": "Konto zapisuje twoją drogę, więc możesz kontynuować na telefonie, laptopie lub dowolnym innym urządzeniu. Jest bezpłatne, a ten krok zaznaczy się sam, gdy tylko się zalogujesz.",
+      "checklist": [
+        "Wybierz Załóż konto i wpisz imię, e-mail i hasło",
+        "Potwierdź adres e-mail linkiem, który wyślemy",
+        "Zaloguj się na innym urządzeniu, aby zobaczyć te same postępy"
+      ],
+      "tip": "Konto przechowuje twoje imię, e-mail i ukończone kroki. Liczby wpisane w kalkulatorze zostają w twojej przeglądarce.",
+      "alt": "Laptop i telefon z tą samą ikoną profilu, a między nimi mała chmurka i dwie strzałki synchronizacji"
+    },
+    "aip-0": {
+      "title": "Wybierz bank bezpośrednio albo pośrednika",
+      "time": "1 tydzień",
+      "cost": "Pośrednik zwykle bezpłatny dla ciebie",
+      "body": "Pośrednik kredytowy (broker) porównuje cały rynek w ramach jednego wniosku. Pójście prosto do banku może dać ofertę cashbacku dostępną tylko w tym banku.",
+      "checklist": [
+        "Zapytaj pośrednika, z którymi bankami współpracuje",
+        "Porównaj cashback z oprocentowaniem. Cashback dostajesz raz, a oprocentowanie obowiązuje przez cały okres kredytu",
+        "Przed złożeniem wniosku sprawdź, jak bank traktuje twój rodzaj zatrudnienia"
+      ],
+      "tip": "Banki najbardziej różnią się przy dochodach z umów na czas określony lub z okresu próbnego i właśnie tam pośrednik jest wart swojej pracy.",
+      "alt": "Drogowskaz z jedną strzałką w lewo, do zielonego banku z kolumnami, i drugą w prawo, do teczki"
+    },
+    "aip-1": {
+      "title": "Zbierz wyciągi z sześciu miesięcy",
+      "time": "2-3 dni",
+      "cost": "Bezpłatnie",
+      "body": "Każde konto osobiste, oszczędnościowe i w Revolut, w całości, bez brakujących stron.",
+      "checklist": [
+        "Pobierz PDF-y bezpośrednio z banku, nie zrzuty ekranu",
+        "Nazwij każdy plik kontem i miesiącem",
+        "Przygotuj wyjaśnienie każdej wpłaty powyżej ok. 500 €"
+      ],
+      "tip": "Jedna brakująca strona to najczęstsza przyczyna, przez którą wniosek utyka.",
+      "alt": "Rozłożony w wachlarz stos sześciu stron dokumentów z zielonym spinaczem, obok lupy"
+    },
+    "aip-2": {
+      "title": "Zbierz odcinki wypłat i Employment Detail Summary",
+      "time": "1 tydzień",
+      "cost": "Bezpłatnie",
+      "body": "Zwykle trzy ostatnie odcinki wypłat, twoje EDS z Revenue i zaświadczenie o zarobkach podpisane przez pracodawcę.",
+      "checklist": [
+        "Trzy najnowsze odcinki wypłat",
+        "Employment Detail Summary z myAccount",
+        "Zaświadczenie o zarobkach potwierdzające rodzaj umowy i ewentualne premie"
+      ],
+      "tip": "Osoby prowadzące własną działalność potrzebują zamiast tego dwóch lat poświadczonych sprawozdań finansowych i zaświadczenia o niezaleganiu w podatkach (tax clearance).",
+      "alt": "Otwarta teczka z trzema odcinkami wypłat, przedni oznaczony znakiem euro i zieloną pieczątką z haczykiem"
+    },
+    "aip-3": {
+      "title": "Udokumentuj czynsz i oszczędności",
+      "time": "Na bieżąco",
+      "cost": "Bezpłatnie",
+      "body": "Czynsz plus regularne oszczędzanie to sposób, żeby udowodnić, że stać cię na ratę ponad obecne wydatki.",
+      "checklist": [
+        "Czynsz płacony zleceniem stałym, widoczny na wyciągach",
+        "Regularne oszczędności, których nie naruszasz",
+        "Krótkie pisemne wyjaśnienie każdej przerwy"
+      ],
+      "tip": "Czynsz plus oszczędności powinny mniej więcej odpowiadać przyszłej racie kredytu, bo analitycy porównują te dwie kwoty.",
+      "alt": "Waga szalkowa, na której mały dom z rdzawym dachem równoważy słoik złotych monet"
+    },
+    "aip-4": {
+      "title": "Odbierz pismo AIP",
+      "time": "1-3 tygodnie",
+      "cost": "Bezpłatnie",
+      "body": "Wstępna zgoda banku określa, ile bank pożyczy, pod warunkiem wyceny i końcowych sprawdzeń. Zwykle jest ważna sześć miesięcy.",
+      "checklist": [
+        "Sprawdź kwotę, okres kredytu i datę ważności",
+        "Zapisz PDF w telefonie na oglądanie nieruchomości",
+        "Wpisz datę ważności do kalendarza, bo przedłużenie wymaga nowych wyciągów"
+      ],
+      "tip": "Żaden agent nieruchomości w Irlandii nie potraktuje oferty poważnie bez niej.",
+      "alt": "Otwarta koperta, z której wysuwa się pismo z okrągłą zieloną pieczątką i haczykiem"
+    },
+    "search-0": {
+      "title": "Wybierz okolicę i sprawdź ceny sprzedaży",
+      "time": "1 tydzień",
+      "cost": "Bezpłatnie",
+      "body": "Cenę ofertową ustala sprzedający. Residential Property Price Register pokazuje, za ile nieruchomości naprawdę się sprzedały.",
+      "checklist": [
+        "Porównuj ceny ofertowe z rejestrem, ulica po ulicy",
+        "Sprawdź dojazd w godzinach, w których naprawdę będziesz dojeżdżać",
+        "Zwróć uwagę na świadectwo energetyczne (BER). Przejście z C na B może kosztować 15 000 € w modernizacjach"
+      ],
+      "tip": "Ustaw alerty na Daft i MyHome dla swojej okolicy i przedziału cenowego, bo dobre oferty znikają w kilka dni.",
+      "alt": "Złożona mapa ulic z drogą i zielonymi parkami, z dużą pinezką lokalizacji na wierzchu i małą metką cenową ze znakiem euro"
+    },
+    "search-1": {
+      "title": "Poznaj irlandzkie słownictwo",
+      "time": "1 wieczór",
+      "cost": "Bezpłatnie",
+      "body": "Ten proces ma własne słownictwo, a agenci założą, że je znasz.",
+      "checklist": [
+        "Sale Agreed nie jest wiążące. Dopóki umowy nie zostaną podpisane, ktoś inny wciąż może przebić ofertę (gazumping)",
+        "Sprzedaż z wolnej ręki (private treaty) i aukcja publiczna (public auction) całkowicie zmieniają zasady",
+        "Zaliczka rezerwacyjna (booking deposit) jest zwrotna, ale wpłata przy podpisaniu umowy już nie"
+      ],
+      "tip": "BER jest wymagany prawem w każdym ogłoszeniu, więc uważaj na ogłoszenia, które go nie pokazują.",
+      "alt": "Otwarta książka z linijkami tekstu i dwa unoszące się nad nią dymki, jeden z kropkami, a drugi z liniami"
+    },
+    "search-2": {
+      "title": "Umów oglądanie",
+      "time": "2-8 tygodni",
+      "cost": "Bezpłatnie",
+      "body": "Obejrzyj co najmniej pięć nieruchomości, zanim złożysz ofertę, w tym dwie, które według ciebie się nie nadają.",
+      "checklist": [
+        "Napisz e-mail do agenta, a potem potwierdź telefonicznie",
+        "Sfotografuj zawilgocenia, skrzynki liczników i właz na strych",
+        "Zapytaj, dlaczego sprzedający się wyprowadza i od jak dawna trwa sprzedaż"
+      ],
+      "tip": "Wróć drugi raz w deszczowy wieczór w dzień roboczy. Domy wyglądają inaczej, gdy pada, a ulica jest zatłoczona.",
+      "alt": "Kalendarz ścienny z jednym dniem oznaczonym małym domkiem i dzwoniącym budzikiem obok"
+    },
+    "search-3": {
+      "title": "Zapisuj każdą ofertę",
+      "time": "1-8 tygodni",
+      "cost": "Bezpłatnie",
+      "body": "Oferty składa się ustnie i nie są regulowane, więc prowadź własny rejestr.",
+      "checklist": [
+        "Zanotuj kwotę, datę i to, z kim rozmawiasz",
+        "Ustal swoją maksymalną kwotę, zanim zaczniesz",
+        "Nigdy nie składaj oferty bez AIP w ręku"
+      ],
+      "tip": "Poproś agenta o potwierdzenie każdej oferty e-mailem. To pomaga chronić się przed fikcyjnymi ofertami.",
+      "alt": "Otwarty notes na spirali z listą wpisów i rosnącym wykresem słupkowym, z leżącym na nim ołówkiem"
+    },
+    "search-4": {
+      "title": "Dojdź do Sale Agreed",
+      "time": "1 tydzień",
+      "cost": "3000-5000 €, zwrotne",
+      "body": "Twoja oferta zostaje przyjęta i wpłacasz zaliczkę rezerwacyjną, zwykle 3000-5000 €, żeby zdjąć dom z rynku.",
+      "checklist": [
+        "Weź na piśmie potwierdzenie zaliczki rezerwacyjnej",
+        "Przekaż agentowi dane swojego prawnika",
+        "Poproś o szybkie wystawienie zawiadomienia o sprzedaży (sales advice notice)"
+      ],
+      "tip": "Zaliczka rezerwacyjna jest w pełni zwrotna do podpisania umów, więc sprzedaż nie jest jeszcze ostateczna.",
+      "alt": "Szyld agencji nieruchomości z zielonym paskiem i dużym haczykiem, przed małym domem"
+    },
+    "legal-0": {
+      "title": "Zatrudnij prawnika",
+      "time": "1 tydzień",
+      "cost": "2000-3000 € + VAT",
+      "body": "Conveyancing to prawne przeniesienie własności, a tempo zależy głównie od twojego prawnika (solicitor).",
+      "checklist": [
+        "Poproś o stałą wycenę z kosztami dodatkowymi i sprawdzeniami w rejestrach",
+        "Zapytaj, ile spraw kancelaria kończy w miesiącu",
+        "Przekaż zawiadomienie o sprzedaży, gdy tylko przyjdzie"
+      ],
+      "tip": "Wybieraj według szybkości odpowiedzi. Tania wycena nie jest okazją, jeśli w sierpniowe wakacje nikt nie odbiera telefonu.",
+      "alt": "Złota waga na drewnianym biurku, obok stosu dokumentów przewiązanych czerwoną taśmą i złotej pieczęci"
+    },
+    "legal-1": {
+      "title": "Zamów inspekcję techniczną",
+      "time": "1-2 tygodnie",
+      "cost": "300-500 €",
+      "body": "Niezależny inżynier obchodzi dom i spisuje wszystko, co jest z nim nie tak.",
+      "checklist": [
+        "Wybierz inżyniera z rejestru Engineers Ireland lub SCSI",
+        "Poproś o zdjęcia i kosztorys napraw",
+        "Przy mieszkaniu przeczytaj też sprawozdania firmy zarządzającej (management company)"
+      ],
+      "tip": "Wyniki inspekcji dają pole do negocjacji. Dach wymagający prac za 6000 € to powód, żeby przed umowami poprosić o 6000 € obniżki.",
+      "alt": "Zielony dom z lupą nad pęknięciem w ścianie, obok podkładki z listą kontrolną"
+    },
+    "legal-2": {
+      "title": "Poproś o wycenę banku",
+      "time": "1 tydzień",
+      "cost": "Ok. 150 €",
+      "body": "Bank wycenia nieruchomość dla własnego zabezpieczenia, przez rzeczoznawcę z własnej listy.",
+      "checklist": [
+        "Zamów ją przez bank lub pośrednika, nie prywatnie",
+        "Wycena to nie inspekcja. Służy ochronie banku",
+        "Zaniżona wycena oznacza, że różnicę pokrywasz gotówką"
+      ],
+      "tip": "Jeśli wycena wyjdzie poniżej uzgodnionej ceny, renegocjacja to zupełnie normalna rzecz.",
+      "alt": "Zielony dom ze złotą metką cenową ze znakiem euro zwisającą z dachu i bankiem w tle"
+    },
+    "legal-3": {
+      "title": "Wykup ubezpieczenie kredytu i ubezpieczenie domu",
+      "time": "1-2 tygodnie",
+      "cost": "25-60 € miesięcznie",
+      "body": "Oba są obowiązkowe przed wypłatą kredytu i żadnego nie trzeba kupować w swoim banku.",
+      "checklist": [
+        "Porównaj oferty ubezpieczenia kredytu (mortgage protection), bo oferta banku rzadko jest najtańsza",
+        "Ubezpieczenie domu musi pokrywać koszt odbudowy, nie cenę zakupu",
+        "Uczciwie podaj stan zdrowia, bo unieważniona polisa jest gorsza niż wyższa składka"
+      ],
+      "tip": "Ocena ubezpieczyciela może potrwać tygodnie przy jakiejkolwiek historii medycznej, więc zacznij przed umowami.",
+      "alt": "Zielona tarcza z białym haczykiem przed małym domem osłoniętym złotym parasolem"
+    },
+    "legal-4": {
+      "title": "Podpisz umowy i wpłać wkład własny",
+      "time": "1-2 tygodnie",
+      "cost": "10% minus zaliczka rezerwacyjna",
+      "body": "Podpisujesz umowę, wpłacasz resztę wkładu własnego w wysokości 10% i sprzedaż staje się prawnie wiążąca.",
+      "checklist": [
+        "Przeczytaj warunki szczególne razem z prawnikiem",
+        "Ustal datę finalizacji zgodną z okresem wypowiedzenia najmu",
+        "Potwierdź na piśmie, jakie elementy wyposażenia są w cenie"
+      ],
+      "tip": "Od chwili wymiany umów nikt już nie może przebić twojej oferty (gazumping).",
+      "alt": "Podpisana strona umowy z zielonym piórem wiecznym na podpisie, obok stosu złotych monet"
+    },
+    "keys-0": {
+      "title": "Odbierz ostateczną ofertę kredytu",
+      "time": "1-2 tygodnie",
+      "cost": "Bezpłatnie",
+      "body": "Oficjalna oferta zastępuje AIP i ustala oprocentowanie, okres kredytu i warunki.",
+      "checklist": [
+        "Sprawdź oprocentowanie, okres i warunki cashbacku",
+        "Ostatni raz porównaj oprocentowanie stałe i zmienne",
+        "Podpisz i odeślij ją z załączonymi polisami"
+      ],
+      "tip": "Zielone oprocentowanie dla BER B3 lub lepszego może być warte kilka tysięcy euro w okresie stałej stopy.",
+      "alt": "Dyplom z zielonym znaczkiem procentu i złotą pieczęcią na wstążce, obok złotej monety euro"
+    },
+    "keys-1": {
+      "title": "Uruchom wypłatę kredytu",
+      "time": "3-10 dni",
+      "cost": "Bezpłatnie",
+      "body": "Twój prawnik zamawia pieniądze na dzień finalizacji, a bank mu je wypłaca.",
+      "checklist": [
+        "Potwierdź z prawnikiem dokładną kwotę do zapłaty przy finalizacji",
+        "Przelej swoją część wcześniej, bo dzienne limity przelewów zaskakują wiele osób",
+        "Sprawdź datę pierwszej raty"
+      ],
+      "tip": "Nigdy nie wysyłaj pieniędzy tylko na podstawie danych bankowych z e-maila; zadzwoń do kancelarii prawnika, żeby je potwierdzić.",
+      "alt": "Złote monety wędrujące po zakrzywionej strzałce od małego banku do biurowca"
+    },
+    "keys-2": {
+      "title": "Sfinalizuj zakup i odbierz klucze",
+      "time": "1 dzień",
+      "cost": "Kwota do zapłaty przy finalizacji",
+      "body": "Własność przechodzi na ciebie, reszta kwoty zostaje zapłacona, a agent przekazuje klucze.",
+      "checklist": [
+        "Spisz stany liczników i zrób im zdjęcia",
+        "Odbierz wszystkie klucze, piloty i kody alarmu",
+        "Wymień zamki w pierwszym tygodniu"
+      ],
+      "tip": "Zanim pieniądze zostaną przelane, obejdź dom ostatni raz i upewnij się, że jest w uzgodnionym stanie.",
+      "alt": "Kółko z trzema kluczami do domu przed zielonymi drzwiami wejściowymi z łukowym naświetlem"
+    },
+    "keys-3": {
+      "title": "Przejdź listę usterek",
+      "time": "1 tydzień",
+      "cost": "300-600 € za inspektora",
+      "body": "Zwłaszcza w nowych budynkach: zapisz każdą usterkę, póki wykonawca za nią odpowiada.",
+      "checklist": [
+        "Przy nowym budynku zatrudnij zawodowego inspektora usterek (snagger)",
+        "Sfotografuj każdą usterkę z nazwą pomieszczenia",
+        "Wyślij listę na piśmie z terminem"
+      ],
+      "tip": "Trzymaj listę otwartą, dopóki każda pozycja nie zostanie zamknięta, bo okres gwarancji już biegnie.",
+      "alt": "Podkładka z listą kontrolną z trzema haczykami i jednym krzyżykiem, między wałkiem malarskim a rolką taśmy malarskiej"
+    },
+    "settling-0": {
+      "title": "Przepisz media na siebie",
+      "time": "1 tydzień",
+      "cost": "Kaucje są różne",
+      "body": "Prąd, gaz, internet i wywóz śmieci, wszystko w pierwszym tygodniu.",
+      "checklist": [
+        "Przy każdej zmianie wyślij zdjęcia liczników z pierwszego dnia",
+        "Zmiana dostawcy przy przeprowadzce to łatwy sposób na oszczędności",
+        "Załatw wywóz śmieci przed pierwszym dniem odbioru"
+      ],
+      "tip": "Zarejestruj alarm i sprawdź, czy linia internetowa jest światłowodowa, zanim wybierzesz abonament.",
+      "alt": "Duża pomarańczowa żarówka pośrodku, z czerwonym znakiem wifi po lewej i zielonym koszem na kółkach po prawej"
+    },
+    "settling-1": {
+      "title": "Zarejestruj się do Local Property Tax",
+      "time": "1 dzień",
+      "cost": "Zależy od progu",
+      "body": "Revenue potrzebuje nieruchomości zarejestrowanej na twoje nazwisko i przypisanej do progu według jej wartości. LPT to roczny podatek od nieruchomości.",
+      "checklist": [
+        "Zarejestruj ją w myAccount, używając identyfikatora nieruchomości",
+        "Sprawdź, czy sprzedający nie zapłacił za rok z góry",
+        "Wybierz metodę płatności, która naprawdę ci odpowiada"
+      ],
+      "tip": "Twój prawnik potwierdza przy finalizacji, że LPT jest opłacony, ale deklaracja za następny rok należy do ciebie.",
+      "alt": "Mały zielony dom obok formularza z okrągłą pieczątką z haczykiem i kalendarza z jedną zaznaczoną datą"
+    },
+    "settling-2": {
+      "title": "Ustal budżet na umeblowanie każdego pokoju",
+      "time": "1 wieczór",
+      "cost": "3000-10 000 €",
+      "body": "Podłogi oraz zasłony lub rolety łatwo mogą pochłonąć pierwsze 5000 €, jeśli nie zaplanujesz wydatków.",
+      "checklist": [
+        "Uszereguj pokoje: najpierw sypialnia i kuchnia, pokój gościnny na końcu",
+        "Wyceń podłogi i rolety przed kanapami",
+        "Zostaw 15% na rzeczy, o których zapomnisz"
+      ],
+      "tip": "Używane meble z litego drewna są tańsze i lepsze niż nowe meble do samodzielnego montażu. Najpierw zmierz drzwi.",
+      "alt": "Rzut czterech pokoi z góry, w każdym mały stos złotych monet"
+    },
+    "settling-3": {
+      "title": "Najpierw podłogi, potem meble",
+      "time": "1-2 tygodnie",
+      "cost": "25-60 € za m²",
+      "body": "Układanie podłóg w pustym domu jest tańsze i dużo szybsze.",
+      "checklist": [
+        "Zmierz każdy pokój i dodaj 10% na docinki",
+        "Pozwól panelom lub deskom warstwowym aklimatyzować się przez 48 godzin",
+        "Podkład i listwy przypodłogowe zamów w tym samym zamówieniu"
+      ],
+      "tip": "Jeśli też malujesz, najpierw maluj, potem kładź podłogi, a listwy na końcu.",
+      "alt": "Stos czterech pomarańczowych desek podłogowych z leżącym na nich młotkiem i mały zielony fotel obok"
+    },
+    "settling-4": {
+      "title": "Zmierz okna pod zasłony i rolety",
+      "time": "1 weekend",
+      "cost": "60-250 € za okno",
+      "body": "Mierz karnisz, a nie szybę, i zdecyduj o długości przed zamówieniem.",
+      "checklist": [
+        "Szerokość karnisza plus 15-20cm z każdej strony",
+        "Do parapetu albo do podłogi, osobno dla każdego pokoju",
+        "Zasłony zaciemniające w sypialniach, zwłaszcza od wschodu"
+      ],
+      "tip": "Zamów najpierw do jednego pokoju i pomieszkaj z tym tydzień, zanim zrobisz cały dom.",
+      "alt": "Okno z dwiema upiętymi zasłonami na karniszu i żółtą taśmą mierniczą rozciągniętą wzdłuż karnisza"
+    },
+    "settling-5": {
+      "title": "Zrób przegląd kotła i sprawdź czujniki",
+      "time": "1 dzień",
+      "cost": "90-150 €",
+      "body": "Zrób przegląd na start i wpisz kontrole bezpieczeństwa do kalendarza.",
+      "checklist": [
+        "Do instalacji gazowej wezwij technika zarejestrowanego w RGI",
+        "Sprawdź czujniki dymu i czadu (CO), wymień te starsze niż dziesięć lat",
+        "Trzymaj certyfikat BER, gwarancje i instrukcje w jednym miejscu"
+      ],
+      "tip": "Coroczny przegląd kotła to warunek większości ubezpieczeń domu, więc zachowuj rachunki.",
+      "alt": "Kocioł ścienny z symbolem płomienia, klucz na podłodze i czujnik dymu na suficie"
+    }
+  }
+}

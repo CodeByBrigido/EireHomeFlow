@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "guide": "Guide",
+    "journey": "My journey",
+    "calculator": "Calculator"
+  },
+  "header": {
+    "signIn": "Sign in"
+  },
+  "language": {
+    "button": "Language: English. Change language",
+    "code": "EN",
+    "title": "Language"
+  },
+  "account": {
+    "menu": "Account menu",
+    "dashboard": "Dashboard",
+    "profile": "My profile",
+    "signOut": "Sign out",
+    "fallbackName": "Your account",
+    "menuFor": "Account menu for {name}",
+    "signedOut": "You have signed out. Your progress is saved in your account."
+  },
+  "yourAccount": "Your account",
+  "footer": {
+    "disclaimer": "Educational content. Not regulated financial advice.",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "toast": {
+    "dismiss": "Dismiss"
+  },
+  "gate": {
+    "loading": "Loading your account...",
+    "signIn": "Sign in",
+    "signUp": "Create an account",
+    "signInPrompt": "Sign in to see this page. Your journey, numbers and details are waiting for you.",
+    "accountsOff": "Accounts are not switched on yet. Please check back soon."
+  },
+  "fields": {
+    "email": "Email",
+    "password": "Password",
+    "confirm": "Confirm password",
+    "name": "Full name"
+  },
+  "forms": {
+    "name": "Enter your first and last name.",
+    "email": "Enter a valid email address, like name@example.com.",
+    "password": "Enter your password.",
+    "weakPassword": "Your password does not meet the requirements below.",
+    "confirm": "Confirm your password.",
+    "mismatch": "The passwords do not match.",
+    "wait": "Please wait...",
+    "connecting": "One moment, still connecting. Please try again."
+  },
+  "errors": {
+    "invalidCredentials": "The email or password is not right. Check them and try again.",
+    "emailNotConfirmed": "Confirm your email address first: open the link we sent you.",
+    "userExists": "There is already an account with this email. Sign in instead.",
+    "weakPassword": "Choose a stronger password: at least 8 characters, with a capital letter and a special character.",
+    "samePassword": "Your new password must be different from the current one.",
+    "rateLimit": "Too many attempts. Please wait a minute and try again.",
+    "signupsOff": "New accounts are switched off for now. Please check back soon.",
+    "sessionEnded": "Your session has ended. Please sign in again.",
+    "network": "We could not reach the server. Check your connection and try again.",
+    "generic": "Something went wrong. Please try again."
+  },
+  "welcome": {
+    "newAccount": "Your account is ready. Welcome to ÉireHome Flow, {name}!",
+    "newAccountNoName": "Your account is ready. Welcome to ÉireHome Flow!",
+    "back": "Welcome back, {name}.",
+    "backNoName": "Welcome back.",
+    "confirmed": "Your email is confirmed. Welcome to ÉireHome Flow, {name}!",
+    "confirmedNoName": "Your email is confirmed. Welcome to ÉireHome Flow!",
+    "goToJourney": "Go to my journey"
+  },
+  "google": {
+    "cancelled": "Signing in with Google was cancelled. You can try again, or use your email.",
+    "failed": "Signing in with Google did not work. Please try again, or use your email.",
+    "failedWith": "Signing in with Google did not work: {reason}. Please try again, or use your email."
+  },
+  "linkExpired": "This link has expired or has already been used. Sign in, or ask for a new link.",
+  "progress": {
+    "steps": {
+      "one": "{done} of {count} step",
+      "other": "{done} of {count} steps"
+    },
+    "phase": {
+      "one": "{done} of {count} step done",
+      "other": "{done} of {count} steps done"
+    }
+  },
+  "approx": "~{amount}",
+  "newTab": "(opens in a new tab)"
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Pentru cei care își cumpără prima locuință în Irlanda",
+    "title": "De la primele economii<br>la <em>prima canapea</em>.",
+    "lead": "Șase etape și treizeci și unu de pași, de la calculul avansului și actele pentru AIP până la oferte și primirea cheilor. Ghidul acoperă și ce urmează, cum ar fi pardoselile, perdelele și prima revizie a centralei.",
+    "start": "Începe drumul meu",
+    "resume": "Continuă drumul meu",
+    "calculator": "Calculator de putere de cumpărare",
+    "alt": "Ilustrație cu o casă irlandeză deasupra coastei",
+    "caption": "Casa pentru care muncești."
+  },
+  "ticker": {
+    "label": "Cifre-cheie",
+    "items": [
+      "Regula Băncii Centrale: 4× venitul brut",
+      "Avans pentru prima locuință: 10 %",
+      "Taxa de timbru: 1 %",
+      "Avocat: 2.000-3.000 €",
+      "Inspecție tehnică: circa 400 €",
+      "Evaluarea băncii: circa 150 €"
+    ],
+    "pause": "Pauză",
+    "play": "Redă"
+  },
+  "stats": {
+    "loan": {
+      "label": "Credit maxim",
+      "value": "4×",
+      "note": "Din venitul anual brut, conform regulilor Băncii Centrale a Irlandei."
+    },
+    "deposit": {
+      "label": "Avans minim",
+      "value": "10 %",
+      "note": "Același pentru prima locuință și pentru cei care au mai avut o locuință."
+    },
+    "cash": {
+      "label": "Bani în afara creditului",
+      "value": "3.550 €",
+      "note": "Avocat, inspecție și evaluare, plus taxa de timbru de 1 %."
+    }
+  },
+  "phases": {
+    "title": "Șase etape, una după alta.",
+    "intro": "Pașii se deblochează pe rând: termină fiecare pas obligatoriu ca să-l deblochezi pe următorul. Poți citi oricând toți pașii în ghidul complet."
+  },
+  "cta": {
+    "title": "Citește ghidul complet",
+    "text": "Toți cei treizeci și unu de pași într-un singur loc, cu liste și sfaturi. Nu ai nevoie de cont.",
+    "button": "Deschide ghidul"
+  }
+}

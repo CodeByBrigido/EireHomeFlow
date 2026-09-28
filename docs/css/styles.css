@@ -71,6 +71,8 @@ button { font-family: inherit; cursor: pointer; }
    stays on the left (no text-align-last). Hyphens keep the gaps small in narrow columns.
    Headings, buttons and text centred on purpose keep their own alignment. */
 p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+/* Titles written as <p> are headings too: in longer languages they wrap, and justified they get wide gaps. */
+.next-up__title, .breakdown-card__title, .verdict__title, .legal-help__title, .dash-account__name, .mine__title { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 
 @keyframes eh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes eh-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -106,11 +108,8 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .site-header__account { display: flex; align-items: center; margin-left: -6px; }
 .nav__link { display: inline-block; background: none; border: 0; border-bottom: 3px solid transparent; padding: 4px 0; font-weight: 800; font-size: 15px; color: rgba(255, 250, 243, .9); }
 .nav__link.is-active { color: var(--cream); border-bottom-color: var(--gold); }
-.nav__stat { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 74px; font-weight: 800; font-size: 15px; }
-.nav__stat--xp { color: #ffd79a; }
-/* The header is in the page from the first frame; the XP count waits (keeping its space) until the script has worked it out. */
-.site-header[data-pending] .nav__stat { visibility: hidden; }
-/* "Sign in" or the account circle waits the same way until we know whether someone is signed in. */
+/* The header is in the page from the first frame; "Sign in" or the account circle waits
+   (keeping its space) until we know whether someone is signed in. */
 .site-header[data-auth-pending] .btn-signin,
 .site-header[data-auth-pending] .account-nav { visibility: hidden; }
 
@@ -123,6 +122,25 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .15s; }
 .btn-signin { display: inline-block; padding: 8px 18px; border-radius: 999px; border: 2px solid rgba(255, 250, 243, .5); background: none; color: var(--cream); font-weight: 700; font-size: 14px; }
 .btn-signin:hover { background: rgba(255, 250, 243, .12); }
+
+/* Language menu: the globe and the language's short code, then the languages in their own names. */
+.lang { position: relative; margin-right: 10px; }
+.lang__button { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px 0 10px; border-radius: 999px; border: 2px solid rgba(255, 250, 243, .35); background: none; color: var(--cream); font-weight: 800; font-size: 13px; letter-spacing: .06em; }
+.lang__button:hover, .lang__button[aria-expanded="true"] { background: rgba(255, 250, 243, .12); }
+.lang__icon { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; }
+/* Nine languages are taller than a short screen, so the list scrolls inside the menu. The height leaves room for the header, the menu's padding and border, and a 16px gap. */
+.lang__menu { max-height: calc(100vh - 96px); max-height: calc(100dvh - 96px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.menu__label { margin: 6px 12px 8px; font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); text-align: left; }
+.lang__list[aria-busy="true"] { opacity: .6; pointer-events: none; }
+.lang__option { display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box; padding: 9px 12px; border: 0; border-radius: 12px; background: none; color: var(--text); text-align: left; }
+.lang__option:hover { background: var(--hover); }
+.lang__option[aria-current="true"] { background: var(--mint); }
+.lang__badge { flex: none; width: 32px; padding: 4px 0; border-radius: 8px; background: var(--sand); color: var(--brown); font-weight: 800; font-size: 11px; letter-spacing: .06em; text-align: center; }
+.lang__option[aria-current="true"] .lang__badge { background: var(--ink); color: var(--cream); }
+.lang__names { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.lang__name { font-weight: 800; font-size: 14px; }
+.lang__here { font-size: 12px; font-weight: 600; color: var(--faint); }
+.lang__check { flex: none; color: var(--ink); font-weight: 800; }
 
 /* Footer */
 .site-footer { background: var(--sand); }
@@ -201,7 +219,8 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 
 .callout { margin-bottom: 10px; padding: 5px 12px; border-radius: 999px; background: var(--sand); color: var(--faint); font-weight: 700; font-size: 12px; }
 .callout--start { background: var(--pop); color: #fff; font-weight: 800; }
-.journey.is-compact .callout { display: none; }
+/* With a step open the path is narrower: the callouts shrink with the nodes but stay, so "Optional" never disappears. */
+.journey.is-compact .callout { margin-bottom: 7px; padding: 4px 10px; font-size: 11px; }
 
 .node { width: 64px; height: 64px; border: 0; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 24px; transition: transform .12s;
   background: var(--ink); color: var(--cream); box-shadow: 0 5px 0 var(--ink-dark); }
@@ -269,12 +288,6 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .ring { width: 84px; height: 84px; flex: none; }
 .ring__pct { margin: 0; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
 .ring__count { margin: 4px 0 0; font-size: 13px; color: var(--faint); }
-.minis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
-.mini { padding: 12px 14px; border-radius: 14px; background: var(--peach); }
-.mini--mint { background: var(--mint); }
-.mini__label { margin: 0; font-size: 12px; font-weight: 700; color: var(--faint); }
-.mini__value { margin: 4px 0 0; font-weight: 800; font-size: 22px; color: var(--pop); }
-.mini--mint .mini__value { color: var(--ink); }
 .next-up { margin-top: 16px; padding: 22px; border-radius: 22px; background: var(--ink); color: var(--cream); }
 .next-up .label { color: inherit; opacity: .8; }
 .next-up__title { margin: 8px 0 0; font-weight: 800; font-size: 20px; line-height: 1.2; }
@@ -529,6 +542,9 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .legal li { margin-bottom: 6px; }
 .legal strong { color: var(--text); }
 .legal__summary { margin-top: 24px; padding: 18px 20px; border-radius: 18px; background: var(--sand); }
+/* In other languages the summary is translated and the full text stays in English; this says so. */
+.legal .legal__notice { margin: 16px 0 0; padding: 12px 16px; border-radius: 14px; border: 2px solid var(--line); background: #fff; font-size: 15px; font-weight: 700; color: var(--brown); }
+html[lang|="en"] .legal__notice { display: none; }
 .legal__summary p:last-child, .legal__summary ul:last-child { margin-bottom: 0; }
 .site-footer__links { display: flex; gap: 16px; flex-wrap: wrap; }
 .site-footer__links a { color: var(--faint); text-decoration: underline; }
@@ -560,20 +576,30 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
   .detail__close { min-height: 44px; }
 }
 
+/* Narrow tablets: the header no longer fits on one row in every language, so it takes two,
+   as on phones: the brand with the language and account buttons, then the links. */
+@media (max-width: 880px) {
+  .site-header__inner { row-gap: 8px; }
+  .nav { flex: 1 1 100%; order: 1; margin-left: 0; gap: 22px; }
+  .site-header__account { margin-left: auto; }
+}
+
 /* Phone */
 @media (max-width: 720px) {
   .site-header__inner { padding: 10px 16px; gap: 6px 16px; }
   .brand { font-size: 20px; }
   .nav { flex: 1 1 100%; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; }
-  .nav__stat { display: none; }
   .nav__link { font-size: 14px; }
   .btn-signin { padding: 6px 14px; }
   .nav { order: 1; margin-left: 0; }
   .site-header__account { margin-left: auto; }
-  /* The account menu opens full width under the header instead of under the circle. */
+  /* The account and language menus open full width under the header instead of under their button. */
   .site-header__inner { position: relative; }
-  .account-nav { position: static; }
+  .account-nav, .lang { position: static; }
   .menu { top: calc(100% - 4px); left: 16px; right: 16px; min-width: 0; }
+  .lang { margin-right: 8px; }
+  .lang__button { height: 34px; padding: 0 10px 0 8px; }
+  .lang__menu { max-height: calc(100vh - 124px); max-height: calc(100dvh - 124px); }
   .site-footer__inner { padding: 20px 16px; }
 
   .hero { padding: 32px 16px 0; }
@@ -603,4 +629,17 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 @media (max-width: 480px) {
   .fields, .result-main__grid, .dash-stats { grid-template-columns: minmax(0, 1fr); }
   .auth-card { padding: 22px; }
+}
+
+/* Narrow phones: the language button keeps only the globe (its label still names the language),
+   so the brand, the globe and "Sign in" share the first row in every language. */
+@media (max-width: 400px) {
+  .lang__code { display: none; }
+  .lang__button { padding: 0 7px; }
+  .lang { margin-right: 6px; }
+}
+@media (max-width: 350px) {
+  .site-header__inner { gap: 6px 10px; }
+  .brand { font-size: 18px; }
+  .btn-signin { padding: 6px 11px; }
 }

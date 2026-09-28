@@ -1,8 +1,10 @@
-// The step list, read from guide.html (the single source of the steps' content).
+// The step list, read from guide.html (the single source of the steps' structure) and shown
+// in the page's language (the texts are in locales/<language>/guide.json).
 // PHASES and steps are live exports: they fill in once loadSteps() has run.
-import { esc } from "../lib/format.js?v=20260928";
-import { progress } from "../lib/progress.js?v=20260928";
-import { state } from "./state.js?v=20260928";
+import { esc } from "../lib/format.js?v=20260929";
+import { progress } from "../lib/progress.js?v=20260929";
+import { ready, t, translate } from "./i18n.js?v=20260929";
+import { state } from "./state.js?v=20260929";
 
 export let PHASES = [];
 export let steps = [];
@@ -16,6 +18,10 @@ export async function loadSteps() {
       const res = await fetch("guide.html", { cache: "no-cache" });
       doc = new DOMParser().parseFromString(await res.text(), "text/html");
     }
+    // The guide is written in English; its data-i18n keys give the page's language.
+    // (On guide.html itself the runtime has already translated the page.)
+    await ready();
+    if (doc !== document) translate(doc);
   } catch (err) {
     console.error("Could not load the step list from guide.html.", err);
     return;
@@ -60,7 +66,7 @@ export const calculatorStep = () => steps.find((s) => s.auto === "calculator") |
 
 export function phaseCardsHtml() {
   return PHASES.map((phase) => {
-    const dn = phase.tasks.filter((t, i) => state.done[phase.slug + "-" + i]).length;
+    const dn = phase.tasks.filter((task, i) => state.done[phase.slug + "-" + i]).length;
     const pc = Math.round((dn / phase.tasks.length) * 100);
     return `<a class="phase-card" href="journey.html#phase-${phase.slug}">
         <span class="phase-card__head">
@@ -69,7 +75,7 @@ export function phaseCardsHtml() {
         </span>
         <span class="phase-card__text">${esc(phase.text)}</span>
         <span class="bar"><span class="bar__fill${pc === 100 ? " is-full" : ""}" style="width:${pc}%"></span></span>
-        <span class="phase-card__progress">${dn} of ${phase.tasks.length} steps done</span>
+        <span class="phase-card__progress">${esc(t("common:progress.phase", { done: dn, count: phase.tasks.length }))}</span>
       </a>`;
   }).join("");
 }

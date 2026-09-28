@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Información legal",
+  "summaryTitle": "En resumen",
+  "toc": "En esta página",
+  "aside": "Sobre esta página",
+  "privacy": {
+    "meta": "Política de privacidad | ÉireHome Flow",
+    "title": "Política de privacidad",
+    "updated": "Última actualización: 28 de septiembre de 2026",
+    "summary": [
+      "ÉireHome Flow es gratis. No mostramos anuncios, no usamos analítica ni seguimiento y no vendemos tus datos.",
+      "Puedes usar la guía, Mi camino y la calculadora sin cuenta. Las cifras de tu calculadora nunca salen de tu navegador.",
+      "Si creas una cuenta, guardamos tu nombre, tu correo y el progreso de tu camino con nuestro proveedor de base de datos, Supabase, en servidores de Irlanda. Si inicias sesión con Google, nuestro sistema de cuentas también guarda el enlace a tu foto de perfil de Google que envía Google. No la mostramos ni la usamos.",
+      "Puedes cambiar tu nombre y tu contraseña, y eliminar tu cuenta, en Mi perfil. Para recibir una copia de tus datos o corregirlos, escribe a <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Te responderemos en un plazo de un mes."
+    ],
+    "englishOnly": "La política completa de abajo solo está disponible en inglés.",
+    "help": {
+      "title": "¿Tienes preguntas sobre tus datos?",
+      "text": "Escríbenos a <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Respondemos en un plazo de un mes.",
+      "link": "Lee nuestras Condiciones de uso"
+    }
+  },
+  "terms": {
+    "meta": "Condiciones de uso | ÉireHome Flow",
+    "title": "Condiciones de uso",
+    "updated": "Última actualización: 28 de septiembre de 2026",
+    "summary": [
+      "ÉireHome Flow es una web educativa y gratuita para quien compra su primera vivienda en Irlanda. No hay pagos, anuncios ni comisiones.",
+      "<strong>No es asesoramiento financiero, hipotecario, jurídico ni fiscal, y no estamos regulados por el Banco Central de Irlanda.</strong> Consulta a profesionales cualificados antes de tomar decisiones.",
+      "Los resultados de la calculadora son estimaciones aproximadas basadas en reglas simplificadas.",
+      "Las cuentas son opcionales y gratuitas, y solo para mayores de 18 años. Guarda bien tu contraseña.",
+      "Usa la web de forma legal y no intentes romperla ni entrar en las cuentas de otras personas.",
+      "Nada en estas condiciones te quita tus derechos legales como consumidor."
+    ],
+    "summaryNote": "Este resumen está aquí para ayudarte. Lo que se aplica son las condiciones completas de abajo.",
+    "englishOnly": "Las condiciones completas de abajo solo están disponibles en inglés.",
+    "help": {
+      "title": "¿Tienes preguntas sobre estas condiciones?",
+      "text": "Escríbenos a <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Intentamos responder en un plazo de 14 días.",
+      "link": "Lee nuestra Política de privacidad"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "For first-time buyers in Ireland",
+    "title": "From first savings<br>to your <em>first sofa</em>.",
+    "lead": "Six phases and thirty-one steps, from the deposit maths and the AIP paperwork to bidding and getting the keys. It also covers what comes after, like floors, curtains and the first boiler service.",
+    "start": "Start my journey",
+    "resume": "Resume my journey",
+    "calculator": "Buying power calculator",
+    "alt": "Illustrated Irish home above the coast",
+    "caption": "The home you are working towards."
+  },
+  "ticker": {
+    "label": "Key figures",
+    "items": [
+      "Central Bank rule: 4× gross income",
+      "First-time buyer deposit: 10%",
+      "Stamp duty: 1%",
+      "Solicitor: €2,000-3,000",
+      "Structural survey: about €400",
+      "Bank valuation: about €150"
+    ],
+    "pause": "Pause",
+    "play": "Play"
+  },
+  "stats": {
+    "loan": {
+      "label": "Maximum mortgage",
+      "value": "4×",
+      "note": "Gross annual income, per Central Bank of Ireland rules."
+    },
+    "deposit": {
+      "label": "Minimum deposit",
+      "value": "10%",
+      "note": "The same for first-time buyers and for anyone who has owned before."
+    },
+    "cash": {
+      "label": "Cash outside the loan",
+      "value": "€3,550",
+      "note": "Solicitor, survey and valuation, plus 1% stamp duty."
+    }
+  },
+  "phases": {
+    "title": "Six phases, one after the other.",
+    "intro": "Steps unlock in order: finish each blocking step to unlock the next one. You can read every step at any time in the full guide."
+  },
+  "cta": {
+    "title": "Read the full guide",
+    "text": "All thirty-one steps in one place, with checklists and tips. No account needed.",
+    "button": "Open the guide"
+  }
+}

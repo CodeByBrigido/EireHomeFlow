@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Simulateur de capacité d'achat | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Phase 01 : Préparation · Étape 1",
+    "title": "Ce que vous pouvez vraiment acheter",
+    "intro": "La Banque centrale plafonne les prêts à 4× le revenu brut pour les primo-accédants et à 3,5× pour tous les autres. Saisissez vos chiffres et les résultats se mettent à jour au fur et à mesure. Enregistrez-les dans votre parcours pour terminer l'étape 1."
+  },
+  "pills": {
+    "buyer": "Type d'acheteur",
+    "ftb": "Primo-accédant",
+    "mover": "Déjà propriétaire",
+    "application": "Type de demande",
+    "single": "Achat seul",
+    "joint": "Demande conjointe",
+    "home": "Type de logement",
+    "secondHand": "Ancien",
+    "newHouse": "Maison neuve",
+    "newApartment": "Appartement neuf"
+  },
+  "fields": {
+    "salary": "Votre salaire annuel brut",
+    "salary2": "Salaire brut du conjoint",
+    "savings": "Épargne",
+    "gift": "Don familial",
+    "htb": "Remboursement Help to Buy",
+    "price": "Prix visé",
+    "rate": "Taux d'intérêt",
+    "term": "Durée"
+  },
+  "off": {
+    "joint": "Demandes conjointes seulement",
+    "newBuild": "Logements neufs seulement",
+    "ftb": "Primo-accédants seulement"
+  },
+  "scale": {
+    "rateMin": "1 %",
+    "rateMax": "8 %",
+    "termMin": "5 ans",
+    "termMax": "35 ans"
+  },
+  "years": {
+    "one": "{count} an",
+    "many": "{count} ans",
+    "other": "{count} ans"
+  },
+  "htb": {
+    "notFtb": "Le Help to Buy est réservé aux primo-accédants, il n'est donc pas compté ici.",
+    "notNew": "Le Help to Buy ne couvre que le neuf et l'autoconstruction. Choisissez Maison neuve ou Appartement neuf ci-dessus si c'est ce que vous achetez.",
+    "overCap": "Le Help to Buy ne couvre que les logements jusqu'à {cap}, il n'est donc pas compté à ce prix.",
+    "loanTooSmall": "Le Help to Buy exige un prêt d'au moins 70 % du prix, soit {minLoan} ici. Vous pouvez emprunter jusqu'à {maxLoan}, il n'est donc pas compté à ce prix.",
+    "counted": "Le Help to Buy vous rembourse l'impôt sur le revenu et la DIRT payés sur les quatre dernières années, jusqu'à 30 000 € ou 10 % du prix. À ce prix, le maximum est de {most}.",
+    "borrowEnough": "Il exige aussi un prêt d'au moins 70 % du prix ({minLoan}), alors prévoyez d'emprunter ce montant et de garder le reste de votre épargne."
+  },
+  "monthly": {
+    "label": "Mensualité estimée",
+    "note": "{loan} sur {years} à {rate}. L'assurance emprunteur et l'assurance habitation s'ajoutent."
+  },
+  "results": {
+    "maxPrice": "Prix maximum du logement",
+    "maxLoan": "Prêt maximum (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Fonds disponibles"
+  },
+  "limit": {
+    "income": "Pour l'instant, c'est votre revenu qui limite. La règle des {multiple} plafonne le prêt à {maxLoan}.",
+    "savings": "Pour l'instant, c'est votre épargne qui limite. Chaque 1 000 € épargné en plus augmente ce montant d'environ {amount}.",
+    "htbEdge": "Pour l'instant, c'est votre épargne qui limite, au prix le plus haut où le Help to Buy s'applique encore. Aller au-delà sans le Help to Buy demande environ {amount} d'épargne en plus."
+  },
+  "save": {
+    "label": "Enregistrer dans mon parcours",
+    "update": "Mettre à jour mon parcours",
+    "hint": "Termine l'étape 1. Vos chiffres restent dans ce navigateur.",
+    "saved": "L'étape 1 est faite. Votre parcours affiche toujours les chiffres de cette page.",
+    "noJourney": "Impossible de charger votre parcours. Rechargez la page pour enregistrer.",
+    "done": "Vos chiffres sont enregistrés et l'étape 1 est faite.",
+    "updated": "Votre parcours utilise maintenant ces chiffres."
+  },
+  "breakdown": {
+    "title": "Pour un logement à <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Apport (10 % minimum)",
+    "loan": "Prêt nécessaire",
+    "loanAll": "Prêt nécessaire, en utilisant toute votre épargne",
+    "stamp": "Droit de timbre ({bands})",
+    "stampNew": "Droit de timbre ({bands} sur le prix hors TVA de {vat})",
+    "bands": {
+      "1": "1 %",
+      "2": "tranches à 1 % et 2 %",
+      "3": "tranches à 1 %, 2 % et 6 %"
+    },
+    "solicitor": "Avocat",
+    "survey": "Expertise du bâti",
+    "valuation": "Évaluation de la banque",
+    "total": "Total de l'argent nécessaire",
+    "booking": "Pour réserver la maison, vous versez un acompte de réservation d'environ 5 000 € (remboursable jusqu'à la signature des contrats). Le reste de l'apport de {deposit} est dû à la signature."
+  },
+  "verdict": {
+    "within": {
+      "title": "Ce prix est dans vos limites",
+      "body": "Vous avez {funds} pour {cash} nécessaires en liquide, et le prêt de {loan} reste sous votre plafond de {multiple}, soit {maxLoan}. Prochaine étape : réunir les papiers de l'AIP."
+    },
+    "outOfReach": {
+      "title": "Ce prix est hors de portée pour l'instant",
+      "body": "Il vous manque {gap} en liquide, et le prêt nécessaire ({loan}) dépasse de {over} votre plafond de {multiple}, soit {maxLoan}. Visez {maxPrice} ou moins."
+    },
+    "cashShort": {
+      "title": "Il vous manque {gap} en liquide",
+      "body": "Vous avez {funds} disponibles et il vous faut {cash} en liquide à ce prix. Épargnez la différence ou visez plus près de {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Le prêt dépasse votre plafond",
+      "body": "Il vous faudrait emprunter {loan}, soit {over} au-dessus de votre plafond de {multiple}, soit {maxLoan}. Visez {maxPrice} ou moins."
+    }
+  },
+  "disclaimer": "Estimations pédagogiques fondées sur les règles de la Banque centrale d'Irlande et sur les règles de Revenue pour le droit de timbre et le Help to Buy. Chaque prêteur applique ses propres critères de crédit et exceptions."
+}

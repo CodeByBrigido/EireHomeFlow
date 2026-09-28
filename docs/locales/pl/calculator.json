@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Kalkulator zdolności zakupowej | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Etap 01: Przygotowanie · Krok 1",
+    "title": "Na co naprawdę cię stać",
+    "intro": "Bank Centralny ogranicza kredyt hipoteczny do 4× dochodu brutto przy pierwszym zakupie i do 3,5× w pozostałych przypadkach. Wpisz swoje liczby, a wyniki zaktualizują się na bieżąco. Zapisz je w swojej drodze, aby ukończyć krok 1."
+  },
+  "pills": {
+    "buyer": "Rodzaj kupującego",
+    "ftb": "Pierwszy zakup",
+    "mover": "Kolejny zakup",
+    "application": "Rodzaj wniosku",
+    "single": "Samodzielnie",
+    "joint": "Wniosek wspólny",
+    "home": "Rodzaj nieruchomości",
+    "secondHand": "Rynek wtórny",
+    "newHouse": "Nowy dom",
+    "newApartment": "Nowe mieszkanie"
+  },
+  "fields": {
+    "salary": "Twoja roczna pensja brutto",
+    "salary2": "Pensja brutto partnera",
+    "savings": "Oszczędności",
+    "gift": "Prezent od rodziny",
+    "htb": "Zwrot Help to Buy",
+    "price": "Docelowa cena",
+    "rate": "Oprocentowanie",
+    "term": "Okres kredytu"
+  },
+  "off": {
+    "joint": "Tylko przy wniosku wspólnym",
+    "newBuild": "Tylko nowe budynki",
+    "ftb": "Tylko pierwszy zakup"
+  },
+  "scale": {
+    "rateMin": "1%",
+    "rateMax": "8%",
+    "termMin": "5 lat",
+    "termMax": "35 lat"
+  },
+  "years": {
+    "one": "{count} rok",
+    "few": "{count} lata",
+    "many": "{count} lat",
+    "other": "{count} roku"
+  },
+  "htb": {
+    "notFtb": "Help to Buy jest tylko dla osób kupujących pierwszą nieruchomość, więc tu nie jest liczony.",
+    "notNew": "Help to Buy obejmuje tylko nowe budynki i budowę samodzielną. Wybierz wyżej Nowy dom lub Nowe mieszkanie, jeśli to właśnie kupujesz.",
+    "overCap": "Help to Buy obejmuje tylko nieruchomości do {cap}, więc przy tej cenie nie jest liczony.",
+    "loanTooSmall": "Help to Buy wymaga kredytu na co najmniej 70% ceny, czyli tutaj {minLoan}. Możesz pożyczyć do {maxLoan}, więc przy tej cenie nie jest liczony.",
+    "counted": "Help to Buy zwraca podatek dochodowy i DIRT zapłacone w ciągu ostatnich czterech lat, do 30 000 € lub 10% ceny. Przy tej cenie maksimum to {most}.",
+    "borrowEnough": "Wymaga też kredytu na co najmniej 70% ceny ({minLoan}), więc zaplanuj pożyczenie takiej kwoty i zatrzymaj resztę oszczędności."
+  },
+  "monthly": {
+    "label": "Szacowana rata miesięczna",
+    "note": "{loan} na {years} przy oprocentowaniu {rate}. Ubezpieczenie kredytu i ubezpieczenie domu są dodatkowo."
+  },
+  "results": {
+    "maxPrice": "Maksymalna cena nieruchomości",
+    "maxLoan": "Maksymalny kredyt (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Dostępne środki"
+  },
+  "limit": {
+    "income": "Teraz ogranicza cię dochód. Zasada {multiple} ogranicza kredyt do {maxLoan}.",
+    "savings": "Teraz ograniczają cię oszczędności. Każde dodatkowe 1000 € oszczędności podnosi tę kwotę o ok. {amount}.",
+    "htbEdge": "Teraz ograniczają cię oszczędności, przy najwyższej cenie, przy której Help to Buy jeszcze przysługuje. Przekroczenie jej bez Help to Buy wymaga ok. {amount} więcej oszczędności."
+  },
+  "save": {
+    "label": "Zapisz w mojej drodze",
+    "update": "Zaktualizuj moją drogę",
+    "hint": "Kończy krok 1. Twoje liczby zostają w tej przeglądarce.",
+    "saved": "Krok 1 jest ukończony. Twoja droga zawsze pokazuje liczby z tej strony.",
+    "noJourney": "Nie udało się wczytać twojej drogi. Odśwież stronę, aby zapisać.",
+    "done": "Twoje liczby są zapisane, a krok 1 jest ukończony.",
+    "updated": "Twoja droga używa teraz tych liczb."
+  },
+  "breakdown": {
+    "title": "Przy cenie <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Wkład własny (minimum 10%)",
+    "loan": "Potrzebny kredyt",
+    "loanAll": "Potrzebny kredyt, przy użyciu wszystkich oszczędności",
+    "stamp": "Opłata skarbowa ({bands})",
+    "stampNew": "Opłata skarbowa ({bands} od ceny bez {vat} VAT)",
+    "bands": {
+      "1": "1%",
+      "2": "progi 1% i 2%",
+      "3": "progi 1%, 2% i 6%"
+    },
+    "solicitor": "Prawnik",
+    "survey": "Inspekcja techniczna",
+    "valuation": "Wycena banku",
+    "total": "Potrzebna gotówka razem",
+    "booking": "Aby zarezerwować dom, wpłacasz zaliczkę rezerwacyjną w wysokości ok. 5000 € (zwrotną do podpisania umów). Reszta wkładu własnego w wysokości {deposit} jest płatna przy podpisaniu umowy."
+  },
+  "verdict": {
+    "within": {
+      "title": "Ta cena mieści się w twoich limitach",
+      "body": "Masz {funds} wobec {cash} potrzebnej gotówki, a kredyt w wysokości {loan} mieści się w twoim limicie {multiple} ({maxLoan}). Następny krok: zbierz dokumenty do AIP."
+    },
+    "outOfReach": {
+      "title": "Ta cena jest na razie poza zasięgiem",
+      "body": "Brakuje ci {gap} gotówki, a potrzebny kredyt ({loan}) przekracza o {over} twój limit {multiple} ({maxLoan}). Celuj w {maxPrice} lub mniej."
+    },
+    "cashShort": {
+      "title": "Brakuje ci {gap} gotówki",
+      "body": "Masz {funds} dostępnych środków, a przy tej cenie potrzebujesz {cash} gotówki. Odłóż różnicę albo celuj bliżej {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Kredyt przekracza twój limit",
+      "body": "Potrzebny byłby kredyt {loan}, o {over} wyższy niż twój limit {multiple} ({maxLoan}). Celuj w {maxPrice} lub mniej."
+    }
+  },
+  "disclaimer": "Szacunki edukacyjne oparte na zasadach Banku Centralnego Irlandii oraz na zasadach Revenue dotyczących opłaty skarbowej i Help to Buy. Każdy bank stosuje własne kryteria kredytowe i wyjątki."
+}

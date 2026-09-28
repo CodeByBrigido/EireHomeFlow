@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "label": "Hauptmenü",
+    "home": "Start",
+    "guide": "Ratgeber",
+    "journey": "Mein Weg",
+    "calculator": "Rechner"
+  },
+  "header": {
+    "signIn": "Anmelden"
+  },
+  "language": {
+    "button": "Sprache: Deutsch. Sprache ändern",
+    "code": "DE",
+    "title": "Sprache"
+  },
+  "account": {
+    "menu": "Kontomenü",
+    "dashboard": "Übersicht",
+    "profile": "Mein Profil",
+    "signOut": "Abmelden",
+    "fallbackName": "Ihr Konto",
+    "menuFor": "Kontomenü von {name}",
+    "signedOut": "Sie haben sich abgemeldet. Ihr Fortschritt bleibt in Ihrem Konto gespeichert."
+  },
+  "yourAccount": "Ihr Konto",
+  "footer": {
+    "disclaimer": "Bildungsinhalte. Keine regulierte Finanzberatung.",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen"
+  },
+  "toast": {
+    "dismiss": "Schließen"
+  },
+  "gate": {
+    "loading": "Ihr Konto wird geladen...",
+    "signIn": "Anmelden",
+    "signUp": "Konto erstellen",
+    "signInPrompt": "Melden Sie sich an, um diese Seite zu sehen. Ihr Weg, Ihre Zahlen und Ihre Daten warten auf Sie.",
+    "accountsOff": "Konten sind noch nicht freigeschaltet. Schauen Sie bald wieder vorbei."
+  },
+  "fields": {
+    "name": "Vollständiger Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirm": "Passwort bestätigen"
+  },
+  "forms": {
+    "name": "Geben Sie Ihren Vor- und Nachnamen ein.",
+    "email": "Geben Sie eine gültige E-Mail-Adresse ein, zum Beispiel name@beispiel.de.",
+    "password": "Geben Sie Ihr Passwort ein.",
+    "weakPassword": "Ihr Passwort erfüllt die Anforderungen unten nicht.",
+    "confirm": "Bestätigen Sie Ihr Passwort.",
+    "mismatch": "Die Passwörter stimmen nicht überein.",
+    "wait": "Bitte warten...",
+    "connecting": "Einen Moment, die Verbindung wird noch aufgebaut. Bitte versuchen Sie es erneut."
+  },
+  "errors": {
+    "invalidCredentials": "E-Mail oder Passwort sind nicht richtig. Prüfen Sie beides und versuchen Sie es erneut.",
+    "emailNotConfirmed": "Bestätigen Sie zuerst Ihre E-Mail-Adresse: Öffnen Sie den Link, den wir Ihnen geschickt haben.",
+    "userExists": "Mit dieser E-Mail gibt es schon ein Konto. Melden Sie sich stattdessen an.",
+    "weakPassword": "Wählen Sie ein stärkeres Passwort: mindestens 8 Zeichen, mit einem Großbuchstaben und einem Sonderzeichen.",
+    "samePassword": "Das neue Passwort muss sich vom aktuellen unterscheiden.",
+    "rateLimit": "Zu viele Versuche. Warten Sie eine Minute und versuchen Sie es erneut.",
+    "signupsOff": "Neue Konten sind im Moment nicht möglich. Schauen Sie bald wieder vorbei.",
+    "sessionEnded": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+    "network": "Der Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "welcome": {
+    "newAccount": "Ihr Konto ist bereit. Willkommen bei ÉireHome Flow, {name}!",
+    "newAccountNoName": "Ihr Konto ist bereit. Willkommen bei ÉireHome Flow!",
+    "back": "Willkommen zurück, {name}.",
+    "backNoName": "Willkommen zurück.",
+    "confirmed": "Ihre E-Mail ist bestätigt. Willkommen bei ÉireHome Flow, {name}!",
+    "confirmedNoName": "Ihre E-Mail ist bestätigt. Willkommen bei ÉireHome Flow!",
+    "goToJourney": "Zu meinem Weg"
+  },
+  "google": {
+    "cancelled": "Die Anmeldung mit Google wurde abgebrochen. Sie können es erneut versuchen oder Ihre E-Mail nutzen.",
+    "failed": "Die Anmeldung mit Google hat nicht geklappt. Versuchen Sie es erneut oder nutzen Sie Ihre E-Mail.",
+    "failedWith": "Die Anmeldung mit Google hat nicht geklappt: {reason}. Versuchen Sie es erneut oder nutzen Sie Ihre E-Mail."
+  },
+  "linkExpired": "Dieser Link ist abgelaufen oder wurde schon benutzt. Melden Sie sich an oder fordern Sie einen neuen Link an.",
+  "progress": {
+    "steps": {
+      "one": "{done} von {count} Schritt",
+      "other": "{done} von {count} Schritten"
+    },
+    "phase": {
+      "one": "{done} von {count} Schritt erledigt",
+      "other": "{done} von {count} Schritten erledigt"
+    }
+  },
+  "approx": "ca. {amount}",
+  "newTab": "(öffnet in einem neuen Tab)"
+}

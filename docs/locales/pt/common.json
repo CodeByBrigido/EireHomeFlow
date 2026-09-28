@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "label": "Principal",
+    "home": "Início",
+    "guide": "Guia",
+    "journey": "Jornada",
+    "calculator": "Calculadora"
+  },
+  "header": {
+    "signIn": "Entrar"
+  },
+  "language": {
+    "button": "Idioma: Português. Mudar idioma",
+    "code": "PT",
+    "title": "Idioma"
+  },
+  "account": {
+    "menu": "Menu da conta",
+    "dashboard": "Painel",
+    "profile": "Meu perfil",
+    "signOut": "Sair",
+    "fallbackName": "Sua conta",
+    "menuFor": "Menu da conta de {name}",
+    "signedOut": "Você saiu. Seu progresso continua salvo na sua conta."
+  },
+  "yourAccount": "Sua conta",
+  "footer": {
+    "disclaimer": "Conteúdo educativo. Não é aconselhamento financeiro regulamentado.",
+    "legal": "Informações legais",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "toast": {
+    "dismiss": "Fechar"
+  },
+  "gate": {
+    "loading": "Carregando sua conta...",
+    "signIn": "Entrar",
+    "signUp": "Criar conta",
+    "signInPrompt": "Entre para ver esta página. Sua jornada, seus números e seus dados estão esperando por você.",
+    "accountsOff": "As contas ainda não estão ativadas. Volte em breve."
+  },
+  "fields": {
+    "name": "Nome completo",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirm": "Confirme a senha"
+  },
+  "forms": {
+    "name": "Digite seu nome e sobrenome.",
+    "email": "Digite um e-mail válido, como nome@exemplo.com.",
+    "password": "Digite sua senha.",
+    "weakPassword": "Sua senha não atende aos requisitos abaixo.",
+    "confirm": "Confirme sua senha.",
+    "mismatch": "As senhas não são iguais.",
+    "wait": "Aguarde...",
+    "connecting": "Um momento, ainda conectando. Tente de novo."
+  },
+  "errors": {
+    "invalidCredentials": "E-mail ou senha incorretos. Confira e tente de novo.",
+    "emailNotConfirmed": "Confirme seu e-mail primeiro: abra o link que enviamos para você.",
+    "userExists": "Já existe uma conta com este e-mail. Entre com ela.",
+    "weakPassword": "Escolha uma senha mais forte: pelo menos 8 caracteres, com uma letra maiúscula e um caractere especial.",
+    "samePassword": "A nova senha precisa ser diferente da atual.",
+    "rateLimit": "Muitas tentativas. Espere um minuto e tente de novo.",
+    "signupsOff": "A criação de contas está desativada no momento. Volte em breve.",
+    "sessionEnded": "Sua sessão terminou. Entre de novo.",
+    "network": "Não conseguimos falar com o servidor. Verifique sua conexão e tente de novo.",
+    "generic": "Algo deu errado. Tente de novo."
+  },
+  "welcome": {
+    "newAccount": "Sua conta está pronta. Boas-vindas ao ÉireHome Flow, {name}!",
+    "newAccountNoName": "Sua conta está pronta. Boas-vindas ao ÉireHome Flow!",
+    "back": "Que bom ver você de novo, {name}.",
+    "backNoName": "Que bom ver você de novo.",
+    "confirmed": "Seu e-mail foi confirmado. Boas-vindas ao ÉireHome Flow, {name}!",
+    "confirmedNoName": "Seu e-mail foi confirmado. Boas-vindas ao ÉireHome Flow!",
+    "goToJourney": "Ir para minha jornada"
+  },
+  "google": {
+    "cancelled": "O login com o Google foi cancelado. Tente de novo ou use seu e-mail.",
+    "failed": "Não foi possível entrar com o Google. Tente de novo ou use seu e-mail.",
+    "failedWith": "Não foi possível entrar com o Google: {reason}. Tente de novo ou use seu e-mail."
+  },
+  "linkExpired": "Este link expirou ou já foi usado. Entre na sua conta ou peça um novo link.",
+  "progress": {
+    "steps": {
+      "one": "{done} de {count} etapa",
+      "many": "{done} de {count} etapas",
+      "other": "{done} de {count} etapas"
+    },
+    "phase": {
+      "one": "{done} de {count} etapa concluída",
+      "many": "{done} de {count} etapas concluídas",
+      "other": "{done} de {count} etapas concluídas"
+    }
+  },
+  "approx": "~{amount}",
+  "newTab": "(abre em uma nova aba)"
+}

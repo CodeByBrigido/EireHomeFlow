@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Calculadora de poder de compra | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Fase 01: Preparação · Etapa 1",
+    "title": "O que você realmente pode comprar",
+    "intro": "O Banco Central limita o financiamento a 4× a renda bruta para quem compra o primeiro imóvel e a 3,5× para os demais. Preencha seus números e os resultados se atualizam na hora. Salve-os na sua jornada para concluir a etapa 1."
+  },
+  "pills": {
+    "buyer": "Tipo de comprador",
+    "ftb": "Primeiro imóvel",
+    "mover": "Troca de imóvel",
+    "application": "Tipo de pedido",
+    "single": "Compra individual",
+    "joint": "Compra em conjunto",
+    "home": "Tipo de imóvel",
+    "secondHand": "Usado",
+    "newHouse": "Casa nova",
+    "newApartment": "Apartamento novo"
+  },
+  "fields": {
+    "salary": "Seu salário bruto anual",
+    "salary2": "Salário bruto do parceiro",
+    "savings": "Economias",
+    "gift": "Presente da família",
+    "htb": "Reembolso do Help to Buy",
+    "price": "Preço desejado do imóvel",
+    "rate": "Taxa de juros",
+    "term": "Prazo"
+  },
+  "off": {
+    "joint": "Só para compra em conjunto",
+    "newBuild": "Só para imóveis novos",
+    "ftb": "Só para o primeiro imóvel"
+  },
+  "scale": {
+    "rateMin": "1%",
+    "rateMax": "8%",
+    "termMin": "5 anos",
+    "termMax": "35 anos"
+  },
+  "years": {
+    "one": "{count} ano",
+    "many": "{count} anos",
+    "other": "{count} anos"
+  },
+  "htb": {
+    "notFtb": "O Help to Buy é só para quem compra o primeiro imóvel, então ele não entra na conta aqui.",
+    "notNew": "O Help to Buy só cobre imóveis novos e construídos por conta própria. Escolha Casa nova ou Apartamento novo acima se for isso que você vai comprar.",
+    "overCap": "O Help to Buy só cobre imóveis de até {cap}, então ele não entra na conta neste preço.",
+    "loanTooSmall": "O Help to Buy exige um financiamento de pelo menos 70% do preço, o que dá {minLoan} aqui. Você pode pegar até {maxLoan}, então ele não entra na conta neste preço.",
+    "counted": "O Help to Buy devolve o imposto de renda e o DIRT que você pagou nos últimos quatro anos, até € 30.000 ou 10% do preço. Neste preço, o máximo é {most}.",
+    "borrowEnough": "Ele também exige um financiamento de pelo menos 70% do preço ({minLoan}), então planeje pegar esse valor e guardar o restante das suas economias."
+  },
+  "monthly": {
+    "label": "Parcela mensal estimada",
+    "note": "{loan} em {years} a {rate}. O seguro do financiamento e o seguro residencial são à parte."
+  },
+  "results": {
+    "maxPrice": "Preço máximo do imóvel",
+    "maxLoan": "Financiamento máximo (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Recursos disponíveis"
+  },
+  "limit": {
+    "income": "No momento, o limite é a sua renda. A regra de {multiple} limita o financiamento a {maxLoan}.",
+    "savings": "No momento, o limite são as suas economias. Cada € 1.000 a mais guardados aumenta este valor em cerca de {amount}.",
+    "htbEdge": "No momento, o limite são as suas economias, no preço mais alto em que o Help to Buy ainda vale. Passar dele sem o Help to Buy exige cerca de {amount} a mais em economias."
+  },
+  "save": {
+    "label": "Salvar na minha jornada",
+    "update": "Atualizar minha jornada",
+    "hint": "Conclui a etapa 1. Seus números ficam neste navegador.",
+    "saved": "A etapa 1 está concluída. Sua jornada sempre mostra os números desta página.",
+    "noJourney": "Não foi possível carregar sua jornada. Recarregue a página para salvar.",
+    "done": "Seus números foram salvos e a etapa 1 está concluída.",
+    "updated": "Sua jornada agora usa estes números."
+  },
+  "breakdown": {
+    "title": "Para um imóvel de <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Entrada (mínimo de 10%)",
+    "loan": "Financiamento necessário",
+    "loanAll": "Financiamento necessário, usando todas as suas economias",
+    "stamp": "Imposto de selo ({bands})",
+    "stampNew": "Imposto de selo ({bands} sobre o preço sem {vat} de IVA)",
+    "bands": {
+      "1": "1%",
+      "2": "faixas de 1% e 2%",
+      "3": "faixas de 1%, 2% e 6%"
+    },
+    "solicitor": "Advogado",
+    "survey": "Vistoria estrutural",
+    "valuation": "Avaliação do banco",
+    "total": "Total em dinheiro necessário",
+    "booking": "Para garantir a casa, você paga um sinal de reserva de cerca de € 5.000 (reembolsável até a assinatura dos contratos). O restante da entrada de {deposit} é pago na assinatura."
+  },
+  "verdict": {
+    "within": {
+      "title": "Este preço está dentro dos seus limites",
+      "body": "Você tem {funds} para {cash} necessários em dinheiro, e o financiamento de {loan} fica dentro do seu limite de {multiple}, de {maxLoan}. Próximo passo: juntar os documentos da AIP."
+    },
+    "outOfReach": {
+      "title": "Este preço está fora do alcance por enquanto",
+      "body": "Faltam {gap} em dinheiro, e o financiamento de que você precisaria ({loan}) fica {over} acima do seu limite de {multiple}, de {maxLoan}. Mire em {maxPrice} ou menos."
+    },
+    "cashShort": {
+      "title": "Faltam {gap} em dinheiro",
+      "body": "Você tem {funds} disponíveis e precisa de {cash} em dinheiro neste preço. Guarde a diferença ou mire mais perto de {maxPrice}."
+    },
+    "loanOver": {
+      "title": "O financiamento passa do seu limite",
+      "body": "Você precisaria pegar {loan}, o que fica {over} acima do seu limite de {multiple}, de {maxLoan}. Mire em {maxPrice} ou menos."
+    }
+  },
+  "disclaimer": "Estimativas educativas baseadas nas regras do Banco Central da Irlanda e nas regras da Revenue para o imposto de selo e o Help to Buy. Cada banco aplica os próprios critérios de crédito e exceções."
+}

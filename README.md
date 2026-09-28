@@ -1,20 +1,21 @@
 # ÉireHome Flow
 
-Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e 31 etapas, da poupança para a entrada até a mudança, com calculadora de poder de compra e progresso salvo na conta.
+Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e 31 etapas, da poupança para a entrada até a mudança, com calculadora de poder de compra e progresso salvo na conta. Disponível em inglês, português, espanhol, francês, alemão, italiano, polonês, romeno e lituano.
 
 **Site publicado:** https://codebybrigido.github.io/EireHomeFlow/
 
-Última revisão: 24/09/2026
+Última revisão: 28/09/2026
 
 ## Pastas
 
 | Pasta | O que tem |
 |---|---|
 | `docs/` | O site. É a pasta publicada pelo GitHub Pages: o que entra na `main` vai ao ar em poucos minutos. |
+| `docs/locales/` | Os textos do site, um JSON por idioma e por parte do site. O inglês (`en/`) é a fonte. Veja o [doc 08](specs/08-Internationalisation.md). |
 | `specs/` | A fonte de verdade do projeto: requisitos, arquitetura, telas, fluxos, banco, plano e design system. |
 | `supabase/email-templates/` | Os e-mails de confirmação e de nova senha, para colar no painel do Supabase. |
 | `tests/` | Os testes automáticos (`npm test`). |
-| `tools/` | Servidor local (`npm start`) e as ferramentas do `?v=`. |
+| `tools/` | Servidor local (`npm start`), as ferramentas do `?v=`, dos partials e das traduções. |
 | `.github/` | O GitHub Actions, que confere cada Pull Request. |
 | `_original-Backup/` | O arquivo original do Claude Design, antes da reestruturação. Só consulta. |
 
@@ -48,14 +49,16 @@ Quem tem Python também pode usar `python -m http.server 8000 --directory docs`,
 | `npm run bump` | Troca o `?v=` em todos os arquivos pela data de hoje. Use depois de mudar CSS ou JS. Segunda mudança no mesmo dia: `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã) |
 | `npm run partials` | Copia `docs/partials/header.html` e `footer.html` para as 12 páginas. Use depois de mudar um dos dois |
 | `npm run check:partials` | Confere se todas as páginas têm o cabeçalho e o rodapé atuais |
-| `npm run check` | Lint, testes, versões e partials juntos, igual ao GitHub Actions em cada Pull Request |
+| `npm run i18n` | Copia os textos de `docs/locales/en/` para o HTML e a lista de idiomas para o `js/i18n-boot.js`. Use depois de mudar um texto ou uma chave |
+| `npm run check:i18n` | Confere as traduções: textos faltando ou sem uso, números e links diferentes do inglês, texto na página sem chave. Mostra quanto cada idioma tem traduzido |
+| `npm run check` | Lint, testes, versões, partials e traduções juntos, igual ao GitHub Actions em cada Pull Request |
 
 ## Trabalhar em equipe
 
 1. Atualize a sua cópia antes de começar: `git pull`.
 2. Crie um branch para cada mudança: `git switch -c nome-da-mudanca`.
 3. Faça a mudança, confira no navegador e atualize os documentos de `specs/` afetados (regra 1 abaixo).
-   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Mudou algum arquivo `.css` ou `.js`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
+   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Escreveu ou mudou um texto? Ele vai primeiro em inglês em `docs/locales/en/`, depois nos outros idiomas, e você roda `npm run i18n` (passo a passo no [doc 08](specs/08-Internationalisation.md), seção 7). Mudou algum arquivo `.css`, `.js` ou de `locales/`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
 4. Envie o branch (`git push -u origin nome-da-mudanca`) e abra um Pull Request no GitHub.
 5. Outra pessoa revisa, e o Pull Request entra na `main`. Só então a mudança vai para o site.
 
@@ -72,6 +75,7 @@ Nunca coloque senhas ou chaves secretas no repositório. A única chave que pode
 | 05 | [Backend Schema](specs/05-Backend-Schema.md) | Supabase: tabelas, segurança, auth, e-mails, IDs das etapas | Antes de mexer no banco, no login ou na lista de etapas |
 | 06 | [Implementation Plan](specs/06-Implementation-Plan.md) | O que já foi feito, o que falta e em que ordem | No início de cada sessão de trabalho |
 | 07 | [Design System](specs/07-Design-System.md) | Cores, tipografia, espaçamentos, componentes | Antes de criar ou mudar qualquer componente visual |
+| 08 | [Internacionalização](specs/08-Internationalisation.md) | Idiomas, arquivos de tradução, como adicionar textos e idiomas, glossário | Antes de escrever ou mudar qualquer texto do site |
 
 Também em `specs/`:
 - [AUDITORIA.md](specs/AUDITORIA.md): auditoria de 23/09/2026 e os itens ainda em aberto.
@@ -84,4 +88,5 @@ Também em `specs/`:
 3. **Nada entra no site sem passar pelo PRD.** Ideia nova que não está no PRD vai primeiro para "Questões em aberto" ou "Fora de escopo".
 4. **Os IDs das etapas são permanentes** (veja o Backend Schema). Mudar a ordem das etapas dentro de uma fase apaga o progresso salvo dos usuários.
 5. **Textos seguem o guia de tom de voz** do UI/UX Design: inglês britânico e irlandês, sem travessões, sem clichês.
-6. **Cada documento tem "Última revisão"** no topo. Atualize a data quando mudar o conteúdo.
+6. **Todo texto novo nasce em `docs/locales/en/`** e é traduzido nos idiomas completos antes de entrar na `main`. Nada de frase escrita direto no HTML ou no JavaScript: o `npm run check:i18n` recusa.
+7. **Cada documento tem "Última revisão"** no topo. Atualize a data quando mudar o conteúdo.

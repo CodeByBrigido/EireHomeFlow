@@ -1,6 +1,6 @@
 # Design System
 
-Produto: ÉireHome Flow · Versão do documento: 1.4 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
 
 Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os tokens e componentes e quando usar cada um. Toda cor nova precisa virar token em `:root` e passar no teste de contraste (seção 2.3).
 
@@ -36,12 +36,12 @@ Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os toke
 | `--line` | `#efe2d1` | Borda de cartões |
 | `--line-2` | `#e4d8c8` | Borda de botões secundários e campos |
 | `--hover` | `#f7efe3` | Fundo no hover de botões secundários |
-| `--peach` | `#fdf2e4` | Dicas ("Worth knowing"), veredito negativo, mini cartão de streak |
+| `--peach` | `#fdf2e4` | Dicas ("Worth knowing"), dicas da calculadora (`.hint`), veredito negativo |
 | `--mint` | `#e8f1ec` | Veredito positivo, mini cartão de XP |
 | `--error` | `#b42318` | Borda, mensagem e requisitos pendentes de campo inválido (6,6:1 no branco) |
 | `--error-bg` | `#fdf0ee` | Fundo de campo inválido |
 
-Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó atual), `#e0d2be` (sombra do nó bloqueado), `#c98f3e` (sombra do botão dourado), `#ffd79a` ("★ N XP" no cabeçalho), `#8a5420` / `#6b4a22` / `#8a5a2a` (textos sobre `--peach`), `#cfe2d7` / `#f0dcc0` (bordas do veredito; `#cfe2d7` também na borda e nas linhas da caixa `.mine`), `#fdfaf4` (itens da checklist), `#c3b39c` / `#ddcdb6` (selo final tracejado).
+Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó atual), `#e0d2be` (sombra do nó bloqueado), `#c98f3e` (sombra do botão dourado), `#8a5420` / `#6b4a22` / `#8a5a2a` (textos sobre `--peach`), `#cfe2d7` / `#f0dcc0` (bordas do veredito; `#cfe2d7` também na borda e nas linhas da caixa `.mine`), `#fdfaf4` (itens da checklist), `#c3b39c` / `#ddcdb6` (selo final tracejado).
 
 ### 2.2 Combinações aprovadas
 
@@ -84,7 +84,7 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 
 Ênfase no hero: `<em>` em itálico e verde (`--ink`).
 
-**Alinhamento do texto corrido:** todo parágrafo, item de lista e legenda (`p`, `li`, `figcaption`, e `.phase-card__text`) é **justificado** (`text-align: justify`) com `hyphens: auto`. É o justificado simples: a última linha fica à esquerda (nada de `text-align-last: justify`), então um texto de uma linha só não muda. Títulos, botões, rótulos e textos centralizados de propósito (ex.: `.auth-card__switch`, `.path__label`) têm alinhamento próprio na classe, que vence a regra geral. **Textos curtos no topo de um cartão centralizado ficam centralizados:** nas páginas de conta, o eyebrow "Your account", o título, a introdução, a nota que substitui o formulário e os botões dela (`text-wrap: balance`, para duas linhas terem tamanhos parecidos).
+**Alinhamento do texto corrido:** todo parágrafo, item de lista e legenda (`p`, `li`, `figcaption`, e `.phase-card__text`) é **justificado** (`text-align: justify`) com `hyphens: auto`. É o justificado simples: a última linha fica à esquerda (nada de `text-align-last: justify`), então um texto de uma linha só não muda. Títulos, botões, rótulos e textos centralizados de propósito (ex.: `.auth-card__switch`, `.path__label`) têm alinhamento próprio na classe, que vence a regra geral. Títulos escritos como `<p>` (`.next-up__title`, `.breakdown-card__title`, `.verdict__title`, `.legal-help__title`, `.dash-account__name`, `.mine__title`) ficam à esquerda e sem hífen: em idiomas com palavras longas eles quebram em duas linhas, e justificados abririam espaços grandes. **Textos curtos no topo de um cartão centralizado ficam centralizados:** nas páginas de conta, o eyebrow "Your account", o título, a introdução, a nota que substitui o formulário e os botões dela (`text-wrap: balance`, para duas linhas terem tamanhos parecidos).
 
 ## 4. Espaço, forma e profundidade
 
@@ -110,8 +110,12 @@ Com `prefers-reduced-motion: reduce`, as animações e transições acima são d
 | Nome | Regra | Efeito principal |
 |---|---|---|
 | Tablet | `max-width: 960px` | Grades viram 1 coluna (fases em 2); painel da etapa em tela cheia |
-| Celular | `max-width: 720px` | Margens de 16px; tipografia com `clamp()`; streak e XP ocultos no topo; cabeçalho em 2 linhas (marca e `.site-header__account` em cima, links embaixo); onda da trilha a 45% |
+| Tablet estreito | `max-width: 880px` | Cabeçalho em 2 linhas: marca, idioma e conta em cima; links embaixo, com o XP à direita |
+| Celular | `max-width: 720px` | Margens de 16px; tipografia com `clamp()`; cabeçalho em 2 linhas (marca e `.site-header__account` em cima, links embaixo); onda da trilha a 45% |
 | Celular estreito | `max-width: 480px` | Campos da calculadora e caixas de resultado em 1 coluna |
+| Celular muito estreito | `max-width: 400px` e `350px` | Botão de idioma só com o globo; abaixo de 350px, marca com 18px e espaços menores no cabeçalho |
+
+O cabeçalho precisa caber assim em **todos os idiomas**: ao mudar um rótulo do menu ou "Sign in" numa tradução, confira em 320px, 400px, 768px e 900px.
 
 ## 7. Componentes
 
@@ -140,7 +144,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 
 ### 7.3 Jornada
 - **Nó** `.node`: círculo de 64px (44px no modo compacto), com os estados `.is-current`, `.is-done`, `.is-locked` e `.is-open` (ver UI/UX seção 4.3).
-- **Balão** `.callout` ("Optional") e `.callout--start` ("Start here").
+- **Balão** `.callout` ("Optional") e `.callout--start` ("Start here"). No modo compacto (etapa aberta) fica menor (11px, padding 4px 10px), mas continua visível.
 - **Cabeçalho de fase** `.phase__head` com selo `.phase__badge` (branco com borda; `.is-active` verde; `.is-done` terracota).
 - **Selo final** `.finish__badge` (tracejado; `.is-done` terracota).
 - **Anel** `.ring`: SVG de 84px, trilho `--sand-2`, preenchimento `--ink`, traço 11.
@@ -177,6 +181,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - **Círculo de iniciais** `.avatar`: 40px, dourado (`--gold`), texto `--text` 14px negrito, borda creme; `aria-expanded` indica o menu aberto.
 - **Separador** `.auth-divider`: texto 13px `--faint` entre duas linhas `--line-2` ("or use your email").
 - **Menu da conta** `.menu`: cartão branco, raio 18px, sombra suave, 240px de largura mínima, abaixo do círculo e alinhado à direita (no celular, largura da tela menos 16px de cada lado). Cabeçalho `.menu__who` (nome em negrito, e-mail em `--faint`) e itens `.menu__item` (hover `--hover`; "Sign out" com `.menu__item--danger` em `--error`).
+- **Menu de idiomas** `.lang`: botão `.lang__button` (pílula de 36px, borda creme translúcida como o `.btn-signin`, globo `.lang__icon` de 18px em traço creme e código `.lang__code` 13px negrito; hover e aberto com fundo creme a 12%). Abre um `.menu.lang__menu` (260px) com rótulo `.menu__label` ("Language") e opções `.lang__option`: selo `.lang__badge` (código em areia; no atual, verde com texto creme), nome `.lang__name` 14px negrito na própria língua e, embaixo, `.lang__here` 12px `--faint` com o nome no idioma da página; a opção atual tem fundo `--mint` e ✓ verde. Enquanto troca, `.lang__list[aria-busy]` fica a 60%. No celular, largura da tela como o menu da conta. Altura máxima: a tela menos 96px (no celular, menos 124px, porque o cabeçalho tem 2 linhas); em telas baixas, a lista rola dentro do menu com barra fina.
 - **Aviso** `.toast`: fixo no rodapé da tela, centralizado, até 560px, raio 18px. Sucesso: fundo `--mint`, ícone ✓ verde. Erro (`.is-error`): fundo `--error-bg`, ícone ! vermelho. Ação opcional `.toast__action` (pílula verde) e fechar `.toast__close` (×).
 - **Cartão de conta** `.auth-card`: branco, até 440px, raio 26px, centralizado na página; título 30px; nota `.auth-card__note` em areia; links `.auth-card__switch` centralizados.
 - **Aviso de página logada** `.gate`: cartão com texto `--brown` e botões "Sign in" / "Create an account".
@@ -192,7 +197,8 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 
 ### 7.8 Páginas legais
 - Grade `.legal-layout` com colunas em porcentagem (`68% 28%`, `justify-content: space-between`); uma coluna abaixo de 960px.
-- Conteúdo em `.legal`: parágrafos e itens justificados pela regra geral do texto corrido (seção 3); data em `.legal__updated` (14px, `--faint`), resumo em `.legal__summary` (fundo `--sand`, raio 18px).
+- Conteúdo em `.legal`: parágrafos e itens justificados pela regra geral do texto corrido (seção 3); data em `.legal__updated` (14px, `--faint`), resumo em `.legal__summary` (fundo `--sand`, raio 18px). Texto integral em `.legal__body` (`lang="en-IE"`).
+- Aviso de idioma `.legal__notice`: cartão branco com borda `--line` de 2px, raio 14px, texto 15px negrito `--brown`, logo abaixo do resumo. Só aparece quando a página não está em inglês (`html[lang|="en"] .legal__notice { display: none }`).
 - Barra lateral `.legal-aside` (fixa a 90px do topo no desktop): índice `.legal-toc` (cartão branco com borda; links 14px `--muted`, seção atual com fundo `--sand` e texto `--ink`) e cartão `.legal-help` (fundo `--ink`, link de e-mail creme sublinhado, botão dourado `.legal-help__link`).
 - `h2` 24px e `h3` 18px em negrito; parágrafos e listas 16px com altura de linha 1.65 em `--body`.
 - Links do rodapé em `.site-footer__links` (sublinhados, `--faint`).
@@ -216,7 +222,7 @@ Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_s
 
 ## 8. Ícones e símbolos
 
-★ etapa obrigatória disponível · ◆ opcional / marcador de checklist · ✓ feita · 🔒 bloqueada · 🔑 selo final · ⏱ tempo · € custo · ← → navegação · ○ requisito pendente · + / × acordeão fechado / aberto. Ícones decorativos ao lado de texto ficam `aria-hidden`.
+🌐 (globo desenhado em SVG no botão de idioma) · ★ etapa obrigatória disponível · ◆ opcional / marcador de checklist · ✓ feita · 🔒 bloqueada · 🔑 selo final · ⏱ tempo · € custo · ← → navegação · ○ requisito pendente · + / × acordeão fechado / aberto. Ícones decorativos ao lado de texto ficam `aria-hidden`.
 
 ## 9. E-mails
 
@@ -235,3 +241,5 @@ Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_s
 | Testar contraste antes de usar uma cor nova | Reduzir opacidade de texto para "suavizar" |
 | Um único botão principal por área | Dois botões verdes lado a lado |
 | Ícone acompanhado de texto ou rótulo acessível | Ícone sozinho como única informação |
+| Idioma pelo nome na própria língua e pelo código | Bandeira de país para representar idioma |
+| Deixar espaço para textos até 40% mais longos que o inglês | Largura fixa ajustada ao texto em inglês |

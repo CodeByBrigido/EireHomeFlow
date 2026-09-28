@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Anmelden | ÉireHome Flow",
+    "title": "Anmelden",
+    "intro": "Melden Sie sich an, um Ihren gespeicherten Weg zu sehen.",
+    "submit": "Anmelden",
+    "forgot": "Passwort vergessen?",
+    "newHere": "Neu hier?",
+    "createAccount": "Konto erstellen"
+  },
+  "signup": {
+    "meta": "Ihr Konto erstellen | ÉireHome Flow",
+    "title": "Ihr Konto erstellen",
+    "intro": "Speichern Sie Ihren Weg und machen Sie auf jedem Gerät weiter.",
+    "terms": "Mit dem Erstellen eines Kontos stimmen Sie unseren <a href=\"terms.html\">Nutzungsbedingungen</a> zu und bestätigen, dass Sie unsere <a href=\"privacy.html\">Datenschutzerklärung</a> gelesen haben.",
+    "submit": "Konto erstellen",
+    "haveAccount": "Sie haben schon ein Konto?",
+    "signIn": "Anmelden",
+    "checkInbox": "Sehen Sie in Ihrem Posteingang nach und klicken Sie auf den Link, den wir geschickt haben, um Ihr Konto zu bestätigen."
+  },
+  "forgot": {
+    "meta": "Passwort zurücksetzen | ÉireHome Flow",
+    "title": "Passwort zurücksetzen",
+    "intro": "Geben Sie Ihre E-Mail ein, und wir schicken Ihnen einen Link, um ein neues Passwort zu wählen.",
+    "submit": "Link senden",
+    "remembered": "Doch wieder eingefallen?",
+    "signIn": "Anmelden",
+    "sent": "Wenn es zu dieser E-Mail ein Konto gibt, ist ein Link zum Zurücksetzen unterwegs. Sehen Sie in Ihrem Posteingang nach."
+  },
+  "newPassword": {
+    "meta": "Neues Passwort wählen | ÉireHome Flow",
+    "title": "Neues Passwort wählen",
+    "intro": "Geben Sie ein neues Passwort für Ihr Konto ein.",
+    "newLink": "Neuen Link schicken",
+    "signIn": "Anmelden",
+    "submit": "Neues Passwort speichern",
+    "changed": "Ihr Passwort wurde geändert."
+  },
+  "google": {
+    "continue": "Weiter mit Google",
+    "divider": "oder mit Ihrer E-Mail",
+    "terms": "Wenn Sie mit Google fortfahren, stimmen Sie unseren <a href=\"terms.html\">Nutzungsbedingungen</a> zu und bestätigen, dass Sie unsere <a href=\"privacy.html\">Datenschutzerklärung</a> gelesen haben.",
+    "opening": "Google wird geöffnet...",
+    "off": "Die Anmeldung mit Google ist noch nicht freigeschaltet. Nutzen Sie vorerst Ihre E-Mail.",
+    "failed": "Google konnte nicht geöffnet werden. Bitte versuchen Sie es erneut."
+  },
+  "password": {
+    "length": "Mindestens 8 Zeichen",
+    "upper": "Ein Großbuchstabe",
+    "special": "Ein Sonderzeichen, zum Beispiel ! # $ oder ?"
+  },
+  "goToDashboard": "Zu meiner Übersicht",
+  "privacyNote": "Ihr Konto speichert Ihren Namen, Ihre E-Mail und die erledigten Schritte, auf Servern in Irland. Mit Google speichert es auch den Link zum Profilbild, den Google schickt, den wir aber nicht nutzen. Die Zahlen im Rechner bleiben in Ihrem Browser. <a href=\"privacy.html\">Unsere Datenschutzerklärung lesen</a>.",
+  "note": {
+    "checking": "Ihr Link wird geprüft...",
+    "signedIn": "Sie sind als {email} angemeldet.",
+    "needLink": "Um ein neues Passwort zu wählen, öffnen Sie den Link in Ihrer E-Mail erneut oder melden Sie sich zuerst an."
+  }
+}

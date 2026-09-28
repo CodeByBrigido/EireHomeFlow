@@ -1,6 +1,6 @@
 # TRD: Technical Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.8 · Última revisão: 28/09/2026
 
 ## 1. Arquitetura
 
@@ -8,13 +8,16 @@ Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/
  Navegador do usuário
  ┌──────────────────────────────────────────────────────────────┐
  │ 12 páginas .html (uma por lugar do site)                      │
- │   cada uma: <body data-page="...">                            │
+ │   cada uma: <body data-page>, <html data-i18n-ns>             │
+ │   js/i18n-boot.js (1º no <head>: idioma e textos)             │
+ │   textos: locales/<idioma>/<ns>.json (inglês = fonte)         │
  │   cabeçalho e rodapé já no HTML (copiados de partials/)       │
  │   css/styles.css                                              │
  │   js/pages/<pg>.js (módulo ES) → js/core/*.js → js/lib/*.js   │
  │   js/config.js (chaves do Supabase, lido por core/account.js) │
  │   conteúdo das etapas: guide.html (lido por fetch + DOMParser)│
  │   localStorage "eirehome-flow" · sessionStorage "eirehome-flash"│
+ │   localStorage "eirehome-locale", "eirehome-i18n:*"           │
  └──────────────┬─────────────────────────────┬─────────────────┘
                 │ HTTPS (estático)             │ HTTPS (API)
       ┌─────────▼────────┐          ┌─────────▼────────────────────┐
@@ -28,6 +31,7 @@ Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/
 - **Uma página por lugar.** Todo clique que leva a outro lugar abre um `.html` próprio. Painéis dentro de uma página (a etapa aberta na jornada) ganham endereço com `#`.
 - **Sem build, sem framework.** HTML, CSS e JavaScript puros, em módulos ES (`<script type="module">`), carregados direto pelo navegador.
 - **Sem servidor próprio.** A lógica roda no navegador; o Supabase cuida de login e do progresso na nuvem.
+- **Vários idiomas, sem framework.** Os textos ficam em JSON por idioma e por parte do site; um script clássico no `<head>` escolhe o idioma e traduz a página enquanto ela é lida. Arquitetura completa, convenção e glossário: `specs/08-Internationalisation.md`.
 
 ## 2. Estrutura de arquivos
 
@@ -42,21 +46,25 @@ EireHomeFlow/
 │   ├── profile.html               ← perfil (nome, e-mail, senha, sair)
 │   ├── signin.html · signup.html · forgot-password.html · new-password.html
 │   ├── privacy.html · terms.html   ← Privacy Policy e Terms of Use
-│   ├── partials/header.html       ← marca, navegação, "★ N XP", Sign in / círculo e menu da conta
+│   ├── partials/header.html       ← marca, navegação, menu de idiomas, Sign in / círculo e menu da conta
 │   ├── partials/footer.html       ← rodapé, links legais e caixa de avisos (toast)
+│   ├── locales/<idioma>/<ns>.json ← textos do site: en (fonte), pt, es, fr, de, it, pl, ro, lt
 │   │                                 (fonte única: npm run partials copia os dois para as 12 páginas)
 │   ├── css/styles.css
 │   ├── js/config.js               ← SUPABASE_URL e SUPABASE_ANON_KEY (chave publicável)
+│   ├── js/i18n-boot.js            ← runtime de tradução: script clássico, primeiro no <head>
 │   ├── js/lib/                    ← lógica pura, sem DOM, testada no Node (tests/)
 │   │   ├── calculator.js          ← regras e fórmulas, calc(), verdictKind(), RANGES
 │   │   ├── progress.js            ← progress(steps, done), XP_PER_STEP
 │   │   ├── validation.js          ← senha, e-mail, nome, safeNext()
 │   │   ├── people.js              ← userName, firstName, initials
-│   │   └── format.js              ← num, euro, esc
+│   │   ├── locales.js             ← lista de idiomas (status complete/draft) e de namespaces
+│   │   └── format.js              ← num, esc, formatMoney/Number/Percent/Date (Intl), euro
 │   ├── js/core/                   ← partes do navegador compartilhadas (ver seção 4)
 │   │   ├── app.js                 ← startPage(): carregamento, cliques, eventos da conta
 │   │   ├── state.js · steps.js · sync.js · account.js
-│   │   └── header.js · notices.js · forms.js · dom.js
+│   │   ├── header.js · notices.js · forms.js · dom.js
+│   │   └── i18n.js · language.js  ← t(), money(), date()...; menu de idiomas
 │   ├── js/pages/<página>.js       ← um módulo por página (home, guide, journey, calculator,
 │   │                                 dashboard, profile, auth, legal)
 │   ├── img/hero-600.webp · hero-900.webp · hero-1200.webp  ← capa em WebP (srcset)
@@ -69,8 +77,9 @@ EireHomeFlow/
 ├── _original-Backup/              ← bundle original do Claude Design
 ├── tests/                         ← testes automáticos (npm test)
 ├── tools/                         ← serve.js (npm start), bump-version.js, check-versions.js, versions.js,
-│                                     partials.js e stamp-partials.js (npm run partials)
-├── .github/workflows/checks.yml   ← lint, testes, versões e partials em cada Pull Request (Node 22)
+│                                     partials.js e stamp-partials.js (npm run partials),
+│                                     i18n.js, i18n-project.js, stamp-i18n.js (npm run i18n) e check-i18n.js
+├── .github/workflows/checks.yml   ← lint, testes, versões, partials e traduções em cada Pull Request (Node 22)
 ├── package.json · eslint.config.js · .editorconfig
 ├── README.md  ·  .gitignore  ·  .gitattributes (LF para todos)
 ```
@@ -79,12 +88,13 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 
 ## 3. Ciclo de carregamento
 
-1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. O "★ N XP" fica invisível (ocupando o seu espaço) até o primeiro `render()`: o cabeçalho traz `data-pending`, e `renderHeader` o remove. Logo que os módulos rodam, antes de a lista de etapas chegar, `init()` desenha o cabeçalho: o XP sai das etapas marcadas neste navegador, e "Sign in" ou o círculo da conta sai da sessão que o Supabase salvou neste navegador no último login (`Account.shown()`). Só quem chega por um link de e-mail (`#access_token`, `type=`, `error_code`) espera o Supabase, com os dois invisíveis (`data-auth-pending`). Assim nem "Sign in" pisca para quem está logado, nem o círculo aparece atrasado.
+0. No `<head>`, antes do CSS, `js/i18n-boot.js` escolhe o idioma (`?lang=`, escolha salva, idioma do navegador, inglês), marca `<html lang>` e `data-locale` e carrega os namespaces de `data-i18n-ns` (da cópia no `localStorage` na hora, ou por `fetch`). Com a cópia, um `MutationObserver` traduz cada elemento assim que o HTML é lido, antes do primeiro desenho; sem ela, a página fica escondida até os textos chegarem (no máximo 3 s). Detalhes: `specs/08-Internationalisation.md`, seção 4.
+1. O HTML da página chega com o seu conteúdo estático, já com cabeçalho, rodapé e caixa de avisos (copiados de `partials/` por `npm run partials`). Por isso nada pula quando a página abre. Logo que os módulos rodam, antes de a lista de etapas chegar, `init()` desenha o cabeçalho: o link ativo, e "Sign in" ou o círculo da conta, que sai da sessão que o Supabase salvou neste navegador no último login (`Account.shown()`). Só quem chega por um link de e-mail (`#access_token`, `type=`, `error_code`) espera o Supabase, com os dois invisíveis (`data-auth-pending`). Assim nem "Sign in" pisca para quem está logado, nem o círculo aparece atrasado.
    Na troca de página, `@view-transition { navigation: auto; }` faz a página nova aparecer num fade de 0,15 s (Chrome, Edge, Safari 18.2+; nos outros, troca como antes), e o cabeçalho, com `view-transition-name: site-header`, fica parado. Desligado com `prefers-reduced-motion: reduce`.
 2. Os módulos rodam depois que o HTML é lido (módulos ES são adiados por padrão). O módulo da página chama `startPage()` de `core/app.js`.
 3. `init()` em `core/app.js`:
    1. `loadSaved()` restaura progresso e calculadora do `localStorage`;
-   2. `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch` e lido com `DOMParser`; no próprio `guide.html`, usa o documento atual);
+   2. `ready()` (textos do idioma) e `loadSteps()`, lado a lado. `loadSteps()` monta `PHASES` e `steps` a partir de `guide.html` (buscado com `fetch`, lido com `DOMParser` e traduzido com `translate(doc)`; no próprio `guide.html`, usa o documento atual, já traduzido). O menu de idiomas é montado aqui;
    3. `init` da página, se existir;
    4. `render()` (cabeçalho e `render(p)` da página);
    5. mostra o aviso guardado na página anterior (`sessionStorage`) e, se o endereço trouxer erro de link de e-mail, o aviso vermelho;
@@ -100,14 +110,16 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 | Etapas | `core/steps.js` | `loadSteps` (texto, checklist, dica, tempo, custo, tipo, `auto`, `numbers`, passo a passo, links externos e ilustração com alt de cada etapa), `PHASES` e `steps` (preenchidos depois do carregamento), `currentProgress()`, `stepLink`, `calculatorStep`, `phaseCardsHtml` (Home e Dashboard) |
 | Progresso | `lib/progress.js` | `progress(steps, done)` e `XP_PER_STEP` |
 | Nuvem | `core/sync.js` | `setDone` (também grava na conta e devolve a promessa), `syncOnSignIn` (soma o progresso local com o da conta) |
-| Cálculo | `lib/calculator.js` | `calc(s)`, `verdictKind(c)` (`"within"`, `"cashShort"`, `"loanOver"`, `"outOfReach"`), `homeVat`, `stampBase`, `stampDuty`, `stampBands`, `htbCap`, `htbLimit`, `htbFor`, `highestPrice`, as constantes da seção 6 e `RANGES` |
+| Cálculo | `lib/calculator.js` | `calc(s)`, `verdictKind(c)` (`"within"`, `"cashShort"`, `"loanOver"`, `"outOfReach"`), `homeVat`, `stampBase`, `stampDuty`, `stampBandCount` (1, 2 ou 3 faixas; a página escreve o rótulo), `htbCap`, `htbLimit`, `htbFor`, `highestPrice`, as constantes da seção 6 e `RANGES`. Nada de texto: a página traduz os códigos |
 | Conta | `core/account.js` | objeto `Account` (Supabase) |
-| Cabeçalho e área logada | `core/header.js` | `renderHeader` (link ativo, XP, "Sign in" ou círculo), `renderGate`, `setMenu` |
+| Cabeçalho e área logada | `core/header.js` | `renderHeaderEarly` (link ativo, "Sign in" ou círculo com iniciais, sem textos traduzidos, antes de os textos chegarem), `renderHeader` (o resto), `renderGate`, `setMenu` |
+| Idiomas | `core/i18n.js` + `js/i18n-boot.js` + `lib/locales.js` | `t(key, params)` (valores, plural por `count`, reserva em inglês), `ready()`, `locale()`, `tag()`, `money()`, `number()`, `percent()`, `date()`, `translate(root)`, `setLocale(code)` |
+| Menu de idiomas | `core/language.js` | `renderLanguages` (idiomas completos no próprio nome), `setLanguageMenu`, `chooseLanguage` |
 | Avisos | `core/notices.js` | `showToast(msg, { error, action, sticky })`, `hideToast`, `flash`, `showFlash` |
-| Formulários | `core/forms.js` + `lib/validation.js` | `formValues`, `checkForm`, `watchForm`, `renderPasswordRules`, `sayInForm`; regras `PASSWORD_RULES`, `EMAIL_PATTERN`, `isFullName` |
-| Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange` |
+| Formulários | `core/forms.js` + `lib/validation.js` | `formValues`, `checkForm`, `watchForm`, `renderPasswordRules`, `sayInForm`, `errorText` (erros do Supabase por código, no idioma da página), `readerError`; regras `PASSWORD_RULES`, `EMAIL_PATTERN`, `isFullName` |
+| Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `languageMenu`, `setLocale`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange` |
 | Nomes | `lib/people.js` | `userName`, `firstName`, `initials` ("Rodrigo Andrade Brigido" vira "RB") |
-| Utilitários | `lib/format.js` + `core/dom.js` | `num`, `euro`, `esc`; `PAGE`, `bind` |
+| Utilitários | `lib/format.js` + `core/dom.js` | `num`, `esc`, `formatMoney`, `formatNumber`, `formatPercent`, `formatDate`, `euro` (inglês da Irlanda); `PAGE`, `bind` |
 | Segurança | `lib/format.js`, `lib/validation.js` | `esc()` em todo texto que vai para `innerHTML`; `safeNext()` aceita só `nome-de-pagina.html` com `#ancora` opcional |
 
 Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p)` e `actions` (as ações de `data-action` só daquela página). `lib/` nunca importa de `core/`: por isso roda no Node.
@@ -126,6 +138,12 @@ Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p
 | `data-fields="name email ..."` num `<form>` | Campos a validar |
 | `data-password="new\|current"` num `<form>` | Senha nova (regras de força) ou atual (só não vazia) |
 | `data-keep-next` num link | Mantém o `?next=` ao trocar entre sign-in e sign-up |
+| `<html data-i18n-ns="common ...">` | Namespaces de texto que a página usa (`common` sempre) |
+| `data-i18n="ns:chave"` | Texto do elemento vem da chave (o elemento não pode ter outros elementos dentro). O inglês é copiado do JSON por `npm run i18n` |
+| `data-i18n-html="ns:chave"` | Idem, com links e negrito permitidos (`a`, `br`, `em`, `strong`, `span`) |
+| `data-i18n-aria-label`, `-alt`, `-placeholder`, `-title`, `-content` | Traduz o atributo |
+| `translate="no"` | Nome que não se traduz (a marca, o XP) |
+| `data-i18n-source-only` | Texto mantido em inglês de propósito (texto integral das páginas legais), com `lang="en-IE"` |
 | `data-auto="calculator\|account"` num `.guide-step` | O site marca a etapa sozinho: ao salvar a calculadora na jornada, ou ao entrar na conta. A etapa não tem botão "Complete step" |
 | `data-numbers="calculator\|deposit\|costs\|htb"` num `.guide-step` | Quais números da calculadora a jornada mostra nessa etapa (caixa "Your numbers") |
 | `.guide-step__howto-label` + `ol.guide-step__howto` | Passo a passo numerado da etapa (ex.: "How to apply" no Help to Buy) |
@@ -136,6 +154,7 @@ Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p
 - `journey.html#step-<id>` abre a etapa; `journey.html#phase-<slug>` rola até a fase. Abrir ou fechar uma etapa atualiza o endereço com `history.replaceState`.
 - `guide.html#step-<id>` e `guide.html#guide-<slug>` são âncoras do guia.
 - Páginas de conta aceitam `?next=`, validado por `safeNext`. Padrão: `dashboard.html`.
+- Qualquer página aceita `?lang=<código>` (en, pt, es, fr, de, it, pl, ro, lt, e qualquer idioma em rascunho): abre a página nesse idioma, nesta aba, sem mudar a escolha salva.
 - Links dos e-mails voltam sempre para a Home (`Account.homeUrl()`, a pasta do site), então as Redirect URLs do Supabase só precisam do endereço base.
 
 ## 6. Especificação da calculadora
@@ -232,6 +251,7 @@ Veredito (4 estados):
 - A chave em `config.js` é a **publishable/anon key**, feita para ficar pública. A proteção vem do Row Level Security (ver Backend Schema). **Nunca** colocar a chave `service_role`/`secret` no site.
 - `esc()` escapa `& < > "` em tudo que vai para `innerHTML`; textos simples usam `textContent`.
 - `?next=` só aceita nomes de página do próprio site, o que evita redirecionamento para fora.
+- Traduções com HTML passam por uma lista de tags e atributos permitidos; links só para páginas do site, `mailto:` e `https:`. `?lang=` só aceita códigos da lista de idiomas.
 - Sem cookies próprios e sem rastreadores. Requisições externas: jsDelivr (biblioteca) e Supabase.
 - O GitHub Pages não permite cabeçalhos HTTP próprios; uma CSP por `<meta>` é possível no futuro.
 - `@supabase/supabase-js@2` fixada na versão principal.
@@ -244,6 +264,7 @@ Recursos que exigem navegador atual: `:focus-visible`, `:where()`, `clamp()`, `d
 
 - A capa só carrega na Home, em WebP com `srcset`: o navegador escolhe 600px (55 KB), 900px (110 KB) ou 1200px (179 KB) conforme a tela; antes era um JPEG único de 298 KB. As 31 ilustrações das etapas são SVG (73,8 KB no total, ~2,4 KB cada), mais leves que WebP para desenhos chapados e nítidas em qualquer tela. As fontes são locais com `unicode-range` (o navegador baixa só o subconjunto latin, ~56 KB).
 - Páginas que não são o guia buscam `guide.html` (~38 KB) para montar a lista de etapas; o navegador guarda em cache entre páginas.
+- Traduções: cada página baixa só os namespaces que usa, do idioma dela e do inglês (reserva). Depois do carregamento, o resto do mesmo idioma é copiado para o `localStorage` (o maior arquivo, `guide.json`, tem ~40 KB). A versão dos textos vai no endereço de cada JSON, então um texto novo é baixado assim que publicado.
 - Sem minificação; para esse tamanho, não compensa um processo de build.
 - O GitHub Pages usa cache de 10 minutos, então um visitante pode receber uma página nova com um script antigo (ou o contrário). Três defesas:
   1. **Versão nos endereços:** as páginas carregam `css/styles.css?v=AAAAMMDD` e `js/pages/<página>.js?v=AAAAMMDD`, e todo `import` entre módulos também leva `?v=AAAAMMDD`. **Ao mudar qualquer CSS ou JS, rode `npm run bump`**, que troca o número em todos os arquivos de `docs/` pela data de hoje. Numa segunda mudança no mesmo dia, use `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã). O `npm run check:versions` (também no GitHub Actions) falha se sobrar um número diferente ou um arquivo sem versão: um `import` sem `?v=` criaria uma segunda cópia do módulo, com estado separado.
@@ -262,7 +283,7 @@ Qualquer novo endereço base (produção, domínio próprio) precisa entrar em *
 
 ## 12. Testes
 
-Testes automáticos: `npm test` roda `tests/*.test.js` no Node, sem navegador: calculadora (os valores da seção 12.1), progresso, validação, formatação e as ferramentas de versão. `npm run check` roda lint, testes e versões, igual ao GitHub Actions. O roteiro manual abaixo continua valendo para o que depende do navegador.
+Testes automáticos: `npm test` roda `tests/*.test.js` no Node, sem navegador: calculadora (os valores da seção 12.1), progresso, validação, formatação por idioma, o runtime de tradução, o validador de traduções e as ferramentas de versão. `npm run check` roda lint, testes, versões, partials e traduções, igual ao GitHub Actions. O roteiro manual abaixo continua valendo para o que depende do navegador.
 
 ### 12.1 Calculadora (valores de referência)
 
@@ -288,6 +309,8 @@ Imposto de um imóvel novo de €400.000: €3,524.23 numa casa (o exemplo da pr
 
 Os números desta tabela estão em `tests/calculator.test.js`. Ao mudar uma regra, atualize a tabela e o teste no mesmo trabalho.
 
+Em outro idioma, os números são os mesmos, só com o formato local: o padrão dá €209,851 em inglês, € 209.851 em português, 209.851 € em alemão e 209 851 € em francês. Os textos citados acima são os do inglês.
+
 ### 12.2 Páginas e navegação
 - As 12 páginas abrem sem erro no console, cada uma com seu título e com o link certo marcado no topo.
 - O botão Voltar do navegador leva à página anterior.
@@ -309,7 +332,15 @@ Os números desta tabela estão em `tests/calculator.test.js`. Ao mudar uma regr
 - Outro navegador com a mesma conta: o progresso aparece.
 - "Sign out" no Perfil: volta à Home com "You have signed out..." e sem progresso local.
 
-### 12.4 Layout e acessibilidade
+### 12.4 Idiomas
+- Primeira visita (sem escolha salva): o site abre no idioma do navegador, se estiver completo; senão, em inglês. Nada é gravado em `eirehome-locale`.
+- Menu de idiomas: abre pelo teclado e fecha com Esc e com clique fora; no celular abre na largura da tela; em 320×480 os 9 idiomas cabem rolando dentro do menu; escolher um idioma recarrega a página nele, e ele continua nas páginas seguintes.
+- `?lang=pt` abre em português só nesta aba; a escolha salva continua a mesma. Um idioma em rascunho aberto com `?lang=` mostra o que já foi traduzido e o resto em inglês, e não aparece no menu.
+- Em cada idioma completo: nenhuma frase em inglês fora das páginas legais e dos nomes oficiais; a calculadora dá os valores da seção 12.1; mensagens de validação, avisos e erros no idioma.
+- Cabeçalho em 2 linhas até 880px e em 1 linha acima disso, em todos os idiomas, sem rolagem horizontal.
+- Páginas legais: fora do inglês, o aviso "texto integral só em inglês" aparece; em inglês, não.
+
+### 12.5 Layout e acessibilidade
 - Sem rolagem horizontal em 320, 375, 768, 1024 e 1440 px em todas as páginas.
 - Navegação completa só com teclado.
 - Com "reduzir movimento" ligado, o ticker fica parado e o nó atual não pula.

@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Panou | ÉireHome Flow",
+    "eyebrow": "Panoul tău",
+    "title": "Panoul tău",
+    "intro": "Unde ești pe drumul spre chei și ce cifre stau în spate.",
+    "progress": "Progres",
+    "phase": "Etapa curentă",
+    "earned": "Câștigat",
+    "xpNote": "XP, 25 pentru fiecare pas terminat.",
+    "nextUp": "Urmează",
+    "openStep": "Deschide acest pas",
+    "phases": "Etapele tale",
+    "numbers": "Cifrele tale",
+    "maxLoan": "Credit maxim",
+    "funds": "Fonduri disponibile",
+    "openCalculator": "Deschide calculatorul",
+    "account": "Contul tău",
+    "synced": "Progresul tău e salvat în cont.",
+    "profile": "Profilul meu",
+    "hello": "Bună, {name}",
+    "helloNoName": "Bună",
+    "allDone": "Toți pașii sunt făcuți. E timpul pentru o ceașcă de ceai.",
+    "notSaved": "Încă nesalvat",
+    "numbersSaved": "Prețul maxim al locuinței, pe baza cifrelor din calculator.",
+    "numbersHint": "Completează calculatorul și alege Salvează în drumul meu ca să-ți vezi cifrele aici. Ele rămân în acest browser.",
+    "useCalculator": "Folosește calculatorul",
+    "memberSince": "Cont creat pe {date}"
+  },
+  "profile": {
+    "meta": "Profilul meu | ÉireHome Flow",
+    "title": "Profilul meu",
+    "intro": "Datele tale și cum funcționează contul.",
+    "details": "Datele tale",
+    "memberSince": "Cont creat pe",
+    "save": "Salvează modificările",
+    "saving": "Se salvează...",
+    "updated": "Profilul tău a fost actualizat.",
+    "password": {
+      "title": "Parolă",
+      "text": "Folosește cel puțin 8 caractere, cu o literă mare și un caracter special.",
+      "change": "Schimbă parola"
+    },
+    "data": {
+      "title": "Datele tale",
+      "text": "Contul tău păstrează numele, e-mailul și pașii terminați, pe servere din Irlanda. Cu Google, păstrează și linkul la poza de profil trimis de Google, pe care nu îl folosim. Cifrele pe care le introduci în calculator rămân în browserul tău. <a href=\"privacy.html\">Citește Politica noastră de confidențialitate</a>."
+    },
+    "signOut": {
+      "title": "Deconectare",
+      "text": "Progresul tău rămâne salvat în cont pentru data viitoare."
+    },
+    "delete": {
+      "title": "Șterge-ți contul",
+      "text": "Asta îți șterge contul și progresul salvat în el, imediat. Nu se poate anula. Cifrele din calculator din acest browser nu fac parte din cont și rămân aici.",
+      "start": "Șterge contul meu",
+      "question": "Ștergi contul <strong data-bind=\"userEmail\"></strong> și tot progresul salvat? Poți crea mai târziu un cont nou, dar acesta nu mai poate fi recuperat.",
+      "confirm": "Da, șterge contul meu",
+      "cancel": "Anulează",
+      "deleting": "Se șterge...",
+      "done": "Contul tău și progresul salvat au fost șterse.",
+      "failed": "Contul tău nu a putut fi șters. Încearcă din nou.",
+      "signInAgain": "Conectează-te din nou ca să-ți ștergi contul.",
+      "notEnabled": "Ștergerea conturilor de pe site nu e încă activă. Scrie la eirehomeflow@gmail.com și îl ștergem noi pentru tine.",
+      "note": "Nu te mai poți conecta? Scrie la <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> de pe adresa contului și îl ștergem noi pentru tine."
+    }
+  }
+}
