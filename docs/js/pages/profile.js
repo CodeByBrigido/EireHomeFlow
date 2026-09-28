@@ -1,17 +1,17 @@
 // My profile: change the name on the account, see the email, change password, sign out,
 // delete the account.
-import { userName } from "../lib/people.js?v=20260928";
-import { Account } from "../core/account.js?v=20260928";
-import { startPage } from "../core/app.js?v=20260928";
-import { bind } from "../core/dom.js?v=20260928";
-import { checkForm, sayInForm, watchForm } from "../core/forms.js?v=20260928";
-import { renderGate } from "../core/header.js?v=20260928";
-import { flash, showToast } from "../core/notices.js?v=20260928";
-import { setState } from "../core/state.js?v=20260928";
+import { userName } from "../lib/people.js?v=20260929";
+import { Account } from "../core/account.js?v=20260929";
+import { startPage } from "../core/app.js?v=20260929";
+import { bind } from "../core/dom.js?v=20260929";
+import { checkForm, errorText, readerError, sayInForm, watchForm } from "../core/forms.js?v=20260929";
+import { renderGate } from "../core/header.js?v=20260929";
+import { date, t } from "../core/i18n.js?v=20260929";
+import { flash, showToast } from "../core/notices.js?v=20260929";
+import { setState } from "../core/state.js?v=20260929";
 
 let profileFilled = false;
 let deleting = false;
-const DELETE_LABEL = "Yes, delete my account";
 
 // The confirmation opens in place of the "Delete my account" button.
 function showDeleteConfirm(open) {
@@ -26,20 +26,21 @@ async function deleteAccount(btn) {
   const status = document.getElementById("delete-status");
   deleting = true;
   btn.disabled = true;
-  btn.textContent = "Deleting...";
+  btn.textContent = t("account:profile.delete.deleting");
   status.textContent = "";
   try {
     await Account.whenReady;
-    if (!Account.user) throw new Error("Sign in again to delete your account.");
+    if (!Account.user) throw readerError("account:profile.delete.signInAgain");
     await Account.deleteAccount();
     setState({ done: {}, open: null });
-    flash("Your account and its saved progress have been deleted.");
+    flash(t("account:profile.delete.done"));
     location.href = "index.html";
   } catch (err) {
     deleting = false;
     btn.disabled = false;
-    btn.textContent = DELETE_LABEL;
-    status.textContent = err.message || "Your account could not be deleted. Please try again.";
+    btn.textContent = t("account:profile.delete.confirm");
+    status.textContent = err.code === "delete_not_enabled" ? t("account:profile.delete.notEnabled")
+      : err.forReader ? err.message : t("account:profile.delete.failed");
   }
 }
 
@@ -49,15 +50,15 @@ function initPage() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!checkForm(form)) return sayInForm(form, "");
-    sayInForm(form, "Saving...");
+    sayInForm(form, t("account:profile.saving"));
     try {
       await Account.whenReady;
       const res = await Account.updateProfile(form.elements.name.value.trim().replace(/\s+/g, " "));
       if (res.error) throw res.error;
       sayInForm(form, "");
-      showToast("Your profile has been updated.");
+      showToast(t("account:profile.updated"));
     } catch (err) {
-      sayInForm(form, err.message || "Something went wrong. Please try again.");
+      sayInForm(form, errorText(err));
     }
   });
 }
@@ -69,7 +70,7 @@ function renderPage() {
     document.getElementById("profile-form").elements.name.value = userName(user);
     profileFilled = true;
   }
-  bind("memberSince", new Date(user.created_at).toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" }));
+  bind("memberSince", date(user.created_at));
 }
 
 startPage({

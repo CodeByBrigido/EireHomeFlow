@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Tableau de bord | ÉireHome Flow",
+    "eyebrow": "Votre tableau de bord",
+    "title": "Votre tableau de bord",
+    "intro": "Où vous en êtes sur la route des clés, et les chiffres derrière.",
+    "progress": "Progression",
+    "phase": "Phase en cours",
+    "earned": "Gagné",
+    "xpNote": "XP, 25 pour chaque étape terminée.",
+    "nextUp": "À suivre",
+    "openStep": "Ouvrir cette étape",
+    "phases": "Vos phases",
+    "numbers": "Vos chiffres",
+    "maxLoan": "Prêt maximum",
+    "funds": "Fonds disponibles",
+    "openCalculator": "Ouvrir le simulateur",
+    "account": "Votre compte",
+    "synced": "Votre progression est enregistrée dans votre compte.",
+    "profile": "Mon profil",
+    "hello": "Bonjour, {name}",
+    "helloNoName": "Bonjour",
+    "allDone": "Toutes les étapes sont faites. C'est l'heure du café.",
+    "notSaved": "Pas encore enregistré",
+    "numbersSaved": "Prix maximum du logement, d'après les chiffres de votre simulateur.",
+    "numbersHint": "Remplissez le simulateur et choisissez Enregistrer dans mon parcours pour voir vos chiffres ici. Ils restent dans ce navigateur.",
+    "useCalculator": "Utiliser le simulateur",
+    "memberSince": "Membre depuis le {date}"
+  },
+  "profile": {
+    "meta": "Mon profil | ÉireHome Flow",
+    "title": "Mon profil",
+    "intro": "Vos informations et le fonctionnement de votre compte.",
+    "details": "Vos informations",
+    "memberSince": "Membre depuis",
+    "save": "Enregistrer les modifications",
+    "saving": "Enregistrement...",
+    "updated": "Votre profil a été mis à jour.",
+    "password": {
+      "title": "Mot de passe",
+      "text": "Utilisez au moins 8 caractères, avec une majuscule et un caractère spécial.",
+      "change": "Changer le mot de passe"
+    },
+    "data": {
+      "title": "Vos données",
+      "text": "Votre compte enregistre votre nom, votre e-mail et les étapes terminées, sur des serveurs en Irlande. Avec Google, il garde aussi le lien de photo de profil envoyé par Google, que nous n'utilisons pas. Les chiffres saisis dans le simulateur restent dans votre navigateur. <a href=\"privacy.html\">Lire notre Politique de confidentialité</a>."
+    },
+    "signOut": {
+      "title": "Se déconnecter",
+      "text": "Votre progression reste enregistrée dans votre compte pour la prochaine fois."
+    },
+    "delete": {
+      "title": "Supprimer votre compte",
+      "text": "Cela supprime votre compte et la progression qui y est enregistrée, immédiatement. C'est irréversible. Les chiffres du simulateur dans ce navigateur ne font pas partie de votre compte et restent ici.",
+      "start": "Supprimer mon compte",
+      "question": "Supprimer le compte <strong data-bind=\"userEmail\"></strong> et toute sa progression enregistrée ? Vous pourrez créer un nouveau compte plus tard, mais celui-ci ne pourra pas être récupéré.",
+      "confirm": "Oui, supprimer mon compte",
+      "cancel": "Annuler",
+      "deleting": "Suppression...",
+      "done": "Votre compte et sa progression enregistrée ont été supprimés.",
+      "failed": "Impossible de supprimer votre compte. Réessayez.",
+      "signInAgain": "Reconnectez-vous pour supprimer votre compte.",
+      "notEnabled": "La suppression de compte depuis le site n'est pas encore activée. Écrivez à eirehomeflow@gmail.com et nous le supprimerons pour vous.",
+      "note": "Vous ne pouvez plus vous connecter ? Écrivez à <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> depuis l'adresse du compte et nous le supprimerons pour vous."
+    }
+  }
+}

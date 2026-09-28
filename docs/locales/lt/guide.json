@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Visas gidas | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Visas gidas",
+    "title": "Kiekvienas žingsnis išsamiai",
+    "intro": "Šeši etapai ir trisdešimt vienas žingsnis, nuo pirmųjų santaupų iki pirmos sofos. Atidarykite etapą, kad jį perskaitytumėte. Kai būsite pasiruošę, sekite savo pažangą skiltyje <a href=\"journey.html\">Mano kelias</a>."
+  },
+  "kind": {
+    "blocking": "Privalomas žingsnis",
+    "optional": "Neprivalomas žingsnis"
+  },
+  "tipLabel": "Verta žinoti:",
+  "openCalculator": "Atidaryti skaičiuoklę",
+  "openInJourney": "Atidaryti skiltyje Mano kelias",
+  "phases": {
+    "preparation": {
+      "title": "Pasiruošimas",
+      "subtitle": "Finansų tvarkymas",
+      "text": "Perkamoji galia, pradinio įnašo tikslas ir šeši mėnesiai tvarkingų išrašų."
+    },
+    "aip": {
+      "title": "Išankstinis banko pritarimas (AIP)",
+      "subtitle": "Įrodymas, kad bankas Jus parems",
+      "text": "Dokumentai, bankas ar tarpininkas ir raštas, kurio prašo agentai."
+    },
+    "search": {
+      "title": "Paieška ir pasiūlymai",
+      "subtitle": "Daft.ie ir MyHome.ie",
+      "text": "Apžiūros, agentų kalba ir pasiūlymai iki Sale Agreed."
+    },
+    "legal": {
+      "title": "Teisiniai reikalai ir sutartys",
+      "subtitle": "Teisininkas, apžiūra ir vertinimas",
+      "text": "Sutartys, apžiūra, vertinimas ir privalomas draudimas."
+    },
+    "keys": {
+      "title": "Raktai rankose",
+      "subtitle": "Paskolos išmokėjimas ir sandorio diena",
+      "text": "Paskolos pasiūlymas, išmokėjimas, sandorio diena ir persikraustymas."
+    },
+    "settling": {
+      "title": "Įsikūrimas",
+      "subtitle": "Grindys, užuolaidos ir katilas",
+      "text": "Namų įrengimas ir priežiūra."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Apskaičiuoti mano perkamąją galią",
+      "time": "15 minučių",
+      "cost": "Nemokamai",
+      "body": "Viskas kita remiasi šiuo skaičiumi. Airijos centrinis bankas leidžia pirmą būstą perkantiems pasiskolinti iki keturių kartų didesnę sumą nei metinės bendrosios pajamos, o keičiantiems būstą iki 3,5 karto didesnę. Tada Jūsų santaupos lemia, kokį pradinį įnašą ir mokesčius galite padengti.",
+      "checklist": [
+        "Atidarykite skaičiuoklę ir įveskite atlyginimą, santaupas ir tikslinę kainą",
+        "Jei teikiate bendrą paraišką, sudėkite abu bendruosius atlyginimus",
+        "Pasirinkite Išsaugoti mano kelyje: šis žingsnis pažymimas automatiškai, o kiti žingsniai rodo Jūsų skaičius"
+      ],
+      "tip": "Automobilio paskolos ir įmokos credit union mažina sumą, kurią pasiūlys bankai, nes jie tikrina kiekvieną mėnesinį įsipareigojimą.",
+      "alt": "Žalia skaičiuoklė su euro ženklu ekrane, šalia mažo namo ir krūvelės auksinių monetų"
+    },
+    "preparation-1": {
+      "title": "Užsitikrinti 10 % pradinį įnašą",
+      "time": "Nuolat",
+      "cost": "10 % kainos",
+      "body": "Jums reikia bent 10 % pirkimo kainos, nesvarbu, ar tai Jūsų pirmas būstas, ar ne. Pradinis įnašas yra atskirai nuo toliau nurodytų mokesčių.",
+      "checklist": [
+        "Nustatykite periodinį pavedimą kitai dienai po atlyginimo",
+        "Laikykite pradinį įnašą atskiroje sąskaitoje, kurios niekada neliečiate",
+        "Dokumentais patvirtinta šeimos dovana tinka, bet bankas pareikalaus rašto, kad tai ne paskola"
+      ],
+      "tip": "Šeši mėnesiai reguliaraus taupymo maždaug būsimos įmokos dydžiu yra stipriausias argumentas Jūsų byloje.",
+      "alt": "Terakotos spalvos kiaulytė taupyklė, į kurios plyšį krenta auksinė moneta, su apvalia auksine etikete su procento ženklu"
+    },
+    "preparation-2": {
+      "title": "Atsidėti pinigų papildomoms išlaidoms",
+      "time": "Nuolat",
+      "cost": "Žyminis mokestis + apie 3 050 €",
+      "body": "Žyminis mokestis (stamp duty), teisininkas, apžiūra ir vertinimas apmokami Jūsų pačių pinigais, o ne iš paskolos. Mano kelias parodo Jūsų sumas, kai išsaugote skaičiuoklę.",
+      "checklist": [
+        "Žyminis mokestis: 1 % kainos iki 1 mln. €, 2 % nuo 1 mln. € iki 1,5 mln. € ir 6 % už viršijančią dalį",
+        "Perkant naują būstą žyminis mokestis skaičiuojamas nuo kainos be PVM: 13,5 % namui, 9 % butui",
+        "Teisininkas: 2 000-3 000 € plius PVM ir papildomos išlaidos",
+        "Techninė apžiūra apie 400 €, banko vertinimas apie 150 €"
+      ],
+      "tip": "Numatykite dar 1 500-2 000 € persikraustymui, spynoms ir pirmosioms komunalinių paslaugų sąskaitoms.",
+      "alt": "Atviras auksinis vokas, iš kurio kyšo žali banknotai, šalia dviejų mažų popierinių kvitų"
+    },
+    "preparation-3": {
+      "title": "Šešis mėnesius palaikyti tvarkingą banko sąskaitą",
+      "time": "6 mėnesiai",
+      "cost": "Nemokamai",
+      "body": "Banko analitikai eilutė po eilutės peržiūri šešių mėnesių išrašus, kad įvertintų, kaip tvarkote pinigus.",
+      "checklist": [
+        "Jokių lažybų internetu, visai",
+        "Jokių neleistinų pereikvojimų ar grąžintų tiesioginio debeto mokėjimų",
+        "Nuoma kiekvieną mėnesį sumokama laiku iš tos pačios sąskaitos"
+      ],
+      "tip": "Revolut ir credit union sąskaitos taip pat skaičiuojamos. Bankas paprašys ir jų išrašų.",
+      "alt": "Banko išrašas su žalia varnele prie kiekvienos eilutės, šalia kabančio kalendoriaus su šešiais žaliai nuspalvintais langeliais"
+    },
+    "preparation-4": {
+      "title": "Patikrinti, ar Jums priklauso Help to Buy",
+      "time": "2 savaitės",
+      "cost": "Grąžinama iki 30 000 €",
+      "body": "Help to Buy grąžina pajamų mokestį ir DIRT, kuriuos sumokėjote Airijoje per pastaruosius ketverius metus, iki 30 000 € arba 10 % kainos, priklausomai nuo to, kuri suma mažesnė. Ji skirta perkantiems pirmą būstą, naujos statybos arba statomą patiems, ir galioja iki 2029 m. pabaigos. First Home Scheme yra atskira bendros nuosavybės (shared equity) galimybė, kurią taip pat verta paskaičiuoti.",
+      "checklist": [
+        "Niekada nepirkote ir nestatėte būsto nei Airijoje, nei užsienyje",
+        "Būstas yra naujos statybos arba statomas pačių ir kainuoja 500 000 € ar mažiau",
+        "Jūsų paskola sudaro bent 70 % kainos ir yra iš tinkamo banko",
+        "Penkerius metus gyvensite jame kaip pagrindiniame būste"
+      ],
+      "howtoLabel": "Kaip pateikti paraišką",
+      "howto": [
+        "Užsiregistruokite Revenue sistemoje myAccount, jei gaunate atlyginimą per PAYE, arba ROS, jei dirbate savarankiškai. Revenue paštu atsiunčia kodą registracijai užbaigti, tad skirkite tam kelias dienas.",
+        "Už kiekvienus iš pastarųjų ketverių metų, kuriuos norite įskaičiuoti, pateikite pajamų mokesčio deklaraciją (Income Tax Return) ir gaukite Statement of Liability. Sumokėkite visus už tuos metus dar nesumokėtus mokesčius.",
+        "Sistemoje myAccount, skiltyje Property and Land Services, atidarykite Help to Buy ir užpildykite paraišką. Sistemoje ROS pradiniame ekrane naudokite nuorodą Help to Buy applicant.",
+        "Revenue suteikia paraiškos numerį, prieigos kodą ir didžiausią sumą, kurios galėtumėte prašyti. Bankas paprašys juos parodyti.",
+        "Kai turėsite paskolos pasiūlymą ir pasirašysite sutartį, grįžkite į Help to Buy ir pateikite išmokos prašymą, įkeldami paskolos pasiūlymą, pasirašytą sutikimą ir sutartį.",
+        "Perduokite prašymo nuorodos numerį ir prieigos kodą vystytojui, kuris patvirtina prašymą. Tada Revenue sumoka grąžinamą sumą vystytojui kaip Jūsų pradinio įnašo dalį."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: prieš teikiant paraišką",
+        "Revenue: kaip pateikti paraišką"
+      ],
+      "tip": "Paraiška turi galiojimo datą, tad pateikite išmokos prašymą, kol ji nepasibaigė. Statotės patys? Išmokos prašote po pirmojo paskolos išmokėjimo: vietoj sutarties įkeliate išmokėjimo patvirtinimą ir banko vertinimą, o prašymą patvirtina Jūsų teisininkas.",
+      "alt": "Žalias namas su atvira medine stogo konstrukcija ir bokštiniu kranu fone, šalia auksinės monetos lenktoje žalioje rodyklėje"
+    },
+    "preparation-5": {
+      "title": "Susikurti ÉireHome Flow paskyrą",
+      "time": "2 minutės",
+      "cost": "Nemokamai",
+      "body": "Paskyra išsaugo Jūsų kelią, todėl galite tęsti telefone, nešiojamajame kompiuteryje ar bet kuriame kitame įrenginyje. Ji nemokama, o šis žingsnis pažymimas automatiškai, kai tik prisijungiate.",
+      "checklist": [
+        "Pasirinkite Sukurti paskyrą ir įveskite vardą, el. paštą bei slaptažodį",
+        "Patvirtinkite el. pašto adresą nuoroda, kurią atsiųsime",
+        "Prisijunkite bet kuriame kitame įrenginyje, kad matytumėte tą pačią pažangą"
+      ],
+      "tip": "Paskyroje saugomas Jūsų vardas, el. paštas ir atlikti žingsniai. Skaičiai, kuriuos įvedate į skaičiuoklę, lieka Jūsų naršyklėje.",
+      "alt": "Nešiojamasis kompiuteris ir telefonas su ta pačia profilio piktograma, o tarp jų mažas debesėlis ir dvi sinchronizavimo rodyklės"
+    },
+    "aip-0": {
+      "title": "Pasirinkti banką tiesiogiai arba tarpininką",
+      "time": "1 savaitė",
+      "cost": "Tarpininkas Jums paprastai nemokamas",
+      "body": "Kredito tarpininkas (broker) viena paraiška palygina visą rinką. Kreipdamiesi tiesiai į banką galite gauti tik to banko cashback pasiūlymą.",
+      "checklist": [
+        "Paklauskite tarpininko, su kuriais bankais jis dirba",
+        "Palyginkite cashback su palūkanų norma. Cashback išmokamas vieną kartą, o palūkanų norma taikoma visą laikotarpį",
+        "Prieš teikdami paraišką patikrinkite, kaip bankas vertina Jūsų darbo sutarties tipą"
+      ],
+      "tip": "Bankai labiausiai skiriasi vertindami terminuotų sutarčių ar bandomojo laikotarpio pajamas, ir būtent čia tarpininkas atsiperka.",
+      "alt": "Kelrodis su viena rodykle į kairę, link žalio banko su kolonomis, ir kita į dešinę, link portfelio"
+    },
+    "aip-1": {
+      "title": "Surinkti šešių mėnesių banko išrašus",
+      "time": "2-3 dienos",
+      "cost": "Nemokamai",
+      "body": "Visų einamųjų, taupomųjų ir Revolut sąskaitų išrašai, pilni, be trūkstamų puslapių.",
+      "checklist": [
+        "Atsisiųskite PDF failus tiesiai iš banko, ne ekrano nuotraukas",
+        "Kiekvieną failą pavadinkite pagal sąskaitą ir mėnesį",
+        "Pasiruoškite paaiškinti kiekvieną didesnę nei apie 500 € įmoką"
+      ],
+      "tip": "Vienas trūkstamas puslapis yra dažniausia priežastis, kodėl paraiška užstringa.",
+      "alt": "Vėduoklės forma išdėstyta šešių dokumentų lapų krūvelė su žalia sąvaržėle, šalia didinamojo stiklo"
+    },
+    "aip-2": {
+      "title": "Surinkti algalapius ir Employment Detail Summary",
+      "time": "1 savaitė",
+      "cost": "Nemokamai",
+      "body": "Paprastai trys naujausi algalapiai, Jūsų EDS iš Revenue ir darbdavio pasirašyta pažyma apie atlyginimą.",
+      "checklist": [
+        "Trys naujausi algalapiai",
+        "Employment Detail Summary iš myAccount",
+        "Pažyma apie atlyginimą, patvirtinanti sutarties tipą ir galimas premijas"
+      ],
+      "tip": "Dirbantiems savarankiškai vietoj to reikia dvejų metų patvirtintų finansinių ataskaitų ir pažymos, kad neturite mokestinių skolų (tax clearance).",
+      "alt": "Atviras aplankas su trimis algalapiais, priekinis pažymėtas euro ženklu ir žaliu antspaudu su varnele"
+    },
+    "aip-3": {
+      "title": "Įrodyti nuomą ir santaupas",
+      "time": "Nuolat",
+      "cost": "Nemokamai",
+      "body": "Nuoma kartu su reguliariomis santaupomis įrodo, kad be dabartinių išlaidų išgalėsite mokėti ir paskolos įmoką.",
+      "checklist": [
+        "Nuoma mokama periodiniu pavedimu, matoma išrašuose",
+        "Taupymo įprotis, kurio nepertraukėte",
+        "Trumpas rašytinis kiekvienos pertraukos paaiškinimas"
+      ],
+      "tip": "Nuoma ir santaupos kartu turėtų maždaug atitikti būsimą paskolos įmoką, nes analitikai šias sumas lygina.",
+      "alt": "Svarstyklės, kuriose mažas namas rūdžių spalvos stogu atsveria stiklainį auksinių monetų"
+    },
+    "aip-4": {
+      "title": "Gauti AIP raštą",
+      "time": "1-3 savaitės",
+      "cost": "Nemokamai",
+      "body": "Išankstinis banko pritarimas nurodo, kiek bankas paskolins, jei vertinimas ir galutiniai patikrinimai bus sėkmingi. Paprastai jis galioja šešis mėnesius.",
+      "checklist": [
+        "Patikrinkite sumą, laikotarpį ir galiojimo datą",
+        "Išsaugokite PDF telefone apžiūroms",
+        "Įrašykite galiojimo datą į kalendorių, nes pratęsimui reikia naujų išrašų"
+      ],
+      "tip": "Nė vienas nekilnojamojo turto agentas Airijoje be jo rimtai nevertins pasiūlymo.",
+      "alt": "Atviras vokas, iš kurio kyla laiškas su apvaliu žaliu antspaudu ir varnele"
+    },
+    "search-0": {
+      "title": "Išsirinkti rajoną ir patikrinti pardavimo kainas",
+      "time": "1 savaitė",
+      "cost": "Nemokamai",
+      "body": "Prašomą kainą nustato pardavėjas. Residential Property Price Register rodo, už kiek būstai iš tikrųjų parduoti.",
+      "checklist": [
+        "Lyginkite prašomą kainą su registru, gatvė po gatvės",
+        "Patikrinkite kelionę į darbą tuo metu, kai iš tikrųjų važiuotumėte",
+        "Atkreipkite dėmesį į energinio naudingumo sertifikatą (BER). Perėjimas iš C į B gali kainuoti 15 000 € renovacijai"
+      ],
+      "tip": "Nustatykite pranešimus Daft ir MyHome savo rajonui ir kainų intervalui, nes geri būstai dingsta per kelias dienas.",
+      "alt": "Sulankstytas gatvių žemėlapis su keliu ir žaliais parkais, ant viršaus didelis vietos žymeklis ir maža kainos etiketė su euro ženklu"
+    },
+    "search-1": {
+      "title": "Išmokti Airijos būsto terminus",
+      "time": "1 vakaras",
+      "cost": "Nemokamai",
+      "body": "Šis procesas turi savo žodyną, ir agentai manys, kad jį žinote.",
+      "checklist": [
+        "Sale Agreed nėra įpareigojantis. Kol nepasirašytos sutartys, kitas pirkėjas vis dar gali Jus aplenkti (gazumping)",
+        "Privatus pardavimas (private treaty) ir viešasis aukcionas (public auction) visiškai pakeičia taisykles",
+        "Rezervacijos įnašas (booking deposit) grąžinamas, o sutarties įnašas ne"
+      ],
+      "tip": "BER įstatymu privalomas kiekviename skelbime, tad būkite atsargūs su skelbimais, kuriuose jo nėra.",
+      "alt": "Atversta knyga su teksto eilutėmis ir du virš jos plūduriuojantys kalbos debesėliai, vienas su taškais, kitas su linijomis"
+    },
+    "search-2": {
+      "title": "Užsisakyti apžiūras",
+      "time": "2-8 savaitės",
+      "cost": "Nemokamai",
+      "body": "Prieš teikdami pasiūlymą apžiūrėkite bent penkis būstus, įskaitant du, kurie, Jūsų manymu, netinka.",
+      "checklist": [
+        "Parašykite agentui el. laišką, tada patvirtinkite telefonu",
+        "Nufotografuokite drėgmės dėmes, skaitiklių dėžes ir palėpės liuką",
+        "Paklauskite, kodėl pardavėjas išsikelia ir kiek laiko būstas parduodamas"
+      ],
+      "tip": "Grįžkite antrą kartą lietingą darbo dienos vakarą. Namai atrodo kitaip, kai lyja ir gatvėje daug eismo.",
+      "alt": "Sieninis kalendorius su viena diena, pažymėta mažu nameliu, ir šalia skambantis žadintuvas"
+    },
+    "search-3": {
+      "title": "Užrašyti kiekvieną pasiūlymą",
+      "time": "1-8 savaitės",
+      "cost": "Nemokamai",
+      "body": "Pasiūlymai teikiami žodžiu ir nėra reguliuojami, tad veskite savo įrašus.",
+      "checklist": [
+        "Užsirašykite sumą, datą ir su kuo kalbėjote",
+        "Prieš pradėdami nusistatykite didžiausią sumą",
+        "Niekada neteikite pasiūlymo neturėdami AIP"
+      ],
+      "tip": "Paprašykite agento kiekvieną pasiūlymą patvirtinti el. paštu. Tai padeda apsisaugoti nuo netikrų pasiūlymų.",
+      "alt": "Atversta užrašų knygelė su spirale, įrašų sąrašu ir kylančia stulpeline diagrama, ant jos gulintis pieštukas"
+    },
+    "search-4": {
+      "title": "Pasiekti Sale Agreed",
+      "time": "1 savaitė",
+      "cost": "3 000-5 000 €, grąžinama",
+      "body": "Jūsų pasiūlymas priimtas, ir sumokate rezervacijos įnašą, paprastai 3 000-5 000 €, kad namas būtų išimtas iš rinkos.",
+      "checklist": [
+        "Gaukite raštišką rezervacijos įnašo kvitą",
+        "Perduokite agentui savo teisininko duomenis",
+        "Paprašykite greitai išduoti pranešimą apie pardavimą (sales advice notice)"
+      ],
+      "tip": "Rezervacijos įnašas visiškai grąžinamas iki sutarčių pasirašymo, tad pardavimas dar nėra galutinis.",
+      "alt": "Nekilnojamojo turto agentūros iškaba su žalia juosta ir didele varnele, priešais mažą namą"
+    },
+    "legal-0": {
+      "title": "Pasisamdyti teisininką",
+      "time": "1 savaitė",
+      "cost": "2 000-3 000 € + PVM",
+      "body": "Conveyancing yra teisinis nuosavybės perdavimas, o terminai daugiausia priklauso nuo Jūsų teisininko (solicitor) tempo.",
+      "checklist": [
+        "Paprašykite fiksuotos kainos pasiūlymo su papildomomis išlaidomis ir registrų patikromis",
+        "Paklauskite, kiek bylų kontora užbaigia per mėnesį",
+        "Perduokite pranešimą apie pardavimą, kai tik jį gausite"
+      ],
+      "tip": "Rinkitės pagal tai, kaip greitai atsako. Pigus pasiūlymas nieko nevertas, jei per rugpjūčio atostogas niekas neatsiliepia telefonu.",
+      "alt": "Auksinės svarstyklės ant medinio stalo, šalia raudona juostele surištų popierių krūvos ir auksinio antspaudo"
+    },
+    "legal-1": {
+      "title": "Užsakyti techninę apžiūrą",
+      "time": "1-2 savaitės",
+      "cost": "300-500 €",
+      "body": "Nepriklausomas inžinierius apžiūri namą ir surašo, kas su juo negerai.",
+      "checklist": [
+        "Rinkitės inžinierių iš Engineers Ireland arba SCSI registro",
+        "Paprašykite nuotraukų ir remonto sąmatos",
+        "Perkant butą perskaitykite ir administruojančios bendrovės (management company) ataskaitas"
+      ],
+      "tip": "Apžiūros išvados suteikia erdvės derybose. Stogas, kuriam reikia 6 000 € darbų, yra priežastis prieš sutartis paprašyti 6 000 € nuolaidos.",
+      "alt": "Žalias namas su didinamuoju stiklu virš sienos įtrūkimo, šalia planšetės su kontroliniu sąrašu"
+    },
+    "legal-2": {
+      "title": "Paprašyti banko vertinimo",
+      "time": "1 savaitė",
+      "cost": "Apie 150 €",
+      "body": "Bankas įvertina turtą savo užstatui, pasitelkdamas vertintoją iš savo sąrašo.",
+      "checklist": [
+        "Užsakykite per banką arba tarpininką, ne privačiai",
+        "Vertinimas nėra apžiūra. Jis skirtas apsaugoti banką",
+        "Jei vertinimas mažesnis, skirtumą padengiate grynaisiais"
+      ],
+      "tip": "Jei vertinimas mažesnis už sutartą kainą, visai įprasta derėtis iš naujo.",
+      "alt": "Žalias namas su auksine kainos etikete su euro ženklu, kabančia nuo stogo, ir bankas fone"
+    },
+    "legal-3": {
+      "title": "Įsigyti paskolos ir būsto draudimą",
+      "time": "1-2 savaitės",
+      "cost": "25-60 € per mėnesį",
+      "body": "Abu draudimai privalomi prieš išmokant paskolą, ir nė vieno nereikia pirkti iš savo banko.",
+      "checklist": [
+        "Palyginkite paskolos draudimo (mortgage protection) pasiūlymus, nes banko pasiūlymas retai būna pigiausias",
+        "Būsto draudimas turi padengti atstatymo kainą, ne pirkimo kainą",
+        "Sąžiningai nurodykite sveikatos būklę, nes negaliojantis polisas yra blogiau nei didesnė įmoka"
+      ],
+      "tip": "Draudiko vertinimas gali užtrukti kelias savaites, jei turite kokią nors ligos istoriją, tad pradėkite prieš sutartis.",
+      "alt": "Žalias skydas su balta varnele priešais mažą namą, pridengtą auksiniu skėčiu"
+    },
+    "legal-4": {
+      "title": "Pasirašyti sutartis ir sumokėti pradinį įnašą",
+      "time": "1-2 savaitės",
+      "cost": "10 % atėmus rezervacijos įnašą",
+      "body": "Pasirašote, sumokate likusią 10 % pradinio įnašo dalį, ir pardavimas tampa teisiškai įpareigojantis.",
+      "checklist": [
+        "Specialiąsias sąlygas perskaitykite kartu su teisininku",
+        "Susitarkite dėl sandorio datos, atitinkančios Jūsų nuomos įspėjimo terminą",
+        "Raštu patvirtinkite, kokie įrenginiai ir priedai įskaičiuoti"
+      ],
+      "tip": "Nuo sutarčių apsikeitimo akimirkos niekas nebegali Jūsų aplenkti (gazumping).",
+      "alt": "Pasirašytas sutarties puslapis su žaliu plunksnakočiu ant parašo, šalia krūvelės auksinių monetų"
+    },
+    "keys-0": {
+      "title": "Gauti galutinį paskolos pasiūlymą",
+      "time": "1-2 savaitės",
+      "cost": "Nemokamai",
+      "body": "Oficialus pasiūlymas pakeičia AIP ir nustato palūkanų normą, laikotarpį bei sąlygas.",
+      "checklist": [
+        "Patikrinkite palūkanų normą, laikotarpį ir cashback sąlygas",
+        "Paskutinį kartą palyginkite fiksuotą ir kintamą palūkanų normą",
+        "Pasirašykite ir grąžinkite pasiūlymą kartu su draudimo polisais"
+      ],
+      "tip": "Žaliosios palūkanų normos būstui, kurio BER yra B3 ar geresnis, per fiksuotą laikotarpį gali sutaupyti kelis tūkstančius eurų.",
+      "alt": "Pažymėjimas su žaliu procento ženkleliu ir auksiniu antspaudu su kaspinu, šalia auksinės euro monetos"
+    },
+    "keys-1": {
+      "title": "Gauti paskolos lėšas",
+      "time": "3-10 dienų",
+      "cost": "Nemokamai",
+      "body": "Jūsų teisininkas paprašo pinigų sandorio dienai, o bankas juos jam išmoka.",
+      "checklist": [
+        "Su teisininku patikslinkite tikslią sandoriui mokėtiną sumą",
+        "Savo dalį perveskite anksčiau, nes dienos pavedimų limitai daug ką nustebina",
+        "Patikrinkite pirmosios įmokos datą"
+      ],
+      "tip": "Niekada nesiųskite pinigų vien pagal el. paštu gautus banko duomenis; paskambinkite į teisininko kontorą ir juos patikrinkite.",
+      "alt": "Auksinės monetos, keliaujančios lenkta rodykle nuo mažo banko iki biurų pastato"
+    },
+    "keys-2": {
+      "title": "Užbaigti sandorį ir atsiimti raktus",
+      "time": "1 diena",
+      "cost": "Sandoriui mokėtina suma",
+      "body": "Nuosavybė perduodama, likutis sumokamas, ir agentas perduoda raktus.",
+      "checklist": [
+        "Užrašykite skaitiklių rodmenis ir juos nufotografuokite",
+        "Paimkite visus raktus, pultelius ir signalizacijos kodus",
+        "Per pirmąją savaitę pakeiskite spynas"
+      ],
+      "tip": "Prieš pervedant pinigus dar kartą apeikite namą ir įsitikinkite, kad jis yra sutartos būklės.",
+      "alt": "Trijų namo raktų ryšulys priešais žalias lauko duris su arkiniu viršlangiu"
+    },
+    "keys-3": {
+      "title": "Patikrinti defektų sąrašą",
+      "time": "1 savaitė",
+      "cost": "300-600 € už tikrintoją",
+      "body": "Ypač naujuose pastatuose: užrašykite kiekvieną defektą, kol statytojas už jį atsakingas.",
+      "checklist": [
+        "Naujam būstui pasisamdykite profesionalų defektų tikrintoją (snagger)",
+        "Nufotografuokite kiekvieną defektą nurodydami patalpą",
+        "Išsiųskite sąrašą raštu su terminu"
+      ],
+      "tip": "Laikykite sąrašą atvirą, kol kiekvienas punktas bus sutvarkytas, nes garantinis laikotarpis jau prasidėjo.",
+      "alt": "Planšetė su kontroliniu sąrašu, kuriame trys varnelės ir vienas kryželis, tarp dažų volelio ir dažymo juostos ritinio"
+    },
+    "settling-0": {
+      "title": "Perrašyti komunalines paslaugas savo vardu",
+      "time": "1 savaitė",
+      "cost": "Užstatai skiriasi",
+      "body": "Elektra, dujos, internetas ir atliekų išvežimas, viskas per pirmąją savaitę.",
+      "checklist": [
+        "Keisdami kiekvieną paslaugą pateikite pirmosios dienos skaitiklių nuotraukas",
+        "Tiekėjo pakeitimas persikraustant yra paprastas būdas sutaupyti",
+        "Susitarkite dėl atliekų išvežimo iki pirmosios išvežimo dienos"
+      ],
+      "tip": "Užregistruokite signalizaciją ir patikrinkite, ar interneto linija šviesolaidinė, prieš rinkdamiesi planą.",
+      "alt": "Didelė oranžinė lemputė centre, kairėje raudonas wifi ženklas, dešinėje žalias konteineris su ratukais"
+    },
+    "settling-1": {
+      "title": "Užsiregistruoti Local Property Tax mokesčiui",
+      "time": "1 diena",
+      "cost": "Priklauso nuo grupės",
+      "body": "Revenue reikia, kad būstas būtų užregistruotas Jūsų vardu ir priskirtas grupei pagal vertę. LPT yra metinis nekilnojamojo turto mokestis.",
+      "checklist": [
+        "Užregistruokite per myAccount, naudodami būsto identifikatorių",
+        "Patikrinkite, ar pardavėjas iš anksto nesumokėjo už metus",
+        "Pasirinkite mokėjimo būdą, kurio iš tikrųjų norite"
+      ],
+      "tip": "Jūsų teisininkas sandorio metu patvirtina, kad LPT sumokėtas, tačiau kitų metų deklaracija yra Jūsų reikalas.",
+      "alt": "Mažas žalias namas šalia formos su apvaliu antspaudu su varnele ir kalendoriaus su viena pažymėta data"
+    },
+    "settling-2": {
+      "title": "Nustatyti baldų biudžetą kiekvienam kambariui",
+      "time": "1 vakaras",
+      "cost": "3 000-10 000 €",
+      "body": "Grindys ir užuolaidos ar žaliuzės gali lengvai suryti pirmuosius 5 000 €, jei neplanuosite iš anksto.",
+      "checklist": [
+        "Surikiuokite kambarius: pirmiausia miegamasis ir virtuvė, svečių kambarys paskutinis",
+        "Grindų ir žaliuzių kainas išsiaiškinkite prieš sofas",
+        "Palikite 15 % dalykams, kuriuos pamiršite"
+      ],
+      "tip": "Naudoti masyvo baldai yra pigesni ir geresni nei nauji surenkami. Pirmiausia išmatuokite durų angas.",
+      "alt": "Keturių kambarių planas iš viršaus, kiekviename maža krūvelė auksinių monetų"
+    },
+    "settling-3": {
+      "title": "Pirma grindys, tada baldai",
+      "time": "1-2 savaitės",
+      "cost": "25-60 € už m²",
+      "body": "Kloti grindis tuščiame name pigiau ir daug greičiau.",
+      "checklist": [
+        "Išmatuokite kiekvieną kambarį ir pridėkite 10 % pjovimo atraižoms",
+        "Leiskite laminatui ar daugiasluoksnėms lentoms aklimatizuotis 48 valandas",
+        "Pagrindą ir grindjuostes užsakykite tuo pačiu užsakymu"
+      ],
+      "tip": "Jei ir dažote, pirmiausia dažykite, tada klokite grindis, o grindjuostes paskutines.",
+      "alt": "Keturių oranžinių grindų lentų krūvelė su plaktuku ant viršaus ir mažas žalias fotelis šalia"
+    },
+    "settling-4": {
+      "title": "Išmatuoti langus užuolaidoms ir žaliuzėms",
+      "time": "1 savaitgalis",
+      "cost": "60-250 € už langą",
+      "body": "Matuokite karnizą, ne stiklą, ir nuspręskite ilgį prieš užsakydami.",
+      "checklist": [
+        "Karnizo plotis plius po 15-20cm kiekvienoje pusėje",
+        "Iki palangės ar iki grindų, sprendžiama kiekvienam kambariui atskirai",
+        "Užtamsinančios užuolaidos miegamuosiuose, ypač į rytus"
+      ],
+      "tip": "Pirmiausia užsakykite vienam kambariui ir savaitę su tuo pagyvenkite, prieš darydami visą namą.",
+      "alt": "Langas su dviem užuolaidomis, surištomis ant karnizo, ir geltona matavimo juosta, ištempta palei karnizą"
+    },
+    "settling-5": {
+      "title": "Atlikti katilo priežiūrą ir patikrinti jutiklius",
+      "time": "1 diena",
+      "cost": "90-150 €",
+      "body": "Atlikite pradinę priežiūrą ir saugos patikras įrašykite į kalendorių.",
+      "checklist": [
+        "Dujų darbams kvieskite RGI registre įrašytą meistrą",
+        "Patikrinkite dūmų ir anglies monoksido (CO) jutiklius, pakeiskite senesnius nei dešimties metų",
+        "BER sertifikatą, garantijas ir instrukcijas laikykite vienoje vietoje"
+      ],
+      "tip": "Kasmetinė katilo priežiūra yra daugumos būsto draudimų sąlyga, tad saugokite kvitus.",
+      "alt": "Sieninis katilas su liepsnos simboliu, veržliaraktis ant grindų ir dūmų jutiklis ant lubų"
+    }
+  }
+}

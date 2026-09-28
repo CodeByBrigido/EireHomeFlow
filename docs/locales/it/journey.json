@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Il mio percorso | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Il tuo percorso",
+    "title": "Fino alle chiavi e alla casa sistemata"
+  },
+  "callout": {
+    "start": "Inizia qui",
+    "optional": "Facoltativo"
+  },
+  "status": {
+    "completed": "completato",
+    "locked": "bloccato",
+    "current": "passo attuale",
+    "optional": "facoltativo"
+  },
+  "node": {
+    "label": "Passo {n} di {total}: {title}"
+  },
+  "finish": {
+    "title": "Casa del tutto sistemata",
+    "note": "Si sblocca quando tutti i passi obbligatori sono spuntati.",
+    "doneTitle": "Sistemato",
+    "doneNote": "Tutti i passi fatti, pavimenti e tende compresi."
+  },
+  "next": {
+    "none": "È ora di un caffè"
+  },
+  "aside": {
+    "nextUp": "Il prossimo",
+    "openStep": "Apri questo passo",
+    "reset": "Azzera i progressi"
+  },
+  "detail": {
+    "close": "Chiudi",
+    "stepOf": "Passo {n} di {total}",
+    "checklist": "Cosa serve",
+    "howto": "Come fare",
+    "tip": "Buono a sapersi",
+    "complete": "Completa il passo +25 XP",
+    "undo": "Segna come non fatto",
+    "changeNumbers": "Cambia i miei numeri",
+    "openCalculator": "Apri il calcolatore",
+    "signUp": "Crea un account o accedi",
+    "previous": "← Precedente",
+    "next": "Successivo →"
+  },
+  "note": {
+    "calculator": "Questo passo viene spuntato per te quando scegli Salva nel mio percorso nel calcolatore.",
+    "signedInDone": "Hai effettuato l'accesso come {email}, quindi questo passo è fatto.",
+    "signedInTicking": "Hai effettuato l'accesso come {email}. Stiamo spuntando questo passo per te.",
+    "checking": "Controllo del tuo account...",
+    "signIn": "Questo passo viene spuntato per te appena accedi.",
+    "accountsOff": "Gli account non sono ancora attivi, quindi questo passo non si può completare.",
+    "locked": "Puoi già leggere questo passo. Potrai completarlo quando avrai finito «{title}»."
+  },
+  "mine": {
+    "calculator": {
+      "title": "I tuoi numeri",
+      "maxPrice": "Prezzo massimo della casa",
+      "maxLoan": "Mutuo massimo ({multiple})",
+      "funds": "Fondi disponibili",
+      "monthly": "Rata mensile per una casa da {price}"
+    },
+    "deposit": {
+      "title": "Il tuo anticipo",
+      "tenPercent": "10% di {price}",
+      "own": "Risparmi e donazione di famiglia",
+      "htb": "Help to Buy",
+      "covered": "I tuoi fondi coprono l'anticipo.",
+      "short": "Ti mancano {amount} per l'anticipo."
+    },
+    "costs": {
+      "title": "Le tue spese extra su {price}",
+      "stamp": "Imposta di bollo",
+      "solicitor": "Avvocato",
+      "survey": "Perizia strutturale",
+      "valuation": "Valutazione della banca",
+      "total": "Totale, oltre all'anticipo",
+      "newHouse": "Il calcolatore è impostato su una casa nuova, quindi l'imposta di bollo si calcola sul prezzo senza il 13,5% di IVA.",
+      "newApartment": "Il calcolatore è impostato su un appartamento nuovo, quindi l'imposta di bollo si calcola sul prezzo senza il 9% di IVA."
+    },
+    "htb": {
+      "title": "L'Help to Buy e te",
+      "mover": "Secondo il tuo calcolatore hai già avuto una casa. L'Help to Buy è solo per chi compra la prima casa, quindi puoi saltare questo passo facoltativo.",
+      "secondHand": "Il tuo calcolatore è impostato su una casa usata. L'Help to Buy copre solo case nuove e autocostruite, quindi scegli Casa nuova o Appartamento nuovo nel calcolatore se è quello che stai cercando.",
+      "overCap": "Il tuo prezzo obiettivo di {price} supera il limite di {cap}, quindi l'Help to Buy non si applicherebbe.",
+      "loanTooSmall": "L'Help to Buy richiede un mutuo di almeno il 70% del prezzo, cioè {minLoan} al tuo prezzo obiettivo. Puoi chiedere fino a {maxLoan}, quindi l'Help to Buy non si applicherebbe a questo prezzo.",
+      "borrowEnough": "Richiede anche un mutuo di almeno il 70% del prezzo ({minLoan}), quindi pianifica di chiedere quella cifra e di tenere il resto dei risparmi.",
+      "most": "Il massimo che potresti ricevere su {price}",
+      "counted": "Conteggiato nel tuo calcolatore",
+      "note": "L'importo finale dipende anche dall'imposta sul reddito e dalla DIRT pagate negli ultimi quattro anni. La tua domanda a Revenue lo indica."
+    },
+    "notSaved": "I tuoi numeri non sono ancora salvati in questo browser. Apri il calcolatore e scegli Salva nel mio percorso per vederli qui.",
+    "saveFirst": "Salva i tuoi numeri nel calcolatore (passo 1) per vedere qui i tuoi valori."
+  }
+}

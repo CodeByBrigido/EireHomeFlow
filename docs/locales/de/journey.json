@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Mein Weg | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Ihr Weg",
+    "title": "Bis zu den Schlüsseln und zum Einleben"
+  },
+  "callout": {
+    "start": "Hier starten",
+    "optional": "Optional"
+  },
+  "status": {
+    "completed": "erledigt",
+    "locked": "gesperrt",
+    "current": "aktueller Schritt",
+    "optional": "optional"
+  },
+  "node": {
+    "label": "Schritt {n} von {total}: {title}"
+  },
+  "finish": {
+    "title": "Ganz angekommen",
+    "note": "Wird freigeschaltet, wenn jeder Pflichtschritt abgehakt ist.",
+    "doneTitle": "Angekommen",
+    "doneNote": "Jeder Schritt erledigt, Böden und Vorhänge inklusive."
+  },
+  "next": {
+    "none": "Zeit für eine Tasse Tee"
+  },
+  "aside": {
+    "nextUp": "Als Nächstes",
+    "openStep": "Diesen Schritt öffnen",
+    "reset": "Fortschritt zurücksetzen"
+  },
+  "detail": {
+    "close": "Schließen",
+    "stepOf": "Schritt {n} von {total}",
+    "checklist": "Was dazugehört",
+    "howto": "So geht es",
+    "tip": "Gut zu wissen",
+    "complete": "Schritt erledigen +25 XP",
+    "undo": "Als nicht erledigt markieren",
+    "changeNumbers": "Meine Zahlen ändern",
+    "openCalculator": "Rechner öffnen",
+    "signUp": "Konto erstellen oder anmelden",
+    "previous": "← Zurück",
+    "next": "Weiter →"
+  },
+  "note": {
+    "calculator": "Dieser Schritt wird für Sie abgehakt, wenn Sie im Rechner In Mein Weg speichern wählen.",
+    "signedInDone": "Sie sind als {email} angemeldet, dieser Schritt ist also erledigt.",
+    "signedInTicking": "Sie sind als {email} angemeldet. Dieser Schritt wird gerade für Sie abgehakt.",
+    "checking": "Ihr Konto wird geprüft...",
+    "signIn": "Dieser Schritt wird abgehakt, sobald Sie sich anmelden.",
+    "accountsOff": "Konten sind noch nicht freigeschaltet, dieser Schritt kann also nicht erledigt werden.",
+    "locked": "Sie können diesen Schritt schon lesen. Erledigen können Sie ihn, sobald Sie „{title}“ abgeschlossen haben."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Ihre Zahlen",
+      "maxPrice": "Höchster Kaufpreis",
+      "maxLoan": "Höchste Hypothek ({multiple})",
+      "funds": "Verfügbare Mittel",
+      "monthly": "Monatliche Rate für eine Immobilie zu {price}"
+    },
+    "deposit": {
+      "title": "Ihre Anzahlung",
+      "tenPercent": "10 % von {price}",
+      "own": "Ersparnisse und Schenkung der Familie",
+      "htb": "Help to Buy",
+      "covered": "Ihre Mittel decken die Anzahlung.",
+      "short": "Für die Anzahlung fehlen Ihnen {amount}."
+    },
+    "costs": {
+      "title": "Ihre Nebenkosten bei {price}",
+      "stamp": "Stempelsteuer",
+      "solicitor": "Anwalt",
+      "survey": "Bautechnisches Gutachten",
+      "valuation": "Wertgutachten der Bank",
+      "total": "Summe, zusätzlich zur Anzahlung",
+      "newHouse": "Der Rechner ist auf ein neues Haus eingestellt, deshalb wird die Stempelsteuer auf den Preis ohne 13,5 % Mehrwertsteuer berechnet.",
+      "newApartment": "Der Rechner ist auf eine neue Wohnung eingestellt, deshalb wird die Stempelsteuer auf den Preis ohne 9 % Mehrwertsteuer berechnet."
+    },
+    "htb": {
+      "title": "Help to Buy und Sie",
+      "mover": "Laut Ihrem Rechner hatten Sie schon Eigentum. Help to Buy gilt nur für Erstkäufer, Sie können diesen optionalen Schritt also überspringen.",
+      "secondHand": "Ihr Rechner ist auf eine Bestandsimmobilie eingestellt. Help to Buy gilt nur für Neubauten und selbst gebaute Häuser, wählen Sie also im Rechner Neues Haus oder Neue Wohnung, wenn Sie so etwas suchen.",
+      "overCap": "Ihr Zielpreis von {price} liegt über der Grenze von {cap}, Help to Buy würde also nicht gelten.",
+      "loanTooSmall": "Help to Buy verlangt eine Hypothek von mindestens 70 % des Preises, bei Ihrem Zielpreis also {minLoan}. Sie können bis zu {maxLoan} leihen, Help to Buy würde bei diesem Preis also nicht gelten.",
+      "borrowEnough": "Es verlangt außerdem eine Hypothek von mindestens 70 % des Preises ({minLoan}), planen Sie also, so viel zu leihen und den Rest Ihrer Ersparnisse zu behalten.",
+      "most": "Höchstbetrag bei {price}",
+      "counted": "In Ihrem Rechner berücksichtigt",
+      "note": "Der endgültige Betrag hängt auch von der Einkommensteuer und der DIRT ab, die Sie in den letzten vier Jahren gezahlt haben. Ihr Antrag bei Revenue zeigt ihn."
+    },
+    "notSaved": "Ihre Zahlen sind in diesem Browser noch nicht gespeichert. Öffnen Sie den Rechner und wählen Sie In Mein Weg speichern, um sie hier zu sehen.",
+    "saveFirst": "Speichern Sie Ihre Zahlen im Rechner (Schritt 1), um hier Ihre eigenen Werte zu sehen."
+  }
+}

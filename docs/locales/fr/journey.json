@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Mon parcours | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Votre parcours",
+    "title": "Jusqu'aux clés et à l'installation"
+  },
+  "callout": {
+    "start": "Commencez ici",
+    "optional": "Facultatif"
+  },
+  "status": {
+    "completed": "terminée",
+    "locked": "verrouillée",
+    "current": "étape en cours",
+    "optional": "facultative"
+  },
+  "node": {
+    "label": "Étape {n} sur {total} : {title}"
+  },
+  "finish": {
+    "title": "Chez soi, bien installé",
+    "note": "Se débloque quand toutes les étapes obligatoires sont cochées.",
+    "doneTitle": "Bien installé",
+    "doneNote": "Toutes les étapes faites, sols et rideaux compris."
+  },
+  "next": {
+    "none": "C'est l'heure du café"
+  },
+  "aside": {
+    "nextUp": "À suivre",
+    "openStep": "Ouvrir cette étape",
+    "reset": "Réinitialiser la progression"
+  },
+  "detail": {
+    "close": "Fermer",
+    "stepOf": "Étape {n} sur {total}",
+    "checklist": "Ce qu'il faut faire",
+    "howto": "Comment faire",
+    "tip": "Bon à savoir",
+    "complete": "Terminer l'étape +25 XP",
+    "undo": "Marquer comme non faite",
+    "changeNumbers": "Modifier mes chiffres",
+    "openCalculator": "Ouvrir le simulateur",
+    "signUp": "Créer un compte ou se connecter",
+    "previous": "← Précédente",
+    "next": "Suivante →"
+  },
+  "note": {
+    "calculator": "Cette étape est cochée pour vous quand vous choisissez Enregistrer dans mon parcours dans le simulateur.",
+    "signedInDone": "Vous êtes connecté en tant que {email}, donc cette étape est faite.",
+    "signedInTicking": "Vous êtes connecté en tant que {email}. Cette étape est en train d'être cochée pour vous.",
+    "checking": "Vérification de votre compte...",
+    "signIn": "Cette étape est cochée pour vous dès que vous vous connectez.",
+    "accountsOff": "Les comptes ne sont pas encore activés, donc cette étape ne peut pas être terminée.",
+    "locked": "Vous pouvez déjà lire cette étape. Vous pourrez la terminer après « {title} »."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Vos chiffres",
+      "maxPrice": "Prix maximum du logement",
+      "maxLoan": "Prêt maximum ({multiple})",
+      "funds": "Fonds disponibles",
+      "monthly": "Mensualité pour un logement à {price}"
+    },
+    "deposit": {
+      "title": "Votre apport",
+      "tenPercent": "10 % de {price}",
+      "own": "Épargne et don familial",
+      "htb": "Help to Buy",
+      "covered": "Vos fonds couvrent l'apport.",
+      "short": "Il vous manque {amount} pour l'apport."
+    },
+    "costs": {
+      "title": "Vos frais annexes sur {price}",
+      "stamp": "Droit de timbre",
+      "solicitor": "Avocat",
+      "survey": "Expertise du bâti",
+      "valuation": "Évaluation de la banque",
+      "total": "Total, en plus de l'apport",
+      "newHouse": "Le simulateur est réglé sur une maison neuve, donc le droit de timbre est calculé sur le prix hors TVA de 13,5 %.",
+      "newApartment": "Le simulateur est réglé sur un appartement neuf, donc le droit de timbre est calculé sur le prix hors TVA de 9 %."
+    },
+    "htb": {
+      "title": "Le Help to Buy et vous",
+      "mover": "D'après votre simulateur, vous avez déjà été propriétaire. Le Help to Buy est réservé aux primo-accédants, vous pouvez donc passer cette étape facultative.",
+      "secondHand": "Votre simulateur est réglé sur un logement ancien. Le Help to Buy ne couvre que le neuf et l'autoconstruction, alors choisissez Maison neuve ou Appartement neuf dans le simulateur si c'est ce que vous visez.",
+      "overCap": "Votre prix visé de {price} dépasse la limite de {cap}, donc le Help to Buy ne s'appliquerait pas.",
+      "loanTooSmall": "Le Help to Buy exige un prêt d'au moins 70 % du prix, soit {minLoan} à votre prix visé. Vous pouvez emprunter jusqu'à {maxLoan}, donc le Help to Buy ne s'appliquerait pas à ce prix.",
+      "borrowEnough": "Il exige aussi un prêt d'au moins 70 % du prix ({minLoan}), alors prévoyez d'emprunter ce montant et de garder le reste de votre épargne.",
+      "most": "Le maximum que vous pourriez obtenir sur {price}",
+      "counted": "Compté dans votre simulateur",
+      "note": "Le montant final dépend aussi de l'impôt sur le revenu et de la DIRT payés sur les quatre dernières années. Votre demande auprès de Revenue l'indique."
+    },
+    "notSaved": "Vos chiffres ne sont pas encore enregistrés dans ce navigateur. Ouvrez le simulateur et choisissez Enregistrer dans mon parcours pour les voir ici.",
+    "saveFirst": "Enregistrez vos chiffres dans le simulateur (étape 1) pour voir ici les vôtres."
+  }
+}

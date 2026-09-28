@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common legal">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="legal:privacy.meta">Privacy Policy | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/legal.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/legal.js?v=20260929"></script>
 </head>
 <body data-page="privacy">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -41,22 +48,25 @@
   <!-- /include -->
 
   <main class="main main--wide">
-    <p class="eyebrow">Legal</p>
-    <h1 class="page-title">Privacy Policy</h1>
-    <p class="legal__updated">Last updated: 28 September 2026</p>
+    <p class="eyebrow" data-i18n="legal:eyebrow">Legal</p>
+    <h1 class="page-title" data-i18n="legal:privacy.title">Privacy Policy</h1>
+    <p class="legal__updated" data-i18n="legal:privacy.updated">Last updated: 28 September 2026</p>
     <div class="legal-layout">
     <div class="legal">
 
       <div class="legal__summary">
-        <p><strong>The short version</strong></p>
+        <p><strong data-i18n="legal:summaryTitle">The short version</strong></p>
         <ul>
-          <li>ÉireHome Flow is free. We do not show ads, use analytics or tracking, or sell your data.</li>
-          <li>You can use the guide, My journey and the calculator without an account. Your calculator figures never leave your browser.</li>
-          <li>If you create an account, we keep your name, email address and journey progress with our database provider, Supabase, on servers in Ireland. If you sign in with Google, our account system also keeps the link to your Google profile picture that Google sends. We do not show it or use it.</li>
-          <li>You can change your name and password, and delete your account, on My profile. To get a copy of your data or have it corrected, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We will reply within one month.</li>
+          <li data-i18n-html="legal:privacy.summary.0">ÉireHome Flow is free. We do not show ads, use analytics or tracking, or sell your data.</li>
+          <li data-i18n-html="legal:privacy.summary.1">You can use the guide, My journey and the calculator without an account. Your calculator figures never leave your browser.</li>
+          <li data-i18n-html="legal:privacy.summary.2">If you create an account, we keep your name, email address and journey progress with our database provider, Supabase, on servers in Ireland. If you sign in with Google, our account system also keeps the link to your Google profile picture that Google sends. We do not show it or use it.</li>
+          <li data-i18n-html="legal:privacy.summary.3">You can change your name and password, and delete your account, on My profile. To get a copy of your data or have it corrected, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We will reply within one month.</li>
         </ul>
       </div>
 
+      <p class="legal__notice" data-i18n="legal:privacy.englishOnly">The full policy below is in English only.</p>
+
+      <div class="legal__body" lang="en-IE" data-i18n-source-only>
       <h2>Who we are</h2>
       <p>ÉireHome Flow is a free, educational website for people buying their first home in Ireland. It offers a step-by-step guide, a progress tracker (My journey), a buying power calculator and optional free accounts. It is trading as ÉireHome Flow.</p>
       <p>The controller responsible for your personal data is <strong>ÉireHome Flow, Ireland</strong>.<!-- TODO: add the operator's full legal name and postal address --> You can contact us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>.</p>
@@ -68,9 +78,9 @@
       <h3>When you visit, with or without an account</h3>
       <ul>
         <li><strong>Technical data sent by your browser.</strong> No website can be delivered without your device's IP address. Your browser also sends details such as your browser type (user agent), the page requested and the time. Our hosting provider, GitHub, logs the IP address of every visitor for security. When a page loads, your browser also downloads the Supabase code library from jsDelivr, a content delivery network, so jsDelivr and its network partners receive this technical data too. We do not receive or see these logs.</li>
-        <li><strong>Data kept in your browser.</strong> Your journey progress (which steps you have ticked) and the figures you type into the calculator (such as salary, savings, gifts, property price, interest rate and term, and whether the home is new or second-hand) are saved in your browser's storage on your device, together with a note that you saved them to your journey, so My journey can show your own figures on the steps they belong to. Calculator figures are never sent to us or to anyone else. Journey progress is sent to us only if you have an account and are signed in. The section on browser storage and cookies below has the details.</li>
+        <li><strong>Data kept in your browser.</strong> Your journey progress (which steps you have ticked) and the figures you type into the calculator (such as salary, savings, gifts, property price, interest rate and term, and whether the home is new or second-hand) are saved in your browser's storage on your device, together with a note that you saved them to your journey, so My journey can show your own figures on the steps they belong to. Calculator figures are never sent to us or to anyone else. Journey progress is sent to us only if you have an account and are signed in. If you choose a language for the site, your browser keeps that choice too, with a copy of the site's text in that language. The section on browser storage and cookies below has the details.</li>
       </ul>
-      <p>Our fonts and images are served from our own site, so no font or image service is told about your visit.</p>
+      <p>Our fonts, images and translations are served from our own site, so no font, image or translation service is told about your visit. The translations are written in advance: nothing you read or type is sent to a translation service.</p>
 
       <h3>When you create an account</h3>
       <ul>
@@ -161,8 +171,11 @@
         <li><strong>eirehome-flash</strong> (sessionStorage): holds a one-time notice, such as "You have signed out", while you move from one page to the next. It is deleted as soon as the notice is shown, or when you close the tab.</li>
         <li><strong>Supabase session</strong> (localStorage, under a key that starts with sb- and ends with -auth-token): used only while you are signed in. It holds a session token that keeps you signed in as you move between pages and come back later. It is removed when you sign out.</li>
         <li><strong>eirehome-google</strong> (sessionStorage): used only when you choose to sign in with Google. It remembers, for up to 15 minutes, which page to take you to when you come back from Google. It is deleted when you come back, or when you close the tab.</li>
+        <li><strong>eirehome-locale</strong> (localStorage): the language you choose in the language menu, so the site stays in that language when you come back. It stays until you choose another language or clear your browser's data for our site. If you never choose one, the site follows the language settings of your browser and nothing is stored.</li>
+        <li><strong>eirehome-locale-preview</strong> (sessionStorage): used only when you open a link to our site that ends in ?lang= and a language code. It keeps that language for the pages you open in the same tab, without changing the language you chose. It is deleted when you close the tab.</li>
+        <li><strong>eirehome-i18n:</strong> followed by a language code and a section name (localStorage): copies of the site's text in your language, and in English as a fallback, so each page opens in your language straight away. They hold no personal data. A copy is replaced when we change the text, and the copies for other languages are deleted when you choose a new language.</li>
       </ul>
-      <p>Under Regulation 5 of the ePrivacy Regulations (S.I. No. 336 of 2011), a website does not need your consent to store information on your device where this is strictly necessary to provide a service you have asked for. Each item above is used only for a feature you choose to use: tracking your journey, using the calculator, seeing a notice after you sign in or out, coming back to the right page after signing in with Google, and staying signed in. None is used for analytics, advertising or tracking. That is why we do not show a cookie banner.</p>
+      <p>Under Regulation 5 of the ePrivacy Regulations (S.I. No. 336 of 2011), a website does not need your consent to store information on your device where this is strictly necessary to provide a service you have asked for. Each item above is used only for a feature you choose to use: tracking your journey, using the calculator, seeing a notice after you sign in or out, coming back to the right page after signing in with Google, staying signed in, and seeing the site in your language. None is used for analytics, advertising or tracking. That is why we do not show a cookie banner.</p>
       <!-- POLICY CHOICE: remembering calculator figures between visits is the least clear-cut item here. It is treated as part of the calculator service the visitor asked for. For a stricter reading, keep calculator figures in sessionStorage so they last only for the visit. -->
       <p>You can clear this storage at any time in your browser settings. If you block it, the guide and the calculator still work, but your progress and figures are lost when you leave or reload the page, and you may not stay signed in as you move between pages.</p>
 
@@ -220,18 +233,19 @@
 
       <h2>Contact us</h2>
       <p>If you have a question about this policy or your data, email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. You can also read our <a href="terms.html">Terms of use</a>.</p>
+      </div>
 
     </div>
 
-    <aside class="legal-aside" aria-label="About this page">
+    <aside class="legal-aside" aria-label="About this page" data-i18n-aria-label="legal:aside">
       <details class="legal-toc" open>
-        <summary>On this page</summary>
-        <ol class="legal-toc__list" id="legal-toc-list"></ol>
+        <summary data-i18n="legal:toc">On this page</summary>
+        <ol class="legal-toc__list" id="legal-toc-list" lang="en-IE"></ol>
       </details>
       <div class="legal-help">
-        <p class="legal-help__title">Questions about your data?</p>
-        <p class="legal-help__text">Email us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We reply within one month.</p>
-        <a class="legal-help__link" href="terms.html">Read our Terms of Use</a>
+        <p class="legal-help__title" data-i18n="legal:privacy.help.title">Questions about your data?</p>
+        <p class="legal-help__text" data-i18n-html="legal:privacy.help.text">Email us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We reply within one month.</p>
+        <a class="legal-help__link" href="terms.html" data-i18n="legal:privacy.help.link">Read our Terms of Use</a>
       </div>
     </aside>
     </div>
@@ -240,11 +254,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -256,7 +270,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

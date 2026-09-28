@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "label": "Principal",
+    "home": "Inicio",
+    "guide": "Guía",
+    "journey": "Mi camino",
+    "calculator": "Calculadora"
+  },
+  "header": {
+    "signIn": "Entrar"
+  },
+  "language": {
+    "button": "Idioma: Español. Cambiar idioma",
+    "code": "ES",
+    "title": "Idioma"
+  },
+  "account": {
+    "menu": "Menú de la cuenta",
+    "dashboard": "Panel",
+    "profile": "Mi perfil",
+    "signOut": "Cerrar sesión",
+    "fallbackName": "Tu cuenta",
+    "menuFor": "Menú de la cuenta de {name}",
+    "signedOut": "Has cerrado sesión. Tu progreso sigue guardado en tu cuenta."
+  },
+  "yourAccount": "Tu cuenta",
+  "footer": {
+    "disclaimer": "Contenido educativo. No es asesoramiento financiero regulado.",
+    "legal": "Información legal",
+    "privacy": "Política de privacidad",
+    "terms": "Condiciones de uso"
+  },
+  "toast": {
+    "dismiss": "Cerrar"
+  },
+  "gate": {
+    "loading": "Cargando tu cuenta...",
+    "signIn": "Iniciar sesión",
+    "signUp": "Crear una cuenta",
+    "signInPrompt": "Inicia sesión para ver esta página. Tu camino, tus cifras y tus datos te están esperando.",
+    "accountsOff": "Las cuentas todavía no están activadas. Vuelve pronto."
+  },
+  "fields": {
+    "name": "Nombre y apellidos",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirm": "Confirma la contraseña"
+  },
+  "forms": {
+    "name": "Escribe tu nombre y tu apellido.",
+    "email": "Escribe un correo electrónico válido, como nombre@ejemplo.com.",
+    "password": "Escribe tu contraseña.",
+    "weakPassword": "Tu contraseña no cumple los requisitos de abajo.",
+    "confirm": "Confirma tu contraseña.",
+    "mismatch": "Las contraseñas no coinciden.",
+    "wait": "Un momento...",
+    "connecting": "Un momento, todavía estamos conectando. Vuelve a intentarlo."
+  },
+  "errors": {
+    "invalidCredentials": "El correo o la contraseña no son correctos. Revísalos y vuelve a intentarlo.",
+    "emailNotConfirmed": "Primero confirma tu correo: abre el enlace que te enviamos.",
+    "userExists": "Ya existe una cuenta con este correo. Inicia sesión con ella.",
+    "weakPassword": "Elige una contraseña más segura: al menos 8 caracteres, con una mayúscula y un carácter especial.",
+    "samePassword": "La nueva contraseña debe ser distinta de la actual.",
+    "rateLimit": "Demasiados intentos. Espera un minuto y vuelve a intentarlo.",
+    "signupsOff": "Por ahora no se pueden crear cuentas nuevas. Vuelve pronto.",
+    "sessionEnded": "Tu sesión ha terminado. Vuelve a iniciar sesión.",
+    "network": "No hemos podido conectar con el servidor. Revisa tu conexión y vuelve a intentarlo.",
+    "generic": "Algo ha salido mal. Vuelve a intentarlo."
+  },
+  "welcome": {
+    "newAccount": "Tu cuenta está lista. ¡Te damos la bienvenida a ÉireHome Flow, {name}!",
+    "newAccountNoName": "Tu cuenta está lista. ¡Te damos la bienvenida a ÉireHome Flow!",
+    "back": "Hola de nuevo, {name}.",
+    "backNoName": "Hola de nuevo.",
+    "confirmed": "Tu correo está confirmado. ¡Te damos la bienvenida a ÉireHome Flow, {name}!",
+    "confirmedNoName": "Tu correo está confirmado. ¡Te damos la bienvenida a ÉireHome Flow!",
+    "goToJourney": "Ir a mi camino"
+  },
+  "google": {
+    "cancelled": "Se ha cancelado el inicio de sesión con Google. Puedes volver a intentarlo o usar tu correo.",
+    "failed": "No se ha podido iniciar sesión con Google. Vuelve a intentarlo o usa tu correo.",
+    "failedWith": "No se ha podido iniciar sesión con Google: {reason}. Vuelve a intentarlo o usa tu correo."
+  },
+  "linkExpired": "Este enlace ha caducado o ya se ha usado. Inicia sesión o pide un enlace nuevo.",
+  "progress": {
+    "steps": {
+      "one": "{done} de {count} paso",
+      "other": "{done} de {count} pasos"
+    },
+    "phase": {
+      "one": "{done} de {count} paso completado",
+      "other": "{done} de {count} pasos completados"
+    }
+  },
+  "approx": "~{amount}",
+  "newTab": "(se abre en una pestaña nueva)"
+}

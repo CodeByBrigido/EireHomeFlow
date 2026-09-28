@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Iniciar sesión | ÉireHome Flow",
+    "title": "Iniciar sesión",
+    "intro": "Inicia sesión para ver tu camino guardado.",
+    "submit": "Iniciar sesión",
+    "forgot": "¿Has olvidado tu contraseña?",
+    "newHere": "¿Eres nuevo?",
+    "createAccount": "Crear una cuenta"
+  },
+  "signup": {
+    "meta": "Crear tu cuenta | ÉireHome Flow",
+    "title": "Crear tu cuenta",
+    "intro": "Guarda tu camino y sigue en cualquier dispositivo.",
+    "terms": "Al crear una cuenta, aceptas nuestras <a href=\"terms.html\">Condiciones de uso</a> y confirmas que has leído nuestra <a href=\"privacy.html\">Política de privacidad</a>.",
+    "submit": "Crear cuenta",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "signIn": "Iniciar sesión",
+    "checkInbox": "Mira tu bandeja de entrada y haz clic en el enlace que te hemos enviado para confirmar tu cuenta."
+  },
+  "forgot": {
+    "meta": "Restablecer tu contraseña | ÉireHome Flow",
+    "title": "Restablecer tu contraseña",
+    "intro": "Escribe tu correo y te enviaremos un enlace para elegir una contraseña nueva.",
+    "submit": "Enviar enlace",
+    "remembered": "¿Te has acordado?",
+    "signIn": "Iniciar sesión",
+    "sent": "Si ese correo tiene una cuenta, el enlace para restablecer la contraseña ya va de camino. Mira tu bandeja de entrada."
+  },
+  "newPassword": {
+    "meta": "Elegir una contraseña nueva | ÉireHome Flow",
+    "title": "Elegir una contraseña nueva",
+    "intro": "Escribe una contraseña nueva para tu cuenta.",
+    "newLink": "Enviarme un enlace nuevo",
+    "signIn": "Iniciar sesión",
+    "submit": "Guardar la contraseña nueva",
+    "changed": "Tu contraseña se ha cambiado."
+  },
+  "google": {
+    "continue": "Continuar con Google",
+    "divider": "o usa tu correo",
+    "terms": "Al continuar con Google, aceptas nuestras <a href=\"terms.html\">Condiciones de uso</a> y confirmas que has leído nuestra <a href=\"privacy.html\">Política de privacidad</a>.",
+    "opening": "Abriendo Google...",
+    "off": "El inicio de sesión con Google todavía no está activado. De momento, usa tu correo.",
+    "failed": "No se ha podido abrir Google. Vuelve a intentarlo."
+  },
+  "password": {
+    "length": "Al menos 8 caracteres",
+    "upper": "Una letra mayúscula",
+    "special": "Un carácter especial, como ! # $ o ?"
+  },
+  "goToDashboard": "Ir a mi panel",
+  "privacyNote": "Tu cuenta guarda tu nombre, tu correo y los pasos que has completado, en servidores de Irlanda. Con Google, también guarda el enlace a la foto de perfil que envía Google, que no usamos. Las cifras de la calculadora se quedan en tu navegador. <a href=\"privacy.html\">Lee nuestra Política de privacidad</a>.",
+  "note": {
+    "checking": "Comprobando tu enlace...",
+    "signedIn": "Has iniciado sesión como {email}.",
+    "needLink": "Para elegir una contraseña nueva, vuelve a abrir el enlace de tu correo o inicia sesión primero."
+  }
+}

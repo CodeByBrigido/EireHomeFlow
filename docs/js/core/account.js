@@ -1,7 +1,7 @@
 // Accounts: Supabase sign-up and sign-in, and reading and writing the progress row (merging is in sync.js).
 // Settings come from config.js. With them empty, Account.enabled stays false
 // and the Supabase library is never downloaded.
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260928";
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260929";
 
 const SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js";
 const CONFIGURED = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
@@ -166,8 +166,8 @@ export const Account = {
   async deleteAccount() {
     const { error } = await this.client.rpc("delete_my_account");
     if (error) {
-      // PGRST202: the database function has not been created yet.
-      if (error.code === "PGRST202") throw new Error("Deleting accounts from the site is not switched on yet. Email eirehomeflow@gmail.com and we will delete it for you.");
+      // PGRST202: the database function has not been created yet. My profile explains it to the reader.
+      if (error.code === "PGRST202") throw Object.assign(new Error("delete_my_account() is not in the database yet."), { code: "delete_not_enabled" });
       throw error;
     }
     // The account is gone, so only this browser's copy of the session needs clearing.

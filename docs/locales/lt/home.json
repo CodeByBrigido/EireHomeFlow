@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Tiems, kurie Airijoje perka pirmą būstą",
+    "title": "Nuo pirmųjų santaupų<br>iki <em>pirmos sofos</em>.",
+    "lead": "Šeši etapai ir trisdešimt vienas žingsnis, nuo pradinio įnašo skaičiavimų ir AIP dokumentų iki pasiūlymų ir raktų perdavimo. Gidas apima ir tai, kas būna vėliau, pavyzdžiui, grindis, užuolaidas ir pirmąją katilo apžiūrą.",
+    "start": "Pradėti mano kelią",
+    "resume": "Tęsti mano kelią",
+    "calculator": "Perkamosios galios skaičiuoklė",
+    "alt": "Iliustracija: airiškas namas virš pakrantės",
+    "caption": "Namai, kurių siekiate."
+  },
+  "ticker": {
+    "label": "Svarbiausi skaičiai",
+    "items": [
+      "Centrinio banko taisyklė: 4× bendrosios pajamos",
+      "Pradinis įnašas perkant pirmą būstą: 10 %",
+      "Žyminis mokestis: 1 %",
+      "Teisininkas: 2 000-3 000 €",
+      "Techninė apžiūra: apie 400 €",
+      "Banko vertinimas: apie 150 €"
+    ],
+    "pause": "Pristabdyti",
+    "play": "Paleisti"
+  },
+  "stats": {
+    "loan": {
+      "label": "Didžiausia paskola",
+      "value": "4×",
+      "note": "Metinių bendrųjų pajamų, pagal Airijos centrinio banko taisykles."
+    },
+    "deposit": {
+      "label": "Mažiausias pradinis įnašas",
+      "value": "10 %",
+      "note": "Toks pats perkant pirmą būstą ir tiems, kurie būstą jau turėjo."
+    },
+    "cash": {
+      "label": "Grynieji be paskolos",
+      "value": "3 550 €",
+      "note": "Teisininkas, apžiūra ir vertinimas, plius 1 % žyminio mokesčio."
+    }
+  },
+  "phases": {
+    "title": "Šeši etapai, vienas po kito.",
+    "intro": "Žingsniai atrakinami iš eilės: atlikite kiekvieną privalomą žingsnį, kad atrakintumėte kitą. Visus žingsnius bet kada galite perskaityti pilname gide."
+  },
+  "cta": {
+    "title": "Perskaitykite visą gidą",
+    "text": "Visi trisdešimt vienas žingsnis vienoje vietoje, su sąrašais ir patarimais. Paskyros nereikia.",
+    "button": "Atidaryti gidą"
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Ghidul complet | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Ghidul complet",
+    "title": "Fiecare pas, în detaliu",
+    "intro": "Șase etape și treizeci și unu de pași, de la primele economii la prima canapea. Deschide o etapă ca s-o citești. Când ești gata, urmărește-ți progresul în <a href=\"journey.html\">Drumul meu</a>."
+  },
+  "kind": {
+    "blocking": "Pas obligatoriu",
+    "optional": "Pas opțional"
+  },
+  "tipLabel": "Bine de știut:",
+  "openCalculator": "Deschide calculatorul",
+  "openInJourney": "Deschide în Drumul meu",
+  "phases": {
+    "preparation": {
+      "title": "Pregătire",
+      "subtitle": "Finanțele puse în ordine",
+      "text": "Puterea de cumpărare, ținta de avans și șase luni de extrase curate."
+    },
+    "aip": {
+      "title": "Aprobare de principiu (AIP)",
+      "subtitle": "Dovada că o bancă te susține",
+      "text": "Actele, banca sau brokerul și scrisoarea pe care o cer agenții."
+    },
+    "search": {
+      "title": "Căutare și oferte",
+      "subtitle": "Daft.ie și MyHome.ie",
+      "text": "Vizionări, limbajul agenților și oferte până la Sale Agreed."
+    },
+    "legal": {
+      "title": "Partea juridică și contractele",
+      "subtitle": "Avocat, inspecție și evaluare",
+      "text": "Contracte, inspecție, evaluare și asigurări obligatorii."
+    },
+    "keys": {
+      "title": "Cheile în mână",
+      "subtitle": "Tragerea creditului și ziua finalizării",
+      "text": "Oferta de credit, tragerea banilor, ziua finalizării și mutarea."
+    },
+    "settling": {
+      "title": "Instalarea",
+      "subtitle": "Pardoseli, perdele și centrala",
+      "text": "Mobilarea casei și buna ei funcționare."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Calculează-mi puterea de cumpărare",
+      "time": "15 minute",
+      "cost": "Gratuit",
+      "body": "Totul pornește de la această cifră. Banca Centrală a Irlandei le permite celor care își cumpără prima locuință să împrumute de până la patru ori venitul anual brut, iar celor care își schimbă locuința de 3,5 ori. Economiile tale decid apoi cât avans și câte costuri poți acoperi.",
+      "checklist": [
+        "Deschide calculatorul și completează salariul, economiile și prețul țintă",
+        "Adună ambele salarii brute dacă aplicați împreună",
+        "Alege Salvează în drumul meu: pasul acesta se bifează singur, iar pașii următori îți arată cifrele"
+      ],
+      "tip": "Creditele auto și ratele la o credit union reduc suma oferită de bănci, pentru că ele testează fiecare obligație lunară.",
+      "alt": "Un calculator verde cu simbolul euro pe ecran, lângă o căsuță și un teanc de monede de aur"
+    },
+    "preparation-1": {
+      "title": "Asigură avansul de 10 %",
+      "time": "Continuu",
+      "cost": "10 % din preț",
+      "body": "Ai nevoie de cel puțin 10 % din prețul de cumpărare, fie că e prima ta locuință, fie că nu. Avansul este separat de costurile de mai jos.",
+      "checklist": [
+        "Setează un ordin de plată programat pentru ziua de după salariu",
+        "Ține avansul într-un cont separat, pe care nu-l atingi niciodată",
+        "O donație documentată de la familie contează, dar banca va cere o scrisoare care spune că nu e un împrumut"
+      ],
+      "tip": "Șase luni de economii regulate, cam cât va fi rata viitoare, sunt cel mai puternic argument din dosarul tău.",
+      "alt": "O pușculiță-purceluș de culoarea teracotei, în care cade o monedă de aur, cu o etichetă rotundă aurie cu semnul procentului"
+    },
+    "preparation-2": {
+      "title": "Pune deoparte bani pentru costurile suplimentare",
+      "time": "Continuu",
+      "cost": "Taxa de timbru + circa 3.050 €",
+      "body": "Taxa de timbru (stamp duty), avocatul, inspecția și evaluarea se plătesc din banii tăi, nu din credit. Drumul meu îți arată sumele tale după ce salvezi calculatorul.",
+      "checklist": [
+        "Taxa de timbru: 1 % din preț până la 1 milion €, 2 % între 1 milion € și 1,5 milioane € și 6 % peste",
+        "La o locuință nouă, taxa de timbru se calculează pe prețul fără TVA: 13,5 % la o casă, 9 % la un apartament",
+        "Avocat: 2.000-3.000 € plus TVA și cheltuieli",
+        "Inspecție tehnică circa 400 €, evaluarea băncii circa 150 €"
+      ],
+      "tip": "Mai pune deoparte 1.500-2.000 € pentru mutare, încuietori și primele facturi la utilități.",
+      "alt": "Un plic auriu deschis din care ies bancnote verzi, lângă două bonuri mici de hârtie"
+    },
+    "preparation-3": {
+      "title": "Păstrează contul curat timp de șase luni",
+      "time": "6 luni",
+      "cost": "Gratuit",
+      "body": "Analiștii băncii citesc șase luni de extrase rând cu rând, ca să vadă cum îți gestionezi banii.",
+      "checklist": [
+        "Nicio tranzacție de pariuri online, deloc",
+        "Nicio descoperire de cont neautorizată și nicio debitare directă respinsă",
+        "Chiria plătită la timp din același cont, în fiecare lună"
+      ],
+      "tip": "Conturile Revolut și cele de la credit union contează și ele. Banca îți va cere și acele extrase.",
+      "alt": "Un extras de cont cu o bifă verde pe fiecare rând, lângă un calendar de perete cu șase pătrate colorate în verde"
+    },
+    "preparation-4": {
+      "title": "Verifică dacă ai dreptul la Help to Buy",
+      "time": "2 săptămâni",
+      "cost": "Rambursare de până la 30.000 €",
+      "body": "Help to Buy îți dă înapoi impozitul pe venit și DIRT plătite în Irlanda în ultimii patru ani, până la 30.000 € sau 10 % din preț, oricare e mai mic. Este pentru cei care își cumpără prima locuință, nouă sau construită pe cont propriu, și e valabil până la sfârșitul lui 2029. First Home Scheme este o opțiune separată de coproprietate (shared equity), pe care merită s-o calculezi și ea.",
+      "checklist": [
+        "Nu ai cumpărat și nu ai construit niciodată o locuință, nici în Irlanda, nici în străinătate",
+        "Locuința este nouă sau construită pe cont propriu și valorează 500.000 € sau mai puțin",
+        "Creditul tău acoperă cel puțin 70 % din preț și vine de la o bancă eligibilă",
+        "Vei locui în ea ca locuință principală timp de cinci ani"
+      ],
+      "howtoLabel": "Cum aplici",
+      "howto": [
+        "Înregistrează-te în myAccount de la Revenue dacă primești salariul prin PAYE, sau în ROS dacă lucrezi pe cont propriu. Revenue îți trimite prin poștă un cod ca să termini înregistrarea, așa că lasă câteva zile.",
+        "Pentru fiecare dintre ultimii patru ani pe care vrei să-i incluzi, depune declarația de venit (Income Tax Return) și obține Statement of Liability. Plătește orice impozit pe care îl mai datorezi pentru acei ani.",
+        "În myAccount, deschide Help to Buy la Property and Land Services și completează cererea. În ROS, folosește linkul Help to Buy applicant de pe ecranul principal.",
+        "Revenue îți dă un număr de cerere, un cod de acces și suma maximă pe care ai putea-o primi. Banca va cere să le vadă.",
+        "După ce ai oferta de credit și ai semnat contractul, revino la Help to Buy și depune solicitarea de plată, încărcând oferta de credit, acceptarea semnată și contractul.",
+        "Dă-i dezvoltatorului numărul de referință al solicitării și codul de acces, iar el confirmă solicitarea. Revenue plătește apoi rambursarea dezvoltatorului, ca parte din avansul tău."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: înainte să aplici",
+        "Revenue: cum aplici"
+      ],
+      "tip": "Cererea are o dată de expirare, așa că depune solicitarea de plată înainte să expire. Îți construiești singur casa? Soliciți plata după prima tragere din credit, încarci dovada tragerii și evaluarea băncii în locul unui contract, iar avocatul tău confirmă solicitarea.",
+      "alt": "O casă verde cu structura de lemn a acoperișului la vedere și o macara în spate, lângă o monedă de aur într-o săgeată verde curbată"
+    },
+    "preparation-5": {
+      "title": "Creează-ți contul ÉireHome Flow",
+      "time": "2 minute",
+      "cost": "Gratuit",
+      "body": "Un cont îți salvează drumul, ca să-l poți continua pe telefon, pe laptop sau pe orice alt dispozitiv. Este gratuit, iar pasul acesta se bifează singur imediat ce te conectezi.",
+      "checklist": [
+        "Alege Creează cont și introdu numele, e-mailul și o parolă",
+        "Confirmă adresa de e-mail prin linkul pe care ți-l trimitem",
+        "Conectează-te pe orice alt dispozitiv ca să vezi același progres"
+      ],
+      "tip": "Contul tău păstrează numele, e-mailul și pașii terminați. Cifrele pe care le introduci în calculator rămân în browserul tău.",
+      "alt": "Un laptop și un telefon care arată aceeași pictogramă de profil, cu un nor mic și două săgeți de sincronizare între ele"
+    },
+    "aip-0": {
+      "title": "Alege direct o bancă sau un broker",
+      "time": "1 săptămână",
+      "cost": "Brokerul de obicei nu te costă nimic",
+      "body": "Un broker de credite compară toată piața cu o singură cerere. Dacă mergi direct la bancă, poți primi o ofertă de cashback valabilă doar la acea bancă.",
+      "checklist": [
+        "Întreabă brokerul cu ce bănci lucrează",
+        "Compară cashbackul cu dobânda. Cashbackul se plătește o dată, dar dobânda se aplică pe toată durata",
+        "Verifică, înainte să aplici, cum tratează banca tipul tău de contract de muncă"
+      ],
+      "tip": "Băncile diferă cel mai mult la veniturile din contracte pe perioadă determinată sau din perioada de probă, iar acolo un broker își merită banii.",
+      "alt": "Un indicator cu o săgeată spre stânga, către o bancă verde cu coloane, și una spre dreapta, către o servietă"
+    },
+    "aip-1": {
+      "title": "Adună extrasele de cont pe șase luni",
+      "time": "2-3 zile",
+      "cost": "Gratuit",
+      "body": "Fiecare cont curent, de economii și Revolut, complet, fără pagini lipsă.",
+      "checklist": [
+        "Descarcă PDF-urile direct de la bancă, nu capturi de ecran",
+        "Denumește fiecare fișier cu contul și luna",
+        "Pregătește o explicație pentru orice depunere de peste circa 500 €"
+      ],
+      "tip": "O singură pagină lipsă este cea mai frecventă cauză pentru care o cerere se blochează.",
+      "alt": "Un teanc în evantai de șase pagini de documente cu o agrafă verde, lângă o lupă"
+    },
+    "aip-2": {
+      "title": "Adună fluturașii de salariu și Employment Detail Summary",
+      "time": "1 săptămână",
+      "cost": "Gratuit",
+      "body": "De obicei, trei fluturași de salariu recenți, EDS-ul tău de la Revenue și o adeverință de salariu semnată de angajator.",
+      "checklist": [
+        "Cei mai recenți trei fluturași de salariu",
+        "Employment Detail Summary din myAccount",
+        "O adeverință de salariu care confirmă tipul de contract și eventualele bonusuri"
+      ],
+      "tip": "Cei care lucrează pe cont propriu au nevoie, în schimb, de doi ani de situații financiare certificate și de un certificat că nu au datorii fiscale (tax clearance).",
+      "alt": "Un dosar deschis cu trei fluturași de salariu, cel din față marcat cu simbolul euro și cu o ștampilă verde cu bifă"
+    },
+    "aip-3": {
+      "title": "Dovedește chiria și economiile",
+      "time": "Continuu",
+      "cost": "Gratuit",
+      "body": "Chiria plus economiile regulate sunt dovada că îți permiți rata peste cheltuielile de acum.",
+      "checklist": [
+        "Chiria plătită prin ordin de plată programat, vizibilă în extrase",
+        "Un obicei de economisire din care nu ai scos bani",
+        "O scurtă explicație scrisă pentru orice pauză"
+      ],
+      "tip": "Chiria plus economiile ar trebui să fie cam cât viitoarea rată a creditului, pentru că analiștii le compară.",
+      "alt": "O balanță care cântărește o căsuță cu acoperiș ruginiu față de un borcan cu monede de aur"
+    },
+    "aip-4": {
+      "title": "Primește scrisoarea AIP",
+      "time": "1-3 săptămâni",
+      "cost": "Gratuit",
+      "body": "Aprobarea de principiu arată cât îți va împrumuta banca, sub rezerva evaluării și a verificărilor finale. De obicei e valabilă șase luni.",
+      "checklist": [
+        "Verifică suma, durata și data de expirare",
+        "Salvează un PDF pe telefon pentru vizionări",
+        "Trece data de expirare în calendar, pentru că reînnoirea cere extrase noi"
+      ],
+      "tip": "Niciun agent imobiliar din Irlanda nu va lua în serios o ofertă fără ea.",
+      "alt": "Un plic deschis din care iese o scrisoare, marcată cu o ștampilă verde rotundă și o bifă"
+    },
+    "search-0": {
+      "title": "Alege o zonă și verifică prețurile de vânzare",
+      "time": "1 săptămână",
+      "cost": "Gratuit",
+      "body": "Prețul cerut îl stabilește vânzătorul. Residential Property Price Register arată cu cât s-au vândut de fapt locuințele.",
+      "checklist": [
+        "Compară prețul cerut cu registrul, stradă cu stradă",
+        "Testează drumul la ora la care chiar ai face naveta",
+        "Uită-te la certificatul energetic (BER). Trecerea de la C la B poate costa 15.000 € în renovări"
+      ],
+      "tip": "Setează alerte pe Daft și MyHome pentru zona și intervalul tău de preț, pentru că locuințele bune se duc în câteva zile.",
+      "alt": "O hartă a străzilor pliată, cu un drum și parcuri verzi, cu un marcaj mare de locație deasupra și o mică etichetă de preț cu simbolul euro"
+    },
+    "search-1": {
+      "title": "Învață vocabularul irlandez",
+      "time": "1 seară",
+      "cost": "Gratuit",
+      "body": "Procesul are vocabularul lui, iar agenții vor presupune că îl cunoști.",
+      "checklist": [
+        "Sale Agreed nu obligă pe nimeni. Până la semnarea contractelor, alt cumpărător încă te poate depăși (gazumping)",
+        "Vânzarea directă (private treaty) și licitația publică (public auction) schimbă complet regulile",
+        "Avansul de rezervare (booking deposit) se returnează, dar avansul din contract nu"
+      ],
+      "tip": "BER este obligatoriu prin lege în orice anunț, așa că ai grijă la anunțurile care nu îl arată.",
+      "alt": "O carte deschisă cu rânduri de text și două bule de dialog deasupra, una cu puncte și una cu linii"
+    },
+    "search-2": {
+      "title": "Programează vizionări",
+      "time": "2-8 săptămâni",
+      "cost": "Gratuit",
+      "body": "Vezi cel puțin cinci proprietăți înainte să faci o ofertă, inclusiv două despre care crezi că nu ți se potrivesc.",
+      "checklist": [
+        "Scrie-i agentului un e-mail, apoi confirmă la telefon",
+        "Fotografiază petele de umezeală, cutiile contoarelor și trapa de la pod",
+        "Întreabă de ce se mută vânzătorul și de cât timp e scoasă la vânzare"
+      ],
+      "tip": "Mergi a doua oară într-o seară ploioasă din timpul săptămânii. Casele arată altfel când plouă și strada e aglomerată.",
+      "alt": "Un calendar de perete cu o zi marcată cu o căsuță și un ceas deșteptător care sună alături"
+    },
+    "search-3": {
+      "title": "Notează fiecare ofertă",
+      "time": "1-8 săptămâni",
+      "cost": "Gratuit",
+      "body": "Ofertele se fac verbal și nu sunt reglementate, așa că ține-ți propria evidență.",
+      "checklist": [
+        "Notează suma, data și cu cine ai vorbit",
+        "Stabilește-ți suma maximă înainte să începi",
+        "Nu face niciodată o ofertă fără AIP în mână"
+      ],
+      "tip": "Roagă-l pe agent să confirme fiecare ofertă pe e-mail. Te ajută să te protejezi de ofertele fantomă.",
+      "alt": "Un carnet cu spirală deschis, cu o listă de însemnări și un grafic cu bare în creștere, cu un creion pus deasupra"
+    },
+    "search-4": {
+      "title": "Ajungi la Sale Agreed",
+      "time": "1 săptămână",
+      "cost": "3.000-5.000 €, returnabili",
+      "body": "Oferta ta e acceptată și plătești un avans de rezervare, de obicei 3.000-5.000 €, ca să scoți casa de pe piață.",
+      "checklist": [
+        "Cere în scris chitanța pentru avansul de rezervare",
+        "Dă-i agentului datele avocatului tău",
+        "Cere ca notificarea de vânzare (sales advice notice) să fie emisă repede"
+      ],
+      "tip": "Avansul de rezervare se returnează integral până la semnarea contractelor, deci vânzarea nu e încă definitivă.",
+      "alt": "Un panou de agenție imobiliară cu o bandă verde și o bifă mare peste ea, în fața unei căsuțe"
+    },
+    "legal-0": {
+      "title": "Angajează un avocat",
+      "time": "1 săptămână",
+      "cost": "2.000-3.000 € + TVA",
+      "body": "Conveyancing înseamnă transferul legal al proprietății, iar calendarul depinde mai ales de ritmul avocatului tău (solicitor).",
+      "checklist": [
+        "Cere o ofertă de preț fixă, cu cheltuieli și verificări în registre incluse",
+        "Întreabă câte dosare finalizează biroul pe lună",
+        "Dă-i notificarea de vânzare imediat ce sosește"
+      ],
+      "tip": "Alege după cât de repede răspund. O ofertă ieftină nu e un chilipir dacă nimeni nu răspunde la telefon în vacanța din august.",
+      "alt": "O balanță aurie pe un birou de lemn, lângă un teanc de hârtii legate cu panglică roșie și un sigiliu auriu"
+    },
+    "legal-1": {
+      "title": "Programează inspecția tehnică",
+      "time": "1-2 săptămâni",
+      "cost": "300-500 €",
+      "body": "Un inginer independent verifică toată casa și scrie ce probleme are.",
+      "checklist": [
+        "Alege un inginer din registrul Engineers Ireland sau SCSI",
+        "Cere fotografii și o estimare a costului reparațiilor",
+        "La apartamente, citește și conturile firmei de administrare (management company)"
+      ],
+      "tip": "Ce găsește inspecția îți dă loc de negociere. Un acoperiș care are nevoie de lucrări de 6.000 € e un motiv să ceri o reducere de 6.000 € înainte de contracte.",
+      "alt": "O casă verde cu o lupă deasupra unei fisuri din perete, lângă un clipboard cu o listă"
+    },
+    "legal-2": {
+      "title": "Cere evaluarea băncii",
+      "time": "1 săptămână",
+      "cost": "Circa 150 €",
+      "body": "Banca evaluează proprietatea pentru propria garanție, printr-un evaluator de pe lista ei.",
+      "checklist": [
+        "Programeaz-o prin bancă sau prin broker, nu pe cont propriu",
+        "O evaluare nu e o inspecție. Există ca să protejeze banca",
+        "Dacă evaluarea iese mai mică, acoperi diferența cu bani proprii"
+      ],
+      "tip": "Dacă evaluarea iese sub prețul convenit, e destul de normal să renegociezi.",
+      "alt": "O casă verde cu o etichetă de preț aurie cu simbolul euro atârnând de acoperiș și o bancă în spate"
+    },
+    "legal-3": {
+      "title": "Fă asigurarea creditului și asigurarea locuinței",
+      "time": "1-2 săptămâni",
+      "cost": "25-60 € pe lună",
+      "body": "Ambele sunt obligatorii înainte de tragerea creditului și niciuna nu trebuie cumpărată de la banca ta.",
+      "checklist": [
+        "Compară ofertele pentru asigurarea creditului (mortgage protection), pentru că oferta băncii e rareori cea mai ieftină",
+        "Asigurarea locuinței trebuie să acopere costul reconstrucției, nu prețul de cumpărare",
+        "Declară sincer problemele de sănătate, pentru că o poliță anulată e mai rea decât o primă mai mare"
+      ],
+      "tip": "Analiza asigurării poate dura săptămâni dacă există istoric medical, așa că începe înainte de contracte.",
+      "alt": "Un scut verde cu o bifă albă în fața unei căsuțe adăpostite de o umbrelă aurie"
+    },
+    "legal-4": {
+      "title": "Semnează contractele și plătește avansul",
+      "time": "1-2 săptămâni",
+      "cost": "10 % minus avansul de rezervare",
+      "body": "Semnezi, plătești restul avansului de 10 % și vânzarea devine obligatorie din punct de vedere legal.",
+      "checklist": [
+        "Citește condițiile speciale împreună cu avocatul",
+        "Stabilește o dată de finalizare care se potrivește cu preavizul de la chirie",
+        "Confirmă în scris ce dotări și accesorii sunt incluse"
+      ],
+      "tip": "Din momentul în care contractele sunt schimbate, nimeni nu te mai poate depăși (gazumping).",
+      "alt": "O pagină de contract semnată, cu un stilou verde pus pe semnătură, lângă un teanc de monede de aur"
+    },
+    "keys-0": {
+      "title": "Primește oferta finală de credit",
+      "time": "1-2 săptămâni",
+      "cost": "Gratuit",
+      "body": "Oferta oficială înlocuiește AIP și stabilește dobânda, durata și condițiile.",
+      "checklist": [
+        "Verifică dobânda, durata și condițiile oricărui cashback",
+        "Compară încă o dată dobânda fixă cu cea variabilă",
+        "Semneaz-o și trimite-o înapoi cu polițele de asigurare atașate"
+      ],
+      "tip": "Dobânzile verzi pentru un BER B3 sau mai bun pot valora câteva mii de euro pe perioada cu dobândă fixă.",
+      "alt": "Un certificat cu o insignă verde cu procent și un sigiliu auriu cu panglică, lângă o monedă euro aurie"
+    },
+    "keys-1": {
+      "title": "Trage banii din credit",
+      "time": "3-10 zile",
+      "cost": "Gratuit",
+      "body": "Avocatul tău cere banii pentru ziua finalizării, iar banca îi plătește avocatului.",
+      "checklist": [
+        "Confirmă cu avocatul soldul exact pentru finalizare",
+        "Transferă-ți partea din timp, pentru că limitele zilnice de transfer îi surprind pe mulți",
+        "Verifică data primei rate"
+      ],
+      "tip": "Nu trimite niciodată bani doar pe baza unor date bancare primite pe e-mail; sună la biroul avocatului ca să le verifici.",
+      "alt": "Monede de aur care merg pe o săgeată curbată de la o bancă mică la o clădire de birouri"
+    },
+    "keys-2": {
+      "title": "Finalizează și ia cheile",
+      "time": "1 zi",
+      "cost": "Soldul la finalizare",
+      "body": "Proprietatea trece pe numele tău, soldul se plătește și agentul îți predă cheile.",
+      "checklist": [
+        "Citește contoarele și fotografiază-le",
+        "Ia toate cheile, telecomenzile și codurile de alarmă",
+        "Schimbă încuietorile în prima săptămână"
+      ],
+      "tip": "Fă o ultimă verificare a casei înainte să se transfere banii, ca să te asiguri că e în starea convenită.",
+      "alt": "Un inel cu trei chei de casă în fața unei uși de la intrare verzi, cu o ferestruică arcuită deasupra"
+    },
+    "keys-3": {
+      "title": "Verifică lista de defecte",
+      "time": "1 săptămână",
+      "cost": "300-600 € pentru un inspector",
+      "body": "Mai ales la construcțiile noi: notează fiecare defect cât timp constructorul încă răspunde de el.",
+      "checklist": [
+        "Angajează un inspector profesionist de defecte (snagger) pentru o locuință nouă",
+        "Fotografiază fiecare defect cu numele camerei",
+        "Trimite lista în scris, cu un termen"
+      ],
+      "tip": "Ține lista deschisă până se rezolvă fiecare punct, pentru că perioada de garanție a început deja.",
+      "alt": "Un clipboard cu o listă cu trei bife și un x, între un trafalet și o rolă de bandă de mascare"
+    },
+    "settling-0": {
+      "title": "Trece utilitățile pe numele tău",
+      "time": "1 săptămână",
+      "cost": "Garanțiile variază",
+      "body": "Curent, gaz, internet și gunoi, totul în prima săptămână.",
+      "checklist": [
+        "Trimite la fiecare schimbare pozele contoarelor din prima zi",
+        "Schimbarea furnizorului la mutare e o metodă ușoară de a economisi",
+        "Aranjează ridicarea gunoiului înainte de prima zi de colectare"
+      ],
+      "tip": "Înregistrează alarma și verifică dacă linia de internet e pe fibră înainte să alegi un abonament.",
+      "alt": "Un bec mare portocaliu în centru, cu un semnal wifi roșu în stânga și o pubelă verde cu roți în dreapta"
+    },
+    "settling-1": {
+      "title": "Înregistrează-te pentru Local Property Tax",
+      "time": "1 zi",
+      "cost": "Depinde de tranșă",
+      "body": "Revenue are nevoie ca proprietatea să fie înregistrată pe numele tău, încadrată într-o tranșă după valoare. LPT este impozitul anual pe proprietate.",
+      "checklist": [
+        "Înregistreaz-o în myAccount folosind ID-ul proprietății",
+        "Verifică dacă vânzătorul a plătit anul în avans",
+        "Alege metoda de plată pe care o vrei cu adevărat"
+      ],
+      "tip": "Avocatul tău confirmă la finalizare că LPT e la zi, dar declarația pentru anul următor e treaba ta.",
+      "alt": "O căsuță verde lângă un formular cu o ștampilă rotundă cu bifă și un calendar cu o dată marcată"
+    },
+    "settling-2": {
+      "title": "Stabilește un buget de mobilare pe cameră",
+      "time": "1 seară",
+      "cost": "3.000-10.000 €",
+      "body": "Pardoselile și perdelele sau jaluzelele pot înghiți ușor primii 5.000 € dacă nu planifici.",
+      "checklist": [
+        "Ordonează camerele: întâi dormitorul și bucătăria, camera de oaspeți la final",
+        "Cere prețuri pentru pardoseli și jaluzele înainte de canapele",
+        "Păstrează 15 % pentru lucrurile pe care le uiți"
+      ],
+      "tip": "Mobila masivă la mâna a doua e mai ieftină și mai bună decât mobila nouă de asamblat. Măsoară întâi ușile.",
+      "alt": "Planul a patru camere văzut de sus, fiecare cu un teanc mic de monede de aur"
+    },
+    "settling-3": {
+      "title": "Întâi pardoselile, apoi mobila",
+      "time": "1-2 săptămâni",
+      "cost": "25-60 € pe m²",
+      "body": "Montarea pardoselilor într-o casă goală e mai ieftină și mult mai rapidă.",
+      "checklist": [
+        "Măsoară fiecare cameră și adaugă 10 % pentru tăieturi",
+        "Lasă parchetul laminat sau stratificat să se aclimatizeze 48 de ore",
+        "Rezolvă folia de sub parchet și plintele în aceeași comandă"
+      ],
+      "tip": "Dacă zugrăvești și tu, zugrăvește întâi, pune apoi pardoseala și plintele la final.",
+      "alt": "Un teanc de patru plăci de parchet portocalii cu un ciocan deasupra și un fotoliu verde mic alături"
+    },
+    "settling-4": {
+      "title": "Măsoară pentru perdele și jaluzele",
+      "time": "1 weekend",
+      "cost": "60-250 € pe fereastră",
+      "body": "Măsoară bara, nu geamul, și hotărăște lungimea înainte să comanzi.",
+      "checklist": [
+        "Lățimea barei plus 15-20cm pe fiecare parte",
+        "Până la pervaz sau până la podea, hotărât cameră cu cameră",
+        "Perdele opace în dormitoare, mai ales în cele spre est"
+      ],
+      "tip": "Comandă întâi pentru o singură cameră și trăiește o săptămână cu ea înainte să faci toată casa.",
+      "alt": "O fereastră cu două perdele strânse pe o bară, cu o ruletă galbenă întinsă de-a lungul barei"
+    },
+    "settling-5": {
+      "title": "Fă revizia centralei și testează detectoarele",
+      "time": "1 zi",
+      "cost": "90-150 €",
+      "body": "Fă o revizie de referință și trece verificările de siguranță în calendar.",
+      "checklist": [
+        "Cheamă pentru gaz un tehnician înregistrat la RGI",
+        "Testează detectoarele de fum și de monoxid de carbon (CO) și înlocuiește-le pe cele mai vechi de zece ani",
+        "Păstrează certificatul BER, garanțiile și manualele într-un singur loc"
+      ],
+      "tip": "Revizia anuală a centralei este o condiție a majorității asigurărilor de locuință, așa că păstrează chitanțele.",
+      "alt": "O centrală de perete cu simbolul unei flăcări, o cheie franceză pe jos și un detector de fum pe tavan"
+    }
+  }
+}

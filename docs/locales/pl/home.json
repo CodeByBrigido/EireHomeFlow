@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Dla kupujących pierwszą nieruchomość w Irlandii",
+    "title": "Od pierwszych oszczędności<br>do <em>pierwszej kanapy</em>.",
+    "lead": "Sześć etapów i trzydzieści jeden kroków, od wyliczenia wkładu własnego i dokumentów do AIP po składanie ofert i odbiór kluczy. Poradnik obejmuje też to, co przychodzi potem, jak podłogi, zasłony i pierwszy przegląd kotła.",
+    "start": "Zacznij moją drogę",
+    "resume": "Kontynuuj moją drogę",
+    "calculator": "Kalkulator zdolności zakupowej",
+    "alt": "Ilustracja irlandzkiego domu nad wybrzeżem",
+    "caption": "Dom, na który pracujesz."
+  },
+  "ticker": {
+    "label": "Najważniejsze liczby",
+    "items": [
+      "Zasada Banku Centralnego: 4× dochód brutto",
+      "Wkład własny przy pierwszym zakupie: 10%",
+      "Opłata skarbowa: 1%",
+      "Prawnik: 2000-3000 €",
+      "Inspekcja techniczna: ok. 400 €",
+      "Wycena banku: ok. 150 €"
+    ],
+    "pause": "Pauza",
+    "play": "Odtwórz"
+  },
+  "stats": {
+    "loan": {
+      "label": "Maksymalny kredyt",
+      "value": "4×",
+      "note": "Rocznego dochodu brutto, według zasad Banku Centralnego Irlandii."
+    },
+    "deposit": {
+      "label": "Minimalny wkład własny",
+      "value": "10%",
+      "note": "Taki sam przy pierwszym zakupie i dla osób, które miały już nieruchomość."
+    },
+    "cash": {
+      "label": "Gotówka poza kredytem",
+      "value": "3550 €",
+      "note": "Prawnik, inspekcja i wycena, plus 1% opłaty skarbowej."
+    }
+  },
+  "phases": {
+    "title": "Sześć etapów, jeden po drugim.",
+    "intro": "Kroki odblokowują się po kolei: ukończ każdy krok obowiązkowy, aby odblokować następny. Wszystkie kroki możesz w każdej chwili przeczytać w pełnym poradniku."
+  },
+  "cta": {
+    "title": "Przeczytaj cały poradnik",
+    "text": "Wszystkie trzydzieści jeden kroków w jednym miejscu, z listami i wskazówkami. Konto nie jest potrzebne.",
+    "button": "Otwórz poradnik"
+  }
+}

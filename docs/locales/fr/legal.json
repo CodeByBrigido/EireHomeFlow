@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Mentions légales",
+  "summaryTitle": "En bref",
+  "toc": "Sur cette page",
+  "aside": "À propos de cette page",
+  "privacy": {
+    "meta": "Politique de confidentialité | ÉireHome Flow",
+    "title": "Politique de confidentialité",
+    "updated": "Dernière mise à jour : 28 septembre 2026",
+    "summary": [
+      "ÉireHome Flow est gratuit. Nous n'affichons pas de publicité, n'utilisons ni outil d'analyse ni traçage, et ne vendons pas vos données.",
+      "Vous pouvez utiliser le guide, Mon parcours et le simulateur sans compte. Les chiffres de votre simulateur ne quittent jamais votre navigateur.",
+      "Si vous créez un compte, nous conservons votre nom, votre adresse e-mail et la progression de votre parcours chez notre hébergeur de base de données, Supabase, sur des serveurs en Irlande. Si vous vous connectez avec Google, notre système de comptes garde aussi le lien vers votre photo de profil Google envoyé par Google. Nous ne l'affichons pas et ne l'utilisons pas.",
+      "Vous pouvez changer votre nom et votre mot de passe, et supprimer votre compte, dans Mon profil. Pour obtenir une copie de vos données ou les faire corriger, écrivez à <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Nous répondons sous un mois."
+    ],
+    "englishOnly": "La politique complète ci-dessous n'est disponible qu'en anglais.",
+    "help": {
+      "title": "Des questions sur vos données ?",
+      "text": "Écrivez-nous à <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Nous répondons sous un mois.",
+      "link": "Lire nos Conditions d'utilisation"
+    }
+  },
+  "terms": {
+    "meta": "Conditions d'utilisation | ÉireHome Flow",
+    "title": "Conditions d'utilisation",
+    "updated": "Dernière mise à jour : 28 septembre 2026",
+    "summary": [
+      "ÉireHome Flow est un site pédagogique gratuit pour les personnes qui achètent leur premier logement en Irlande. Il n'y a ni paiement, ni publicité, ni commission.",
+      "<strong>Ce n'est pas un conseil financier, hypothécaire, juridique ou fiscal, et nous ne sommes pas réglementés par la Banque centrale d'Irlande.</strong> Consultez des professionnels qualifiés avant de prendre une décision.",
+      "Les résultats du simulateur sont des estimations approximatives fondées sur des règles simplifiées.",
+      "Les comptes sont facultatifs et gratuits, et réservés aux personnes de 18 ans ou plus. Gardez votre mot de passe en sécurité.",
+      "Utilisez le site dans le respect de la loi et n'essayez pas de le casser ni d'accéder aux comptes d'autres personnes.",
+      "Rien dans ces conditions ne vous retire vos droits de consommateur."
+    ],
+    "summaryNote": "Ce résumé est là pour vous aider. Ce sont les conditions complètes ci-dessous qui s'appliquent.",
+    "englishOnly": "Les conditions complètes ci-dessous ne sont disponibles qu'en anglais.",
+    "help": {
+      "title": "Des questions sur ces conditions ?",
+      "text": "Écrivez-nous à <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Nous essayons de répondre sous 14 jours.",
+      "link": "Lire notre Politique de confidentialité"
+    }
+  }
+}

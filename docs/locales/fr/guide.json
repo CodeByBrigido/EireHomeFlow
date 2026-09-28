@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Le guide complet | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Le guide complet",
+    "title": "Chaque étape, en détail",
+    "intro": "Six phases et trente et une étapes, de vos premières économies à votre premier canapé. Ouvrez une phase pour la lire. Quand vous êtes prêt, suivez votre progression dans <a href=\"journey.html\">Mon parcours</a>."
+  },
+  "kind": {
+    "blocking": "Étape obligatoire",
+    "optional": "Étape facultative"
+  },
+  "tipLabel": "Bon à savoir :",
+  "openCalculator": "Ouvrir le simulateur",
+  "openInJourney": "Ouvrir dans mon parcours",
+  "phases": {
+    "preparation": {
+      "title": "Préparation",
+      "subtitle": "Mettre ses finances en ordre",
+      "text": "Capacité d'achat, objectif d'apport et six mois de relevés irréprochables."
+    },
+    "aip": {
+      "title": "Accord de principe (AIP)",
+      "subtitle": "La preuve qu'un prêteur vous suit",
+      "text": "Les papiers, banque ou courtier, et la lettre que demandent les agents."
+    },
+    "search": {
+      "title": "Recherche et offres",
+      "subtitle": "Daft.ie et MyHome.ie",
+      "text": "Visites, le jargon des agents et les offres jusqu'au Sale Agreed."
+    },
+    "legal": {
+      "title": "Juridique et contrats",
+      "subtitle": "Avocat, expertise et évaluation",
+      "text": "Contrats, expertise, évaluation et assurances obligatoires."
+    },
+    "keys": {
+      "title": "Les clés en main",
+      "subtitle": "Déblocage des fonds et jour de la signature",
+      "text": "Offre de prêt, déblocage des fonds, jour de la signature et déménagement."
+    },
+    "settling": {
+      "title": "S'installer",
+      "subtitle": "Sols, rideaux et chaudière",
+      "text": "Meubler la maison et la faire tourner."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Calculer ma capacité d'achat",
+      "time": "15 minutes",
+      "cost": "Gratuit",
+      "body": "Tout le reste découle de ce chiffre. La Banque centrale d'Irlande permet aux primo-accédants d'emprunter jusqu'à quatre fois leur revenu annuel brut, et à ceux qui changent de logement 3,5 fois. Votre épargne décide ensuite quel apport et quels frais vous pouvez couvrir.",
+      "checklist": [
+        "Ouvrez le simulateur et indiquez votre salaire, votre épargne et le prix visé",
+        "Additionnez les deux salaires bruts si vous faites une demande à deux",
+        "Choisissez Enregistrer dans mon parcours : cette étape est cochée pour vous et les étapes suivantes affichent vos chiffres"
+      ],
+      "tip": "Les crédits auto et les remboursements à une credit union réduisent ce que les prêteurs proposent, car ils testent chaque engagement mensuel.",
+      "alt": "Une calculatrice verte avec le symbole de l'euro à l'écran, à côté d'une petite maison et d'une pile de pièces dorées"
+    },
+    "preparation-1": {
+      "title": "Réunir l'apport de 10 %",
+      "time": "En continu",
+      "cost": "10 % du prix",
+      "body": "Il vous faut au moins 10 % du prix d'achat, que ce soit votre premier logement ou non. L'apport s'ajoute aux frais ci-dessous.",
+      "checklist": [
+        "Mettez en place un virement permanent le lendemain de la paie",
+        "Gardez l'apport sur un compte à part auquel vous ne touchez jamais",
+        "Un don familial documenté compte, mais le prêteur voudra une lettre précisant que ce n'est pas un prêt"
+      ],
+      "tip": "Six mois d'épargne régulière d'un montant proche de votre future mensualité, c'est l'argument le plus fort de votre dossier.",
+      "alt": "Une tirelire cochon couleur terre cuite avec une pièce dorée qui tombe dans la fente et une étiquette dorée ronde avec le signe pourcentage"
+    },
+    "preparation-2": {
+      "title": "Mettre de côté l'argent des frais annexes",
+      "time": "En continu",
+      "cost": "Droit de timbre + environ 3 050 €",
+      "body": "Le droit de timbre (stamp duty), l'avocat, l'expertise et l'évaluation se paient avec votre propre argent, pas avec le prêt. Mon parcours affiche vos montants une fois le simulateur enregistré.",
+      "checklist": [
+        "Droit de timbre : 1 % du prix jusqu'à 1 M€, 2 % de 1 M€ à 1,5 M€ et 6 % au-delà",
+        "Pour un logement neuf, le droit de timbre porte sur le prix hors TVA : 13,5 % pour une maison, 9 % pour un appartement",
+        "Avocat : 2 000-3 000 € plus TVA et débours",
+        "Expertise du bâti environ 400 €, évaluation de la banque environ 150 €"
+      ],
+      "tip": "Prévoyez encore 1 500-2 000 € pour le déménagement, les serrures et les premières factures d'énergie.",
+      "alt": "Une enveloppe dorée ouverte d'où dépassent des billets verts, à côté de deux petits reçus en papier"
+    },
+    "preparation-3": {
+      "title": "Garder un compte bancaire irréprochable pendant six mois",
+      "time": "6 mois",
+      "cost": "Gratuit",
+      "body": "Les analystes du prêteur lisent six mois de relevés ligne par ligne pour juger votre gestion de l'argent.",
+      "checklist": [
+        "Aucun pari en ligne, absolument aucun",
+        "Aucun découvert non autorisé ni prélèvement rejeté",
+        "Le loyer payé à temps depuis le même compte chaque mois"
+      ],
+      "tip": "Les comptes Revolut et de credit union comptent aussi. Le prêteur demandera aussi ces relevés.",
+      "alt": "Un relevé bancaire avec une coche verte sur chaque ligne, à côté d'un calendrier mural avec six cases remplies en vert"
+    },
+    "preparation-4": {
+      "title": "Vérifier si vous avez droit au Help to Buy",
+      "time": "2 semaines",
+      "cost": "Remboursement jusqu'à 30 000 €",
+      "body": "Le Help to Buy vous rembourse l'impôt sur le revenu et la DIRT payés en Irlande sur les quatre dernières années, jusqu'à 30 000 € ou 10 % du prix, le plus bas des deux. Il s'adresse aux primo-accédants d'un logement neuf ou autoconstruit et court jusqu'à fin 2029. Le First Home Scheme est une option distincte d'achat en copropriété avec l'État (shared equity) qu'il vaut aussi la peine de chiffrer.",
+      "checklist": [
+        "Vous n'avez jamais acheté ni construit de logement, en Irlande ou à l'étranger",
+        "Le logement est neuf ou autoconstruit et vaut 500 000 € ou moins",
+        "Votre prêt couvre au moins 70 % du prix et vient d'un prêteur agréé",
+        "Vous y vivrez comme résidence principale pendant cinq ans"
+      ],
+      "howtoLabel": "Comment faire la demande",
+      "howto": [
+        "Inscrivez-vous au myAccount de Revenue si vous êtes payé via le PAYE, ou au ROS si vous êtes indépendant. Revenue vous envoie par courrier un code pour finir l'inscription, comptez donc quelques jours.",
+        "Pour chacune des quatre dernières années à prendre en compte, déposez une déclaration de revenus (Income Tax Return) et obtenez votre Statement of Liability. Payez tout impôt encore dû pour ces années.",
+        "Dans myAccount, ouvrez Help to Buy sous Property and Land Services et remplissez la demande. Sur ROS, utilisez le lien Help to Buy applicant de l'écran d'accueil.",
+        "Revenue vous donne un numéro de demande, un code d'accès et le montant maximal que vous pourriez obtenir. Votre prêteur demandera à le voir.",
+        "Une fois l'offre de prêt reçue et le contrat signé, retournez dans Help to Buy et faites la réclamation en joignant l'offre de prêt, votre acceptation signée et le contrat.",
+        "Donnez votre numéro de référence et votre code d'accès au promoteur, qui confirme la réclamation. Revenue verse alors le remboursement au promoteur, comme partie de votre apport."
+      ],
+      "links": [
+        "Revenue : Help to Buy",
+        "Revenue : avant de faire la demande",
+        "Revenue : comment faire la demande"
+      ],
+      "tip": "La demande a une date d'expiration, alors faites la réclamation avant. Vous faites construire vous-même ? Vous réclamez après le premier déblocage du prêt, en joignant la preuve de ce déblocage et l'évaluation du prêteur au lieu d'un contrat, et votre avocat confirme la réclamation.",
+      "alt": "Une maison verte avec la charpente du toit à nu et une grue derrière, à côté d'une pièce dorée dans une flèche verte courbe"
+    },
+    "preparation-5": {
+      "title": "Créer votre compte ÉireHome Flow",
+      "time": "2 minutes",
+      "cost": "Gratuit",
+      "body": "Un compte enregistre votre parcours, pour le reprendre sur votre téléphone, votre ordinateur ou tout autre appareil. C'est gratuit, et cette étape est cochée pour vous dès que vous vous connectez.",
+      "checklist": [
+        "Choisissez Créer un compte et indiquez votre nom, votre e-mail et un mot de passe",
+        "Confirmez votre adresse e-mail grâce au lien que nous vous envoyons",
+        "Connectez-vous sur un autre appareil pour voir la même progression"
+      ],
+      "tip": "Votre compte enregistre votre nom, votre e-mail et les étapes terminées. Les chiffres saisis dans le simulateur restent dans votre navigateur.",
+      "alt": "Un ordinateur portable et un téléphone affichant la même icône de profil, avec un petit nuage et deux flèches de synchronisation entre eux"
+    },
+    "aip-0": {
+      "title": "Choisir une banque en direct ou un courtier",
+      "time": "1 semaine",
+      "cost": "Courtier en général gratuit pour vous",
+      "body": "Un courtier (broker) compare tout le marché avec une seule demande. Passer en direct peut vous valoir une offre de cashback propre à une banque.",
+      "checklist": [
+        "Demandez au courtier avec quelles banques il travaille",
+        "Comparez le cashback au taux. Le cashback est versé une fois, mais le taux s'applique sur toute la durée",
+        "Vérifiez la position du prêteur sur votre type de contrat de travail avant de faire la demande"
+      ],
+      "tip": "C'est sur les revenus en CDD ou en période d'essai que les prêteurs diffèrent le plus, et c'est là qu'un courtier fait la différence.",
+      "alt": "Un panneau indicateur avec une flèche vers la gauche, vers une banque verte à colonnes, et une vers la droite, vers une mallette"
+    },
+    "aip-1": {
+      "title": "Réunir six mois de relevés bancaires",
+      "time": "2-3 jours",
+      "cost": "Gratuit",
+      "body": "Tous les comptes courants, d'épargne et Revolut, complets, sans page manquante.",
+      "checklist": [
+        "Téléchargez les PDF directement depuis la banque, pas de captures d'écran",
+        "Nommez chaque fichier avec le compte et le mois",
+        "Soyez prêt à expliquer tout versement de plus de 500 € environ"
+      ],
+      "tip": "Une seule page manquante est la cause la plus fréquente d'un dossier bloqué.",
+      "alt": "Une pile en éventail de six pages de documents avec un trombone vert, à côté d'une loupe"
+    },
+    "aip-2": {
+      "title": "Réunir les fiches de paie et l'Employment Detail Summary",
+      "time": "1 semaine",
+      "cost": "Gratuit",
+      "body": "En général, trois fiches de paie récentes, votre EDS de Revenue et une attestation de salaire signée par votre employeur.",
+      "checklist": [
+        "Les trois fiches de paie les plus récentes",
+        "L'Employment Detail Summary tiré de myAccount",
+        "Une attestation de salaire confirmant le type de contrat et les primes éventuelles"
+      ],
+      "tip": "Les indépendants ont besoin à la place de deux ans de comptes certifiés et d'une attestation de régularité fiscale (tax clearance).",
+      "alt": "Un dossier ouvert contenant trois fiches de paie, celle de devant marquée du symbole de l'euro et d'un tampon vert coché"
+    },
+    "aip-3": {
+      "title": "Prouver le loyer et l'épargne",
+      "time": "En continu",
+      "cost": "Gratuit",
+      "body": "Le loyer plus une épargne régulière prouvent que vous pouvez rembourser au-delà de vos dépenses actuelles.",
+      "checklist": [
+        "Le loyer payé par virement permanent, visible sur les relevés",
+        "Une épargne régulière à laquelle vous n'avez pas touché",
+        "Une courte explication écrite de toute interruption"
+      ],
+      "tip": "Le loyer plus l'épargne devraient à peu près égaler la future mensualité, car les analystes comparent les deux.",
+      "alt": "Une balance qui pèse une petite maison au toit couleur rouille contre un bocal de pièces dorées"
+    },
+    "aip-4": {
+      "title": "Recevoir la lettre d'AIP",
+      "time": "1-3 semaines",
+      "cost": "Gratuit",
+      "body": "L'accord de principe indique ce que le prêteur vous prêtera, sous réserve de l'évaluation et des derniers contrôles. Il est en général valable six mois.",
+      "checklist": [
+        "Vérifiez le montant, la durée et la date d'expiration",
+        "Enregistrez un PDF sur votre téléphone pour les visites",
+        "Notez la date d'expiration dans votre agenda, car un renouvellement demande de nouveaux relevés"
+      ],
+      "tip": "Aucun agent immobilier en Irlande ne prendra une offre au sérieux sans lui.",
+      "alt": "Une enveloppe ouverte d'où sort une lettre, marquée d'un tampon vert rond et d'une coche"
+    },
+    "search-0": {
+      "title": "Choisir un quartier et vérifier les prix de vente",
+      "time": "1 semaine",
+      "cost": "Gratuit",
+      "body": "Le prix demandé est fixé par le vendeur. Le Residential Property Price Register montre à quel prix les logements se sont vraiment vendus.",
+      "checklist": [
+        "Comparez le prix demandé au registre, rue par rue",
+        "Testez le trajet à l'heure où vous le feriez vraiment",
+        "Regardez le diagnostic énergétique (BER). Passer de C à B peut coûter 15 000 € de travaux"
+      ],
+      "tip": "Créez des alertes sur Daft et MyHome pour votre quartier et votre budget, car les bons biens partent en quelques jours.",
+      "alt": "Un plan de rues plié avec une route et des parcs verts, un grand repère de lieu dessus et une petite étiquette de prix avec le symbole de l'euro"
+    },
+    "search-1": {
+      "title": "Apprendre le vocabulaire irlandais",
+      "time": "1 soirée",
+      "cost": "Gratuit",
+      "body": "Le processus a son propre vocabulaire, et les agents supposeront que vous le connaissez.",
+      "checklist": [
+        "Sale Agreed n'engage personne. Jusqu'à la signature des contrats, un autre acheteur peut encore passer devant vous (gazumping)",
+        "La vente de gré à gré (private treaty) et la vente aux enchères (public auction) changent complètement les règles",
+        "L'acompte de réservation (booking deposit) est remboursable, mais pas l'acompte du contrat"
+      ],
+      "tip": "Le BER est obligatoire sur chaque annonce, alors méfiez-vous d'une annonce qui ne l'affiche pas.",
+      "alt": "Un livre ouvert avec des lignes de texte et deux bulles de dialogue qui flottent au-dessus, l'une avec des points et l'autre avec des lignes"
+    },
+    "search-2": {
+      "title": "Réserver des visites",
+      "time": "2-8 semaines",
+      "cost": "Gratuit",
+      "body": "Visitez au moins cinq biens avant de faire une offre, dont deux qui ne vous semblent pas adaptés.",
+      "checklist": [
+        "Écrivez à l'agent, puis confirmez par téléphone",
+        "Photographiez les traces d'humidité, les boîtiers de compteurs et la trappe des combles",
+        "Demandez pourquoi le vendeur déménage et depuis combien de temps le bien est en vente"
+      ],
+      "tip": "Revenez une seconde fois un soir de semaine pluvieux. Une maison n'a pas le même visage sous la pluie et quand la rue est chargée.",
+      "alt": "Un calendrier mural avec un jour marqué d'une petite maison et un réveil qui sonne à côté"
+    },
+    "search-3": {
+      "title": "Noter chaque offre",
+      "time": "1-8 semaines",
+      "cost": "Gratuit",
+      "body": "Les offres sont orales et non réglementées, alors tenez votre propre registre.",
+      "checklist": [
+        "Notez le montant, la date et votre interlocuteur",
+        "Fixez votre prix plafond avant de commencer",
+        "Ne faites jamais d'offre sans l'AIP en main"
+      ],
+      "tip": "Demandez à l'agent de confirmer chaque offre par e-mail. Cela vous protège contre les offres fantômes.",
+      "alt": "Un carnet à spirale ouvert avec une liste d'entrées et un graphique en barres qui monte, avec un crayon posé dessus"
+    },
+    "search-4": {
+      "title": "Arriver au Sale Agreed",
+      "time": "1 semaine",
+      "cost": "3 000-5 000 € remboursables",
+      "body": "Votre offre est acceptée et vous versez un acompte de réservation, en général 3 000-5 000 €, pour retirer la maison du marché.",
+      "checklist": [
+        "Obtenez un reçu écrit de l'acompte de réservation",
+        "Donnez à l'agent les coordonnées de votre avocat",
+        "Demandez que l'avis de vente (sales advice notice) soit émis rapidement"
+      ],
+      "tip": "L'acompte de réservation est entièrement remboursable jusqu'à la signature des contrats, donc la vente n'est pas encore définitive.",
+      "alt": "Un panneau d'agence immobilière avec un bandeau vert barré d'une grande coche, devant une petite maison"
+    },
+    "legal-0": {
+      "title": "Choisir un avocat",
+      "time": "1 semaine",
+      "cost": "2 000-3 000 € + TVA",
+      "body": "Le conveyancing est le transfert juridique de la propriété, et le calendrier dépend surtout du rythme de votre avocat (solicitor).",
+      "checklist": [
+        "Demandez un devis forfaitaire incluant les débours et les recherches",
+        "Demandez combien de dossiers le cabinet clôt par mois",
+        "Transmettez-lui l'avis de vente dès qu'il arrive"
+      ],
+      "tip": "Choisissez selon la rapidité de réponse. Un devis bas ne vaut rien si personne ne répond au téléphone pendant les vacances d'août.",
+      "alt": "Une balance dorée sur un bureau en bois, à côté d'une pile de papiers nouée d'un ruban rouge et d'un sceau doré"
+    },
+    "legal-1": {
+      "title": "Réserver l'expertise du bâti",
+      "time": "1-2 semaines",
+      "cost": "300-500 €",
+      "body": "Un ingénieur indépendant parcourt la maison et consigne par écrit tout ce qui ne va pas.",
+      "checklist": [
+        "Faites appel à un ingénieur inscrit chez Engineers Ireland ou à la SCSI",
+        "Demandez des photos et une estimation du coût des réparations",
+        "Pour un appartement, lisez aussi les comptes du syndic (management company)"
+      ],
+      "tip": "Les constats de l'expertise vous donnent une marge de négociation. Un toit qui demande 6 000 € de travaux justifie de demander 6 000 € de rabais avant les contrats.",
+      "alt": "Une maison verte avec une loupe sur une fissure de son mur, à côté d'un porte-bloc avec une liste"
+    },
+    "legal-2": {
+      "title": "Demander l'évaluation du prêteur",
+      "time": "1 semaine",
+      "cost": "Environ 150 €",
+      "body": "La banque fait évaluer le bien pour sa propre garantie, par un évaluateur de sa propre liste.",
+      "checklist": [
+        "Réservez-la via le prêteur ou le courtier, pas de votre côté",
+        "Une évaluation n'est pas une expertise. Elle sert à protéger la banque",
+        "Si l'évaluation est inférieure, vous comblez l'écart avec vos fonds"
+      ],
+      "tip": "Si l'évaluation est inférieure au prix convenu, il est tout à fait normal de renégocier.",
+      "alt": "Une maison verte avec une étiquette de prix dorée au symbole de l'euro suspendue à son toit, et une banque derrière"
+    },
+    "legal-3": {
+      "title": "Souscrire l'assurance emprunteur et l'assurance habitation",
+      "time": "1-2 semaines",
+      "cost": "25-60 € par mois",
+      "body": "Les deux sont obligatoires avant le déblocage des fonds, et aucune ne doit forcément être souscrite auprès de votre prêteur.",
+      "checklist": [
+        "Faites jouer la concurrence pour l'assurance emprunteur (mortgage protection), car l'offre de la banque est rarement la moins chère",
+        "L'assurance habitation doit couvrir le coût de reconstruction, pas le prix d'achat",
+        "Déclarez honnêtement vos problèmes de santé, car une police annulée est pire qu'une surprime"
+      ],
+      "tip": "L'étude de l'assurance peut prendre des semaines en cas d'antécédents médicaux, alors commencez avant les contrats.",
+      "alt": "Un bouclier vert avec une coche blanche devant une petite maison abritée par un parapluie doré"
+    },
+    "legal-4": {
+      "title": "Signer les contrats et verser l'apport",
+      "time": "1-2 semaines",
+      "cost": "10 % moins l'acompte de réservation",
+      "body": "Vous signez, versez le reste de l'apport de 10 % et la vente devient juridiquement contraignante.",
+      "checklist": [
+        "Lisez les conditions particulières avec votre avocat",
+        "Fixez une date de signature qui correspond à votre préavis de location",
+        "Faites confirmer par écrit les équipements et accessoires inclus"
+      ],
+      "tip": "Dès l'échange des contrats, plus personne ne peut passer devant vous (gazumping).",
+      "alt": "Une page de contrat signée avec un stylo plume vert posé sur la signature, à côté d'une pile de pièces dorées"
+    },
+    "keys-0": {
+      "title": "Recevoir l'offre de prêt définitive",
+      "time": "1-2 semaines",
+      "cost": "Gratuit",
+      "body": "L'offre officielle remplace l'AIP et fixe le taux, la durée et les conditions.",
+      "checklist": [
+        "Vérifiez le taux, la durée et les conditions de tout cashback",
+        "Comparez une dernière fois le taux fixe et le taux variable",
+        "Signez et renvoyez-la avec les polices d'assurance jointes"
+      ],
+      "tip": "Les taux verts pour un BER B3 ou mieux peuvent représenter plusieurs milliers d'euros sur une période à taux fixe.",
+      "alt": "Un certificat avec un badge vert pourcentage et un sceau à ruban doré, à côté d'une pièce d'euro dorée"
+    },
+    "keys-1": {
+      "title": "Débloquer les fonds",
+      "time": "3-10 jours",
+      "cost": "Gratuit",
+      "body": "Votre avocat demande l'argent pour le jour de la signature et le prêteur le lui verse.",
+      "checklist": [
+        "Confirmez avec votre avocat le solde exact à la signature",
+        "Virez votre part tôt, car les plafonds de virement quotidiens surprennent beaucoup de gens",
+        "Vérifiez la date du premier remboursement"
+      ],
+      "tip": "N'envoyez jamais d'argent sur la seule foi de coordonnées bancaires reçues par e-mail ; appelez le cabinet de votre avocat pour les vérifier.",
+      "alt": "Des pièces dorées qui suivent une flèche courbe d'une petite banque jusqu'à un immeuble de bureaux"
+    },
+    "keys-2": {
+      "title": "Signer et récupérer les clés",
+      "time": "1 jour",
+      "cost": "Solde à la signature",
+      "body": "La propriété est transférée, le solde est payé et l'agent vous remet les clés.",
+      "checklist": [
+        "Relevez les compteurs et photographiez-les",
+        "Récupérez toutes les clés, badges et codes d'alarme",
+        "Changez les serrures la première semaine"
+      ],
+      "tip": "Faites une dernière visite avant que l'argent ne parte, pour vérifier que la maison est dans l'état convenu.",
+      "alt": "Un trousseau de trois clés de maison devant une porte d'entrée verte surmontée d'une imposte en arc"
+    },
+    "keys-3": {
+      "title": "Faire la liste des défauts",
+      "time": "1 semaine",
+      "cost": "300-600 € pour un contrôleur",
+      "body": "Surtout dans le neuf : notez chaque défaut tant que le constructeur en répond encore.",
+      "checklist": [
+        "Faites appel à un contrôleur professionnel (snagger) pour un logement neuf",
+        "Photographiez chaque défaut avec le nom de la pièce",
+        "Envoyez la liste par écrit avec un délai"
+      ],
+      "tip": "Gardez la liste ouverte jusqu'à ce que chaque point soit réglé, car la période de garantie a déjà commencé.",
+      "alt": "Un porte-bloc avec une liste de trois coches et une croix, entre un rouleau de peinture et un rouleau de ruban de masquage"
+    },
+    "settling-0": {
+      "title": "Mettre les abonnements à votre nom",
+      "time": "1 semaine",
+      "cost": "Dépôts variables",
+      "body": "Électricité, gaz, internet et poubelles, tout la première semaine.",
+      "checklist": [
+        "Joignez vos photos de compteurs du premier jour à chaque changement",
+        "Changer de fournisseur en emménageant est un moyen simple d'économiser",
+        "Organisez la collecte des poubelles avant le premier jour de ramassage"
+      ],
+      "tip": "Enregistrez l'alarme et vérifiez si la ligne internet est en fibre avant de vous engager sur une offre.",
+      "alt": "Une grande ampoule orange au centre, avec un signal wifi rouge à gauche et une poubelle verte à roulettes à droite"
+    },
+    "settling-1": {
+      "title": "S'inscrire à la Local Property Tax",
+      "time": "1 jour",
+      "cost": "Selon la tranche",
+      "body": "Revenue a besoin que le bien soit enregistré à votre nom et classé dans une tranche selon sa valeur. La LPT est la taxe foncière annuelle.",
+      "checklist": [
+        "Inscrivez-vous via myAccount avec l'identifiant du bien",
+        "Vérifiez si le vendeur a payé l'année d'avance",
+        "Choisissez le mode de paiement que vous voulez vraiment"
+      ],
+      "tip": "Votre avocat vérifie à la signature que la LPT est à jour, mais la déclaration de l'année suivante vous revient.",
+      "alt": "Une petite maison verte à côté d'un formulaire avec un tampon rond coché et d'un calendrier avec une date marquée"
+    },
+    "settling-2": {
+      "title": "Fixer un budget d'ameublement par pièce",
+      "time": "1 soirée",
+      "cost": "3 000-10 000 €",
+      "body": "Les sols et les rideaux ou stores peuvent facilement absorber les premiers 5 000 € si vous ne planifiez pas.",
+      "checklist": [
+        "Classez les pièces : chambre et cuisine d'abord, chambre d'amis en dernier",
+        "Chiffrez les sols et les stores avant les canapés",
+        "Gardez 15 % pour ce que vous oubliez"
+      ],
+      "tip": "Des meubles massifs d'occasion coûtent moins cher et valent mieux que du neuf en kit. Mesurez d'abord les portes.",
+      "alt": "Le plan de quatre pièces vu du dessus, chacune avec une petite pile de pièces dorées"
+    },
+    "settling-3": {
+      "title": "Les sols avant les meubles",
+      "time": "1-2 semaines",
+      "cost": "25-60 € par m²",
+      "body": "Poser les sols dans une maison vide est moins cher et bien plus rapide.",
+      "checklist": [
+        "Mesurez chaque pièce et ajoutez 10 % pour les coupes",
+        "Laissez le stratifié ou le parquet contrecollé s'acclimater 48 heures",
+        "Réglez la sous-couche et les plinthes dans la même commande"
+      ],
+      "tip": "Si vous peignez aussi, peignez d'abord, posez les sols ensuite et les plinthes en dernier.",
+      "alt": "Une pile de quatre lames de parquet orange avec un marteau posé dessus, et un petit fauteuil vert à côté"
+    },
+    "settling-4": {
+      "title": "Mesurer pour les rideaux et les stores",
+      "time": "1 week-end",
+      "cost": "60-250 € par fenêtre",
+      "body": "Mesurez la tringle plutôt que la vitre, et choisissez la longueur avant de commander.",
+      "checklist": [
+        "La largeur de la tringle plus 15-20cm de chaque côté",
+        "Jusqu'à l'appui ou jusqu'au sol, à décider pièce par pièce",
+        "Des rideaux occultants dans les chambres, surtout exposées à l'est"
+      ],
+      "tip": "Commandez d'abord pour une pièce et vivez avec pendant une semaine avant de faire toute la maison.",
+      "alt": "Une fenêtre avec deux rideaux attachés sur une tringle, avec un mètre ruban jaune tendu le long de la tringle"
+    },
+    "settling-5": {
+      "title": "Faire entretenir la chaudière et tester les détecteurs",
+      "time": "1 jour",
+      "cost": "90-150 €",
+      "body": "Faites faire un entretien de référence et notez les contrôles de sécurité dans un calendrier.",
+      "checklist": [
+        "Faites appel à un technicien gaz inscrit au RGI",
+        "Testez les détecteurs de fumée et de monoxyde de carbone (CO), et remplacez ceux de plus de dix ans",
+        "Rangez le certificat BER, les garanties et les notices au même endroit"
+      ],
+      "tip": "L'entretien annuel de la chaudière est une condition de la plupart des assurances habitation, alors gardez les reçus.",
+      "alt": "Une chaudière murale avec un symbole de flamme, une clé à molette par terre et un détecteur de fumée au plafond"
+    }
+  }
+}

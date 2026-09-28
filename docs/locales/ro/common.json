@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "label": "Principal",
+    "home": "Acasă",
+    "guide": "Ghid",
+    "journey": "Drumul meu",
+    "calculator": "Calculator"
+  },
+  "header": {
+    "signIn": "Conectare"
+  },
+  "language": {
+    "button": "Limba: Română. Schimbă limba",
+    "code": "RO",
+    "title": "Limba"
+  },
+  "account": {
+    "menu": "Meniul contului",
+    "dashboard": "Panou",
+    "profile": "Profilul meu",
+    "signOut": "Deconectare",
+    "fallbackName": "Contul tău",
+    "menuFor": "Meniul contului pentru {name}",
+    "signedOut": "Te-ai deconectat. Progresul tău rămâne salvat în cont."
+  },
+  "yourAccount": "Contul tău",
+  "footer": {
+    "disclaimer": "Conținut educativ. Nu este consultanță financiară reglementată.",
+    "legal": "Informații legale",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni de utilizare"
+  },
+  "toast": {
+    "dismiss": "Închide"
+  },
+  "gate": {
+    "loading": "Se încarcă contul...",
+    "signIn": "Conectează-te",
+    "signUp": "Creează un cont",
+    "signInPrompt": "Conectează-te ca să vezi această pagină. Drumul, cifrele și datele tale te așteaptă.",
+    "accountsOff": "Conturile nu sunt încă active. Revino în curând."
+  },
+  "fields": {
+    "name": "Nume complet",
+    "email": "E-mail",
+    "password": "Parolă",
+    "confirm": "Confirmă parola"
+  },
+  "forms": {
+    "name": "Scrie prenumele și numele.",
+    "email": "Scrie o adresă de e-mail validă, de exemplu nume@exemplu.ro.",
+    "password": "Scrie parola.",
+    "weakPassword": "Parola nu îndeplinește cerințele de mai jos.",
+    "confirm": "Confirmă parola.",
+    "mismatch": "Parolele nu coincid.",
+    "wait": "Te rugăm să aștepți...",
+    "connecting": "O clipă, încă ne conectăm. Încearcă din nou."
+  },
+  "errors": {
+    "invalidCredentials": "E-mailul sau parola nu sunt corecte. Verifică-le și încearcă din nou.",
+    "emailNotConfirmed": "Confirmă mai întâi adresa de e-mail: deschide linkul pe care ți l-am trimis.",
+    "userExists": "Există deja un cont cu acest e-mail. Conectează-te.",
+    "weakPassword": "Alege o parolă mai puternică: cel puțin 8 caractere, cu o literă mare și un caracter special.",
+    "samePassword": "Parola nouă trebuie să fie diferită de cea actuală.",
+    "rateLimit": "Prea multe încercări. Așteaptă un minut și încearcă din nou.",
+    "signupsOff": "Crearea de conturi este oprită deocamdată. Revino în curând.",
+    "sessionEnded": "Sesiunea a expirat. Conectează-te din nou.",
+    "network": "Nu am putut contacta serverul. Verifică conexiunea și încearcă din nou.",
+    "generic": "Ceva nu a mers bine. Încearcă din nou."
+  },
+  "welcome": {
+    "newAccount": "Contul tău este gata. Bun venit la ÉireHome Flow, {name}!",
+    "newAccountNoName": "Contul tău este gata. Bun venit la ÉireHome Flow!",
+    "back": "Bine ai revenit, {name}.",
+    "backNoName": "Bine ai revenit.",
+    "confirmed": "E-mailul tău este confirmat. Bun venit la ÉireHome Flow, {name}!",
+    "confirmedNoName": "E-mailul tău este confirmat. Bun venit la ÉireHome Flow!",
+    "goToJourney": "Mergi la drumul meu"
+  },
+  "google": {
+    "cancelled": "Conectarea cu Google a fost anulată. Poți încerca din nou sau poți folosi e-mailul.",
+    "failed": "Conectarea cu Google nu a reușit. Încearcă din nou sau folosește e-mailul.",
+    "failedWith": "Conectarea cu Google nu a reușit: {reason}. Încearcă din nou sau folosește e-mailul."
+  },
+  "linkExpired": "Acest link a expirat sau a fost deja folosit. Conectează-te sau cere un link nou.",
+  "progress": {
+    "steps": {
+      "one": "Pași: {done} din {count}",
+      "few": "Pași: {done} din {count}",
+      "other": "Pași: {done} din {count}"
+    },
+    "phase": {
+      "one": "Pași terminați: {done} din {count}",
+      "few": "Pași terminați: {done} din {count}",
+      "other": "Pași terminați: {done} din {count}"
+    }
+  },
+  "approx": "~{amount}",
+  "newTab": "(se deschide într-o filă nouă)"
+}

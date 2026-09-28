@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Informații legale",
+  "summaryTitle": "Pe scurt",
+  "toc": "Pe această pagină",
+  "aside": "Despre această pagină",
+  "privacy": {
+    "meta": "Politica de confidențialitate | ÉireHome Flow",
+    "title": "Politica de confidențialitate",
+    "updated": "Ultima actualizare: 28 septembrie 2026",
+    "summary": [
+      "ÉireHome Flow este gratuit. Nu afișăm reclame, nu folosim analiză sau urmărire și nu îți vindem datele.",
+      "Poți folosi ghidul, Drumul meu și calculatorul fără cont. Cifrele din calculator nu îți părăsesc niciodată browserul.",
+      "Dacă îți creezi un cont, îți păstrăm numele, adresa de e-mail și progresul la furnizorul nostru de baze de date, Supabase, pe servere din Irlanda. Dacă te conectezi cu Google, sistemul nostru de conturi păstrează și linkul la poza ta de profil Google, trimis de Google. Nu îl afișăm și nu îl folosim.",
+      "Îți poți schimba numele și parola și îți poți șterge contul din Profilul meu. Ca să primești o copie a datelor tale sau să le corectezi, scrie la <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Îți răspundem în cel mult o lună."
+    ],
+    "englishOnly": "Politica completă de mai jos este disponibilă doar în engleză.",
+    "help": {
+      "title": "Întrebări despre datele tale?",
+      "text": "Scrie-ne la <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Răspundem în cel mult o lună.",
+      "link": "Citește Termenii noștri de utilizare"
+    }
+  },
+  "terms": {
+    "meta": "Termeni de utilizare | ÉireHome Flow",
+    "title": "Termeni de utilizare",
+    "updated": "Ultima actualizare: 28 septembrie 2026",
+    "summary": [
+      "ÉireHome Flow este un site educativ gratuit pentru cei care își cumpără prima locuință în Irlanda. Nu există plăți, reclame sau comisioane.",
+      "<strong>Nu este consultanță financiară, ipotecară, juridică sau fiscală și nu suntem reglementați de Banca Centrală a Irlandei.</strong> Cere sfatul unor profesioniști calificați înainte să iei decizii.",
+      "Rezultatele calculatorului sunt estimări aproximative, bazate pe reguli simplificate.",
+      "Conturile sunt opționale și gratuite și doar pentru persoane de cel puțin 18 ani. Păstrează-ți parola în siguranță.",
+      "Folosește site-ul legal și nu încerca să-l strici sau să intri în conturile altor persoane.",
+      "Nimic din acești termeni nu îți ia drepturile legale de consumator."
+    ],
+    "summaryNote": "Acest rezumat e aici ca să te ajute. Se aplică termenii compleți de mai jos.",
+    "englishOnly": "Termenii compleți de mai jos sunt disponibili doar în engleză.",
+    "help": {
+      "title": "Întrebări despre acești termeni?",
+      "text": "Scrie-ne la <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>. Încercăm să răspundem în 14 zile.",
+      "link": "Citește Politica noastră de confidențialitate"
+    }
+  }
+}

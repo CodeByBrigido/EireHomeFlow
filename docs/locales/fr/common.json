@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "label": "Principale",
+    "home": "Accueil",
+    "guide": "Guide",
+    "journey": "Parcours",
+    "calculator": "Simulateur"
+  },
+  "header": {
+    "signIn": "Connexion"
+  },
+  "language": {
+    "button": "Langue : Français. Changer de langue",
+    "code": "FR",
+    "title": "Langue"
+  },
+  "account": {
+    "menu": "Menu du compte",
+    "dashboard": "Tableau de bord",
+    "profile": "Mon profil",
+    "signOut": "Se déconnecter",
+    "fallbackName": "Votre compte",
+    "menuFor": "Menu du compte de {name}",
+    "signedOut": "Vous êtes déconnecté. Votre progression reste enregistrée dans votre compte."
+  },
+  "yourAccount": "Votre compte",
+  "footer": {
+    "disclaimer": "Contenu pédagogique. Pas un conseil financier réglementé.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "toast": {
+    "dismiss": "Fermer"
+  },
+  "gate": {
+    "loading": "Chargement de votre compte...",
+    "signIn": "Se connecter",
+    "signUp": "Créer un compte",
+    "signInPrompt": "Connectez-vous pour voir cette page. Votre parcours, vos chiffres et vos informations vous attendent.",
+    "accountsOff": "Les comptes ne sont pas encore activés. Revenez bientôt."
+  },
+  "fields": {
+    "name": "Nom complet",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirm": "Confirmez le mot de passe"
+  },
+  "forms": {
+    "name": "Saisissez votre prénom et votre nom.",
+    "email": "Saisissez une adresse e-mail valide, comme nom@exemple.com.",
+    "password": "Saisissez votre mot de passe.",
+    "weakPassword": "Votre mot de passe ne respecte pas les critères ci-dessous.",
+    "confirm": "Confirmez votre mot de passe.",
+    "mismatch": "Les mots de passe ne correspondent pas.",
+    "wait": "Patientez...",
+    "connecting": "Un instant, la connexion est en cours. Réessayez."
+  },
+  "errors": {
+    "invalidCredentials": "L'e-mail ou le mot de passe est incorrect. Vérifiez-les et réessayez.",
+    "emailNotConfirmed": "Confirmez d'abord votre adresse e-mail : ouvrez le lien que nous vous avons envoyé.",
+    "userExists": "Un compte existe déjà avec cet e-mail. Connectez-vous plutôt.",
+    "weakPassword": "Choisissez un mot de passe plus solide : au moins 8 caractères, avec une majuscule et un caractère spécial.",
+    "samePassword": "Le nouveau mot de passe doit être différent de l'actuel.",
+    "rateLimit": "Trop de tentatives. Attendez une minute et réessayez.",
+    "signupsOff": "La création de comptes est désactivée pour le moment. Revenez bientôt.",
+    "sessionEnded": "Votre session a expiré. Reconnectez-vous.",
+    "network": "Impossible de joindre le serveur. Vérifiez votre connexion et réessayez.",
+    "generic": "Un problème est survenu. Réessayez."
+  },
+  "welcome": {
+    "newAccount": "Votre compte est prêt. Bienvenue sur ÉireHome Flow, {name} !",
+    "newAccountNoName": "Votre compte est prêt. Bienvenue sur ÉireHome Flow !",
+    "back": "Content de vous revoir, {name}.",
+    "backNoName": "Content de vous revoir.",
+    "confirmed": "Votre e-mail est confirmé. Bienvenue sur ÉireHome Flow, {name} !",
+    "confirmedNoName": "Votre e-mail est confirmé. Bienvenue sur ÉireHome Flow !",
+    "goToJourney": "Aller à mon parcours"
+  },
+  "google": {
+    "cancelled": "La connexion avec Google a été annulée. Vous pouvez réessayer ou utiliser votre e-mail.",
+    "failed": "La connexion avec Google n'a pas fonctionné. Réessayez ou utilisez votre e-mail.",
+    "failedWith": "La connexion avec Google n'a pas fonctionné : {reason}. Réessayez ou utilisez votre e-mail."
+  },
+  "linkExpired": "Ce lien a expiré ou a déjà été utilisé. Connectez-vous ou demandez un nouveau lien.",
+  "progress": {
+    "steps": {
+      "one": "Étapes : {done} sur {count}",
+      "many": "Étapes : {done} sur {count}",
+      "other": "Étapes : {done} sur {count}"
+    },
+    "phase": {
+      "one": "Étapes terminées : {done} sur {count}",
+      "many": "Étapes terminées : {done} sur {count}",
+      "other": "Étapes terminées : {done} sur {count}"
+    }
+  },
+  "approx": "env. {amount}",
+  "newTab": "(s'ouvre dans un nouvel onglet)"
+}

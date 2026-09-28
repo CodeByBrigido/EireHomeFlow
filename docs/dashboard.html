@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common account guide">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="account:dashboard.meta">Dashboard | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/dashboard.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/dashboard.js?v=20260929"></script>
 </head>
 <body data-page="dashboard">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -41,71 +48,71 @@
   <!-- /include -->
 
   <main class="main main--wide">
-    <p class="eyebrow">Your dashboard</p>
-    <h1 class="page-title" data-bind="dashGreeting">Your dashboard</h1>
-    <p class="calc__intro">Where you are on the road to your keys, and the numbers behind it.</p>
+    <p class="eyebrow" data-i18n="account:dashboard.eyebrow">Your dashboard</p>
+    <h1 class="page-title" data-bind="dashGreeting" data-i18n="account:dashboard.title">Your dashboard</h1>
+    <p class="calc__intro" data-i18n="account:dashboard.intro">Where you are on the road to your keys, and the numbers behind it.</p>
 
     <div class="gate card" id="gate">
-      <p class="gate__text" data-bind="gateText">Loading your account...</p>
+      <p class="gate__text" data-bind="gateText" data-i18n="common:gate.loading">Loading your account...</p>
       <div class="gate__actions" id="gate-actions" hidden>
-        <a class="btn btn--primary" href="signin.html?next=dashboard.html">Sign in</a>
-        <a class="btn btn--outline" href="signup.html?next=dashboard.html">Create an account</a>
+        <a class="btn btn--primary" href="signin.html?next=dashboard.html" data-i18n="common:gate.signIn">Sign in</a>
+        <a class="btn btn--outline" href="signup.html?next=dashboard.html" data-i18n="common:gate.signUp">Create an account</a>
       </div>
     </div>
 
     <div id="signed-in" hidden>
       <div class="dash-stats">
         <div class="stat">
-          <p class="label">Progress</p>
+          <p class="label" data-i18n="account:dashboard.progress">Progress</p>
           <p class="stat__value" data-bind="pct"></p>
           <p class="stat__note" data-bind="countLabel"></p>
         </div>
         <div class="stat">
-          <p class="label">Current phase</p>
+          <p class="label" data-i18n="account:dashboard.phase">Current phase</p>
           <p class="stat__value" data-bind="dashPhaseNumber"></p>
           <p class="stat__note" data-bind="dashPhaseName"></p>
         </div>
         <div class="stat">
-          <p class="label">Earned</p>
+          <p class="label" data-i18n="account:dashboard.earned">Earned</p>
           <p class="stat__value" data-bind="xp"></p>
-          <p class="stat__note">XP, 25 for each step you complete.</p>
+          <p class="stat__note" data-i18n="account:dashboard.xpNote">XP, 25 for each step you complete.</p>
         </div>
         <div class="stat stat--accent">
-          <p class="label">Next up</p>
+          <p class="label" data-i18n="account:dashboard.nextUp">Next up</p>
           <p class="next-up__title" data-bind="nextTitle"></p>
-          <a class="next-up__btn" id="next-link" href="journey.html">Open this step</a>
+          <a class="next-up__btn" id="next-link" href="journey.html" data-i18n="account:dashboard.openStep">Open this step</a>
         </div>
       </div>
 
-      <h2 class="dash__title">Your phases</h2>
+      <h2 class="dash__title" data-i18n="account:dashboard.phases">Your phases</h2>
       <div class="phases__grid dash__phases" id="dash-phases"></div>
 
       <div class="dash-row">
         <div class="result-main">
-          <p class="label">Your numbers</p>
+          <p class="label" data-i18n="account:dashboard.numbers">Your numbers</p>
           <p class="result-main__value" data-bind="maxPrice"></p>
           <p class="result-main__note" data-bind="numbersNote"></p>
           <div class="result-main__grid" id="dash-numbers">
             <div class="result-main__box">
-              <p class="result-main__box-label">Max mortgage</p>
+              <p class="result-main__box-label" data-i18n="account:dashboard.maxLoan">Max mortgage</p>
               <p class="result-main__box-value" data-bind="maxLoan"></p>
             </div>
             <div class="result-main__box">
-              <p class="result-main__box-label">Funds available</p>
+              <p class="result-main__box-label" data-i18n="account:dashboard.funds">Funds available</p>
               <p class="result-main__box-value" data-bind="funds"></p>
             </div>
           </div>
-          <a class="next-up__btn" href="calculator.html" data-bind="numbersAction">Open the calculator</a>
+          <a class="next-up__btn" href="calculator.html" data-bind="numbersAction" data-i18n="account:dashboard.openCalculator">Open the calculator</a>
         </div>
 
         <div class="card dash-account">
-          <p class="label">Your account</p>
+          <p class="label" data-i18n="account:dashboard.account">Your account</p>
           <p class="dash-account__name" data-bind="userName"></p>
           <p class="dash-account__email" data-bind="userEmail"></p>
           <p class="dash-account__since" data-bind="memberSince"></p>
-          <p class="dash-account__sync"><span aria-hidden="true">✓</span> Your progress is saved to your account.</p>
+          <p class="dash-account__sync"><span aria-hidden="true">✓</span> <span data-i18n="account:dashboard.synced">Your progress is saved to your account.</span></p>
           <div class="dash-account__actions">
-            <a class="btn btn--outline" href="profile.html">My profile</a>
+            <a class="btn btn--outline" href="profile.html" data-i18n="account:dashboard.profile">My profile</a>
           </div>
         </div>
       </div>
@@ -115,11 +122,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -131,7 +138,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

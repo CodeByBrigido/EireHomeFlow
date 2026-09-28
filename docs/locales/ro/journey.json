@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Drumul meu | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Drumul tău",
+    "title": "Până la chei și la casa gata de locuit"
+  },
+  "callout": {
+    "start": "Începe aici",
+    "optional": "Opțional"
+  },
+  "status": {
+    "completed": "terminat",
+    "locked": "blocat",
+    "current": "pasul curent",
+    "optional": "opțional"
+  },
+  "node": {
+    "label": "Pasul {n} din {total}: {title}"
+  },
+  "finish": {
+    "title": "Casă complet amenajată",
+    "note": "Se deblochează când toți pașii obligatorii sunt bifați.",
+    "doneTitle": "Gata de locuit",
+    "doneNote": "Toți pașii făcuți, inclusiv pardoselile și perdelele."
+  },
+  "next": {
+    "none": "E timpul pentru o ceașcă de ceai"
+  },
+  "aside": {
+    "nextUp": "Urmează",
+    "openStep": "Deschide acest pas",
+    "reset": "Resetează progresul"
+  },
+  "detail": {
+    "close": "Închide",
+    "stepOf": "Pasul {n} din {total}",
+    "checklist": "Ce presupune",
+    "howto": "Cum se face",
+    "tip": "Bine de știut",
+    "complete": "Termină pasul +25 XP",
+    "undo": "Marchează ca nefăcut",
+    "changeNumbers": "Schimbă-mi cifrele",
+    "openCalculator": "Deschide calculatorul",
+    "signUp": "Creează cont sau conectează-te",
+    "previous": "← Înapoi",
+    "next": "Înainte →"
+  },
+  "note": {
+    "calculator": "Pasul acesta se bifează singur când alegi Salvează în drumul meu în calculator.",
+    "signedInDone": "Contul conectat: {email}, deci pasul acesta e făcut.",
+    "signedInTicking": "Contul conectat: {email}. Pasul acesta se bifează acum pentru tine.",
+    "checking": "Se verifică contul...",
+    "signIn": "Pasul acesta se bifează singur imediat ce te conectezi.",
+    "accountsOff": "Conturile nu sunt încă active, deci pasul acesta nu poate fi terminat.",
+    "locked": "Poți citi pasul acesta de acum. Îl poți termina după ce termini „{title}”."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Cifrele tale",
+      "maxPrice": "Prețul maxim al locuinței",
+      "maxLoan": "Credit maxim ({multiple})",
+      "funds": "Fonduri disponibile",
+      "monthly": "Rata lunară pentru o locuință de {price}"
+    },
+    "deposit": {
+      "title": "Avansul tău",
+      "tenPercent": "10 % din {price}",
+      "own": "Economii și donație de la familie",
+      "htb": "Help to Buy",
+      "covered": "Fondurile tale acoperă avansul.",
+      "short": "Îți lipsesc {amount} pentru avans."
+    },
+    "costs": {
+      "title": "Costurile tale suplimentare la {price}",
+      "stamp": "Taxa de timbru",
+      "solicitor": "Avocat",
+      "survey": "Inspecție tehnică",
+      "valuation": "Evaluarea băncii",
+      "total": "Total, peste avans",
+      "newHouse": "Calculatorul e setat pe o casă nouă, deci taxa de timbru se calculează pe prețul fără TVA de 13,5 %.",
+      "newApartment": "Calculatorul e setat pe un apartament nou, deci taxa de timbru se calculează pe prețul fără TVA de 9 %."
+    },
+    "htb": {
+      "title": "Help to Buy și tu",
+      "mover": "Calculatorul tău spune că îți schimbi locuința. Help to Buy e doar pentru prima locuință, așa că poți sări peste acest pas opțional.",
+      "secondHand": "Calculatorul tău e setat pe o locuință la mâna a doua. Help to Buy acoperă doar construcțiile noi și cele pe cont propriu, așa că alege Casă nouă sau Apartament nou în calculator dacă asta cauți.",
+      "overCap": "Prețul tău țintă de {price} depășește limita de {cap}, deci Help to Buy nu s-ar aplica.",
+      "loanTooSmall": "Help to Buy cere un credit de cel puțin 70 % din preț, adică {minLoan} la prețul tău țintă. Poți împrumuta până la {maxLoan}, deci Help to Buy nu s-ar aplica la acest preț.",
+      "borrowEnough": "Mai cere și un credit de cel puțin 70 % din preț ({minLoan}), așa că plănuiește să împrumuți atât și păstrează restul economiilor.",
+      "most": "Maximul pe care l-ai putea primi la {price}",
+      "counted": "Inclus în calculatorul tău",
+      "note": "Suma finală e limitată și de impozitul pe venit și DIRT plătite în ultimii patru ani. Cererea ta la Revenue o arată."
+    },
+    "notSaved": "Cifrele tale nu sunt încă salvate în acest browser. Deschide calculatorul și alege Salvează în drumul meu ca să le vezi aici.",
+    "saveFirst": "Salvează-ți cifrele în calculator (pasul 1) ca să vezi aici valorile tale."
+  }
+}

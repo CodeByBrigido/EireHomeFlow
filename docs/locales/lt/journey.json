@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Mano kelias | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Jūsų kelias",
+    "title": "Iki raktų ir įrengtų namų"
+  },
+  "callout": {
+    "start": "Pradėkite čia",
+    "optional": "Neprivalomas"
+  },
+  "status": {
+    "completed": "atliktas",
+    "locked": "užrakintas",
+    "current": "dabartinis žingsnis",
+    "optional": "neprivalomas"
+  },
+  "node": {
+    "label": "{n} žingsnis iš {total}: {title}"
+  },
+  "finish": {
+    "title": "Namai visiškai įrengti",
+    "note": "Atrakinama, kai pažymėti visi privalomi žingsniai.",
+    "doneTitle": "Įsikurta",
+    "doneNote": "Atlikti visi žingsniai, įskaitant grindis ir užuolaidas."
+  },
+  "next": {
+    "none": "Metas užkaisti arbatinuką"
+  },
+  "aside": {
+    "nextUp": "Toliau",
+    "openStep": "Atidaryti šį žingsnį",
+    "reset": "Atstatyti pažangą"
+  },
+  "detail": {
+    "close": "Uždaryti",
+    "stepOf": "{n} žingsnis iš {total}",
+    "checklist": "Ką reikia padaryti",
+    "howto": "Kaip tai padaryti",
+    "tip": "Verta žinoti",
+    "complete": "Atlikti žingsnį +25 XP",
+    "undo": "Pažymėti kaip neatliktą",
+    "changeNumbers": "Keisti mano skaičius",
+    "openCalculator": "Atidaryti skaičiuoklę",
+    "signUp": "Sukurti paskyrą arba prisijungti",
+    "previous": "← Ankstesnis",
+    "next": "Kitas →"
+  },
+  "note": {
+    "calculator": "Šis žingsnis pažymimas automatiškai, kai skaičiuoklėje pasirenkate Išsaugoti mano kelyje.",
+    "signedInDone": "Prisijungta kaip {email}, todėl šis žingsnis atliktas.",
+    "signedInTicking": "Prisijungta kaip {email}. Šis žingsnis dabar pažymimas.",
+    "checking": "Tikrinama paskyra...",
+    "signIn": "Šis žingsnis pažymimas automatiškai, kai tik prisijungiate.",
+    "accountsOff": "Paskyros dar neįjungtos, todėl šio žingsnio atlikti negalima.",
+    "locked": "Šį žingsnį jau galite perskaityti. Atlikti jį galėsite, kai baigsite „{title}“."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Jūsų skaičiai",
+      "maxPrice": "Didžiausia būsto kaina",
+      "maxLoan": "Didžiausia paskola ({multiple})",
+      "funds": "Turimos lėšos",
+      "monthly": "Mėnesio įmoka perkant už {price}"
+    },
+    "deposit": {
+      "title": "Jūsų pradinis įnašas",
+      "tenPercent": "10 % nuo {price}",
+      "own": "Santaupos ir šeimos dovana",
+      "htb": "Help to Buy",
+      "covered": "Jūsų lėšos padengia pradinį įnašą.",
+      "short": "Pradiniam įnašui trūksta {amount}."
+    },
+    "costs": {
+      "title": "Jūsų papildomos išlaidos perkant už {price}",
+      "stamp": "Žyminis mokestis",
+      "solicitor": "Teisininkas",
+      "survey": "Techninė apžiūra",
+      "valuation": "Banko vertinimas",
+      "total": "Iš viso, be pradinio įnašo",
+      "newHouse": "Skaičiuoklėje pasirinktas naujas namas, todėl žyminis mokestis skaičiuojamas nuo kainos be 13,5 % PVM.",
+      "newApartment": "Skaičiuoklėje pasirinktas naujas butas, todėl žyminis mokestis skaičiuojamas nuo kainos be 9 % PVM."
+    },
+    "htb": {
+      "title": "Help to Buy ir Jūs",
+      "mover": "Pagal Jūsų skaičiuoklę keičiate būstą. Help to Buy skirtas tik perkantiems pirmą būstą, tad šį neprivalomą žingsnį galite praleisti.",
+      "secondHand": "Jūsų skaičiuoklėje pasirinktas senos statybos būstas. Help to Buy taikomas tik naujos statybos ir pačių statomiems būstams, tad skaičiuoklėje pasirinkite Naujas namas arba Naujas butas, jei tokio ieškote.",
+      "overCap": "Jūsų tikslinė kaina {price} viršija {cap} ribą, todėl Help to Buy nebūtų taikomas.",
+      "loanTooSmall": "Help to Buy reikalauja paskolos, sudarančios bent 70 % kainos, tai yra {minLoan} Jūsų tikslinei kainai. Galite pasiskolinti iki {maxLoan}, todėl esant šiai kainai Help to Buy nebūtų taikomas.",
+      "borrowEnough": "Taip pat reikalaujama paskolos, sudarančios bent 70 % kainos ({minLoan}), tad planuokite pasiskolinti tiek ir pasilikti likusias santaupas.",
+      "most": "Daugiausia, ką galėtumėte gauti perkant už {price}",
+      "counted": "Įskaičiuota Jūsų skaičiuoklėje",
+      "note": "Galutinę sumą taip pat riboja pajamų mokestis ir DIRT, sumokėti per pastaruosius ketverius metus. Ją rodo Jūsų paraiška Revenue sistemoje."
+    },
+    "notSaved": "Jūsų skaičiai šioje naršyklėje dar neišsaugoti. Atidarykite skaičiuoklę ir pasirinkite Išsaugoti mano kelyje, kad juos čia matytumėte.",
+    "saveFirst": "Išsaugokite savo skaičius skaičiuoklėje (1 žingsnis), kad čia matytumėte savo reikšmes."
+  }
+}

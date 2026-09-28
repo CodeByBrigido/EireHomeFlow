@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common legal">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms of Use | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="legal:terms.meta">Terms of Use | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/legal.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/legal.js?v=20260929"></script>
 </head>
 <body data-page="terms">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -41,24 +48,27 @@
   <!-- /include -->
 
   <main class="main main--wide">
-    <p class="eyebrow">Legal</p>
-    <h1 class="page-title">Terms of Use</h1>
-    <p class="legal__updated">Last updated: 28 September 2026</p>
+    <p class="eyebrow" data-i18n="legal:eyebrow">Legal</p>
+    <h1 class="page-title" data-i18n="legal:terms.title">Terms of Use</h1>
+    <p class="legal__updated" data-i18n="legal:terms.updated">Last updated: 28 September 2026</p>
     <div class="legal-layout">
     <div class="legal">
       <div class="legal__summary">
-        <p><strong>The short version</strong></p>
+        <p><strong data-i18n="legal:summaryTitle">The short version</strong></p>
         <ul>
-          <li>ÉireHome Flow is a free educational website for people buying their first home in Ireland. There are no payments, ads or commissions.</li>
-          <li><strong>It is not financial, mortgage, legal or tax advice, and we are not regulated by the Central Bank of Ireland.</strong> Get advice from qualified professionals before you make decisions.</li>
-          <li>Calculator results are rough estimates based on simplified rules.</li>
-          <li>Accounts are optional and free, and only for people aged 18 or over. Keep your password safe.</li>
-          <li>Use the site lawfully and do not try to break it or get into other people's accounts.</li>
-          <li>Nothing in these terms takes away your legal rights as a consumer.</li>
+          <li data-i18n-html="legal:terms.summary.0">ÉireHome Flow is a free educational website for people buying their first home in Ireland. There are no payments, ads or commissions.</li>
+          <li data-i18n-html="legal:terms.summary.1"><strong>It is not financial, mortgage, legal or tax advice, and we are not regulated by the Central Bank of Ireland.</strong> Get advice from qualified professionals before you make decisions.</li>
+          <li data-i18n-html="legal:terms.summary.2">Calculator results are rough estimates based on simplified rules.</li>
+          <li data-i18n-html="legal:terms.summary.3">Accounts are optional and free, and only for people aged 18 or over. Keep your password safe.</li>
+          <li data-i18n-html="legal:terms.summary.4">Use the site lawfully and do not try to break it or get into other people's accounts.</li>
+          <li data-i18n-html="legal:terms.summary.5">Nothing in these terms takes away your legal rights as a consumer.</li>
         </ul>
-        <p>This summary is here to help. The full terms below are what apply.</p>
+        <p data-i18n="legal:terms.summaryNote">This summary is here to help. The full terms below are what apply.</p>
       </div>
 
+      <p class="legal__notice" data-i18n="legal:terms.englishOnly">The full terms below are in English only.</p>
+
+      <div class="legal__body" lang="en-IE" data-i18n-source-only>
       <h2>1. Who we are</h2>
       <p>ÉireHome Flow is run and based in Ireland, trading as ÉireHome Flow. In these terms, "we", "us" and "our" mean ÉireHome Flow, Ireland.<!-- TODO: add the operator's full legal name and postal address --> "You" means anyone who uses the website.</p>
       <p>You can contact us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>.</p>
@@ -238,17 +248,18 @@
       <p>If you have any questions about these terms, email us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We aim to reply within 14 days.</p>
       <!-- POLICY CHOICE: a 14-day reply target is a proposal. -->
       <p>ÉireHome Flow, Ireland.<!-- TODO: add the operator's full legal name and postal address --></p>
+      </div>
     </div>
 
-    <aside class="legal-aside" aria-label="About this page">
+    <aside class="legal-aside" aria-label="About this page" data-i18n-aria-label="legal:aside">
       <details class="legal-toc" open>
-        <summary>On this page</summary>
-        <ol class="legal-toc__list" id="legal-toc-list"></ol>
+        <summary data-i18n="legal:toc">On this page</summary>
+        <ol class="legal-toc__list" id="legal-toc-list" lang="en-IE"></ol>
       </details>
       <div class="legal-help">
-        <p class="legal-help__title">Questions about these terms?</p>
-        <p class="legal-help__text">Email us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We aim to reply within 14 days.</p>
-        <a class="legal-help__link" href="privacy.html">Read our Privacy Policy</a>
+        <p class="legal-help__title" data-i18n="legal:terms.help.title">Questions about these terms?</p>
+        <p class="legal-help__text" data-i18n-html="legal:terms.help.text">Email us at <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a>. We aim to reply within 14 days.</p>
+        <a class="legal-help__link" href="privacy.html" data-i18n="legal:terms.help.link">Read our Privacy Policy</a>
       </div>
     </aside>
     </div>
@@ -257,11 +268,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -273,7 +284,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { calc, stampDuty, VAT, verdictKind } from "../docs/js/lib/calculator.js";
+import { calc, stampBandCount, stampDuty, VAT, verdictKind } from "../docs/js/lib/calculator.js";
 
 // The calculator's example figures (specs/02-TRD.md, section 12.1).
 const BASE = {
@@ -99,4 +99,11 @@ test("price 1,200,000 uses the 1% and 2% bands", () => {
 test("Revenue's own example: new home at 400,000", () => {
   assert.equal(stampDuty(400000, VAT.house).toFixed(2), "3524.23");
   assert.equal(stampDuty(400000, VAT.apartment).toFixed(2), "3669.72");
+});
+
+test("stampBandCount says how many stamp duty bands a price reaches", () => {
+  assert.equal(stampBandCount(380000), 1);
+  assert.equal(stampBandCount(1e6), 1);
+  assert.equal(stampBandCount(1.2e6), 2);
+  assert.equal(stampBandCount(1.6e6), 3);
 });

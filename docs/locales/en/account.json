@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Dashboard | ÉireHome Flow",
+    "eyebrow": "Your dashboard",
+    "title": "Your dashboard",
+    "intro": "Where you are on the road to your keys, and the numbers behind it.",
+    "progress": "Progress",
+    "phase": "Current phase",
+    "earned": "Earned",
+    "xpNote": "XP, 25 for each step you complete.",
+    "nextUp": "Next up",
+    "openStep": "Open this step",
+    "phases": "Your phases",
+    "numbers": "Your numbers",
+    "maxLoan": "Max mortgage",
+    "funds": "Funds available",
+    "openCalculator": "Open the calculator",
+    "account": "Your account",
+    "synced": "Your progress is saved to your account.",
+    "profile": "My profile",
+    "hello": "Hi, {name}",
+    "helloNoName": "Hi there",
+    "allDone": "Every step is done. Put the kettle on.",
+    "notSaved": "Not saved yet",
+    "numbersSaved": "Maximum property price, based on the figures in your calculator.",
+    "numbersHint": "Fill in the calculator and choose Save to my journey to see your numbers here. They stay in this browser.",
+    "useCalculator": "Use the calculator",
+    "memberSince": "Member since {date}"
+  },
+  "profile": {
+    "meta": "My profile | ÉireHome Flow",
+    "title": "My profile",
+    "intro": "Your details and how your account works.",
+    "details": "Your details",
+    "memberSince": "Member since",
+    "save": "Save changes",
+    "saving": "Saving...",
+    "updated": "Your profile has been updated.",
+    "password": {
+      "title": "Password",
+      "text": "Use at least 8 characters, with a capital letter and a special character.",
+      "change": "Change password"
+    },
+    "data": {
+      "title": "Your data",
+      "text": "Your account stores your name, your email and the steps you have completed, on servers in Ireland. With Google, it also keeps the profile picture link Google sends, which we do not use. The figures you type into the calculator stay in your browser. <a href=\"privacy.html\">Read our Privacy Policy</a>."
+    },
+    "signOut": {
+      "title": "Sign out",
+      "text": "Your progress stays saved in your account for next time."
+    },
+    "delete": {
+      "title": "Delete your account",
+      "text": "This deletes your account and the progress saved in it, straight away. It cannot be undone. The calculator figures in this browser are not part of your account and stay here.",
+      "start": "Delete my account",
+      "question": "Delete the account for <strong data-bind=\"userEmail\"></strong> and all its saved progress? You can create a new account later, but this one cannot be brought back.",
+      "confirm": "Yes, delete my account",
+      "cancel": "Cancel",
+      "deleting": "Deleting...",
+      "done": "Your account and its saved progress have been deleted.",
+      "failed": "Your account could not be deleted. Please try again.",
+      "signInAgain": "Sign in again to delete your account.",
+      "notEnabled": "Deleting accounts from the site is not switched on yet. Email eirehomeflow@gmail.com and we will delete it for you.",
+      "note": "Cannot sign in any more? Email <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> from the address on the account and we will delete it for you."
+    }
+  }
+}

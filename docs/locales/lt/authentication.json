@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Prisijungimas | ÉireHome Flow",
+    "title": "Prisijungti",
+    "intro": "Prisijunkite, kad matytumėte išsaugotą kelią.",
+    "submit": "Prisijungti",
+    "forgot": "Pamiršote slaptažodį?",
+    "newHere": "Esate čia pirmą kartą?",
+    "createAccount": "Sukurti paskyrą"
+  },
+  "signup": {
+    "meta": "Sukurkite paskyrą | ÉireHome Flow",
+    "title": "Sukurkite paskyrą",
+    "intro": "Išsaugokite savo kelią ir tęskite bet kuriame įrenginyje.",
+    "terms": "Kurdami paskyrą sutinkate su mūsų <a href=\"terms.html\">Naudojimo sąlygomis</a> ir patvirtinate, kad perskaitėte mūsų <a href=\"privacy.html\">Privatumo politiką</a>.",
+    "submit": "Sukurti paskyrą",
+    "haveAccount": "Jau turite paskyrą?",
+    "signIn": "Prisijungti",
+    "checkInbox": "Patikrinkite el. pašto dėžutę ir spustelėkite nuorodą, kurią išsiuntėme paskyrai patvirtinti."
+  },
+  "forgot": {
+    "meta": "Slaptažodžio atkūrimas | ÉireHome Flow",
+    "title": "Atkurti slaptažodį",
+    "intro": "Įveskite el. pašto adresą, ir atsiųsime nuorodą naujam slaptažodžiui pasirinkti.",
+    "submit": "Siųsti nuorodą",
+    "remembered": "Prisiminėte?",
+    "signIn": "Prisijungti",
+    "sent": "Jei šiuo el. pašto adresu yra paskyra, atkūrimo nuoroda jau siunčiama. Patikrinkite el. pašto dėžutę."
+  },
+  "newPassword": {
+    "meta": "Naujas slaptažodis | ÉireHome Flow",
+    "title": "Pasirinkite naują slaptažodį",
+    "intro": "Įveskite naują savo paskyros slaptažodį.",
+    "newLink": "Atsiųsti naują nuorodą",
+    "signIn": "Prisijungti",
+    "submit": "Išsaugoti naują slaptažodį",
+    "changed": "Jūsų slaptažodis pakeistas."
+  },
+  "google": {
+    "continue": "Tęsti su Google",
+    "divider": "arba naudokite el. paštą",
+    "terms": "Tęsdami su Google sutinkate su mūsų <a href=\"terms.html\">Naudojimo sąlygomis</a> ir patvirtinate, kad perskaitėte mūsų <a href=\"privacy.html\">Privatumo politiką</a>.",
+    "opening": "Atidaroma Google...",
+    "off": "Prisijungimas su Google dar neįjungtas. Kol kas naudokite el. paštą.",
+    "failed": "Nepavyko atidaryti Google. Bandykite dar kartą."
+  },
+  "password": {
+    "length": "Bent 8 simboliai",
+    "upper": "Viena didžioji raidė",
+    "special": "Vienas specialusis simbolis, pavyzdžiui, ! # $ arba ?"
+  },
+  "goToDashboard": "Eiti į mano suvestinę",
+  "privacyNote": "Jūsų paskyroje saugomas vardas, el. paštas ir atlikti žingsniai, serveriuose Airijoje. Prisijungus su Google, saugoma ir Google atsiųsta profilio nuotraukos nuoroda, kurios nenaudojame. Skaičiuoklės skaičiai lieka Jūsų naršyklėje. <a href=\"privacy.html\">Perskaitykite mūsų Privatumo politiką</a>.",
+  "note": {
+    "checking": "Tikrinama nuoroda...",
+    "signedIn": "Prisijungta kaip {email}.",
+    "needLink": "Norėdami pasirinkti naują slaptažodį, dar kartą atidarykite nuorodą el. laiške arba pirmiausia prisijunkite."
+  }
+}

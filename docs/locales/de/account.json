@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Übersicht | ÉireHome Flow",
+    "eyebrow": "Ihre Übersicht",
+    "title": "Ihre Übersicht",
+    "intro": "Wo Sie auf dem Weg zu Ihren Schlüsseln stehen, und die Zahlen dahinter.",
+    "progress": "Fortschritt",
+    "phase": "Aktuelle Phase",
+    "earned": "Verdient",
+    "xpNote": "XP, 25 für jeden erledigten Schritt.",
+    "nextUp": "Als Nächstes",
+    "openStep": "Diesen Schritt öffnen",
+    "phases": "Ihre Phasen",
+    "numbers": "Ihre Zahlen",
+    "maxLoan": "Höchste Hypothek",
+    "funds": "Verfügbare Mittel",
+    "openCalculator": "Rechner öffnen",
+    "account": "Ihr Konto",
+    "synced": "Ihr Fortschritt ist in Ihrem Konto gespeichert.",
+    "profile": "Mein Profil",
+    "hello": "Hallo, {name}",
+    "helloNoName": "Hallo",
+    "allDone": "Alle Schritte sind erledigt. Zeit für eine Tasse Tee.",
+    "notSaved": "Noch nicht gespeichert",
+    "numbersSaved": "Höchster Kaufpreis, nach den Zahlen in Ihrem Rechner.",
+    "numbersHint": "Füllen Sie den Rechner aus und wählen Sie In Mein Weg speichern, um Ihre Zahlen hier zu sehen. Sie bleiben in diesem Browser.",
+    "useCalculator": "Rechner nutzen",
+    "memberSince": "Mitglied seit {date}"
+  },
+  "profile": {
+    "meta": "Mein Profil | ÉireHome Flow",
+    "title": "Mein Profil",
+    "intro": "Ihre Angaben und wie Ihr Konto funktioniert.",
+    "details": "Ihre Angaben",
+    "memberSince": "Mitglied seit",
+    "save": "Änderungen speichern",
+    "saving": "Wird gespeichert...",
+    "updated": "Ihr Profil wurde aktualisiert.",
+    "password": {
+      "title": "Passwort",
+      "text": "Verwenden Sie mindestens 8 Zeichen, mit einem Großbuchstaben und einem Sonderzeichen.",
+      "change": "Passwort ändern"
+    },
+    "data": {
+      "title": "Ihre Daten",
+      "text": "Ihr Konto speichert Ihren Namen, Ihre E-Mail und die erledigten Schritte, auf Servern in Irland. Mit Google speichert es auch den Link zum Profilbild, den Google schickt, den wir aber nicht nutzen. Die Zahlen, die Sie in den Rechner eingeben, bleiben in Ihrem Browser. <a href=\"privacy.html\">Unsere Datenschutzerklärung lesen</a>."
+    },
+    "signOut": {
+      "title": "Abmelden",
+      "text": "Ihr Fortschritt bleibt für das nächste Mal in Ihrem Konto gespeichert."
+    },
+    "delete": {
+      "title": "Ihr Konto löschen",
+      "text": "Damit werden Ihr Konto und der darin gespeicherte Fortschritt sofort gelöscht. Das lässt sich nicht rückgängig machen. Die Zahlen im Rechner dieses Browsers gehören nicht zu Ihrem Konto und bleiben hier.",
+      "start": "Mein Konto löschen",
+      "question": "Das Konto <strong data-bind=\"userEmail\"></strong> und den ganzen gespeicherten Fortschritt löschen? Sie können später ein neues Konto erstellen, aber dieses lässt sich nicht wiederherstellen.",
+      "confirm": "Ja, mein Konto löschen",
+      "cancel": "Abbrechen",
+      "deleting": "Wird gelöscht...",
+      "done": "Ihr Konto und der gespeicherte Fortschritt wurden gelöscht.",
+      "failed": "Ihr Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.",
+      "signInAgain": "Melden Sie sich erneut an, um Ihr Konto zu löschen.",
+      "notEnabled": "Konten lassen sich noch nicht über die Website löschen. Schreiben Sie an eirehomeflow@gmail.com, und wir löschen es für Sie.",
+      "note": "Sie können sich nicht mehr anmelden? Schreiben Sie von der Adresse des Kontos an <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a>, und wir löschen es für Sie."
+    }
+  }
+}

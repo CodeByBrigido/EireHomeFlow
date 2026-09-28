@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Der ganze Ratgeber | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Der ganze Ratgeber",
+    "title": "Jeder Schritt im Detail",
+    "intro": "Sechs Phasen und einunddreißig Schritte, vom ersten Ersparten bis zum ersten Sofa. Öffnen Sie eine Phase, um sie zu lesen. Wenn Sie so weit sind, verfolgen Sie Ihren Fortschritt unter <a href=\"journey.html\">Mein Weg</a>."
+  },
+  "kind": {
+    "blocking": "Pflichtschritt",
+    "optional": "Optionaler Schritt"
+  },
+  "tipLabel": "Gut zu wissen:",
+  "openCalculator": "Rechner öffnen",
+  "openInJourney": "In Mein Weg öffnen",
+  "phases": {
+    "preparation": {
+      "title": "Vorbereitung",
+      "subtitle": "Die Finanzen in Ordnung bringen",
+      "text": "Kaufkraft, Anzahlungsziel und sechs Monate saubere Kontoauszüge."
+    },
+    "aip": {
+      "title": "Grundsatzzusage (AIP)",
+      "subtitle": "Der Nachweis, dass eine Bank Sie finanziert",
+      "text": "Unterlagen, Bank oder Vermittler und das Schreiben, das Makler sehen wollen."
+    },
+    "search": {
+      "title": "Suche und Gebote",
+      "subtitle": "Daft.ie und MyHome.ie",
+      "text": "Besichtigungen, die Sprache der Makler und Gebote bis zum Sale Agreed."
+    },
+    "legal": {
+      "title": "Recht und Verträge",
+      "subtitle": "Anwalt, Gutachten und Wertgutachten",
+      "text": "Verträge, Gutachten, Wertgutachten und Pflichtversicherungen."
+    },
+    "keys": {
+      "title": "Schlüssel in der Hand",
+      "subtitle": "Auszahlung und Übergabetag",
+      "text": "Darlehensangebot, Auszahlung, Übergabetag und der Umzug."
+    },
+    "settling": {
+      "title": "Ankommen",
+      "subtitle": "Böden, Vorhänge und der Heizkessel",
+      "text": "Das Zuhause einrichten und am Laufen halten."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Meine Kaufkraft berechnen",
+      "time": "15 Minuten",
+      "cost": "Kostenlos",
+      "body": "Alles andere baut auf dieser Zahl auf. Die irische Zentralbank erlaubt Erstkäufern, bis zum Vierfachen ihres jährlichen Bruttoeinkommens zu leihen, und allen, die schon Eigentum hatten, das 3,5-Fache. Ihre Ersparnisse entscheiden dann, wie viel Anzahlung und Nebenkosten Sie decken können.",
+      "checklist": [
+        "Öffnen Sie den Rechner und tragen Sie Gehalt, Ersparnisse und Zielpreis ein",
+        "Addieren Sie beide Bruttogehälter, wenn Sie gemeinsam beantragen",
+        "Wählen Sie In Mein Weg speichern: Dieser Schritt wird für Sie abgehakt und spätere Schritte zeigen Ihre Zahlen"
+      ],
+      "tip": "Autokredite und Raten an eine Credit Union senken, was Banken anbieten, weil sie jede monatliche Verpflichtung einem Belastungstest unterziehen.",
+      "alt": "Ein grüner Taschenrechner mit Eurozeichen auf dem Display, neben einem kleinen Haus und einem Stapel Goldmünzen"
+    },
+    "preparation-1": {
+      "title": "Die Anzahlung von 10 % sichern",
+      "time": "Laufend",
+      "cost": "10 % des Preises",
+      "body": "Sie brauchen mindestens 10 % des Kaufpreises, ob es Ihre erste Immobilie ist oder nicht. Die Anzahlung kommt zu den Nebenkosten unten hinzu.",
+      "checklist": [
+        "Richten Sie einen Dauerauftrag für den Tag nach dem Zahltag ein",
+        "Halten Sie die Anzahlung auf einem eigenen Konto, das Sie nie anrühren",
+        "Eine dokumentierte Schenkung der Familie zählt, aber die Bank will ein Schreiben, dass es kein Darlehen ist"
+      ],
+      "tip": "Sechs Monate regelmäßiges Sparen in etwa der Höhe Ihrer künftigen Rate ist das stärkste Argument in Ihrer Akte.",
+      "alt": "Ein terrakottafarbenes Sparschwein, in dessen Schlitz eine Goldmünze fällt, mit einem runden goldenen Anhänger mit Prozentzeichen"
+    },
+    "preparation-2": {
+      "title": "Geld für die Nebenkosten zurücklegen",
+      "time": "Laufend",
+      "cost": "Stempelsteuer + etwa 3.050 €",
+      "body": "Stempelsteuer (Stamp Duty), Anwalt, Gutachten und Wertgutachten zahlen Sie aus eigenem Geld, nicht aus der Hypothek. Mein Weg zeigt Ihre eigenen Beträge, sobald Sie den Rechner gespeichert haben.",
+      "checklist": [
+        "Stempelsteuer: 1 % des Preises bis 1 Mio. €, 2 % von 1 Mio. € bis 1,5 Mio. € und 6 % darüber",
+        "Bei einem Neubau wird die Stempelsteuer auf den Preis ohne Mehrwertsteuer berechnet: 13,5 % bei einem Haus, 9 % bei einer Wohnung",
+        "Anwalt: 2.000-3.000 € zuzüglich Mehrwertsteuer und Auslagen",
+        "Bautechnisches Gutachten etwa 400 €, Wertgutachten der Bank etwa 150 €"
+      ],
+      "tip": "Planen Sie weitere 1.500-2.000 € für Umzug, Schlösser und die ersten Nebenkostenrechnungen ein.",
+      "alt": "Ein offener goldener Umschlag, aus dem grüne Geldscheine ragen, neben zwei kleinen Papierquittungen"
+    },
+    "preparation-3": {
+      "title": "Das Bankkonto sechs Monate lang sauber halten",
+      "time": "6 Monate",
+      "cost": "Kostenlos",
+      "body": "Die Kreditprüfer gehen sechs Monate Kontoauszüge Zeile für Zeile durch, um zu sehen, wie Sie mit Geld umgehen.",
+      "checklist": [
+        "Keine Online-Wetten, überhaupt keine",
+        "Keine ungenehmigten Überziehungen oder geplatzten Lastschriften",
+        "Die Miete jeden Monat pünktlich vom selben Konto bezahlt"
+      ],
+      "tip": "Konten bei Revolut und bei einer Credit Union zählen auch. Die Bank verlangt auch diese Auszüge.",
+      "alt": "Ein Kontoauszug mit einem grünen Haken in jeder Zeile, neben einem Wandkalender mit sechs grün ausgefüllten Feldern"
+    },
+    "preparation-4": {
+      "title": "Den Anspruch auf Help to Buy prüfen",
+      "time": "2 Wochen",
+      "cost": "Erstattung bis 30.000 €",
+      "body": "Help to Buy erstattet die Einkommensteuer und die DIRT, die Sie in den letzten vier Jahren in Irland gezahlt haben, bis zu 30.000 € oder 10 % des Preises, je nachdem, was niedriger ist. Es gilt für Erstkäufer eines Neubaus oder eines selbst gebauten Hauses und läuft bis Ende 2029. Das First Home Scheme ist eine eigene Option mit staatlicher Beteiligung (Shared Equity), die sich ebenfalls durchzurechnen lohnt.",
+      "checklist": [
+        "Sie haben noch nie eine Immobilie gekauft oder gebaut, weder in Irland noch im Ausland",
+        "Die Immobilie ist ein Neubau oder selbst gebaut und kostet 500.000 € oder weniger",
+        "Ihre Hypothek beträgt mindestens 70 % des Preises und kommt von einer zugelassenen Bank",
+        "Sie wohnen fünf Jahre lang als Hauptwohnsitz darin"
+      ],
+      "howtoLabel": "So beantragen Sie es",
+      "howto": [
+        "Registrieren Sie sich bei myAccount von Revenue, wenn Sie über PAYE bezahlt werden, oder bei ROS, wenn Sie selbstständig sind. Revenue schickt Ihnen per Post einen Code, um die Registrierung abzuschließen, rechnen Sie also mit ein paar Tagen.",
+        "Reichen Sie für jedes der letzten vier Jahre, das zählen soll, eine Einkommensteuererklärung (Income Tax Return) ein und holen Sie Ihr Statement of Liability. Zahlen Sie alle Steuern, die Sie für diese Jahre noch schulden.",
+        "Öffnen Sie in myAccount Help to Buy unter Property and Land Services und füllen Sie den Antrag aus. In ROS nutzen Sie den Link Help to Buy applicant auf der Startseite.",
+        "Revenue gibt Ihnen eine Antragsnummer, einen Zugangscode und den Höchstbetrag, den Sie beanspruchen könnten. Ihre Bank wird ihn sehen wollen.",
+        "Sobald Sie das Darlehensangebot haben und den Vertrag unterschrieben haben, gehen Sie zurück zu Help to Buy und stellen den Erstattungsantrag, mit Darlehensangebot, Ihrer unterschriebenen Annahme und dem Vertrag.",
+        "Geben Sie Ihre Referenznummer und den Zugangscode an den Bauträger weiter, der den Antrag bestätigt. Revenue zahlt die Erstattung dann an den Bauträger, als Teil Ihrer Anzahlung."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: vor dem Antrag",
+        "Revenue: so beantragen Sie es"
+      ],
+      "tip": "Der Antrag hat ein Ablaufdatum, stellen Sie den Erstattungsantrag also rechtzeitig. Sie bauen selbst? Dann beantragen Sie nach der ersten Auszahlung der Hypothek, laden statt eines Vertrags den Auszahlungsnachweis und das Wertgutachten der Bank hoch, und Ihr Anwalt bestätigt den Antrag.",
+      "alt": "Ein grünes Haus mit offenem Dachstuhl aus Holz und einem Baukran dahinter, neben einer Goldmünze in einem gebogenen grünen Pfeil"
+    },
+    "preparation-5": {
+      "title": "Ihr ÉireHome-Flow-Konto erstellen",
+      "time": "2 Minuten",
+      "cost": "Kostenlos",
+      "body": "Ein Konto speichert Ihren Weg, damit Sie auf dem Handy, dem Laptop oder jedem anderen Gerät weitermachen können. Es ist kostenlos, und dieser Schritt wird abgehakt, sobald Sie sich anmelden.",
+      "checklist": [
+        "Wählen Sie Konto erstellen und geben Sie Namen, E-Mail und ein Passwort ein",
+        "Bestätigen Sie Ihre E-Mail-Adresse über den Link, den wir Ihnen schicken",
+        "Melden Sie sich auf jedem anderen Gerät an, um denselben Fortschritt zu sehen"
+      ],
+      "tip": "Ihr Konto speichert Ihren Namen, Ihre E-Mail und die erledigten Schritte. Die Zahlen, die Sie in den Rechner eingeben, bleiben in Ihrem Browser.",
+      "alt": "Ein Laptop und ein Handy mit demselben Profilsymbol, dazwischen eine kleine Wolke und zwei Synchronisierungspfeile"
+    },
+    "aip-0": {
+      "title": "Direkt zur Bank oder zum Vermittler",
+      "time": "1 Woche",
+      "cost": "Vermittler meist kostenlos für Sie",
+      "body": "Ein Kreditvermittler (Broker) vergleicht mit einem einzigen Antrag den ganzen Markt. Wer direkt zur Bank geht, bekommt vielleicht ein Cashback-Angebot dieser Bank.",
+      "checklist": [
+        "Fragen Sie den Vermittler, mit welchen Banken er zusammenarbeitet",
+        "Wägen Sie Cashback gegen den Zinssatz ab. Cashback wird einmal gezahlt, der Zinssatz gilt aber für die ganze Laufzeit",
+        "Prüfen Sie vor dem Antrag, wie die Bank Ihre Art von Arbeitsverhältnis bewertet"
+      ],
+      "tip": "Am stärksten unterscheiden sich Banken bei befristeten Verträgen oder Einkommen in der Probezeit, und genau dort verdient ein Vermittler sein Geld.",
+      "alt": "Ein Wegweiser mit einem Pfeil nach links zu einer grünen Bank mit Säulen und einem nach rechts zu einer Aktentasche"
+    },
+    "aip-1": {
+      "title": "Sechs Monate Kontoauszüge sammeln",
+      "time": "2-3 Tage",
+      "cost": "Kostenlos",
+      "body": "Jedes Giro-, Spar- und Revolut-Konto, vollständig, ohne fehlende Seiten.",
+      "checklist": [
+        "Laden Sie die PDFs direkt bei der Bank herunter, keine Screenshots",
+        "Benennen Sie jede Datei mit Konto und Monat",
+        "Seien Sie bereit, jeden Eingang über etwa 500 € zu erklären"
+      ],
+      "tip": "Eine einzige fehlende Seite ist der häufigste Grund dafür, dass ein Antrag stockt.",
+      "alt": "Ein aufgefächerter Stapel aus sechs Dokumentseiten mit einer grünen Büroklammer, neben einer Lupe"
+    },
+    "aip-2": {
+      "title": "Gehaltsabrechnungen und das Employment Detail Summary sammeln",
+      "time": "1 Woche",
+      "cost": "Kostenlos",
+      "body": "Meist drei aktuelle Gehaltsabrechnungen, Ihr EDS von Revenue und eine Gehaltsbescheinigung, die Ihr Arbeitgeber unterschreibt.",
+      "checklist": [
+        "Die drei neuesten Gehaltsabrechnungen",
+        "Das Employment Detail Summary aus myAccount",
+        "Eine Gehaltsbescheinigung mit Vertragsart und eventuellen Boni"
+      ],
+      "tip": "Selbstständige brauchen stattdessen zwei Jahre geprüfte Jahresabschlüsse und eine steuerliche Unbedenklichkeitsbescheinigung (Tax Clearance).",
+      "alt": "Eine offene Mappe mit drei Gehaltsabrechnungen, die vorderste mit Eurozeichen und einem grünen Haken-Stempel"
+    },
+    "aip-3": {
+      "title": "Miete und Ersparnisse belegen",
+      "time": "Laufend",
+      "cost": "Kostenlos",
+      "body": "Miete plus regelmäßiges Sparen ist der Beweis, dass Sie die Raten über Ihre heutigen Ausgaben hinaus tragen können.",
+      "checklist": [
+        "Die Miete per Dauerauftrag gezahlt, sichtbar auf den Auszügen",
+        "Ein Sparmuster, das Sie nicht angetastet haben",
+        "Eine kurze schriftliche Erklärung für jede Lücke"
+      ],
+      "tip": "Miete plus Ersparnisse sollten in etwa der künftigen Hypothekenrate entsprechen, denn die Kreditprüfer vergleichen beides.",
+      "alt": "Eine Balkenwaage, die ein kleines Haus mit rostrotem Dach gegen ein Glas voller Goldmünzen wiegt"
+    },
+    "aip-4": {
+      "title": "Das AIP-Schreiben erhalten",
+      "time": "1-3 Wochen",
+      "cost": "Kostenlos",
+      "body": "Die Grundsatzzusage nennt den Betrag, den die Bank leihen wird, vorbehaltlich Wertgutachten und letzter Prüfungen. Sie gilt meist sechs Monate.",
+      "checklist": [
+        "Prüfen Sie Betrag, Laufzeit und Ablaufdatum",
+        "Speichern Sie ein PDF auf dem Handy für Besichtigungen",
+        "Tragen Sie das Ablaufdatum in den Kalender ein, denn eine Verlängerung braucht neue Auszüge"
+      ],
+      "tip": "Kein Immobilienmakler in Irland nimmt ein Gebot ohne sie ernst.",
+      "alt": "Ein offener Umschlag, aus dem ein Brief ragt, mit einem runden grünen Stempel und einem Haken"
+    },
+    "search-0": {
+      "title": "Eine Gegend wählen und Verkaufspreise prüfen",
+      "time": "1 Woche",
+      "cost": "Kostenlos",
+      "body": "Den Angebotspreis legt der Verkäufer fest. Das Residential Property Price Register zeigt, zu welchem Preis Immobilien tatsächlich verkauft wurden.",
+      "checklist": [
+        "Vergleichen Sie Angebotspreise mit dem Register, Straße für Straße",
+        "Testen Sie den Arbeitsweg zu der Uhrzeit, zu der Sie wirklich fahren würden",
+        "Achten Sie auf den Energieausweis (BER). Von C auf B zu kommen, kann 15.000 € an Modernisierung kosten"
+      ],
+      "tip": "Richten Sie auf Daft und MyHome Suchaufträge für Ihre Gegend und Preisklasse ein, denn gute Objekte sind in wenigen Tagen weg.",
+      "alt": "Ein gefalteter Stadtplan mit einer Straße und grünen Parks, darauf eine große Standortmarkierung und ein kleines Preisschild mit Eurozeichen"
+    },
+    "search-1": {
+      "title": "Das irische Fachvokabular lernen",
+      "time": "1 Abend",
+      "cost": "Kostenlos",
+      "body": "Der Ablauf hat sein eigenes Vokabular, und Makler gehen davon aus, dass Sie es kennen.",
+      "checklist": [
+        "Sale Agreed ist nicht bindend. Bis zur Vertragsunterzeichnung kann Ihnen noch jemand zuvorkommen (Gazumping)",
+        "Freihändiger Verkauf (Private Treaty) und öffentliche Versteigerung (Public Auction) ändern die Regeln völlig",
+        "Die Reservierungsanzahlung (Booking Deposit) wird erstattet, die Vertragsanzahlung nicht"
+      ],
+      "tip": "Der BER ist in jeder Anzeige gesetzlich vorgeschrieben, seien Sie also bei Anzeigen ohne ihn vorsichtig.",
+      "alt": "Ein aufgeschlagenes Buch mit Textzeilen, darüber zwei schwebende Sprechblasen, eine mit Punkten und eine mit Linien"
+    },
+    "search-2": {
+      "title": "Besichtigungen vereinbaren",
+      "time": "2-8 Wochen",
+      "cost": "Kostenlos",
+      "body": "Sehen Sie sich mindestens fünf Objekte an, bevor Sie bieten, darunter zwei, die Sie für unpassend halten.",
+      "checklist": [
+        "Schreiben Sie dem Makler eine E-Mail und bestätigen Sie dann telefonisch",
+        "Fotografieren Sie feuchte Stellen, Zählerkästen und die Dachbodenluke",
+        "Fragen Sie, warum der Verkäufer umzieht und wie lange das Objekt schon angeboten wird"
+      ],
+      "tip": "Gehen Sie ein zweites Mal hin, an einem regnerischen Abend unter der Woche. Häuser wirken anders, wenn es regnet und auf der Straße Verkehr ist.",
+      "alt": "Ein Wandkalender mit einem Tag, der mit einem kleinen Haus markiert ist, und daneben ein klingelnder Wecker"
+    },
+    "search-3": {
+      "title": "Jedes Gebot festhalten",
+      "time": "1-8 Wochen",
+      "cost": "Kostenlos",
+      "body": "Gebote werden mündlich abgegeben und sind nicht geregelt, führen Sie also Ihre eigenen Aufzeichnungen.",
+      "checklist": [
+        "Notieren Sie Betrag, Datum und Ihren Gesprächspartner",
+        "Legen Sie Ihre Obergrenze fest, bevor Sie anfangen",
+        "Bieten Sie nie ohne AIP in der Hand"
+      ],
+      "tip": "Bitten Sie den Makler, jedes Gebot per E-Mail zu bestätigen. Das schützt Sie vor erfundenen Geboten.",
+      "alt": "Ein aufgeschlagener Spiralblock mit einer Liste von Einträgen und einem steigenden Balkendiagramm, darauf ein Bleistift"
+    },
+    "search-4": {
+      "title": "Sale Agreed erreichen",
+      "time": "1 Woche",
+      "cost": "3.000-5.000 €, erstattungsfähig",
+      "body": "Ihr Gebot wird angenommen und Sie zahlen eine Reservierungsanzahlung, meist 3.000-5.000 €, damit das Haus vom Markt genommen wird.",
+      "checklist": [
+        "Lassen Sie sich die Reservierungsanzahlung schriftlich quittieren",
+        "Geben Sie dem Makler die Daten Ihres Anwalts",
+        "Bitten Sie darum, dass die Verkaufsmitteilung (Sales Advice Notice) schnell ausgestellt wird"
+      ],
+      "tip": "Die Reservierungsanzahlung wird bis zur Vertragsunterzeichnung voll erstattet, der Verkauf ist also noch nicht endgültig.",
+      "alt": "Ein Maklerschild mit einem grünen Banner und einem großen Haken darüber, vor einem kleinen Haus"
+    },
+    "legal-0": {
+      "title": "Einen Anwalt beauftragen",
+      "time": "1 Woche",
+      "cost": "2.000-3.000 € + MwSt.",
+      "body": "Das Conveyancing ist die rechtliche Übertragung des Eigentums, und der Zeitplan hängt vor allem vom Tempo Ihres Anwalts (Solicitor) ab.",
+      "checklist": [
+        "Verlangen Sie ein Festpreisangebot inklusive Auslagen und Recherchen",
+        "Fragen Sie, wie viele Vorgänge die Kanzlei pro Monat abschließt",
+        "Geben Sie ihr die Verkaufsmitteilung, sobald sie eintrifft"
+      ],
+      "tip": "Wählen Sie danach, wie schnell die Kanzlei antwortet. Ein günstiges Angebot bringt nichts, wenn in den Augustferien niemand ans Telefon geht.",
+      "alt": "Eine goldene Waage auf einem Holzschreibtisch, neben einem Papierstapel mit rotem Band und einem goldenen Siegel"
+    },
+    "legal-1": {
+      "title": "Das bautechnische Gutachten beauftragen",
+      "time": "1-2 Wochen",
+      "cost": "300-500 €",
+      "body": "Ein unabhängiger Ingenieur geht durch das Haus und schreibt auf, was daran nicht stimmt.",
+      "checklist": [
+        "Beauftragen Sie einen Ingenieur, der bei Engineers Ireland oder der SCSI registriert ist",
+        "Verlangen Sie Fotos und eine Kostenschätzung für Reparaturen",
+        "Lesen Sie bei Wohnungen auch die Abrechnungen der Hausverwaltung (Management Company)"
+      ],
+      "tip": "Was das Gutachten findet, gibt Ihnen Verhandlungsspielraum. Ein Dach, das Arbeiten für 6.000 € braucht, ist ein Grund, vor den Verträgen 6.000 € Nachlass zu verlangen.",
+      "alt": "Ein grünes Haus mit einer Lupe über einem Riss in der Wand, neben einem Klemmbrett mit einer Checkliste"
+    },
+    "legal-2": {
+      "title": "Das Wertgutachten der Bank anfordern",
+      "time": "1 Woche",
+      "cost": "Etwa 150 €",
+      "body": "Die Bank lässt die Immobilie für ihre eigene Sicherheit bewerten, von einem Gutachter aus ihrer eigenen Liste.",
+      "checklist": [
+        "Beauftragen Sie es über die Bank oder den Vermittler, nicht privat",
+        "Ein Wertgutachten ist kein bautechnisches Gutachten. Es dient dem Schutz der Bank",
+        "Fällt der Wert niedriger aus, gleichen Sie die Differenz mit eigenem Geld aus"
+      ],
+      "tip": "Liegt das Wertgutachten unter dem vereinbarten Preis, ist es ganz normal, neu zu verhandeln.",
+      "alt": "Ein grünes Haus, an dessen Dach ein goldenes Preisschild mit Eurozeichen hängt, und dahinter eine Bank"
+    },
+    "legal-3": {
+      "title": "Restschuldversicherung und Wohngebäudeversicherung abschließen",
+      "time": "1-2 Wochen",
+      "cost": "25-60 € pro Monat",
+      "body": "Beide sind vor der Auszahlung Pflicht, und keine muss bei Ihrer Bank abgeschlossen werden.",
+      "checklist": [
+        "Vergleichen Sie Angebote für die Restschuldversicherung (Mortgage Protection), denn das der Bank ist selten das günstigste",
+        "Die Wohngebäudeversicherung muss die Wiederaufbaukosten decken, nicht den Kaufpreis",
+        "Geben Sie Vorerkrankungen ehrlich an, denn eine ungültige Police ist schlimmer als ein Risikozuschlag"
+      ],
+      "tip": "Die Risikoprüfung kann bei jeder Krankengeschichte Wochen dauern, fangen Sie also vor den Verträgen damit an.",
+      "alt": "Ein grünes Schild mit einem weißen Haken vor einem kleinen Haus unter einem goldenen Schirm"
+    },
+    "legal-4": {
+      "title": "Verträge unterschreiben und die Anzahlung leisten",
+      "time": "1-2 Wochen",
+      "cost": "10 % abzüglich Reservierungsanzahlung",
+      "body": "Sie unterschreiben, zahlen den Rest der Anzahlung von 10 % und der Kauf wird rechtlich bindend.",
+      "checklist": [
+        "Lesen Sie die besonderen Bedingungen mit Ihrem Anwalt",
+        "Vereinbaren Sie einen Übergabetermin, der zu Ihrer Kündigungsfrist bei der Miete passt",
+        "Lassen Sie schriftlich bestätigen, welche Einbauten und Ausstattung dazugehören"
+      ],
+      "tip": "Sobald die Verträge ausgetauscht sind, kann Ihnen niemand mehr zuvorkommen (Gazumping).",
+      "alt": "Eine unterschriebene Vertragsseite mit einem grünen Füller auf der Unterschrift, neben einem Stapel Goldmünzen"
+    },
+    "keys-0": {
+      "title": "Das endgültige Darlehensangebot erhalten",
+      "time": "1-2 Wochen",
+      "cost": "Kostenlos",
+      "body": "Das offizielle Angebot ersetzt die AIP und legt Zinssatz, Laufzeit und Bedingungen fest.",
+      "checklist": [
+        "Prüfen Sie Zinssatz, Laufzeit und die Bedingungen für ein Cashback",
+        "Vergleichen Sie ein letztes Mal festen und variablen Zins",
+        "Unterschreiben Sie und schicken Sie es mit den Versicherungspolicen zurück"
+      ],
+      "tip": "Grüne Zinssätze für einen BER von B3 oder besser können über eine Zinsbindung mehrere Tausend Euro wert sein.",
+      "alt": "Eine Urkunde mit einem grünen Prozent-Abzeichen und einem goldenen Siegel mit Band, neben einer goldenen Euromünze"
+    },
+    "keys-1": {
+      "title": "Das Geld abrufen",
+      "time": "3-10 Tage",
+      "cost": "Kostenlos",
+      "body": "Ihr Anwalt fordert das Geld für den Übergabetag an und die Bank zahlt es an ihn aus.",
+      "checklist": [
+        "Bestätigen Sie mit Ihrem Anwalt den genauen Restbetrag für die Übergabe",
+        "Überweisen Sie Ihren Anteil früh, denn tägliche Überweisungslimits erwischen viele",
+        "Prüfen Sie das Datum der ersten Rate"
+      ],
+      "tip": "Überweisen Sie nie Geld nur aufgrund von Bankdaten aus einer E-Mail; rufen Sie die Kanzlei Ihres Anwalts an, um sie zu prüfen.",
+      "alt": "Goldmünzen, die auf einem gebogenen Pfeil von einer kleinen Bank zu einem Bürogebäude wandern"
+    },
+    "keys-2": {
+      "title": "Übergabe und Schlüssel abholen",
+      "time": "1 Tag",
+      "cost": "Restbetrag",
+      "body": "Das Eigentum geht über, der Restbetrag wird bezahlt und der Makler übergibt die Schlüssel.",
+      "checklist": [
+        "Lesen Sie die Zählerstände ab und fotografieren Sie sie",
+        "Holen Sie sich alle Schlüssel, Transponder und Alarmcodes",
+        "Tauschen Sie in der ersten Woche die Schlösser aus"
+      ],
+      "tip": "Gehen Sie ein letztes Mal durch das Haus, bevor das Geld fließt, um sicherzugehen, dass es im vereinbarten Zustand ist.",
+      "alt": "Ein Ring mit drei Hausschlüsseln vor einer grünen Haustür mit einem bogenförmigen Oberlicht"
+    },
+    "keys-3": {
+      "title": "Die Mängelliste durchgehen",
+      "time": "1 Woche",
+      "cost": "300-600 € für einen Prüfer",
+      "body": "Vor allem bei Neubauten: Halten Sie jeden Mangel fest, solange der Bauträger noch haftet.",
+      "checklist": [
+        "Beauftragen Sie bei einem Neubau einen professionellen Mängelprüfer (Snagger)",
+        "Fotografieren Sie jeden Punkt mit dem Namen des Raums",
+        "Schicken Sie die Liste schriftlich mit einer Frist"
+      ],
+      "tip": "Halten Sie die Liste offen, bis jeder Punkt abgenommen ist, denn die Gewährleistungsfrist läuft schon.",
+      "alt": "Ein Klemmbrett mit einer Checkliste mit drei Haken und einem Kreuz, zwischen einer Farbrolle und einer Rolle Malerkrepp"
+    },
+    "settling-0": {
+      "title": "Strom, Gas und Co. auf Ihren Namen umstellen",
+      "time": "1 Woche",
+      "cost": "Kautionen unterschiedlich",
+      "body": "Strom, Gas, Internet und Müllabfuhr, alles in der ersten Woche.",
+      "checklist": [
+        "Schicken Sie bei jedem Wechsel die Zählerfotos vom ersten Tag mit",
+        "Beim Einzug den Anbieter zu wechseln, ist eine einfache Art zu sparen",
+        "Melden Sie die Müllabfuhr vor dem ersten Abholtag an"
+      ],
+      "tip": "Melden Sie die Alarmanlage an und prüfen Sie, ob die Internetleitung Glasfaser ist, bevor Sie einen Tarif abschließen.",
+      "alt": "Eine große orangefarbene Glühbirne in der Mitte, links ein rotes WLAN-Symbol und rechts eine grüne Mülltonne mit Rädern"
+    },
+    "settling-1": {
+      "title": "Für die Local Property Tax anmelden",
+      "time": "1 Tag",
+      "cost": "Je nach Stufe",
+      "body": "Revenue braucht die Immobilie auf Ihren Namen registriert und nach ihrem Wert eingestuft. Die LPT ist die jährliche Grundsteuer.",
+      "checklist": [
+        "Melden Sie sie über myAccount mit der Immobilien-ID an",
+        "Prüfen Sie, ob der Verkäufer das Jahr schon im Voraus bezahlt hat",
+        "Wählen Sie die Zahlungsart, die Sie wirklich wollen"
+      ],
+      "tip": "Ihr Anwalt bestätigt bei der Übergabe, dass die LPT bezahlt ist, aber die Erklärung für das Folgejahr ist Ihre Sache.",
+      "alt": "Ein kleines grünes Haus neben einem Formular mit rundem Haken-Stempel und einem Kalender mit einem markierten Datum"
+    },
+    "settling-2": {
+      "title": "Ein Einrichtungsbudget pro Raum festlegen",
+      "time": "1 Abend",
+      "cost": "3.000-10.000 €",
+      "body": "Böden und Vorhänge oder Rollos können leicht die ersten 5.000 € auffressen, wenn Sie nicht vorausplanen.",
+      "checklist": [
+        "Ordnen Sie die Räume: Schlafzimmer und Küche zuerst, Gästezimmer zuletzt",
+        "Holen Sie Preise für Böden und Rollos ein, bevor Sie Sofas kaufen",
+        "Lassen Sie 15 % für das, was Sie vergessen"
+      ],
+      "tip": "Gebrauchte Massivmöbel sind günstiger und besser als neue Möbel zum Selbstaufbau. Messen Sie zuerst die Türen.",
+      "alt": "Ein Grundriss mit vier Räumen von oben, jeder mit einem kleinen Stapel Goldmünzen"
+    },
+    "settling-3": {
+      "title": "Böden vor Möbeln",
+      "time": "1-2 Wochen",
+      "cost": "25-60 € pro m²",
+      "body": "Böden in einem leeren Haus zu verlegen, ist günstiger und viel schneller.",
+      "checklist": [
+        "Messen Sie jeden Raum aus und rechnen Sie 10 % Verschnitt dazu",
+        "Lassen Sie Laminat oder Fertigparkett 48 Stunden akklimatisieren",
+        "Bestellen Sie Trittschalldämmung und Sockelleisten gleich mit"
+      ],
+      "tip": "Wenn Sie auch streichen, streichen Sie zuerst, verlegen dann die Böden und setzen zuletzt die Sockelleisten.",
+      "alt": "Ein Stapel aus vier orangefarbenen Dielen mit einem Hammer obendrauf und einem kleinen grünen Sessel daneben"
+    },
+    "settling-4": {
+      "title": "Für Vorhänge und Rollos messen",
+      "time": "1 Wochenende",
+      "cost": "60-250 € pro Fenster",
+      "body": "Messen Sie die Schiene, nicht das Glas, und entscheiden Sie die Länge, bevor Sie bestellen.",
+      "checklist": [
+        "Schienenbreite plus 15-20cm auf jeder Seite",
+        "Bis zur Fensterbank oder bis zum Boden, Raum für Raum entschieden",
+        "Verdunkelung in Schlafzimmern, besonders nach Osten"
+      ],
+      "tip": "Bestellen Sie zuerst für einen Raum und leben Sie eine Woche damit, bevor Sie das ganze Haus machen.",
+      "alt": "Ein Fenster mit zwei gerafften Vorhängen an einer Schiene, entlang der ein gelbes Maßband gespannt ist"
+    },
+    "settling-5": {
+      "title": "Den Heizkessel warten und die Melder testen",
+      "time": "1 Tag",
+      "cost": "90-150 €",
+      "body": "Lassen Sie eine erste Wartung machen und tragen Sie die Sicherheitsprüfungen in den Kalender ein.",
+      "checklist": [
+        "Beauftragen Sie für Gas einen beim RGI registrierten Techniker",
+        "Testen Sie Rauch- und Kohlenmonoxidmelder (CO) und ersetzen Sie alles, was älter als zehn Jahre ist",
+        "Legen Sie das BER-Zertifikat, Garantien und Anleitungen an einem Ort ab"
+      ],
+      "tip": "Die jährliche Kesselwartung ist bei den meisten Wohngebäudeversicherungen Bedingung, heben Sie also die Belege auf.",
+      "alt": "Ein Wandkessel mit Flammensymbol, ein Schraubenschlüssel auf dem Boden und ein Rauchmelder an der Decke"
+    }
+  }
+}

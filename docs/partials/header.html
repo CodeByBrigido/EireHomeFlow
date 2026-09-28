@@ -1,22 +1,28 @@
-<header class="site-header" data-pending data-auth-pending>
+<header class="site-header" data-auth-pending>
   <div class="site-header__inner">
-    <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-    <nav class="nav" aria-label="Main">
-      <a class="nav__link" href="index.html" data-page="home">Home</a>
-      <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-      <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-      <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-      <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+    <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+    <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+      <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+      <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+      <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+      <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
     </nav>
     <div class="site-header__account">
-      <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+      <div class="lang">
+        <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+        <div class="menu lang__menu" id="lang-menu" hidden>
+          <p class="menu__label" data-i18n="common:language.title">Language</p>
+          <div class="lang__list" id="lang-list"></div>
+        </div>
+      </div>
+      <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
       <div class="account-nav" id="account-nav" hidden>
-        <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+        <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
         <div class="menu" id="account-menu" hidden>
           <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-          <a class="menu__item" href="dashboard.html">Dashboard</a>
-          <a class="menu__item" href="profile.html">My profile</a>
-          <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+          <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+          <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+          <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
         </div>
       </div>
     </div>

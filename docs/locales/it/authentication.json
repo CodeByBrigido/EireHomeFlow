@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Accedi | ÉireHome Flow",
+    "title": "Accedi",
+    "intro": "Accedi per vedere il tuo percorso salvato.",
+    "submit": "Accedi",
+    "forgot": "Hai dimenticato la password?",
+    "newHere": "Sei nuovo?",
+    "createAccount": "Crea un account"
+  },
+  "signup": {
+    "meta": "Crea il tuo account | ÉireHome Flow",
+    "title": "Crea il tuo account",
+    "intro": "Salva il tuo percorso e riprendilo da qualsiasi dispositivo.",
+    "terms": "Creando un account, accetti le nostre <a href=\"terms.html\">Condizioni d'uso</a> e confermi di aver letto la nostra <a href=\"privacy.html\">Informativa sulla privacy</a>.",
+    "submit": "Crea account",
+    "haveAccount": "Hai già un account?",
+    "signIn": "Accedi",
+    "checkInbox": "Controlla la posta in arrivo e fai clic sul link che ti abbiamo inviato per confermare l'account."
+  },
+  "forgot": {
+    "meta": "Reimposta la password | ÉireHome Flow",
+    "title": "Reimposta la password",
+    "intro": "Inserisci la tua email e ti invieremo un link per scegliere una nuova password.",
+    "submit": "Invia il link",
+    "remembered": "Te la sei ricordata?",
+    "signIn": "Accedi",
+    "sent": "Se quell'email ha un account, il link per reimpostare la password è in arrivo. Controlla la posta."
+  },
+  "newPassword": {
+    "meta": "Scegli una nuova password | ÉireHome Flow",
+    "title": "Scegli una nuova password",
+    "intro": "Inserisci una nuova password per il tuo account.",
+    "newLink": "Inviami un nuovo link",
+    "signIn": "Accedi",
+    "submit": "Salva la nuova password",
+    "changed": "La tua password è stata cambiata."
+  },
+  "google": {
+    "continue": "Continua con Google",
+    "divider": "oppure usa la tua email",
+    "terms": "Continuando con Google, accetti le nostre <a href=\"terms.html\">Condizioni d'uso</a> e confermi di aver letto la nostra <a href=\"privacy.html\">Informativa sulla privacy</a>.",
+    "opening": "Apertura di Google...",
+    "off": "L'accesso con Google non è ancora attivo. Per ora usa la tua email.",
+    "failed": "Impossibile aprire Google. Riprova."
+  },
+  "password": {
+    "length": "Almeno 8 caratteri",
+    "upper": "Una lettera maiuscola",
+    "special": "Un carattere speciale, come ! # $ o ?"
+  },
+  "goToDashboard": "Vai al mio pannello",
+  "privacyNote": "Il tuo account conserva nome, email e i passi completati, su server in Irlanda. Con Google conserva anche il link alla foto del profilo che invia Google, che non usiamo. I numeri del calcolatore restano nel tuo browser. <a href=\"privacy.html\">Leggi la nostra Informativa sulla privacy</a>.",
+  "note": {
+    "checking": "Controllo del link...",
+    "signedIn": "Hai effettuato l'accesso come {email}.",
+    "needLink": "Per scegliere una nuova password, apri di nuovo il link nella tua email oppure accedi prima."
+  }
+}

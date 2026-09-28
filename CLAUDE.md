@@ -13,7 +13,7 @@
 - **Live site:** https://codebybrigido.github.io/EireHomeFlow/
 - **Repo:** `CodeByBrigido/EireHomeFlow`, default branch `main`
 - **Project docs** (`specs/`, `README.md`) are written in **Portuguese**.
-- **Site copy** is in **British/Irish English**.
+- **Site copy** is written in **British/Irish English** (the source) and translated into Portuguese (Brazil), Spanish, French, German, Italian, Polish, Romanian and Lithuanian. See `specs/08-Internationalisation.md`.
 
 ---
 
@@ -23,7 +23,8 @@
 |-------|-----------|
 | Frontend | Plain HTML, CSS and JavaScript: no framework, no build, no minification |
 | Scripts | ES modules (`<script type="module">`), one entry per page: `js/pages/<page>.js` imports from `js/core/` and `js/lib/` and calls `startPage({ init, render, actions })` once |
-| Tooling | Node.js 20.1+ locally (CI uses 22): `npm start`, `npm test` (node:test), `npm run lint` (ESLint 9), `npm run check`; GitHub Actions runs lint, tests and the version check on every PR |
+| Tooling | Node.js 20.1+ locally (CI uses 22): `npm start`, `npm test` (node:test), `npm run lint` (ESLint 9), `npm run i18n`, `npm run check`; GitHub Actions runs lint, tests, the version, partials and translations checks on every PR |
+| Translations | JSON per language and namespace in `docs/locales/`, English first. `js/i18n-boot.js` (classic script in `<head>`) picks the language and translates while the page is parsed; scripts use `t()` from `js/core/i18n.js`. No runtime machine translation |
 | Auth + data | Supabase (project `dyfxstpbzmihtmccaezs`, eu-west-1), `@supabase/supabase-js@2` from jsDelivr |
 | Hosting | GitHub Pages, serving `docs/` from `main` |
 
@@ -37,16 +38,18 @@ EireHomeFlow/
 │   ├── *.html                # 12 pages, one per place; <body data-page="...">
 │   ├── guide.html            # SINGLE SOURCE of the 31 steps' content (other pages fetch + parse it)
 │   ├── partials/             # header.html, footer.html: the SOURCE; npm run partials stamps them into every page
+│   ├── locales/<code>/*.json # site texts per language and namespace; en/ is the SOURCE of every text
 │   ├── css/styles.css
 │   ├── js/config.js          # SUPABASE_URL + publishable anon key (the only key allowed in the repo)
-│   ├── js/lib/               # PURE logic (no DOM): calculator, progress, validation, people, format. Tested in Node
-│   ├── js/core/              # browser parts: app (startPage), state, steps, sync, account, header, notices, forms, dom
+│   ├── js/i18n-boot.js       # translations runtime: classic script, first in <head> (language list stamped by npm run i18n)
+│   ├── js/lib/               # PURE logic (no DOM): calculator, progress, validation, people, format, locales. Tested in Node
+│   ├── js/core/              # browser parts: app (startPage), state, steps, sync, account, header, notices, forms, dom, i18n, language
 │   ├── js/pages/*.js         # one ES module per page; calls startPage()
 │   └── img/, fonts/
 ├── specs/                    # source of truth (see table below)
 ├── tests/                    # npm test (node:test); calculator tests hold the TRD 12.1 reference values
-├── tools/                    # serve.js, bump-version.js, check-versions.js, versions.js, partials.js, stamp-partials.js
-├── .github/workflows/        # CI: lint + tests + version check + header/footer check
+├── tools/                    # serve.js, bump-version.js, check-versions.js, versions.js, partials.js, stamp-partials.js, i18n*.js
+├── .github/workflows/        # CI: lint + tests + version check + header/footer check + translations check
 ├── supabase/email-templates/ # confirmation + reset emails, pasted into the Supabase dashboard
 └── _original-Backup/         # original Claude Design bundle: READ ONLY, reference only
 ```
@@ -62,6 +65,7 @@ EireHomeFlow/
 | `specs/05-Backend-Schema.md` | touching the database, auth or the step list |
 | `specs/06-Implementation-Plan.md` | start of each session (what's done, what's next) |
 | `specs/07-Design-System.md` | creating or changing any visual component |
+| `specs/08-Internationalisation.md` | writing or changing any text the site shows, or adding a language |
 | `specs/AUDITORIA.md` | open audit items (2026-09-23) |
 | `specs/SETUP-CONTAS.md` | Supabase setup steps |
 
@@ -75,8 +79,9 @@ EireHomeFlow/
 4. **Step IDs are permanent.** ID = `<phase slug>-<index in phase, from 0>`, derived from the order in `docs/guide.html`.
    - OK: edit a step's text, checklist, links, tip, time, cost, `data-auto`, `data-numbers`; add a step at the **end** of a phase.
    - NOT OK without an SQL migration of `progress.done`: insert mid-phase, reorder, move between phases, or rename a phase `data-slug`. Doing so silently corrupts users' saved progress.
-5. **Copy follows the tone-of-voice guide:** British/Irish English, **no dashes (em/en dashes)**, no clichés.
-6. **Every doc has "Última revisão"** at the top. Update the date when you change its content.
+5. **Copy follows the tone-of-voice guide:** British/Irish English, **no dashes (em/en dashes)**, no clichés. The same house style applies to every translation.
+6. **Every new user-facing text goes into `docs/locales/en/<namespace>.json` first** (content, buttons, errors, `aria-label`, `alt`, `placeholder`, `title`), and is translated into every complete language in the same piece of work. Never hard-code a sentence in HTML or JS: mark HTML with `data-i18n*` and run `npm run i18n`; use `t("ns:key")` in scripts. `npm run check:i18n` enforces it.
+7. **Every doc has "Última revisão"** at the top. Update the date when you change its content.
 
 ---
 
@@ -89,6 +94,7 @@ EireHomeFlow/
   Then open http://localhost:8000/. Without Node: `python -m http.server 8000 --directory docs`, but on Windows some Python installs serve `.js` with the wrong type and the modules do not load (nothing works and the steps stay empty), so `npm start` is the recommended way.
 - **Cache-busting:** changed any `.css` or `.js`? Run `npm run bump` (`npm run bump -- YYYYMMDD` for a second change on the same day). Every relative `import` must carry the same `?v=` as the pages. A module imported with two different URLs runs twice with separate state. `npm run check:versions` enforces this. GitHub Pages caches for 10 minutes, so without the bump a visitor can get a new page with an old script.
 - **Header and footer:** edit `docs/partials/*.html`, never the copy between `<!-- include ... -->` and `<!-- /include -->` in a page, then run `npm run partials`. `npm run check:partials` (in `npm run check` and CI) fails if a page is out of date.
+- **Translations:** the English text in the HTML is stamped from `locales/en` by `npm run i18n` (edit the JSON, not the HTML). Each page lists its namespaces in `<html data-i18n-ns>` and loads `js/i18n-boot.js` before the stylesheet. `js/core/` may only use `common` keys, and `js/lib/` never uses texts (return a code; the page translates it). Numbers, money and dates go through `money()`, `number()`, `percent()` and `date()` from `js/core/i18n.js`, never `toLocaleString("en-IE")`. A translation must keep the English numbers, placeholders and links (the check compares them). Changed a locale file? `npm run i18n` then `npm run bump`. Do not translate step IDs, stored values, `data-action` names or the Irish scheme names in the glossary (`specs/08`, section 6).
 - **Layering:** `js/lib/` must never import from `js/core/` or touch the DOM; that is what keeps it testable in Node. New maths or rules go in `lib/` with a test.
 - **One `startPage()` per page:** it throws if called twice. Page-only `data-action` handlers go in the `actions` hook, not on `document`.
 - **Backwards-tolerant scripts:** page modules must tolerate missing parts (e.g. `s.howto || []`), and function signatures used across pages must stay compatible.
@@ -98,7 +104,7 @@ EireHomeFlow/
   - Never put the Supabase `service_role`/secret key in the repo; RLS is what protects the data.
 - **Calculator numbers never go to the cloud.** Only `progress.done` (step ID → `true`) syncs. Journey and Dashboard read numbers from `localStorage` (`eirehome-flow`).
 - **Calculator changes:** update the reference values in TRD §12.1 and `tests/calculator.test.js` together (e.g. defaults → max price €209,851). Formulas and legal constants (stamp duty, HTB, VAT) are sourced from Revenue/Central Bank; keep the TRD source links in sync.
-- **Tests:** `npm test` covers the pure logic in `js/lib/` and the version tools. Anything that needs a browser (pages, accounts, layout) still goes through the manual script in TRD §12. Check there's no horizontal scroll at 320/375/768/1024/1440 px and that everything works by keyboard.
+- **Tests:** `npm test` covers the pure logic in `js/lib/`, the translations runtime and tools, and the version tools. Anything that needs a browser (pages, accounts, layout) still goes through the manual script in TRD §12. Check there's no horizontal scroll at 320/375/768/1024/1440 px and that everything works by keyboard.
 - **Before claiming done:** `npm run check` must pass, plus the relevant browser checks in TRD §12.
 
 ---

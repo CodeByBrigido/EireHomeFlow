@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Conectare | ÉireHome Flow",
+    "title": "Conectare",
+    "intro": "Conectează-te ca să-ți vezi drumul salvat.",
+    "submit": "Conectează-te",
+    "forgot": "Ți-ai uitat parola?",
+    "newHere": "Prima dată aici?",
+    "createAccount": "Creează un cont"
+  },
+  "signup": {
+    "meta": "Creează-ți contul | ÉireHome Flow",
+    "title": "Creează-ți contul",
+    "intro": "Salvează-ți drumul și continuă pe orice dispozitiv.",
+    "terms": "Creând un cont, accepți <a href=\"terms.html\">Termenii de utilizare</a> și confirmi că ai citit <a href=\"privacy.html\">Politica de confidențialitate</a>.",
+    "submit": "Creează contul",
+    "haveAccount": "Ai deja un cont?",
+    "signIn": "Conectează-te",
+    "checkInbox": "Verifică-ți căsuța de e-mail și dă clic pe linkul trimis ca să-ți confirmi contul."
+  },
+  "forgot": {
+    "meta": "Resetează parola | ÉireHome Flow",
+    "title": "Resetează-ți parola",
+    "intro": "Scrie-ți e-mailul și îți trimitem un link ca să alegi o parolă nouă.",
+    "submit": "Trimite linkul",
+    "remembered": "Ți-ai amintit?",
+    "signIn": "Conectează-te",
+    "sent": "Dacă acest e-mail are un cont, linkul de resetare e pe drum. Verifică-ți căsuța de e-mail."
+  },
+  "newPassword": {
+    "meta": "Alege o parolă nouă | ÉireHome Flow",
+    "title": "Alege o parolă nouă",
+    "intro": "Scrie o parolă nouă pentru contul tău.",
+    "newLink": "Trimite-mi un link nou",
+    "signIn": "Conectează-te",
+    "submit": "Salvează parola nouă",
+    "changed": "Parola ta a fost schimbată."
+  },
+  "google": {
+    "continue": "Continuă cu Google",
+    "divider": "sau folosește e-mailul",
+    "terms": "Continuând cu Google, accepți <a href=\"terms.html\">Termenii de utilizare</a> și confirmi că ai citit <a href=\"privacy.html\">Politica de confidențialitate</a>.",
+    "opening": "Se deschide Google...",
+    "off": "Conectarea cu Google nu e încă activă. Deocamdată folosește e-mailul.",
+    "failed": "Google nu s-a putut deschide. Încearcă din nou."
+  },
+  "password": {
+    "length": "Cel puțin 8 caractere",
+    "upper": "O literă mare",
+    "special": "Un caracter special, de exemplu ! # $ sau ?"
+  },
+  "goToDashboard": "Mergi la panoul meu",
+  "privacyNote": "Contul tău păstrează numele, e-mailul și pașii terminați, pe servere din Irlanda. Cu Google, păstrează și linkul la poza de profil trimis de Google, pe care nu îl folosim. Cifrele din calculator rămân în browserul tău. <a href=\"privacy.html\">Citește Politica noastră de confidențialitate</a>.",
+  "note": {
+    "checking": "Se verifică linkul...",
+    "signedIn": "Contul conectat: {email}.",
+    "needLink": "Ca să alegi o parolă nouă, deschide din nou linkul din e-mail sau conectează-te mai întâi."
+  }
+}

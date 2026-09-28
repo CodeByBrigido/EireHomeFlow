@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Minha jornada | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Sua jornada",
+    "title": "Rumo às chaves e à casa arrumada"
+  },
+  "callout": {
+    "start": "Comece aqui",
+    "optional": "Opcional"
+  },
+  "status": {
+    "completed": "concluída",
+    "locked": "bloqueada",
+    "current": "etapa atual",
+    "optional": "opcional"
+  },
+  "node": {
+    "label": "Etapa {n} de {total}: {title}"
+  },
+  "finish": {
+    "title": "Casa pronta e arrumada",
+    "note": "É liberado quando todas as etapas obrigatórias estiverem marcadas.",
+    "doneTitle": "Casa arrumada",
+    "doneNote": "Todas as etapas concluídas, pisos e cortinas incluídos."
+  },
+  "next": {
+    "none": "Hora de passar um café"
+  },
+  "aside": {
+    "nextUp": "A seguir",
+    "openStep": "Abrir esta etapa",
+    "reset": "Zerar progresso"
+  },
+  "detail": {
+    "close": "Fechar",
+    "stepOf": "Etapa {n} de {total}",
+    "checklist": "O que esta etapa pede",
+    "howto": "Como fazer",
+    "tip": "Bom saber",
+    "complete": "Concluir etapa +25 XP",
+    "undo": "Marcar como não concluída",
+    "changeNumbers": "Alterar meus números",
+    "openCalculator": "Abrir a calculadora",
+    "signUp": "Criar conta ou entrar",
+    "previous": "← Anterior",
+    "next": "Próxima →"
+  },
+  "note": {
+    "calculator": "Esta etapa é marcada para você quando você escolhe Salvar na minha jornada na calculadora.",
+    "signedInDone": "Você entrou como {email}, então esta etapa está concluída.",
+    "signedInTicking": "Você entrou como {email}. Esta etapa está sendo marcada para você.",
+    "checking": "Verificando sua conta...",
+    "signIn": "Esta etapa é marcada para você assim que você entrar.",
+    "accountsOff": "As contas ainda não estão ativadas, então esta etapa não pode ser concluída.",
+    "locked": "Você já pode ler esta etapa. Poderá concluí-la quando terminar \"{title}\"."
+  },
+  "mine": {
+    "calculator": {
+      "title": "Seus números",
+      "maxPrice": "Preço máximo do imóvel",
+      "maxLoan": "Financiamento máximo ({multiple})",
+      "funds": "Recursos disponíveis",
+      "monthly": "Parcela mensal para um imóvel de {price}"
+    },
+    "deposit": {
+      "title": "Sua entrada",
+      "tenPercent": "10% de {price}",
+      "own": "Economias e presente da família",
+      "htb": "Help to Buy",
+      "covered": "Seus recursos cobrem a entrada.",
+      "short": "Faltam {amount} para a entrada."
+    },
+    "costs": {
+      "title": "Seus custos extras sobre {price}",
+      "stamp": "Imposto de selo",
+      "solicitor": "Advogado",
+      "survey": "Vistoria estrutural",
+      "valuation": "Avaliação do banco",
+      "total": "Total, além da entrada",
+      "newHouse": "A calculadora está configurada para uma casa nova, então o imposto de selo é calculado sobre o preço sem os 13,5% de IVA.",
+      "newApartment": "A calculadora está configurada para um apartamento novo, então o imposto de selo é calculado sobre o preço sem os 9% de IVA."
+    },
+    "htb": {
+      "title": "O Help to Buy e você",
+      "mover": "Sua calculadora diz que você está trocando de imóvel. O Help to Buy é só para quem compra o primeiro imóvel, então você pode pular esta etapa opcional.",
+      "secondHand": "Sua calculadora está configurada para um imóvel usado. O Help to Buy só cobre imóveis novos e construídos por conta própria, então escolha Casa nova ou Apartamento novo na calculadora se for isso que você está procurando.",
+      "overCap": "O preço desejado de {price} está acima do limite de {cap}, então o Help to Buy não se aplicaria.",
+      "loanTooSmall": "O Help to Buy exige um financiamento de pelo menos 70% do preço, o que dá {minLoan} no preço desejado. Você pode pegar até {maxLoan}, então o Help to Buy não se aplicaria a esse preço.",
+      "borrowEnough": "Ele também exige um financiamento de pelo menos 70% do preço ({minLoan}), então planeje pegar esse valor e guardar o restante das suas economias.",
+      "most": "O máximo que você poderia receber sobre {price}",
+      "counted": "Contado na sua calculadora",
+      "note": "O valor final também é limitado pelo imposto de renda e pelo DIRT que você pagou nos últimos quatro anos. Seu pedido na Revenue mostra esse valor."
+    },
+    "notSaved": "Seus números ainda não estão salvos neste navegador. Abra a calculadora e escolha Salvar na minha jornada para vê-los aqui.",
+    "saveFirst": "Salve seus números na calculadora (etapa 1) para ver seus próprios valores aqui."
+  }
+}

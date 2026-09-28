@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "ÉireHome Flow"
+  },
+  "hero": {
+    "eyebrow": "Pour les primo-accédants en Irlande",
+    "title": "Des premières économies<br>à votre <em>premier canapé</em>.",
+    "lead": "Six phases et trente et une étapes, du calcul de l'apport et des papiers de l'AIP jusqu'aux offres et à la remise des clés. Le guide couvre aussi la suite, comme les sols, les rideaux et le premier entretien de la chaudière.",
+    "start": "Commencer mon parcours",
+    "resume": "Reprendre mon parcours",
+    "calculator": "Simulateur de capacité d'achat",
+    "alt": "Illustration d'une maison irlandaise au-dessus de la côte",
+    "caption": "La maison pour laquelle vous travaillez."
+  },
+  "ticker": {
+    "label": "Chiffres clés",
+    "items": [
+      "Règle de la Banque centrale : 4× le revenu brut",
+      "Apport pour un primo-accédant : 10 %",
+      "Droit de timbre : 1 %",
+      "Avocat : 2 000-3 000 €",
+      "Expertise du bâti : environ 400 €",
+      "Évaluation de la banque : environ 150 €"
+    ],
+    "pause": "Pause",
+    "play": "Lecture"
+  },
+  "stats": {
+    "loan": {
+      "label": "Prêt maximum",
+      "value": "4×",
+      "note": "Le revenu annuel brut, selon les règles de la Banque centrale d'Irlande."
+    },
+    "deposit": {
+      "label": "Apport minimum",
+      "value": "10 %",
+      "note": "Le même pour les primo-accédants et pour ceux qui ont déjà été propriétaires."
+    },
+    "cash": {
+      "label": "Argent hors prêt",
+      "value": "3 550 €",
+      "note": "Avocat, expertise et évaluation, plus 1 % de droit de timbre."
+    }
+  },
+  "phases": {
+    "title": "Six phases, l'une après l'autre.",
+    "intro": "Les étapes se débloquent dans l'ordre : terminez chaque étape obligatoire pour débloquer la suivante. Vous pouvez lire toutes les étapes à tout moment dans le guide complet."
+  },
+  "cta": {
+    "title": "Lire le guide complet",
+    "text": "Les trente et une étapes au même endroit, avec des listes et des conseils. Aucun compte nécessaire.",
+    "button": "Ouvrir le guide"
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "La guía completa | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "La guía completa",
+    "title": "Cada paso, en detalle",
+    "intro": "Seis fases y treinta y un pasos, de tus primeros ahorros a tu primer sofá. Abre una fase para leerla. Cuando estés listo, sigue tu progreso en <a href=\"journey.html\">Mi camino</a>."
+  },
+  "kind": {
+    "blocking": "Paso obligatorio",
+    "optional": "Paso opcional"
+  },
+  "tipLabel": "Conviene saber:",
+  "openCalculator": "Abrir la calculadora",
+  "openInJourney": "Abrir en mi camino",
+  "phases": {
+    "preparation": {
+      "title": "Preparación",
+      "subtitle": "Poner en orden las finanzas",
+      "text": "Capacidad de compra, objetivo de entrada y seis meses de extractos limpios."
+    },
+    "aip": {
+      "title": "Aprobación en Principio (AIP)",
+      "subtitle": "La prueba de que un banco te respalda",
+      "text": "Documentación, banco o intermediario, y la carta que piden las agencias."
+    },
+    "search": {
+      "title": "Búsqueda y ofertas",
+      "subtitle": "Daft.ie y MyHome.ie",
+      "text": "Visitas, el lenguaje de las agencias y ofertas hasta el Sale Agreed."
+    },
+    "legal": {
+      "title": "Trámites legales y contratos",
+      "subtitle": "Abogado, inspección y tasación",
+      "text": "Contratos, inspección, tasación y seguros obligatorios."
+    },
+    "keys": {
+      "title": "Las llaves en la mano",
+      "subtitle": "Desembolso y día del cierre",
+      "text": "Oferta de préstamo, desembolso, día del cierre y la mudanza."
+    },
+    "settling": {
+      "title": "Instalarse",
+      "subtitle": "Suelos, cortinas y la caldera",
+      "text": "Amueblar la casa y mantenerla en marcha."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Calcular mi capacidad de compra",
+      "time": "15 minutos",
+      "cost": "Gratis",
+      "body": "Todo lo demás parte de esta cifra. El Banco Central de Irlanda permite a quien compra su primera vivienda pedir hasta cuatro veces sus ingresos brutos anuales, y a quien cambia de vivienda, 3,5 veces. Después, tus ahorros deciden cuánta entrada y cuántos gastos puedes cubrir.",
+      "checklist": [
+        "Abre la calculadora y rellena tu salario, tus ahorros y el precio objetivo",
+        "Suma los dos salarios brutos si la solicitud es conjunta",
+        "Elige Guardar en mi camino: este paso se marca solo y los pasos siguientes muestran tus cifras"
+      ],
+      "tip": "Los préstamos del coche y las cuotas de una credit union reducen lo que te ofrecen los bancos, porque ponen a prueba cada pago mensual.",
+      "alt": "Una calculadora verde con el símbolo del euro en la pantalla, junto a una casita y un montón de monedas doradas"
+    },
+    "preparation-1": {
+      "title": "Asegurar la entrada del 10 %",
+      "time": "Continuo",
+      "cost": "10 % del precio",
+      "body": "Necesitas al menos el 10 % del precio de compra, tanto si es tu primera vivienda como si no. La entrada va aparte de los gastos de abajo.",
+      "checklist": [
+        "Programa una transferencia periódica para el día después de cobrar",
+        "Guarda la entrada en una cuenta aparte que no toques nunca",
+        "Una donación familiar documentada cuenta, pero el banco querrá una carta que diga que no es un préstamo"
+      ],
+      "tip": "Seis meses ahorrando con regularidad más o menos lo que será tu cuota es lo que más pesa en tu expediente.",
+      "alt": "Una hucha de cerdito color terracota con una moneda dorada cayendo por la ranura y una etiqueta dorada redonda con el signo de porcentaje"
+    },
+    "preparation-2": {
+      "title": "Reservar dinero para los gastos extra",
+      "time": "Continuo",
+      "cost": "Impuesto de timbre + unos 3050 €",
+      "body": "El impuesto de timbre (stamp duty), el abogado, la inspección y la tasación se pagan con tu propio dinero, no con la hipoteca. Mi camino muestra tus cantidades cuando hayas guardado la calculadora.",
+      "checklist": [
+        "Impuesto de timbre: 1 % del precio hasta 1 millón de €, 2 % de 1 millón de € a 1,5 millones de € y 6 % por encima",
+        "En una vivienda nueva, el impuesto de timbre se calcula sobre el precio sin IVA: 13,5 % para una casa, 9 % para un piso",
+        "Abogado: 2000-3000 € más IVA y gastos",
+        "Inspección estructural unos 400 €, tasación del banco unos 150 €"
+      ],
+      "tip": "Reserva otros 1500-2000 € para la mudanza, las cerraduras y las primeras facturas de suministros.",
+      "alt": "Un sobre dorado abierto con billetes verdes asomando, junto a dos pequeños recibos de papel"
+    },
+    "preparation-3": {
+      "title": "Mantener la cuenta bancaria limpia durante seis meses",
+      "time": "6 meses",
+      "cost": "Gratis",
+      "body": "Los analistas del banco revisan seis meses de extractos línea por línea para ver cómo manejas el dinero.",
+      "checklist": [
+        "Ninguna operación de apuestas en línea, ni una",
+        "Ningún descubierto no autorizado ni recibo devuelto",
+        "El alquiler pagado a tiempo desde la misma cuenta cada mes"
+      ],
+      "tip": "Las cuentas de Revolut y de credit union también cuentan. El banco también te pedirá esos extractos.",
+      "alt": "Un extracto bancario con una marca verde en cada línea, junto a un calendario colgado con seis casillas en verde"
+    },
+    "preparation-4": {
+      "title": "Comprobar si puedes pedir el Help to Buy",
+      "time": "2 semanas",
+      "cost": "Devolución de hasta 30.000 €",
+      "body": "El Help to Buy te devuelve el impuesto sobre la renta y el DIRT que pagaste en Irlanda en los últimos cuatro años, hasta 30.000 € o el 10 % del precio, lo que sea menor. Es para quien compra su primera vivienda, de obra nueva o de autoconstrucción, y está vigente hasta finales de 2029. El First Home Scheme es otra opción aparte, de copropiedad (shared equity), que también merece la pena calcular.",
+      "checklist": [
+        "Nunca has comprado ni construido una vivienda, ni en Irlanda ni en el extranjero",
+        "La vivienda es de obra nueva o de autoconstrucción y vale 500.000 € o menos",
+        "Tu hipoteca cubre al menos el 70 % del precio y es de un banco que cumple los requisitos",
+        "Vivirás en ella como residencia principal durante cinco años"
+      ],
+      "howtoLabel": "Cómo solicitarlo",
+      "howto": [
+        "Regístrate en el myAccount de Revenue si cobras por PAYE, o en ROS si trabajas por cuenta propia. Revenue te envía por correo postal un código para terminar el registro, así que cuenta con unos días.",
+        "Para cada uno de los últimos cuatro años que quieras incluir, presenta la declaración de la renta (Income Tax Return) y consigue tu Statement of Liability. Paga cualquier impuesto que aún debas de esos años.",
+        "En myAccount, abre Help to Buy dentro de Property and Land Services y completa la solicitud. En ROS, usa el enlace Help to Buy applicant de la pantalla de inicio.",
+        "Revenue te da un número de solicitud, un código de acceso y lo máximo que podrías reclamar. Tu banco pedirá verlo.",
+        "Cuando tengas la oferta de préstamo y hayas firmado el contrato, vuelve a Help to Buy y presenta la reclamación, subiendo la oferta, tu aceptación firmada y el contrato.",
+        "Da tu número de referencia de la reclamación y el código de acceso al promotor, que confirma la reclamación. Revenue paga entonces la devolución al promotor como parte de tu entrada."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: antes de solicitarlo",
+        "Revenue: cómo solicitarlo"
+      ],
+      "tip": "La solicitud tiene fecha de caducidad, así que reclama antes de que venza. ¿Te construyes la casa tú? Reclamas después del primer desembolso de la hipoteca, subes el justificante de ese desembolso y la tasación del banco en lugar de un contrato, y tu abogado confirma la reclamación.",
+      "alt": "Una casa verde con la estructura de madera del tejado a la vista y una grúa torre detrás, junto a una moneda dorada dentro de una flecha verde curva"
+    },
+    "preparation-5": {
+      "title": "Crear tu cuenta de ÉireHome Flow",
+      "time": "2 minutos",
+      "cost": "Gratis",
+      "body": "Una cuenta guarda tu camino, para que puedas seguir en el móvil, en el portátil o en cualquier otro dispositivo. Es gratis, y este paso se marca solo en cuanto inicias sesión.",
+      "checklist": [
+        "Elige Crear cuenta y escribe tu nombre, tu correo y una contraseña",
+        "Confirma tu correo con el enlace que te enviamos",
+        "Inicia sesión en cualquier otro dispositivo para ver el mismo progreso"
+      ],
+      "tip": "Tu cuenta guarda tu nombre, tu correo y los pasos que has completado. Las cifras que escribes en la calculadora se quedan en tu navegador.",
+      "alt": "Un portátil y un móvil con el mismo icono de perfil, con una pequeña nube y dos flechas de sincronización entre ellos"
+    },
+    "aip-0": {
+      "title": "Elegir un banco directamente o un intermediario",
+      "time": "1 semana",
+      "cost": "El intermediario no suele costarte nada",
+      "body": "Un intermediario hipotecario (broker) compara todo el mercado con una sola solicitud. Ir directamente al banco puede darte una oferta de cashback propia de ese banco.",
+      "checklist": [
+        "Pregunta al intermediario con qué bancos trabaja",
+        "Compara el cashback con el tipo de interés. El cashback se paga una vez, pero el tipo se aplica durante todo el plazo",
+        "Mira cómo trata el banco tu tipo de contrato laboral antes de solicitar"
+      ],
+      "tip": "Donde más se diferencian los bancos es en los ingresos de contratos temporales o en periodo de prueba, y ahí es donde un intermediario se gana el sueldo.",
+      "alt": "Un poste indicador con una flecha a la izquierda hacia un banco verde con columnas y otra a la derecha hacia un maletín"
+    },
+    "aip-1": {
+      "title": "Reunir seis meses de extractos bancarios",
+      "time": "2-3 días",
+      "cost": "Gratis",
+      "body": "Todas las cuentas corrientes, de ahorro y de Revolut, completas, sin páginas que falten.",
+      "checklist": [
+        "Descarga los PDF directamente del banco, no capturas de pantalla",
+        "Nombra cada archivo con la cuenta y el mes",
+        "Prepárate para explicar cualquier ingreso de más de unos 500 €"
+      ],
+      "tip": "Una sola página que falte es la causa más habitual de que una solicitud se atasque.",
+      "alt": "Un montón en abanico de seis páginas de documentos con un clip verde, junto a una lupa"
+    },
+    "aip-2": {
+      "title": "Reunir nóminas y el Employment Detail Summary",
+      "time": "1 semana",
+      "cost": "Gratis",
+      "body": "Normalmente, tres nóminas recientes, tu EDS de Revenue y un certificado de salario firmado por tu empresa.",
+      "checklist": [
+        "Las tres nóminas más recientes",
+        "El Employment Detail Summary de myAccount",
+        "Un certificado de salario que confirme el tipo de contrato y cualquier bonus"
+      ],
+      "tip": "Si trabajas por cuenta propia, en su lugar necesitas dos años de cuentas certificadas y un certificado de estar al corriente con Hacienda (tax clearance).",
+      "alt": "Una carpeta abierta con tres nóminas, la de delante marcada con el símbolo del euro y un sello verde con una marca"
+    },
+    "aip-3": {
+      "title": "Demostrar el alquiler y el ahorro",
+      "time": "Continuo",
+      "cost": "Gratis",
+      "body": "El alquiler más el ahorro regular es la forma de demostrar que puedes pagar la cuota además de tus gastos actuales.",
+      "checklist": [
+        "El alquiler pagado por transferencia periódica, visible en los extractos",
+        "Un ahorro constante que no hayas tocado",
+        "Una breve explicación por escrito de cualquier hueco"
+      ],
+      "tip": "El alquiler más el ahorro deberían sumar más o menos la futura cuota de la hipoteca, porque los analistas comparan las dos cifras.",
+      "alt": "Una balanza que pesa una casita de tejado color óxido frente a un tarro de monedas doradas"
+    },
+    "aip-4": {
+      "title": "Recibir la carta de AIP",
+      "time": "1-3 semanas",
+      "cost": "Gratis",
+      "body": "La Aprobación en Principio indica cuánto te prestará el banco, a falta de la tasación y de las comprobaciones finales. Suele durar seis meses.",
+      "checklist": [
+        "Revisa el importe, el plazo y la fecha de caducidad",
+        "Guarda un PDF en el móvil para las visitas",
+        "Anota la fecha de caducidad en tu agenda, porque renovarla exige extractos nuevos"
+      ],
+      "tip": "Ninguna agencia inmobiliaria de Irlanda se tomará en serio una oferta sin ella.",
+      "alt": "Un sobre abierto del que sale una carta, marcada con un sello verde redondo y una marca"
+    },
+    "search-0": {
+      "title": "Elegir una zona y mirar los precios de venta",
+      "time": "1 semana",
+      "cost": "Gratis",
+      "body": "El precio de salida lo pone el vendedor. El Residential Property Price Register muestra por cuánto se vendieron de verdad las viviendas.",
+      "checklist": [
+        "Compara el precio de salida con el registro, calle por calle",
+        "Prueba el trayecto a la hora a la que de verdad viajarías",
+        "Mira el certificado energético (BER). Pasar de una C a una B puede costar 15.000 € en reformas"
+      ],
+      "tip": "Crea alertas en Daft y en MyHome para tu zona y tu franja de precio, porque las buenas viviendas vuelan en días.",
+      "alt": "Un plano de calles doblado con una carretera y parques verdes, un gran marcador de ubicación encima y una pequeña etiqueta de precio con el símbolo del euro"
+    },
+    "search-1": {
+      "title": "Aprender el vocabulario irlandés",
+      "time": "1 tarde",
+      "cost": "Gratis",
+      "body": "El proceso tiene su propio vocabulario, y las agencias darán por hecho que lo conoces.",
+      "checklist": [
+        "Sale Agreed no es vinculante. Hasta que se firman los contratos, otro comprador todavía puede adelantarse (gazumping)",
+        "La venta directa (private treaty) y la subasta pública (public auction) cambian por completo las reglas",
+        "La señal de reserva (booking deposit) se devuelve, pero la señal del contrato no"
+      ],
+      "tip": "El BER es obligatorio por ley en todos los anuncios, así que desconfía de cualquier anuncio que no lo muestre.",
+      "alt": "Un libro abierto con líneas de texto y dos bocadillos flotando encima, uno con puntos y otro con líneas"
+    },
+    "search-2": {
+      "title": "Reservar visitas",
+      "time": "2-8 semanas",
+      "cost": "Gratis",
+      "body": "Ve al menos cinco viviendas antes de hacer una oferta, incluidas dos que creas que no te convienen.",
+      "checklist": [
+        "Escribe a la agencia por correo y después confírmalo por teléfono",
+        "Fotografía las manchas de humedad, los cuadros de contadores y la trampilla del desván",
+        "Pregunta por qué se muda el vendedor y cuánto tiempo lleva anunciada"
+      ],
+      "tip": "Vuelve una segunda vez una tarde lluviosa entre semana. Las casas se ven distintas cuando llueve y la calle está llena de tráfico.",
+      "alt": "Un calendario de pared con un día marcado con una casita y un despertador sonando al lado"
+    },
+    "search-3": {
+      "title": "Apuntar cada oferta",
+      "time": "1-8 semanas",
+      "cost": "Gratis",
+      "body": "Las ofertas son verbales y no están reguladas, así que lleva tu propio registro.",
+      "checklist": [
+        "Anota el importe, la fecha y con quién hablaste",
+        "Fija tu cifra límite antes de empezar",
+        "No hagas nunca una oferta sin la AIP en la mano"
+      ],
+      "tip": "Pide a la agencia que te confirme cada oferta por correo. Te ayuda a protegerte de ofertas fantasma.",
+      "alt": "Un cuaderno de espiral abierto con una lista de anotaciones y un gráfico de barras que sube, con un lápiz encima"
+    },
+    "search-4": {
+      "title": "Llegar al Sale Agreed",
+      "time": "1 semana",
+      "cost": "3000-5000 € reembolsables",
+      "body": "Aceptan tu oferta y pagas una señal de reserva, normalmente 3000-5000 €, para retirar la casa del mercado.",
+      "checklist": [
+        "Pide el recibo de la señal de reserva por escrito",
+        "Da a la agencia los datos de tu abogado",
+        "Pide que se emita pronto el aviso de venta (sales advice notice)"
+      ],
+      "tip": "La señal de reserva se devuelve por completo hasta que firmas los contratos, así que la venta todavía no es definitiva.",
+      "alt": "Un cartel de agencia inmobiliaria con una banda verde y una gran marca de visto encima, delante de una casita"
+    },
+    "legal-0": {
+      "title": "Contratar a un abogado",
+      "time": "1 semana",
+      "cost": "2000-3000 € + IVA",
+      "body": "El conveyancing es la transmisión legal de la propiedad, y los plazos dependen sobre todo del ritmo de tu abogado (solicitor).",
+      "checklist": [
+        "Pide un presupuesto cerrado que incluya gastos y búsquedas registrales",
+        "Pregunta cuántos expedientes cierra el despacho al mes",
+        "Dales el aviso de venta en cuanto llegue"
+      ],
+      "tip": "Elige por la rapidez con la que responden. Un presupuesto barato no compensa si nadie coge el teléfono en las vacaciones de agosto.",
+      "alt": "Una balanza dorada sobre un escritorio de madera, junto a un montón de papeles atados con cinta roja y un sello dorado"
+    },
+    "legal-1": {
+      "title": "Encargar la inspección estructural",
+      "time": "1-2 semanas",
+      "cost": "300-500 €",
+      "body": "Un ingeniero independiente recorre la casa y pone por escrito todo lo que falla.",
+      "checklist": [
+        "Contrata a un ingeniero inscrito en Engineers Ireland o en la SCSI",
+        "Pide fotografías y un presupuesto de las reparaciones",
+        "En un piso, lee también las cuentas de la comunidad (management company)"
+      ],
+      "tip": "Lo que encuentre la inspección te da margen para negociar. Un tejado que necesita 6000 € de obra es motivo para pedir 6000 € de rebaja antes de los contratos.",
+      "alt": "Una casa verde con una lupa sobre una grieta de la pared, junto a una carpeta con una lista"
+    },
+    "legal-2": {
+      "title": "Pedir la tasación del banco",
+      "time": "1 semana",
+      "cost": "Unos 150 €",
+      "body": "El banco tasa la vivienda como garantía propia, con un tasador de su propia lista.",
+      "checklist": [
+        "Encárgala a través del banco o del intermediario, no por tu cuenta",
+        "Una tasación no es una inspección. Existe para proteger al banco",
+        "Si la tasación sale por debajo, pones la diferencia de tu bolsillo"
+      ],
+      "tip": "Si la tasación sale por debajo del precio acordado, es bastante normal renegociar.",
+      "alt": "Una casa verde con una etiqueta de precio dorada con el símbolo del euro colgando del tejado, y un banco detrás"
+    },
+    "legal-3": {
+      "title": "Contratar el seguro de vida de la hipoteca y el seguro de hogar",
+      "time": "1-2 semanas",
+      "cost": "25-60 € al mes",
+      "body": "Los dos son obligatorios antes del desembolso, y ninguno tiene que contratarse con tu banco.",
+      "checklist": [
+        "Compara precios del seguro de vida de la hipoteca (mortgage protection), porque el del banco rara vez es el más barato",
+        "El seguro de hogar debe cubrir el coste de reconstrucción, no el precio de compra",
+        "Declara tus problemas de salud con sinceridad, porque una póliza anulada es peor que pagar un recargo"
+      ],
+      "tip": "El estudio del seguro puede tardar semanas si hay cualquier historial médico, así que empieza antes de los contratos.",
+      "alt": "Un escudo verde con una marca blanca delante de una casita protegida por un paraguas dorado"
+    },
+    "legal-4": {
+      "title": "Firmar los contratos y pagar la entrada",
+      "time": "1-2 semanas",
+      "cost": "10 % menos la señal de reserva",
+      "body": "Firmas, pagas el resto de la entrada del 10 % y la venta pasa a ser legalmente vinculante.",
+      "checklist": [
+        "Lee las condiciones especiales con tu abogado",
+        "Acuerda una fecha de cierre que encaje con el preaviso de tu alquiler",
+        "Confirma por escrito qué elementos fijos y accesorios se incluyen"
+      ],
+      "tip": "Desde el momento en que se intercambian los contratos, nadie puede adelantarse (gazumping).",
+      "alt": "Una página de contrato firmada con una pluma estilográfica verde sobre la firma, junto a un montón de monedas doradas"
+    },
+    "keys-0": {
+      "title": "Recibir la oferta final de préstamo",
+      "time": "1-2 semanas",
+      "cost": "Gratis",
+      "body": "La oferta formal sustituye a la AIP y fija el tipo, el plazo y las condiciones.",
+      "checklist": [
+        "Revisa el tipo, el plazo y las condiciones de cualquier cashback",
+        "Compara el tipo fijo con el variable por última vez",
+        "Firma y devuélvela con las pólizas de seguro adjuntas"
+      ],
+      "tip": "Los tipos verdes para viviendas con BER B3 o mejor pueden suponer varios miles durante un plazo fijo.",
+      "alt": "Un certificado con una insignia verde de porcentaje y un sello de cinta dorada, junto a una moneda de euro dorada"
+    },
+    "keys-1": {
+      "title": "Disponer de los fondos",
+      "time": "3-10 días",
+      "cost": "Gratis",
+      "body": "Tu abogado pide el dinero para el día del cierre y el banco se lo paga.",
+      "checklist": [
+        "Confirma con tu abogado el saldo exacto del cierre",
+        "Transfiere tu parte con tiempo, porque los límites diarios de transferencia pillan a mucha gente",
+        "Comprueba la fecha de la primera cuota"
+      ],
+      "tip": "Nunca envíes dinero solo con unos datos bancarios recibidos por correo; llama al despacho de tu abogado para comprobarlos.",
+      "alt": "Monedas doradas que viajan por una flecha curva desde un pequeño banco hasta un edificio de oficinas"
+    },
+    "keys-2": {
+      "title": "Cerrar la compra y recoger las llaves",
+      "time": "1 día",
+      "cost": "Saldo del cierre",
+      "body": "Se transmite la propiedad, se paga el saldo y la agencia te entrega las llaves.",
+      "checklist": [
+        "Toma las lecturas de los contadores y fotografíalas",
+        "Consigue todas las llaves, mandos y códigos de alarma",
+        "Cambia las cerraduras la primera semana"
+      ],
+      "tip": "Haz una última visita antes de que se mueva el dinero, para asegurarte de que la casa está como acordasteis.",
+      "alt": "Un llavero con tres llaves de casa delante de una puerta verde con un montante en arco"
+    },
+    "keys-3": {
+      "title": "Revisar la lista de defectos",
+      "time": "1 semana",
+      "cost": "300-600 € por un revisor",
+      "body": "Sobre todo en obra nueva: anota cada defecto mientras el constructor todavía responde.",
+      "checklist": [
+        "Contrata a un revisor profesional (snagger) para una vivienda nueva",
+        "Fotografía cada defecto con el nombre de la habitación",
+        "Envía la lista por escrito con un plazo"
+      ],
+      "tip": "Mantén la lista abierta hasta que cada punto esté resuelto, porque el plazo de la garantía ya ha empezado a correr.",
+      "alt": "Una carpeta con una lista de tres marcas y una cruz, entre un rodillo de pintura y un rollo de cinta de carrocero"
+    },
+    "settling-0": {
+      "title": "Poner los suministros a tu nombre",
+      "time": "1 semana",
+      "cost": "Las fianzas varían",
+      "body": "Luz, gas, internet y basura, todo en la primera semana.",
+      "checklist": [
+        "Envía las fotos de los contadores del primer día con cada cambio",
+        "Cambiar de compañía al mudarte es una forma fácil de ahorrar",
+        "Contrata la recogida de basura antes del primer día de recogida"
+      ],
+      "tip": "Da de alta la alarma y comprueba si la línea de internet es de fibra antes de comprometerte con una tarifa.",
+      "alt": "Una gran bombilla naranja en el centro, con una señal wifi roja a la izquierda y un contenedor verde con ruedas a la derecha"
+    },
+    "settling-1": {
+      "title": "Darte de alta en el Local Property Tax",
+      "time": "1 día",
+      "cost": "Según el tramo",
+      "body": "Revenue necesita la vivienda registrada a tu nombre, clasificada en un tramo según su valor. El LPT es el impuesto anual sobre la vivienda.",
+      "checklist": [
+        "Regístrala en myAccount con el identificador de la vivienda",
+        "Comprueba si el vendedor ya pagó el año por adelantado",
+        "Elige la forma de pago que de verdad quieres"
+      ],
+      "tip": "Tu abogado confirma en el cierre que el LPT está al día, pero la declaración del año siguiente es cosa tuya.",
+      "alt": "Una casita verde junto a un formulario con un sello redondo de visto y un calendario con una fecha marcada"
+    },
+    "settling-2": {
+      "title": "Fijar un presupuesto de muebles por habitación",
+      "time": "1 tarde",
+      "cost": "3000-10.000 €",
+      "body": "Los suelos y las cortinas o estores pueden comerse fácilmente los primeros 5000 € si no planificas.",
+      "checklist": [
+        "Ordena las habitaciones: dormitorio y cocina primero, habitación de invitados al final",
+        "Pide precios de suelos y estores antes que de sofás",
+        "Deja un 15 % para lo que se te olvide"
+      ],
+      "tip": "Los muebles macizos de segunda mano son más baratos y mejores que los nuevos para montar. Mide antes las puertas.",
+      "alt": "El plano de cuatro habitaciones visto desde arriba, cada una con un pequeño montón de monedas doradas"
+    },
+    "settling-3": {
+      "title": "Suelos antes que muebles",
+      "time": "1-2 semanas",
+      "cost": "25-60 € por m²",
+      "body": "Poner el suelo en una casa vacía es más barato y mucho más rápido.",
+      "checklist": [
+        "Mide cada habitación y añade un 10 % para los cortes",
+        "Deja que el laminado o la tarima multicapa se aclimaten 48 horas",
+        "Resuelve la base aislante y los rodapiés en el mismo pedido"
+      ],
+      "tip": "Si también vas a pintar, pinta primero, pon el suelo después y los rodapiés al final.",
+      "alt": "Un montón de cuatro tablas de suelo naranjas con un martillo encima y un pequeño sillón verde al lado"
+    },
+    "settling-4": {
+      "title": "Medir para cortinas y estores",
+      "time": "1 fin de semana",
+      "cost": "60-250 € por ventana",
+      "body": "Mide la barra, no el cristal, y decide el largo antes de encargar.",
+      "checklist": [
+        "El ancho de la barra más 15-20cm por cada lado",
+        "Hasta el alféizar o hasta el suelo, decidido habitación por habitación",
+        "Opacas en los dormitorios, sobre todo si dan al este"
+      ],
+      "tip": "Encarga primero una habitación y vive con ella una semana antes de hacer toda la casa.",
+      "alt": "Una ventana con dos cortinas recogidas en una barra, con un metro amarillo extendido a lo largo de la barra"
+    },
+    "settling-5": {
+      "title": "Revisar la caldera y probar las alarmas",
+      "time": "1 día",
+      "cost": "90-150 €",
+      "body": "Haz una revisión de referencia y apunta las comprobaciones de seguridad en el calendario.",
+      "checklist": [
+        "Llama a un técnico inscrito en el RGI para el gas",
+        "Prueba las alarmas de humo y de monóxido de carbono (CO) y cambia las que tengan más de diez años",
+        "Guarda el certificado BER, las garantías y los manuales en un solo sitio"
+      ],
+      "tip": "La revisión anual de la caldera es una condición de la mayoría de los seguros de hogar, así que guarda los recibos.",
+      "alt": "Una caldera de pared con el símbolo de una llama, una llave inglesa en el suelo y un detector de humo en el techo"
+    }
+  }
+}

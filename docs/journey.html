@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common journey guide">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My journey | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="journey:meta.title">My journey | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/journey.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/journey.js?v=20260929"></script>
 </head>
 <body data-page="journey">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link is-active" aria-current="page" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link is-active" aria-current="page" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -44,8 +51,8 @@
     <div class="journey" id="journey">
       <div class="journey__main">
         <div class="journey__head">
-          <p class="eyebrow">Your journey</p>
-          <h1 class="page-title">Getting the keys and settling in</h1>
+          <p class="eyebrow" data-i18n="journey:page.eyebrow">Your journey</p>
+          <h1 class="page-title" data-i18n="journey:page.title">Getting the keys and settling in</h1>
         </div>
         <div class="journey__track">
           <div id="journey-phases"></div>
@@ -60,7 +67,7 @@
       <section class="detail" id="detail" aria-labelledby="detail-title" hidden>
         <div class="detail__top">
           <p class="eyebrow" data-bind="openPhase"></p>
-          <button type="button" class="detail__close" data-action="close">Close</button>
+          <button type="button" class="detail__close" data-action="close" data-i18n="journey:detail.close">Close</button>
         </div>
         <p class="detail__step" data-bind="openStepLabel"></p>
         <h2 class="detail__title" id="detail-title" tabindex="-1" data-bind="openTitle"></h2>
@@ -81,7 +88,7 @@
           <p class="mine__note" id="mine-note"></p>
         </div>
 
-        <p class="label">What this takes</p>
+        <p class="label" data-i18n="journey:detail.checklist">What this takes</p>
         <ul class="checklist" id="open-checklist"></ul>
 
         <div id="open-howto-box" hidden>
@@ -91,7 +98,7 @@
         <div class="step-links" id="open-links" hidden></div>
 
         <div class="tip">
-          <p class="label">Worth knowing</p>
+          <p class="label" data-i18n="journey:detail.tip">Worth knowing</p>
           <p class="tip__text" data-bind="openTip"></p>
         </div>
 
@@ -100,8 +107,8 @@
         <div class="detail__actions">
           <button type="button" class="btn btn--primary" id="toggle-step" data-action="toggle" data-bind="openAction"></button>
           <a class="btn btn--primary" id="step-go" href="calculator.html" hidden></a>
-          <button type="button" class="btn btn--outline" data-action="prev">← Previous</button>
-          <button type="button" class="btn btn--outline" data-action="next">Next →</button>
+          <button type="button" class="btn btn--outline" data-action="prev" data-i18n="journey:detail.previous">← Previous</button>
+          <button type="button" class="btn btn--outline" data-action="next" data-i18n="journey:detail.next">Next →</button>
         </div>
       </section>
 
@@ -117,25 +124,15 @@
               <p class="ring__count" data-bind="countLabel"></p>
             </div>
           </div>
-          <div class="minis">
-            <div class="mini">
-              <p class="mini__label">Streak</p>
-              <p class="mini__value" data-bind="streak"></p>
-            </div>
-            <div class="mini mini--mint">
-              <p class="mini__label">Earned</p>
-              <p class="mini__value" data-bind="xp"></p>
-            </div>
-          </div>
         </div>
 
         <div class="next-up">
-          <p class="label">Next up</p>
+          <p class="label" data-i18n="journey:aside.nextUp">Next up</p>
           <p class="next-up__title" data-bind="nextTitle"></p>
-          <button type="button" class="next-up__btn" data-action="openNext">Open this step</button>
+          <button type="button" class="next-up__btn" data-action="openNext" data-i18n="journey:aside.openStep">Open this step</button>
         </div>
 
-        <button type="button" class="reset" data-action="reset">Reset progress</button>
+        <button type="button" class="reset" data-action="reset" data-i18n="journey:aside.reset">Reset progress</button>
       </aside>
     </div>
   </main>
@@ -143,11 +140,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -159,7 +156,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

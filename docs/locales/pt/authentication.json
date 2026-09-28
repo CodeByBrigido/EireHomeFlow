@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Entrar | ÉireHome Flow",
+    "title": "Entrar",
+    "intro": "Entre para ver sua jornada salva.",
+    "submit": "Entrar",
+    "forgot": "Esqueceu sua senha?",
+    "newHere": "Ainda não tem conta?",
+    "createAccount": "Criar conta"
+  },
+  "signup": {
+    "meta": "Criar sua conta | ÉireHome Flow",
+    "title": "Criar sua conta",
+    "intro": "Salve sua jornada e continue em qualquer aparelho.",
+    "terms": "Ao criar uma conta, você concorda com nossos <a href=\"terms.html\">Termos de Uso</a> e confirma que leu nossa <a href=\"privacy.html\">Política de Privacidade</a>.",
+    "submit": "Criar conta",
+    "haveAccount": "Já tem uma conta?",
+    "signIn": "Entrar",
+    "checkInbox": "Confira sua caixa de entrada e clique no link que enviamos para confirmar sua conta."
+  },
+  "forgot": {
+    "meta": "Redefinir sua senha | ÉireHome Flow",
+    "title": "Redefinir sua senha",
+    "intro": "Digite seu e-mail e enviaremos um link para você escolher uma nova senha.",
+    "submit": "Enviar link de redefinição",
+    "remembered": "Lembrou?",
+    "signIn": "Entrar",
+    "sent": "Se esse e-mail tiver uma conta, um link de redefinição está a caminho. Confira sua caixa de entrada."
+  },
+  "newPassword": {
+    "meta": "Escolher uma nova senha | ÉireHome Flow",
+    "title": "Escolher uma nova senha",
+    "intro": "Digite uma nova senha para a sua conta.",
+    "newLink": "Enviar um novo link",
+    "signIn": "Entrar",
+    "submit": "Salvar nova senha",
+    "changed": "Sua senha foi alterada."
+  },
+  "google": {
+    "continue": "Continuar com o Google",
+    "divider": "ou use seu e-mail",
+    "terms": "Ao continuar com o Google, você concorda com nossos <a href=\"terms.html\">Termos de Uso</a> e confirma que leu nossa <a href=\"privacy.html\">Política de Privacidade</a>.",
+    "opening": "Abrindo o Google...",
+    "off": "O login com o Google ainda não está ativado. Por enquanto, use seu e-mail.",
+    "failed": "Não foi possível abrir o Google. Tente de novo."
+  },
+  "password": {
+    "length": "Pelo menos 8 caracteres",
+    "upper": "Uma letra maiúscula",
+    "special": "Um caractere especial, como ! # $ ou ?"
+  },
+  "goToDashboard": "Ir para o meu painel",
+  "privacyNote": "Sua conta guarda seu nome, seu e-mail e as etapas que você concluiu, em servidores na Irlanda. Com o Google, ela também guarda o link da foto de perfil que o Google envia, que não usamos. Os números da calculadora ficam no seu navegador. <a href=\"privacy.html\">Leia nossa Política de Privacidade</a>.",
+  "note": {
+    "checking": "Verificando seu link...",
+    "signedIn": "Você entrou como {email}.",
+    "needLink": "Para escolher uma nova senha, abra de novo o link do seu e-mail ou entre primeiro."
+  }
+}

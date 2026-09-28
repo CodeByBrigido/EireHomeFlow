@@ -1,0 +1,59 @@
+{
+  "signin": {
+    "meta": "Connexion | ÉireHome Flow",
+    "title": "Connexion",
+    "intro": "Connectez-vous pour voir votre parcours enregistré.",
+    "submit": "Se connecter",
+    "forgot": "Mot de passe oublié ?",
+    "newHere": "Pas encore de compte ?",
+    "createAccount": "Créer un compte"
+  },
+  "signup": {
+    "meta": "Créer votre compte | ÉireHome Flow",
+    "title": "Créer votre compte",
+    "intro": "Enregistrez votre parcours et reprenez-le sur n'importe quel appareil.",
+    "terms": "En créant un compte, vous acceptez nos <a href=\"terms.html\">Conditions d'utilisation</a> et confirmez avoir lu notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
+    "submit": "Créer le compte",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "signIn": "Se connecter",
+    "checkInbox": "Consultez votre boîte de réception et cliquez sur le lien envoyé pour confirmer votre compte."
+  },
+  "forgot": {
+    "meta": "Réinitialiser votre mot de passe | ÉireHome Flow",
+    "title": "Réinitialiser votre mot de passe",
+    "intro": "Saisissez votre e-mail et nous vous enverrons un lien pour choisir un nouveau mot de passe.",
+    "submit": "Envoyer le lien",
+    "remembered": "Ça vous revient ?",
+    "signIn": "Se connecter",
+    "sent": "Si cet e-mail correspond à un compte, un lien de réinitialisation est en route. Consultez votre boîte de réception."
+  },
+  "newPassword": {
+    "meta": "Choisir un nouveau mot de passe | ÉireHome Flow",
+    "title": "Choisir un nouveau mot de passe",
+    "intro": "Saisissez un nouveau mot de passe pour votre compte.",
+    "newLink": "M'envoyer un nouveau lien",
+    "signIn": "Se connecter",
+    "submit": "Enregistrer le mot de passe",
+    "changed": "Votre mot de passe a été modifié."
+  },
+  "google": {
+    "continue": "Continuer avec Google",
+    "divider": "ou utilisez votre e-mail",
+    "terms": "En continuant avec Google, vous acceptez nos <a href=\"terms.html\">Conditions d'utilisation</a> et confirmez avoir lu notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
+    "opening": "Ouverture de Google...",
+    "off": "La connexion avec Google n'est pas encore activée. Utilisez votre e-mail pour le moment.",
+    "failed": "Impossible d'ouvrir Google. Réessayez."
+  },
+  "password": {
+    "length": "Au moins 8 caractères",
+    "upper": "Une majuscule",
+    "special": "Un caractère spécial, comme ! # $ ou ?"
+  },
+  "goToDashboard": "Aller à mon tableau de bord",
+  "privacyNote": "Votre compte enregistre votre nom, votre e-mail et les étapes terminées, sur des serveurs en Irlande. Avec Google, il garde aussi le lien de photo de profil envoyé par Google, que nous n'utilisons pas. Les chiffres du simulateur restent dans votre navigateur. <a href=\"privacy.html\">Lire notre Politique de confidentialité</a>.",
+  "note": {
+    "checking": "Vérification de votre lien...",
+    "signedIn": "Vous êtes connecté en tant que {email}.",
+    "needLink": "Pour choisir un nouveau mot de passe, rouvrez le lien de votre e-mail ou connectez-vous d'abord."
+  }
+}

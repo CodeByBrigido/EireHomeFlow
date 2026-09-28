@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-IE" data-i18n-ns="common account">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My profile | ÉireHome Flow</title>
+  <script src="js/i18n-boot.js?v=20260929"></script>
+  <title data-i18n="account:profile.meta">My profile | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260928">
-  <script type="module" src="js/pages/profile.js?v=20260928"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+  <script type="module" src="js/pages/profile.js?v=20260929"></script>
 </head>
 <body data-page="profile">
 <div class="page">
 
   <!-- include partials/header.html: edit that file, then run npm run partials -->
-  <header class="site-header" data-pending data-auth-pending>
+  <header class="site-header" data-auth-pending>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">ÉireHome <span class="brand__accent">Flow</span></a>
-      <nav class="nav" aria-label="Main">
-        <a class="nav__link" href="index.html" data-page="home">Home</a>
-        <a class="nav__link" href="guide.html" data-page="guide">Guide</a>
-        <a class="nav__link" href="journey.html" data-page="journey">My journey</a>
-        <a class="nav__link" href="calculator.html" data-page="calculator">Calculator</a>
-        <span class="nav__stat nav__stat--xp">★ <span data-bind="xp">0</span> XP</span>
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
       </nav>
       <div class="site-header__account">
-        <a class="btn-signin" id="signin-link" href="signin.html">Sign in</a>
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
         <div class="account-nav" id="account-nav" hidden>
-          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu"><span data-bind="initials"></span></button>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
           <div class="menu" id="account-menu" hidden>
             <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
-            <a class="menu__item" href="dashboard.html">Dashboard</a>
-            <a class="menu__item" href="profile.html">My profile</a>
-            <button type="button" class="menu__item menu__item--danger" data-action="signOut">Sign out</button>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
           </div>
         </div>
       </div>
@@ -41,63 +48,63 @@
   <!-- /include -->
 
   <main class="main main--wide">
-    <p class="eyebrow">Your account</p>
-    <h1 class="page-title">My profile</h1>
-    <p class="calc__intro">Your details and how your account works.</p>
+    <p class="eyebrow" data-i18n="common:yourAccount">Your account</p>
+    <h1 class="page-title" data-i18n="account:profile.title">My profile</h1>
+    <p class="calc__intro" data-i18n="account:profile.intro">Your details and how your account works.</p>
 
     <div class="gate card" id="gate">
-      <p class="gate__text" data-bind="gateText">Loading your account...</p>
+      <p class="gate__text" data-bind="gateText" data-i18n="common:gate.loading">Loading your account...</p>
       <div class="gate__actions" id="gate-actions" hidden>
-        <a class="btn btn--primary" href="signin.html?next=profile.html">Sign in</a>
-        <a class="btn btn--outline" href="signup.html?next=profile.html">Create an account</a>
+        <a class="btn btn--primary" href="signin.html?next=profile.html" data-i18n="common:gate.signIn">Sign in</a>
+        <a class="btn btn--outline" href="signup.html?next=profile.html" data-i18n="common:gate.signUp">Create an account</a>
       </div>
     </div>
 
     <div id="signed-in" hidden>
       <div class="profile-grid">
         <form class="card profile-form" id="profile-form" novalidate data-fields="name">
-          <h2 class="card__title">Your details</h2>
+          <h2 class="card__title" data-i18n="account:profile.details">Your details</h2>
           <label class="field">
-            <span class="field__label">Full name</span>
+            <span class="field__label" data-i18n="common:fields.name">Full name</span>
             <input type="text" name="name" autocomplete="name" maxlength="80" aria-describedby="error-name">
             <span class="field__error" id="error-name"></span>
           </label>
           <div class="field">
-            <span class="field__label">Email</span>
+            <span class="field__label" data-i18n="common:fields.email">Email</span>
             <p class="field__static" data-bind="userEmail"></p>
           </div>
           <div class="field">
-            <span class="field__label">Member since</span>
+            <span class="field__label" data-i18n="account:profile.memberSince">Member since</span>
             <p class="field__static" data-bind="memberSince"></p>
           </div>
           <p class="form-status" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary">Save changes</button>
+          <button type="submit" class="btn btn--primary" data-i18n="account:profile.save">Save changes</button>
         </form>
 
         <div class="card profile-side">
-          <h2 class="card__title">Password</h2>
-          <p class="profile-side__text">Use at least 8 characters, with a capital letter and a special character.</p>
-          <a class="btn btn--outline" href="new-password.html">Change password</a>
+          <h2 class="card__title" data-i18n="account:profile.password.title">Password</h2>
+          <p class="profile-side__text" data-i18n="account:profile.password.text">Use at least 8 characters, with a capital letter and a special character.</p>
+          <a class="btn btn--outline" href="new-password.html" data-i18n="account:profile.password.change">Change password</a>
 
-          <h2 class="card__title">Your data</h2>
-          <p class="profile-side__text">Your account stores your name, your email and the steps you have completed, on servers in Ireland. With Google, it also keeps the profile picture link Google sends, which we do not use. The figures you type into the calculator stay in your browser. <a href="privacy.html">Read our Privacy Policy</a>.</p>
+          <h2 class="card__title" data-i18n="account:profile.data.title">Your data</h2>
+          <p class="profile-side__text" data-i18n-html="account:profile.data.text">Your account stores your name, your email and the steps you have completed, on servers in Ireland. With Google, it also keeps the profile picture link Google sends, which we do not use. The figures you type into the calculator stay in your browser. <a href="privacy.html">Read our Privacy Policy</a>.</p>
 
-          <h2 class="card__title">Sign out</h2>
-          <p class="profile-side__text">Your progress stays saved in your account for next time.</p>
-          <button type="button" class="btn btn--outline" data-action="signOut">Sign out</button>
+          <h2 class="card__title" data-i18n="account:profile.signOut.title">Sign out</h2>
+          <p class="profile-side__text" data-i18n="account:profile.signOut.text">Your progress stays saved in your account for next time.</p>
+          <button type="button" class="btn btn--outline" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
 
-          <h2 class="card__title">Delete your account</h2>
-          <p class="profile-side__text">This deletes your account and the progress saved in it, straight away. It cannot be undone. The calculator figures in this browser are not part of your account and stay here.</p>
-          <button type="button" class="btn btn--danger-outline" id="delete-start" data-action="deleteStart">Delete my account</button>
+          <h2 class="card__title" data-i18n="account:profile.delete.title">Delete your account</h2>
+          <p class="profile-side__text" data-i18n="account:profile.delete.text">This deletes your account and the progress saved in it, straight away. It cannot be undone. The calculator figures in this browser are not part of your account and stay here.</p>
+          <button type="button" class="btn btn--danger-outline" id="delete-start" data-action="deleteStart" data-i18n="account:profile.delete.start">Delete my account</button>
           <div class="danger-zone" id="delete-confirm" hidden>
-            <p class="danger-zone__text">Delete the account for <strong data-bind="userEmail"></strong> and all its saved progress? You can create a new account later, but this one cannot be brought back.</p>
+            <p class="danger-zone__text" data-i18n-html="account:profile.delete.question">Delete the account for <strong data-bind="userEmail"></strong> and all its saved progress? You can create a new account later, but this one cannot be brought back.</p>
             <div class="danger-zone__actions">
-              <button type="button" class="btn btn--danger" id="delete-confirm-btn" data-action="deleteConfirm">Yes, delete my account</button>
-              <button type="button" class="btn btn--outline" data-action="deleteCancel">Cancel</button>
+              <button type="button" class="btn btn--danger" id="delete-confirm-btn" data-action="deleteConfirm" data-i18n="account:profile.delete.confirm">Yes, delete my account</button>
+              <button type="button" class="btn btn--outline" data-action="deleteCancel" data-i18n="account:profile.delete.cancel">Cancel</button>
             </div>
             <p class="form-status" id="delete-status" role="status" aria-live="polite"></p>
           </div>
-          <p class="profile-side__text profile-side__note">Cannot sign in any more? Email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a> from the address on the account and we will delete it for you.</p>
+          <p class="profile-side__text profile-side__note" data-i18n-html="account:profile.delete.note">Cannot sign in any more? Email <a href="mailto:eirehomeflow@gmail.com">eirehomeflow@gmail.com</a> from the address on the account and we will delete it for you.</p>
         </div>
       </div>
     </div>
@@ -106,11 +113,11 @@
   <!-- include partials/footer.html: edit that file, then run npm run partials -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span class="site-footer__brand">ÉireHome Flow</span>
-      <span>Educational content. Not regulated financial advice.</span>
-      <nav class="site-footer__links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+      <span class="site-footer__brand" translate="no">ÉireHome Flow</span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="Legal" data-i18n-aria-label="common:footer.legal">
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
       </nav>
     </div>
   </footer>
@@ -122,7 +129,7 @@
       <p class="toast__text" id="toast-text"></p>
       <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
     </div>
-    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss">×</button>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
   </div>
   <!-- /include -->
 

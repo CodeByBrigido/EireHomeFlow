@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Kaufkraftrechner | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "Phase 01: Vorbereitung · Schritt 1",
+    "title": "Was Sie sich wirklich leisten können",
+    "intro": "Die Zentralbank begrenzt Hypotheken auf 4× das Bruttoeinkommen für Erstkäufer und auf 3,5× für alle anderen. Tragen Sie Ihre Zahlen ein, die Ergebnisse aktualisieren sich sofort. Speichern Sie sie in Ihrem Weg, um Schritt 1 zu erledigen."
+  },
+  "pills": {
+    "buyer": "Art des Käufers",
+    "ftb": "Erstkäufer",
+    "mover": "Umzug",
+    "application": "Art des Antrags",
+    "single": "Allein",
+    "joint": "Gemeinsamer Antrag",
+    "home": "Art der Immobilie",
+    "secondHand": "Bestand",
+    "newHouse": "Neues Haus",
+    "newApartment": "Neue Wohnung"
+  },
+  "fields": {
+    "salary": "Ihr jährliches Bruttogehalt",
+    "salary2": "Bruttogehalt der Partnerin oder des Partners",
+    "savings": "Ersparnisse",
+    "gift": "Schenkung der Familie",
+    "htb": "Help-to-Buy-Erstattung",
+    "price": "Zielpreis",
+    "rate": "Zinssatz",
+    "term": "Laufzeit"
+  },
+  "off": {
+    "joint": "Nur bei gemeinsamem Antrag",
+    "newBuild": "Nur bei Neubauten",
+    "ftb": "Nur für Erstkäufer"
+  },
+  "scale": {
+    "rateMin": "1 %",
+    "rateMax": "8 %",
+    "termMin": "5 Jahre",
+    "termMax": "35 Jahre"
+  },
+  "years": {
+    "one": "{count} Jahr",
+    "other": "{count} Jahre"
+  },
+  "htb": {
+    "notFtb": "Help to Buy gilt nur für Erstkäufer und wird hier deshalb nicht berücksichtigt.",
+    "notNew": "Help to Buy gilt nur für Neubauten und selbst gebaute Häuser. Wählen Sie oben Neues Haus oder Neue Wohnung, wenn Sie so etwas kaufen.",
+    "overCap": "Help to Buy gilt nur für Immobilien bis {cap} und wird bei diesem Preis deshalb nicht berücksichtigt.",
+    "loanTooSmall": "Help to Buy verlangt eine Hypothek von mindestens 70 % des Preises, hier also {minLoan}. Sie können bis zu {maxLoan} leihen, bei diesem Preis wird es deshalb nicht berücksichtigt.",
+    "counted": "Help to Buy erstattet die Einkommensteuer und die DIRT, die Sie in den letzten vier Jahren gezahlt haben, bis zu 30.000 € oder 10 % des Preises. Bei diesem Preis sind es höchstens {most}.",
+    "borrowEnough": "Es verlangt außerdem eine Hypothek von mindestens 70 % des Preises ({minLoan}), planen Sie also, so viel zu leihen und den Rest Ihrer Ersparnisse zu behalten."
+  },
+  "monthly": {
+    "label": "Geschätzte Monatsrate",
+    "note": "{loan} über {years} zu {rate}. Restschuld- und Wohngebäudeversicherung kommen dazu."
+  },
+  "results": {
+    "maxPrice": "Höchster Kaufpreis",
+    "maxLoan": "Höchste Hypothek (<span data-bind=\"multipleLabel\"></span>)",
+    "funds": "Verfügbare Mittel"
+  },
+  "limit": {
+    "income": "Im Moment begrenzt Ihr Einkommen. Die {multiple}-Regel deckelt das Darlehen bei {maxLoan}.",
+    "savings": "Im Moment begrenzen Ihre Ersparnisse. Jede zusätzlich gesparten 1.000 € erhöhen diesen Betrag um etwa {amount}.",
+    "htbEdge": "Im Moment begrenzen Ihre Ersparnisse, beim höchsten Preis, zu dem Help to Buy noch gilt. Darüber hinaus ohne Help to Buy brauchen Sie etwa {amount} mehr an Ersparnissen."
+  },
+  "save": {
+    "label": "In Mein Weg speichern",
+    "update": "Mein Weg aktualisieren",
+    "hint": "Erledigt Schritt 1. Ihre Zahlen bleiben in diesem Browser.",
+    "saved": "Schritt 1 ist erledigt. Ihr Weg zeigt immer die Zahlen dieser Seite.",
+    "noJourney": "Ihr Weg konnte nicht geladen werden. Laden Sie die Seite neu, um zu speichern.",
+    "done": "Ihre Zahlen sind gespeichert und Schritt 1 ist erledigt.",
+    "updated": "Ihr Weg verwendet jetzt diese Zahlen."
+  },
+  "breakdown": {
+    "title": "Bei einer Immobilie zu <span data-bind=\"priceLabel\"></span>",
+    "deposit": "Anzahlung (mindestens 10 %)",
+    "loan": "Benötigte Hypothek",
+    "loanAll": "Benötigte Hypothek, mit allen Ersparnissen",
+    "stamp": "Stempelsteuer ({bands})",
+    "stampNew": "Stempelsteuer ({bands} auf den Preis ohne {vat} Mehrwertsteuer)",
+    "bands": {
+      "1": "1 %",
+      "2": "Stufen von 1 % und 2 %",
+      "3": "Stufen von 1 %, 2 % und 6 %"
+    },
+    "solicitor": "Anwalt",
+    "survey": "Bautechnisches Gutachten",
+    "valuation": "Wertgutachten der Bank",
+    "total": "Benötigtes Bargeld insgesamt",
+    "booking": "Um das Haus zu sichern, zahlen Sie eine Reservierungsanzahlung von rund 5.000 € (erstattungsfähig bis zur Vertragsunterzeichnung). Der Rest der Anzahlung von {deposit} ist bei der Unterzeichnung fällig."
+  },
+  "verdict": {
+    "within": {
+      "title": "Dieser Preis liegt in Ihrem Rahmen",
+      "body": "Sie haben {funds} gegenüber {cash} benötigtem Bargeld, und die Hypothek von {loan} liegt innerhalb Ihres {multiple}-Limits von {maxLoan}. Nächster Schritt: die Unterlagen für die AIP sammeln."
+    },
+    "outOfReach": {
+      "title": "Dieser Preis ist vorerst außer Reichweite",
+      "body": "Ihnen fehlen {gap} an Bargeld, und die nötige Hypothek ({loan}) liegt {over} über Ihrem {multiple}-Limit von {maxLoan}. Zielen Sie auf {maxPrice} oder weniger."
+    },
+    "cashShort": {
+      "title": "Ihnen fehlen {gap} an Bargeld",
+      "body": "Sie haben {funds} verfügbar und brauchen bei diesem Preis {cash} in bar. Sparen Sie die Differenz an oder zielen Sie näher an {maxPrice}."
+    },
+    "loanOver": {
+      "title": "Die Hypothek liegt über Ihrem Limit",
+      "body": "Sie müssten {loan} leihen, das sind {over} über Ihrem {multiple}-Limit von {maxLoan}. Zielen Sie auf {maxPrice} oder weniger."
+    }
+  },
+  "disclaimer": "Schätzungen zu Bildungszwecken, auf Grundlage der Regeln der irischen Zentralbank und der Regeln von Revenue zu Stempelsteuer und Help to Buy. Jede Bank wendet ihre eigenen Kreditkriterien und Ausnahmen an."
+}

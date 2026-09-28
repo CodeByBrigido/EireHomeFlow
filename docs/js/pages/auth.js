@@ -1,13 +1,14 @@
 // Account pages: sign in, create account, forgot password and new password.
 // After signing in (with email or with Google), people go back to the page in ?next=
 // (or to their dashboard).
-import { firstName } from "../lib/people.js?v=20260928";
-import { safeNext } from "../lib/validation.js?v=20260928";
-import { Account } from "../core/account.js?v=20260928";
-import { startPage } from "../core/app.js?v=20260928";
-import { bind, PAGE } from "../core/dom.js?v=20260928";
-import { checkForm, formValues, renderPasswordRules, sayInForm, watchForm } from "../core/forms.js?v=20260928";
-import { flash } from "../core/notices.js?v=20260928";
+import { firstName } from "../lib/people.js?v=20260929";
+import { safeNext } from "../lib/validation.js?v=20260929";
+import { Account } from "../core/account.js?v=20260929";
+import { startPage } from "../core/app.js?v=20260929";
+import { bind, PAGE } from "../core/dom.js?v=20260929";
+import { checkForm, errorText, formValues, readerError, renderPasswordRules, sayInForm, watchForm } from "../core/forms.js?v=20260929";
+import { t } from "../core/i18n.js?v=20260929";
+import { flash } from "../core/notices.js?v=20260929";
 
 const NEXT = safeNext(new URLSearchParams(location.search).get("next"), "dashboard.html");
 
@@ -15,14 +16,13 @@ const NEXT = safeNext(new URLSearchParams(location.search).get("next"), "dashboa
 // so the form below never jumps, and hides only if the Supabase dashboard has Google off.
 let googleOn = null;   // null until the Supabase settings have been read
 let googleBusy = false;
-const GOOGLE_LABEL = "Continue with Google";
 
 function resetGoogle() {
   const btn = document.querySelector('[data-action="google"]');
   if (!btn) return;
   googleBusy = false;
   btn.disabled = false;
-  bind("googleLabel", GOOGLE_LABEL);
+  bind("googleLabel", t("authentication:google.continue"));
 }
 
 async function continueWithGoogle(btn) {
@@ -30,18 +30,18 @@ async function continueWithGoogle(btn) {
   const status = document.getElementById("google-status");
   googleBusy = true;
   btn.disabled = true;
-  bind("googleLabel", "Opening Google...");
+  bind("googleLabel", t("authentication:google.opening"));
   status.textContent = "";
   try {
     await Account.whenReady;
-    if (!Account.enabled) throw new Error("Accounts are not switched on yet.");
-    if (!(await Account.googleAvailable())) throw new Error("Google sign-in is not switched on yet. Please use your email for now.");
+    if (!Account.enabled) throw readerError("common:gate.accountsOff");
+    if (!(await Account.googleAvailable())) throw readerError("authentication:google.off");
     const { error } = await Account.signInWithGoogle(NEXT);
     if (error) throw error;
     // The browser is now on its way to Google; the button stays busy until the page changes.
   } catch (err) {
     resetGoogle();
-    status.textContent = err.message || "Google could not be opened. Please try again.";
+    status.textContent = err.forReader ? err.message : t("authentication:google.failed");
   }
 }
 
@@ -50,7 +50,7 @@ const AUTH_PAGES = {
     send: (v) => Account.signIn(v.email.trim(), v.password),
     after: (res) => {
       const name = firstName(res.data.user);
-      flash("Welcome back" + (name ? ", " + name : "") + ".");
+      flash(name ? t("common:welcome.back", { name }) : t("common:welcome.backNoName"));
       location.href = NEXT;
     },
   },
@@ -58,23 +58,23 @@ const AUTH_PAGES = {
     send: (v) => Account.signUp(v.email.trim(), v.password, v.name.trim().replace(/\s+/g, " ")),
     after: (res, form) => {
       if (res.data.session) {
-        flash("Your account is ready. Welcome to ÉireHome Flow!");
+        flash(t("common:welcome.newAccountNoName"));
         location.href = NEXT;
         return;
       }
       form.reset();
       renderPasswordRules(form);
-      sayInForm(form, "Check your inbox and click the link we sent to confirm your account.");
+      sayInForm(form, t("authentication:signup.checkInbox"));
     },
   },
   "forgot-password": {
     send: (v) => Account.sendReset(v.email.trim()),
-    after: (res, form) => sayInForm(form, "If that email has an account, a reset link is on its way. Check your inbox."),
+    after: (res, form) => sayInForm(form, t("authentication:forgot.sent")),
   },
   "new-password": {
     send: (v) => Account.setPassword(v.password),
     after: () => {
-      flash("Your password has been changed.");
+      flash(t("authentication:newPassword.changed"));
       location.href = "dashboard.html";
     },
   },
@@ -95,17 +95,17 @@ function initPage() {
   watchForm(form);
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (!Account.ready) return sayInForm(form, "One moment, still connecting. Please try again.");
-    if (!Account.enabled) return sayInForm(form, "Accounts are not switched on yet.");
+    if (!Account.ready) return sayInForm(form, t("common:forms.connecting"));
+    if (!Account.enabled) return sayInForm(form, t("common:gate.accountsOff"));
     if (!checkForm(form)) return sayInForm(form, "");
-    sayInForm(form, "Please wait...");
+    sayInForm(form, t("common:forms.wait"));
     try {
       const res = await AUTH_PAGES[PAGE].send(formValues(form));
       if (res.error) throw res.error;
       sayInForm(form, "");
       AUTH_PAGES[PAGE].after(res, form);
     } catch (err) {
-      sayInForm(form, err.message || "Something went wrong. Please try again.");
+      sayInForm(form, errorText(err));
     }
   });
 }
@@ -117,10 +117,10 @@ function renderPage() {
   const user = Account.shown();
   const checking = PAGE === "new-password" && !Account.ready;
   let note = "";
-  if (checking) note = "Checking your link...";
-  else if (!Account.available()) note = "Accounts are not switched on yet. Please check back soon.";
-  else if (user && (PAGE === "signin" || PAGE === "signup")) note = "You are signed in as " + user.email + ".";
-  else if (!user && PAGE === "new-password") note = "To choose a new password, open the link in your email again, or sign in first.";
+  if (checking) note = t("authentication:note.checking");
+  else if (!Account.available()) note = t("common:gate.accountsOff");
+  else if (user && (PAGE === "signin" || PAGE === "signup")) note = t("authentication:note.signedIn", { email: user.email });
+  else if (!user && PAGE === "new-password") note = t("authentication:note.needLink");
   bind("authNote", note);
   document.getElementById("auth-note").hidden = !note;
   document.getElementById("auth-note-links").hidden = !note || checking || !Account.available();

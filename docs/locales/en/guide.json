@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "The full guide | ÉireHome Flow"
+  },
+  "page": {
+    "eyebrow": "The full guide",
+    "title": "Every step, in detail",
+    "intro": "Six phases and thirty-one steps, from your first savings to your first sofa. Open a phase to read it. When you are ready, track your progress in <a href=\"journey.html\">My journey</a>."
+  },
+  "kind": {
+    "blocking": "Blocking step",
+    "optional": "Optional step"
+  },
+  "tipLabel": "Worth knowing:",
+  "openCalculator": "Open the calculator",
+  "openInJourney": "Open in my journey",
+  "phases": {
+    "preparation": {
+      "title": "Preparation",
+      "subtitle": "Getting the financial house in order",
+      "text": "Buying power, deposit target and six clean months of statements."
+    },
+    "aip": {
+      "title": "Approval in Principle",
+      "subtitle": "Proof that a lender will back you",
+      "text": "Paperwork, bank or broker, and the letter agents ask for."
+    },
+    "search": {
+      "title": "Search & Bidding",
+      "subtitle": "Daft.ie and MyHome.ie",
+      "text": "Viewings, agent language and bids up to Sale Agreed."
+    },
+    "legal": {
+      "title": "Legal & Contracts",
+      "subtitle": "Solicitor, survey and valuation",
+      "text": "Contracts, survey, valuation and mandatory insurance."
+    },
+    "keys": {
+      "title": "Keys in Hand",
+      "subtitle": "Drawdown and closing day",
+      "text": "Loan offer, drawdown, closing day and the move."
+    },
+    "settling": {
+      "title": "Settling In",
+      "subtitle": "Floors, curtains and the boiler",
+      "text": "Furnishing the home and keeping it running."
+    }
+  },
+  "steps": {
+    "preparation-0": {
+      "title": "Calculate my buying power",
+      "time": "15 minutes",
+      "cost": "Free",
+      "body": "Everything else builds on this number. The Central Bank of Ireland lets first-time buyers borrow up to four times their gross annual income, and movers 3.5 times. Your savings then decide how much deposit and fees you can cover.",
+      "checklist": [
+        "Open the calculator and fill in your salary, savings and target price",
+        "Add both gross salaries if you are applying jointly",
+        "Choose Save to my journey: this step is ticked for you and later steps show your figures"
+      ],
+      "tip": "Car loans and credit union repayments lower what lenders will offer, because they stress-test every monthly commitment.",
+      "alt": "A green calculator with a euro sign on its screen, beside a small house and a stack of gold coins"
+    },
+    "preparation-1": {
+      "title": "Confirm the 10% deposit",
+      "time": "Ongoing",
+      "cost": "10% of price",
+      "body": "You need at least 10% of the purchase price, whether this is your first home or not. The deposit is separate from the fees below.",
+      "checklist": [
+        "Set up a standing order for the day after payday",
+        "Keep the deposit in a separate account you never touch",
+        "A documented family gift counts, but the lender will want a letter saying it is not a loan"
+      ],
+      "tip": "Six months of regular saving at roughly your future repayment is the strongest thing on your file.",
+      "alt": "A terracotta piggy bank with a gold coin dropping into its slot and a round gold tag showing a percent sign"
+    },
+    "preparation-2": {
+      "title": "Set aside cash for the extra costs",
+      "time": "Ongoing",
+      "cost": "Stamp duty + about €3,050",
+      "body": "Stamp duty, solicitor, survey and valuation are paid from your own cash, not the mortgage. My journey shows your own amounts once you have saved the calculator.",
+      "checklist": [
+        "Stamp duty: 1% of the price up to €1m, 2% from €1m to €1.5m and 6% above that",
+        "On a new home, stamp duty is charged on the price without VAT: 13.5% for a house, 9% for an apartment",
+        "Solicitor: €2,000-3,000 plus VAT and outlays",
+        "Structural survey about €400, bank valuation about €150"
+      ],
+      "tip": "Budget another €1,500-2,000 for moving, locks and the first utility bills.",
+      "alt": "An open gold envelope with green banknotes sticking out, next to two small paper receipts"
+    },
+    "preparation-3": {
+      "title": "Keep the bank account clean for six months",
+      "time": "6 months",
+      "cost": "Free",
+      "body": "Underwriters go through six months of statements line by line to judge how you manage money.",
+      "checklist": [
+        "No online betting transactions, at all",
+        "No unauthorised overdrafts or returned direct debits",
+        "Rent paid on time from the same account every month"
+      ],
+      "tip": "Revolut and credit union accounts count too. The lender will ask for those statements as well.",
+      "alt": "A bank statement with a green tick on every row, beside a hanging calendar with six squares filled in green"
+    },
+    "preparation-4": {
+      "title": "Check Help to Buy eligibility",
+      "time": "2 weeks",
+      "cost": "Refund up to €30,000",
+      "body": "Help to Buy gives back the income tax and DIRT you paid in Ireland over the last four years, up to €30,000 or 10% of the price, whichever is lower. It is for first-time buyers of a new build or a self-build, and runs until the end of 2029. The First Home Scheme is a separate shared-equity option worth pricing too.",
+      "checklist": [
+        "You have never bought or built a home, in Ireland or abroad",
+        "The home is a new build or a self-build worth €500,000 or less",
+        "Your mortgage is at least 70% of the price, from a qualifying lender",
+        "You will live in it as your main home for five years"
+      ],
+      "howtoLabel": "How to apply",
+      "howto": [
+        "Register for Revenue's myAccount if you are paid through PAYE, or ROS if you are self-employed. Revenue posts you a code to finish registering, so allow a few days.",
+        "For each of the last four years you want counted, file an Income Tax Return and get your Statement of Liability. Pay any tax you still owe for those years.",
+        "In myAccount, open Help to Buy under Property and Land Services and complete the application. On ROS, use the Help to Buy applicant link on the home screen.",
+        "Revenue gives you an application number, an access code and the most you could claim. Your lender will ask to see it.",
+        "Once you have your loan offer and have signed the contract, go back to Help to Buy and make the claim, uploading the loan offer, your signed acceptance and the contract.",
+        "Give your claim reference number and access code to the developer, who confirms the claim. Revenue then pays the refund to the developer as part of your deposit."
+      ],
+      "links": [
+        "Revenue: Help to Buy",
+        "Revenue: before you apply",
+        "Revenue: how to apply"
+      ],
+      "tip": "The application has an expiry date, so claim before it runs out. Self-building? You claim after the first mortgage drawdown, upload the drawdown proof and the lender's valuation instead of a contract, and your solicitor confirms the claim.",
+      "alt": "A green house with a bare timber roof frame and a tower crane behind it, next to a gold coin in a curved green arrow"
+    },
+    "preparation-5": {
+      "title": "Create your ÉireHome Flow account",
+      "time": "2 minutes",
+      "cost": "Free",
+      "body": "An account saves your journey, so you can pick it up on your phone, your laptop or any other device. It is free, and this step is ticked for you as soon as you sign in.",
+      "checklist": [
+        "Choose Create account and enter your name, email and a password",
+        "Confirm your email address from the link we send you",
+        "Sign in on any other device to see the same progress"
+      ],
+      "tip": "Your account stores your name, your email and the steps you have completed. The figures you type into the calculator stay in your browser.",
+      "alt": "A laptop and a phone showing the same profile icon, with a small cloud and two sync arrows between them"
+    },
+    "aip-0": {
+      "title": "Choose a bank direct or a broker",
+      "time": "1 week",
+      "cost": "Broker usually free to you",
+      "body": "A broker compares the whole market in one application. Going direct can win you a lender-specific cashback offer.",
+      "checklist": [
+        "Ask the broker which lenders they are on panel with",
+        "Weigh cashback against the rate. Cashback is paid once, but the rate applies for the whole term",
+        "Check the lender's stance on your employment type before applying"
+      ],
+      "tip": "Lenders differ most on contract or probation income, and that is where a broker earns their keep.",
+      "alt": "A signpost with one arrow pointing left to a green bank with columns and one pointing right to a briefcase"
+    },
+    "aip-1": {
+      "title": "Gather six months of bank statements",
+      "time": "2-3 days",
+      "cost": "Free",
+      "body": "Every current, savings and Revolut account, complete, with no missing pages.",
+      "checklist": [
+        "Download PDFs directly from the bank, not screenshots",
+        "Label each file with the account and the month",
+        "Be ready to explain any lodgement over about €500"
+      ],
+      "tip": "One missing page is the single most common cause of a stalled application.",
+      "alt": "A fanned stack of six document pages with a green paper clip, beside a magnifying glass"
+    },
+    "aip-2": {
+      "title": "Gather payslips and the Employment Detail Summary",
+      "time": "1 week",
+      "cost": "Free",
+      "body": "Usually three recent payslips, your EDS from Revenue, and a salary certificate signed by your employer.",
+      "checklist": [
+        "Three most recent payslips",
+        "Employment Detail Summary from myAccount",
+        "Salary certificate confirming contract type and any bonus"
+      ],
+      "tip": "Self-employed applicants need two years of certified accounts and a tax clearance certificate instead.",
+      "alt": "An open folder holding three payslips, the front one marked with a euro sign and a green tick stamp"
+    },
+    "aip-3": {
+      "title": "Evidence rent and savings",
+      "time": "Ongoing",
+      "cost": "Free",
+      "body": "Rent plus regular saving is how you prove repayment capacity above your current outgoings.",
+      "checklist": [
+        "Rent paid by standing order, visible on statements",
+        "A savings pattern that has not been dipped into",
+        "A short written explanation of any gap"
+      ],
+      "tip": "Rent plus savings should roughly match the future mortgage repayment, as underwriters compare the two.",
+      "alt": "Balance scale weighing a small house with a rust roof against a jar of gold coins"
+    },
+    "aip-4": {
+      "title": "Receive the AIP letter",
+      "time": "1-3 weeks",
+      "cost": "Free",
+      "body": "Approval in Principle states what the lender will lend, subject to valuation and final checks. It usually lasts six months.",
+      "checklist": [
+        "Check the amount, the term and the expiry date",
+        "Save a PDF to your phone for viewings",
+        "Put the expiry date in your calendar, as renewing needs fresh statements"
+      ],
+      "tip": "No estate agent in Ireland will take a bid seriously without it.",
+      "alt": "An open envelope with a letter rising out of it, marked with a round green stamp and a tick"
+    },
+    "search-0": {
+      "title": "Pick an area, check sold prices",
+      "time": "1 week",
+      "cost": "Free",
+      "body": "Asking prices are set by the seller. The Residential Property Price Register shows what homes actually sold for.",
+      "checklist": [
+        "Compare asking against the register, street by street",
+        "Check the commute at the hour you would really travel",
+        "Look at BER ratings. Going from a C to a B can cost €15,000 in upgrades"
+      ],
+      "tip": "Set alerts on Daft and MyHome for your area and price band, because good stock goes in days.",
+      "alt": "A folded street map with a road and green parks, a big location pin on top and a small price tag with a euro sign"
+    },
+    "search-1": {
+      "title": "Learn the Irish vocabulary",
+      "time": "1 evening",
+      "cost": "Free",
+      "body": "The process has its own vocabulary, and agents will assume you know it.",
+      "checklist": [
+        "Sale Agreed is not binding. Gazumping is still possible until contracts are signed",
+        "Private treaty vs public auction changes the rules entirely",
+        "The booking deposit is refundable, but the contract deposit is not"
+      ],
+      "tip": "BER is legally required on every listing, so be wary of any listing that does not show one.",
+      "alt": "An open book with lines of text and two speech bubbles floating above it, one with dots and one with lines"
+    },
+    "search-2": {
+      "title": "Book viewings",
+      "time": "2-8 weeks",
+      "cost": "Free",
+      "body": "See at least five properties before you bid, including two you think are wrong.",
+      "checklist": [
+        "Email the agent, then confirm by phone",
+        "Photograph damp patches, meter boxes and the attic hatch",
+        "Ask why the seller is moving and how long it has been listed"
+      ],
+      "tip": "Go back a second time on a wet weekday evening. Houses look different when it rains and the road is busy.",
+      "alt": "A wall calendar with one day marked by a small house, and a ringing alarm clock beside it"
+    },
+    "search-3": {
+      "title": "Log every bid",
+      "time": "1-8 weeks",
+      "cost": "Free",
+      "body": "Bidding is verbal and unregulated, so keep your own record.",
+      "checklist": [
+        "Note the amount, the date and who you spoke to",
+        "Set your walk-away number before you start",
+        "Never bid without AIP in hand"
+      ],
+      "tip": "Ask the agent to confirm each bid by email. It helps protect you against phantom bids.",
+      "alt": "An open spiral notebook with a list of entries and a rising bar chart, with a pencil lying across it"
+    },
+    "search-4": {
+      "title": "Reach Sale Agreed",
+      "time": "1 week",
+      "cost": "€3,000-5,000 refundable",
+      "body": "Your bid is accepted and you pay a booking deposit, usually €3,000-5,000, to take the house off the market.",
+      "checklist": [
+        "Get the booking deposit receipt in writing",
+        "Give the agent your solicitor's details",
+        "Ask for the sales advice notice to be issued quickly"
+      ],
+      "tip": "The booking deposit is fully refundable until you sign contracts, so the sale is not final yet.",
+      "alt": "An estate agent sign with a green banner and a big tick across it, standing in front of a small house"
+    },
+    "legal-0": {
+      "title": "Hire a solicitor",
+      "time": "1 week",
+      "cost": "€2,000-3,000 + VAT",
+      "body": "Conveyancing is the legal transfer of title, and the timeline mostly runs at your solicitor's pace.",
+      "checklist": [
+        "Ask for a fixed quote including outlays and searches",
+        "Ask how many files the firm closes per month",
+        "Give them the sales advice notice as soon as it lands"
+      ],
+      "tip": "Choose based on how quickly they respond. A cheap quote is no bargain if nobody answers the phone during the August holidays.",
+      "alt": "Gold balance scales on a wooden desk beside a stack of papers tied with red tape and a gold seal"
+    },
+    "legal-1": {
+      "title": "Book the structural survey",
+      "time": "1-2 weeks",
+      "cost": "€300-500",
+      "body": "An independent engineer walks the house and writes up what is wrong with it.",
+      "checklist": [
+        "Use an engineer on the Engineers Ireland or SCSI register",
+        "Ask for photographs and a repair cost estimate",
+        "For apartments, read the management company accounts too"
+      ],
+      "tip": "Survey findings give you room to negotiate. A roof that needs €6,000 of work is a reason to ask for €6,000 off before contracts.",
+      "alt": "A green house with a magnifying glass over a crack in its wall, beside a clipboard with a checklist"
+    },
+    "legal-2": {
+      "title": "Request the lender's valuation",
+      "time": "1 week",
+      "cost": "About €150",
+      "body": "The bank values the property for its own security, from its own panel of valuers.",
+      "checklist": [
+        "Book it through the lender or broker, not privately",
+        "A valuation is not a survey. It is there to protect the bank",
+        "A down-valuation means you make up the gap in cash"
+      ],
+      "tip": "If the valuation comes in under the agreed price, it is quite normal to renegotiate.",
+      "alt": "A green house with a gold price tag showing a euro sign hanging from its roof, and a bank behind it"
+    },
+    "legal-3": {
+      "title": "Take out mortgage protection and home insurance",
+      "time": "1-2 weeks",
+      "cost": "€25-60 per month",
+      "body": "Both are mandatory before drawdown, and neither has to be bought from your lender.",
+      "checklist": [
+        "Shop around for mortgage protection, as the bank's quote is rarely the cheapest",
+        "Home insurance must cover the rebuild cost, not the purchase price",
+        "Declare health conditions honestly, because a policy that gets voided is worse than paying a loading"
+      ],
+      "tip": "Underwriting can take weeks if there is any medical history, so start it before contracts.",
+      "alt": "A green shield with a white tick in front of a small house sheltered by a gold umbrella"
+    },
+    "legal-4": {
+      "title": "Sign contracts and pay the deposit",
+      "time": "1-2 weeks",
+      "cost": "10% less booking deposit",
+      "body": "You sign, pay the balance of the 10% deposit and the sale becomes legally binding.",
+      "checklist": [
+        "Read the special conditions with your solicitor",
+        "Agree a closing date that matches your notice period on rent",
+        "Confirm what fixtures and fittings are included in writing"
+      ],
+      "tip": "From the moment contracts are exchanged, gazumping is off the table.",
+      "alt": "A signed contract page with a green fountain pen resting on the signature, beside a stack of gold coins"
+    },
+    "keys-0": {
+      "title": "Receive the final loan offer",
+      "time": "1-2 weeks",
+      "cost": "Free",
+      "body": "The formal offer replaces the AIP and sets the rate, the term and the conditions.",
+      "checklist": [
+        "Check the rate, the term and any cashback conditions",
+        "Compare fixed against variable one last time",
+        "Sign and return with the insurance policies attached"
+      ],
+      "tip": "Green rates for a B3 BER or better can be worth several thousand over a fixed term.",
+      "alt": "A certificate with a green percent badge and a gold ribbon seal, beside a gold euro coin"
+    },
+    "keys-1": {
+      "title": "Draw down the funds",
+      "time": "3-10 days",
+      "cost": "Free",
+      "body": "Your solicitor requests the money for closing day and the lender pays it to them.",
+      "checklist": [
+        "Confirm the exact closing balance with your solicitor",
+        "Transfer your share early, because daily transfer limits catch people out",
+        "Check the first repayment date"
+      ],
+      "tip": "Never send money on emailed bank details alone; ring your solicitor's office to verify them.",
+      "alt": "Gold coins travelling along a curved arrow from a small bank to an office building"
+    },
+    "keys-2": {
+      "title": "Close and collect the keys",
+      "time": "1 day",
+      "cost": "Closing balance",
+      "body": "Title transfers, the balance is paid and the agent hands over the keys.",
+      "checklist": [
+        "Take meter readings and photograph them",
+        "Get every key, fob and alarm code",
+        "Change the locks in the first week"
+      ],
+      "tip": "Do a final walk-through before the money moves to make sure the house is in the condition you agreed.",
+      "alt": "A ring of three house keys in front of a green front door with an arched fanlight"
+    },
+    "keys-3": {
+      "title": "Walk the snag list",
+      "time": "1 week",
+      "cost": "€300-600 for a snagger",
+      "body": "New builds especially: log every defect while the builder is still on the hook.",
+      "checklist": [
+        "Hire a professional snagger for a new build",
+        "Photograph every item with a room name",
+        "Send the list in writing with a deadline"
+      ],
+      "tip": "Keep the list open until each item is signed off, because the warranty period has already started.",
+      "alt": "A clipboard checklist with three ticks and one cross, between a paint roller and a roll of masking tape"
+    },
+    "settling-0": {
+      "title": "Switch the utilities into your name",
+      "time": "1 week",
+      "cost": "Deposits vary",
+      "body": "Electricity, gas, broadband and bins, all in the first week.",
+      "checklist": [
+        "Submit your day-one meter photos with each switch",
+        "Switching supplier when you move in is an easy way to save",
+        "Set up the bin collection before your first bin day"
+      ],
+      "tip": "Register the alarm and check whether the broadband line is fibre before you commit to a plan.",
+      "alt": "A large orange light bulb in the centre, with a red wifi signal on the left and a green wheelie bin on the right"
+    },
+    "settling-1": {
+      "title": "Register for Local Property Tax",
+      "time": "1 day",
+      "cost": "Band-dependent",
+      "body": "Revenue needs the property registered in your name, banded on its value.",
+      "checklist": [
+        "Register through myAccount using the property ID",
+        "Check whether the seller pre-paid the year",
+        "Set the payment method you actually want"
+      ],
+      "tip": "Your solicitor confirms LPT compliance at closing, but the following year's return is yours.",
+      "alt": "A small green house beside a form with a round tick stamp and a calendar with one date marked"
+    },
+    "settling-2": {
+      "title": "Set a furnishing budget by room",
+      "time": "1 evening",
+      "cost": "€3,000-10,000",
+      "body": "Flooring and window coverings can easily eat the first €5,000 if you do not plan ahead.",
+      "checklist": [
+        "Rank rooms: bedroom and kitchen first, spare room last",
+        "Price flooring and blinds before sofas",
+        "Leave 15% for the things you forget"
+      ],
+      "tip": "Second-hand solid furniture is cheaper and better than new flat-pack. Measure doorways first.",
+      "alt": "A floor plan of four rooms seen from above, each holding a small stack of gold coins"
+    },
+    "settling-3": {
+      "title": "Floors before furniture",
+      "time": "1-2 weeks",
+      "cost": "€25-60 per m²",
+      "body": "Laying floors in an empty house is cheaper and much faster.",
+      "checklist": [
+        "Measure each room and add 10% for cuts",
+        "Let laminate or engineered board acclimatise for 48 hours",
+        "Sort underlay and skirting in the same order"
+      ],
+      "tip": "If you are painting too, paint first, floors second, skirting last.",
+      "alt": "A stack of four orange floorboards with a hammer resting on top, and a small green armchair beside them"
+    },
+    "settling-4": {
+      "title": "Measure for curtains and blinds",
+      "time": "1 weekend",
+      "cost": "€60-250 per window",
+      "body": "Measure the rail rather than the glass, and decide on the length before you order.",
+      "checklist": [
+        "Rail width plus 15-20cm each side",
+        "Sill length or floor length, decided room by room",
+        "Blackout in bedrooms, especially east-facing"
+      ],
+      "tip": "Order one room first and live with it for a week before doing the whole house.",
+      "alt": "A window with two tied back curtains on a rail, with a yellow measuring tape stretched along the rail"
+    },
+    "settling-5": {
+      "title": "Service the boiler and test the alarms",
+      "time": "1 day",
+      "cost": "€90-150",
+      "body": "Get a baseline service and put safety checks on a calendar.",
+      "checklist": [
+        "Book an RGI-registered engineer for gas",
+        "Test smoke and CO alarms, replace anything over ten years old",
+        "File the BER cert, warranties and manuals in one place"
+      ],
+      "tip": "Annual boiler servicing is a condition of most home insurance policies, so keep the receipts.",
+      "alt": "A wall mounted boiler with a flame symbol, a wrench on the floor and a smoke alarm on the ceiling"
+    }
+  }
+}

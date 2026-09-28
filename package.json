@@ -14,7 +14,9 @@
     "bump": "node tools/bump-version.js",
     "partials": "node tools/stamp-partials.js",
     "check:partials": "node tools/stamp-partials.js --check",
-    "check": "npm run lint && npm test && npm run check:versions && npm run check:partials"
+    "i18n": "node tools/stamp-i18n.js",
+    "check:i18n": "node tools/check-i18n.js",
+    "check": "npm run lint && npm test && npm run check:versions && npm run check:partials && npm run check:i18n"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

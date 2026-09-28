@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "meta": "Panel | ÉireHome Flow",
+    "eyebrow": "Twój panel",
+    "title": "Twój panel",
+    "intro": "Gdzie jesteś na drodze do kluczy i jakie liczby za tym stoją.",
+    "progress": "Postępy",
+    "phase": "Bieżący etap",
+    "earned": "Zdobyte",
+    "xpNote": "XP, 25 za każdy ukończony krok.",
+    "nextUp": "Następny krok",
+    "openStep": "Otwórz ten krok",
+    "phases": "Twoje etapy",
+    "numbers": "Twoje liczby",
+    "maxLoan": "Maksymalny kredyt",
+    "funds": "Dostępne środki",
+    "openCalculator": "Otwórz kalkulator",
+    "account": "Twoje konto",
+    "synced": "Twoje postępy są zapisane na koncie.",
+    "profile": "Mój profil",
+    "hello": "Cześć, {name}",
+    "helloNoName": "Cześć",
+    "allDone": "Wszystkie kroki ukończone. Czas nastawić czajnik.",
+    "notSaved": "Jeszcze nie zapisano",
+    "numbersSaved": "Maksymalna cena nieruchomości na podstawie liczb z twojego kalkulatora.",
+    "numbersHint": "Wypełnij kalkulator i wybierz Zapisz w mojej drodze, aby zobaczyć tu swoje liczby. Zostają w tej przeglądarce.",
+    "useCalculator": "Użyj kalkulatora",
+    "memberSince": "Konto założone {date}"
+  },
+  "profile": {
+    "meta": "Mój profil | ÉireHome Flow",
+    "title": "Mój profil",
+    "intro": "Twoje dane i to, jak działa twoje konto.",
+    "details": "Twoje dane",
+    "memberSince": "Konto założone",
+    "save": "Zapisz zmiany",
+    "saving": "Zapisywanie...",
+    "updated": "Profil został zaktualizowany.",
+    "password": {
+      "title": "Hasło",
+      "text": "Użyj co najmniej 8 znaków, w tym wielkiej litery i znaku specjalnego.",
+      "change": "Zmień hasło"
+    },
+    "data": {
+      "title": "Twoje dane",
+      "text": "Twoje konto przechowuje imię, e-mail i ukończone kroki, na serwerach w Irlandii. Przy logowaniu przez Google zapisuje też link do zdjęcia profilowego wysłany przez Google, którego nie używamy. Liczby wpisane w kalkulatorze zostają w twojej przeglądarce. <a href=\"privacy.html\">Przeczytaj naszą Politykę prywatności</a>."
+    },
+    "signOut": {
+      "title": "Wyloguj się",
+      "text": "Twoje postępy zostaną zapisane na koncie na następny raz."
+    },
+    "delete": {
+      "title": "Usuń konto",
+      "text": "To od razu usuwa twoje konto i zapisane na nim postępy. Tego nie da się cofnąć. Liczby z kalkulatora w tej przeglądarce nie są częścią konta i tu zostają.",
+      "start": "Usuń moje konto",
+      "question": "Usunąć konto <strong data-bind=\"userEmail\"></strong> i wszystkie zapisane postępy? Później możesz założyć nowe konto, ale tego nie da się przywrócić.",
+      "confirm": "Tak, usuń moje konto",
+      "cancel": "Anuluj",
+      "deleting": "Usuwanie...",
+      "done": "Twoje konto i zapisane postępy zostały usunięte.",
+      "failed": "Nie udało się usunąć konta. Spróbuj ponownie.",
+      "signInAgain": "Zaloguj się ponownie, aby usunąć konto.",
+      "notEnabled": "Usuwanie kont na stronie nie jest jeszcze włączone. Napisz na eirehomeflow@gmail.com, a usuniemy je za ciebie.",
+      "note": "Nie możesz się już zalogować? Napisz na <a href=\"mailto:eirehomeflow@gmail.com\">eirehomeflow@gmail.com</a> z adresu przypisanego do konta, a usuniemy je za ciebie."
+    }
+  }
+}
