@@ -557,13 +557,12 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .slide__link:hover .slide__title, .post-card__link:hover .post-card__title { color: var(--ink); }
 .slideshow__controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
 .slideshow__arrow { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 2px solid var(--line-2); border-radius: 50%; background: #fff; color: var(--brown); font-weight: 800; font-size: 17px; }
-.slideshow__arrow:hover, .slideshow__pause:hover { background: var(--hover); }
+.slideshow__arrow:hover { background: var(--hover); }
 .slideshow__dots { display: flex; }
 /* Each dot is a 24px target around a small pill; the current one is longer and green. */
 .slideshow__dot { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; }
 .slideshow__dot::before { content: ""; width: 10px; height: 10px; border-radius: 999px; background: var(--line-2); transition: width .2s, background .2s; }
 .slideshow__dot[aria-current="true"]::before { width: 22px; background: var(--ink); }
-.slideshow__pause { margin-left: auto; padding: 8px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--brown); font-weight: 700; font-size: 13px; }
 .blog__side, .post-grid { list-style: none; margin: 0; padding: 0; display: grid; }
 /* Cards are list items, but their titles are headings: no justified text. */
 .post-card { text-align: left; hyphens: manual; -webkit-hyphens: manual; }

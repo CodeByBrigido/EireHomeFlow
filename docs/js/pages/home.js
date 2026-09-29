@@ -11,9 +11,10 @@ import { phaseCardsHtml } from "../core/steps.js?v=20260930";
 const SLIDE_SECONDS = 7;
 const MORE_AT_A_TIME = 6;
 
-// The slideshow moves on its own unless the reader paused it, is pointing at it or has keyboard
-// focus in it, or asked their system for less motion (then it starts paused).
-const slideshow = { current: 0, paused: false, held: false };
+// The slideshow moves on its own until the reader picks an article with the arrows or the dots
+// (then it stays where they left it). It waits while the reader points at it or has keyboard focus
+// in it, and never moves on its own for readers who asked their system for less motion.
+const slideshow = { current: 0, stopped: false, held: false };
 
 function slideHtml(post, index, total) {
   return `<div class="slide" role="group" aria-roledescription="${SLIDESHOW.slide}" aria-label="${esc(SLIDESHOW.position(index + 1, total))}">
@@ -50,9 +51,9 @@ function showSlide(index, byReader, direction = 1) {
   document.getElementById("slides").setAttribute("aria-live", byReader ? "polite" : "off");
 }
 
-function setPaused(paused) {
-  slideshow.paused = paused;
-  bind("slidePause", paused ? SLIDESHOW.play : SLIDESHOW.pause);
+function pickSlide(index, direction) {
+  slideshow.stopped = true;
+  showSlide(index, true, direction);
 }
 
 function renderBlog() {
@@ -72,14 +73,14 @@ function renderBlog() {
     if (e.target.classList.contains("is-leaving")) e.target.classList.remove("is-leaving", "is-next", "is-prev");
   });
 
-  setPaused(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  slideshow.stopped = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hold = (held) => () => { slideshow.held = held; };
   box.addEventListener("mouseenter", hold(true));
   box.addEventListener("mouseleave", hold(false));
   box.addEventListener("focusin", hold(true));
   box.addEventListener("focusout", (e) => { if (!box.contains(e.relatedTarget)) slideshow.held = false; });
   setInterval(() => {
-    if (!slideshow.paused && !slideshow.held && !document.hidden) showSlide(slideshow.current + 1, false);
+    if (!slideshow.stopped && !slideshow.held && !document.hidden) showSlide(slideshow.current + 1, false);
   }, SLIDE_SECONDS * 1000);
 }
 
@@ -116,9 +117,8 @@ function toggleTicker() {
 
 startPage({ init: initPage, render: renderPage, actions: {
   ticker: toggleTicker,
-  slidePrev: () => showSlide(slideshow.current - 1, true, -1),
-  slideNext: () => showSlide(slideshow.current + 1, true, 1),
-  slideTo: (el) => showSlide(Number(el.dataset.index), true, Math.sign(Number(el.dataset.index) - slideshow.current)),
-  slidePause: () => setPaused(!slideshow.paused),
+  slidePrev: () => pickSlide(slideshow.current - 1, -1),
+  slideNext: () => pickSlide(slideshow.current + 1, 1),
+  slideTo: (el) => pickSlide(Number(el.dataset.index), Math.sign(Number(el.dataset.index) - slideshow.current)),
   morePosts,
 } });
