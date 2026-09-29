@@ -101,9 +101,10 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 |---|---|---|
 | `eh-marquee` | 38s linear, infinita | Ticker (pausa no hover, no foco e no botão) |
 | `eh-bob` | 2.4s, infinita | Nó da etapa atual (só fora do modo compacto) |
+| `slide-in-from-right`, `slide-out-to-left` (e os inversos) | .7s, `cubic-bezier(.65, 0, .35, 1)` | Troca de artigo no slideshow do blog |
 | Transições | .12s (botões e nós), .14s (cartões de fase), .15s (ícone do acordeão), .25s (barra de progresso) | |
 
-Com `prefers-reduced-motion: reduce`, as animações e transições acima são desligadas, e o ticker vira uma lista estática.
+Com `prefers-reduced-motion: reduce`, as animações e transições acima são desligadas, o ticker vira uma lista estática e o slideshow troca de artigo sem deslizar.
 
 ## 6. Pontos de quebra
 
@@ -219,7 +220,7 @@ Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_s
 
 ### 7.10 Blog
 - **Seção da Home** `.blog`: cabeçalho com `.eyebrow` e `.blog__title` (42px, como o das fases); `.blog__top` em grade `1.6fr 1fr` (1 coluna até 960px).
-- **Slideshow** `.slideshow`: os `.slide` ficam empilhados na mesma célula (`grid-area: 1 / 1`) e trocam por opacidade em 0,45 s (sem transição com "reduzir movimento"). Imagem 16:10 com raio 24px, `.slide__category` (12px, maiúsculas, verde), `.slide__title` (30px; 23px no celular) e `.slide__summary` (16px, `--muted`). Controles em `.slideshow__controls`: `.slideshow__arrow` (círculo de 40px, borda `--line-2`), `.slideshow__dot` (alvo de 24px com uma pílula de 10px; a atual com 22px e `--ink`) e `.slideshow__pause` (pílula com borda, à direita).
+- **Slideshow** `.slideshow`: os `.slide` ficam empilhados na mesma célula (`grid-area: 1 / 1`) numa caixa `.slideshow__slides` com `overflow: hidden` (8px de respiro, compensados por margem negativa, para o contorno de foco não ser cortado). Na troca, o card inteiro desliza da direita para a esquerda em 0,7 s, com 24px entre o que sai e o que entra; para trás, da esquerda para a direita. Com "reduzir movimento", troca sem deslizar. Imagem 16:10 com raio 24px, `.slide__category` (12px, maiúsculas, verde), `.slide__title` (30px; 23px no celular) e `.slide__summary` (16px, `--muted`). Controles em `.slideshow__controls`: `.slideshow__arrow` (círculo de 40px, borda `--line-2`), `.slideshow__dot` (alvo de 24px com uma pílula de 10px; a atual com 22px e `--ink`) e `.slideshow__pause` (pílula com borda, à direita).
 - **Cartão** `.post-card` (um `li` com o link inteiro): `--row` com a imagem (44% da largura, até 230px, raio 16px) ao lado de `.post-card__category` e `.post-card__title` (17px, 800); `--column` com a imagem em cima. Nada justificado. `.post-grid` em 2 colunas (1 no celular); nos semelhantes, 3 colunas (2 no tablet).
 - **Artigo** `.post`: coluna de 760px; `.post__title` 46px, `.post__lead` 20px à esquerda, `.post__meta` 14px `--faint`, imagem 16:10 com raio 26px; `.post__body` 17px com entrelinha 1,7, `h2` de 27px, listas com marcador verde, `.post__tip` em `--peach` (como "Worth knowing" das etapas) e `.post__table` com cabeçalho em maiúsculas.
 - **Caixa do My journey** `.post-journey`: cartão `--ink` com texto creme e o botão `.post-journey__btn` dourado com sombra `#c98f3e`, como o "Next up" da jornada.

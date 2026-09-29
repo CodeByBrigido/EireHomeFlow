@@ -96,7 +96,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 4. **Seis fases:** cartões com número, título, resumo, barra e "N of M steps done"; cada um leva a `journey.html#phase-<slug>`.
 5. **Convite ao guia:** faixa areia "Read the full guide" com o botão "Open the guide".
 6. **Blog** (`#blog`, todo em inglês em qualquer idioma do site): eyebrow "From the blog" e título "Guides for buying a home in Ireland". Embaixo, como num portal de notícias:
-   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas, pontos com o atual alongado em verde e "Pause"/"Play" à direita). Passa sozinho a cada 7 s e para com o ponteiro ou o foco em cima;
+   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas, pontos com o atual alongado em verde e "Pause"/"Play" à direita). Passa sozinho a cada 7 s, com o card inteiro deslizando da direita para a esquerda (para trás, o contrário), e para com o ponteiro ou o foco em cima;
    - à direita, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título;
    - **"More articles"**: os outros 13 em 2 colunas, com imagem ao lado do texto, 6 por vez; "Show more articles" mostra os próximos 6.
    Nenhum artigo aparece duas vezes. Cada cartão inteiro é o link para o artigo.

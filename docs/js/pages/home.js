@@ -26,16 +26,25 @@ function slideHtml(post, index, total) {
     </div>`;
 }
 
-function showSlide(index, byReader) {
-  const slides = document.querySelectorAll("#slides .slide");
+// direction 1 slides the cards to the left (next), -1 to the right (previous).
+function showSlide(index, byReader, direction = 1) {
+  const slides = [...document.querySelectorAll("#slides .slide")];
   if (!slides.length) return;
+  const from = slideshow.current;
   slideshow.current = (index + slides.length) % slides.length;
   slides.forEach((slide, i) => {
     const on = i === slideshow.current;
+    slide.classList.remove("is-leaving", "is-next", "is-prev");
     slide.classList.toggle("is-active", on);
     slide.inert = !on;
     slide.setAttribute("aria-hidden", String(!on));
   });
+  // With less motion asked for, the new slide simply replaces the old one.
+  if (from !== slideshow.current && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const way = direction > 0 ? "is-next" : "is-prev";
+    slides[from].classList.add("is-leaving", way);
+    slides[slideshow.current].classList.add(way);
+  }
   document.querySelectorAll("#slide-dots .slideshow__dot").forEach((dot, i) => dot.setAttribute("aria-current", String(i === slideshow.current)));
   // Only a change the reader asked for is announced; the automatic ones would interrupt reading.
   document.getElementById("slides").setAttribute("aria-live", byReader ? "polite" : "off");
@@ -58,6 +67,10 @@ function renderBlog() {
   document.getElementById("blog-more").innerHTML = pick.more.map((post, i) => postCardHtml(post, "row", i >= MORE_AT_A_TIME)).join("");
   document.getElementById("more-posts").hidden = pick.more.length <= MORE_AT_A_TIME;
   showSlide(0, false);
+  // The slide that moved out is hidden once its animation ends.
+  document.getElementById("slides").addEventListener("animationend", (e) => {
+    if (e.target.classList.contains("is-leaving")) e.target.classList.remove("is-leaving", "is-next", "is-prev");
+  });
 
   setPaused(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   const hold = (held) => () => { slideshow.held = held; };
@@ -103,9 +116,9 @@ function toggleTicker() {
 
 startPage({ init: initPage, render: renderPage, actions: {
   ticker: toggleTicker,
-  slidePrev: () => showSlide(slideshow.current - 1, true),
-  slideNext: () => showSlide(slideshow.current + 1, true),
-  slideTo: (el) => showSlide(Number(el.dataset.index), true),
+  slidePrev: () => showSlide(slideshow.current - 1, true, -1),
+  slideNext: () => showSlide(slideshow.current + 1, true, 1),
+  slideTo: (el) => showSlide(Number(el.dataset.index), true, Math.sign(Number(el.dataset.index) - slideshow.current)),
   slidePause: () => setPaused(!slideshow.paused),
   morePosts,
 } });
