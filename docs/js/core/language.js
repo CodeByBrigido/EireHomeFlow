@@ -1,8 +1,8 @@
 // The language menu in the header. It offers the complete languages in js/lib/locales.js,
 // each in its own name; choosing one saves it in this browser and reloads the page in it.
-import { esc } from "../lib/format.js?v=20261001";
-import { offeredLocales } from "../lib/locales.js?v=20261001";
-import { locale, setLocale, tag } from "./i18n.js?v=20261001";
+import { esc } from "../lib/format.js?v=20261002";
+import { offeredLocales } from "../lib/locales.js?v=20261002";
+import { locale, setLocale, tag } from "./i18n.js?v=20261002";
 
 // Each language's name in the language of the page as well ("Deutsch", German), where the browser knows it.
 // Every row shows it, even when it matches the language's own name ("Italiano", italiano), so no row looks untranslated.

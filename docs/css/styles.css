@@ -552,7 +552,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .blog { padding: 80px 32px 100px; }
 .blog__head { margin-bottom: 26px; }
 .blog__title { margin: 0; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.025em; }
-.blog__top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.blog__top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
 /* The slides share one grid cell, so the box is as tall as the tallest slide. On a change the whole
    card slides out to the left while the next one comes in from the right, 24px apart (the other way
    for "previous"). The 8px of padding keeps the focus ring inside the clipped area. */
@@ -582,10 +582,19 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .slideshow__dot { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; }
 .slideshow__dot::before { content: ""; width: 10px; height: 10px; border-radius: 999px; background: var(--line-2); transition: width .2s, background .2s; }
 .slideshow__dot[aria-current="true"]::before { width: 22px; background: var(--ink); }
-.blog__side, .post-grid { list-style: none; margin: 0; padding: 0; display: grid; }
+.blog__side, .post-grid { list-style: none; margin: 0; padding: 0; }
+.post-grid { display: grid; }
 /* Cards are list items, but their titles are headings: no justified text. */
 .post-card { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
-.blog__side { gap: 24px; }
+/* The three articles beside the slideshow fill its height, after a rule: the first starts level with
+   the picture and the last ends level with the arrows, with a rule halfway between each. The middle one
+   gets twice the spare height and sits in the middle of it, so all four gaps come out equal. */
+.blog__side { display: flex; flex-direction: column; padding-left: 24px; border-left: 2px solid var(--line-2); }
+.blog__side > .post-card { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 18px 0; }
+.blog__side > .post-card:first-child { justify-content: flex-start; padding-top: 0; }
+.blog__side > .post-card:last-child { justify-content: flex-end; padding-bottom: 0; }
+.blog__side > .post-card:nth-child(2) { flex-grow: 2; }
+.blog__side > .post-card + .post-card { border-top: 2px solid var(--line-2); }
 .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
 .post-card__link { display: flex; gap: 18px; align-items: flex-start; }
 .post-card__image { flex: none; width: 44%; max-width: 230px; height: auto; aspect-ratio: 16 / 10; border-radius: 16px; background: var(--sand); }
@@ -593,7 +602,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .post-card__title { display: block; margin-top: 6px; font-weight: 800; font-size: 17px; line-height: 1.28; text-wrap: pretty; }
 .post-card--column .post-card__link { flex-direction: column; gap: 14px; }
 .post-card--column .post-card__image { width: 100%; max-width: none; }
-.blog__more-title { margin: 72px 0 24px; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; }
+.blog__more-title { margin: 40px 0 24px; padding-top: 40px; border-top: 2px solid var(--line-2); font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; }
 .blog__more-actions { margin-top: 32px; text-align: center; }
 
 /* Blog article */
@@ -701,7 +710,8 @@ html[lang|="en"] .legal__notice { display: none; }
   .legal-aside { position: static; order: -1; margin-top: 16px; }
   .contact { grid-template-columns: minmax(0, 1fr); }
   .sitemap, .sitemap__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .blog__top { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .blog__top { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .blog__side { padding: 28px 0 0; border-left: 0; border-top: 2px solid var(--line-2); }
   .similar .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail { position: fixed; inset: 0; z-index: 60; max-height: none; overflow-y: auto; overscroll-behavior: contain; padding: 20px 20px 0; border: 0; border-radius: 0; }
   .detail__actions { margin: 14px -20px 0; padding: 12px 20px 16px; }
@@ -749,7 +759,7 @@ html[lang|="en"] .legal__notice { display: none; }
   .slide__title { font-size: 23px; }
   .post-grid, .similar .post-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .post-card__image { width: 40%; }
-  .blog__more-title { margin-top: 56px; font-size: 26px; }
+  .blog__more-title { margin-top: 32px; padding-top: 32px; font-size: 26px; }
   .post__title { font-size: clamp(30px, 8.5vw, 46px); }
   .post__lead { font-size: 18px; }
   .post__body { font-size: 16px; }
