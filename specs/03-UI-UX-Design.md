@@ -96,7 +96,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 4. **Seis fases:** cartões com número, título, resumo, barra e "N of M steps done"; cada um leva a `journey.html#phase-<slug>`.
 5. **Convite ao guia:** faixa areia "Read the full guide" com o botão "Open the guide".
 6. **Blog** (`#blog`, todo em inglês em qualquer idioma do site): eyebrow "From the blog" e título "Guides for buying a home in Ireland". Embaixo, como num portal de notícias:
-   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas e pontos com o atual alongado em verde, sem botão de pausa). Passa sozinho a cada 7 s, com o card inteiro deslizando da direita para a esquerda (para trás, o contrário); espera com o ponteiro ou o foco em cima e para de passar sozinho depois que a pessoa usa as setas ou os pontos;
+   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: foto 16:9, categoria, título e resumo; controles embaixo (setas redondas e pontos com o atual alongado em verde, sem botão de pausa). Passa sozinho a cada 7 s, com o card inteiro deslizando da direita para a esquerda (para trás, o contrário); espera com o ponteiro ou o foco em cima e para de passar sozinho depois que a pessoa usa as setas ou os pontos;
    - à direita, depois de uma linha vertical, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título, separados por linhas e centralizados na altura do slideshow;
    - uma linha horizontal e **"More articles"**: os outros 13 em 2 colunas, com imagem ao lado do texto, 6 por vez; "Show more articles" mostra os próximos 6.
    Nenhum artigo aparece duas vezes. Cada cartão inteiro é o link para o artigo.
@@ -246,7 +246,7 @@ Em `signup.html`, logo acima do botão: "By creating an account, you agree to ou
 ### 5.9 Artigo do blog (`blog/<slug>.html`)
 Coluna de leitura de 760px, centralizada:
 1. **Topo:** "← All articles" (volta ao blog na Home), categoria em verde e maiúsculas, título grande, abertura em texto maior e tempo de leitura ("5 min read").
-2. **Imagem:** a ilustração do artigo em 16:10, com cantos de 26px (a mesma dos cartões da Home).
+2. **Imagem:** a foto do artigo em 16:9, com cantos de 26px (a mesma dos cartões da Home), com texto alternativo que descreve a cena.
 3. **Texto:** títulos `h2`, parágrafos justificados, listas com marcador verde, passos numerados, notas "Worth knowing" em pêssego e tabelas com cabeçalho em maiúsculas (em telas estreitas, a tabela rola dentro da própria caixa).
 4. **Caixa "In My journey":** cartão verde com o texto que liga o artigo a uma etapa e o botão dourado "Open this step in My journey", que abre a etapa no painel da jornada.
 5. **Similar articles:** 3 cartões com imagem em cima, categoria e título (3 colunas no desktop, 2 no tablet, 1 no celular).

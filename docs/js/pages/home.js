@@ -1,14 +1,16 @@
 // Home page: ticker loop, phase cards, the start or resume button, and the blog: a slideshow of
 // four articles, three more beside it and the rest below, picked at random on every visit.
 // The blog is in English only (its words are in lib/posts.js).
-import { esc } from "../lib/format.js?v=20261004";
-import { CATEGORY_NAMES, SLIDESHOW, homeSelection, postCardHtml, postImage, postPath } from "../lib/posts.js?v=20261004";
-import { startPage } from "../core/app.js?v=20261004";
-import { bind } from "../core/dom.js?v=20261004";
-import { t } from "../core/i18n.js?v=20261004";
-import { phaseCardsHtml } from "../core/steps.js?v=20261004";
+import { esc } from "../lib/format.js?v=20261006";
+import { CATEGORY_NAMES, SLIDESHOW, homeSelection, postCardHtml, postImage, postPath, postSrcset } from "../lib/posts.js?v=20261006";
+import { startPage } from "../core/app.js?v=20261006";
+import { bind } from "../core/dom.js?v=20261006";
+import { t } from "../core/i18n.js?v=20261006";
+import { phaseCardsHtml } from "../core/steps.js?v=20261006";
 
 const SLIDE_SECONDS = 7;
+// How wide a slide's picture shows (the blog is far down the page, so every picture loads lazily).
+const SLIDE_SIZES = "(max-width: 720px) calc(100vw - 32px), (max-width: 960px) calc(100vw - 64px), 700px";
 const MORE_AT_A_TIME = 6;
 
 // The slideshow moves on its own until the reader picks an article with the arrows or the dots
@@ -19,7 +21,7 @@ const slideshow = { current: 0, stopped: false, held: false };
 function slideHtml(post, index, total) {
   return `<div class="slide" role="group" aria-roledescription="${SLIDESHOW.slide}" aria-label="${esc(SLIDESHOW.position(index + 1, total))}">
       <a class="slide__link" href="${esc(postPath(post.slug))}">
-        <img class="slide__image" src="${esc(postImage(post.slug))}" alt="" width="800" height="500"${index ? ' loading="lazy"' : ""}>
+        <img class="slide__image" src="${esc(postImage(post.slug))}" srcset="${esc(postSrcset(post.slug))}" sizes="${SLIDE_SIZES}" alt="" width="1440" height="810" loading="lazy">
         <span class="slide__category">${esc(CATEGORY_NAMES[post.category])}</span>
         <span class="slide__title">${esc(post.title)}</span>
         <span class="slide__summary">${esc(post.summary)}</span>

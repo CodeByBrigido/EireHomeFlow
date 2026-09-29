@@ -3,7 +3,7 @@
 // the note on My journey) is in content/blog/<slug>.json, and npm run posts writes blog/<slug>.html
 // from both. step is the My journey step the article leads to; tags decide the similar articles.
 // See README.md and specs/08-Internationalisation.md.
-import { esc } from "./format.js?v=20261004";
+import { esc } from "./format.js?v=20261006";
 
 export const CATEGORY_NAMES = { schemes: "Schemes", money: "Money", buying: "Buying", newcomers: "Newcomers", energy: "Energy", moving: "Moving in" };
 export const CATEGORIES = Object.keys(CATEGORY_NAMES);
@@ -120,7 +120,16 @@ export const POSTS = [
 ];
 
 export const postPath = (slug) => "blog/" + slug + ".html";
-export const postImage = (slug) => "img/blog/" + slug + ".svg";
+// Each article's picture comes in four widths, all 16:9 (tools/blog_images.py writes them), so the
+// browser downloads only the size it shows. postImage() is one width, postSrcset() all of them.
+export const IMAGE_WIDTHS = [320, 640, 960, 1440];
+export const postImage = (slug, width = 640) => `img/blog/${slug}-${width}.webp`;
+export const postSrcset = (slug) => IMAGE_WIDTHS.map((width) => `${postImage(slug, width)} ${width}w`).join(", ");
+// How wide a card's picture shows: beside the text (row), or across a column of cards.
+const CARD_SIZES = {
+  row: "(max-width: 720px) 40vw, 230px",
+  column: "(max-width: 720px) calc(100vw - 32px), (max-width: 960px) 45vw, 360px",
+};
 export const findPost = (slug) => POSTS.find((post) => post.slug === slug) || null;
 
 // A shuffled copy (Fisher-Yates). random() returns a number from 0 up to, but not including, 1.
@@ -144,7 +153,7 @@ export function homeSelection(random = Math.random, posts = POSTS) {
 export function postCardHtml(post, layout = "row", hidden = false) {
   return `<li class="post-card post-card--${layout}"${hidden ? " hidden" : ""}>
       <a class="post-card__link" href="${esc(postPath(post.slug))}">
-        <img class="post-card__image" src="${esc(postImage(post.slug))}" alt="" width="800" height="500" loading="lazy">
+        <img class="post-card__image" src="${esc(postImage(post.slug))}" srcset="${esc(postSrcset(post.slug))}" sizes="${CARD_SIZES[layout]}" alt="" width="1440" height="810" loading="lazy">
         <span class="post-card__body">
           <span class="post-card__category">${esc(CATEGORY_NAMES[post.category])}</span>
           <span class="post-card__title">${esc(post.title)}</span>

@@ -568,10 +568,10 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 @keyframes slide-in-from-left { from { transform: translateX(calc(-100% - 24px)); } to { transform: none; } }
 @keyframes slide-out-to-right { from { transform: none; } to { transform: translateX(calc(100% + 24px)); } }
 .slide__link { display: block; }
-.slide__image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 24px; background: var(--sand); }
+.slide__image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 24px; background: var(--sand); }
 .slide__category, .post-card__category, .post__category { display: block; font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
 .slide__category { margin-top: 18px; }
-.slide__title { display: block; margin-top: 8px; font-weight: 800; font-size: 30px; line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; }
+.slide__title { display: block; margin-top: 8px; font-weight: 800; font-size: 30px; line-height: 1.12; letter-spacing: -0.02em; text-wrap: pretty; }
 .slide__summary { display: block; margin-top: 10px; font-size: 16px; line-height: 1.5; color: var(--muted); }
 .slide__link:hover .slide__title, .post-card__link:hover .post-card__title { color: var(--ink); }
 .slideshow__controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
@@ -595,7 +595,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .blog__side > .post-card + .post-card { border-top: 2px solid var(--line-2); }
 .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
 .post-card__link { display: flex; gap: 18px; align-items: flex-start; }
-.post-card__image { flex: none; width: 44%; max-width: 230px; height: auto; aspect-ratio: 16 / 10; border-radius: 16px; background: var(--sand); }
+.post-card__image { flex: none; width: 44%; max-width: 230px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; background: var(--sand); }
 .post-card__body { min-width: 0; }
 .post-card__title { display: block; margin-top: 6px; font-weight: 800; font-size: 17px; line-height: 1.28; text-wrap: pretty; }
 .post-card--column .post-card__link { flex-direction: column; gap: 14px; }
@@ -608,13 +608,15 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .post__back { display: inline-block; margin-bottom: 24px; font-weight: 700; font-size: 14px; color: var(--ink); }
 .post__back:hover { text-decoration: underline; }
 .post__category { margin: 0; }
-.post__title { margin: 10px 0 0; font-weight: 800; font-size: 46px; line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance; }
+/* Titles fill each line before wrapping (pretty only avoids one word alone on the last line);
+   balance broke them early, leaving the first line short. */
+.post__title { margin: 10px 0 0; font-weight: 800; font-size: 46px; line-height: 1.06; letter-spacing: -0.03em; text-wrap: pretty; }
 .post__lead { margin: 18px 0 0; font-size: 20px; line-height: 1.5; color: var(--body); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 .post__meta { margin: 12px 0 0; font-weight: 700; font-size: 14px; color: var(--faint); }
 .post__figure { margin: 30px 0 0; }
-.post__figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 26px; background: var(--sand); }
+.post__figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 26px; background: var(--sand); }
 .post__body { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--body); }
-.post__body h2 { margin: 40px 0 0; font-weight: 800; font-size: 27px; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); text-wrap: balance; }
+.post__body h2 { margin: 40px 0 0; font-weight: 800; font-size: 27px; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); text-wrap: pretty; }
 .post__body p { margin: 14px 0 0; }
 .post__list, .post__steps { margin: 14px 0 0; padding-left: 24px; }
 .post__list li, .post__steps li { margin-top: 8px; padding-left: 4px; }

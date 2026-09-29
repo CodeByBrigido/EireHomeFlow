@@ -73,7 +73,7 @@ O blog é só em inglês, com o mesmo tom de voz do site (sem travessão, sem cl
 
 1. Em `docs/js/lib/posts.js`, adicione uma entrada: `slug`, `category`, `step` (a etapa do My journey para onde o artigo leva), `tags` (para os artigos semelhantes), `title` e `summary`.
 2. Escreva o texto em `content/blog/<slug>.json`: `alt` (a descrição da imagem), `lead`, `sections` (cada uma com `title` e `body`) e `journey` (a frase que leva ao My journey, que precisa citar "My journey"). Use um dos artigos existentes como modelo; os blocos possíveis estão no [TRD](specs/02-TRD.md), seção 4.2.
-3. Desenhe a imagem em `docs/img/blog/<slug>.svg`, com as regras do [Design System](specs/07-Design-System.md), seção 7.9.
+3. Prepare a imagem do artigo (foto ou ilustração, de preferência 16:9 e com pelo menos 1440px de largura) e rode `python tools/blog_images.py <imagem> <slug>`. Ele corta em 16:9 e grava `docs/img/blog/<slug>-320.webp`, `-640`, `-960` e `-1440`. Numa imagem mais larga, `--focus` escolhe o que manter (0 é a esquerda, 1 a direita). Precisa de Python e Pillow (`pip install Pillow`). O texto alternativo (`alt` no JSON) descreve o que a imagem mostra.
 4. Rode `npm run posts` e confira a página em `http://localhost:8000/blog/<slug>.html`.
 5. Números mudam: cite a fonte oficial com link e revise o artigo quando o programa mudar.
 

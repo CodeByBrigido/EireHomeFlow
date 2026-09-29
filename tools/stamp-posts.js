@@ -5,7 +5,7 @@
 //   npm run check:posts    fails if an article has a problem or a file is out of date (used by CI)
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { POSTS, postPath } from "../docs/js/lib/posts.js";
+import { IMAGE_WIDTHS, POSTS, postImage, postPath } from "../docs/js/lib/posts.js";
 import { flatten, stampHtml } from "./i18n.js";
 import { stampPartials } from "./partials.js";
 import { articleProblems, postPage, sitemapXml } from "./posts.js";
@@ -14,6 +14,7 @@ import { findVersions } from "./versions.js";
 const DOCS = "docs";
 const BLOG = join(DOCS, "blog");
 const CONTENT = join("content", "blog");
+const IMAGES = join(DOCS, "img", "blog");
 const check = process.argv.includes("--check");
 // The published site, and the pages search engines should list (not the account pages).
 const SITE = "https://codebybrigido.github.io/EireHomeFlow/";
@@ -48,7 +49,8 @@ for (const post of POSTS) {
     problems.push(`${source} is missing: write the article there first.`);
     continue;
   }
-  if (!existsSync(join(DOCS, "img/blog", post.slug + ".svg"))) problems.push(`docs/img/blog/${post.slug}.svg is missing: every article needs its picture.`);
+  const missing = IMAGE_WIDTHS.filter((width) => !existsSync(join(DOCS, postImage(post.slug, width))));
+  if (missing.length) problems.push(`docs/${postImage(post.slug, missing[0])} is missing: every article needs its picture in ${IMAGE_WIDTHS.join(", ")} px. Run python tools/blog_images.py <picture> ${post.slug}.`);
   let article;
   try {
     article = readJson(source);
@@ -83,6 +85,9 @@ const orphans = existsSync(BLOG) ? readdirSync(BLOG).filter((name) => name.endsW
 for (const name of orphans) problems.push(`${join(BLOG, name)} has no article in js/lib/posts.js. Delete the page, or add the article back.`);
 const unused = existsSync(CONTENT) ? readdirSync(CONTENT).filter((name) => name.endsWith(".json") && !slugs.has(name.slice(0, -5))) : [];
 for (const name of unused) problems.push(`${join(CONTENT, name)} is not in js/lib/posts.js, so it has no page.`);
+const pictures = new Set(POSTS.flatMap((post) => IMAGE_WIDTHS.map((width) => postImage(post.slug, width).split("/").pop())));
+const loose = existsSync(IMAGES) ? readdirSync(IMAGES).filter((name) => !pictures.has(name)) : [];
+for (const name of loose) problems.push(`${join(IMAGES, name)} is not a picture of any article. Delete it, or name it <slug>-<width>.webp.`);
 
 if (problems.length) {
   console.error(problems.join("\n"));
