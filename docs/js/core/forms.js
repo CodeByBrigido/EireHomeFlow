@@ -1,8 +1,8 @@
-// Form checks for sign-up, sign-in, passwords and the profile: red fields, messages,
+// Form checks for sign-up, sign-in, passwords, the profile and the contact form: red fields, messages,
 // the live password rules and the status line under each form. Also the reader's version
 // of the errors Supabase sends back.
-import { EMAIL_PATTERN, isFullName, PASSWORD_RULES, strongPassword } from "../lib/validation.js?v=20260929";
-import { locale, t } from "./i18n.js?v=20260929";
+import { EMAIL_PATTERN, isFullName, PASSWORD_RULES, strongPassword } from "../lib/validation.js?v=20260930";
+import { locale, t } from "./i18n.js?v=20260930";
 
 // Each check returns an error message, or "" when the field is fine. A form lists the
 // fields to check in data-fields; data-password="current" means sign-in (no strength rules).
@@ -13,6 +13,7 @@ const FIELD_CHECKS = {
     ? (v.password ? "" : t("common:forms.password"))
     : (strongPassword(v.password) ? "" : t("common:forms.weakPassword"))),
   confirm: (v) => (!v.confirm ? t("common:forms.confirm") : v.confirm === v.password ? "" : t("common:forms.mismatch")),
+  message: (v) => (v.message.trim() ? "" : t("common:forms.message")),
 };
 
 const formFields = (form) => form.dataset.fields.split(" ");

@@ -1,0 +1,64 @@
+{
+  "alt": "A jar filling with gold coins beside a calendar with several months ticked",
+  "lead": "Most first-time buyers need a deposit of 10% of the price, plus the cash costs of buying. Turning that into a monthly target makes the goal concrete and shows which choices shorten the wait.",
+  "sections": [
+    {
+      "title": "Step 1: set the target",
+      "body": [
+        "Start from a realistic price. The deposit is 10% of it. Add stamp duty at 1% on homes up to €1 million, a solicitor at about €2,000-3,000, a survey at about €400 and a valuation at about €150, and keep a buffer for moving.",
+        "On a €350,000 home, that is a €35,000 deposit, €3,500 in stamp duty and about €3,000 for the rest: €41,500 before the buffer. The buying power calculator does these sums with your own figures and saves them to My journey."
+      ]
+    },
+    {
+      "title": "Step 2: subtract what you already have",
+      "body": [
+        "Count the savings you can show on statements, a gift from family backed by a gift letter, and Help to Buy if the home is new. With €15,000 saved and a €5,000 gift, the gap in the example is €21,500."
+      ]
+    },
+    {
+      "title": "Step 3: divide by what you can save each month",
+      "body": [
+        {
+          "head": [
+            "Monthly saving",
+            "Months to close a €21,500 gap"
+          ],
+          "rows": [
+            [
+              "€600",
+              "36"
+            ],
+            [
+              "€900",
+              "24"
+            ],
+            [
+              "€1,200",
+              "18"
+            ],
+            [
+              "€1,500",
+              "15"
+            ]
+          ]
+        },
+        "Lenders also look for a steady saving pattern, usually over the last six months. Saving the same amount every month, ideally close to your future repayment, makes the application stronger."
+      ]
+    },
+    {
+      "title": "Ways to shorten the wait",
+      "body": [
+        [
+          "Consider new builds, where Help to Buy can cover up to 10% of the price.",
+          "Buy with a partner: two incomes save faster and raise the borrowing limit.",
+          "Aim a little lower. Every €10,000 off the price cuts about €1,100 from the cash you need.",
+          "Keep your savings in an account that pays interest, where a lender can see them easily."
+        ],
+        {
+          "tip": "Rent paid on time counts in your favour. Keep the statements, because lenders read your rent as evidence that you can manage a repayment."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 2 of My journey, Confirm the 10% deposit, compares your savings with the deposit at your target price, using the figures you save in the calculator."
+}

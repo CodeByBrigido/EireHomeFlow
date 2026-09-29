@@ -3,17 +3,17 @@
 //   init()     runs once, after the texts and the step list have loaded;
 //   render(p)  runs after every state change, with p = currentProgress();
 //   actions    handlers for data-action="<name>" on that page.
-import { firstName, isNewAccount } from "../lib/people.js?v=20260929";
-import { safeNext } from "../lib/validation.js?v=20260929";
-import { Account } from "./account.js?v=20260929";
-import { PAGE } from "./dom.js?v=20260929";
-import { renderHeader, renderHeaderEarly, setMenu } from "./header.js?v=20260929";
-import { ready, t } from "./i18n.js?v=20260929";
-import { chooseLanguage, renderLanguages, setLanguageMenu } from "./language.js?v=20260929";
-import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260929";
-import { loadSaved, onStateChange, setState } from "./state.js?v=20260929";
-import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260929";
-import { syncOnSignIn } from "./sync.js?v=20260929";
+import { firstName, isNewAccount } from "../lib/people.js?v=20260930";
+import { safeNext } from "../lib/validation.js?v=20260930";
+import { Account } from "./account.js?v=20260930";
+import { PAGE } from "./dom.js?v=20260930";
+import { renderHeader, renderHeaderEarly, setMenu } from "./header.js?v=20260930";
+import { ready, t } from "./i18n.js?v=20260930";
+import { chooseLanguage, renderLanguages, setLanguageMenu } from "./language.js?v=20260930";
+import { flash, hideToast, showFlash, showToast } from "./notices.js?v=20260930";
+import { loadSaved, onStateChange, setState } from "./state.js?v=20260930";
+import { currentProgress, loadSteps, stepLink, steps } from "./steps.js?v=20260930";
+import { syncOnSignIn } from "./sync.js?v=20260930";
 
 // Links in the confirmation and password emails, and the return from Google, bring people back
 // with details after "#" or "?" (type=signup, access_token, error_code=otp_expired, error=access_denied).

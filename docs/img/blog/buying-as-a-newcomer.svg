@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="36" cy="150" r="6" fill="#f3b45f"/>
+  <circle cx="44" cy="40" r="5" fill="#cfe7dd"/>
+  <circle cx="290" cy="160" r="3" fill="#f3b45f"/>
+  <ellipse cx="164" cy="176" rx="120" ry="10" fill="#e4d8c8"/>
+  <!-- map of Ireland -->
+  <path d="M150 34c20-6 42 2 48 20 12 4 20 18 12 32 12 14 8 36-6 50-10 18-34 28-58 24-22 2-40-10-46-26-12-12-8-32 4-42-6-14 2-32 18-38 8-12 16-18 28-20z" fill="#cfe7dd" stroke="#0f6b52" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M132 70c10 6 28 4 40 12M126 110c16-6 36 0 52-8" stroke="#0f6b52" stroke-width="2.5" stroke-dasharray="3 7" stroke-linecap="round" fill="none" opacity=".6"/>
+  <!-- passport -->
+  <g transform="rotate(-8 112 134)">
+    <rect x="86" y="104" width="54" height="70" rx="6" fill="#0a4c3a"/>
+    <rect x="86" y="100" width="54" height="70" rx="6" fill="#0f6b52"/>
+    <circle cx="113" cy="128" r="12" fill="none" stroke="#f3b45f" stroke-width="3"/>
+    <path d="M101 128h24M113 116v24" stroke="#f3b45f" stroke-width="2"/>
+    <rect x="98" y="150" width="30" height="5" rx="2.5" fill="#f3b45f"/>
+  </g>
+  <!-- house key -->
+  <g transform="rotate(20 206 132)">
+    <circle cx="188" cy="132" r="12" fill="none" stroke="#c98f3e" stroke-width="6"/>
+    <path d="M200 132h38M230 132v10M220 132v7" stroke="#c98f3e" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- small plane with its trail -->
+  <path d="M224 70c20-18 40-26 62-28" stroke="#e4d8c8" stroke-width="3" stroke-dasharray="4 7" stroke-linecap="round" fill="none"/>
+  <g transform="rotate(-18 262 48)">
+    <path d="M244 48h36c6 0 8 4 0 6h-36z" fill="#b3521f"/>
+    <path d="M258 48l-8-14h6l14 14zM258 54l-8 14h6l14-14zM246 48l-6-8h4l8 8z" fill="#8a3d14"/>
+  </g>
+</svg>

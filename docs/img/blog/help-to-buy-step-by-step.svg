@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="44" cy="36" r="6" fill="#f3b45f"/>
+  <circle cx="290" cy="34" r="5" fill="#cfe7dd"/>
+  <circle cx="300" cy="58" r="3" fill="#f3b45f"/>
+  <ellipse cx="160" cy="172" rx="130" ry="12" fill="#e4d8c8"/>
+  <!-- laptop with a form and a euro sign -->
+  <rect x="38" y="62" width="120" height="84" rx="8" fill="#0a4c3a"/>
+  <rect x="38" y="58" width="120" height="84" rx="8" fill="#0f6b52"/>
+  <rect x="46" y="66" width="104" height="68" rx="4" fill="#fffaf3"/>
+  <circle cx="70" cy="92" r="13" fill="#f3b45f"/>
+  <path d="M75 84a9 9 0 1 0 0 16M63 90h10M63 95h10" stroke="#0f6b52" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <rect x="90" y="80" width="48" height="6" rx="3" fill="#e4d8c8"/>
+  <rect x="90" y="92" width="40" height="6" rx="3" fill="#e4d8c8"/>
+  <rect x="90" y="104" width="46" height="6" rx="3" fill="#e4d8c8"/>
+  <rect x="58" y="116" width="36" height="10" rx="5" fill="#b3521f"/>
+  <path d="M26 146h144l-8 10H34z" fill="#6b5a48"/>
+  <!-- arrow carrying a coin to the new house -->
+  <path d="M164 72C196 40 234 44 250 82" stroke="#0f6b52" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M242 80l10 12 6-15z" fill="#0f6b52" stroke="#0f6b52" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="206" cy="52" r="13" fill="#c98f3e"/>
+  <circle cx="206" cy="49" r="13" fill="#f3b45f"/>
+  <circle cx="206" cy="49" r="7" fill="none" stroke="#c98f3e" stroke-width="3"/>
+  <!-- new house -->
+  <rect x="216" y="112" width="74" height="56" rx="6" fill="#0a4c3a"/>
+  <rect x="216" y="106" width="74" height="56" rx="6" fill="#0f6b52"/>
+  <path d="M210 108 253 80l43 28z" fill="#b3521f" stroke="#b3521f" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="226" y="120" width="16" height="14" rx="3" fill="#fffaf3"/>
+  <rect x="264" y="120" width="16" height="14" rx="3" fill="#fffaf3"/>
+  <rect x="245" y="136" width="16" height="26" rx="3" fill="#f3b45f"/>
+</svg>

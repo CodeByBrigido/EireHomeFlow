@@ -1,0 +1,34 @@
+{
+  "meta": "Contact | ÉireHome Flow",
+  "eyebrow": "Contact",
+  "title": "Ia legătura cu noi",
+  "intro": "Întrebări despre ghid, calculator sau contul tău, o cifră care pare greșită sau o idee pentru site: citim fiecare mesaj.",
+  "form": {
+    "title": "Scrie-ne",
+    "topic": "Subiect",
+    "message": "Mesaj",
+    "note": "Butonul deschide aplicația ta de e-mail cu mesajul pregătit. Nu se trimite nimic până nu îl trimiți de acolo.",
+    "submit": "Deschide în aplicația mea de e-mail",
+    "opened": "Aplicația ta de e-mail ar trebui să fie deschisă cu mesajul. Dacă nu s-a deschis nimic, scrie la eirehomeflow@gmail.com."
+  },
+  "topics": {
+    "guide": "O întrebare despre ghid",
+    "calculator": "Calculatorul",
+    "account": "Contul meu",
+    "correction": "O cifră sau o informație de corectat",
+    "idea": "O idee pentru site",
+    "misc": "Altceva"
+  },
+  "email": {
+    "title": "Scrie-ne direct",
+    "reply": "Încercăm să răspundem în 14 zile. La cererile privind datele tale personale răspundem în cel mult o lună."
+  },
+  "before": {
+    "title": "Înainte să scrii",
+    "items": [
+      "Nu putem oferi consultanță financiară, ipotecară, juridică sau fiscală personalizată. Pentru decizii, vorbește cu un specialist calificat.",
+      "Ca să îți ștergi contul, folosește <a href=\"profile.html\">Profilul meu</a> sau scrie-ne de pe adresa contului.",
+      "Ai găsit o greșeală? Spune-ne pasul sau articolul și, dacă o ai, sursa."
+    ]
+  }
+}

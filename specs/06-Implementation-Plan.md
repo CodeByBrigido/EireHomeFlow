@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.9 · Última revisão: 29/09/2026
 
 Como usar: no início de cada sessão de trabalho, abra este arquivo, pegue o **próximo marco não concluído** e siga as tarefas na ordem. Ao terminar uma tarefa, marque `[x]` e atualize os outros documentos afetados.
 
@@ -125,6 +125,20 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Sem "★ N XP" no topo e sem os cartões "Streak" e "Earned" na jornada; o XP fica só no Dashboard
 - [x] Balões "Start here" e "Optional" continuam visíveis, menores, com uma etapa aberta
 
+### Marco 3.10: Blog (28/09/2026) ✅
+- [x] 20 artigos em inglês, escritos como por profissionais do setor, com números de 2026 conferidos nas fontes oficiais: programas do governo, dinheiro, compra, recém-chegados, energia e mudança
+- [x] Cada artigo com ilustração própria, tempo de leitura, citação do My journey, caixa que leva à etapa ligada e 3 artigos semelhantes
+- [x] Na Home, depois do convite ao guia: slideshow com 4 artigos sorteados, 3 ao lado e "More articles" em 2 colunas, 6 por vez
+- [x] Blog todo em inglês, em qualquer idioma do site (só cabeçalho e rodapé seguem o idioma)
+- [x] `npm run posts` escreve as páginas a partir de `content/blog/` e `js/lib/posts.js`; `npm run check:posts` no `npm run check` e no CI
+
+### Marco 3.11: Contato e mapa do site (29/09/2026) ✅
+- [x] `contact.html`: formulário (nome, e-mail, assunto, mensagem) com a validação dos outros formulários, que abre o aplicativo de e-mail com a mensagem pronta; nada passa por servidor
+- [x] `sitemap.html`: todas as páginas, as 6 fases e as 31 etapas (cada uma abre na jornada) e os 20 artigos por categoria
+- [x] `sitemap.xml` com as páginas públicas e os artigos, escrito por `npm run posts` e conferido pelo `npm run check:posts`
+- [x] Rodapé com Contact us, Sitemap, Privacy Policy e Terms of Use em todas as páginas e artigos
+- [x] Textos de contato e do mapa do site nos 9 idiomas
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade
@@ -152,7 +166,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 ### Marco 6: Confiança e requisitos legais (antes de divulgar)
 - [ ] A8 aviso legal fixo logo abaixo dos resultados da calculadora; renomear para "Estimated maximum price"; vereditos com tom de estimativa
 - [ ] Revisar `privacy.html` e `terms.html`: preencher os `TODO` (nome legal e endereço), decidir os `POLICY CHOICE` e, idealmente, pedir uma revisão jurídica
-- [ ] Página "About" com quem mantém o site e um contato
+- [ ] Página "About" com quem mantém o site (o contato já existe em `contact.html`)
 - [ ] M16 links para fontes oficiais (Central Bank, Revenue, Citizens Information) e "Last reviewed: mês/ano"
 - [ ] Revisão das traduções por falantes nativos, começando pelo vocabulário financeiro. Polonês, romeno e lituano primeiro, por serem os mais novos
 
@@ -163,6 +177,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] M3 validação dos campos de valor (negativos e vazios); taxa e prazo já estão resolvidos pelos sliders
 - [ ] M17 rever quais etapas são "Optional"
 - [ ] M9 chip de custo sem o "€ " duplicado
+- [ ] Revisar os números dos artigos do blog a cada Budget e quando os programas mudarem (Help to Buy, First Home Scheme, LAHL, grants da SEAI, LPT)
 
 **Pronto quando:** os valores de referência do TRD (seção 12.1) estiverem atualizados e conferidos.
 
@@ -174,7 +189,9 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 
 ### Marco 9: SEO e divulgação
 - [x] M15 (parte) ícone do site
-- [ ] M15 meta description, Open Graph e Twitter card, canonical, `robots.txt`, `sitemap.xml`, página 404
+- [x] M15 (parte) `sitemap.xml` e página `sitemap.html`
+- [ ] M15 meta description, Open Graph e Twitter card, canonical, `robots.txt` (com a linha `Sitemap:`), página 404
+- [ ] Enviar `https://codebybrigido.github.io/EireHomeFlow/sitemap.xml` no Google Search Console, depois do merge
 - [ ] Título da página mais descritivo
 - [ ] Decidir se os idiomas precisam de endereços próprios para busca (hoje a tradução acontece no navegador, e o Google indexa o inglês)
 

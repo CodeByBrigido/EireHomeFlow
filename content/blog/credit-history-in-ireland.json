@@ -1,0 +1,47 @@
+{
+  "alt": "A credit report page with a bar chart and a green tick, next to a bank card",
+  "lead": "Every Irish lender checks the Central Credit Register before approving a mortgage. Knowing what it holds, and reading your own report first, avoids surprises during the application.",
+  "sections": [
+    {
+      "title": "What the register holds",
+      "body": [
+        "The Central Credit Register is run by the Central Bank of Ireland. It holds information on loans of €500 or more, including mortgages, personal loans, car finance, credit cards and overdrafts. For each one it records the amount, the repayments and any missed payments.",
+        "Lenders also report applications for loans of €2,000 or more, even if the loan was never taken out. Information stays on your report for five years after a loan is repaid."
+      ]
+    },
+    {
+      "title": "How lenders use it",
+      "body": [
+        "A mortgage lender sees every loan you have with any lender in Ireland, how much you owe and whether you pay on time. Missed or late payments in recent years weigh heavily, and existing debts reduce the amount you can borrow."
+      ]
+    },
+    {
+      "title": "Getting your report",
+      "body": [
+        {
+          "steps": [
+            "Request it free of charge at <a href=\"https://www.centralcreditregister.ie\">centralcreditregister.ie</a>.",
+            "Have your PPS number, photo ID and proof of address ready.",
+            "Read every loan listed. If something is wrong, ask the lender to correct it. You can also ask for a note to be added while it is checked."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Building a good record",
+      "body": [
+        [
+          "Pay every loan and card on time, by direct debit if you can.",
+          "Keep credit card balances low and clear them each month.",
+          "Avoid several credit applications in the months before your mortgage application.",
+          "If you are new to Ireland, an Irish current account, a small credit card and regular rent payments give lenders something to see."
+        ],
+        "My journey puts this check at step 4, six months before you ask a lender for approval.",
+        {
+          "tip": "Buy now, pay later plans and phone contracts may not appear on the register, but lenders still see the payments on your bank statements."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 4 of My journey, Keep the bank account clean for six months, lists what lenders look for in your statements and your credit report."
+}

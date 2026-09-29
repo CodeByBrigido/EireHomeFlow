@@ -6,7 +6,7 @@
 //   t("calculator:years", { count: 2 })          plural chosen by count: "2 years", "2 anos"
 //   money(209851), percent(0.039, 2), date(user.created_at)
 // Every text lives in locales/<language>/<namespace>.json, English first. See specs/08-Internationalisation.md.
-import { formatDate, formatMoney, formatNumber, formatPercent } from "../lib/format.js?v=20260929";
+import { formatDate, formatMoney, formatNumber, formatPercent } from "../lib/format.js?v=20260930";
 
 // Read when used, not when this module loads: tests load the page modules without the runtime.
 const runtime = () => window.EireI18n || null;

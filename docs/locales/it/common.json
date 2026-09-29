@@ -26,9 +26,12 @@
   "yourAccount": "Il tuo account",
   "footer": {
     "disclaimer": "Contenuti formativi. Non è consulenza finanziaria regolamentata.",
-    "legal": "Note legali",
+    "rights": "Tutti i diritti riservati.",
+    "legal": "Informazioni sul sito",
     "privacy": "Informativa sulla privacy",
-    "terms": "Condizioni d'uso"
+    "terms": "Condizioni d'uso",
+    "contact": "Contatti",
+    "sitemap": "Mappa del sito"
   },
   "toast": {
     "dismiss": "Chiudi"
@@ -47,6 +50,7 @@
     "confirm": "Conferma la password"
   },
   "forms": {
+    "message": "Scrivi il tuo messaggio.",
     "name": "Inserisci il tuo nome e il tuo cognome.",
     "email": "Inserisci un indirizzo email valido, come nome@esempio.com.",
     "password": "Inserisci la tua password.",

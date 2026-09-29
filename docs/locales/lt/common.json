@@ -26,9 +26,12 @@
   "yourAccount": "Jūsų paskyra",
   "footer": {
     "disclaimer": "Mokomasis turinys. Tai nėra reguliuojama finansinė konsultacija.",
-    "legal": "Teisinė informacija",
+    "rights": "Visos teisės saugomos.",
+    "legal": "Apie svetainę",
     "privacy": "Privatumo politika",
-    "terms": "Naudojimo sąlygos"
+    "terms": "Naudojimo sąlygos",
+    "contact": "Susisiekite",
+    "sitemap": "Svetainės medis"
   },
   "toast": {
     "dismiss": "Uždaryti"
@@ -47,6 +50,7 @@
     "confirm": "Pakartokite slaptažodį"
   },
   "forms": {
+    "message": "Parašykite savo žinutę.",
     "name": "Įveskite vardą ir pavardę.",
     "email": "Įveskite teisingą el. pašto adresą, pavyzdžiui, vardas@pavyzdys.lt.",
     "password": "Įveskite slaptažodį.",

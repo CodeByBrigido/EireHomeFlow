@@ -1,4 +1,4 @@
-// Stamps partials/header.html and footer.html into every page in docs/.
+// Stamps partials/header.html and footer.html into every page in docs/ and docs/blog/.
 //   npm run partials          writes the pages (run after editing a partial)
 //   npm run check:partials    fails if any page has an out-of-date copy (used by CI)
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -17,8 +17,14 @@ const read = (path) => {
 
 const stale = [];
 const missing = [];
-for (const name of readdirSync(DOCS).filter((file) => file.endsWith(".html"))) {
-  const file = join(DOCS, name);
+const pagesIn = (dir) => {
+  try {
+    return readdirSync(dir).filter((file) => file.endsWith(".html")).map((file) => join(dir, file));
+  } catch {
+    return [];
+  }
+};
+for (const file of [...pagesIn(DOCS), ...pagesIn(join(DOCS, "blog"))]) {
   const html = readFileSync(file, "utf8");
   const next = stampPartials(html, read);
   // Every page needs exactly one header and one footer (the footer also holds the notices box).

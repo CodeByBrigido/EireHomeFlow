@@ -1,0 +1,52 @@
+{
+  "alt": "A magnifying glass over a window and a radiator, with a checklist beside them",
+  "lead": "A viewing often lasts 20 minutes, and it is easy to leave with only an impression. A short routine for each room helps you compare homes fairly and spot what needs a closer look.",
+  "sections": [
+    {
+      "title": "Before you go",
+      "body": [
+        [
+          "Check the BER on the listing. It shows how much energy the home is likely to need for heating.",
+          "Look up what homes on the same street sold for on the Residential Property Price Register.",
+          "Walk the area at a different time of day, to hear the traffic and see the parking.",
+          "Bring a torch, your phone for photos and a notebook."
+        ]
+      ]
+    },
+    {
+      "title": "Inside, room by room",
+      "body": [
+        [
+          "<strong>Walls and ceilings:</strong> damp patches, black mould, fresh paint in a single spot, and cracks wider than a coin.",
+          "<strong>Windows:</strong> condensation between the panes, soft or rotten frames, and whether they open.",
+          "<strong>Heating:</strong> the age and type of the boiler or heat pump, and when it was last serviced.",
+          "<strong>Water:</strong> run a tap and flush a toilet, and check the pressure upstairs.",
+          "<strong>Electrics:</strong> the age of the fuse board and the number of sockets.",
+          "<strong>Attic:</strong> the depth of the insulation, signs of leaks and the water tank."
+        ]
+      ]
+    },
+    {
+      "title": "Questions for the agent",
+      "body": [
+        [
+          "Why is the owner selling, and have they bought elsewhere?",
+          "How long has the home been on the market, and have there been offers?",
+          "Were extensions built, and is there planning permission or an exemption for them?",
+          "For an apartment: what is the management fee, and how much is in the sinking fund?"
+        ]
+      ]
+    },
+    {
+      "title": "After the viewing",
+      "body": [
+        "Write up your notes the same day and score each home on what matters to you. If you are interested, book a second viewing, and before you bid, have a surveyor or builder look at anything that worried you.",
+        "My journey keeps this list at step 14, so you can use it on your phone at every viewing.",
+        {
+          "tip": "View at least five homes before your first offer, including two you think will not suit you. It shows you what your budget buys in that area."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 14 of My journey, Book viewings, has a checklist for each viewing, and step 12 helps you choose the area and check sold prices first."
+}

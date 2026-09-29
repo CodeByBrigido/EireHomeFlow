@@ -26,9 +26,12 @@
   "yourAccount": "Your account",
   "footer": {
     "disclaimer": "Educational content. Not regulated financial advice.",
-    "legal": "Legal",
+    "rights": "All rights reserved.",
+    "legal": "About this site",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "terms": "Terms of Use",
+    "contact": "Contact us",
+    "sitemap": "Sitemap"
   },
   "toast": {
     "dismiss": "Dismiss"
@@ -47,6 +50,7 @@
     "name": "Full name"
   },
   "forms": {
+    "message": "Write your message.",
     "name": "Enter your first and last name.",
     "email": "Enter a valid email address, like name@example.com.",
     "password": "Enter your password.",

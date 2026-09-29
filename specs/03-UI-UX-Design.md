@@ -1,6 +1,6 @@
 # UI/UX Design
 
-Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.8 · Última revisão: 29/09/2026
 
 Complementa o [Design System](07-Design-System.md), que define cores, tipos e componentes. Este documento define **o que cada página mostra, em que estado e com quais palavras**.
 
@@ -16,7 +16,7 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 
 ## 2. Tom de voz e regras de texto
 
-- **Idioma:** inglês britânico e irlandês (`en-IE`) na fonte: *organise, savings, solicitor, flat, estate agent*. O site também está em português do Brasil, espanhol, francês, alemão e italiano, traduzidos a partir do inglês com as mesmas regras (sem travessão, sem "≈", sem "…", sem prometer resultado) e o glossário do [doc 08](08-Internationalisation.md), seção 6. Termos oficiais irlandeses ficam em inglês nas traduções, explicados na primeira menção.
+- **Idioma:** inglês britânico e irlandês (`en-IE`) na fonte: *organise, savings, solicitor, flat, estate agent*. O site também está em português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano, traduzidos a partir do inglês com as mesmas regras (sem travessão, sem "≈", sem "…", sem prometer resultado) e o glossário do [doc 08](08-Internationalisation.md), seção 6. Termos oficiais irlandeses ficam em inglês nas traduções, explicados na primeira menção. O blog fica só em inglês, com as mesmas regras de texto.
 - **Maiúsculas:** sentence case em títulos e botões ("Start my journey", não "Start My Journey"). Exceções: nomes próprios e termos oficiais (Approval in Principle, Sale Agreed, Help to Buy, Local Property Tax).
 - **Números:** em inglês, euro antes do valor e vírgula de milhar (€380,000). Nos outros idiomas, o formato local (€ 380.000 em português, 380.000 € em alemão e romeno, 380 000 € em francês, polonês e lituano), sempre com os mesmos valores. Faixas com hífen simples (€2,000-3,000; 1-2 weeks). Aproximação com "about" no texto e "~" nas tabelas ("ca." em alemão, "env." em francês).
 - **Proibido** (marcas de texto gerado por IA):
@@ -43,8 +43,11 @@ Complementa o [Design System](07-Design-System.md), que define cores, tipos e co
 | Criar conta | `signup.html` | Create your account \| ÉireHome Flow | Etapa de conta, "Create an account" |
 | Esqueci a senha | `forgot-password.html` | Reset your password \| ÉireHome Flow | "Forgot your password?" |
 | Nova senha | `new-password.html` | Choose a new password \| ÉireHome Flow | Link do e-mail de senha, "Change password" em My profile |
+| Contato | `contact.html` | Contact us \| ÉireHome Flow | Rodapé, mapa do site |
+| Mapa do site | `sitemap.html` | Sitemap \| ÉireHome Flow | Rodapé |
 | Política de privacidade | `privacy.html` | Privacy Policy \| ÉireHome Flow | Rodapé, cadastro, páginas de conta, My profile |
 | Termos de uso | `terms.html` | Terms of Use \| ÉireHome Flow | Rodapé, cadastro |
+| Artigo do blog | `blog/<slug>.html` | O título do artigo, em inglês | Slideshow e cartões do blog na Home, "Similar articles" |
 
 **Endereços profundos da jornada:** `journey.html#step-<id>` abre a etapa no painel; `journey.html#phase-<slug>` rola até a fase. O endereço acompanha a etapa aberta.
 
@@ -67,7 +70,7 @@ Os títulos acima são os do inglês; cada idioma tem os seus (ex.: "Minha jorna
 - **Até 880px, o cabeçalho tem 2 linhas, em qualquer idioma:** a marca à esquerda e o botão de idioma com "Sign in" (ou o círculo) à direita na primeira; Home, Guide, My journey e Calculator na segunda. Por isso esses botões ficam fora do `<nav>`, num `.site-header__account` próprio. Abaixo de 400px o botão de idioma mostra só o globo. Os rótulos do menu são curtos em todos os idiomas ("Jornada", "Parcours", "Percorso") para caberem em 320px.
 
 ### 4.2 Rodapé e avisos (`partials/footer.html`)
-- Rodapé areia com "ÉireHome Flow", "Educational content. Not regulated financial advice." e os links **Privacy Policy** e **Terms of Use**.
+- Rodapé areia com "© 2026 ÉireHome Flow, All rights reserved." (a marca e o ano fixos, "All rights reserved." traduzido), "Educational content. Not regulated financial advice." e os links **Contact us**, **Sitemap**, **Privacy Policy** e **Terms of Use**, num `<nav>` com `aria-label` "About this site".
 - **Aviso (toast):** caixa no rodapé da tela, verde (sucesso) ou vermelha (erro), com ícone, texto, botão de ação opcional e "×". Some sozinho em 7 segundos, exceto os avisos marcados como fixos.
 
 | Situação | Texto | Tipo |
@@ -92,6 +95,11 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 3. **Números-chave:** 3 cartões (4×, 10%, €3,550).
 4. **Seis fases:** cartões com número, título, resumo, barra e "N of M steps done"; cada um leva a `journey.html#phase-<slug>`.
 5. **Convite ao guia:** faixa areia "Read the full guide" com o botão "Open the guide".
+6. **Blog** (`#blog`, todo em inglês em qualquer idioma do site): eyebrow "From the blog" e título "Guides for buying a home in Ireland". Embaixo, como num portal de notícias:
+   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas, pontos com o atual alongado em verde e "Pause"/"Play" à direita). Passa sozinho a cada 7 s e para com o ponteiro ou o foco em cima;
+   - à direita, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título;
+   - **"More articles"**: os outros 13 em 2 colunas, com imagem ao lado do texto, 6 por vez; "Show more articles" mostra os próximos 6.
+   Nenhum artigo aparece duas vezes. Cada cartão inteiro é o link para o artigo.
 
 ### 5.2 Guia completo (`guide.html`)
 - Eyebrow "The full guide", título "Every step, in detail", introdução com link para My journey.
@@ -220,7 +228,32 @@ Em `signup.html`, logo acima do botão: "By creating an account, you agree to ou
 - **Em outros idiomas:** eyebrow, título, data, o resumo ("The short version"), o índice, o cartão de contato e um aviso ("A política completa abaixo está disponível apenas em inglês.") ficam no idioma. O texto integral continua em inglês, marcado com `lang="en-IE"`, e o índice lateral também (aponta para as seções em inglês). O aviso não aparece em inglês.
 - Trechos que dependem de decisão do dono do site ficam marcados no código com `<!-- TODO -->` ou `<!-- POLICY CHOICE -->`.
 
-### 5.9 E-mails
+### 5.8.1 Contato (`contact.html`)
+- Eyebrow "Contact us", título "Get in touch" e uma frase sobre o que se pode perguntar.
+- **Duas colunas** (60% e 40%); abaixo de 960px, uma coluna, com os cartões depois do formulário.
+- **Formulário "Write to us"** (cartão branco): Full name, Email, Topic (lista: "A question about the guide", "The calculator", "My account", "A figure or fact to correct", "An idea for the site", "Something else") e Message (até 1.500 caracteres). Abaixo, a nota "The button opens your email app with the message ready. Nothing is sent until you send it there." e o botão "Open in my email app".
+- Campos vazios ficam vermelhos, com "Enter your first and last name.", "Enter a valid email address..." e "Write your message.", e o foco vai ao primeiro. Com tudo certo, o aplicativo de e-mail abre e a mensagem "Your email app should now be open with the message. If nothing opened, write to eirehomeflow@gmail.com." aparece acima do botão.
+- Logado, nome e e-mail já vêm preenchidos.
+- **Cartões ao lado:** "Email us directly" (branco: o endereço e o prazo de resposta, 14 dias, ou um mês para pedidos sobre dados pessoais) e "Before you write" (areia: o site não dá aconselhamento; para apagar a conta, My profile; ao apontar um erro, diga a etapa ou o artigo e a fonte).
+
+### 5.8.2 Mapa do site (`sitemap.html`)
+- Título "Sitemap" e "Every page of the site in one place."
+- Três colunas no topo: **Main pages** (Home, Guide, My journey, Calculator, Blog), **Your account** (Sign in, Create an account, Dashboard, My profile) e **About the site** (Contact us, Privacy Policy, Terms of Use e o mapa XML).
+- **My journey, phase by phase:** as 6 fases ("01 · Preparation"...), cada uma um link para a fase na jornada, com as etapas embaixo, cada uma um link que abre a etapa.
+- **Blog articles:** os 20 artigos por categoria (Schemes, Money, Buying, Newcomers, Energy, Moving in), em inglês em qualquer idioma.
+- 3 colunas no desktop, 2 abaixo de 960px e 1 abaixo de 720px; listas alinhadas à esquerda.
+
+### 5.9 Artigo do blog (`blog/<slug>.html`)
+Coluna de leitura de 760px, centralizada:
+1. **Topo:** "← All articles" (volta ao blog na Home), categoria em verde e maiúsculas, título grande, abertura em texto maior e tempo de leitura ("5 min read").
+2. **Imagem:** a ilustração do artigo em 16:10, com cantos de 26px (a mesma dos cartões da Home).
+3. **Texto:** títulos `h2`, parágrafos justificados, listas com marcador verde, passos numerados, notas "Worth knowing" em pêssego e tabelas com cabeçalho em maiúsculas (em telas estreitas, a tabela rola dentro da própria caixa).
+4. **Caixa "In My journey":** cartão verde com o texto que liga o artigo a uma etapa e o botão dourado "Open this step in My journey", que abre a etapa no painel da jornada.
+5. **Similar articles:** 3 cartões com imagem em cima, categoria e título (3 colunas no desktop, 2 no tablet, 1 no celular).
+
+A página inteira fica em inglês (`lang="en-IE"`), em qualquer idioma do site; só o cabeçalho e o rodapé seguem o idioma escolhido.
+
+### 5.10 E-mails
 Modelos em `supabase/email-templates/`, só em inglês (o Supabase usa um modelo por projeto): fundo areia, cartão branco, logo, título, 2 parágrafos curtos, botão verde, nota "If you didn't..." e rodapé. Os dois links levam à Home, que mostra o aviso de confirmação ou encaminha para `new-password.html`.
 
 ## 6. Responsividade
@@ -228,9 +261,9 @@ Modelos em `supabase/email-templates/`, só em inglês (o Supabase usa um modelo
 | Largura | Mudanças |
 |---|---|
 | > 960px | Layouts completos de duas colunas |
-| ≤ 960px | Hero, calculadora, jornada, Dashboard (linha de baixo) e Perfil em 1 coluna; cartões do Dashboard em 2; painel da etapa em tela cheia |
-| ≤ 880px | Cabeçalho em 2 linhas: marca, idioma e conta em cima; links embaixo (XP à direita) |
-| ≤ 720px | Margens de 16px; navegação em linha própria; botão de idioma, círculo e "Sign in" à direita; menus da conta e de idioma na largura da tela; títulos com `clamp()`; onda da trilha a 45% |
+| ≤ 960px | Hero, calculadora, jornada, Dashboard (linha de baixo) e Perfil em 1 coluna; cartões do Dashboard em 2; painel da etapa em tela cheia; no blog, os 3 artigos passam para baixo do slideshow e os semelhantes ficam em 2 colunas; contato em 1 coluna; mapa do site em 2 colunas |
+| ≤ 880px | Cabeçalho em 2 linhas: marca, idioma e conta em cima; links embaixo |
+| ≤ 720px | Margens de 16px; navegação em linha própria; botão de idioma, círculo e "Sign in" à direita; menus da conta e de idioma na largura da tela; títulos com `clamp()`; onda da trilha a 45%; artigos do blog em 1 coluna, com título do slide de 23px; mapa do site em 1 coluna |
 | ≤ 400px | Botão de idioma só com o globo |
 | ≤ 480px | Campos da calculadora, caixas de resultado e cartões do Dashboard em 1 coluna |
 

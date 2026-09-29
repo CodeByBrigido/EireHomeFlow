@@ -1,0 +1,48 @@
+{
+  "alt": "A letter with a green seal and a tick beside a stack of payslips and a pen",
+  "lead": "Approval in Principle, or AIP, is a lender's written statement that it would lend you up to a certain amount, subject to the property and final checks. Estate agents usually ask for it before they take your bids seriously.",
+  "sections": [
+    {
+      "title": "What lenders check",
+      "body": [
+        [
+          "<strong>Income:</strong> payslips, the Employment Detail Summary from Revenue and a salary certificate from your employer.",
+          "<strong>Spending and saving:</strong> six months of statements for every current and savings account. Lenders look for regular saving and no missed payments.",
+          "<strong>Debts:</strong> car finance, personal loans and credit cards reduce what you can borrow, and the lender sees them on the Central Credit Register.",
+          "<strong>Deposit:</strong> where it comes from, including a gift letter if family is helping.",
+          "<strong>Identity and address:</strong> a passport or driving licence, a recent bill and your PPS number."
+        ],
+        "My journey lists these documents in steps 8 to 10, so you can tick them off as you collect them."
+      ]
+    },
+    {
+      "title": "How much they will offer",
+      "body": [
+        "The Central Bank limits mortgages to 4× gross income for first-time buyers and 3.5× for everyone else, and the loan to 90% of the price. Within those limits, the lender tests whether you could still afford the repayment if rates rose.",
+        "Lenders can make exceptions for a small share of their loans each year, so a strong application sometimes gets more."
+      ]
+    },
+    {
+      "title": "How long it lasts",
+      "body": [
+        "An AIP usually lasts six months. If it expires before you go Sale Agreed, the lender asks for recent statements and payslips to renew it.",
+        "It is not yet a loan offer. The offer comes after the valuation and the final checks on you and the home."
+      ]
+    },
+    {
+      "title": "Avoiding surprises",
+      "body": [
+        [
+          "Clear small debts, and avoid new credit in the six months before you apply.",
+          "Avoid gambling transactions and large transfers you cannot explain. Lenders read every line.",
+          "Keep your job steady if you can. A change during the process can pause the approval.",
+          "Get your own report from the Central Credit Register first, so nothing on it surprises you."
+        ],
+        {
+          "tip": "Applying to more than one lender, or through a broker, lets you compare what each would offer before you commit."
+        }
+      ]
+    }
+  ],
+  "journey": "Steps 7 to 11 of My journey cover the AIP, from choosing a lender to receiving the letter, with the documents for each step."
+}

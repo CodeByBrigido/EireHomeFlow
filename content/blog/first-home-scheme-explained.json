@@ -1,0 +1,42 @@
+{
+  "alt": "A house in two colours, a large green part and a smaller gold part, with a key below",
+  "lead": "The First Home Scheme helps first-time buyers close the gap between what they can borrow and save and the price of a new home. In return it takes a share of the home, which you can buy back later.",
+  "sections": [
+    {
+      "title": "How the share works",
+      "body": [
+        "Suppose a new home costs €400,000. You have a 10% deposit of €40,000 and a mortgage offer of €320,000. The scheme can fund the remaining €40,000, which is 10% of the price. From then on it owns a 10% share of the home's value, which is different from a fixed debt.",
+        "If you buy the share back when the home is worth €450,000, a 10% share costs €45,000. If the value falls, the share costs less."
+      ]
+    },
+    {
+      "title": "The limits",
+      "body": [
+        [
+          "Up to 30% of the price, or up to 20% if you also use Help to Buy.",
+          "At least 2.5% of the price or €10,000, whichever is higher.",
+          "The home must be a new build, or a self-build on a site you own, and below the price ceiling for your local authority.",
+          "You need Approval in Principle from a participating lender: AIB, EBS, Haven, Bank of Ireland or PTSB.",
+          "You borrow what your lender will offer and put in your deposit first. The scheme fills the gap that is left."
+        ]
+      ]
+    },
+    {
+      "title": "What it costs over time",
+      "body": [
+        "For the first five years there is no charge. From year six, a service charge applies to the amount the scheme funded: 1.75% a year from year six to year 15, 2.15% from year 16 to year 29 and 2.85% from year 30. Buying back part of the share lowers the charge.",
+        "In the example above, 1.75% of €40,000 is €700 a year from year six."
+      ]
+    },
+    {
+      "title": "Buying the share back",
+      "body": [
+        "You can buy the share back in full, or in parts of at least 5% of the original amount, up to twice in 12 months. You must buy it back in full if you sell, if the home stops being your main residence or if you move your mortgage to a lender outside the scheme.",
+        {
+          "tip": "If you can, plan to buy back some or all of the share before year six, when the charge starts. Each buy-back needs a valuation, so ask what it costs."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 5 of My journey covers Help to Buy and the supports for new homes. Save your figures in the calculator first, so the gap you may need to fill is clear."
+}

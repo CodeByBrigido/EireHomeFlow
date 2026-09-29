@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="36" cy="40" r="6" fill="#f3b45f"/>
+  <circle cx="190" cy="30" r="5" fill="#cfe7dd"/>
+  <circle cx="56" cy="64" r="3" fill="#cfe7dd"/>
+  <ellipse cx="160" cy="174" rx="134" ry="11" fill="#e4d8c8"/>
+  <!-- small house -->
+  <rect x="42" y="118" width="76" height="52" rx="6" fill="#0a4c3a"/>
+  <rect x="42" y="112" width="76" height="52" rx="6" fill="#0f6b52"/>
+  <path d="M36 114 80 86l44 28z" fill="#b3521f" stroke="#b3521f" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="52" y="124" width="16" height="14" rx="3" fill="#fffaf3"/>
+  <rect x="92" y="124" width="16" height="14" rx="3" fill="#fffaf3"/>
+  <rect x="72" y="140" width="16" height="24" rx="3" fill="#f3b45f"/>
+  <!-- tax form with a round stamp -->
+  <rect x="146" y="54" width="72" height="100" rx="6" fill="#e4d8c8"/>
+  <rect x="140" y="48" width="72" height="100" rx="6" fill="#fffaf3"/>
+  <rect x="150" y="60" width="36" height="7" rx="3" fill="#0f6b52"/>
+  <rect x="150" y="76" width="52" height="5" rx="2.5" fill="#e4d8c8"/>
+  <rect x="150" y="87" width="44" height="5" rx="2.5" fill="#e4d8c8"/>
+  <rect x="150" y="98" width="50" height="5" rx="2.5" fill="#e4d8c8"/>
+  <circle cx="190" cy="126" r="13" fill="none" stroke="#b3521f" stroke-width="3.5"/>
+  <circle cx="190" cy="126" r="6" fill="#b3521f"/>
+  <!-- calendar page with one date marked -->
+  <rect x="236" y="36" width="50" height="42" rx="6" fill="#fffaf3"/>
+  <path d="M236 42a6 6 0 0 1 6-6h38a6 6 0 0 1 6 6v6h-50z" fill="#b3521f"/>
+  <circle cx="261" cy="62" r="9" fill="none" stroke="#0f6b52" stroke-width="3"/>
+  <!-- calculator -->
+  <rect x="234" y="90" width="58" height="80" rx="8" fill="#6b5a48"/>
+  <rect x="242" y="98" width="42" height="16" rx="3" fill="#cfe7dd"/>
+  <g fill="#fffaf3">
+    <rect x="242" y="122" width="10" height="10" rx="2"/>
+    <rect x="258" y="122" width="10" height="10" rx="2"/>
+    <rect x="242" y="138" width="10" height="10" rx="2"/>
+    <rect x="258" y="138" width="10" height="10" rx="2"/>
+    <rect x="242" y="154" width="10" height="10" rx="2"/>
+    <rect x="258" y="154" width="10" height="10" rx="2"/>
+  </g>
+  <rect x="274" y="122" width="10" height="42" rx="2" fill="#f3b45f"/>
+</svg>

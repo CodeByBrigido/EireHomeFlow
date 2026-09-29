@@ -26,7 +26,7 @@ export const LOCALES = [
 
 // One file per namespace in each language folder. A page lists the ones it needs in
 // <html data-i18n-ns="...">; common (header, footer, notices, forms) is on every page.
-export const NAMESPACES = ["common", "home", "guide", "journey", "calculator", "authentication", "account", "legal"];
+export const NAMESPACES = ["common", "home", "guide", "journey", "calculator", "authentication", "account", "legal", "contact", "sitemap"];
 
 export const findLocale = (code) => LOCALES.find((locale) => locale.code === code) || null;
 

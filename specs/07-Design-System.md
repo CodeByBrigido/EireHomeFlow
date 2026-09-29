@@ -1,6 +1,6 @@
 # Design System
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 29/09/2026
 
 Fonte de verdade técnica: `docs/css/styles.css`. Este documento explica os tokens e componentes e quando usar cada um. Toda cor nova precisa virar token em `:root` e passar no teste de contraste (seção 2.3).
 
@@ -164,7 +164,8 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - **Só para leitor de tela** `.sr-only`: texto escondido na tela, lido por leitores de tela (ex.: "(opens in a new tab)").
 
 ### 7.5 Formulários
-- **Campo** `.field` > `.field__label` + `input`: fundo creme, borda `--line-2` de 2px, raio 14px, texto 16px em negrito (16px evita zoom automático no iPhone).
+- **Campo** `.field` > `.field__label` + `input`, `select` ou `textarea`: fundo creme, borda `--line-2` de 2px, raio 14px, texto 16px em negrito (16px evita zoom automático no iPhone).
+- **Texto longo** `.field textarea`: altura mínima de 150px, só estica na vertical, peso 600 e entrelinha 1,5.
 - **Campo inválido** `.field.is-invalid`: borda `--error` e fundo `--error-bg`, com `aria-invalid="true"` no input.
 - **Mensagem de erro** `.field__error`: 13px, negrito, `--error`, logo abaixo do input, ligada por `aria-describedby` (id `error-<campo>`); some quando vazia.
 - **Campo que não se aplica** `.field.is-off` + `input:disabled`: continua no mesmo lugar, com fundo `--sand`, borda tracejada, rótulo `--locked` e o motivo no placeholder (`--faint`, 14px). Nunca esconder um campo condicional: isso empurra os outros de lugar.
@@ -201,7 +202,7 @@ Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn
 - Aviso de idioma `.legal__notice`: cartão branco com borda `--line` de 2px, raio 14px, texto 15px negrito `--brown`, logo abaixo do resumo. Só aparece quando a página não está em inglês (`html[lang|="en"] .legal__notice { display: none }`).
 - Barra lateral `.legal-aside` (fixa a 90px do topo no desktop): índice `.legal-toc` (cartão branco com borda; links 14px `--muted`, seção atual com fundo `--sand` e texto `--ink`) e cartão `.legal-help` (fundo `--ink`, link de e-mail creme sublinhado, botão dourado `.legal-help__link`).
 - `h2` 24px e `h3` 18px em negrito; parágrafos e listas 16px com altura de linha 1.65 em `--body`.
-- Links do rodapé em `.site-footer__links` (sublinhados, `--faint`).
+- Links do rodapé em `.site-footer__links` (sublinhados, `--faint`): Contact us, Sitemap, Privacy Policy e Terms of Use.
 
 ### 7.9 Ilustrações das etapas
 Uma ilustração por etapa em `docs/img/steps/<id da etapa>.svg`, exibida com a classe `.step-image` (proporção 8:5, raio 18px): até 300px e **centralizada por alinhamento** no painel da jornada (contêiner `.detail__figure` com `display: flex; justify-content: center`, sem margem automática na `.detail__image`) e, no guia, numa coluna à direita do texto (`.guide-step` em grade `68% 28%`; no celular, acima do título, até 320px).
@@ -216,7 +217,19 @@ Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_s
 - Um assunto principal centralizado (55-65% da área), 1-3 elementos de apoio, 16px de margem livre nas bordas. Reconhecível a 240px.
 - Todo `<img>` de ilustração tem texto alternativo que descreve o desenho literalmente.
 
-### 7.10 Imagens
+### 7.10 Blog
+- **Seção da Home** `.blog`: cabeçalho com `.eyebrow` e `.blog__title` (42px, como o das fases); `.blog__top` em grade `1.6fr 1fr` (1 coluna até 960px).
+- **Slideshow** `.slideshow`: os `.slide` ficam empilhados na mesma célula (`grid-area: 1 / 1`) e trocam por opacidade em 0,45 s (sem transição com "reduzir movimento"). Imagem 16:10 com raio 24px, `.slide__category` (12px, maiúsculas, verde), `.slide__title` (30px; 23px no celular) e `.slide__summary` (16px, `--muted`). Controles em `.slideshow__controls`: `.slideshow__arrow` (círculo de 40px, borda `--line-2`), `.slideshow__dot` (alvo de 24px com uma pílula de 10px; a atual com 22px e `--ink`) e `.slideshow__pause` (pílula com borda, à direita).
+- **Cartão** `.post-card` (um `li` com o link inteiro): `--row` com a imagem (44% da largura, até 230px, raio 16px) ao lado de `.post-card__category` e `.post-card__title` (17px, 800); `--column` com a imagem em cima. Nada justificado. `.post-grid` em 2 colunas (1 no celular); nos semelhantes, 3 colunas (2 no tablet).
+- **Artigo** `.post`: coluna de 760px; `.post__title` 46px, `.post__lead` 20px à esquerda, `.post__meta` 14px `--faint`, imagem 16:10 com raio 26px; `.post__body` 17px com entrelinha 1,7, `h2` de 27px, listas com marcador verde, `.post__tip` em `--peach` (como "Worth knowing" das etapas) e `.post__table` com cabeçalho em maiúsculas.
+- **Caixa do My journey** `.post-journey`: cartão `--ink` com texto creme e o botão `.post-journey__btn` dourado com sombra `#c98f3e`, como o "Next up" da jornada.
+- **Ilustrações** em `docs/img/blog/<slug>.svg`, com as mesmas regras e o mesmo validador das ilustrações das etapas (seção 7.9).
+
+### 7.10.1 Contato e mapa do site
+- **Contato** `.contact`: grade `1.5fr 1fr` com 32px de espaço (1 coluna até 960px). O formulário `.contact__form` é um `.card` com 26px de respiro (20px no celular) e o botão à esquerda; títulos `.contact__title` 21px, 800; nota `.contact__note` 14px `--muted`. Ao lado, `.contact__aside` com `.contact__card` (branco, borda `--line` de 2px, raio 22px) e `.contact__card--sand` (fundo `--sand`); o e-mail em `.contact__email` (17px, 800, quebra em qualquer ponto para caber em 320px) e a lista `.contact__list` 15px.
+- **Mapa do site** `.sitemap`: grade de 3 colunas (2 até 960px, 1 até 720px). Cada seção longa (`.sitemap__section`) ocupa a linha inteira, com linha `--sand` de 2px acima e título `.sitemap__title` 28px; dentro, `.sitemap__grid` com as mesmas colunas. Títulos de grupo `.sitemap__heading` 17px, 800; listas `.sitemap__list` 15px, alinhadas à esquerda, sem hifenização, com marcador `--faint`.
+
+### 7.11 Imagens
 - **Ilustrações** (desenhos chapados): SVG. Mais leve que WebP ou PNG e nítido em qualquer tela.
 - **Ilustrações com textura ou fotos** (a capa): WebP em 3 larguras (600, 900, 1200) com `srcset` e `sizes`, `width`/`height` definidos e `fetchpriority="high"` quando for a imagem principal da página.
 

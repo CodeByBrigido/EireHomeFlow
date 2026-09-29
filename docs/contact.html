@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-IE" data-i18n-ns="common contact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/i18n-boot.js?v=20260930"></script>
+  <title data-i18n="contact:meta">Contact us | ÉireHome Flow</title>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260930">
+  <script type="module" src="js/pages/contact.js?v=20260930"></script>
+</head>
+<body data-page="contact">
+<div class="page">
+
+  <!-- include partials/header.html: edit that file, then run npm run partials -->
+  <header class="site-header" data-auth-pending>
+    <div class="site-header__inner">
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
+      </nav>
+      <div class="site-header__account">
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
+        <div class="account-nav" id="account-nav" hidden>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
+          <div class="menu" id="account-menu" hidden>
+            <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /include -->
+
+  <main class="main main--wide">
+    <p class="eyebrow" data-i18n="contact:eyebrow">Contact us</p>
+    <h1 class="page-title" data-i18n="contact:title">Get in touch</h1>
+    <p class="calc__intro" data-i18n="contact:intro">Questions about the guide, the calculator or your account, a figure that looks wrong, or an idea for the site: we read every message.</p>
+
+    <div class="contact">
+      <form class="card contact__form" id="contact-form" novalidate data-fields="name email message">
+        <h2 class="contact__title" data-i18n="contact:form.title">Write to us</h2>
+        <label class="field">
+          <span class="field__label" data-i18n="common:fields.name">Full name</span>
+          <input type="text" name="name" autocomplete="name" maxlength="80" aria-describedby="error-name">
+          <span class="field__error" id="error-name"></span>
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="common:fields.email">Email</span>
+          <input type="email" name="email" autocomplete="email" aria-describedby="error-email">
+          <span class="field__error" id="error-email"></span>
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="contact:form.topic">Topic</span>
+          <select name="topic">
+            <option value="guide" data-i18n="contact:topics.guide">A question about the guide</option>
+            <option value="calculator" data-i18n="contact:topics.calculator">The calculator</option>
+            <option value="account" data-i18n="contact:topics.account">My account</option>
+            <option value="correction" data-i18n="contact:topics.correction">A figure or fact to correct</option>
+            <option value="idea" data-i18n="contact:topics.idea">An idea for the site</option>
+            <option value="misc" data-i18n="contact:topics.misc">Something else</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label" data-i18n="contact:form.message">Message</span>
+          <textarea name="message" rows="7" maxlength="1500" aria-describedby="error-message"></textarea>
+          <span class="field__error" id="error-message"></span>
+        </label>
+        <p class="contact__note" data-i18n="contact:form.note">The button opens your email app with the message ready. Nothing is sent until you send it there.</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn--primary" data-i18n="contact:form.submit">Open in my email app</button>
+      </form>
+
+      <aside class="contact__aside">
+        <div class="contact__card">
+          <h2 class="contact__title" data-i18n="contact:email.title">Email us directly</h2>
+          <p class="contact__email"><a href="mailto:eirehomeflow@gmail.com" translate="no">eirehomeflow@gmail.com</a></p>
+          <p data-i18n="contact:email.reply">We aim to reply within 14 days. Requests about your personal data are answered within one month.</p>
+        </div>
+        <div class="contact__card contact__card--sand">
+          <h2 class="contact__title" data-i18n="contact:before.title">Before you write</h2>
+          <ul class="contact__list">
+            <li data-i18n="contact:before.items.0">We cannot give personal financial, mortgage, legal or tax advice. For decisions, talk to a qualified professional.</li>
+            <li data-i18n-html="contact:before.items.1">To delete your account, use <a href="profile.html">My profile</a>, or email us from the address on the account.</li>
+            <li data-i18n="contact:before.items.2">Spotted a mistake? Tell us the step or article, and the source if you have one.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- include partials/footer.html: edit that file, then run npm run partials -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span class="site-footer__brand"><span translate="no">© 2026 ÉireHome Flow</span>, <span data-i18n="common:footer.rights">All rights reserved.</span></span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="About this site" data-i18n-aria-label="common:footer.legal">
+        <a href="contact.html" data-i18n="common:footer.contact">Contact us</a>
+        <a href="sitemap.html" data-i18n="common:footer.sitemap">Sitemap</a>
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Short notices: email confirmed, signed in or out, profile saved -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast__icon" aria-hidden="true">✓</span>
+    <div class="toast__body">
+      <p class="toast__text" id="toast-text"></p>
+      <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
+    </div>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
+  </div>
+  <!-- /include -->
+
+</div>
+</body>
+</html>

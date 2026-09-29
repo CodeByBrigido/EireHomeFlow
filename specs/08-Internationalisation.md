@@ -1,6 +1,6 @@
 # 08 · Internacionalização (i18n)
 
-Última revisão: 28/09/2026
+Última revisão: 29/09/2026
 
 Como o site aparece em vários idiomas, como adicionar textos novos sem quebrar nenhum idioma e como adicionar um idioma novo.
 
@@ -58,12 +58,14 @@ Cada página baixa só o que usa, e só do idioma dela (mais o inglês, como res
 |---|---|---|
 | `common` | Cabeçalho, rodapé, menu de idiomas, avisos, portão das páginas logadas, rótulos e erros de formulário, erros do Supabase, saudações | Todas |
 | `home` | Página inicial | `index.html` |
-| `guide` | As 6 fases e os 31 passos (título, tempo, custo, texto, checklist, como fazer, links, dica, texto alternativo da imagem) e a página do guia | `guide.html`, `index.html`, `journey.html`, `dashboard.html` |
+| `guide` | As 6 fases e os 31 passos (título, tempo, custo, texto, checklist, como fazer, links, dica, texto alternativo da imagem) e a página do guia | `guide.html`, `index.html`, `journey.html`, `dashboard.html`, `sitemap.html` |
 | `journey` | Minha jornada: caminho, painel do passo, "seus números" | `journey.html` |
 | `calculator` | Calculadora: campos, dicas, quadro de custos, veredito | `calculator.html` |
 | `authentication` | Entrar, criar conta, esqueci a senha, nova senha, Google | As 4 páginas de conta |
 | `account` | Painel e Meu perfil | `dashboard.html`, `profile.html` |
 | `legal` | Moldura das páginas legais e os resumos traduzidos | `privacy.html`, `terms.html` |
+| `contact` | Contato: formulário, assuntos, cartões ao lado | `contact.html` |
+| `sitemap` | Mapa do site: títulos das seções (as fases e etapas vêm de `guide`) | `sitemap.html` |
 
 A página declara os namespaces em `<html lang="en-IE" data-i18n-ns="common calculator">`. O validador confere se toda chave usada pela página ou pelo script dela está num namespace declarado. Módulos de `js/core/` só usam `common`, e `js/lib/` não usa textos (é puro: devolve códigos, e a página traduz).
 
@@ -139,6 +141,7 @@ Três chaves novas, todas descritas na Política de Privacidade (seção "Browse
 - **A marca** "ÉireHome Flow" e o "XP" (marcados com `translate="no"`).
 - **Páginas legais:** título, resumo ("The short version"), índice, quadro de ajuda e um aviso são traduzidos. O **texto integral** continua em inglês, dentro de `<div class="legal__body" lang="en-IE" data-i18n-source-only>`, e o aviso diz isso no idioma da pessoa. Motivo: é a versão que vale, e a política ainda tem itens em aberto (nome jurídico, endereço, escolhas marcadas com POLICY CHOICE). Traduzir o texto integral fica para depois de fechar esses itens.
 - **E-mails do Supabase** (confirmação e nova senha) continuam em inglês: o Supabase envia um modelo por projeto.
+- **O blog:** a seção da Home e os artigos (`blog/<slug>.html`) ficam em inglês em qualquer idioma, inclusive categorias, botões e rótulos, marcados com `lang="en-IE"` e `data-i18n-source-only`. Só o cabeçalho e o rodapé seguem o idioma. O texto fica em `content/blog/` e `js/lib/posts.js`, fora de `locales/`, e o `npm run check:posts` confere nele o estilo da casa (sem travessão, "≈" ou "…").
 - **Mensagens de erro desconhecidas do Supabase:** as comuns têm tradução (senha errada, e-mail não confirmado, conta existente, limite de tentativas, sessão expirada, rede). As outras aparecem em inglês para quem usa inglês e como "Algo deu errado" nos demais idiomas.
 
 ## 6. Glossário

@@ -1,0 +1,34 @@
+{
+  "meta": "Fale conosco | ÉireHome Flow",
+  "eyebrow": "Fale conosco",
+  "title": "Entre em contato",
+  "intro": "Dúvidas sobre o guia, a calculadora ou sua conta, um número que parece errado ou uma ideia para o site: lemos todas as mensagens.",
+  "form": {
+    "title": "Escreva para nós",
+    "topic": "Assunto",
+    "message": "Mensagem",
+    "note": "O botão abre seu app de e-mail com a mensagem pronta. Nada é enviado até você enviar por lá.",
+    "submit": "Abrir no meu app de e-mail",
+    "opened": "Seu app de e-mail deve estar aberto com a mensagem. Se nada abriu, escreva para eirehomeflow@gmail.com."
+  },
+  "topics": {
+    "guide": "Uma dúvida sobre o guia",
+    "calculator": "A calculadora",
+    "account": "Minha conta",
+    "correction": "Um número ou dado para corrigir",
+    "idea": "Uma ideia para o site",
+    "misc": "Outro assunto"
+  },
+  "email": {
+    "title": "Escreva direto para nós",
+    "reply": "Procuramos responder em até 14 dias. Pedidos sobre seus dados pessoais são respondidos em até um mês."
+  },
+  "before": {
+    "title": "Antes de escrever",
+    "items": [
+      "Não damos aconselhamento financeiro, de financiamento, jurídico ou fiscal personalizado. Para decidir, fale com um profissional qualificado.",
+      "Para apagar sua conta, use <a href=\"profile.html\">Meu perfil</a>, ou escreva para nós do e-mail da conta.",
+      "Achou um erro? Diga qual etapa ou artigo e, se tiver, a fonte."
+    ]
+  }
+}

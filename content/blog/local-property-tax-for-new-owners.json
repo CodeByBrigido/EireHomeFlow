@@ -1,0 +1,61 @@
+{
+  "alt": "A small house next to a tax form, a calculator and a calendar page",
+  "lead": "Local Property Tax is a yearly tax on homes in Ireland, collected by Revenue. As a new owner you will pay it, but when you start depends on the date you bought.",
+  "sections": [
+    {
+      "title": "When you become liable",
+      "body": [
+        "You pay LPT for a year if you own the home on 1 November of the year before. If you buy on 15 October 2026, you pay LPT for 2027. If you buy on 15 November 2026, the seller owned the home on 1 November, so the 2027 tax is theirs and yours starts in 2028.",
+        "Your solicitor checks that the seller's LPT is paid up to date, because unpaid LPT stays with the property."
+      ]
+    },
+    {
+      "title": "How the tax is worked out",
+      "body": [
+        "You value your own home, and the value places it in a band. For 2026 to 2030 the values are based on 1 November 2025. The bands were widened by 20%, so that price rises alone move fewer homes into a higher band.",
+        {
+          "head": [
+            "Value on 1 November 2025",
+            "LPT a year"
+          ],
+          "rows": [
+            [
+              "Up to €240,000",
+              "€95"
+            ],
+            [
+              "€240,001-315,000",
+              "€235"
+            ],
+            [
+              "Higher values",
+              "Rises with each band; see Revenue's table"
+            ]
+          ]
+        },
+        "Local authorities can raise or lower the basic rate by up to 15%, so the amount varies a little between counties."
+      ]
+    },
+    {
+      "title": "Valuing a new home",
+      "body": [
+        "If your home is newly built, ask Revenue how the valuation date applies to it. For any home, Revenue's <a href=\"https://www.revenue.ie/en/property/local-property-tax/index.aspx\">LPT guidance</a> helps you estimate a value from sales of similar homes."
+      ]
+    },
+    {
+      "title": "Paying it",
+      "body": [
+        [
+          "Register the property and file your return in Revenue's myAccount.",
+          "Choose how to pay: deduction from your salary or pension, direct debit, a single payment by card, or through a payment service provider.",
+          "Deduction from your salary spreads the tax evenly over the year, which many new owners find easiest."
+        ],
+        "My journey keeps this on your settling-in list at step 27.",
+        {
+          "tip": "Keep a note of how you reached your valuation, such as the sold prices of similar homes. Revenue can ask for it later."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 27 of My journey, Register for Local Property Tax, sits in the settling-in phase, next to the other first tasks in your new home."
+}

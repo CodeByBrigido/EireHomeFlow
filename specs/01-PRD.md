@@ -1,6 +1,6 @@
 # PRD: Product Requirements Document
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026 · Dono: Rodrigo
+Produto: ÉireHome Flow · Versão do documento: 1.7 · Última revisão: 29/09/2026 · Dono: Rodrigo
 
 ## 1. Visão
 
@@ -40,7 +40,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 
 ## 5. Escopo atual (v1)
 
-**Uma página por lugar:** todo clique que leva a outro lugar abre um `.html` próprio (Home, Guide, My journey, Calculator, Dashboard, My profile, Sign in, Create account, Forgot password, New password, Privacy Policy, Terms of Use). Cabeçalho e rodapé são compartilhados entre as páginas.
+**Uma página por lugar:** todo clique que leva a outro lugar abre um `.html` próprio (Home, Guide, My journey, Calculator, Dashboard, My profile, Sign in, Create account, Forgot password, New password, Contact us, Sitemap, Privacy Policy, Terms of Use e uma página por artigo do blog). Cabeçalho e rodapé são compartilhados entre as páginas; o rodapé leva a Contact us, Sitemap, Privacy Policy e Terms of Use.
 
 ### 5.1 Home
 - Hero com chamada, botões "Start/Resume my journey" e "Buying power calculator".
@@ -48,10 +48,17 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Três cartões de números: limite de 4×, entrada mínima de 10%, custos fora do empréstimo.
 - Cartões das 6 fases com barra de progresso, que levam à fase na jornada.
 - Convite para o guia completo.
+- Blog: um slideshow com 4 artigos e mais 3 ao lado, sorteados a cada visita, e os demais em `More articles`, em 2 colunas.
 
 ### 5.1.1 Guia completo (`guide.html`)
 - As 31 etapas com texto, checklist e dica, em acordeão por fase, legíveis sem conta e sem JavaScript.
 - Cada etapa tem o link "Open in my journey"; a etapa 1 também tem "Open the calculator", e a do Help to Buy tem passo a passo ("How to apply") e links para a Revenue.
+
+### 5.1.2 Blog (`blog/<slug>.html`)
+- 20 artigos sobre compra de imóvel na Irlanda: programas do governo (Help to Buy, First Home Scheme, Local Authority Home Loan), dinheiro (entrada, custos, taxas, seguros, alugar ou comprar), compra (AIP, lances, visitas, profissionais, imóvel novo ou usado), recém-chegados (permissão, renda do exterior, histórico de crédito), energia (BER e grants da SEAI) e mudança (troca de endereço, LPT, snag list).
+- Escritos como por profissionais do setor, com números de 2026 e links para as fontes oficiais.
+- Cada artigo tem imagem no topo (a mesma dos cartões da Home), categoria, tempo de leitura, cita o My journey no texto, termina com uma caixa que leva à etapa relacionada e mostra 3 artigos semelhantes.
+- O blog é todo em inglês (a seção da Home e as páginas dos artigos, com categorias, botões e rótulos), em qualquer idioma do site. Só o cabeçalho e o rodapé seguem o idioma escolhido.
 
 ### 5.2 My journey
 - 31 etapas em 6 fases: Preparation (6), Approval in Principle (5), Search & Bidding (5), Legal & Contracts (5), Keys in Hand (4), Settling In (6).
@@ -83,18 +90,28 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - **Páginas de conta:** `signin.html`, `signup.html`, `forgot-password.html` e `new-password.html`, com retorno para a página de origem (`?next=`).
 - **Avisos (toasts):** confirmação de e-mail ao voltar do link, link expirado, boas-vindas ao entrar, saída, perfil salvo e senha alterada.
 
-### 5.6 Páginas legais
+### 5.6 Páginas do rodapé
 - **Privacy Policy** (`privacy.html`) e **Terms of Use** (`terms.html`), com links no rodapé de todas as páginas, no cadastro (aceite ao criar a conta) e no perfil.
+
+### 5.6.1 Contato (`contact.html`)
+- Formulário com nome, e-mail, assunto (dúvida sobre o guia, calculadora, conta, correção, ideia, outro) e mensagem.
+- O botão abre o aplicativo de e-mail da pessoa com a mensagem pronta para eirehomeflow@gmail.com; nada é enviado nem guardado pelo site. Logado, nome e e-mail já vêm preenchidos.
+- Ao lado: o endereço de e-mail, o prazo de resposta e "Before you write" (o site não dá aconselhamento, como apagar a conta, como apontar um erro).
+
+### 5.6.2 Mapa do site (`sitemap.html` e `sitemap.xml`)
+- Página com todos os lugares do site: páginas principais, conta, páginas sobre o site, as 6 fases e as 31 etapas da jornada (cada uma abre a etapa) e os 20 artigos do blog por categoria (em inglês).
+- `sitemap.xml` para buscadores, com as páginas públicas e os artigos, gerado por `npm run posts`.
 
 ### 5.7 Persistência sem conta
 - Progresso e valores da calculadora ficam salvos no navegador.
 
 ### 5.8 Idiomas
-- O site inteiro (navegação, as 31 etapas, calculadora, contas, avisos, erros, textos para leitor de tela) está em inglês, português do Brasil, espanhol, francês, alemão e italiano.
+- O site inteiro (navegação, as 31 etapas, calculadora, contas, avisos, erros, textos para leitor de tela) está em inglês, português do Brasil, espanhol, francês, alemão, italiano, polonês, romeno e lituano.
 - Na primeira visita, o site segue o idioma do navegador; sem idioma disponível, abre em inglês.
 - Menu de idiomas no cabeçalho, com os nomes na própria língua. A escolha fica salva no navegador e nunca é trocada pela detecção.
 - Regras, valores e nomes oficiais irlandeses (Help to Buy, AIP, Revenue...) são os mesmos em todos os idiomas; os nomes oficiais ficam em inglês, com explicação.
 - Nas páginas legais, o resumo e a moldura são traduzidos; o texto integral continua em inglês, com aviso. Os e-mails de conta continuam em inglês.
+- O blog (a seção da Home e os artigos) é todo em inglês; nele, só o cabeçalho e o rodapé seguem o idioma.
 - Detalhes: `specs/08-Internationalisation.md`.
 
 ## 6. Requisitos funcionais
@@ -141,6 +158,13 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-38 | Regras iguais em todo idioma | Cada tradução tem os mesmos números do inglês (taxas, limites, preços, datas); a calculadora dá o mesmo resultado em todos os idiomas, só com o formato local (€209,851 ou 209.851 €) |
 | RF-39 | Troca de página sem inglês antes | Com os textos já copiados no navegador, a página aparece direto no idioma, sem mostrar o inglês primeiro |
 | RF-40 | Idioma incompleto não é anunciado | Idioma em rascunho não aparece no menu nem é detectado; só abre com `?lang=`, e o que falta aparece em inglês |
+| RF-41 | Blog na Home | Depois do convite ao guia: um slideshow com 4 artigos sorteados a cada visita (passa sozinho a cada 7 s; para ao apontar ou focar nele, com o botão Pause e com "reduzir movimento"), 3 artigos sorteados ao lado e os outros abaixo, em 2 colunas, 6 por vez com "Show more articles". Nenhum artigo aparece duas vezes |
+| RF-42 | Página de artigo | Cada artigo tem página própria (`blog/<slug>.html`), com imagem no topo, categoria, título, abertura, tempo de leitura, texto, a caixa "In My journey" com botão para a etapa relacionada e 3 "Similar articles" (mesma categoria primeiro) |
+| RF-43 | Blog em inglês | A seção do blog na Home e as páginas dos artigos ficam em inglês em qualquer idioma (`lang="en-IE"`), inclusive categorias, botões e rótulos; só o cabeçalho e o rodapé seguem o idioma escolhido |
+| RF-44 | Artigos levam ao My journey | Todo artigo cita o My journey no texto e aponta uma etapa; `npm run check:posts` recusa um artigo sem essa ligação, sem imagem ou com travessão |
+| RF-45 | Contato sem servidor | `contact.html` confere nome, e-mail e mensagem como os outros formulários e abre o aplicativo de e-mail com assunto "ÉireHome Flow: <assunto>" e o texto pronto; o site não envia nem guarda a mensagem |
+| RF-46 | Rodapé completo | O rodapé de todas as páginas, artigos inclusive, tem Contact us, Sitemap, Privacy Policy e Terms of Use |
+| RF-47 | Mapa do site | `sitemap.html` lista todas as páginas, as 31 etapas (cada link abre a etapa na jornada) e os 20 artigos; `sitemap.xml` lista as páginas públicas e os artigos, sem as páginas de conta, e `npm run check:posts` falha se estiver desatualizado |
 
 ## 7. Requisitos não funcionais
 
@@ -148,7 +172,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - **Responsividade:** de 320px a telas largas, com breakpoints em 960px, 720px e 480px.
 - **Performance:** página inicial abaixo de 500 KB; sem frameworks; fontes locais.
 - **Privacidade:** nenhum rastreador de terceiros; dados da calculadora nunca saem do navegador; dados de conta hospedados na Irlanda (Supabase eu-west-1).
-- **Internacionalização:** todo texto novo nasce em inglês em `docs/locales/en/` e é traduzido nos idiomas completos no mesmo trabalho; nenhuma tradução automática no site; cada página baixa só os textos do idioma dela (e o inglês de reserva).
+- **Internacionalização:** todo texto novo nasce em inglês em `docs/locales/en/` e é traduzido nos idiomas completos no mesmo trabalho (exceção: o blog, só em inglês); nenhuma tradução automática no site; cada página baixa só os textos do idioma dela (e o inglês de reserva).
 - **Confiabilidade do conteúdo:** regras e valores revisados periodicamente, com data de revisão visível (pendente).
 - **Hospedagem:** site estático (GitHub Pages), sem servidor próprio.
 - **Navegadores:** versões atuais de Chrome, Edge, Firefox e Safari (desktop e celular).
@@ -160,6 +184,8 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Pagamentos, assinaturas ou área paga.
 - Aplicativo nativo (iOS/Android).
 - Texto integral das páginas legais e e-mails de conta em outros idiomas além do inglês (por enquanto).
+- Tradução do blog: fica em inglês.
+- Envio do formulário de contato pelo próprio site: por enquanto ele abre o aplicativo de e-mail da pessoa.
 - Login com Apple e autenticação em dois fatores.
 - Compartilhamento de progresso entre duas contas (casal usa uma conta só por enquanto).
 
@@ -186,8 +212,9 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 ## 10. Questões em aberto
 
 1. Ferramenta de analytics e metas numéricas da seção 4.
-2. Domínio próprio (ex.: eirehomeflow.ie) e e-mail no domínio.
+2. Domínio próprio (ex.: eirehomeflow.ie) e e-mail no domínio (hoje o contato é eirehomeflow@gmail.com); envio do formulário de contato pelo site, sem depender do aplicativo de e-mail da pessoa.
 3. Política de privacidade e termos já existem; faltam o nome legal e o endereço do responsável pelo site (marcados como TODO nas páginas), a revisão das escolhas marcadas como POLICY CHOICE e uma página "About".
 4. Itens abertos da auditoria (`AUDITORIA.md`): A8 e M1 a M22, priorizados no Implementation Plan.
 5. Conteúdo específico para imigrantes (residência, renda no exterior, histórico de crédito).
-6. Revisão das traduções por falantes nativos; tradução do texto integral das páginas legais depois de fechar os itens em aberto delas; e-mails de conta em outros idiomas.
+6. Números dos artigos do blog (Help to Buy, First Home Scheme, LAHL, grants da SEAI, LPT): revisar a cada Budget e quando os programas mudarem.
+7. Revisão das traduções por falantes nativos; tradução do texto integral das páginas legais depois de fechar os itens em aberto delas; e-mails de conta em outros idiomas.

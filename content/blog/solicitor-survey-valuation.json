@@ -1,0 +1,56 @@
+{
+  "alt": "Three round badges with a document, a ruler and a euro sign above a small house",
+  "lead": "Between Sale Agreed and the keys, three professionals check the purchase for you. Each looks at something different, and your lender relies on two of them.",
+  "sections": [
+    {
+      "title": "The solicitor: the legal side",
+      "body": [
+        "Your solicitor checks that the seller owns the property and can sell it, that it has the planning permissions it needs, and that nothing unusual is attached to it. They explain the contract to you, handle the money and register you as the owner.",
+        [
+          "Typical fee: €2,000-3,000 plus VAT, with outlays such as searches and registration on top.",
+          "Instruct them as soon as you are Sale Agreed, because the seller's solicitor sends the contract to them.",
+          "Your lender relies on your solicitor's undertaking to register its mortgage on the property."
+        ]
+      ]
+    },
+    {
+      "title": "The surveyor: the condition",
+      "body": [
+        "A structural survey is your own check on the building: the roof, walls, damp, windows, drainage, heating and electrics. The lender does not require it, but it is your best protection against expensive surprises.",
+        [
+          "Typical fee: about €400, more for larger or older homes.",
+          "Choose an engineer or surveyor registered with Engineers Ireland or the SCSI.",
+          "Book it before you sign the contract, so you can renegotiate or walk away."
+        ]
+      ]
+    },
+    {
+      "title": "The valuer: the price",
+      "body": [
+        "The bank valuation protects the lender. A valuer from the lender's panel confirms that the home is worth at least the price, so the loan is secured. It does not check the condition of the building.",
+        [
+          "Typical fee: about €150.",
+          "If the valuation comes in below the price, the lender lends on the lower figure. You can renegotiate with the seller or make up the difference yourself."
+        ]
+      ]
+    },
+    {
+      "title": "The order of events",
+      "body": [
+        {
+          "steps": [
+            "Once you are Sale Agreed, instruct the solicitor and book the survey.",
+            "Ask your lender for loan approval. It orders the valuation.",
+            "Read the survey report and renegotiate if it finds problems.",
+            "Sign the contract when the legal checks, the survey and the loan offer are all in place."
+          ]
+        },
+        "My journey follows the same order in steps 17 to 19, with what to ask each professional.",
+        {
+          "tip": "Ask each professional for a written quote before they start, and whether it includes VAT."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 17 of My journey, Hire a solicitor, starts the legal phase, and the next two steps cover the survey and the valuation."
+}

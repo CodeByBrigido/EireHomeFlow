@@ -1,13 +1,14 @@
 // The language menu in the header. It offers the complete languages in js/lib/locales.js,
 // each in its own name; choosing one saves it in this browser and reloads the page in it.
-import { esc } from "../lib/format.js?v=20260929";
-import { offeredLocales } from "../lib/locales.js?v=20260929";
-import { locale, setLocale, tag } from "./i18n.js?v=20260929";
+import { esc } from "../lib/format.js?v=20260930";
+import { offeredLocales } from "../lib/locales.js?v=20260930";
+import { locale, setLocale, tag } from "./i18n.js?v=20260930";
 
 // Each language's name in the language of the page as well ("Deutsch", German), where the browser knows it.
+// Every row shows it, even when it matches the language's own name ("Italiano", italiano), so no row looks untranslated.
 function nameHere(code) {
   try {
-    return new Intl.DisplayNames([tag()], { type: "language" }).of(code) || "";
+    return new Intl.DisplayNames([tag()], { type: "language", fallback: "none" }).of(code) || "";
   } catch (err) {
     return "";
   }
@@ -19,7 +20,7 @@ export function renderLanguages() {
   list.innerHTML = offeredLocales().map((l) => {
     const current = l.code === locale();
     const here = current ? "" : nameHere(l.code);
-    const second = here && !l.name.toLowerCase().startsWith(here.toLowerCase()) ? `<span class="lang__here">${esc(here)}</span>` : "";
+    const second = here ? `<span class="lang__here">${esc(here)}</span>` : "";
     return `<button type="button" class="lang__option" data-action="setLocale" data-locale="${l.code}"${current ? ' aria-current="true"' : ""}>
         <span class="lang__badge" aria-hidden="true">${l.code.toUpperCase()}</span>
         <span class="lang__names"><span class="lang__name" lang="${l.tag}">${esc(l.name)}</span>${second}</span>

@@ -1,0 +1,52 @@
+{
+  "alt": "A passport and a house key on a map of Ireland, with a small plane above",
+  "lead": "Many people who move to Ireland buy a home here within a few years. Lenders welcome these applications, but they ask for a few things that people who grew up here do not need to show.",
+  "sections": [
+    {
+      "title": "Your permission to live here",
+      "body": [
+        "Citizens of the EU, the EEA, the UK and Switzerland apply on the same terms as Irish citizens. Other nationalities need permission to live and work here, and lenders look at what kind it is and how long it lasts.",
+        [
+          "Stamp 4 and long-term residence are the easiest for lenders to accept.",
+          "Some lenders accept Stamp 1 with a Critical Skills or General Employment Permit, often with conditions on your time in Ireland or in your job.",
+          "Bring your Irish Residence Permit, your passport and your employment permit, and check the expiry dates."
+        ],
+        "Policies differ between lenders and change over time, so ask each one, or a broker, before you apply."
+      ]
+    },
+    {
+      "title": "Your job and income",
+      "body": [
+        [
+          "Most lenders want you past probation in your current job, and some ask for 12 months or more in Ireland.",
+          "A salary paid in euro by an employer in Ireland is the simplest income to assess.",
+          "Income earned abroad or paid in another currency is often left out, or counted at a reduced amount to allow for exchange rates.",
+          "Self-employed people usually need two to three years of accounts filed in Ireland."
+        ]
+      ]
+    },
+    {
+      "title": "Your credit history",
+      "body": [
+        "Your credit record from another country is not visible to Irish lenders, because the Central Credit Register only holds loans taken out in Ireland. A short record here means lenders read your bank statements more closely.",
+        [
+          "Open an Irish current account early and have your salary paid into it.",
+          "Pay rent and bills from that account, on time, by standing order or direct debit.",
+          "A small credit card, cleared in full every month, starts a record.",
+          "If you have loans in your home country, keep their statements. Some lenders ask for them."
+        ]
+      ]
+    },
+    {
+      "title": "Your deposit",
+      "body": [
+        "Savings brought from abroad count, but the lender will want to see where they came from. Keep statements that show the money building up in your old account and the transfer to Ireland. A gift from family abroad needs a gift letter, like any other gift.",
+        "My journey lists the documents lenders ask for at steps 8 to 10, and you can add these to the same pile.",
+        {
+          "tip": "Help to Buy only counts income tax paid in Ireland, so a recent arrival may get a smaller refund. Revenue shows the figure when you apply."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 7 of My journey, Choose a bank direct or a broker, helps you pick lenders. A broker who often works with newcomers can save you time."
+}

@@ -1,0 +1,88 @@
+{
+  "alt": "A clipboard with four ticked boxes beside a small green house and a gold coin",
+  "lead": "Four State supports can make a first home more affordable in Ireland. Each has its own rules, and some can be combined. This checker shows who each one is for, so you know which to raise with a lender or broker.",
+  "sections": [
+    {
+      "title": "Start with three questions",
+      "body": [
+        "Most of the answer depends on three facts. Write them down before you read on.",
+        [
+          "<strong>Are you a first-time buyer?</strong> You have never owned a home, alone or jointly, in Ireland or abroad. Some schemes also accept a Fresh Start, for example after a separation.",
+          "<strong>Is the home new?</strong> Help to Buy and the First Home Scheme only apply to new builds and self-builds.",
+          "<strong>What is your household income?</strong> The Local Authority Home Loan has income limits, and affordable purchase schemes are means tested."
+        ],
+        "If you have saved your figures in the calculator, My journey already checks the Help to Buy rules against them."
+      ]
+    },
+    {
+      "title": "Help to Buy",
+      "body": [
+        "A refund of the income tax and DIRT you paid in Ireland over the last four years, up to €30,000 or 10% of the price, whichever is lower. The home must be new or self-built and cost no more than €500,000, and your mortgage must be at least 70% of the price. At the time of writing (September 2026) the scheme runs until the end of 2029.",
+        "The refund counts towards your deposit, so it lowers the cash you need to save."
+      ]
+    },
+    {
+      "title": "First Home Scheme",
+      "body": [
+        "The State and the participating banks fund part of the price of a new home, and in return take a share of it. The share can be up to 30% of the price, or up to 20% if you also use Help to Buy. There is no charge for the first five years, and you can buy the share back at any time.",
+        "You need a mortgage from a participating lender, and each local authority has a price ceiling that is reviewed every six months. Check the current table on <a href=\"https://www.firsthomescheme.ie\">firsthomescheme.ie</a>."
+      ]
+    },
+    {
+      "title": "Local Authority Home Loan",
+      "body": [
+        "A mortgage from your local authority for first-time buyers and Fresh Start applicants who could not get enough from two banks. From 1 April 2026 the income limit is €80,000 for one applicant and €85,000 for a joint application. The rate is fixed for the whole term: 4.00% for up to 25 years and 4.05% for 26 to 30 years.",
+        "It covers second-hand homes as well as new ones, up to a property value between €310,000 and €415,000 depending on the county."
+      ]
+    },
+    {
+      "title": "Affordable purchase",
+      "body": [
+        "Some local authorities and the Land Development Agency sell new homes below market price to buyers within income limits. The discount is held as a share of the home, as with the First Home Scheme. Homes are released in batches, so register your interest with your council and check <a href=\"https://www.affordablehomes.ie\">affordablehomes.ie</a>."
+      ]
+    },
+    {
+      "title": "How they combine",
+      "body": [
+        {
+          "head": [
+            "Scheme",
+            "New build",
+            "Second-hand",
+            "Can combine with"
+          ],
+          "rows": [
+            [
+              "Help to Buy",
+              "Yes",
+              "No",
+              "First Home Scheme, Local Authority Home Loan, affordable purchase"
+            ],
+            [
+              "First Home Scheme",
+              "Yes",
+              "No",
+              "Help to Buy, with a share of up to 20%"
+            ],
+            [
+              "Local Authority Home Loan",
+              "Yes",
+              "Yes",
+              "Help to Buy on a new home, affordable purchase"
+            ],
+            [
+              "Affordable purchase",
+              "Yes",
+              "No",
+              "Help to Buy, Local Authority Home Loan"
+            ]
+          ]
+        },
+        {
+          "tip": "The rules can change with each Budget. Before you rely on a scheme, confirm it on the official site and with your lender or broker."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 5 of My journey, Check Help to Buy eligibility, tests the rules against your saved figures and shows the most you could claim."
+}

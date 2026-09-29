@@ -1,0 +1,46 @@
+{
+  "alt": "A green shield with a white tick in front of a small house under a gold umbrella",
+  "lead": "Two policies must be in place before your lender releases the loan. You can buy both from any provider, and comparing quotes often saves money every month.",
+  "sections": [
+    {
+      "title": "Mortgage protection",
+      "body": [
+        "Mortgage protection is life insurance that pays off the mortgage if a borrower dies during the term. Irish law requires it for most home loans. The cover falls as the balance falls, which keeps it cheaper than ordinary life cover.",
+        [
+          "There are exemptions, for example if you are over 50 or cannot get cover because of your health. Your lender will tell you what it needs.",
+          "The premium depends on your age, health, smoking and the size of the loan. Joint cover for two borrowers usually costs less than two separate policies.",
+          "Answer the health questions fully. A claim can be refused if something was left out."
+        ],
+        "Serious illness cover is an optional extra that pays a lump sum if you are diagnosed with certain illnesses. It costs more, so compare it separately."
+      ]
+    },
+    {
+      "title": "Home insurance",
+      "body": [
+        "Your lender requires buildings insurance from the day the loan is drawn down, with the lender's interest noted on the policy. It must cover the cost of rebuilding the home, which is often different from the price you paid.",
+        [
+          "The rebuild cost includes demolition, professional fees and building to current regulations. The Society of Chartered Surveyors Ireland publishes a guide to help you estimate it.",
+          "Contents cover is separate and optional, but worth adding once you furnish.",
+          "In apartments, the buildings are usually insured through a block policy paid from the management fee. Check what it includes."
+        ]
+      ]
+    },
+    {
+      "title": "Buying the policies",
+      "body": [
+        {
+          "steps": [
+            "Ask for quotes as soon as you are Sale Agreed. Medical questions for mortgage protection can take weeks.",
+            "Compare at least three quotes, through a broker or directly. Your bank's policy is rarely the only option.",
+            "Send the policy documents to your solicitor and your lender before the closing date."
+          ]
+        },
+        "My journey keeps both policies on your list at step 20, before the loan can be drawn down.",
+        {
+          "tip": "Non-smoker rates usually need 12 months without smoking. If you are planning to quit, it can lower the premium for the whole term."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 20 of My journey, Take out mortgage protection and home insurance, lists what your lender will ask for before drawdown."
+}

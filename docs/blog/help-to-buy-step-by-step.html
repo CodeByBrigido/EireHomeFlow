@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-IE" data-i18n-ns="common">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Written by npm run posts from content/blog/help-to-buy-step-by-step.json and js/lib/posts.js: edit those, then run npm run posts -->
+  <base href="../">
+  <script src="js/i18n-boot.js?v=20260930"></script>
+  <title lang="en-IE" data-i18n-source-only>Help to Buy, step by step: from myAccount to the refund</title>
+  <meta name="description" content="How the refund of up to €30,000 on a new home works, which tax years count, and the order of the application, the claim and the payment." data-i18n-source-only>
+  <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20260930">
+  <script type="module" src="js/pages/post.js?v=20260930"></script>
+</head>
+<body data-page="post" data-post="help-to-buy-step-by-step">
+<div class="page">
+
+  <!-- include partials/header.html: edit that file, then run npm run partials -->
+  <header class="site-header" data-auth-pending>
+    <div class="site-header__inner">
+      <a class="brand" href="index.html" translate="no">ÉireHome <span class="brand__accent">Flow</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-aria-label="common:nav.label">
+        <a class="nav__link" href="index.html" data-page="home" data-i18n="common:nav.home">Home</a>
+        <a class="nav__link" href="guide.html" data-page="guide" data-i18n="common:nav.guide">Guide</a>
+        <a class="nav__link" href="journey.html" data-page="journey" data-i18n="common:nav.journey">My journey</a>
+        <a class="nav__link" href="calculator.html" data-page="calculator" data-i18n="common:nav.calculator">Calculator</a>
+      </nav>
+      <div class="site-header__account">
+        <div class="lang">
+          <button type="button" class="lang__button" id="lang-button" data-action="languageMenu" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English. Change language" data-i18n-aria-label="common:language.button"><svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="lang__code" data-i18n="common:language.code">EN</span></button>
+          <div class="menu lang__menu" id="lang-menu" hidden>
+            <p class="menu__label" data-i18n="common:language.title">Language</p>
+            <div class="lang__list" id="lang-list"></div>
+          </div>
+        </div>
+        <a class="btn-signin" id="signin-link" href="signin.html" data-i18n="common:header.signIn">Sign in</a>
+        <div class="account-nav" id="account-nav" hidden>
+          <button type="button" class="avatar" id="avatar" data-action="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu" data-i18n-aria-label="common:account.menu"><span data-bind="initials"></span></button>
+          <div class="menu" id="account-menu" hidden>
+            <p class="menu__who"><span class="menu__name" data-bind="userName"></span><span class="menu__email" data-bind="userEmail"></span></p>
+            <a class="menu__item" href="dashboard.html" data-i18n="common:account.dashboard">Dashboard</a>
+            <a class="menu__item" href="profile.html" data-i18n="common:account.profile">My profile</a>
+            <button type="button" class="menu__item menu__item--danger" data-action="signOut" data-i18n="common:account.signOut">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /include -->
+
+  <main class="main main--wide" lang="en-IE" data-i18n-source-only>
+    <article class="post">
+      <header class="post__head">
+        <a class="post__back" href="index.html#blog">← All articles</a>
+        <p class="post__category">Schemes</p>
+        <h1 class="post__title">Help to Buy, step by step: from myAccount to the refund</h1>
+        <p class="post__lead">Help to Buy refunds income tax you have already paid, to help first-time buyers with the deposit on a new home. The money arrives at the end of a two-stage process, and the order matters.</p>
+        <p class="post__meta">3 min read</p>
+      </header>
+      <figure class="post__figure">
+        <img src="img/blog/help-to-buy-step-by-step.svg" alt="A laptop showing a form with a euro sign, and a gold coin moving along a green arrow to a new house" width="800" height="500">
+      </figure>
+      <div class="post__body">
+        <h2>Who qualifies</h2>
+        <ul class="post__list">
+          <li>You are a first-time buyer: you have never bought or built a home, alone or with anyone else.</li>
+          <li>The home is a new build bought from a developer, or a home you are building yourself, and you will live in it.</li>
+          <li>The price, or the valuation of a self-build, is €500,000 or less.</li>
+          <li>Your mortgage is at least 70% of the price, from a qualifying lender.</li>
+          <li>You paid income tax, and possibly DIRT, in Ireland in the four years before you apply.</li>
+        </ul>
+        <h2>How much you can get</h2>
+        <p>The refund is the lowest of three figures: €30,000, 10% of the price, and the income tax and DIRT you paid over the previous four years. On a €350,000 home the ceiling is €30,000. On a €280,000 home it is €28,000, provided you paid at least that much tax.</p>
+        <p>A joint application adds up the tax paid by both buyers. Once you save your figures in the calculator, My journey shows the most you could get at your target price.</p>
+        <h2>The two stages</h2>
+        <ol class="post__steps">
+          <li><strong>Application.</strong> In Revenue's myAccount, open Help to Buy under Property and Land Services and apply. Revenue shows the most you could claim and gives you an application number, which your lender needs for the mortgage approval.</li>
+          <li><strong>Claim.</strong> Once you have signed the contract and have a loan offer, return to Help to Buy and make the claim, with the contract and the offer. Your solicitor verifies the details.</li>
+          <li><strong>Payment.</strong> Revenue pays the refund to the developer, or to your lender for a self-build. It does not come to you directly.</li>
+        </ol>
+        <p>Before you apply, make sure an income tax return is filed for each of the four years. PAYE workers file theirs in myAccount and self-employed people in ROS. A year without a return counts as nothing.</p>
+        <h2>Common delays</h2>
+        <ul class="post__list">
+          <li>The application has an expiry date. Apply when you are close to buying, and claim before it passes.</li>
+          <li>A tax year is missing because a return was never filed.</li>
+          <li>The developer is not a qualifying contractor. Ask before you pay a booking deposit.</li>
+          <li>The mortgage falls below 70% of the price because more savings went in. Borrow at least 70% and keep the rest as a buffer.</li>
+        </ul>
+        <div class="post__tip">
+          <p class="label">Worth knowing</p>
+          <p>You do not repay Help to Buy, as long as the home stays your main residence for five years. If you sell or move out sooner, part of it may be clawed back.</p>
+        </div>
+      </div>
+      <aside class="post-journey">
+        <p class="label">In My journey</p>
+        <p class="post-journey__text">Step 5 of My journey, Check Help to Buy eligibility, tests the rules against your saved figures and shows the most you could claim.</p>
+        <a class="btn post-journey__btn" href="journey.html#step-preparation-4">Open this step in My journey</a>
+      </aside>
+    </article>
+
+    <section class="similar" aria-labelledby="similar-title">
+      <h2 class="similar__title" id="similar-title">Similar articles</h2>
+      <ul class="post-grid">
+        <li class="post-card post-card--column">
+          <a class="post-card__link" href="blog/government-schemes-checker.html">
+            <img class="post-card__image" src="img/blog/government-schemes-checker.svg" alt="" width="800" height="500" loading="lazy">
+            <span class="post-card__body">
+              <span class="post-card__category">Schemes</span>
+              <span class="post-card__title">Which government schemes can you use? A checker for first-time buyers</span>
+            </span>
+          </a>
+        </li>
+        <li class="post-card post-card--column">
+          <a class="post-card__link" href="blog/first-home-scheme-explained.html">
+            <img class="post-card__image" src="img/blog/first-home-scheme-explained.svg" alt="" width="800" height="500" loading="lazy">
+            <span class="post-card__body">
+              <span class="post-card__category">Schemes</span>
+              <span class="post-card__title">First Home Scheme: how the shared equity works</span>
+            </span>
+          </a>
+        </li>
+        <li class="post-card post-card--column">
+          <a class="post-card__link" href="blog/local-authority-home-loan.html">
+            <img class="post-card__image" src="img/blog/local-authority-home-loan.svg" alt="" width="800" height="500" loading="lazy">
+            <span class="post-card__body">
+              <span class="post-card__category">Schemes</span>
+              <span class="post-card__title">Local Authority Home Loan: a mortgage from your council</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- include partials/footer.html: edit that file, then run npm run partials -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span class="site-footer__brand"><span translate="no">© 2026 ÉireHome Flow</span>, <span data-i18n="common:footer.rights">All rights reserved.</span></span>
+      <span data-i18n="common:footer.disclaimer">Educational content. Not regulated financial advice.</span>
+      <nav class="site-footer__links" aria-label="About this site" data-i18n-aria-label="common:footer.legal">
+        <a href="contact.html" data-i18n="common:footer.contact">Contact us</a>
+        <a href="sitemap.html" data-i18n="common:footer.sitemap">Sitemap</a>
+        <a href="privacy.html" data-i18n="common:footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="common:footer.terms">Terms of Use</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Short notices: email confirmed, signed in or out, profile saved -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast__icon" aria-hidden="true">✓</span>
+    <div class="toast__body">
+      <p class="toast__text" id="toast-text"></p>
+      <a class="toast__action" id="toast-action" href="journey.html" hidden></a>
+    </div>
+    <button type="button" class="toast__close" data-action="closeToast" aria-label="Dismiss" data-i18n-aria-label="common:toast.dismiss">×</button>
+  </div>
+  <!-- /include -->
+
+</div>
+</body>
+</html>
