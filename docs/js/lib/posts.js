@@ -3,7 +3,7 @@
 // the note on My journey) is in content/blog/<slug>.json, and npm run posts writes blog/<slug>.html
 // from both. step is the My journey step the article leads to; tags decide the similar articles.
 // See README.md and specs/08-Internationalisation.md.
-import { esc } from "./format.js?v=20260929";
+import { esc } from "./format.js?v=20260930";
 
 export const CATEGORY_NAMES = { schemes: "Schemes", money: "Money", buying: "Buying", newcomers: "Newcomers", energy: "Energy", moving: "Moving in" };
 export const CATEGORIES = Object.keys(CATEGORY_NAMES);

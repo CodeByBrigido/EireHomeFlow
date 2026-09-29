@@ -1,12 +1,12 @@
 // Contact us: the form writes the email in the reader's own email app, addressed to us.
 // Nothing is sent from the site and nothing is stored. Someone signed in finds their name
 // and email already filled in.
-import { mailtoLink } from "../lib/contact.js?v=20260929";
-import { userName } from "../lib/people.js?v=20260929";
-import { Account } from "../core/account.js?v=20260929";
-import { startPage } from "../core/app.js?v=20260929";
-import { checkForm, formValues, sayInForm, watchForm } from "../core/forms.js?v=20260929";
-import { t } from "../core/i18n.js?v=20260929";
+import { mailtoLink } from "../lib/contact.js?v=20260930";
+import { userName } from "../lib/people.js?v=20260930";
+import { Account } from "../core/account.js?v=20260930";
+import { startPage } from "../core/app.js?v=20260930";
+import { checkForm, formValues, sayInForm, watchForm } from "../core/forms.js?v=20260930";
+import { t } from "../core/i18n.js?v=20260930";
 
 function initPage() {
   const form = document.getElementById("contact-form");

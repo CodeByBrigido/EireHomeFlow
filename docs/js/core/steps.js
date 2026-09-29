@@ -1,10 +1,10 @@
 // The step list, read from guide.html (the single source of the steps' structure) and shown
 // in the page's language (the texts are in locales/<language>/guide.json).
 // PHASES and steps are live exports: they fill in once loadSteps() has run.
-import { esc } from "../lib/format.js?v=20260929";
-import { progress } from "../lib/progress.js?v=20260929";
-import { ready, t, translate } from "./i18n.js?v=20260929";
-import { state } from "./state.js?v=20260929";
+import { esc } from "../lib/format.js?v=20260930";
+import { progress } from "../lib/progress.js?v=20260930";
+import { ready, t, translate } from "./i18n.js?v=20260930";
+import { state } from "./state.js?v=20260930";
 
 export let PHASES = [];
 export let steps = [];

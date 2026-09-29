@@ -70,7 +70,7 @@ Os títulos acima são os do inglês; cada idioma tem os seus (ex.: "Minha jorna
 - **Até 880px, o cabeçalho tem 2 linhas, em qualquer idioma:** a marca à esquerda e o botão de idioma com "Sign in" (ou o círculo) à direita na primeira; Home, Guide, My journey e Calculator na segunda. Por isso esses botões ficam fora do `<nav>`, num `.site-header__account` próprio. Abaixo de 400px o botão de idioma mostra só o globo. Os rótulos do menu são curtos em todos os idiomas ("Jornada", "Parcours", "Percorso") para caberem em 320px.
 
 ### 4.2 Rodapé e avisos (`partials/footer.html`)
-- Rodapé areia com "ÉireHome Flow", "Educational content. Not regulated financial advice." e os links **Contact us**, **Sitemap**, **Privacy Policy** e **Terms of Use**, num `<nav>` com `aria-label` "About this site".
+- Rodapé areia com "© 2026 ÉireHome Flow, All rights reserved." (a marca e o ano fixos, "All rights reserved." traduzido), "Educational content. Not regulated financial advice." e os links **Contact us**, **Sitemap**, **Privacy Policy** e **Terms of Use**, num `<nav>` com `aria-label` "About this site".
 - **Aviso (toast):** caixa no rodapé da tela, verde (sucesso) ou vermelha (erro), com ícone, texto, botão de ação opcional e "×". Some sozinho em 7 segundos, exceto os avisos marcados como fixos.
 
 | Situação | Texto | Tipo |

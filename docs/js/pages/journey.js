@@ -1,14 +1,14 @@
 // My journey: the step path, the step panel and the progress sidebar.
 // Links can open a step (journey.html#step-aip-0) or jump to a phase (journey.html#phase-aip).
-import { calc, HTB } from "../lib/calculator.js?v=20260929";
-import { esc } from "../lib/format.js?v=20260929";
-import { Account } from "../core/account.js?v=20260929";
-import { startPage } from "../core/app.js?v=20260929";
-import { bind } from "../core/dom.js?v=20260929";
-import { money, number, percent, t } from "../core/i18n.js?v=20260929";
-import { setState, state } from "../core/state.js?v=20260929";
-import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260929";
-import { setDone } from "../core/sync.js?v=20260929";
+import { calc, HTB } from "../lib/calculator.js?v=20260930";
+import { esc } from "../lib/format.js?v=20260930";
+import { Account } from "../core/account.js?v=20260930";
+import { startPage } from "../core/app.js?v=20260930";
+import { bind } from "../core/dom.js?v=20260930";
+import { money, number, percent, t } from "../core/i18n.js?v=20260930";
+import { setState, state } from "../core/state.js?v=20260930";
+import { currentProgress, PHASES, stepLink, steps } from "../core/steps.js?v=20260930";
+import { setDone } from "../core/sync.js?v=20260930";
 
 const WAVE = [0, 72, 108, 72, 0, -72, -108, -72];
 const RING = 2 * Math.PI * 43;
