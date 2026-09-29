@@ -1,7 +1,8 @@
 // Supabase Edge Function "contact": receives the Contact us form (docs/contact.html), emails the
 // message to us through Resend, with Reply-To set to the sender, and keeps a copy in the table
 // public.contact_messages. Setup (table, deploy, the RESEND_API_KEY secret): specs/SETUP-CONTAS.md,
-// section 8. Deploy with "Verify JWT" switched off: the site calls it with the publishable key.
+// section 8. Deploy it under the name "contact": the site calls /functions/v1/contact with the publishable key
+// in the apikey header.
 //
 // Plain JavaScript on purpose: the same file is pasted into the dashboard editor (index.ts) and
 // tested in Node (tests/contact-function.test.js), where Deno does not exist and nothing is served.

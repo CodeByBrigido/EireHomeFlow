@@ -162,15 +162,16 @@ create index contact_messages_ip_hash_created_at on public.contact_messages (ip_
 **c) Guardar a chave do Resend no Supabase.** Em **Edge Functions → Secrets**, adicione o nome `RESEND_API_KEY` com a chave do passo a). Essa chave fica só no painel do Supabase: **nunca** a coloque em `docs/js/config.js` nem em nenhum arquivo do repositório.
 
 **d) Criar a função.** Em **Edge Functions → Deploy a new function → Via Editor**:
-1. Dê o nome `contact` (exatamente assim: o site chama `/functions/v1/contact`).
-2. Apague o exemplo do `index.ts` e cole o conteúdo inteiro de `supabase/functions/contact/index.js`.
+1. Apague o exemplo do `index.ts` e cole o conteúdo inteiro de `supabase/functions/contact/index.js`.
+2. **Troque o nome da função para `contact`** antes de publicar. O campo do nome fica embaixo do editor, ao lado do botão **Deploy function**, e já vem com um nome sorteado (como `clever-handler`). O site chama `/functions/v1/contact`, e o nome não muda depois de publicado: se sair com outro nome, publique de novo como `contact` e apague a outra (na página dela, **Details → Delete function**).
 3. Clique em **Deploy function**.
-4. Na página da função, em **Details**, desligue **Enforce JWT Verification** (Verify JWT) e salve. O site chama a função com a chave publicável, que não é um JWT; com a verificação ligada, toda mensagem volta com erro 401.
+4. A verificação de JWT pode ficar como está: o site manda a chave publicável no header `apikey`, e ela chega à função (conferido em 29/09/2026). Se um dia as mensagens voltarem com erro 401 antes de chegar à função, desligue a verificação de JWT na página da função, em **Details**.
 
 **e) Testar.** Abra `contact.html` no site publicado (ou em `http://localhost:8000/`), preencha e clique em **Send message**. Deve aparecer "Thank you. Your message has been sent..." e, em até um minuto, chegar um e-mail "Contact form: ..." de `onboarding@resend.dev`. Se ele cair no spam, marque como "Não é spam". Em **Table Editor → contact_messages**, a mensagem aparece com `emailed = true`.
 
 **Se der erro:** em **Edge Functions → contact → Logs**, a função diz o que falhou:
-- `401` antes de chegar na função: a verificação de JWT continua ligada (passo d.4);
+- `404` "Requested function was not found": a função não se chama `contact` (passo d.2);
+- `401` antes de chegar na função: desligue a verificação de JWT (passo d.4);
 - "the RESEND_API_KEY secret is not set": falta o passo c;
 - Resend `403` ("You can only send testing emails to your own email address"): a conta do Resend não foi criada com eirehomeflow@gmail.com.
 
