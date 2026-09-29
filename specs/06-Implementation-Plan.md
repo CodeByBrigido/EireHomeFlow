@@ -151,7 +151,7 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] Definir o tamanho mínimo de senha = 8
 - [ ] Teste completo em `http://localhost:8000/`: `signup.html` → e-mail → confirmação (aviso na Home) → concluir a etapa de conta → fase 2 destrava → outro navegador mostra o mesmo progresso → menu da conta → Dashboard → Perfil (mudar o nome) → Sign out → `forgot-password.html` → e-mail → `new-password.html`
 
-- [ ] Formulário de contato: conta no Resend com eirehomeflow@gmail.com, tabela `contact_messages`, segredo `RESEND_API_KEY` e a função `contact` com Verify JWT desligado (`SETUP-CONTAS.md`, seção 8); testar uma mensagem de ponta a ponta
+- [x] Formulário de contato: conta no Resend com eirehomeflow@gmail.com, tabela `contact_messages`, segredo `RESEND_API_KEY` e a função `contact` (`SETUP-CONTAS.md`, seção 8). Testado de ponta a ponta em 29/09/2026: o e-mail chegou na caixa de entrada, com Reply-To de quem escreveu
 
 **Pronto quando:** todos os passos do teste passam com uma conta real.
 
