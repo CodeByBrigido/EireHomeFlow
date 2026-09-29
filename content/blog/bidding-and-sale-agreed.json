@@ -1,0 +1,49 @@
+{
+  "alt": "A for sale sign with a gold sale agreed sticker and a speech bubble with a euro sign",
+  "lead": "Buying a second-hand home in Ireland usually means bidding against other buyers through the estate agent. Knowing how the process works helps you bid calmly and stop at the right point.",
+  "sections": [
+    {
+      "title": "How bidding works",
+      "body": [
+        "Offers go to the estate agent, by phone, by email or on an online bidding platform. The agent passes every offer to the seller and should confirm yours in writing. There is no fixed closing date unless the agent sets one, so bidding can run for days or weeks.",
+        "Agents share the amounts other people have bid, but not their names. You can ask whether the other bidders have mortgage approval."
+      ]
+    },
+    {
+      "title": "Setting your ceiling",
+      "body": [
+        [
+          "Check what similar homes nearby sold for on the <a href=\"https://www.propertypriceregister.ie\">Residential Property Price Register</a>.",
+          "Base your limit on your AIP and your cash, including stamp duty and fees.",
+          "Decide your limit before bidding starts, and write it down.",
+          "Remember that the bank's valuation must support the price. If it comes in lower, you make up the difference in cash."
+        ]
+      ]
+    },
+    {
+      "title": "Sale Agreed",
+      "body": [
+        "When the seller accepts an offer, the home goes Sale Agreed and you usually pay a booking deposit to the agent. Sale Agreed is not legally binding in Ireland: either side can walk away until contracts are signed and exchanged.",
+        "Gazumping, when a seller accepts a higher offer after agreeing a sale, is legal until that point. Moving quickly on the survey, the loan offer and the contract reduces the risk.",
+        "The booking deposit is refundable until contracts are exchanged. Ask for a receipt that says so."
+      ]
+    },
+    {
+      "title": "After Sale Agreed",
+      "body": [
+        {
+          "steps": [
+            "Instruct your solicitor, who asks the seller's solicitor for the contract and the title documents.",
+            "Book the structural survey.",
+            "Tell your lender, which orders its valuation.",
+            "Arrange mortgage protection and home insurance."
+          ]
+        },
+        {
+          "tip": "Keep a record of every bid: the date, the amount and who confirmed it. It helps you stick to your limit and settles any confusion with the agent later."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 15 of My journey, Log every bid, lists what to note for each offer, and step 16 covers what to do once you reach Sale Agreed."
+}

@@ -1,0 +1,90 @@
+{
+  "alt": "A balance with a small house on one side and a stack of rent receipts on the other",
+  "lead": "Comparing a mortgage repayment with your rent is a good start, but owning a home brings costs that renting does not. Setting them side by side gives a fairer picture.",
+  "sections": [
+    {
+      "title": "What a homeowner pays",
+      "body": [
+        [
+          "<strong>The repayment:</strong> capital and interest. Only the interest is a cost; the capital becomes your equity.",
+          "<strong>Home insurance:</strong> required by your lender, often a few hundred euro a year.",
+          "<strong>Mortgage protection:</strong> life cover that clears the loan, often €20-60 a month depending on age and health.",
+          "<strong>Local Property Tax:</strong> €95 a year for homes valued up to €240,000, and more in the higher bands.",
+          "<strong>Management fees:</strong> for apartments and some estates, often €1,500-3,000 a year.",
+          "<strong>Maintenance:</strong> a common rule of thumb is 1% of the home's value a year, for the boiler, the roof, paint and repairs."
+        ]
+      ]
+    },
+    {
+      "title": "A worked example",
+      "body": [
+        "Take a €300,000 house bought with a €270,000 mortgage over 30 years at 3.9%. The repayment is about €1,274 a month. In the first year, about €878 of that is interest and €396 repays capital. The calculator in My journey gives the repayment for your own price and rate.",
+        {
+          "head": [
+            "Each month",
+            "Owner",
+            "Renter"
+          ],
+          "rows": [
+            [
+              "Interest in the first year",
+              "€878",
+              "-"
+            ],
+            [
+              "Capital repaid",
+              "€396",
+              "-"
+            ],
+            [
+              "Rent for a similar home",
+              "-",
+              "€1,800"
+            ],
+            [
+              "Insurance",
+              "€65",
+              "€10"
+            ],
+            [
+              "Local Property Tax",
+              "€20",
+              "-"
+            ],
+            [
+              "Maintenance",
+              "€250",
+              "-"
+            ],
+            [
+              "Total paid out",
+              "€1,609",
+              "€1,810"
+            ]
+          ]
+        },
+        "In this example the owner pays about €200 a month less, and €396 of their payment builds equity. Interest falls and capital rises every year after. The result changes with the price, the rate and the rents in your area, so run your own numbers."
+      ]
+    },
+    {
+      "title": "The costs that come once",
+      "body": [
+        "Buying also has upfront costs that renting does not: stamp duty, legal fees, and the deposit itself, which is money you can no longer invest elsewhere. Moving and furnishing add more. Because these costs are spread over the years you stay, owning tends to compare better the longer you live in the home."
+      ]
+    },
+    {
+      "title": "When renting can make more sense",
+      "body": [
+        [
+          "You expect to move to another city or country within a few years.",
+          "Your job or income is not yet steady enough for a 30-year commitment.",
+          "Prices where you want to live are well above what the Central Bank limits let you borrow."
+        ],
+        {
+          "tip": "If you rent for now, keep saving at the pace a repayment would need. Lenders see that pattern, and the option to buy stays open."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 1 of My journey, Calculate my buying power, shows the price and monthly repayment that fit your income, so you can compare them with your rent."
+}

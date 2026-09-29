@@ -1,0 +1,51 @@
+{
+  "alt": "A clipboard with a checklist and a spirit level in front of a new house",
+  "lead": "A snag list records the defects in a new home, from sticking doors to missing sealant, for the builder to fix. Inspecting before you close gives you the best chance of getting everything done.",
+  "sections": [
+    {
+      "title": "When to snag",
+      "body": [
+        "The developer will tell you when the home is ready to inspect, usually a few weeks before closing. Book the inspection for that window, and a second visit to check the repairs before closing.",
+        "Defects that appear later, such as small cracks as the building dries out, are usually fixed by the builder in the first months. Structural defects are covered by the structural guarantee for 10 years."
+      ]
+    },
+    {
+      "title": "Doing it yourself or hiring a professional",
+      "body": [
+        "A snag surveyor or engineer typically charges €300-500 and brings a moisture meter and often a thermal camera. Most first-time buyers find it worth the cost.",
+        "If you do it yourself, go room by room in good light, with a spirit level and a camera, and take your time."
+      ]
+    },
+    {
+      "title": "What to check",
+      "body": [
+        [
+          "<strong>Doors and windows:</strong> they open, close and lock smoothly, with no gaps or scratches.",
+          "<strong>Walls and ceilings:</strong> cracks, uneven paint and damage from the fit-out.",
+          "<strong>Floors and stairs:</strong> level, with no creaks or loose treads.",
+          "<strong>Kitchen and bathrooms:</strong> sealant around sinks and showers, taps, drainage and extractor fans.",
+          "<strong>Heating and electrics:</strong> every radiator heats, every socket and light works, and the heat pump or boiler has been commissioned, with its documents.",
+          "<strong>Outside:</strong> gutters, the finish of the walls, paving, fencing and drainage."
+        ]
+      ]
+    },
+    {
+      "title": "Getting the list fixed",
+      "body": [
+        {
+          "steps": [
+            "Send the snag list to the developer in writing, with photos, and copy your solicitor.",
+            "Agree a date for the repairs and for a second inspection.",
+            "If serious items are still open, talk to your solicitor before closing about how to protect yourself.",
+            "Collect the documents: warranties, the BER certificate, the manuals for the heating and appliances, and the structural guarantee."
+          ]
+        },
+        "My journey puts the snag list at step 25, just before you collect the keys.",
+        {
+          "tip": "Check the home again before the first year is out. Many developers fix new defects reported within that time."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 25 of My journey, Walk the snag list, keeps the inspection on your list before closing, with the documents to collect."
+}

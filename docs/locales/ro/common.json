@@ -26,9 +26,11 @@
   "yourAccount": "Contul tău",
   "footer": {
     "disclaimer": "Conținut educativ. Nu este consultanță financiară reglementată.",
-    "legal": "Informații legale",
+    "legal": "Despre site",
     "privacy": "Politica de confidențialitate",
-    "terms": "Termeni de utilizare"
+    "terms": "Termeni de utilizare",
+    "contact": "Contact",
+    "sitemap": "Harta site-ului"
   },
   "toast": {
     "dismiss": "Închide"
@@ -47,6 +49,7 @@
     "confirm": "Confirmă parola"
   },
   "forms": {
+    "message": "Scrie mesajul tău.",
     "name": "Scrie prenumele și numele.",
     "email": "Scrie o adresă de e-mail validă, de exemplu nume@exemplu.ro.",
     "password": "Scrie parola.",

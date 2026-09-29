@@ -1,5 +1,6 @@
-// Reads what the translation tools work on: the language list, every locales/ file, the pages,
-// the partials, the page scripts and js/i18n-boot.js. Run from the repository root, next to docs/.
+// Reads what the translation tools work on: the language list, every locales/ file, the pages
+// (docs/*.html and the blog articles in docs/blog/), the partials, the page scripts and
+// js/i18n-boot.js. Run from the repository root, next to docs/.
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { LOCALES, NAMESPACES, SOURCE_LOCALE } from "../docs/js/lib/locales.js";
 import { messagesVersion } from "./i18n.js";
@@ -45,7 +46,7 @@ export function loadProject() {
     files,
     texts,
     version: messagesVersion(texts),
-    pages: html("docs"),
+    pages: [...html("docs"), ...html("docs/blog")],
     partials: html("docs/partials"),
     scripts,
     boot: { file: BOOT, text: read(BOOT) },

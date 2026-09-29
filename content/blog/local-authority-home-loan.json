@@ -1,0 +1,77 @@
+{
+  "alt": "A council building with columns next to a small house, joined by a green path",
+  "lead": "The Local Authority Home Loan is a State-backed mortgage offered through your council. It is for first-time buyers and Fresh Start applicants with a steady income who could not get a large enough mortgage from two banks.",
+  "sections": [
+    {
+      "title": "Who can apply",
+      "body": [
+        [
+          "First-time buyers, and Fresh Start applicants who no longer own a home after a separation or insolvency.",
+          "Aged 18 or over. The loan must be repaid by the time the oldest applicant turns 70.",
+          "Gross income up to €80,000 for one applicant or €85,000 for a joint application, from 1 April 2026.",
+          "Two years of continuous employment for a single applicant. In a joint application, the main earner needs two years and the second earner one year.",
+          "Written evidence that two regulated lenders offered too little or declined, from the last 12 months."
+        ]
+      ]
+    },
+    {
+      "title": "How much you can borrow",
+      "body": [
+        "The loan covers up to 90% of the price or the valuation, whichever is lower. The rest is your deposit: at least 3% from your own savings, and the balance from another source such as a gift or Help to Buy.",
+        {
+          "head": [
+            "Area",
+            "Maximum property value",
+            "Maximum loan"
+          ],
+          "rows": [
+            [
+              "Dublin, Kildare, Wicklow",
+              "€415,000",
+              "€373,500"
+            ],
+            [
+              "Cork, Galway City, Meath",
+              "€375,000",
+              "€337,500"
+            ],
+            [
+              "Clare, Galway County, Kilkenny, Limerick, Louth, Waterford, Westmeath, Wexford",
+              "€345,000",
+              "€310,500"
+            ],
+            [
+              "All other counties",
+              "€310,000",
+              "€279,000"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The interest rate",
+      "body": [
+        "At the time of writing (September 2026) the rate is fixed for the whole term: 4.00% for terms up to 25 years and 4.05% for 26 to 30 years. Your repayment never changes, which makes budgeting simple, but you will not benefit if market rates fall."
+      ]
+    },
+    {
+      "title": "How to apply",
+      "body": [
+        {
+          "steps": [
+            "Collect the two letters from regulated lenders that show an insufficient offer or a refusal.",
+            "Apply online at <a href=\"https://localauthorityhomeloan.ie\">localauthorityhomeloan.ie</a>, for the council area where the home is.",
+            "Send your payslips, bank statements, Employment Detail Summary and ID. The Housing Agency assesses the application and the council's credit committee decides.",
+            "With approval in place, you have a set time to find a home and draw down, as with a bank."
+          ]
+        },
+        "My journey records both bank replies at step 7, so they are ready when you apply.",
+        {
+          "tip": "The loan can be combined with Help to Buy on a new home and with some affordable purchase schemes. It cannot be combined with the First Home Scheme, which only works with participating banks."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 7 of My journey, Choose a bank direct or a broker, is where you compare lenders and keep the replies you need for this loan."
+}

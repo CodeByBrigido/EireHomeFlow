@@ -1,0 +1,89 @@
+{
+  "alt": "A house beside an energy rating scale, with an arrow moving from yellow to green",
+  "lead": "A Building Energy Rating runs from A1, the most efficient, to G. A better rating means lower bills, a more comfortable home and often a green mortgage rate, and SEAI grants cover part of the work.",
+  "sections": [
+    {
+      "title": "What the rating tells you",
+      "body": [
+        "The BER estimates the energy a home needs for heating, hot water, ventilation and lighting, per square metre per year. It assumes standard use, so your own bills also depend on your habits. Every home for sale or rent must show it, and a certificate is valid for up to 10 years."
+      ]
+    },
+    {
+      "title": "The grants in 2026",
+      "body": [
+        "At the time of writing (September 2026), SEAI offers these individual grants. Insulation and heating controls are for homes built and occupied before 2011, and heat pumps and solar panels for homes built and occupied before 2021.",
+        {
+          "head": [
+            "Measure",
+            "Grant up to"
+          ],
+          "rows": [
+            [
+              "Heat pump, including the renewable heat bonus",
+              "€12,500"
+            ],
+            [
+              "External or internal wall insulation",
+              "€8,000"
+            ],
+            [
+              "Windows",
+              "€4,000"
+            ],
+            [
+              "Attic insulation for first-time buyers",
+              "€2,500"
+            ],
+            [
+              "Attic insulation",
+              "€2,000"
+            ],
+            [
+              "Solar panels",
+              "€1,800"
+            ],
+            [
+              "External doors",
+              "€1,600"
+            ],
+            [
+              "Solar water heating",
+              "€1,200"
+            ],
+            [
+              "Heating controls",
+              "€700"
+            ]
+          ]
+        },
+        "The amounts depend on the type of home. Check the current figures on <a href=\"https://www.seai.ie\">seai.ie</a> before you plan, because they change."
+      ]
+    },
+    {
+      "title": "The order that works",
+      "body": [
+        {
+          "steps": [
+            "Get a BER assessment and advice on where the heat escapes.",
+            "Insulate first: the attic, the walls, then windows and doors. A heat pump only works efficiently in a well-insulated home.",
+            "Upgrade the heating, then add solar panels if the roof suits them.",
+            "Apply for the grant and wait for approval before any work starts. Work started before approval does not qualify.",
+            "Use contractors registered with SEAI, and get a new BER when the work is finished."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What it can cost",
+      "body": [
+        "Costs vary a lot with the size and type of home. As a rough guide, attic insulation often costs €1,500-2,500 before the grant, external wall insulation on a semi-detached house €20,000-30,000, and a heat pump system €12,000-18,000. Get at least two quotes.",
+        "For a larger project, a One Stop Shop under the National Home Energy Upgrade Scheme can manage the whole job, with higher grants for a deep retrofit.",
+        "If you are buying an older home, My journey reminds you at step 29 to plan work before the furniture arrives, while the rooms are empty.",
+        {
+          "tip": "Ask your lender whether it offers a green top-up loan for energy upgrades. Some lenders price it close to their green mortgage rates."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 29 of My journey, Floors before furniture, is the moment to schedule upgrades, before the rooms fill up."
+}

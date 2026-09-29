@@ -309,7 +309,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: block; }
 .field__label { display: block; font-weight: 700; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-.field input { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 2px solid var(--line-2); border-radius: 14px; background: var(--cream); font-family: inherit; font-weight: 700; font-size: 16px; color: var(--text); }
+.field input, .field select, .field textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 2px solid var(--line-2); border-radius: 14px; background: var(--cream); font-family: inherit; font-weight: 700; font-size: 16px; color: var(--text); }
 /* A field that does not apply stays in place, switched off, and its placeholder says why. */
 .field.is-off .field__label { color: var(--locked); }
 .field input:disabled { background: var(--sand); border-style: dashed; cursor: not-allowed; }
@@ -409,7 +409,8 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .password-rules li.is-met { color: var(--ink); }
 .password-rules li.is-met::before { content: "✓"; }
 .password-rules.is-invalid li:not(.is-met) { color: var(--error); }
-.field.is-invalid input { border-color: var(--error); background: var(--error-bg); }
+.field.is-invalid input, .field.is-invalid textarea { border-color: var(--error); background: var(--error-bg); }
+.field textarea { display: block; min-height: 150px; resize: vertical; font-weight: 600; line-height: 1.5; }
 .field__error { display: block; margin-top: 6px; font-size: 13px; font-weight: 700; line-height: 1.4; color: var(--error); }
 .field__error:empty { display: none; }
 .field__static { margin: 0; padding: 12px 0 0; font-weight: 700; font-size: 16px; color: var(--text); overflow-wrap: anywhere; }
@@ -495,14 +496,112 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .danger-zone__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .profile-side__note { margin-top: 14px; font-size: 13px; }
 
-/* Guide page and the home invitation to it */
-.guide__phases { margin-top: 28px; }
+/* Contact us: the form on the left, the address and advice beside it (stacked on tablets and phones). */
+.contact { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 32px; }
+.contact__form { display: grid; gap: 16px; padding: 26px; }
+.contact__form .btn { justify-self: start; }
+.contact__title { margin: 0; font-weight: 800; font-size: 21px; letter-spacing: -0.01em; }
+.contact__note { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.contact__aside { display: grid; gap: 18px; }
+.contact__card { padding: 22px 24px; border-radius: 22px; background: #fff; border: 2px solid var(--line); }
+.contact__card p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }
+.contact__card--sand { background: var(--sand); border-color: var(--sand); }
+.contact__email { font-weight: 800; font-size: 17px; overflow-wrap: anywhere; }
+.contact__list { margin: 10px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.6; color: var(--body); }
+.contact__list li + li { margin-top: 8px; }
+
+/* Sitemap: three short lists, then the phases and the blog articles, each in columns. */
+.sitemap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; margin-top: 36px; }
+.sitemap__section { grid-column: 1 / -1; margin-top: 12px; padding-top: 28px; border-top: 2px solid var(--sand); }
+.sitemap__title { margin: 0 0 20px; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; }
+.sitemap__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 40px; }
+.sitemap__heading { margin: 0; font-weight: 800; font-size: 17px; }
+.sitemap__heading a { color: inherit; }
+.sitemap__list { margin: 10px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.5; text-align: left; }
+.sitemap__list li { margin-top: 6px; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.sitemap__list li::marker { color: var(--faint); }
+
+/* Guide page and the home invitation to it */.guide__phases { margin-top: 28px; }
 .guide-step__link { display: inline-block; justify-self: start; margin: 12px 18px 0 0; font-weight: 800; font-size: 14px; color: var(--ink); text-decoration: underline; }
 .guide-step__link + .guide-step__link { margin-top: 6px; }
-.guide-cta { padding: 56px 32px 90px; }
+.guide-cta { padding: 56px 32px 0; }
 .guide-cta__card { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 26px 28px; border-radius: 22px; background: var(--sand); }
 .guide-cta__title { margin: 0; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; }
 .guide-cta__text { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
+
+/* Home: the blog. A slideshow of four articles with three more beside it, then the rest in two columns. */
+.blog { padding: 80px 32px 100px; }
+.blog__head { margin-bottom: 26px; }
+.blog__title { margin: 0; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.025em; }
+.blog__top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+/* The slides share one grid cell and cross-fade, so the box is as tall as the tallest slide. */
+.slideshow__slides { display: grid; }
+.slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s; }
+.slide.is-active { opacity: 1; visibility: visible; }
+.slide__link { display: block; }
+.slide__image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 24px; background: var(--sand); }
+.slide__category, .post-card__category, .post__category { display: block; font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+.slide__category { margin-top: 18px; }
+.slide__title { display: block; margin-top: 8px; font-weight: 800; font-size: 30px; line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; }
+.slide__summary { display: block; margin-top: 10px; font-size: 16px; line-height: 1.5; color: var(--muted); }
+.slide__link:hover .slide__title, .post-card__link:hover .post-card__title { color: var(--ink); }
+.slideshow__controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+.slideshow__arrow { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 2px solid var(--line-2); border-radius: 50%; background: #fff; color: var(--brown); font-weight: 800; font-size: 17px; }
+.slideshow__arrow:hover, .slideshow__pause:hover { background: var(--hover); }
+.slideshow__dots { display: flex; }
+/* Each dot is a 24px target around a small pill; the current one is longer and green. */
+.slideshow__dot { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; }
+.slideshow__dot::before { content: ""; width: 10px; height: 10px; border-radius: 999px; background: var(--line-2); transition: width .2s, background .2s; }
+.slideshow__dot[aria-current="true"]::before { width: 22px; background: var(--ink); }
+.slideshow__pause { margin-left: auto; padding: 8px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--brown); font-weight: 700; font-size: 13px; }
+.blog__side, .post-grid { list-style: none; margin: 0; padding: 0; display: grid; }
+/* Cards are list items, but their titles are headings: no justified text. */
+.post-card { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.blog__side { gap: 24px; }
+.post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+.post-card__link { display: flex; gap: 18px; align-items: flex-start; }
+.post-card__image { flex: none; width: 44%; max-width: 230px; height: auto; aspect-ratio: 16 / 10; border-radius: 16px; background: var(--sand); }
+.post-card__body { min-width: 0; }
+.post-card__title { display: block; margin-top: 6px; font-weight: 800; font-size: 17px; line-height: 1.28; text-wrap: pretty; }
+.post-card--column .post-card__link { flex-direction: column; gap: 14px; }
+.post-card--column .post-card__image { width: 100%; max-width: none; }
+.blog__more-title { margin: 72px 0 24px; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; }
+.blog__more-actions { margin-top: 32px; text-align: center; }
+
+/* Blog article */
+.post { max-width: 760px; margin: 0 auto; }
+.post__back { display: inline-block; margin-bottom: 24px; font-weight: 700; font-size: 14px; color: var(--ink); }
+.post__back:hover { text-decoration: underline; }
+.post__category { margin: 0; }
+.post__title { margin: 10px 0 0; font-weight: 800; font-size: 46px; line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance; }
+.post__lead { margin: 18px 0 0; font-size: 20px; line-height: 1.5; color: var(--body); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.post__meta { margin: 12px 0 0; font-weight: 700; font-size: 14px; color: var(--faint); }
+.post__figure { margin: 30px 0 0; }
+.post__figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 26px; background: var(--sand); }
+.post__body { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--body); }
+.post__body h2 { margin: 40px 0 0; font-weight: 800; font-size: 27px; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); text-wrap: balance; }
+.post__body p { margin: 14px 0 0; }
+.post__list, .post__steps { margin: 14px 0 0; padding-left: 24px; }
+.post__list li, .post__steps li { margin-top: 8px; padding-left: 4px; }
+.post__list li::marker { color: var(--ink); }
+.post__steps li::marker { color: var(--ink); font-weight: 800; }
+.post__tip { margin-top: 22px; padding: 16px 20px; border-radius: 18px; background: var(--peach); }
+.post__tip .label { color: #8a5420; }
+.post__tip p:not(.label) { margin: 6px 0 0; color: #6b4a22; }
+.post__table-wrap { margin-top: 18px; overflow-x: auto; }
+.post__table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.post__table th, .post__table td { padding: 10px 12px; border-bottom: 1px solid var(--line-2); text-align: left; vertical-align: top; }
+.post__table thead th { font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); border-bottom-width: 2px; }
+.post__table tbody th { font-weight: 700; color: var(--text); }
+.post-journey { margin-top: 44px; padding: 26px 28px; border-radius: 24px; background: var(--ink); color: var(--cream); }
+.post-journey .label { color: inherit; opacity: .8; }
+.post-journey__text { margin: 8px 0 0; font-weight: 700; font-size: 18px; line-height: 1.5; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.post-journey__btn { margin-top: 18px; padding: 12px 22px; background: var(--gold); color: var(--text); font-size: 15px; box-shadow: 0 4px 0 #c98f3e; }
+.post-journey__btn:active { transform: translateY(3px); }
+.similar { margin-top: 80px; }
+.similar__title { margin: 0 0 24px; font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+.similar .post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+
 
 /* Step illustrations (journey panel and guide) */
 .step-image { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; border-radius: 18px; }
@@ -555,6 +654,7 @@ html[lang|="en"] .legal__notice { display: none; }
   .ticker__item[aria-hidden="true"], .ticker__toggle { display: none; }
   .journey:not(.is-compact) .node.is-current { animation: none; }
   .btn--primary, .phase-card, .node, .bar__fill, .guide-phase__summary::after { transition: none; }
+  .slide, .slideshow__dot::before { transition: none; }
 }
 
 /* Tablet */
@@ -571,6 +671,10 @@ html[lang|="en"] .legal__notice { display: none; }
   .dash-row, .profile-grid { grid-template-columns: minmax(0, 1fr); }
   .legal-layout { grid-template-columns: 100%; row-gap: 20px; }
   .legal-aside { position: static; order: -1; margin-top: 16px; }
+  .contact { grid-template-columns: minmax(0, 1fr); }
+  .sitemap, .sitemap__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .blog__top { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .similar .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail { position: fixed; inset: 0; z-index: 60; max-height: none; overflow-y: auto; overscroll-behavior: contain; padding: 20px 20px 0; border: 0; border-radius: 0; }
   .detail__actions { margin: 14px -20px 0; padding: 12px 20px 16px; }
   .detail__close { min-height: 44px; }
@@ -610,7 +714,21 @@ html[lang|="en"] .legal__notice { display: none; }
   .stats__grid, .phases__grid { grid-template-columns: minmax(0, 1fr); }
   .stat__value { font-size: 44px; }
   .phases { padding: 48px 16px 0; }
-  .guide-cta { padding: 40px 16px 64px; }
+  .guide-cta { padding: 40px 16px 0; }
+  .blog { padding: 56px 16px 72px; }
+  .sitemap, .sitemap__grid { grid-template-columns: minmax(0, 1fr); }
+  .contact__form { padding: 20px; }
+  .blog__title { font-size: clamp(28px, 7.5vw, 42px); }
+  .slide__title { font-size: 23px; }
+  .post-grid, .similar .post-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .post-card__image { width: 40%; }
+  .blog__more-title { margin-top: 56px; font-size: 26px; }
+  .post__title { font-size: clamp(30px, 8.5vw, 46px); }
+  .post__lead { font-size: 18px; }
+  .post__body { font-size: 16px; }
+  .post__body h2 { font-size: 23px; }
+  .post-journey { padding: 22px; }
+  .similar { margin-top: 56px; }
   .phases__title { font-size: clamp(28px, 7.5vw, 42px); }
   .guide-phase__summary { padding: 16px; }
   .guide-phase__text, .guide-step { margin-left: 16px; margin-right: 16px; }

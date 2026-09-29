@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="40" cy="42" r="6" fill="#f3b45f"/>
+  <circle cx="284" cy="46" r="5" fill="#cfe7dd"/>
+  <circle cx="62" cy="64" r="3" fill="#cfe7dd"/>
+  <ellipse cx="160" cy="172" rx="130" ry="12" fill="#e4d8c8"/>
+  <!-- one house in two shares: green for the buyer, gold for the scheme -->
+  <rect x="94" y="94" width="92" height="72" rx="6" fill="#0a4c3a"/>
+  <rect x="180" y="94" width="42" height="72" rx="6" fill="#c98f3e"/>
+  <rect x="94" y="88" width="96" height="72" rx="6" fill="#0f6b52"/>
+  <rect x="180" y="88" width="42" height="72" rx="6" fill="#f3b45f"/>
+  <path d="M184 92v64" stroke="#fffaf3" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/>
+  <path d="M86 90 158 44l72 46z" fill="#b3521f" stroke="#b3521f" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="106" y="102" width="22" height="20" rx="3" fill="#fffaf3"/>
+  <path d="M117 102v20M106 112h22" stroke="#e4d8c8" stroke-width="3"/>
+  <rect x="146" y="118" width="22" height="42" rx="4" fill="#f3b45f"/>
+  <rect x="192" y="102" width="20" height="20" rx="3" fill="#fffaf3"/>
+  <!-- key -->
+  <circle cx="246" cy="150" r="11" fill="none" stroke="#6b5a48" stroke-width="6"/>
+  <path d="M257 150h36M285 150v10M275 150v7" stroke="#6b5a48" stroke-width="6" stroke-linecap="round"/>
+</svg>

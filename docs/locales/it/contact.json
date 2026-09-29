@@ -1,0 +1,34 @@
+{
+  "meta": "Contatti | ÉireHome Flow",
+  "eyebrow": "Contatti",
+  "title": "Mettiti in contatto",
+  "intro": "Domande sulla guida, sul calcolatore o sul tuo account, una cifra che sembra sbagliata o un'idea per il sito: leggiamo ogni messaggio.",
+  "form": {
+    "title": "Scrivici",
+    "topic": "Argomento",
+    "message": "Messaggio",
+    "note": "Il pulsante apre la tua app di posta con il messaggio pronto. Non viene inviato nulla finché non lo invii da lì.",
+    "submit": "Apri nella mia app di posta",
+    "opened": "La tua app di posta dovrebbe essere aperta con il messaggio. Se non si è aperto nulla, scrivi a eirehomeflow@gmail.com."
+  },
+  "topics": {
+    "guide": "Una domanda sulla guida",
+    "calculator": "Il calcolatore",
+    "account": "Il mio account",
+    "correction": "Un dato o una cifra da correggere",
+    "idea": "Un'idea per il sito",
+    "misc": "Altro"
+  },
+  "email": {
+    "title": "Scrivici direttamente",
+    "reply": "Cerchiamo di rispondere entro 14 giorni. Alle richieste sui tuoi dati personali rispondiamo entro un mese."
+  },
+  "before": {
+    "title": "Prima di scrivere",
+    "items": [
+      "Non possiamo dare consulenza finanziaria, sui mutui, legale o fiscale personalizzata. Per decidere, parla con un professionista qualificato.",
+      "Per eliminare il tuo account, usa <a href=\"profile.html\">Il mio profilo</a>, oppure scrivici dall'indirizzo dell'account.",
+      "Hai trovato un errore? Indicaci il passo o l'articolo e, se ce l'hai, la fonte."
+    ]
+  }
+}

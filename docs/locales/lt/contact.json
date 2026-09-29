@@ -1,0 +1,34 @@
+{
+  "meta": "Susisiekite | ÉireHome Flow",
+  "eyebrow": "Susisiekite",
+  "title": "Susisiekite su mumis",
+  "intro": "Klausimai apie gidą, skaičiuoklę ar Jūsų paskyrą, skaičius, kuris atrodo neteisingas, ar idėja svetainei: skaitome kiekvieną žinutę.",
+  "form": {
+    "title": "Parašykite mums",
+    "topic": "Tema",
+    "message": "Žinutė",
+    "note": "Mygtukas atidaro Jūsų el. pašto programą su paruošta žinute. Niekas neišsiunčiama, kol neišsiųsite jos iš ten.",
+    "submit": "Atidaryti el. pašto programoje",
+    "opened": "Jūsų el. pašto programa turėtų būti atidaryta su žinute. Jei niekas neatsidarė, rašykite adresu eirehomeflow@gmail.com."
+  },
+  "topics": {
+    "guide": "Klausimas apie gidą",
+    "calculator": "Skaičiuoklė",
+    "account": "Mano paskyra",
+    "correction": "Skaičius ar faktas, kurį reikia pataisyti",
+    "idea": "Idėja svetainei",
+    "misc": "Kita"
+  },
+  "email": {
+    "title": "Rašykite mums tiesiogiai",
+    "reply": "Stengiamės atsakyti per 14 dienų. Į prašymus dėl Jūsų asmens duomenų atsakome per mėnesį."
+  },
+  "before": {
+    "title": "Prieš rašydami",
+    "items": [
+      "Negalime teikti asmeninių finansinių, būsto paskolų, teisinių ar mokesčių konsultacijų. Priimdami sprendimus pasitarkite su kvalifikuotu specialistu.",
+      "Norėdami ištrinti paskyrą, naudokite <a href=\"profile.html\">Mano profilis</a> arba parašykite mums iš paskyros el. pašto adreso.",
+      "Pastebėjote klaidą? Nurodykite žingsnį ar straipsnį ir, jei turite, šaltinį."
+    ]
+  }
+}

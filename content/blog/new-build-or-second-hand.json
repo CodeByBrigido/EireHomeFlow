@@ -1,0 +1,95 @@
+{
+  "alt": "A modern house and an older house with a chimney, side by side on a green hill",
+  "lead": "The same budget goes further on some homes than on others, and new builds and second-hand homes differ in more than age. Here is how the numbers and the timeline change.",
+  "sections": [
+    {
+      "title": "Side by side",
+      "body": [
+        {
+          "head": [
+            "Topic",
+            "New build",
+            "Second-hand"
+          ],
+          "rows": [
+            [
+              "Help to Buy",
+              "Up to €30,000 or 10% of the price",
+              "Not available"
+            ],
+            [
+              "First Home Scheme",
+              "Available below the local price ceiling",
+              "Not available"
+            ],
+            [
+              "Stamp duty",
+              "1% of the price without VAT",
+              "1% of the price"
+            ],
+            [
+              "Energy rating",
+              "Usually A-rated",
+              "Anything from A to G"
+            ],
+            [
+              "Green mortgage rate",
+              "Usually available",
+              "Only with a BER of B3 or better"
+            ],
+            [
+              "Timeline",
+              "Can take months, until the home is finished",
+              "Often 3-4 months from Sale Agreed"
+            ],
+            [
+              "Checks before closing",
+              "A snag list",
+              "A structural survey"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The case for a new build",
+      "body": [
+        [
+          "Help to Buy and the First Home Scheme can close a deposit gap that would take years to save.",
+          "Lower energy bills and access to a green mortgage rate.",
+          "A structural guarantee for 10 years, usually from HomeBond or Premier Guarantee.",
+          "Less maintenance in the first years."
+        ]
+      ]
+    },
+    {
+      "title": "The case for a second-hand home",
+      "body": [
+        [
+          "More choice of location, including established areas close to work and schools.",
+          "Larger gardens and rooms for the price in many areas.",
+          "A shorter wait: you can often move in within months.",
+          "Room to add value by upgrading, with SEAI grants for insulation and heating."
+        ],
+        "The trade-off is condition. Budget for a survey, and for the work that the BER and the survey point to."
+      ]
+    },
+    {
+      "title": "Questions for a developer",
+      "body": [
+        [
+          "When is completion expected, and what happens if it is late?",
+          "Is the developer registered for Help to Buy?",
+          "Which structural guarantee comes with the home?",
+          "What is included: flooring, wardrobes, appliances, landscaping?",
+          "For an apartment or a managed estate, what will the management fee be?"
+        ],
+        "Try both options in the calculator, which shows how Help to Buy and stamp duty change the numbers, and save the one you choose to My journey.",
+        {
+          "tip": "The booking deposit on a new home is refundable until contracts are signed. Get the terms in writing before you pay."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 12 of My journey, Pick an area, check sold prices, is the place to compare new and second-hand options before you book viewings."
+}

@@ -1,10 +1,10 @@
 # ÉireHome Flow
 
-Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e 31 etapas, da poupança para a entrada até a mudança, com calculadora de poder de compra e progresso salvo na conta. Disponível em inglês, português, espanhol, francês, alemão, italiano, polonês, romeno e lituano.
+Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e 31 etapas, da poupança para a entrada até a mudança, com calculadora de poder de compra, progresso salvo na conta, um blog com 20 artigos (em inglês), página de contato e mapa do site. Disponível em inglês, português, espanhol, francês, alemão, italiano, polonês, romeno e lituano.
 
 **Site publicado:** https://codebybrigido.github.io/EireHomeFlow/
 
-Última revisão: 28/09/2026
+Última revisão: 29/09/2026
 
 ## Pastas
 
@@ -12,10 +12,12 @@ Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e
 |---|---|
 | `docs/` | O site. É a pasta publicada pelo GitHub Pages: o que entra na `main` vai ao ar em poucos minutos. |
 | `docs/locales/` | Os textos do site, um JSON por idioma e por parte do site. O inglês (`en/`) é a fonte. Veja o [doc 08](specs/08-Internationalisation.md). |
+| `docs/blog/` | As páginas dos artigos do blog, escritas pelo `npm run posts` (que também escreve o `docs/sitemap.xml`). Não edite à mão. |
+| `content/blog/` | O texto de cada artigo do blog, em inglês. |
 | `specs/` | A fonte de verdade do projeto: requisitos, arquitetura, telas, fluxos, banco, plano e design system. |
 | `supabase/email-templates/` | Os e-mails de confirmação e de nova senha, para colar no painel do Supabase. |
 | `tests/` | Os testes automáticos (`npm test`). |
-| `tools/` | Servidor local (`npm start`), as ferramentas do `?v=`, dos partials e das traduções. |
+| `tools/` | Servidor local (`npm start`), as ferramentas do `?v=`, dos partials, das traduções e do blog. |
 | `.github/` | O GitHub Actions, que confere cada Pull Request. |
 | `_original-Backup/` | O arquivo original do Claude Design, antes da reestruturação. Só consulta. |
 
@@ -47,20 +49,32 @@ Quem tem Python também pode usar `python -m http.server 8000 --directory docs`,
 | `npm run lint` | ESLint: `import` esquecido, variável não declarada, erros comuns |
 | `npm run check:versions` | Confere se todo CSS e JS usa o mesmo `?v=` |
 | `npm run bump` | Troca o `?v=` em todos os arquivos pela data de hoje. Use depois de mudar CSS ou JS. Segunda mudança no mesmo dia: `npm run bump -- AAAAMMDD` com um número novo (ex.: a data de amanhã) |
-| `npm run partials` | Copia `docs/partials/header.html` e `footer.html` para as 12 páginas. Use depois de mudar um dos dois |
+| `npm run partials` | Copia `docs/partials/header.html` e `footer.html` para as 14 páginas e os artigos. Use depois de mudar um dos dois |
 | `npm run check:partials` | Confere se todas as páginas têm o cabeçalho e o rodapé atuais |
 | `npm run i18n` | Copia os textos de `docs/locales/en/` para o HTML e a lista de idiomas para o `js/i18n-boot.js`. Use depois de mudar um texto ou uma chave |
 | `npm run check:i18n` | Confere as traduções: textos faltando ou sem uso, números e links diferentes do inglês, texto na página sem chave. Mostra quanto cada idioma tem traduzido |
-| `npm run check` | Lint, testes, versões, partials e traduções juntos, igual ao GitHub Actions em cada Pull Request |
+| `npm run posts` | Escreve as páginas dos artigos (`docs/blog/`) a partir de `content/blog/` e de `docs/js/lib/posts.js`, e o `docs/sitemap.xml`. Use depois de escrever ou mudar um artigo, ou de criar uma página pública (acrescente-a em `PUBLIC_PAGES`, em `tools/stamp-posts.js`) |
+| `npm run check:posts` | Confere os artigos: texto e imagem de cada um, estilo da casa, links, a ligação com o My journey e se as páginas e o `sitemap.xml` estão em dia |
+| `npm run check` | Lint, testes, versões, partials, blog e traduções juntos, igual ao GitHub Actions em cada Pull Request |
 
 ## Trabalhar em equipe
 
 1. Atualize a sua cópia antes de começar: `git pull`.
 2. Crie um branch para cada mudança: `git switch -c nome-da-mudanca`.
 3. Faça a mudança, confira no navegador e atualize os documentos de `specs/` afetados (regra 1 abaixo).
-   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Escreveu ou mudou um texto? Ele vai primeiro em inglês em `docs/locales/en/`, depois nos outros idiomas, e você roda `npm run i18n` (passo a passo no [doc 08](specs/08-Internationalisation.md), seção 7). Mudou algum arquivo `.css`, `.js` ou de `locales/`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
+   Mudou o cabeçalho ou o rodapé? Edite o arquivo em `docs/partials/` (nunca a cópia dentro das páginas) e rode `npm run partials`. Escreveu ou mudou um texto? Ele vai primeiro em inglês em `docs/locales/en/`, depois nos outros idiomas, e você roda `npm run i18n` (passo a passo no [doc 08](specs/08-Internationalisation.md), seção 7). Escreveu ou mudou um artigo do blog? Veja [Escrever um artigo](#escrever-um-artigo-do-blog). Mudou algum arquivo `.css`, `.js` ou de `locales/`? Rode `npm run bump`. Antes de enviar, rode `npm run check`: é o mesmo que o GitHub vai conferir no Pull Request.
 4. Envie o branch (`git push -u origin nome-da-mudanca`) e abra um Pull Request no GitHub.
 5. Outra pessoa revisa, e o Pull Request entra na `main`. Só então a mudança vai para o site.
+
+## Escrever um artigo do blog
+
+O blog é só em inglês, com o mesmo tom de voz do site (sem travessão, sem clichê, sem prometer resultado).
+
+1. Em `docs/js/lib/posts.js`, adicione uma entrada: `slug`, `category`, `step` (a etapa do My journey para onde o artigo leva), `tags` (para os artigos semelhantes), `title` e `summary`.
+2. Escreva o texto em `content/blog/<slug>.json`: `alt` (a descrição da imagem), `lead`, `sections` (cada uma com `title` e `body`) e `journey` (a frase que leva ao My journey, que precisa citar "My journey"). Use um dos artigos existentes como modelo; os blocos possíveis estão no [TRD](specs/02-TRD.md), seção 4.2.
+3. Desenhe a imagem em `docs/img/blog/<slug>.svg`, com as regras do [Design System](specs/07-Design-System.md), seção 7.9.
+4. Rode `npm run posts` e confira a página em `http://localhost:8000/blog/<slug>.html`.
+5. Números mudam: cite a fonte oficial com link e revise o artigo quando o programa mudar.
 
 Nunca coloque senhas ou chaves secretas no repositório. A única chave que pode ficar aqui é a publicável, em `docs/js/config.js`.
 

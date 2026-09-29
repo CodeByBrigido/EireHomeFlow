@@ -1,0 +1,70 @@
+{
+  "alt": "A receipt with a green stamp next to a pile of gold coins and a house key",
+  "lead": "The deposit is the largest cash cost of buying, but not the only one. Before you bid, add up the rest, so the savings your lender sees cover all of it.",
+  "sections": [
+    {
+      "title": "Stamp duty",
+      "body": [
+        "Stamp duty is 1% of the price up to €1 million, 2% on the part between €1 million and €1.5 million, and 6% above that. On a €350,000 home it is €3,500.",
+        "On a new home it is charged on the price without VAT, which is 13.5% for a house and 9% for an apartment. A new house at €400,000 including VAT has a price of about €352,423 without it, so the stamp duty is about €3,524.",
+        "Your solicitor pays it to Revenue for you, so the money has to be in their client account before closing."
+      ]
+    },
+    {
+      "title": "Professional fees",
+      "body": [
+        {
+          "head": [
+            "Item",
+            "Typical cost",
+            "When you pay"
+          ],
+          "rows": [
+            [
+              "Solicitor",
+              "€2,000-3,000 plus VAT and outlays",
+              "Part when you instruct them, the rest at closing"
+            ],
+            [
+              "Structural survey",
+              "About €400",
+              "When you book it, before signing"
+            ],
+            [
+              "Bank valuation",
+              "About €150",
+              "When the lender orders it"
+            ],
+            [
+              "Searches and registration",
+              "Usually a few hundred euro, as outlays",
+              "At closing"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The smaller items",
+      "body": [
+        [
+          "Mortgage protection and home insurance, which must be in place before drawdown.",
+          "A booking deposit of about €5,000 on many homes, which is later taken off the full deposit.",
+          "Moving costs, and any charges to connect or reconnect utilities.",
+          "Floors, blinds and furniture if the home is new or empty."
+        ]
+      ]
+    },
+    {
+      "title": "Putting it together",
+      "body": [
+        "For a second-hand home at €350,000 with a 10% deposit, plan for about €41,500 in cash: the €35,000 deposit, €3,500 in stamp duty and about €3,000 for the solicitor, the survey and the valuation. Add a buffer of a few thousand euro for moving and the first weeks in the home.",
+        "Lenders want to see the full amount in your savings, or in a gift letter, before they issue loan approval.",
+        {
+          "tip": "Ask your solicitor for a written quote that lists the fee, VAT and outlays separately. A quote that looks cheaper sometimes leaves the outlays out."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 3 of My journey, Set aside cash for the extra costs, adds these costs to your target price and shows the total you need."
+}

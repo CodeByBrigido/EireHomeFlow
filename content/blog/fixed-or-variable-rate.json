@@ -1,0 +1,47 @@
+{
+  "alt": "A padlock and a curving line chart side by side above a green leaf",
+  "lead": "The type of rate shapes your repayments for years, as much as the rate itself. Irish lenders offer fixed periods from one year to ten or more, variable rates, and lower green rates for energy-efficient homes.",
+  "sections": [
+    {
+      "title": "Fixed rates",
+      "body": [
+        "A fixed rate keeps your repayment the same for the fixed period, whatever happens to market rates. It suits a tight budget, and buyers who want certainty in the first years, when the loan is at its largest.",
+        [
+          "Leaving a fixed rate early, to switch lender or clear a large part of the loan, can cost a break fee.",
+          "Some lenders allow limited overpayments during a fixed period without a fee. Ask for the exact limit.",
+          "When the period ends you move to a new fixed or variable rate, so note the date."
+        ]
+      ]
+    },
+    {
+      "title": "Variable rates",
+      "body": [
+        "A variable rate can rise or fall when the lender decides, usually following the European Central Bank. It is more flexible: you can overpay or switch lender without a break fee.",
+        "It suits buyers who expect to overpay, sell or switch within a few years, and who could manage a higher repayment if rates went up."
+      ]
+    },
+    {
+      "title": "Green mortgages",
+      "body": [
+        "Most Irish lenders offer a lower rate for homes with a BER of B3 or better. The discount is often a few tenths of a percentage point, which over a fixed period can add up to thousands of euro.",
+        "New builds usually qualify. For a second-hand home, the BER on the listing tells you whether a green rate is possible, or how far an upgrade would need to go."
+      ]
+    },
+    {
+      "title": "Comparing offers",
+      "body": [
+        [
+          "Compare the APRC, which includes fees, as well as the headline rate.",
+          "Check what happens when a fixed period ends. Some lenders move existing customers to rates above what they offer new ones.",
+          "Cashback can help with furnishing, but compare the total cost over the fixed period.",
+          "A mortgage broker can compare several lenders for you. Ask how they are paid."
+        ],
+        "When your offer arrives, step 22 of My journey walks you through these checks.",
+        {
+          "tip": "On a €300,000 mortgage over 30 years, 3.65% instead of 3.9% saves about €43 a month, or more than €15,000 over the whole term."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 22 of My journey, Receive the final loan offer, lists what to check in the offer, including the type of rate and what happens when a fixed period ends."
+}

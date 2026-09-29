@@ -26,9 +26,11 @@
   "yourAccount": "Votre compte",
   "footer": {
     "disclaimer": "Contenu pédagogique. Pas un conseil financier réglementé.",
-    "legal": "Mentions légales",
+    "legal": "À propos du site",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation"
+    "terms": "Conditions d'utilisation",
+    "contact": "Nous contacter",
+    "sitemap": "Plan du site"
   },
   "toast": {
     "dismiss": "Fermer"
@@ -47,6 +49,7 @@
     "confirm": "Confirmez le mot de passe"
   },
   "forms": {
+    "message": "Écrivez votre message.",
     "name": "Saisissez votre prénom et votre nom.",
     "email": "Saisissez une adresse e-mail valide, comme nom@exemple.com.",
     "password": "Saisissez votre mot de passe.",

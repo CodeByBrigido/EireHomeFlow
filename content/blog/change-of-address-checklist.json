@@ -1,0 +1,53 @@
+{
+  "alt": "A moving box with envelopes flying out towards a new green front door",
+  "lead": "Moving into your new home means telling a long list of organisations where you live now. Doing it in a sensible order saves time and keeps your post, your tax and your bills on track.",
+  "sections": [
+    {
+      "title": "Before the move",
+      "body": [
+        [
+          "Set up mail redirection with <a href=\"https://www.anpost.com\">An Post</a> for at least three months, so anything you miss still reaches you.",
+          "Plan meter readings for your last day in the old home and your first day in the new one.",
+          "Give your landlord notice in writing, following your lease and the notice periods set by the Residential Tenancies Board."
+        ]
+      ]
+    },
+    {
+      "title": "In the first week",
+      "body": [
+        [
+          "<strong>Revenue:</strong> update your address in myAccount, which also keeps your tax credits and Local Property Tax in order.",
+          "<strong>Your bank and credit union:</strong> update it in the app or online banking, including loans and cards.",
+          "<strong>Your employer and pension provider:</strong> for payroll records and pension statements.",
+          "<strong>Utilities:</strong> electricity, gas, broadband and bins, using the meter readings from moving day.",
+          "<strong>Insurers:</strong> car, health and contents policies."
+        ]
+      ]
+    },
+    {
+      "title": "In the first month",
+      "body": [
+        [
+          "<strong>Department of Social Protection:</strong> update your address through MyWelfare if you receive a payment or hold a Public Services Card.",
+          "<strong>Driving licence:</strong> update it with the National Driver Licence Service.",
+          "<strong>Vehicle:</strong> update the address on your vehicle registration for motor tax.",
+          "<strong>Electoral register:</strong> change your address at <a href=\"https://www.checktheregister.ie\">checktheregister.ie</a>, so you can vote where you live.",
+          "<strong>GP, dentist and schools:</strong> transfer records or register locally.",
+          "<strong>TV licence:</strong> update the address with An Post.",
+          "<strong>Subscriptions and online shops:</strong> change your delivery address."
+        ]
+      ]
+    },
+    {
+      "title": "Useful habits",
+      "body": [
+        "Keep a list as you go, with the date you told each organisation. Use your Eircode on every form, because it identifies your home exactly and avoids mix-ups with similar addresses.",
+        "My journey starts this list at step 26, on the day you get the keys.",
+        {
+          "tip": "Take dated photos of the meters on moving day. They settle any dispute over the final bill at your old address."
+        }
+      ]
+    }
+  ],
+  "journey": "Step 26 of My journey, Switch the utilities into your name, starts this list on moving day, and step 27 covers Local Property Tax."
+}

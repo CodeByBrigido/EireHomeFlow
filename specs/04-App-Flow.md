@@ -1,6 +1,6 @@
 # App Flow
 
-Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.8 · Última revisão: 29/09/2026
 
 Os diagramas usam Mermaid (renderizado no GitHub e no VS Code com a extensão de preview). Cada caixa com `.html` é uma página própria.
 
@@ -22,13 +22,22 @@ flowchart LR
   D -->|menu / My profile| P[profile.html]
   P -->|Change password| NP[new-password.html]
   H & SU & P -->|rodapé, cadastro, perfil| LG[privacy.html e terms.html]
+  H -->|slideshow e cartões do blog| B[blog/slug.html]
+  B -->|Open this step in My journey| J
+  B -->|Similar articles| B
+  B -->|All articles| H
+  H & B -->|rodapé: Contact us| CT[contact.html]
+  H & B -->|rodapé: Sitemap| SM[sitemap.html]
+  SM -->|fase ou etapa| J
+  SM -->|artigo| B
+  CT -->|Open in my email app| M[App de e-mail da pessoa]
   E1[Link do e-mail de confirmação] --> H
   E2[Link do e-mail de senha] --> H -->|redireciona| NP
 ```
 
 ## 2. Primeira visita
 
-1. O visitante chega à Home, no idioma do navegador se o site o tiver completo (português, espanhol, francês, alemão ou italiano), senão em inglês. Nada é salvo: a detecção roda de novo a cada visita até a pessoa escolher um idioma no menu (seção 10.1). Sem progresso salvo, o botão diz "Start my journey".
+1. O visitante chega à Home, no idioma do navegador se o site o tiver completo (um dos 9 idiomas), senão em inglês. Nada é salvo: a detecção roda de novo a cada visita até a pessoa escolher um idioma no menu (seção 10.1). Sem progresso salvo, o botão diz "Start my journey".
 2. Pode ler o guia completo (`guide.html`), usar a calculadora ou abrir a jornada, sem conta.
 3. Na jornada, "Calculate my buying power" aparece como atual ("Start here"); as demais obrigatórias aparecem bloqueadas.
 4. A etapa 1 só se conclui pela calculadora: "Open the calculator" → preenche → "Save to my journey" → volta à etapa 1 marcada, com os números da pessoa. Daí em diante, as etapas 2, 3 e 5 mostram os números dela.
@@ -192,6 +201,26 @@ flowchart LR
 3. A página recarrega no mesmo lugar (a etapa aberta na jornada continua aberta, porque está no endereço). Formulário meio preenchido é perdido.
 4. **Link com `?lang=`** (ex.: `index.html?lang=pt`): abre naquele idioma só nesta aba, sem mudar a escolha salva. Serve para mandar o site em português para alguém, e para revisar idiomas em rascunho (`?lang=<código>`).
 5. Com o armazenamento bloqueado, a escolha não pode ser salva: a página recarrega com `?lang=` no endereço, e o idioma vale só para ela.
+
+## 10.2 Ler um artigo do blog
+
+1. Na Home, a seção do blog mostra 4 artigos no slideshow, 3 ao lado e o resto em "More articles", sorteados a cada visita. O blog é todo em inglês, qualquer que seja o idioma do site.
+2. Clicar num slide ou cartão abre `blog/<slug>.html`.
+3. No fim do artigo, a caixa "In My journey" leva à etapa ligada a ele (`journey.html#step-<id>`), que abre com o painel da etapa.
+4. "Similar articles" abre outro artigo; "← All articles" volta ao blog na Home (`index.html#blog`).
+
+## 10.3 Falar com o site (contact.html)
+
+1. "Contact us" no rodapé de qualquer página abre `contact.html`. Logado, nome e e-mail já vêm preenchidos.
+2. A pessoa escolhe o assunto e escreve a mensagem. Campo vazio ou e-mail inválido fica vermelho, e o foco vai ao primeiro.
+3. "Open in my email app" abre o aplicativo de e-mail com a mensagem para eirehomeflow@gmail.com, assunto "ÉireHome Flow: <assunto>" e nome e e-mail no fim do texto. A página avisa que o aplicativo deve ter aberto e repete o endereço, para quem não tem aplicativo de e-mail configurado.
+4. Nada é enviado nem guardado pelo site: a mensagem só sai quando a pessoa a envia no aplicativo.
+
+## 10.4 Mapa do site (sitemap.html)
+
+1. "Sitemap" no rodapé abre `sitemap.html`, com todas as páginas, as 6 fases e as 31 etapas e os 20 artigos.
+2. Uma fase leva a `journey.html#phase-<slug>`; uma etapa abre em `journey.html#step-<id>`, com o painel aberto; um artigo abre `blog/<slug>.html`.
+3. Para buscadores, `sitemap.xml` lista as páginas públicas e os artigos.
 
 ## 11. Pessoa que volta
 

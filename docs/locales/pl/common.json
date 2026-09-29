@@ -26,9 +26,11 @@
   "yourAccount": "Twoje konto",
   "footer": {
     "disclaimer": "Treści edukacyjne. To nie jest regulowane doradztwo finansowe.",
-    "legal": "Informacje prawne",
+    "legal": "O serwisie",
     "privacy": "Polityka prywatności",
-    "terms": "Warunki korzystania"
+    "terms": "Warunki korzystania",
+    "contact": "Kontakt",
+    "sitemap": "Mapa strony"
   },
   "toast": {
     "dismiss": "Zamknij"
@@ -47,6 +49,7 @@
     "confirm": "Powtórz hasło"
   },
   "forms": {
+    "message": "Napisz swoją wiadomość.",
     "name": "Wpisz imię i nazwisko.",
     "email": "Wpisz poprawny adres e-mail, na przykład imie@przyklad.pl.",
     "password": "Wpisz hasło.",

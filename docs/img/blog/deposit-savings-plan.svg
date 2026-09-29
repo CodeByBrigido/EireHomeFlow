@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="290" cy="34" r="6" fill="#f3b45f"/>
+  <circle cx="34" cy="50" r="5" fill="#cfe7dd"/>
+  <circle cx="52" cy="30" r="3" fill="#f3b45f"/>
+  <ellipse cx="160" cy="172" rx="130" ry="12" fill="#e4d8c8"/>
+  <!-- savings jar filling with coins -->
+  <rect x="58" y="70" width="92" height="98" rx="20" fill="#e8f1ec" stroke="#0f6b52" stroke-width="4"/>
+  <g fill="#f3b45f" stroke="#c98f3e" stroke-width="3">
+    <ellipse cx="86" cy="150" rx="16" ry="7"/>
+    <ellipse cx="120" cy="150" rx="16" ry="7"/>
+    <ellipse cx="102" cy="138" rx="16" ry="7"/>
+    <ellipse cx="80" cy="126" rx="16" ry="7"/>
+    <ellipse cx="124" cy="128" rx="16" ry="7"/>
+    <ellipse cx="104" cy="115" rx="16" ry="7"/>
+  </g>
+  <rect x="64" y="56" width="80" height="16" rx="6" fill="#0f6b52"/>
+  <rect x="96" y="60" width="16" height="4" rx="2" fill="#0a4c3a"/>
+  <circle cx="104" cy="36" r="11" fill="#c98f3e"/>
+  <circle cx="104" cy="33" r="11" fill="#f3b45f"/>
+  <circle cx="104" cy="33" r="5" fill="none" stroke="#c98f3e" stroke-width="2.5"/>
+  <!-- calendar with ticked months -->
+  <rect x="178" y="56" width="104" height="102" rx="10" fill="#e4d8c8"/>
+  <rect x="178" y="50" width="104" height="102" rx="10" fill="#fffaf3"/>
+  <path d="M178 60a10 10 0 0 1 10-10h84a10 10 0 0 1 10 10v12H178z" fill="#b3521f"/>
+  <rect x="200" y="42" width="8" height="16" rx="4" fill="#6b5a48"/>
+  <rect x="252" y="42" width="8" height="16" rx="4" fill="#6b5a48"/>
+  <g fill="#e8f1ec">
+    <rect x="190" y="82" width="22" height="18" rx="4"/>
+    <rect x="219" y="82" width="22" height="18" rx="4"/>
+    <rect x="248" y="82" width="22" height="18" rx="4"/>
+    <rect x="190" y="106" width="22" height="18" rx="4"/>
+    <rect x="219" y="106" width="22" height="18" rx="4"/>
+  </g>
+  <g fill="#f3ece1">
+    <rect x="248" y="106" width="22" height="18" rx="4"/>
+    <rect x="190" y="130" width="22" height="16" rx="4"/>
+    <rect x="219" y="130" width="22" height="16" rx="4"/>
+    <rect x="248" y="130" width="22" height="16" rx="4"/>
+  </g>
+  <path d="M195 91l4 4 7-8M224 91l4 4 7-8M253 91l4 4 7-8M195 115l4 4 7-8M224 115l4 4 7-8" stroke="#0f6b52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -26,9 +26,11 @@
   "yourAccount": "Tu cuenta",
   "footer": {
     "disclaimer": "Contenido educativo. No es asesoramiento financiero regulado.",
-    "legal": "Información legal",
+    "legal": "Sobre el sitio",
     "privacy": "Política de privacidad",
-    "terms": "Condiciones de uso"
+    "terms": "Condiciones de uso",
+    "contact": "Contacto",
+    "sitemap": "Mapa del sitio"
   },
   "toast": {
     "dismiss": "Cerrar"
@@ -47,6 +49,7 @@
     "confirm": "Confirma la contraseña"
   },
   "forms": {
+    "message": "Escribe tu mensaje.",
     "name": "Escribe tu nombre y tu apellido.",
     "email": "Escribe un correo electrónico válido, como nombre@ejemplo.com.",
     "password": "Escribe tu contraseña.",

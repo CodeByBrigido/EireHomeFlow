@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="40" cy="36" r="6" fill="#cfe7dd"/>
+  <circle cx="292" cy="40" r="5" fill="#f3b45f"/>
+  <circle cx="60" cy="58" r="3" fill="#f3b45f"/>
+  <ellipse cx="160" cy="174" rx="128" ry="11" fill="#e4d8c8"/>
+  <!-- padlock: the fixed rate -->
+  <path d="M78 90V70a24 24 0 0 1 48 0v20" stroke="#6b5a48" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <rect x="62" y="92" width="80" height="62" rx="10" fill="#0a4c3a"/>
+  <rect x="62" y="86" width="80" height="62" rx="10" fill="#0f6b52"/>
+  <circle cx="102" cy="110" r="8" fill="#fffaf3"/>
+  <rect x="99" y="112" width="6" height="16" rx="3" fill="#fffaf3"/>
+  <!-- line chart: the variable rate -->
+  <path d="M176 50v94h112" stroke="#e4d8c8" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M184 118C198 88 212 136 228 104S260 76 280 92" stroke="#b3521f" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="184" cy="118" r="5" fill="#f3b45f"/>
+  <circle cx="228" cy="104" r="5" fill="#f3b45f"/>
+  <circle cx="280" cy="92" r="5" fill="#f3b45f"/>
+  <!-- green leaf: the green rate -->
+  <path d="M126 168C142 140 186 136 204 152 184 176 150 180 126 168z" fill="#0f6b52"/>
+  <path d="M136 166C156 158 176 154 196 153" stroke="#cfe7dd" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

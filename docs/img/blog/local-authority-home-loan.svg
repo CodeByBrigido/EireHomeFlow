@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="290" cy="42" r="6" fill="#f3b45f"/>
+  <circle cx="38" cy="38" r="5" fill="#cfe7dd"/>
+  <circle cx="268" cy="66" r="3" fill="#f3b45f"/>
+  <ellipse cx="160" cy="172" rx="132" ry="12" fill="#e4d8c8"/>
+  <!-- council building with columns -->
+  <path d="M40 86 97 52l57 34z" fill="#0f6b52" stroke="#0f6b52" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="97" cy="72" r="7" fill="#f3b45f"/>
+  <rect x="44" y="86" width="106" height="10" rx="3" fill="#6b5a48"/>
+  <rect x="52" y="96" width="12" height="52" fill="#fffaf3"/>
+  <rect x="74" y="96" width="12" height="52" fill="#fffaf3"/>
+  <rect x="108" y="96" width="12" height="52" fill="#fffaf3"/>
+  <rect x="130" y="96" width="12" height="52" fill="#fffaf3"/>
+  <path d="M60 96v52M82 96v52M116 96v52M138 96v52" stroke="#e4d8c8" stroke-width="3"/>
+  <rect x="90" y="120" width="14" height="28" rx="3" fill="#b3521f"/>
+  <rect x="38" y="148" width="118" height="12" rx="4" fill="#c98f3e"/>
+  <!-- green path to the house -->
+  <path d="M156 160C182 178 206 176 226 162" stroke="#0f6b52" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M160 161C184 175 204 173 222 162" stroke="#cfe7dd" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round" fill="none"/>
+  <!-- small house -->
+  <rect x="222" y="112" width="64" height="50" rx="6" fill="#0a4c3a"/>
+  <rect x="222" y="106" width="64" height="50" rx="6" fill="#0f6b52"/>
+  <path d="M216 108 254 82l38 26z" fill="#b3521f" stroke="#b3521f" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="232" y="118" width="14" height="13" rx="3" fill="#fffaf3"/>
+  <rect x="262" y="118" width="14" height="13" rx="3" fill="#fffaf3"/>
+  <rect x="247" y="134" width="14" height="22" rx="3" fill="#f3b45f"/>
+</svg>

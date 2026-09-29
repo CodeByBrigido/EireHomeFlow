@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <rect width="320" height="200" rx="20" fill="#f3ece1"/>
+  <circle cx="34" cy="120" r="6" fill="#f3b45f"/>
+  <circle cx="290" cy="126" r="5" fill="#cfe7dd"/>
+  <circle cx="292" cy="30" r="3" fill="#f3b45f"/>
+  <ellipse cx="160" cy="174" rx="110" ry="11" fill="#e4d8c8"/>
+  <!-- links from the three professionals to the house -->
+  <path d="M96 106 146 130M160 94v24M224 106l-50 24" stroke="#e4d8c8" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <!-- solicitor: document -->
+  <circle cx="96" cy="80" r="30" fill="#fffaf3" stroke="#0f6b52" stroke-width="5"/>
+  <path d="M84 64h18l8 8v24H84z" fill="#cfe7dd" stroke="#0f6b52" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M89 78h16M89 85h16M89 92h10" stroke="#0f6b52" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- surveyor: ruler -->
+  <circle cx="160" cy="62" r="30" fill="#fffaf3" stroke="#b3521f" stroke-width="5"/>
+  <g transform="rotate(-35 160 62)">
+    <rect x="136" y="54" width="48" height="16" rx="3" fill="#f3b45f" stroke="#b3521f" stroke-width="2.5"/>
+    <path d="M144 54v7M152 54v5M160 54v7M168 54v5M176 54v7" stroke="#b3521f" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <!-- valuer: euro -->
+  <circle cx="224" cy="80" r="30" fill="#fffaf3" stroke="#c98f3e" stroke-width="5"/>
+  <path d="M233 68a14 14 0 1 0 0 24M212 77h17M212 84h17" stroke="#c98f3e" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- small house -->
+  <rect x="130" y="130" width="60" height="42" rx="6" fill="#0a4c3a"/>
+  <rect x="130" y="124" width="60" height="42" rx="6" fill="#0f6b52"/>
+  <path d="M124 126 160 104l36 22z" fill="#b3521f" stroke="#b3521f" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="140" y="134" width="13" height="12" rx="2" fill="#fffaf3"/>
+  <rect x="166" y="134" width="13" height="12" rx="2" fill="#fffaf3"/>
+  <rect x="154" y="146" width="12" height="20" rx="2" fill="#f3b45f"/>
+</svg>

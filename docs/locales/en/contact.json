@@ -1,0 +1,34 @@
+{
+  "meta": "Contact us | ÉireHome Flow",
+  "eyebrow": "Contact us",
+  "title": "Get in touch",
+  "intro": "Questions about the guide, the calculator or your account, a figure that looks wrong, or an idea for the site: we read every message.",
+  "form": {
+    "title": "Write to us",
+    "topic": "Topic",
+    "message": "Message",
+    "note": "The button opens your email app with the message ready. Nothing is sent until you send it there.",
+    "submit": "Open in my email app",
+    "opened": "Your email app should now be open with the message. If nothing opened, write to eirehomeflow@gmail.com."
+  },
+  "topics": {
+    "guide": "A question about the guide",
+    "calculator": "The calculator",
+    "account": "My account",
+    "correction": "A figure or fact to correct",
+    "idea": "An idea for the site",
+    "misc": "Something else"
+  },
+  "email": {
+    "title": "Email us directly",
+    "reply": "We aim to reply within 14 days. Requests about your personal data are answered within one month."
+  },
+  "before": {
+    "title": "Before you write",
+    "items": [
+      "We cannot give personal financial, mortgage, legal or tax advice. For decisions, talk to a qualified professional.",
+      "To delete your account, use <a href=\"profile.html\">My profile</a>, or email us from the address on the account.",
+      "Spotted a mistake? Tell us the step or article, and the source if you have one."
+    ]
+  }
+}
