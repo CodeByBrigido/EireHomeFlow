@@ -7,9 +7,11 @@
     "title": "Parašykite mums",
     "topic": "Tema",
     "message": "Žinutė",
-    "note": "Mygtukas atidaro Jūsų el. pašto programą su paruošta žinute. Niekas neišsiunčiama, kol neišsiųsite jos iš ten.",
-    "submit": "Atidaryti el. pašto programoje",
-    "opened": "Jūsų el. pašto programa turėtų būti atidaryta su žinute. Jei niekas neatsidarė, rašykite adresu eirehomeflow@gmail.com."
+    "note": "Jūsų žinutė iškart patenka į mūsų pašto dėžutę, o Jūsų el. pašto adresą naudojame tik atsakymui. Žr. mūsų <a href=\"privacy.html\">Privatumo politiką</a>.",
+    "submit": "Siųsti žinutę",
+    "sent": "Ačiū. Jūsų žinutė išsiųsta, stengiamės atsakyti per 14 dienų.",
+    "tooMany": "Per pastarąją valandą išsiuntėte kelias žinutes. Bandykite vėliau arba rašykite adresu eirehomeflow@gmail.com.",
+    "failed": "Žinutės išsiųsti nepavyko. Bandykite dar kartą arba rašykite adresu eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Klausimas apie gidą",

@@ -95,7 +95,8 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 
 ### 5.6.1 Contato (`contact.html`)
 - Formulário com nome, e-mail, assunto (dúvida sobre o guia, calculadora, conta, correção, ideia, outro) e mensagem.
-- O botão abre o aplicativo de e-mail da pessoa com a mensagem pronta para eirehomeflow@gmail.com; nada é enviado nem guardado pelo site. Logado, nome e e-mail já vêm preenchidos.
+- "Send message" envia a mensagem pelo próprio site: ela chega por e-mail em eirehomeflow@gmail.com (responder no Gmail responde à pessoa) e uma cópia fica no Supabase, na Irlanda. Sem abrir aplicativo de e-mail. Logado, nome e e-mail já vêm preenchidos.
+- Proteção contra spam: um campo escondido que só robôs preenchem e no máximo 5 mensagens por hora de um mesmo endereço de internet.
 - Ao lado: o endereço de e-mail, o prazo de resposta e "Before you write" (o site não dá aconselhamento, como apagar a conta, como apontar um erro).
 
 ### 5.6.2 Mapa do site (`sitemap.html` e `sitemap.xml`)
@@ -158,11 +159,11 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 | RF-38 | Regras iguais em todo idioma | Cada tradução tem os mesmos números do inglês (taxas, limites, preços, datas); a calculadora dá o mesmo resultado em todos os idiomas, só com o formato local (€209,851 ou 209.851 €) |
 | RF-39 | Troca de página sem inglês antes | Com os textos já copiados no navegador, a página aparece direto no idioma, sem mostrar o inglês primeiro |
 | RF-40 | Idioma incompleto não é anunciado | Idioma em rascunho não aparece no menu nem é detectado; só abre com `?lang=`, e o que falta aparece em inglês |
-| RF-41 | Blog na Home | Depois do convite ao guia: um slideshow com 4 artigos sorteados a cada visita (passa sozinho a cada 7 s; para ao apontar ou focar nele, com o botão Pause e com "reduzir movimento"), 3 artigos sorteados ao lado e os outros abaixo, em 2 colunas, 6 por vez com "Show more articles". Nenhum artigo aparece duas vezes |
+| RF-41 | Blog na Home | Depois do convite ao guia: um slideshow com 4 artigos sorteados a cada visita (passa sozinho a cada 7 s, sem botão de pausa; espera enquanto a pessoa aponta ou foca nele, para de passar quando ela usa as setas ou os pontos e não passa sozinho com "reduzir movimento"), 3 artigos sorteados ao lado e os outros abaixo, em 2 colunas, 6 por vez com "Show more articles". Nenhum artigo aparece duas vezes |
 | RF-42 | Página de artigo | Cada artigo tem página própria (`blog/<slug>.html`), com imagem no topo, categoria, título, abertura, tempo de leitura, texto, a caixa "In My journey" com botão para a etapa relacionada e 3 "Similar articles" (mesma categoria primeiro) |
 | RF-43 | Blog em inglês | A seção do blog na Home e as páginas dos artigos ficam em inglês em qualquer idioma (`lang="en-IE"`), inclusive categorias, botões e rótulos; só o cabeçalho e o rodapé seguem o idioma escolhido |
 | RF-44 | Artigos levam ao My journey | Todo artigo cita o My journey no texto e aponta uma etapa; `npm run check:posts` recusa um artigo sem essa ligação, sem imagem ou com travessão |
-| RF-45 | Contato sem servidor | `contact.html` confere nome, e-mail e mensagem como os outros formulários e abre o aplicativo de e-mail com assunto "ÉireHome Flow: <assunto>" e o texto pronto; o site não envia nem guarda a mensagem |
+| RF-45 | Contato enviado pelo site | `contact.html` confere nome, e-mail e mensagem como os outros formulários e envia a mensagem pela Edge Function `contact` do Supabase: chega um e-mail "Contact form: <assunto> (<nome>)" em eirehomeflow@gmail.com, com Reply-To de quem escreveu, e a cópia fica em `contact_messages`. Enviada, aparece "Thank you. Your message has been sent..." e a mensagem some do campo; com erro, o aviso repete o endereço de e-mail; depois de 5 mensagens em uma hora do mesmo endereço, pede para tentar mais tarde |
 | RF-46 | Rodapé completo | O rodapé de todas as páginas, artigos inclusive, tem Contact us, Sitemap, Privacy Policy e Terms of Use |
 | RF-47 | Mapa do site | `sitemap.html` lista todas as páginas, as 31 etapas (cada link abre a etapa na jornada) e os 20 artigos; `sitemap.xml` lista as páginas públicas e os artigos, sem as páginas de conta, e `npm run check:posts` falha se estiver desatualizado |
 
@@ -185,7 +186,6 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 - Aplicativo nativo (iOS/Android).
 - Texto integral das páginas legais e e-mails de conta em outros idiomas além do inglês (por enquanto).
 - Tradução do blog: fica em inglês.
-- Envio do formulário de contato pelo próprio site: por enquanto ele abre o aplicativo de e-mail da pessoa.
 - Login com Apple e autenticação em dois fatores.
 - Compartilhamento de progresso entre duas contas (casal usa uma conta só por enquanto).
 
@@ -212,7 +212,7 @@ Hoje o site **não tem analytics**. Definir a ferramenta (preferência por uma s
 ## 10. Questões em aberto
 
 1. Ferramenta de analytics e metas numéricas da seção 4.
-2. Domínio próprio (ex.: eirehomeflow.ie) e e-mail no domínio (hoje o contato é eirehomeflow@gmail.com); envio do formulário de contato pelo site, sem depender do aplicativo de e-mail da pessoa.
+2. Domínio próprio (ex.: eirehomeflow.ie) e e-mail no domínio (hoje o contato é eirehomeflow@gmail.com). Com domínio próprio verificado no Resend, os e-mails do formulário de contato deixam de sair de `onboarding@resend.dev`.
 3. Política de privacidade e termos já existem; faltam o nome legal e o endereço do responsável pelo site (marcados como TODO nas páginas), a revisão das escolhas marcadas como POLICY CHOICE e uma página "About".
 4. Itens abertos da auditoria (`AUDITORIA.md`): A8 e M1 a M22, priorizados no Implementation Plan.
 5. Conteúdo específico para imigrantes (residência, renda no exterior, histórico de crédito).

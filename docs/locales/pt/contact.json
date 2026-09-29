@@ -7,9 +7,11 @@
     "title": "Escreva para nós",
     "topic": "Assunto",
     "message": "Mensagem",
-    "note": "O botão abre seu app de e-mail com a mensagem pronta. Nada é enviado até você enviar por lá.",
-    "submit": "Abrir no meu app de e-mail",
-    "opened": "Seu app de e-mail deve estar aberto com a mensagem. Se nada abriu, escreva para eirehomeflow@gmail.com."
+    "note": "Sua mensagem vai direto para a nossa caixa de entrada, e usamos o seu e-mail só para responder. Veja a nossa <a href=\"privacy.html\">Política de Privacidade</a>.",
+    "submit": "Enviar mensagem",
+    "sent": "Obrigado. Sua mensagem foi enviada, e procuramos responder em até 14 dias.",
+    "tooMany": "Você enviou várias mensagens na última hora. Tente de novo mais tarde, ou escreva para eirehomeflow@gmail.com.",
+    "failed": "Não foi possível enviar a sua mensagem. Tente de novo, ou escreva para eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Uma dúvida sobre o guia",

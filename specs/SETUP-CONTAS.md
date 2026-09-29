@@ -1,6 +1,6 @@
 # Como ativar as contas (Supabase)
 
-O código das contas já está pronto. Enquanto `docs/js/config.js` estiver vazio, o site mostra "Accounts are not switched on yet", e a etapa **"Create your ÉireHome Flow account"** (a última da fase 1) não pode ser concluída. Como ela é obrigatória, **ninguém consegue concluir as etapas da fase 2 em diante até as contas estarem ativas**. A leitura de todas as etapas continua liberada.
+O código das contas e do formulário de contato já está pronto. Enquanto `docs/js/config.js` estiver vazio, o site mostra "Accounts are not switched on yet", e a etapa **"Create your ÉireHome Flow account"** (a última da fase 1) não pode ser concluída. Como ela é obrigatória, **ninguém consegue concluir as etapas da fase 2 em diante até as contas estarem ativas**. A leitura de todas as etapas continua liberada.
 
 Leva uns 15 minutos.
 
@@ -45,7 +45,7 @@ create or replace function public.delete_my_account()
 returns void
 language sql
 security definer
-set search_path = '
+set search_path = ''
 as $$
   delete from auth.users where id = auth.uid();
 $$;
@@ -128,6 +128,57 @@ Clique em **Save** em cada um. Os trechos `{{ .Email }}` e `{{ .ConfirmationURL 
 O site já exige, no cadastro e na troca de senha: **pelo menos 8 caracteres, 1 letra maiúscula e 1 caractere especial** (``! @ # $ % ^ & * ( ) _ + - = [ ] { } ; ' \ : " | < > ? , . / ` ~``), com uma lista que vai marcando cada requisito enquanto a pessoa digita.
 
 No Supabase, em **Authentication → Sign In / Providers → Email**, defina **Minimum password length = 8**. A opção **Password requirements** não tem a combinação exata "maiúscula + especial". A mais próxima é "Lowercase, uppercase letters, digits and symbols", que também exige minúscula e número. Para ter essa trava no servidor também, acrescente "1 número" (e "1 minúscula") à regra do site, para as duas baterem.
+
+## 8. Formulário de contato (Resend)
+O formulário de `contact.html` envia a mensagem pelo próprio site. Ela vai para a Edge Function `contact` do Supabase, que manda um e-mail para eirehomeflow@gmail.com pelo Resend e guarda uma cópia na tabela `contact_messages`. Para responder, basta clicar em **Responder** no Gmail: a resposta vai direto para quem escreveu. O código da função está em `supabase/functions/contact/index.js`.
+
+Enquanto estes passos não forem feitos, o formulário mostra "Your message could not be sent. Please try again, or email us at eirehomeflow@gmail.com." Leva uns 15 minutos.
+
+**a) Criar a conta no Resend.** Crie uma conta gratuita em [resend.com](https://resend.com) **com o e-mail eirehomeflow@gmail.com**. Sem domínio próprio, o Resend só entrega para o e-mail da própria conta. Depois, em **API Keys → Create API Key**, escolha a permissão **Sending access** e copie a chave (`re_...`). Ela aparece uma vez só.
+
+**b) Criar a tabela.** No Supabase, em **SQL Editor**, cole e clique em **Run**:
+
+```sql
+-- Messages sent through the Contact us form. Only the "contact" Edge Function
+-- (service role) reads and writes this table: RLS is on, with no policies.
+create table public.contact_messages (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  name text not null check (char_length(name) between 1 and 80),
+  email text not null check (char_length(email) between 3 and 254),
+  topic text not null check (topic in ('guide', 'calculator', 'account', 'correction', 'idea', 'misc')),
+  message text not null check (char_length(message) between 1 and 1500),
+  locale text not null default '',
+  ip_hash text,
+  emailed boolean not null default false
+);
+
+alter table public.contact_messages enable row level security;
+revoke all on public.contact_messages from anon, authenticated;
+
+create index contact_messages_ip_hash_created_at on public.contact_messages (ip_hash, created_at);
+```
+
+**c) Guardar a chave do Resend no Supabase.** Em **Edge Functions → Secrets**, adicione o nome `RESEND_API_KEY` com a chave do passo a). Essa chave fica só no painel do Supabase: **nunca** a coloque em `docs/js/config.js` nem em nenhum arquivo do repositório.
+
+**d) Criar a função.** Em **Edge Functions → Deploy a new function → Via Editor**:
+1. Apague o exemplo do `index.ts` e cole o conteúdo inteiro de `supabase/functions/contact/index.js`.
+2. **Troque o nome da função para `contact`** antes de publicar. O campo do nome fica embaixo do editor, ao lado do botão **Deploy function**, e já vem com um nome sorteado (como `clever-handler`). O site chama `/functions/v1/contact`, e o nome não muda depois de publicado: se sair com outro nome, publique de novo como `contact` e apague a outra (na página dela, **Details → Delete function**).
+3. Clique em **Deploy function**.
+4. A verificação de JWT pode ficar como está: o site manda a chave publicável no header `apikey`, e ela chega à função (conferido em 29/09/2026). Se um dia as mensagens voltarem com erro 401 antes de chegar à função, desligue a verificação de JWT na página da função, em **Details**.
+
+**e) Testar.** Abra `contact.html` no site publicado (ou em `http://localhost:8000/`), preencha e clique em **Send message**. Deve aparecer "Thank you. Your message has been sent..." e, em até um minuto, chegar um e-mail "Contact form: ..." de `onboarding@resend.dev`. Se ele cair no spam, marque como "Não é spam". Em **Table Editor → contact_messages**, a mensagem aparece com `emailed = true`.
+
+**Se der erro:** em **Edge Functions → contact → Logs**, a função diz o que falhou:
+- `404` "Requested function was not found": a função não se chama `contact` (passo d.2);
+- `401` antes de chegar na função: desligue a verificação de JWT (passo d.4);
+- "the RESEND_API_KEY secret is not set": falta o passo c;
+- Resend `403` ("You can only send testing emails to your own email address"): a conta do Resend não foi criada com eirehomeflow@gmail.com.
+
+**Depois:**
+- Se o site mudar de endereço (domínio próprio), acrescente o endereço em `ORIGINS`, no começo de `supabase/functions/contact/index.js`, e cole a função de novo. Com um domínio próprio verificado no Resend, troque também o `FROM`.
+- A Privacy Policy promete apagar as mensagens 2 anos depois da última resposta. De vez em quando, rode no **SQL Editor**: `delete from public.contact_messages where created_at < now() - interval '2 years';` (ou agende em **Integrations → Cron**).
+- Cada endereço de internet pode mandar até 5 mensagens por hora. O IP não é guardado, só um código (HMAC) feito a partir dele.
 
 ## Antes de divulgar o site
 - **E-mails:** o serviço de e-mail padrão do Supabase serve só para testes e tem limite baixo de envios por hora. Para uso real, configure um SMTP próprio em **Authentication → Emails → SMTP Settings** (por exemplo Gmail com senha de app, Brevo, Resend ou Postmark). A senha do SMTP fica só no painel do Supabase, nunca no repositório.

@@ -17,7 +17,7 @@
     {"code":"ro","tag":"ro-RO","name":"Română","status":"complete","namespaces":["account","authentication","calculator","common","contact","guide","home","journey","legal","sitemap"]},
     {"code":"lt","tag":"lt-LT","name":"Lietuvių","status":"complete","namespaces":["account","authentication","calculator","common","contact","guide","home","journey","legal","sitemap"]},
   ];
-  var MESSAGES_VERSION = "9f44c5005c";
+  var MESSAGES_VERSION = "a13385156a";
   // /i18n:generated
 
   var SOURCE = "en";

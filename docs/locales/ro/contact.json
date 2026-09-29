@@ -7,9 +7,11 @@
     "title": "Scrie-ne",
     "topic": "Subiect",
     "message": "Mesaj",
-    "note": "Butonul deschide aplicația ta de e-mail cu mesajul pregătit. Nu se trimite nimic până nu îl trimiți de acolo.",
-    "submit": "Deschide în aplicația mea de e-mail",
-    "opened": "Aplicația ta de e-mail ar trebui să fie deschisă cu mesajul. Dacă nu s-a deschis nimic, scrie la eirehomeflow@gmail.com."
+    "note": "Mesajul tău ajunge direct în căsuța noastră de e-mail, iar adresa ta de e-mail o folosim doar ca să îți răspundem. Vezi <a href=\"privacy.html\">Politica de confidențialitate</a>.",
+    "submit": "Trimite mesajul",
+    "sent": "Mulțumim. Mesajul tău a fost trimis și încercăm să răspundem în cel mult 14 zile.",
+    "tooMany": "Ai trimis mai multe mesaje în ultima oră. Încearcă din nou mai târziu sau scrie-ne la eirehomeflow@gmail.com.",
+    "failed": "Mesajul nu a putut fi trimis. Încearcă din nou sau scrie-ne la eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "O întrebare despre ghid",

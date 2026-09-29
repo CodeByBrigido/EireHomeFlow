@@ -12,8 +12,6 @@ export const CATEGORIES = Object.keys(CATEGORY_NAMES);
 export const SLIDESHOW = {
   role: "carousel",
   slide: "slide",
-  pause: "Pause",
-  play: "Play",
   position: (n, total) => `${n} of ${total}`,
   goTo: (n, total) => `Show article ${n} of ${total}`,
 };

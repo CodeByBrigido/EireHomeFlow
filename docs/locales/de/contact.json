@@ -7,9 +7,11 @@
     "title": "Schreiben Sie uns",
     "topic": "Thema",
     "message": "Nachricht",
-    "note": "Die Schaltfläche öffnet Ihr E-Mail-Programm mit der fertigen Nachricht. Gesendet wird erst, wenn Sie sie dort abschicken.",
-    "submit": "In meinem E-Mail-Programm öffnen",
-    "opened": "Ihr E-Mail-Programm sollte jetzt mit der Nachricht geöffnet sein. Falls sich nichts geöffnet hat, schreiben Sie an eirehomeflow@gmail.com."
+    "note": "Ihre Nachricht geht direkt in unser Postfach, und wir verwenden Ihre E-Mail-Adresse nur für die Antwort. Siehe unsere <a href=\"privacy.html\">Datenschutzerklärung</a>.",
+    "submit": "Nachricht senden",
+    "sent": "Vielen Dank. Ihre Nachricht wurde gesendet, und wir bemühen uns, innerhalb von 14 Tagen zu antworten.",
+    "tooMany": "Sie haben in der letzten Stunde mehrere Nachrichten gesendet. Bitte versuchen Sie es später erneut oder schreiben Sie an eirehomeflow@gmail.com.",
+    "failed": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Eine Frage zum Ratgeber",

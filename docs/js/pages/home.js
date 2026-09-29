@@ -11,9 +11,10 @@ import { phaseCardsHtml } from "../core/steps.js?v=20260930";
 const SLIDE_SECONDS = 7;
 const MORE_AT_A_TIME = 6;
 
-// The slideshow moves on its own unless the reader paused it, is pointing at it or has keyboard
-// focus in it, or asked their system for less motion (then it starts paused).
-const slideshow = { current: 0, paused: false, held: false };
+// The slideshow moves on its own until the reader picks an article with the arrows or the dots
+// (then it stays where they left it). It waits while the reader points at it or has keyboard focus
+// in it, and never moves on its own for readers who asked their system for less motion.
+const slideshow = { current: 0, stopped: false, held: false };
 
 function slideHtml(post, index, total) {
   return `<div class="slide" role="group" aria-roledescription="${SLIDESHOW.slide}" aria-label="${esc(SLIDESHOW.position(index + 1, total))}">
@@ -26,24 +27,33 @@ function slideHtml(post, index, total) {
     </div>`;
 }
 
-function showSlide(index, byReader) {
-  const slides = document.querySelectorAll("#slides .slide");
+// direction 1 slides the cards to the left (next), -1 to the right (previous).
+function showSlide(index, byReader, direction = 1) {
+  const slides = [...document.querySelectorAll("#slides .slide")];
   if (!slides.length) return;
+  const from = slideshow.current;
   slideshow.current = (index + slides.length) % slides.length;
   slides.forEach((slide, i) => {
     const on = i === slideshow.current;
+    slide.classList.remove("is-leaving", "is-next", "is-prev");
     slide.classList.toggle("is-active", on);
     slide.inert = !on;
     slide.setAttribute("aria-hidden", String(!on));
   });
+  // With less motion asked for, the new slide simply replaces the old one.
+  if (from !== slideshow.current && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const way = direction > 0 ? "is-next" : "is-prev";
+    slides[from].classList.add("is-leaving", way);
+    slides[slideshow.current].classList.add(way);
+  }
   document.querySelectorAll("#slide-dots .slideshow__dot").forEach((dot, i) => dot.setAttribute("aria-current", String(i === slideshow.current)));
   // Only a change the reader asked for is announced; the automatic ones would interrupt reading.
   document.getElementById("slides").setAttribute("aria-live", byReader ? "polite" : "off");
 }
 
-function setPaused(paused) {
-  slideshow.paused = paused;
-  bind("slidePause", paused ? SLIDESHOW.play : SLIDESHOW.pause);
+function pickSlide(index, direction) {
+  slideshow.stopped = true;
+  showSlide(index, true, direction);
 }
 
 function renderBlog() {
@@ -58,15 +68,19 @@ function renderBlog() {
   document.getElementById("blog-more").innerHTML = pick.more.map((post, i) => postCardHtml(post, "row", i >= MORE_AT_A_TIME)).join("");
   document.getElementById("more-posts").hidden = pick.more.length <= MORE_AT_A_TIME;
   showSlide(0, false);
+  // The slide that moved out is hidden once its animation ends.
+  document.getElementById("slides").addEventListener("animationend", (e) => {
+    if (e.target.classList.contains("is-leaving")) e.target.classList.remove("is-leaving", "is-next", "is-prev");
+  });
 
-  setPaused(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  slideshow.stopped = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hold = (held) => () => { slideshow.held = held; };
   box.addEventListener("mouseenter", hold(true));
   box.addEventListener("mouseleave", hold(false));
   box.addEventListener("focusin", hold(true));
   box.addEventListener("focusout", (e) => { if (!box.contains(e.relatedTarget)) slideshow.held = false; });
   setInterval(() => {
-    if (!slideshow.paused && !slideshow.held && !document.hidden) showSlide(slideshow.current + 1, false);
+    if (!slideshow.stopped && !slideshow.held && !document.hidden) showSlide(slideshow.current + 1, false);
   }, SLIDE_SECONDS * 1000);
 }
 
@@ -103,9 +117,8 @@ function toggleTicker() {
 
 startPage({ init: initPage, render: renderPage, actions: {
   ticker: toggleTicker,
-  slidePrev: () => showSlide(slideshow.current - 1, true),
-  slideNext: () => showSlide(slideshow.current + 1, true),
-  slideTo: (el) => showSlide(Number(el.dataset.index), true),
-  slidePause: () => setPaused(!slideshow.paused),
+  slidePrev: () => pickSlide(slideshow.current - 1, -1),
+  slideNext: () => pickSlide(slideshow.current + 1, 1),
+  slideTo: (el) => pickSlide(Number(el.dataset.index), Math.sign(Number(el.dataset.index) - slideshow.current)),
   morePosts,
 } });

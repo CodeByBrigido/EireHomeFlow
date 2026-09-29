@@ -502,6 +502,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .contact__form .btn { justify-self: start; }
 .contact__title { margin: 0; font-weight: 800; font-size: 21px; letter-spacing: -0.01em; }
 .contact__note { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.contact__trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .contact__aside { display: grid; gap: 18px; }
 .contact__card { padding: 22px 24px; border-radius: 22px; background: #fff; border: 2px solid var(--line); }
 .contact__card p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }
@@ -534,10 +535,20 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .blog__head { margin-bottom: 26px; }
 .blog__title { margin: 0; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.025em; }
 .blog__top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: start; }
-/* The slides share one grid cell and cross-fade, so the box is as tall as the tallest slide. */
-.slideshow__slides { display: grid; }
-.slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s; }
-.slide.is-active { opacity: 1; visibility: visible; }
+/* The slides share one grid cell, so the box is as tall as the tallest slide. On a change the whole
+   card slides out to the left while the next one comes in from the right, 24px apart (the other way
+   for "previous"). The 8px of padding keeps the focus ring inside the clipped area. */
+.slideshow__slides { display: grid; overflow: hidden; margin: -8px; padding: 8px; }
+.slide { grid-area: 1 / 1; visibility: hidden; animation-duration: .7s; animation-timing-function: cubic-bezier(.65, 0, .35, 1); animation-fill-mode: both; }
+.slide.is-active, .slide.is-leaving { visibility: visible; }
+.slide.is-active.is-next { animation-name: slide-in-from-right; }
+.slide.is-leaving.is-next { animation-name: slide-out-to-left; }
+.slide.is-active.is-prev { animation-name: slide-in-from-left; }
+.slide.is-leaving.is-prev { animation-name: slide-out-to-right; }
+@keyframes slide-in-from-right { from { transform: translateX(calc(100% + 24px)); } to { transform: none; } }
+@keyframes slide-out-to-left { from { transform: none; } to { transform: translateX(calc(-100% - 24px)); } }
+@keyframes slide-in-from-left { from { transform: translateX(calc(-100% - 24px)); } to { transform: none; } }
+@keyframes slide-out-to-right { from { transform: none; } to { transform: translateX(calc(100% + 24px)); } }
 .slide__link { display: block; }
 .slide__image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 24px; background: var(--sand); }
 .slide__category, .post-card__category, .post__category { display: block; font-weight: 800; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
@@ -547,13 +558,12 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .slide__link:hover .slide__title, .post-card__link:hover .post-card__title { color: var(--ink); }
 .slideshow__controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
 .slideshow__arrow { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 2px solid var(--line-2); border-radius: 50%; background: #fff; color: var(--brown); font-weight: 800; font-size: 17px; }
-.slideshow__arrow:hover, .slideshow__pause:hover { background: var(--hover); }
+.slideshow__arrow:hover { background: var(--hover); }
 .slideshow__dots { display: flex; }
 /* Each dot is a 24px target around a small pill; the current one is longer and green. */
 .slideshow__dot { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; }
 .slideshow__dot::before { content: ""; width: 10px; height: 10px; border-radius: 999px; background: var(--line-2); transition: width .2s, background .2s; }
 .slideshow__dot[aria-current="true"]::before { width: 22px; background: var(--ink); }
-.slideshow__pause { margin-left: auto; padding: 8px 16px; border: 2px solid var(--line-2); border-radius: 999px; background: none; color: var(--brown); font-weight: 700; font-size: 13px; }
 .blog__side, .post-grid { list-style: none; margin: 0; padding: 0; display: grid; }
 /* Cards are list items, but their titles are headings: no justified text. */
 .post-card { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
@@ -654,7 +664,7 @@ html[lang|="en"] .legal__notice { display: none; }
   .ticker__item[aria-hidden="true"], .ticker__toggle { display: none; }
   .journey:not(.is-compact) .node.is-current { animation: none; }
   .btn--primary, .phase-card, .node, .bar__fill, .guide-phase__summary::after { transition: none; }
-  .slide, .slideshow__dot::before { transition: none; }
+  .slideshow__dot::before { transition: none; }
 }
 
 /* Tablet */

@@ -7,9 +7,11 @@
     "title": "Write to us",
     "topic": "Topic",
     "message": "Message",
-    "note": "The button opens your email app with the message ready. Nothing is sent until you send it there.",
-    "submit": "Open in my email app",
-    "opened": "Your email app should now be open with the message. If nothing opened, write to eirehomeflow@gmail.com."
+    "note": "Your message goes straight to our inbox, and we use your email address only to reply. See our <a href=\"privacy.html\">Privacy Policy</a>.",
+    "submit": "Send message",
+    "sent": "Thank you. Your message has been sent, and we aim to reply within 14 days.",
+    "tooMany": "You have sent several messages in the last hour. Please try again later, or email us at eirehomeflow@gmail.com.",
+    "failed": "Your message could not be sent. Please try again, or email us at eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "A question about the guide",

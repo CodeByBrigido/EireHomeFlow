@@ -96,7 +96,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 4. **Seis fases:** cartões com número, título, resumo, barra e "N of M steps done"; cada um leva a `journey.html#phase-<slug>`.
 5. **Convite ao guia:** faixa areia "Read the full guide" com o botão "Open the guide".
 6. **Blog** (`#blog`, todo em inglês em qualquer idioma do site): eyebrow "From the blog" e título "Guides for buying a home in Ireland". Embaixo, como num portal de notícias:
-   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas, pontos com o atual alongado em verde e "Pause"/"Play" à direita). Passa sozinho a cada 7 s e para com o ponteiro ou o foco em cima;
+   - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas e pontos com o atual alongado em verde, sem botão de pausa). Passa sozinho a cada 7 s, com o card inteiro deslizando da direita para a esquerda (para trás, o contrário); espera com o ponteiro ou o foco em cima e para de passar sozinho depois que a pessoa usa as setas ou os pontos;
    - à direita, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título;
    - **"More articles"**: os outros 13 em 2 colunas, com imagem ao lado do texto, 6 por vez; "Show more articles" mostra os próximos 6.
    Nenhum artigo aparece duas vezes. Cada cartão inteiro é o link para o artigo.
@@ -231,8 +231,8 @@ Em `signup.html`, logo acima do botão: "By creating an account, you agree to ou
 ### 5.8.1 Contato (`contact.html`)
 - Eyebrow "Contact us", título "Get in touch" e uma frase sobre o que se pode perguntar.
 - **Duas colunas** (60% e 40%); abaixo de 960px, uma coluna, com os cartões depois do formulário.
-- **Formulário "Write to us"** (cartão branco): Full name, Email, Topic (lista: "A question about the guide", "The calculator", "My account", "A figure or fact to correct", "An idea for the site", "Something else") e Message (até 1.500 caracteres). Abaixo, a nota "The button opens your email app with the message ready. Nothing is sent until you send it there." e o botão "Open in my email app".
-- Campos vazios ficam vermelhos, com "Enter your first and last name.", "Enter a valid email address..." e "Write your message.", e o foco vai ao primeiro. Com tudo certo, o aplicativo de e-mail abre e a mensagem "Your email app should now be open with the message. If nothing opened, write to eirehomeflow@gmail.com." aparece acima do botão.
+- **Formulário "Write to us"** (cartão branco): Full name, Email, Topic (lista: "A question about the guide", "The calculator", "My account", "A figure or fact to correct", "An idea for the site", "Something else") e Message (até 1.500 caracteres). Abaixo, a nota "Your message goes straight to our inbox, and we use your email address only to reply. See our Privacy Policy." (com link) e o botão "Send message".
+- Campos vazios ficam vermelhos, com "Enter your first and last name.", "Enter a valid email address..." e "Write your message.", e o foco vai ao primeiro. Com tudo certo, "Please wait..." aparece acima do botão, que fica desativado. Enviada: aviso verde "Thank you. Your message has been sent, and we aim to reply within 14 days.", e a mensagem e o assunto voltam ao início. Erro: "Your message could not be sent. Please try again, or email us at eirehomeflow@gmail.com."; depois de 5 mensagens em uma hora: "You have sent several messages in the last hour. Please try again later, or email us at eirehomeflow@gmail.com."
 - Logado, nome e e-mail já vêm preenchidos.
 - **Cartões ao lado:** "Email us directly" (branco: o endereço e o prazo de resposta, 14 dias, ou um mês para pedidos sobre dados pessoais) e "Before you write" (areia: o site não dá aconselhamento; para apagar a conta, My profile; ao apontar um erro, diga a etapa ou o artigo e a fonte).
 
