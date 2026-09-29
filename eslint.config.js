@@ -24,6 +24,11 @@ export default [
     languageOptions: { sourceType: "script" },
   },
   {
+    // Supabase Edge Functions run on Deno, which has the browser's fetch, Request and crypto.
+    files: ["supabase/functions/**/*.js"],
+    languageOptions: { ecmaVersion: 2022, sourceType: "module", globals: { ...globals.browser, Deno: "readonly" } },
+  },
+  {
     files: ["tests/**/*.js", "tools/**/*.js", "eslint.config.js"],
     languageOptions: { ecmaVersion: 2022, sourceType: "module", globals: globals.node },
   },

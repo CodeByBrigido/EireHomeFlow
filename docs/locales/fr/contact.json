@@ -7,9 +7,11 @@
     "title": "Écrivez-nous",
     "topic": "Sujet",
     "message": "Message",
-    "note": "Le bouton ouvre votre messagerie avec le message prêt. Rien n'est envoyé tant que vous ne l'envoyez pas depuis celle-ci.",
-    "submit": "Ouvrir dans ma messagerie",
-    "opened": "Votre messagerie devrait être ouverte avec le message. Si rien ne s'est ouvert, écrivez à eirehomeflow@gmail.com."
+    "note": "Votre message arrive directement dans notre boîte de réception, et nous utilisons votre adresse e-mail uniquement pour vous répondre. Consultez notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
+    "submit": "Envoyer le message",
+    "sent": "Merci. Votre message a bien été envoyé, et nous nous efforçons de répondre sous 14 jours.",
+    "tooMany": "Vous avez envoyé plusieurs messages au cours de la dernière heure. Réessayez plus tard, ou écrivez-nous à eirehomeflow@gmail.com.",
+    "failed": "Votre message n'a pas pu être envoyé. Réessayez, ou écrivez-nous à eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Une question sur le guide",

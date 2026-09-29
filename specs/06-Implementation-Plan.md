@@ -133,7 +133,8 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] `npm run posts` escreve as páginas a partir de `content/blog/` e `js/lib/posts.js`; `npm run check:posts` no `npm run check` e no CI
 
 ### Marco 3.11: Contato e mapa do site (29/09/2026) ✅
-- [x] `contact.html`: formulário (nome, e-mail, assunto, mensagem) com a validação dos outros formulários, que abre o aplicativo de e-mail com a mensagem pronta; nada passa por servidor
+- [x] `contact.html`: formulário (nome, e-mail, assunto, mensagem) com a validação dos outros formulários, enviado pelo site: Edge Function `contact` do Supabase, e-mail pelo Resend e cópia em `contact_messages`, com campo-armadilha para robôs e limite de 5 por hora
+- [x] Privacy Policy com o formulário, o Resend e os prazos
 - [x] `sitemap.html`: todas as páginas, as 6 fases e as 31 etapas (cada uma abre na jornada) e os 20 artigos por categoria
 - [x] `sitemap.xml` com as páginas públicas e os artigos, escrito por `npm run posts` e conferido pelo `npm run check:posts`
 - [x] Rodapé com Contact us, Sitemap, Privacy Policy e Terms of Use em todas as páginas e artigos
@@ -149,6 +150,8 @@ Responsável: Rodrigo (painel do Supabase e conta Google), com apoio do Claude.
 - [ ] Colar os dois modelos de e-mail (versão com a logo no GitHub Pages) e os assuntos
 - [ ] Definir o tamanho mínimo de senha = 8
 - [ ] Teste completo em `http://localhost:8000/`: `signup.html` → e-mail → confirmação (aviso na Home) → concluir a etapa de conta → fase 2 destrava → outro navegador mostra o mesmo progresso → menu da conta → Dashboard → Perfil (mudar o nome) → Sign out → `forgot-password.html` → e-mail → `new-password.html`
+
+- [ ] Formulário de contato: conta no Resend com eirehomeflow@gmail.com, tabela `contact_messages`, segredo `RESEND_API_KEY` e a função `contact` com Verify JWT desligado (`SETUP-CONTAS.md`, seção 8); testar uma mensagem de ponta a ponta
 
 **Pronto quando:** todos os passos do teste passam com uma conta real.
 

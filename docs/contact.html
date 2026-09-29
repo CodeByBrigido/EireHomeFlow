@@ -81,9 +81,13 @@
           <textarea name="message" rows="7" maxlength="1500" aria-describedby="error-message"></textarea>
           <span class="field__error" id="error-message"></span>
         </label>
-        <p class="contact__note" data-i18n="contact:form.note">The button opens your email app with the message ready. Nothing is sent until you send it there.</p>
+        <!-- Only bots fill in this field; the Edge Function drops their messages. -->
+        <div class="contact__trap" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="contact__note" data-i18n-html="contact:form.note">Your message goes straight to our inbox, and we use your email address only to reply. See our <a href="privacy.html">Privacy Policy</a>.</p>
         <p class="form-status" role="status" aria-live="polite"></p>
-        <button type="submit" class="btn btn--primary" data-i18n="contact:form.submit">Open in my email app</button>
+        <button type="submit" class="btn btn--primary" data-i18n="contact:form.submit">Send message</button>
       </form>
 
       <aside class="contact__aside">

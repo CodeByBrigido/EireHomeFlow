@@ -7,9 +7,11 @@
     "title": "Scrivici",
     "topic": "Argomento",
     "message": "Messaggio",
-    "note": "Il pulsante apre la tua app di posta con il messaggio pronto. Non viene inviato nulla finché non lo invii da lì.",
-    "submit": "Apri nella mia app di posta",
-    "opened": "La tua app di posta dovrebbe essere aperta con il messaggio. Se non si è aperto nulla, scrivi a eirehomeflow@gmail.com."
+    "note": "Il tuo messaggio arriva direttamente nella nostra casella di posta, e usiamo il tuo indirizzo email solo per risponderti. Consulta la nostra <a href=\"privacy.html\">Informativa sulla privacy</a>.",
+    "submit": "Invia messaggio",
+    "sent": "Grazie. Il tuo messaggio è stato inviato e cerchiamo di rispondere entro 14 giorni.",
+    "tooMany": "Hai inviato diversi messaggi nell'ultima ora. Riprova più tardi, oppure scrivici a eirehomeflow@gmail.com.",
+    "failed": "Non è stato possibile inviare il messaggio. Riprova, oppure scrivici a eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Una domanda sulla guida",

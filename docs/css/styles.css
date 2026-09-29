@@ -502,6 +502,7 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .contact__form .btn { justify-self: start; }
 .contact__title { margin: 0; font-weight: 800; font-size: 21px; letter-spacing: -0.01em; }
 .contact__note { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.contact__trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .contact__aside { display: grid; gap: 18px; }
 .contact__card { padding: 22px 24px; border-radius: 22px; background: #fff; border: 2px solid var(--line); }
 .contact__card p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }

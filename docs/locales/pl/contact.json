@@ -7,9 +7,11 @@
     "title": "Napisz do nas",
     "topic": "Temat",
     "message": "Wiadomość",
-    "note": "Przycisk otwiera twoją aplikację pocztową z gotową wiadomością. Nic nie zostanie wysłane, dopóki nie wyślesz jej stamtąd.",
-    "submit": "Otwórz w mojej poczcie",
-    "opened": "Twoja aplikacja pocztowa powinna być już otwarta z wiadomością. Jeśli nic się nie otworzyło, napisz na eirehomeflow@gmail.com."
+    "note": "Twoja wiadomość trafia prosto do naszej skrzynki, a twojego adresu e-mail używamy tylko do odpowiedzi. Zobacz naszą <a href=\"privacy.html\">Politykę prywatności</a>.",
+    "submit": "Wyślij wiadomość",
+    "sent": "Dziękujemy. Wiadomość została wysłana, a odpowiedzi staramy się udzielić w ciągu 14 dni.",
+    "tooMany": "W ciągu ostatniej godziny wysłano kilka wiadomości. Spróbuj ponownie później albo napisz na eirehomeflow@gmail.com.",
+    "failed": "Nie udało się wysłać wiadomości. Spróbuj ponownie albo napisz na eirehomeflow@gmail.com."
   },
   "topics": {
     "guide": "Pytanie o poradnik",

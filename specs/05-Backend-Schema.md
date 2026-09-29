@@ -1,8 +1,8 @@
 # Backend Schema
 
-Produto: ÉireHome Flow · Versão do documento: 1.5 · Última revisão: 28/09/2026
+Produto: ÉireHome Flow · Versão do documento: 1.6 · Última revisão: 29/09/2026
 
-O único backend é o **Supabase** (Auth + Postgres + Storage). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS).
+O único backend é o **Supabase** (Auth + Postgres + Storage + uma Edge Function). O site é estático e fala com o Supabase direto do navegador, usando a chave publicável. Toda a proteção de dados é feita por Row Level Security (RLS). A única exceção é o formulário de contato: ele passa pela Edge Function `contact` (seção 2.3), que usa a chave `service_role` dentro do Supabase e envia e-mail pelo Resend.
 
 ## 1. Projeto
 
@@ -30,6 +30,9 @@ public.progress
   user_id    uuid         PK, FK → auth.users(id) ON DELETE CASCADE
   done       jsonb        NOT NULL DEFAULT '{}'
   updated_at timestamptz  NOT NULL DEFAULT now()
+
+public.contact_messages (sem ligação com auth.users; só a Edge Function "contact" lê e grava)
+  id, created_at, name, email, topic, message, locale, ip_hash, emailed
 ```
 
 ### 2.1 `auth.users`
@@ -41,7 +44,7 @@ Tabela interna do Supabase Auth. O site grava apenas:
 Quem entra com Google não tem senha. O Supabase guarda a identidade Google em `auth.identities` e copia nome, e-mail e o link da foto para `user_metadata` (o site não usa a foto).
 
 ### 2.1.1 Função `public.delete_my_account()`
-Deixa a própria pessoa apagar a conta em My profile. `security definer` (roda com os direitos de quem a criou, que pode apagar em `auth.users`), `set search_path = '`, e sem parâmetros: só apaga `auth.uid()`, então ninguém consegue apagar a conta de outra pessoa. `EXECUTE` só para `authenticated` (tirado de `public` e `anon`). O SQL está no `SETUP-CONTAS.md`, seção 2.1. Apagar em `auth.users` leva junto `public.progress` (cascade), `auth.identities`, `auth.sessions` e os tokens de atualização. Não pode haver arquivos no Storage em nome da pessoa (o site não usa Storage).
+Deixa a própria pessoa apagar a conta em My profile. `security definer` (roda com os direitos de quem a criou, que pode apagar em `auth.users`), `set search_path = ''`, e sem parâmetros: só apaga `auth.uid()`, então ninguém consegue apagar a conta de outra pessoa. `EXECUTE` só para `authenticated` (tirado de `public` e `anon`). O SQL está no `SETUP-CONTAS.md`, seção 2.1. Apagar em `auth.users` leva junto `public.progress` (cascade), `auth.identities`, `auth.sessions` e os tokens de atualização. Não pode haver arquivos no Storage em nome da pessoa (o site não usa Storage).
 
 Nos modelos de e-mail, o nome fica disponível como `{{ .Data.full_name }}`.
 
@@ -76,6 +79,26 @@ Exemplo de linha:
 
 - Chave: ID da etapa (seção 4). Valor `true` = feita; `false` ou ausente = não feita.
 - A linha é criada na primeira gravação (`upsert`) e substituída inteira a cada mudança.
+
+### 2.3 `public.contact_messages` e a Edge Function `contact`
+As mensagens do formulário de ``contact.html``. O SQL está no ``SETUP-CONTAS.md``, seção 8.
+
+| Coluna | Tipo | O que é |
+|---|---|---|
+| ``id`` | ``bigint`` identity, PK | |
+| ``created_at`` | ``timestamptz`` | Quando chegou |
+| ``name`` | ``text``, 1 a 80 caracteres | Nome digitado |
+| ``email`` | ``text``, 3 a 254 | E-mail para a resposta |
+| ``topic`` | ``text`` | Um de ``guide``, ``calculator``, ``account``, ``correction``, ``idea``, ``misc`` |
+| ``message`` | ``text``, 1 a 1500 | A mensagem |
+| ``locale`` | ``text`` | Idioma do site ao enviar (``pt``, ``de``...) ou vazio |
+| ``ip_hash`` | ``text`` | HMAC-SHA256 do IP, com a chave ``service_role`` como segredo: conta as mensagens por hora sem guardar o IP |
+| ``emailed`` | ``boolean`` | Se o e-mail pelo Resend saiu |
+
+- **RLS ligado e sem nenhuma política**, e ``revoke all`` de ``anon`` e ``authenticated``: pelo site ou pela API, ninguém lê nem grava. Só a função, com ``service_role``, que ignora o RLS.
+- **Função** (``supabase/functions/contact/index.js``, colada no painel com **Verify JWT desligado**): aceita só ``POST`` de ``https://codebybrigido.github.io`` e de ``localhost``/``127.0.0.1`` (CORS). Descarta sem erro quem preenche o campo escondido ``website`` (robôs); confere os campos (400); recusa a sexta mensagem do mesmo IP em uma hora (429); manda o e-mail pelo Resend (``from`` ``onboarding@resend.dev``, ``to`` eirehomeflow@gmail.com, ``reply_to`` quem escreveu) e grava a linha com ``emailed``. Responde 200 se o e-mail ou a cópia funcionou, 502 se os dois falharam.
+- **Segredos:** ``SUPABASE_URL`` e ``SUPABASE_SERVICE_ROLE_KEY`` o Supabase já dá à função; ``RESEND_API_KEY`` é colado em **Edge Functions → Secrets**. Nenhum deles vai para o repositório.
+- **Retenção:** 2 anos depois da última resposta (Privacy Policy); apagar com ``delete from public.contact_messages where created_at < now() - interval '2 years';``.
 
 ## 3. Segurança (Row Level Security)
 
@@ -169,6 +192,7 @@ where done ? 'aip-3';
 | Mudar o nome | `auth.updateUser({ data: { display_name, full_name } })` | `profile.html` |
 | Ler progresso | `from("progress").select("done").eq("user_id", id).maybeSingle()` | Ao entrar |
 | Gravar progresso | `from("progress").upsert({ user_id, done, updated_at })` | Ao entrar (soma) e a cada mudança |
+| Mandar mensagem de contato | `fetch(SUPABASE_URL + "/functions/v1/contact", { method: "POST", headers: { apikey } })` (`pages/contact.js`, sem `Authorization`) | `contact.html` |
 
 `emailRedirectTo` e `redirectTo` (também no Google) são sempre o endereço base do site (`Account.homeUrl()`, a pasta onde está o `index.html`). A Home trata o retorno: mostra o aviso de confirmação ou, no caso de senha, redireciona para `new-password.html`. Por isso as Redirect URLs só precisam do endereço base.
 
@@ -207,7 +231,7 @@ Se o endereço do site mudar, troque a URL nos dois modelos e cole-os de novo no
 
 ## 8. Privacidade e GDPR
 
-- **Dados pessoais guardados:** nome, e-mail, hash da senha, datas de acesso (gerenciados pelo Supabase) e o mapa de etapas feitas.
+- **Dados pessoais guardados:** nome, e-mail, hash da senha, datas de acesso (gerenciados pelo Supabase) e o mapa de etapas feitas. Das mensagens de contato: nome, e-mail, assunto, mensagem, idioma e o HMAC do IP (seção 2.3), também entregues por e-mail pelo Resend (EUA; DPF e cláusulas contratuais padrão).
 - **Dados que nunca saem do navegador:** salário, poupança, presente, preço e tudo o mais da calculadora. Também o idioma escolhido e as cópias dos textos traduzidos (`eirehome-locale`, `eirehome-locale-preview`, `eirehome-i18n:*`), que não têm dado pessoal.
 - **Localização:** Irlanda (eu-west-1).
 - **Exclusão:** Authentication → Users → Delete user apaga o usuário e, por cascata, o progresso.

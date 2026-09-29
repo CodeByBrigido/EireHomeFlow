@@ -30,7 +30,7 @@ flowchart LR
   H & B -->|rodapé: Sitemap| SM[sitemap.html]
   SM -->|fase ou etapa| J
   SM -->|artigo| B
-  CT -->|Open in my email app| M[App de e-mail da pessoa]
+  CT -->|Send message| EF[Edge Function contact] -->|Resend| M[E-mail em eirehomeflow@gmail.com]
   E1[Link do e-mail de confirmação] --> H
   E2[Link do e-mail de senha] --> H -->|redireciona| NP
 ```
@@ -213,8 +213,9 @@ flowchart LR
 
 1. "Contact us" no rodapé de qualquer página abre `contact.html`. Logado, nome e e-mail já vêm preenchidos.
 2. A pessoa escolhe o assunto e escreve a mensagem. Campo vazio ou e-mail inválido fica vermelho, e o foco vai ao primeiro.
-3. "Open in my email app" abre o aplicativo de e-mail com a mensagem para eirehomeflow@gmail.com, assunto "ÉireHome Flow: <assunto>" e nome e e-mail no fim do texto. A página avisa que o aplicativo deve ter aberto e repete o endereço, para quem não tem aplicativo de e-mail configurado.
-4. Nada é enviado nem guardado pelo site: a mensagem só sai quando a pessoa a envia no aplicativo.
+3. "Send message" mostra "Please wait..." e manda a mensagem para a Edge Function `contact` do Supabase, que a envia por e-mail (Resend) para eirehomeflow@gmail.com, com Reply-To de quem escreveu, e guarda uma cópia em `contact_messages`.
+4. Enviada: aviso "Thank you. Your message has been sent...", e a mensagem e o assunto voltam ao início (nome e e-mail ficam). Erro: "Your message could not be sent..." com o endereço de e-mail do site. Mais de 5 mensagens em uma hora do mesmo endereço de internet: "You have sent several messages in the last hour...".
+5. Um robô que preenche o campo escondido recebe "ok", mas nada é enviado nem guardado.
 
 ## 10.4 Mapa do site (sitemap.html)
 

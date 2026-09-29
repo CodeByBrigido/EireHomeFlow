@@ -45,7 +45,7 @@ EireHomeFlow/
 │   ├── dashboard.html             ← painel da pessoa logada
 │   ├── profile.html               ← perfil (nome, e-mail, senha, sair)
 │   ├── signin.html · signup.html · forgot-password.html · new-password.html
-│   ├── contact.html               ← Contact us (formulário que abre o app de e-mail)
+│   ├── contact.html               ← Contact us (formulário enviado pela Edge Function contact)
 │   ├── sitemap.html               ← mapa do site (páginas, 31 etapas, artigos)
 │   ├── sitemap.xml                ← mapa para buscadores, escrito por npm run posts: não edite
 │   ├── privacy.html · terms.html   ← Privacy Policy e Terms of Use
@@ -64,7 +64,7 @@ EireHomeFlow/
 │   │   ├── people.js              ← userName, firstName, initials
 │   │   ├── locales.js             ← lista de idiomas (status complete/draft) e de namespaces
 │   │   ├── posts.js               ← os artigos do blog (título, resumo, categoria, etapa, tags), sorteio e semelhantes
-│   │   ├── contact.js             ← CONTACT_EMAIL e mailtoLink (a mensagem do formulário de contato)
+│   │   ├── contact.js             ← endereço da Edge Function, corpo do envio e leitura da resposta (formulário de contato)
 │   │   └── format.js              ← num, esc, formatMoney/Number/Percent/Date (Intl), euro
 │   ├── js/core/                   ← partes do navegador compartilhadas (ver seção 4)
 │   │   ├── app.js                 ← startPage(): carregamento, cliques, eventos da conta
@@ -81,6 +81,7 @@ EireHomeFlow/
 │   └── fonts/*.woff2
 ├── content/blog/<slug>.json      ← o texto de cada artigo, em inglês (fonte da página em docs/blog/)
 ├── supabase/email-templates/      ← e-mails de confirmação e de nova senha
+├── supabase/functions/contact/    ← index.js: a Edge Function do formulário de contato (colada no painel do Supabase)
 ├── specs/                         ← estes documentos, AUDITORIA.md e SETUP-CONTAS.md
 ├── _original-Backup/              ← bundle original do Claude Design
 ├── tests/                         ← testes automáticos (npm test)
@@ -129,7 +130,7 @@ Cada página carrega um único script: `<script type="module" src="js/pages/<pá
 | Início e eventos | `core/app.js` | `startPage` (uma vez por página), `AUTH_RETURN`, `cleanAuthUrl`, ações comuns (`menu`, `languageMenu`, `setLocale`, `closeToast`, `signOut`), um `click`, um `input` e um `keydown` no `document`, `onAccountChange` |
 | Nomes | `lib/people.js` | `userName`, `firstName`, `initials` ("Rodrigo Andrade Brigido" vira "RB") |
 | Blog | `lib/posts.js` | `POSTS` (slug, categoria, etapa do My journey, tags, título e resumo em inglês), `CATEGORY_NAMES` e `CATEGORIES`, `SLIDESHOW` (as palavras do slideshow), `postPath`, `postImage`, `shuffle`, `homeSelection` (4 no slideshow, 3 ao lado, o resto abaixo, sem repetir), `similarPosts` (mesma categoria vale 3, cada tag em comum vale 1; empate segue a ordem de `POSTS`), `postCardHtml` |
-| Contato | `lib/contact.js` | `CONTACT_EMAIL` (eirehomeflow@gmail.com) e `mailtoLink({ topic, name, email, message })`: o endereço `mailto:` com assunto "ÉireHome Flow: <assunto>" e o corpo (mensagem, nome, e-mail) codificados |
+| Contato | `lib/contact.js` | `CONTACT_EMAIL` (eirehomeflow@gmail.com), `contactUrl(SUPABASE_URL)` (`/functions/v1/contact`), `contactBody(values, locale)` (campos sem espaços nas pontas, o campo-armadilha `website` e o idioma) e `sendOutcome(status)` (`sent`, `tooMany` para 429, `failed`) |
 | Utilitários | `lib/format.js` + `core/dom.js` | `num`, `esc`, `formatMoney`, `formatNumber`, `formatPercent`, `formatDate`, `euro` (inglês da Irlanda); `PAGE`, `bind` |
 | Segurança | `lib/format.js`, `lib/validation.js` | `esc()` em todo texto que vai para `innerHTML`; `safeNext()` aceita só `nome-de-pagina.html` com `#ancora` opcional |
 
@@ -170,7 +171,7 @@ Cada módulo de página passa a `startPage` os seus ganchos: `init()`, `render(p
 - **Slideshow:** os 4 slides ficam empilhados na mesma célula do grid. Na troca, o card inteiro desliza: o atual sai para a esquerda e o próximo entra pela direita, 24px atrás dele, em 0,7 s (classes `is-leaving` e `is-next`). Para trás (seta anterior ou um ponto de número menor), o contrário (`is-prev`). O que saiu fica escondido no `animationend`. Com "reduzir movimento", a troca é direta, sem animação. Só o atual pode receber foco (`inert` nos outros). Passa a cada 7 s, a não ser que a pessoa esteja com o ponteiro ou o foco nele ou a aba esteja escondida. Não há botão de pausa: quando a pessoa usa as setas ou os pontos, ele para de passar sozinho até a próxima visita (`stopped`), o que também serve de meio de parar o movimento (WCAG 2.2.2). Com "reduzir movimento", não passa sozinho. Botões anterior/próximo e pontos (alvos de 24px); só a troca pedida pela pessoa é anunciada (`aria-live="polite"`).
 
 ### 4.3 Contato e mapa do site
-- **Contato (`contact.html`, `js/pages/contact.js`):** o formulário usa `data-fields="name email message"` e a validação de `core/forms.js` (a regra `message` só pede texto). Logado, nome e e-mail vêm de `Account.shown()`, sem apagar o que a pessoa já digitou. Ao enviar, `mailtoLink` monta o `mailto:` com o assunto no idioma da página e `location.href` abre o aplicativo de e-mail; a página mostra o aviso em `.form-status`. Nada passa pelo Supabase nem fica guardado.
+- **Contato (`contact.html`, `js/pages/contact.js`):** o formulário usa `data-fields="name email message"` e a validação de `core/forms.js` (a regra `message` só pede texto). Logado, nome e e-mail vêm de `Account.shown()`, sem apagar o que a pessoa já digitou. Ao enviar, a página mostra "Please wait...", desativa o botão e faz `fetch` (POST, JSON) para a Edge Function `contact` com o header `apikey` (chave publicável, sem `Authorization`: ela não é um JWT). Enviada: o campo da mensagem e o assunto voltam ao início, nome e e-mail ficam, e um aviso (toast) agradece. Erro ou 429: o texto vai para `.form-status`, com o e-mail do site. Um campo `website` fora da tela (`.contact__trap`, `aria-hidden`, `tabindex=-1`) pega robôs. A função, a tabela `contact_messages` e a configuração estão no Backend Schema, seção 2.3, e no `SETUP-CONTAS.md`, seção 8.
 - **Mapa do site (`sitemap.html`, `js/pages/sitemap.js`):** as seções fixas (páginas principais, conta, sobre o site) vêm no HTML, traduzidas. No `init`, a página desenha `#sitemap-steps` (as 6 fases de `PHASES`, cada uma com `journey.html#phase-<slug>`, e as etapas com `journey.html#step-<id>`, nos textos do idioma) e `#sitemap-posts` (os artigos de `POSTS` por categoria, em inglês, numa seção `lang="en-IE" data-i18n-source-only`).
 - **`sitemap.xml`:** `npm run posts` escreve as páginas públicas (`PUBLIC_PAGES` em `tools/stamp-posts.js`: Home, guia, jornada, calculadora, contato, mapa do site, privacidade e termos) e os 20 artigos, com o endereço completo de produção (`index.html` vira a pasta do site). As páginas de conta ficam de fora. Depois de publicar, envie `https://codebybrigido.github.io/EireHomeFlow/sitemap.xml` no Google Search Console.
 
@@ -310,7 +311,7 @@ Qualquer novo endereço base (produção, domínio próprio) precisa entrar em *
 
 ## 12. Testes
 
-Testes automáticos: `npm test` roda `tests/*.test.js` no Node, sem navegador: calculadora (os valores da seção 12.1), progresso, validação, formatação por idioma, o runtime de tradução, o validador de traduções, as ferramentas de versão, o blog (sorteio, semelhantes, cartões, verificação e página dos artigos), o `sitemap.xml` e o link do formulário de contato. `npm run check` roda lint, testes, versões, partials, artigos e traduções, igual ao GitHub Actions. O roteiro manual abaixo continua valendo para o que depende do navegador.
+Testes automáticos: `npm test` roda `tests/*.test.js` no Node, sem navegador: calculadora (os valores da seção 12.1), progresso, validação, formatação por idioma, o runtime de tradução, o validador de traduções, as ferramentas de versão, o blog (sorteio, semelhantes, cartões, verificação e página dos artigos), o `sitemap.xml`, o formulário de contato e a Edge Function `contact` (rodada no Node com Resend e banco simulados: origem, robôs, validação, limite por hora, falhas). `npm run check` roda lint, testes, versões, partials, artigos e traduções, igual ao GitHub Actions. O roteiro manual abaixo continua valendo para o que depende do navegador.
 
 ### 12.1 Calculadora (valores de referência)
 
@@ -380,5 +381,5 @@ Em outro idioma, os números são os mesmos, só com o formato local: o padrão 
 
 ### 12.7 Contato e mapa do site
 - Rodapé de qualquer página (artigos inclusive): Contact us, Sitemap, Privacy Policy e Terms of Use, no idioma da página.
-- Contato com tudo vazio: nome, e-mail e mensagem ficam vermelhos, com foco no nome; ao corrigir, o vermelho some. Enviar abre o aplicativo de e-mail com o assunto "ÉireHome Flow: <assunto>" e mostra "Your email app should now be open...". Logado, nome e e-mail já vêm preenchidos.
+- Contato com tudo vazio: nome, e-mail e mensagem ficam vermelhos, com foco no nome; ao corrigir, o vermelho some. Enviar mostra "Please wait..." e, com a função configurada, o aviso "Thank you. Your message has been sent..." e um e-mail em eirehomeflow@gmail.com (responder vai para quem escreveu); sem a função, "Your message could not be sent..." com o endereço de e-mail. Logado, nome e e-mail já vêm preenchidos.
 - Mapa do site: 6 fases e 31 etapas no idioma da página (cada link abre a etapa na jornada) e os 20 artigos em inglês, por categoria. Em 375px, uma coluna, sem rolagem horizontal.

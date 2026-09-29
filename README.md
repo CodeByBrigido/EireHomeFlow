@@ -16,6 +16,7 @@ Guia educativo para quem vai comprar o primeiro imóvel na Irlanda: seis fases e
 | `content/blog/` | O texto de cada artigo do blog, em inglês. |
 | `specs/` | A fonte de verdade do projeto: requisitos, arquitetura, telas, fluxos, banco, plano e design system. |
 | `supabase/email-templates/` | Os e-mails de confirmação e de nova senha, para colar no painel do Supabase. |
+| `supabase/functions/contact/` | A função do Supabase que recebe o formulário de contato e manda o e-mail (pelo Resend). Configuração no [SETUP-CONTAS.md](specs/SETUP-CONTAS.md), seção 8. |
 | `tests/` | Os testes automáticos (`npm test`). |
 | `tools/` | Servidor local (`npm start`), as ferramentas do `?v=`, dos partials, das traduções e do blog. |
 | `.github/` | O GitHub Actions, que confere cada Pull Request. |

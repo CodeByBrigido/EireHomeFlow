@@ -1,11 +1,16 @@
-// Contact us: the address, and the email the contact form writes in the reader's own email app.
-// Nothing is sent from the site and nothing is stored.
-
+// The contact form posts its message to the Supabase Edge Function "contact"
+// (supabase/functions/contact/index.js), which emails it to us and keeps a copy.
 export const CONTACT_EMAIL = "eirehomeflow@gmail.com";
 
-// A mailto: link with the subject and the message ready. Line breaks are CRLF, as email expects.
-export function mailtoLink({ topic, name, email, message }) {
-  const subject = `ÉireHome Flow: ${topic}`;
-  const body = [message.trim(), "", name.trim(), email.trim()].join("\r\n");
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+export const contactUrl = (supabaseUrl) => (supabaseUrl ? supabaseUrl.replace(/\/+$/, "") + "/functions/v1/contact" : "");
+
+// What the form sends: the fields trimmed, the hidden field only bots fill in, and the page's language.
+export function contactBody({ name = "", email = "", topic = "", message = "", website = "" }, locale) {
+  return { name: name.trim(), email: email.trim(), topic, message: message.trim(), website, locale };
+}
+
+// "sent", "tooMany" (too many messages from this address in the last hour) or "failed".
+export function sendOutcome(status) {
+  if (status >= 200 && status < 300) return "sent";
+  return status === 429 ? "tooMany" : "failed";
 }
