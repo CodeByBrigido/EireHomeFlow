@@ -140,6 +140,11 @@ Os códigos A8, M1 e similares vêm de `AUDITORIA.md`.
 - [x] Rodapé com Contact us, Sitemap, Privacy Policy e Terms of Use em todas as páginas e artigos
 - [x] Textos de contato e do mapa do site nos 9 idiomas
 
+### Marco 3.12: Fotos do blog (29/09/2026) ✅
+- [x] Uma foto por artigo no lugar das ilustrações SVG, em WebP 16:9 com 4 larguras (320, 640, 960, 1440) e `srcset`, geradas por `tools/blog_images.py`
+- [x] Texto alternativo novo em cada artigo, descrevendo a foto
+- [x] `npm run check:posts` confere as 4 larguras de cada artigo e recusa imagem sem artigo
+
 ## Próximos marcos
 
 ### Marco 4: Contas funcionando de verdade

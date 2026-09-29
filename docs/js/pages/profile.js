@@ -1,14 +1,14 @@
 // My profile: change the name on the account, see the email, change password, sign out,
 // delete the account.
-import { userName } from "../lib/people.js?v=20261004";
-import { Account } from "../core/account.js?v=20261004";
-import { startPage } from "../core/app.js?v=20261004";
-import { bind } from "../core/dom.js?v=20261004";
-import { checkForm, errorText, readerError, sayInForm, watchForm } from "../core/forms.js?v=20261004";
-import { renderGate } from "../core/header.js?v=20261004";
-import { date, t } from "../core/i18n.js?v=20261004";
-import { flash, showToast } from "../core/notices.js?v=20261004";
-import { setState } from "../core/state.js?v=20261004";
+import { userName } from "../lib/people.js?v=20261006";
+import { Account } from "../core/account.js?v=20261006";
+import { startPage } from "../core/app.js?v=20261006";
+import { bind } from "../core/dom.js?v=20261006";
+import { checkForm, errorText, readerError, sayInForm, watchForm } from "../core/forms.js?v=20261006";
+import { renderGate } from "../core/header.js?v=20261006";
+import { date, t } from "../core/i18n.js?v=20261006";
+import { flash, showToast } from "../core/notices.js?v=20261006";
+import { setState } from "../core/state.js?v=20261006";
 
 let profileFilled = false;
 let deleting = false;

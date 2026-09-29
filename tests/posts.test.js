@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
-import { CATEGORIES, CATEGORY_NAMES, POSTS, SLIDESHOW, homeSelection, postCardHtml, shuffle, similarPosts } from "../docs/js/lib/posts.js";
+import { CATEGORIES, CATEGORY_NAMES, IMAGE_WIDTHS, POSTS, SLIDESHOW, homeSelection, postCardHtml, postImage, postSrcset, shuffle, similarPosts } from "../docs/js/lib/posts.js";
 import { articleProblems, postPage, readingMinutes, sitemapXml } from "../tools/posts.js";
 import { htmlProblems, untranslatedText } from "../tools/i18n.js";
 
@@ -31,7 +31,7 @@ test("every article has a category, a real My journey step, its text and its pic
     assert.ok(guideSteps.includes(item.step), `${item.slug}: ${item.step}`);
     assert.ok(item.title && item.summary && item.tags.length, item.slug);
     assert.ok(existsSync(fromRoot(`content/blog/${item.slug}.json`)), `${item.slug}: text`);
-    assert.ok(existsSync(fromRoot(`docs/img/blog/${item.slug}.svg`)), `${item.slug}: picture`);
+    for (const width of IMAGE_WIDTHS) assert.ok(existsSync(fromRoot(`docs/${postImage(item.slug, width)}`)), `${item.slug}: picture ${width}px`);
   }
 });
 
@@ -66,6 +66,15 @@ test("a card links to the article, names its category and can wait for Show more
   assert.match(html, /<li class="post-card post-card--row" hidden>/);
   assert.match(html, /post-card__category">Schemes</);
   assert.match(html, /post-card__title">Tom &amp; Jerry &lt;b&gt;</);
+  assert.match(html, /src="img\/blog\/government-schemes-checker-640\.webp"/);
+  assert.match(html, /srcset="img\/blog\/government-schemes-checker-320\.webp 320w, [^"]*-1440\.webp 1440w"/);
+  assert.match(html, /width="1440" height="810" loading="lazy"/);
+});
+
+test("every picture comes in four 16:9 widths, and the browser picks one", () => {
+  assert.deepEqual(IMAGE_WIDTHS, [320, 640, 960, 1440]);
+  assert.equal(postImage("sample"), "img/blog/sample-640.webp");
+  assert.equal(postSrcset("sample"), "img/blog/sample-320.webp 320w, img/blog/sample-640.webp 640w, img/blog/sample-960.webp 960w, img/blog/sample-1440.webp 1440w");
 });
 
 test("the blog has an English name for every category and the words of the slideshow", () => {
@@ -104,6 +113,7 @@ test("an article page is in English, apart from the shared header and footer", (
   assert.match(html, /<h1 class="post__title">A sample article<\/h1>/);
   assert.match(html, /<p class="post__category">Money<\/p>/);
   assert.match(html, /<p class="post__meta">1 min read<\/p>/);
+  assert.match(html, /<img src="img\/blog\/sample-960\.webp" srcset="img\/blog\/sample-320\.webp 320w, [^"]+" sizes="[^"]+" alt="A small house" width="1440" height="810" fetchpriority="high">/);
   assert.match(html, /<p>A paragraph with <strong>bold<\/strong> text\.<\/p>/);
   assert.match(html, /href="journey\.html#step-preparation-4">Open this step in My journey</);
   assert.ok(!html.includes("data-i18n="), "no translation keys outside the header and footer");

@@ -3,7 +3,7 @@
 // labels, its reading time and its similar articles go straight into the page, marked lang="en-IE"
 // and data-i18n-source-only. Only the shared header and footer follow the site's language.
 // Pure functions, so tests/posts.test.js can run them.
-import { CATEGORY_NAMES, postCardHtml, postImage, similarPosts } from "../docs/js/lib/posts.js";
+import { CATEGORY_NAMES, postCardHtml, postImage, postSrcset, similarPosts } from "../docs/js/lib/posts.js";
 import { FORBIDDEN, escapeText } from "./i18n.js";
 
 const WORDS_PER_MINUTE = 200;
@@ -132,7 +132,7 @@ export function postPage({ post, article, version }) {
     `        <p class="post__meta">${minutes} min read</p>`,
     "      </header>",
     '      <figure class="post__figure">',
-    `        <img src="${postImage(post.slug)}" alt="${escapeAttribute(article.alt)}" width="800" height="500">`,
+    `        <img src="${postImage(post.slug, 960)}" srcset="${postSrcset(post.slug)}" sizes="(max-width: 800px) calc(100vw - 32px), 760px" alt="${escapeAttribute(article.alt)}" width="1440" height="810" fetchpriority="high">`,
     "      </figure>",
     '      <div class="post__body">',
     ...body,
