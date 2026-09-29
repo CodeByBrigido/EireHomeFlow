@@ -1,14 +1,14 @@
 // Buying power calculator. The maths is calc() in lib/calculator.js, shared with the journey and the dashboard.
 // Saving here ticks step 1 of the journey; the figures themselves stay in this browser.
-import { calc, HTB, RANGES, stampBandCount, verdictKind } from "../lib/calculator.js?v=20261003";
-import { esc, num } from "../lib/format.js?v=20261003";
-import { startPage } from "../core/app.js?v=20261003";
-import { bind } from "../core/dom.js?v=20261003";
-import { money, number, percent, t } from "../core/i18n.js?v=20261003";
-import { flash } from "../core/notices.js?v=20261003";
-import { setState, state } from "../core/state.js?v=20261003";
-import { calculatorStep, stepLink } from "../core/steps.js?v=20261003";
-import { setDone } from "../core/sync.js?v=20261003";
+import { calc, HTB, RANGES, stampBandCount, verdictKind } from "../lib/calculator.js?v=20261004";
+import { esc, num } from "../lib/format.js?v=20261004";
+import { startPage } from "../core/app.js?v=20261004";
+import { bind } from "../core/dom.js?v=20261004";
+import { money, number, percent, t } from "../core/i18n.js?v=20261004";
+import { flash } from "../core/notices.js?v=20261004";
+import { setState, state } from "../core/state.js?v=20261004";
+import { calculatorStep, stepLink } from "../core/steps.js?v=20261004";
+import { setDone } from "../core/sync.js?v=20261004";
 
 function initPage() {
   document.querySelectorAll("[data-field]").forEach((input) => { input.value = state[input.dataset.field]; });

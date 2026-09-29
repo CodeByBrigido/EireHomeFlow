@@ -1,9 +1,9 @@
 // Sitemap: every page in one place. The phases and steps come from the step list, in the page's
 // language, and link into My journey; the blog articles come from js/lib/posts.js, in English.
-import { esc } from "../lib/format.js?v=20261003";
-import { CATEGORIES, CATEGORY_NAMES, POSTS, postPath } from "../lib/posts.js?v=20261003";
-import { startPage } from "../core/app.js?v=20261003";
-import { PHASES, steps } from "../core/steps.js?v=20261003";
+import { esc } from "../lib/format.js?v=20261004";
+import { CATEGORIES, CATEGORY_NAMES, POSTS, postPath } from "../lib/posts.js?v=20261004";
+import { startPage } from "../core/app.js?v=20261004";
+import { PHASES, steps } from "../core/steps.js?v=20261004";
 
 function initPage() {
   document.getElementById("sitemap-steps").innerHTML = PHASES.map((phase) => `<div class="sitemap__column">

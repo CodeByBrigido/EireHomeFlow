@@ -1,9 +1,9 @@
 // The shared header (active link, sign-in link or account circle), the gate on
 // signed-in pages, and the account menu.
-import { initials, userName } from "../lib/people.js?v=20261003";
-import { Account } from "./account.js?v=20261003";
-import { bind, PAGE } from "./dom.js?v=20261003";
-import { t } from "./i18n.js?v=20261003";
+import { initials, userName } from "../lib/people.js?v=20261004";
+import { Account } from "./account.js?v=20261004";
+import { bind, PAGE } from "./dom.js?v=20261004";
+import { t } from "./i18n.js?v=20261004";
 
 // The parts drawn at once, before the texts and the step list have loaded: the active link,
 // and "Sign in" or the account circle with the initials. Returns the person shown.

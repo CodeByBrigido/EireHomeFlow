@@ -1,4 +1,4 @@
 // The full guide: static content, so the page only needs the shared header, footer and account.
-import { startPage } from "../core/app.js?v=20261003";
+import { startPage } from "../core/app.js?v=20261004";
 
 startPage();
