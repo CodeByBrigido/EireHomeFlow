@@ -1,13 +1,13 @@
 // Contact us: the form sends the message from the site to the Supabase Edge Function "contact",
 // which emails it to us. Someone signed in finds their name and email already filled in.
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20260930";
-import { contactBody, contactUrl, sendOutcome } from "../lib/contact.js?v=20260930";
-import { userName } from "../lib/people.js?v=20260930";
-import { Account } from "../core/account.js?v=20260930";
-import { startPage } from "../core/app.js?v=20260930";
-import { checkForm, formValues, sayInForm, watchForm } from "../core/forms.js?v=20260930";
-import { locale, t } from "../core/i18n.js?v=20260930";
-import { showToast } from "../core/notices.js?v=20260930";
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "../config.js?v=20261001";
+import { contactBody, contactUrl, sendOutcome } from "../lib/contact.js?v=20261001";
+import { userName } from "../lib/people.js?v=20261001";
+import { Account } from "../core/account.js?v=20261001";
+import { startPage } from "../core/app.js?v=20261001";
+import { checkForm, formValues, sayInForm, watchForm } from "../core/forms.js?v=20261001";
+import { locale, t } from "../core/i18n.js?v=20261001";
+import { showToast } from "../core/notices.js?v=20261001";
 
 const PROBLEMS = { tooMany: "contact:form.tooMany", failed: "contact:form.failed" };
 

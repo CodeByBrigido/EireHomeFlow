@@ -151,10 +151,29 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .hero { padding: 56px 32px 0; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; }
 .hero .eyebrow { margin-bottom: 12px; }
-.hero__title { margin: 0; font-weight: 800; font-size: 66px; line-height: 1; letter-spacing: -0.03em; text-wrap: pretty; }
+/* The title keeps the English shape in every language: each half (split by <br>) on one line.
+   --title-em is the width of the longest half at a font size of 1em, measured in the browser, plus 2%.
+   The size is the column width divided by it, between 30px and 66px, so it also fits narrower
+   screens. tests/hero-title.test.js holds the titles these numbers were measured for. */
+.hero__text { container-type: inline-size; }
+.hero__title { --title-em: 8.12; margin: 0; font-weight: 800; font-size: 66px; font-size: clamp(30px, 100cqi / var(--title-em), 66px); line-height: 1; letter-spacing: -0.03em; text-wrap: pretty; }
+.hero__title:lang(pt) { --title-em: 11.36; }
+.hero__title:lang(es) { --title-em: 10.95; }
+.hero__title:lang(fr) { --title-em: 11.61; }
+.hero__title:lang(de) { --title-em: 9.94; }
+.hero__title:lang(it) { --title-em: 8.8; }
+.hero__title:lang(pl) { --title-em: 12.8; }
+.hero__title:lang(ro) { --title-em: 10.42; }
+.hero__title:lang(lt) { --title-em: 10.24; }
 .hero__title em { font-style: italic; color: var(--ink); }
 .hero__lead { margin: 20px 0 26px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 40ch; }
 .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+/* 20px at the sides, so both buttons fit side by side in the longer languages too. In a narrower
+   column they would wrap unevenly, so there they stack at full width instead. */
+.hero__actions .btn { padding-left: 20px; padding-right: 20px; }
+@container (max-width: 530px) {
+  .hero__actions { flex-direction: column; }
+}
 .hero__figure { margin: 0; }
 .hero__figure img { display: block; width: 100%; height: auto; border-radius: 24px; }
 .hero__figure figcaption { margin-top: 10px; font-size: 13px; color: var(--faint); }
@@ -502,7 +521,6 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .contact__form .btn { justify-self: start; }
 .contact__title { margin: 0; font-weight: 800; font-size: 21px; letter-spacing: -0.01em; }
 .contact__note { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
-.contact__trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .contact__aside { display: grid; gap: 18px; }
 .contact__card { padding: 22px 24px; border-radius: 22px; background: #fff; border: 2px solid var(--line); }
 .contact__card p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }
@@ -717,7 +735,6 @@ html[lang|="en"] .legal__notice { display: none; }
   .site-footer__inner { padding: 20px 16px; }
 
   .hero { padding: 32px 16px 0; }
-  .hero__title { font-size: clamp(38px, 10.5vw, 66px); }
   .hero__lead { font-size: 17px; }
   .ticker { margin-top: 36px; }
   .stats { padding: 40px 16px 0; }

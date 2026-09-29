@@ -90,7 +90,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 ## 5. Páginas
 
 ### 5.1 Home (`index.html`)
-1. **Hero:** eyebrow "For first-time buyers in Ireland", título "From first savings to your *first sofa*.", texto de apoio, botão principal ("Start my journey" ou "Resume my journey") e botão secundário ("Buying power calculator"). Ilustração com legenda.
+1. **Hero:** eyebrow "For first-time buyers in Ireland", título "From first savings to your *first sofa*.", texto de apoio, botão principal ("Start my journey" ou "Resume my journey") e botão secundário ("Buying power calculator"). Ilustração com legenda. Em qualquer idioma, o título fica em 2 linhas como no inglês (o tamanho se ajusta ao idioma e à largura) e os botões ficam lado a lado; numa coluna estreita (tablet e celular), um embaixo do outro, na largura toda.
 2. **Ticker:** faixa verde com 6 fatos em rolagem contínua; "Pause"/"Play".
 3. **Números-chave:** 3 cartões (4×, 10%, €3,550).
 4. **Seis fases:** cartões com número, título, resumo, barra e "N of M steps done"; cada um leva a `journey.html#phase-<slug>`.

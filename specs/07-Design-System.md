@@ -70,7 +70,7 @@ Cores fixas fora dos tokens (usar só nestes lugares): `#cfe7dd` (anel do nó at
 
 | Estilo | Tamanho | Peso | Altura de linha | Espaçamento | Onde |
 |---|---|---|---|---|---|
-| Display | 66px (celular: `clamp(38px, 10.5vw, 66px)`) | 800 | 1 | -0.03em | Título do hero |
+| Display | Até 66px: largura da coluna ÷ `--title-em` do idioma, entre 30px e 66px (seção 7.1.1) | 800 | 1 | -0.03em | Título do hero |
 | H1 de tela | 48px (`clamp(32px, 8.5vw, 48px)`) | 800 | 1.02 | -0.03em | "Getting the keys...", "What you can actually buy" |
 | Número grande | 56px (cartões), 52px (preço máximo), 38px (prestação) | 800 | 1 | -0.03em | Valores |
 | H2 de seção | 42px (`clamp(28px, 7.5vw, 42px)`) | 800 | 1.05 | -0.025em | "Six phases...", "The full guide" |
@@ -137,6 +137,10 @@ O cabeçalho precisa caber assim em **todos os idiomas**: ao mudar um rótulo do
 | Google | `.btn.btn--google` | Branco, borda `--line-2` de 2px, texto `--text` 16px, logo "G" colorido de 20px (`.google-logo`) à esquerda, largura total | "Continue with Google" nas páginas de conta; desativado com "Opening Google..." |
 | Link de texto | `<a>` sem classe | Verde, sublinhado; hover verde escuro | Links dentro de textos |
 | Desativado | `.btn:disabled` | 45% de opacidade, sem sombra | Etapa bloqueada |
+
+### 7.1.1 Hero em qualquer idioma
+- **Título:** em todos os idiomas, cada metade (separada por `<br>`) fica numa linha, como no inglês. A coluna de texto `.hero__text` é um contêiner (`container-type: inline-size`), e o tamanho é `clamp(30px, 100cqi / var(--title-em), 66px)`. `--title-em` é a largura da metade mais longa com fonte de 1em, medida no navegador, mais 2%: 8,12 no inglês (o padrão) e uma regra `.hero__title:lang(xx)` para cada idioma. No desktop o inglês fica em 66px, e os outros entre 42px (polonês) e 61px (italiano). Como medir: `specs/08-Internationalisation.md`, seção 7.
+- **Botões:** 20px de respiro nas laterais (em vez de 26px), para os dois caberem lado a lado nos 9 idiomas a partir de 1224px de tela. Numa coluna com menos de 530px, eles ficam um embaixo do outro, na largura toda (`@container`), em vez de quebrar com larguras diferentes.
 
 Links que parecem botão usam as mesmas classes em `<a>` (`.btn`, `.next-up__btn`, `.nav__link`, `.phase-card`, `.step-link`). A regra de cor de link vale só para `<a>` sem classe.
 
@@ -227,7 +231,7 @@ Regras para criar ou trocar uma ilustração (conferidas pelo validador `check_s
 - **Ilustrações** em `docs/img/blog/<slug>.svg`, com as mesmas regras e o mesmo validador das ilustrações das etapas (seção 7.9).
 
 ### 7.10.1 Contato e mapa do site
-- **Contato** `.contact`: grade `1.5fr 1fr` com 32px de espaço (1 coluna até 960px). O formulário `.contact__form` é um `.card` com 26px de respiro (20px no celular) e o botão à esquerda; títulos `.contact__title` 21px, 800; nota `.contact__note` 14px `--muted`. Ao lado, `.contact__aside` com `.contact__card` (branco, borda `--line` de 2px, raio 22px) e `.contact__card--sand` (fundo `--sand`); o e-mail em `.contact__email` (17px, 800, quebra em qualquer ponto para caber em 320px) e a lista `.contact__list` 15px. O campo-armadilha `.contact__trap` fica fora da tela (`left: -10000px`), nunca com `display: none`, que alguns robôs detectam.
+- **Contato** `.contact`: grade `1.5fr 1fr` com 32px de espaço (1 coluna até 960px). O formulário `.contact__form` é um `.card` com 26px de respiro (20px no celular) e o botão à esquerda; títulos `.contact__title` 21px, 800; nota `.contact__note` 14px `--muted`. Ao lado, `.contact__aside` com `.contact__card` (branco, borda `--line` de 2px, raio 22px) e `.contact__card--sand` (fundo `--sand`); o e-mail em `.contact__email` (17px, 800, quebra em qualquer ponto para caber em 320px) e a lista `.contact__list` 15px. O campo-armadilha para robôs fica fora da tela (`left: -10000px`, num `style` no próprio HTML, para nunca aparecer mesmo com um CSS antigo no cache), nunca com `display: none`, que alguns robôs detectam.
 - **Mapa do site** `.sitemap`: grade de 3 colunas (2 até 960px, 1 até 720px). Cada seção longa (`.sitemap__section`) ocupa a linha inteira, com linha `--sand` de 2px acima e título `.sitemap__title` 28px; dentro, `.sitemap__grid` com as mesmas colunas. Títulos de grupo `.sitemap__heading` 17px, 800; listas `.sitemap__list` 15px, alinhadas à esquerda, sem hifenização, com marcador `--faint`.
 
 ### 7.11 Imagens

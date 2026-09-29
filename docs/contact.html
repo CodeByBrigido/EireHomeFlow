@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="js/i18n-boot.js?v=20260930"></script>
+  <script src="js/i18n-boot.js?v=20261001"></script>
   <title data-i18n="contact:meta">Contact us | ÉireHome Flow</title>
   <link rel="icon" href="img/icon/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/icon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260930">
-  <script type="module" src="js/pages/contact.js?v=20260930"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261001">
+  <script type="module" src="js/pages/contact.js?v=20261001"></script>
 </head>
 <body data-page="contact">
 <div class="page">
@@ -81,8 +81,9 @@
           <textarea name="message" rows="7" maxlength="1500" aria-describedby="error-message"></textarea>
           <span class="field__error" id="error-message"></span>
         </label>
-        <!-- Only bots fill in this field; the Edge Function drops their messages. -->
-        <div class="contact__trap" aria-hidden="true">
+        <!-- Only bots fill in this field; the Edge Function drops their messages. It is hidden with an
+             inline style so it never shows, even with an old stylesheet in the browser's cache. -->
+        <div aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;">
           <input type="text" name="website" tabindex="-1" autocomplete="off">
         </div>
         <p class="contact__note" data-i18n-html="contact:form.note">Your message goes straight to our inbox, and we use your email address only to reply. See our <a href="privacy.html">Privacy Policy</a>.</p>
