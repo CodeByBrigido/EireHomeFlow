@@ -586,14 +586,12 @@ p, li, figcaption, .phase-card__text { text-align: justify; hyphens: auto; -webk
 .post-grid { display: grid; }
 /* Cards are list items, but their titles are headings: no justified text. */
 .post-card { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
-/* The three articles beside the slideshow fill its height, after a rule: the first starts level with
-   the picture and the last ends level with the arrows, with a rule halfway between each. The middle one
-   gets twice the spare height and sits in the middle of it, so all four gaps come out equal. */
+/* The three articles beside the slideshow, after a rule as tall as the slideshow: the first starts
+   level with the picture, and a rule separates each from the next. */
 .blog__side { display: flex; flex-direction: column; padding-left: 24px; border-left: 2px solid var(--line-2); }
-.blog__side > .post-card { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 18px 0; }
-.blog__side > .post-card:first-child { justify-content: flex-start; padding-top: 0; }
-.blog__side > .post-card:last-child { justify-content: flex-end; padding-bottom: 0; }
-.blog__side > .post-card:nth-child(2) { flex-grow: 2; }
+.blog__side > .post-card { padding: 20px 0; }
+.blog__side > .post-card:first-child { padding-top: 0; }
+.blog__side > .post-card:last-child { padding-bottom: 0; }
 .blog__side > .post-card + .post-card { border-top: 2px solid var(--line-2); }
 .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
 .post-card__link { display: flex; gap: 18px; align-items: flex-start; }

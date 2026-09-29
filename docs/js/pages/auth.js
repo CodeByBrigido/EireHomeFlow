@@ -1,14 +1,14 @@
 // Account pages: sign in, create account, forgot password and new password.
 // After signing in (with email or with Google), people go back to the page in ?next=
 // (or to their dashboard).
-import { firstName } from "../lib/people.js?v=20261002";
-import { safeNext } from "../lib/validation.js?v=20261002";
-import { Account } from "../core/account.js?v=20261002";
-import { startPage } from "../core/app.js?v=20261002";
-import { bind, PAGE } from "../core/dom.js?v=20261002";
-import { checkForm, errorText, formValues, readerError, renderPasswordRules, sayInForm, watchForm } from "../core/forms.js?v=20261002";
-import { t } from "../core/i18n.js?v=20261002";
-import { flash } from "../core/notices.js?v=20261002";
+import { firstName } from "../lib/people.js?v=20261003";
+import { safeNext } from "../lib/validation.js?v=20261003";
+import { Account } from "../core/account.js?v=20261003";
+import { startPage } from "../core/app.js?v=20261003";
+import { bind, PAGE } from "../core/dom.js?v=20261003";
+import { checkForm, errorText, formValues, readerError, renderPasswordRules, sayInForm, watchForm } from "../core/forms.js?v=20261003";
+import { t } from "../core/i18n.js?v=20261003";
+import { flash } from "../core/notices.js?v=20261003";
 
 const NEXT = safeNext(new URLSearchParams(location.search).get("next"), "dashboard.html");
 

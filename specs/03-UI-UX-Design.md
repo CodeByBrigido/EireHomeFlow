@@ -97,7 +97,7 @@ Avisos que acontecem logo antes de uma troca de página (entrar, sair, trocar se
 5. **Convite ao guia:** faixa areia "Read the full guide" com o botão "Open the guide".
 6. **Blog** (`#blog`, todo em inglês em qualquer idioma do site): eyebrow "From the blog" e título "Guides for buying a home in Ireland". Embaixo, como num portal de notícias:
    - à esquerda, um **slideshow** grande com 4 artigos sorteados a cada visita: imagem 16:10, categoria, título e resumo; controles embaixo (setas redondas e pontos com o atual alongado em verde, sem botão de pausa). Passa sozinho a cada 7 s, com o card inteiro deslizando da direita para a esquerda (para trás, o contrário); espera com o ponteiro ou o foco em cima e para de passar sozinho depois que a pessoa usa as setas ou os pontos;
-   - à direita, depois de uma linha vertical, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título, separados por linhas. Eles ocupam a altura do slideshow: o primeiro começa na altura da imagem e o último termina junto com as setas;
+   - à direita, depois de uma linha vertical, **3 artigos** sorteados, com imagem pequena ao lado da categoria e do título, separados por linhas; o primeiro começa na altura da imagem;
    - uma linha horizontal e **"More articles"**: os outros 13 em 2 colunas, com imagem ao lado do texto, 6 por vez; "Show more articles" mostra os próximos 6.
    Nenhum artigo aparece duas vezes. Cada cartão inteiro é o link para o artigo.
 

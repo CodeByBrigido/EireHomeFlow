@@ -1,12 +1,12 @@
 // Home page: ticker loop, phase cards, the start or resume button, and the blog: a slideshow of
 // four articles, three more beside it and the rest below, picked at random on every visit.
 // The blog is in English only (its words are in lib/posts.js).
-import { esc } from "../lib/format.js?v=20261002";
-import { CATEGORY_NAMES, SLIDESHOW, homeSelection, postCardHtml, postImage, postPath } from "../lib/posts.js?v=20261002";
-import { startPage } from "../core/app.js?v=20261002";
-import { bind } from "../core/dom.js?v=20261002";
-import { t } from "../core/i18n.js?v=20261002";
-import { phaseCardsHtml } from "../core/steps.js?v=20261002";
+import { esc } from "../lib/format.js?v=20261003";
+import { CATEGORY_NAMES, SLIDESHOW, homeSelection, postCardHtml, postImage, postPath } from "../lib/posts.js?v=20261003";
+import { startPage } from "../core/app.js?v=20261003";
+import { bind } from "../core/dom.js?v=20261003";
+import { t } from "../core/i18n.js?v=20261003";
+import { phaseCardsHtml } from "../core/steps.js?v=20261003";
 
 const SLIDE_SECONDS = 7;
 const MORE_AT_A_TIME = 6;
