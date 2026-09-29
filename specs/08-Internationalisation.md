@@ -216,6 +216,14 @@ Cuidados na tradução:
 - Mesma quantidade de "€" e "%".
 - Sem travessão, sem "≈" e sem "…" (use "..."), como no tom de voz do site.
 - Textos curtos do cabeçalho (menu e "Sign in") precisam caber no celular de 320px. Depois de mudar, confira em 320px e em 768px.
+- **Título da Home (`home:hero.title`):** o tamanho dele em cada idioma vem de `--title-em` em `styles.css` (Design System, seção 7.1.1), medido para o texto atual. Mudou o título num idioma ou criou um idioma novo? Abra `index.html?lang=<código>`, rode no console do navegador o trecho abaixo e ponha o resultado (arredondado para cima, com 2 casas) na regra `.hero__title:lang(<código>)`. Depois atualize o título em `tests/hero-title.test.js`, que falha até as duas coisas baterem.
+
+  ```js
+  const t = document.querySelector(".hero__title"), cs = getComputedStyle(t), r = document.createElement("span");
+  r.style.cssText = `position:absolute;white-space:nowrap;font:${cs.font};letter-spacing:${cs.letterSpacing}`;
+  document.body.append(r);
+  Math.max(...t.innerHTML.split("<br>").map((half) => { r.innerHTML = half; return r.getBoundingClientRect().width / parseFloat(cs.fontSize); })) * 1.02;
+  ```
 - Quando a concordância depende de outro número (por exemplo, "1 de 6 etapas"), escreva uma frase que funcione com o plural escolhido por `count`.
 
 ## 8. O validador: `npm run check:i18n`
